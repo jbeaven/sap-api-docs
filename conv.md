@@ -25,13 +25,13 @@ Deletes a job. In case the job is in status processing, it is aborted before rem
 *   for parameter i_job_id:
 *   a simple ABAP primitive of type /BLCK/CNV_STRING
     data gvs_job_id type /BLCK/CNV_STRING.
-*   when the the result of the call is HTTP401 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/CNV_ERROR
     data gr_http401 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/CNV_ERROR
     data gr_http404 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
     data gr_http500 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/CNV_ERROR
     data gr_http0 type /BLCK/CNV_ERROR.
         
 *** set data according to requirements of the API call
@@ -63,6 +63,8 @@ Deletes a job. In case the job is in status processing, it is aborted before rem
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 201.
+*       handle code 201
       when 401.
 *       do something with gr_http401 (type /BLCK/CNV_ERROR)
       when 404.
@@ -114,13 +116,13 @@ Start processing of a job. If processing is already triggered nothing is done. J
 *   for parameter i_job_id:
 *   a simple ABAP primitive of type /BLCK/CNV_STRING
     data gvs_job_id type /BLCK/CNV_STRING.
-*   when the the result of the call is HTTP401 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/CNV_ERROR
     data gr_http401 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/CNV_ERROR
     data gr_http404 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
     data gr_http500 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/CNV_ERROR
     data gr_http0 type /BLCK/CNV_ERROR.
         
 *** set data according to requirements of the API call
@@ -152,6 +154,8 @@ Start processing of a job. If processing is already triggered nothing is done. J
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 201.
+*       handle code 201
       when 401.
 *       do something with gr_http401 (type /BLCK/CNV_ERROR)
       when 404.
@@ -203,15 +207,15 @@ Get a object with job status and output information
 *   for parameter i_job_id:
 *   a simple ABAP primitive of type /BLCK/CNV_STRING
     data gvs_job_id type /BLCK/CNV_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/CNV_JOB_STATUS
+*   when the result of the call is HTTP200 we expect type /BLCK/CNV_JOB_STATUS
     data gr_http200 type /BLCK/CNV_JOB_STATUS.
-*   when the the result of the call is HTTP401 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/CNV_ERROR
     data gr_http401 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/CNV_ERROR
     data gr_http404 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
     data gr_http500 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/CNV_ERROR
     data gr_http0 type /BLCK/CNV_ERROR.
         
 *** set data according to requirements of the API call
@@ -269,11 +273,11 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/CNV_JOB_STATUS (**[JobStatus](#markdown-header-model-)**) | OK, job status information returned
- 401 | **e_401** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 404 | **e_404** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-)**) | Not found
- 500 | **e_500** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/CNV_JOB_STATUS (**[JobStatus](#markdown-header-model-job_status)**) | OK, job status information returned
+ 401 | **e_401** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 404 | **e_404** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_500** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -304,15 +308,15 @@ Easy way to convert with a single REST call: - Creates a single input file with 
 *   for parameter i_jobid:
 *   a simple ABAP primitive of type /BLCK/CNV_STRING
     data gvs_jobid type /BLCK/CNV_STRING.
-*   when the the result of the call is HTTP401 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/CNV_ERROR
     data gr_http401 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/CNV_ERROR
     data gr_http404 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/CNV_ERROR
     data gr_http409 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
     data gr_http500 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/CNV_ERROR
     data gr_http0 type /BLCK/CNV_ERROR.
         
 *** set data according to requirements of the API call
@@ -345,6 +349,8 @@ Easy way to convert with a single REST call: - Creates a single input file with 
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 200.
+*       handle code 200
       when 401.
 *       do something with gr_http401 (type /BLCK/CNV_ERROR)
       when 404.
@@ -402,15 +408,15 @@ Get a object with full job status, input and output information.
 *   for parameter i_job_id:
 *   a simple ABAP primitive of type /BLCK/CNV_STRING
     data gvs_job_id type /BLCK/CNV_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/CNV_JOB_DATA
+*   when the result of the call is HTTP200 we expect type /BLCK/CNV_JOB_DATA
     data gr_http200 type /BLCK/CNV_JOB_DATA.
-*   when the the result of the call is HTTP401 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/CNV_ERROR
     data gr_http401 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/CNV_ERROR
     data gr_http404 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
     data gr_http500 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/CNV_ERROR
     data gr_http0 type /BLCK/CNV_ERROR.
         
 *** set data according to requirements of the API call
@@ -468,11 +474,11 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/CNV_JOB_DATA (**[JobData](#markdown-header-model-)**) | OK, job status information returned
- 401 | **e_401** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 404 | **e_404** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-)**) | Not found
- 500 | **e_500** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/CNV_JOB_DATA (**[JobData](#markdown-header-model-job_data)**) | OK, job status information returned
+ 401 | **e_401** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 404 | **e_404** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_500** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -503,19 +509,18 @@ Appends a new input file to the input file list of a job.
 *   for parameter i_body:
 *   a reference to model type /BLCK/CNV_INPUT_FILE
     data gm_body type /BLCK/CNV_INPUT_FILE.
-
 *   for parameter i_job_id:
 *   a simple ABAP primitive of type /BLCK/CNV_STRING
     data gvs_job_id type /BLCK/CNV_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/CNV_STRING
+*   when the result of the call is HTTP200 we expect type /BLCK/CNV_STRING
     data gr_http200 type /BLCK/CNV_STRING.
-*   when the the result of the call is HTTP401 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/CNV_ERROR
     data gr_http401 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/CNV_ERROR
     data gr_http409 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
     data gr_http500 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/CNV_ERROR
     data gr_http0 type /BLCK/CNV_ERROR.
         
 *** set data according to requirements of the API call
@@ -579,10 +584,10 @@ Name | Type | Description
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
  200 | **e_200** | /BLCK/CNV_STRING | OK, entry created. Returns fileId as index of created file in input file list, starting with zero.
- 401 | **e_401** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 409 | **e_409** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-)**) | Conflict, ressource could not be created. See error message for details. 
- 500 | **e_500** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 401 | **e_401** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 409 | **e_409** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
+ 500 | **e_500** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -613,15 +618,15 @@ Easy way to convert with a single REST call: - Creates a single input file with 
 *   for parameter i_jobid:
 *   a simple ABAP primitive of type /BLCK/CNV_STRING
     data gvs_jobid type /BLCK/CNV_STRING.
-*   when the the result of the call is HTTP401 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/CNV_ERROR
     data gr_http401 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/CNV_ERROR
     data gr_http404 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/CNV_ERROR
     data gr_http409 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
     data gr_http500 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/CNV_ERROR
     data gr_http0 type /BLCK/CNV_ERROR.
         
 *** set data according to requirements of the API call
@@ -654,6 +659,8 @@ Easy way to convert with a single REST call: - Creates a single input file with 
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 200.
+*       handle code 200
       when 401.
 *       do something with gr_http401 (type /BLCK/CNV_ERROR)
       when 404.
@@ -705,15 +712,15 @@ Create a new job.
 *   for parameter i_body:
 *   a reference to model type /BLCK/CNV_JOB_TICKET
     data gm_body type /BLCK/CNV_JOB_TICKET.
-*   when the the result of the call is HTTP200 we expect type /BLCK/CNV_STRING
+*   when the result of the call is HTTP200 we expect type /BLCK/CNV_STRING
     data gr_http200 type /BLCK/CNV_STRING.
-*   when the the result of the call is HTTP401 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/CNV_ERROR
     data gr_http401 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/CNV_ERROR
     data gr_http409 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
     data gr_http500 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/CNV_ERROR
     data gr_http0 type /BLCK/CNV_ERROR.
         
 *** set data according to requirements of the API call
@@ -773,10 +780,10 @@ Name | Type | Description
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
  200 | **e_200** | /BLCK/CNV_STRING | OK, entry created. Returns a job id.
- 401 | **e_401** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 409 | **e_409** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-)**) | Conflict, ressource could not be created. See error message for details. 
- 500 | **e_500** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 401 | **e_401** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 409 | **e_409** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
+ 500 | **e_500** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -807,19 +814,18 @@ Upload input file binary input content.
 *   for parameter i_job_id:
 *   a simple ABAP primitive of type /BLCK/CNV_STRING
     data gvs_job_id type /BLCK/CNV_STRING.
-
 *   for parameter i_file_id:
 *   a simple ABAP primitive of type /BLCK/CNV_STRING
     data gvs_file_id type /BLCK/CNV_STRING.
-*   when the the result of the call is HTTP401 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/CNV_ERROR
     data gr_http401 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/CNV_ERROR
     data gr_http404 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/CNV_ERROR
     data gr_http409 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
     data gr_http500 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/CNV_ERROR
     data gr_http0 type /BLCK/CNV_ERROR.
         
 *** set data according to requirements of the API call
@@ -855,6 +861,8 @@ Upload input file binary input content.
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 201.
+*       handle code 201
       when 401.
 *       do something with gr_http401 (type /BLCK/CNV_ERROR)
       when 404.
@@ -909,17 +917,16 @@ Get processing result binary content.
 *   for parameter i_job_id:
 *   a simple ABAP primitive of type /BLCK/CNV_STRING
     data gvs_job_id type /BLCK/CNV_STRING.
-
 *   for parameter i_file_id:
 *   a simple ABAP primitive of type /BLCK/CNV_STRING
     data gvs_file_id type /BLCK/CNV_STRING.
-*   when the the result of the call is HTTP401 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/CNV_ERROR
     data gr_http401 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/CNV_ERROR
     data gr_http404 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
     data gr_http500 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/CNV_ERROR
     data gr_http0 type /BLCK/CNV_ERROR.
         
 *** set data according to requirements of the API call
@@ -954,6 +961,8 @@ Get processing result binary content.
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 200.
+*       handle code 200
       when 401.
 *       do something with gr_http401 (type /BLCK/CNV_ERROR)
       when 404.
@@ -1010,17 +1019,16 @@ Get processing result binary content.
 *   for parameter i_job_id:
 *   a simple ABAP primitive of type /BLCK/CNV_STRING
     data gvs_job_id type /BLCK/CNV_STRING.
-
 *   for parameter i_file_id:
 *   a simple ABAP primitive of type /BLCK/CNV_STRING
     data gvs_file_id type /BLCK/CNV_STRING.
-*   when the the result of the call is HTTP401 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/CNV_ERROR
     data gr_http401 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/CNV_ERROR
     data gr_http404 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
     data gr_http500 type /BLCK/CNV_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/CNV_ERROR
     data gr_http0 type /BLCK/CNV_ERROR.
         
 *** set data according to requirements of the API call
@@ -1055,6 +1063,8 @@ Get processing result binary content.
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 200.
+*       handle code 200
       when 401.
 *       do something with gr_http401 (type /BLCK/CNV_ERROR)
       when 404.
@@ -1087,7 +1097,7 @@ Name | Type | Description
 * * *
 <a name="markdown-header-model-error"></a> 
 
-# Model: error
+# Model: Error
 
 
 
@@ -1096,44 +1106,47 @@ Name | Type | Description
 *** model error example
 
 * create our variables..
-    data gcl_error type ref to /blck/mdl_cl_error.
+    data gr_error type /blck/cnv_error.
     
 * instantiate model and call the setters to set values..
-    gcl_error = /blck/mdl_cl_error=>create( ).
-    gcl_error->set_code( 42 ). " (type i)
-    gcl_error->set_message( 'ipsum lorem' ). " (type string)
-    gcl_error->set_metadata( 'ipsum lorem' ). " (type string)
+    gr_error-code = 42. " (type /BLCK/CNV_INT)
+
+    gr_error-message = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
+
+    gr_error-metadata = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_error(
-    	exporting
-    		i_error = gcl_error ).
+      exporting
+        i_error = gr_error ).
     		
-    clear gcl_error.
+    clear gr_error.
     
 * fetch new instance from example API method
-    gcl_error = gcl_exampleapi->get_error(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_error(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_error ).
     		
-    l_code = gcl_error->get_code( ). " (type i)
-    l_message = gcl_error->get_message( ). " (type string)
-    l_metadata = gcl_error->get_metadata( ). " (type string)
+    write: gr_error-code. " (type /BLCK/CNV_INT)
+    write: gr_error-message. " (type /BLCK/CNV_STRING)
+    write: gr_error-metadata. " (type /BLCK/CNV_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**code** | i |  | [optional] [default to null]
-**message** | string |  | [optional] [default to null]
-**metadata** | string |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**code** | /BLCK/CNV_INT | 
+**message** | /BLCK/CNV_STRING | 
+**metadata** | /BLCK/CNV_STRING | 
 
 * * *
 <a name="markdown-header-model-file_id"></a> 
 
-# Model: file_id
+# Model: FileId
 
 
 
@@ -1143,35 +1156,35 @@ Name | Type | Description | Notes
 *** Id (index) of file in file list
 
 * create our variables..
-    data gcl_file_id type ref to /blck/mdl_cl_file_id.
+    data gr_file_id type /blck/cnv_file_id.
     
-* instantiate model and call the setters to set values..
-    gcl_file_id = /blck/mdl_cl_file_id=>create( ).
-    
+* instantiate model and call the setters to set values..    
 * pass to example API method
     gcl_exampleapi->update_file_id(
-    	exporting
-    		i_file_id = gcl_file_id ).
+      exporting
+        i_file_id = gr_file_id ).
     		
-    clear gcl_file_id.
+    clear gr_file_id.
     
 * fetch new instance from example API method
-    gcl_file_id = gcl_exampleapi->get_file_id(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_file_id(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_file_id ).
     		
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+Name | Type | Description
+------------ | ------------- | -------------
 
 * * *
 <a name="markdown-header-model-input_file"></a> 
 
-# Model: input_file
+# Model: InputFile
 
 
 
@@ -1181,41 +1194,43 @@ Name | Type | Description | Notes
 *** Description of a single file
 
 * create our variables..
-    data gcl_input_file type ref to /blck/mdl_cl_input_file.
+    data gr_input_file type /blck/cnv_input_file.
     
 * instantiate model and call the setters to set values..
-    gcl_input_file = /blck/mdl_cl_input_file=>create( ).
-    gcl_input_file->set_mime_type( 'ipsum lorem' ). " (type string)
-    gcl_input_file->set_metadata( 'ipsum lorem' ). " (type string)
+    gr_input_file-mime_type = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
+
+    gr_input_file-metadata = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_input_file(
-    	exporting
-    		i_input_file = gcl_input_file ).
+      exporting
+        i_input_file = gr_input_file ).
     		
-    clear gcl_input_file.
+    clear gr_input_file.
     
 * fetch new instance from example API method
-    gcl_input_file = gcl_exampleapi->get_input_file(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_input_file(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_input_file ).
     		
-    l_mime_type = gcl_input_file->get_mime_type( ). " (type string)
-    l_metadata = gcl_input_file->get_metadata( ). " (type string)
+    write: gr_input_file-mime_type. " (type /BLCK/CNV_STRING)
+    write: gr_input_file-metadata. " (type /BLCK/CNV_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**mime_type** | string | Mime type of the file. | [optional] [default to null]
-**metadata** | string | File specific parameter, will be merged with job metadata at runtime. | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**mime_type** | /BLCK/CNV_STRING | Mime type of the file.
+**metadata** | /BLCK/CNV_STRING | File specific parameter, will be merged with job metadata at runtime.
 
 * * *
 <a name="markdown-header-model-job_id"></a> 
 
-# Model: job_id
+# Model: JobId
 
 
 
@@ -1225,35 +1240,35 @@ Name | Type | Description | Notes
 *** Id of created preprocessing job for later use.
 
 * create our variables..
-    data gcl_job_id type ref to /blck/mdl_cl_job_id.
+    data gr_job_id type /blck/cnv_job_id.
     
-* instantiate model and call the setters to set values..
-    gcl_job_id = /blck/mdl_cl_job_id=>create( ).
-    
+* instantiate model and call the setters to set values..    
 * pass to example API method
     gcl_exampleapi->update_job_id(
-    	exporting
-    		i_job_id = gcl_job_id ).
+      exporting
+        i_job_id = gr_job_id ).
     		
-    clear gcl_job_id.
+    clear gr_job_id.
     
 * fetch new instance from example API method
-    gcl_job_id = gcl_exampleapi->get_job_id(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_job_id(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_job_id ).
     		
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+Name | Type | Description
+------------ | ------------- | -------------
 
 * * *
 <a name="markdown-header-enum-jobstatusenum"></a> 
 
-# Enum: jobstatusenum
+# Enum: JobStatusEnum
 
 
 
@@ -1263,39 +1278,37 @@ Name | Type | Description | Notes
 *** Definition of allowed status names
 
 * create our variables..
-    data gcl_jobstatusenum type ref to /blck/mdl_cl_jobstatusenum.
+    data gv_jobstatusenum type /blck/cnv_jobstatusenum.
     
-* instantiate model relevant to the enum value we want
-    gcl_jobstatusenum = /blck/mdl_cl_jobstatusenum=>enum_open( ).
+* set the enum value we want
+    gv_jobstatusenum = /blck/cnv_cl_model=>jobstatusenum-open.
     
 * pass the enum to the example API via method
     gcl_exampleapi->set_jobstatusenum_state(
-    	exporting
-    		i_jobstatusenum = gcl_jobstatusenum ).
+      exporting
+        i_jobstatusenum = gv_jobstatusenum ).
     		
-    clear gcl_jobstatusenum.
+    clear gv_jobstatusenum.
     
 * fetch result from example API method
-    gcl_jobstatusenum = gcl_exampleapi->get_jobstatusenum_state(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_jobstatusenum_state(
+      exporting
+        i_id = 1
+      importing
+        e_200 = gv_jobstatusenum ).
     	
-* we have two ways to handle the result, either "if" with individual cases..
-  if gcl_jobstatusenum->is_open( ) eq 'X'.
-*   do something specific to open case..
-  endif.
-  
-* .. or use a case clause to handle all scenarios:
-  case gcl_jobstatusenum->get_value( ).
-    when /blck/mdl_cl_jobstatusenum=>mce_open.
+* we can handle the result with either "if" with individual cases
+* or use a case clause to handle all scenarios:
+  case gv_jobstatusenum.
+    when /blck/cnv_cl_model=>jobstatusenum-open.
 *     do something specific to open case..
-    when /blck/mdl_cl_jobstatusenum=>mce_waiting.
+    when /blck/cnv_cl_model=>jobstatusenum-waiting.
 *     do something specific to waiting case..
-    when /blck/mdl_cl_jobstatusenum=>mce_processing.
+    when /blck/cnv_cl_model=>jobstatusenum-processing.
 *     do something specific to processing case..
-    when /blck/mdl_cl_jobstatusenum=>mce_completed.
+    when /blck/cnv_cl_model=>jobstatusenum-completed.
 *     do something specific to completed case..
-    when /blck/mdl_cl_jobstatusenum=>mce_error.
+    when /blck/cnv_cl_model=>jobstatusenum-error.
 *     do something specific to error case..
   endcase.
 
@@ -1304,18 +1317,18 @@ Name | Type | Description | Notes
 
 ## Enum Values
 
-Name | Value | Instantiation
+Name | Value | Constant
 ------------ | ------------- | -------------
-**open** | open | /blck/mdl_cl_jobstatusenum=>enum_open( ).
-**waiting** | waiting | /blck/mdl_cl_jobstatusenum=>enum_waiting( ).
-**processing** | processing | /blck/mdl_cl_jobstatusenum=>enum_processing( ).
-**completed** | completed | /blck/mdl_cl_jobstatusenum=>enum_completed( ).
-**error** | error | /blck/mdl_cl_jobstatusenum=>enum_error( ).
+**open** | open | /blck/cnv_cl_model=>jobstatusenum-open.
+**waiting** | waiting | /blck/cnv_cl_model=>jobstatusenum-waiting.
+**processing** | processing | /blck/cnv_cl_model=>jobstatusenum-processing.
+**completed** | completed | /blck/cnv_cl_model=>jobstatusenum-completed.
+**error** | error | /blck/cnv_cl_model=>jobstatusenum-error.
 
 * * *
 <a name="markdown-header-model-job_ticket"></a> 
 
-# Model: job_ticket
+# Model: JobTicket
 
 
 
@@ -1326,41 +1339,43 @@ Name | Value | Instantiation
 *** paramters.
 
 * create our variables..
-    data gcl_job_ticket type ref to /blck/mdl_cl_job_ticket.
+    data gr_job_ticket type /blck/cnv_job_ticket.
     
 * instantiate model and call the setters to set values..
-    gcl_job_ticket = /blck/mdl_cl_job_ticket=>create( ).
-    gcl_job_ticket->set_name( 'ipsum lorem' ). " (type string)
-    gcl_job_ticket->set_metadata( 'ipsum lorem' ). " (type string)
+    gr_job_ticket-name = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
+
+    gr_job_ticket-metadata = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_job_ticket(
-    	exporting
-    		i_job_ticket = gcl_job_ticket ).
+      exporting
+        i_job_ticket = gr_job_ticket ).
     		
-    clear gcl_job_ticket.
+    clear gr_job_ticket.
     
 * fetch new instance from example API method
-    gcl_job_ticket = gcl_exampleapi->get_job_ticket(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_job_ticket(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_job_ticket ).
     		
-    l_name = gcl_job_ticket->get_name( ). " (type string)
-    l_metadata = gcl_job_ticket->get_metadata( ). " (type string)
+    write: gr_job_ticket-name. " (type /BLCK/CNV_STRING)
+    write: gr_job_ticket-metadata. " (type /BLCK/CNV_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | string | Name of preprocessing rule to use | [optional] [default to null]
-**metadata** | string | Rule specific parameter. | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**name** | /BLCK/CNV_STRING | Name of preprocessing rule to use
+**metadata** | /BLCK/CNV_STRING | Rule specific parameter.
 
 * * *
 <a name="markdown-header-model-output_file"></a> 
 
-# Model: output_file
+# Model: OutputFile
 
 
 
@@ -1370,41 +1385,43 @@ Name | Type | Description | Notes
 *** All available data for a single output file
 
 * create our variables..
-    data gcl_output_file type ref to /blck/mdl_cl_output_file.
+    data gr_output_file type /blck/cnv_output_file.
     
 * instantiate model and call the setters to set values..
-    gcl_output_file = /blck/mdl_cl_output_file=>create( ).
-    gcl_output_file->set_mime_type( 'ipsum lorem' ). " (type string)
-    gcl_output_file->set_metadata( 'ipsum lorem' ). " (type string)
+    gr_output_file-mime_type = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
+
+    gr_output_file-metadata = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_output_file(
-    	exporting
-    		i_output_file = gcl_output_file ).
+      exporting
+        i_output_file = gr_output_file ).
     		
-    clear gcl_output_file.
+    clear gr_output_file.
     
 * fetch new instance from example API method
-    gcl_output_file = gcl_exampleapi->get_output_file(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_output_file(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_output_file ).
     		
-    l_mime_type = gcl_output_file->get_mime_type( ). " (type string)
-    l_metadata = gcl_output_file->get_metadata( ). " (type string)
+    write: gr_output_file-mime_type. " (type /BLCK/CNV_STRING)
+    write: gr_output_file-metadata. " (type /BLCK/CNV_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**mime_type** | string | Mime type of the file. | [optional] [default to null]
-**metadata** | string | Output file specific parameter. Result of merged job metadata, input file metadata and rule target metadata.  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**mime_type** | /BLCK/CNV_STRING | Mime type of the file.
+**metadata** | /BLCK/CNV_STRING | Output file specific parameter. Result of merged job metadata, input file metadata and rule target metadata. 
 
 * * *
 <a name="markdown-header-model-job_data"></a> 
 
-# Model: job_data
+# Model: JobData
 
 
 
@@ -1414,53 +1431,59 @@ Name | Type | Description | Notes
 *** All available data for a single job
 
 * create our variables..
-    data gcl_job_data type ref to /blck/mdl_cl_job_data.
+    data gr_job_data type /blck/cnv_job_data.
     
 * instantiate model and call the setters to set values..
-    gcl_job_data = /blck/mdl_cl_job_data=>create( ).
-    gcl_job_data->set_job_id( l_job_id ). " (type /BLCK/CNV_job_id)
-    gcl_job_data->set_job_status( l_job_status ). " (type /BLCK/CNV_jobstatusenum)
-    gcl_job_data->set_creation_date( 42 ). " (type i)
-    gcl_job_data->set_job_ticket( l_job_ticket ). " (type /BLCK/CNV_job_ticket)
-    gcl_job_data->set_input( l_input ). " (type /BLCK/CNV_input_file_tt)
-    gcl_job_data->set_output( l_output ). " (type /BLCK/CNV_output_file_tt)
+    gr_job_data-job_id = l_job_id. " (type /BLCK/CNV_JOB_ID)
+
+    gr_job_data-job_status = l_job_status. " (type /BLCK/CNV_JOBSTATUSENUM)
+
+    gr_job_data-creation_date = 42. " (type /BLCK/CNV_INT)
+
+    gr_job_data-job_ticket = l_job_ticket. " (type /BLCK/CNV_JOB_TICKET)
+
+    gr_job_data-input = l_input. " (type /BLCK/CNV_INPUT_FILE_TT)
+
+    gr_job_data-output = l_output. " (type /BLCK/CNV_OUTPUT_FILE_TT)
     
 * pass to example API method
     gcl_exampleapi->update_job_data(
-    	exporting
-    		i_job_data = gcl_job_data ).
+      exporting
+        i_job_data = gr_job_data ).
     		
-    clear gcl_job_data.
+    clear gr_job_data.
     
 * fetch new instance from example API method
-    gcl_job_data = gcl_exampleapi->get_job_data(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_job_data(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_job_data ).
     		
-    l_job_id = gcl_job_data->get_job_id( ). " (type /BLCK/CNV_job_id)
-    l_job_status = gcl_job_data->get_job_status( ). " (type /BLCK/CNV_jobstatusenum)
-    l_creation_date = gcl_job_data->get_creation_date( ). " (type i)
-    l_job_ticket = gcl_job_data->get_job_ticket( ). " (type /BLCK/CNV_job_ticket)
-    l_input = gcl_job_data->get_input( ). " (type /BLCK/CNV_input_file_tt)
-    l_output = gcl_job_data->get_output( ). " (type /BLCK/CNV_output_file_tt)
+    write: gr_job_data-job_id. " (type /BLCK/CNV_JOB_ID)
+    write: gr_job_data-job_status. " (type /BLCK/CNV_JOBSTATUSENUM)
+    write: gr_job_data-creation_date. " (type /BLCK/CNV_INT)
+    write: gr_job_data-job_ticket. " (type /BLCK/CNV_JOB_TICKET)
+    write: gr_job_data-input. " (type /BLCK/CNV_INPUT_FILE_TT)
+    write: gr_job_data-output. " (type /BLCK/CNV_OUTPUT_FILE_TT)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**job_id** | /BLCK/CNV_job_id (**[job_id](#markdown-header-model-job_id)**) |  | [optional] [default to null]
-**job_status** | /BLCK/CNV_jobstatusenum (**[jobstatusenum](#markdown-header-enum-jobstatusenum)**) |  | [optional] [default to null]
-**creation_date** | i | Time stamp of creation date | [optional] [default to null]
-**job_ticket** | /BLCK/CNV_job_ticket (**[job_ticket](#markdown-header-model-job_ticket)**) |  | [optional] [default to null]
-**input** | /BLCK/CNV_input_file_tt (**[array of input_file](#markdown-header-model-input_file)**) | input file list | [optional] [default to null]
-**output** | /BLCK/CNV_output_file_tt (**[array of output_file](#markdown-header-model-output_file)**) | generated output file list | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**job_id** | /BLCK/CNV_JOB_ID (**[job_id](#markdown-header-model-job_id)**) | 
+**job_status** | /BLCK/CNV_JOBSTATUSENUM (**[jobstatusenum](#markdown-header-enum-jobstatusenum)**) | 
+**creation_date** | /BLCK/CNV_INT | Time stamp of creation date
+**job_ticket** | /BLCK/CNV_JOB_TICKET (**[job_ticket](#markdown-header-model-job_ticket)**) | 
+**input** | /BLCK/CNV_INPUT_FILE_TT (**[array of input_file](#markdown-header-model-input_file)**) | input file list
+**output** | /BLCK/CNV_OUTPUT_FILE_TT (**[array of output_file](#markdown-header-model-output_file)**) | generated output file list
 
 * * *
 <a name="markdown-header-model-job_status"></a> 
 
-# Model: job_status
+# Model: JobStatus
 
 
 
@@ -1470,37 +1493,40 @@ Name | Type | Description | Notes
 *** Entry for job list
 
 * create our variables..
-    data gcl_job_status type ref to /blck/mdl_cl_job_status.
+    data gr_job_status type /blck/cnv_job_status.
     
 * instantiate model and call the setters to set values..
-    gcl_job_status = /blck/mdl_cl_job_status=>create( ).
-    gcl_job_status->set_job_id( l_job_id ). " (type /BLCK/CNV_job_id)
-    gcl_job_status->set_job_status( l_job_status ). " (type /BLCK/CNV_jobstatusenum)
-    gcl_job_status->set_output( l_output ). " (type /BLCK/CNV_output_file_tt)
+    gr_job_status-job_id = l_job_id. " (type /BLCK/CNV_JOB_ID)
+
+    gr_job_status-job_status = l_job_status. " (type /BLCK/CNV_JOBSTATUSENUM)
+
+    gr_job_status-output = l_output. " (type /BLCK/CNV_OUTPUT_FILE_TT)
     
 * pass to example API method
     gcl_exampleapi->update_job_status(
-    	exporting
-    		i_job_status = gcl_job_status ).
+      exporting
+        i_job_status = gr_job_status ).
     		
-    clear gcl_job_status.
+    clear gr_job_status.
     
 * fetch new instance from example API method
-    gcl_job_status = gcl_exampleapi->get_job_status(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_job_status(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_job_status ).
     		
-    l_job_id = gcl_job_status->get_job_id( ). " (type /BLCK/CNV_job_id)
-    l_job_status = gcl_job_status->get_job_status( ). " (type /BLCK/CNV_jobstatusenum)
-    l_output = gcl_job_status->get_output( ). " (type /BLCK/CNV_output_file_tt)
+    write: gr_job_status-job_id. " (type /BLCK/CNV_JOB_ID)
+    write: gr_job_status-job_status. " (type /BLCK/CNV_JOBSTATUSENUM)
+    write: gr_job_status-output. " (type /BLCK/CNV_OUTPUT_FILE_TT)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**job_id** | /BLCK/CNV_job_id (**[job_id](#markdown-header-model-job_id)**) |  | [optional] [default to null]
-**job_status** | /BLCK/CNV_jobstatusenum (**[jobstatusenum](#markdown-header-enum-jobstatusenum)**) |  | [optional] [default to null]
-**output** | /BLCK/CNV_output_file_tt (**[array of output_file](#markdown-header-model-output_file)**) | generated output file list | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**job_id** | /BLCK/CNV_JOB_ID (**[job_id](#markdown-header-model-job_id)**) | 
+**job_status** | /BLCK/CNV_JOBSTATUSENUM (**[jobstatusenum](#markdown-header-enum-jobstatusenum)**) | 
+**output** | /BLCK/CNV_OUTPUT_FILE_TT (**[array of output_file](#markdown-header-model-output_file)**) | generated output file list
 

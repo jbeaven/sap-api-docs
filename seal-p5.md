@@ -25,11 +25,11 @@ Aggregates count the number of objects matching a given query and aggregate resu
 *   for parameter i_body:
 *   a reference to model type /BLCK/P5_AGGREGATEQUERY
     data gm_body type /BLCK/P5_AGGREGATEQUERY.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_AGGREGATERESPO
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_AGGREGATERESPO
     data gr_http200 type /BLCK/P5_AGGREGATERESPO.
-*   when the the result of the call is HTTP400 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP400 we expect type /BLCK/P5_ERROR
     data gr_http400 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -82,9 +82,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_AGGREGATERESPO (**[AggregateResponse](#markdown-header-model-)**) | OK, an aggregate json object is returned
- 400 | **e_400** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Missing required paramenter
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
+ 200 | **e_200** | /BLCK/P5_AGGREGATERESPO (**[AggregateResponse](#markdown-header-model-aggregaterespo)**) | OK, an aggregate json object is returned
+ 400 | **e_400** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Missing required paramenter
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -115,9 +115,9 @@ This route provides access to the number of print jobs known in PLOSSYS P5; eith
 *   for parameter i_filter:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_filter type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_COUNT
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_COUNT
     data gr_http200 type /BLCK/P5_COUNT.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -166,8 +166,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-)**) | OK, a number is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
+ 200 | **e_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-count)**) | OK, a number is returned
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -198,29 +198,24 @@ A GET query to this path provides access to the list of print jobs in PLOSSYS P5
 *   for parameter i_filter:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_filter type /BLCK/P5_STRING.
-
 *   for parameter i_select:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_select type /BLCK/P5_STRING.
-
 *   for parameter i_skip:
 *   a simple ABAP primitive of type /BLCK/P5_INT
     data gvi_skip type /BLCK/P5_INT.
-
 *   for parameter i_top:
 *   a simple ABAP primitive of type /BLCK/P5_INT
     data gvi_top type /BLCK/P5_INT.
-
 *   for parameter i_orderby:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_orderby type /BLCK/P5_STRING.
-
 *   for parameter i_inlinecount:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_inlinecount type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_PRINT_JOB_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_PRINT_JOB_TT
     data gr_http200 type /BLCK/P5_PRINT_JOB_TT.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -292,8 +287,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINT_JOB_TT (**[array](#markdown-header-model-)**) | Query OK; an array of PrintJob objects is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
+ 200 | **e_200** | /BLCK/P5_PRINT_JOB_TT (**[array](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -324,9 +319,9 @@ A GET query to this route returns a json object containing status information an
 *   for parameter i_job_id:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_job_id type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_PRINT_JOB
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_PRINT_JOB
     data gr_http200 type /BLCK/P5_PRINT_JOB.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -375,8 +370,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINT_JOB (**[PrintJob](#markdown-header-model-)**) | OK, a json object is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
+ 200 | **e_200** | /BLCK/P5_PRINT_JOB (**[PrintJob](#markdown-header-model-print_job)**) | OK, a json object is returned
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -403,9 +398,10 @@ Returns a JSON object describing the PrintJob object model
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
-*** create variables for input and output as needed*   when the the result of the call is HTTP200 we expect type /BLCK/P5_METADATA
+*** create variables for input and output as needed
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_METADATA
     data gr_http200 type /BLCK/P5_METADATA.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
         
 
@@ -447,8 +443,8 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_METADATA (**[Metadata](#markdown-header-model-)**) | Query OK, metadata document is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
+ 200 | **e_200** | /BLCK/P5_METADATA (**[Metadata](#markdown-header-model-metadata)**) | Query OK, metadata document is returned
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -479,11 +475,11 @@ Aggregates count the number of objects matching a given query and aggregate resu
 *   for parameter i_body:
 *   a reference to model type /BLCK/P5_AGGREGATEQUERY
     data gm_body type /BLCK/P5_AGGREGATEQUERY.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_AGGREGATERESPO
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_AGGREGATERESPO
     data gr_http200 type /BLCK/P5_AGGREGATERESPO.
-*   when the the result of the call is HTTP400 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP400 we expect type /BLCK/P5_ERROR
     data gr_http400 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -536,9 +532,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_AGGREGATERESPO (**[AggregateResponse](#markdown-header-model-)**) | OK, an aggregate json object is returned
- 400 | **e_400** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Missing required paramenter
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
+ 200 | **e_200** | /BLCK/P5_AGGREGATERESPO (**[AggregateResponse](#markdown-header-model-aggregaterespo)**) | OK, an aggregate json object is returned
+ 400 | **e_400** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Missing required paramenter
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -569,9 +565,9 @@ This route provides access to the number of printers registered in PLOSSYS P5; e
 *   for parameter i_filter:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_filter type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_COUNT
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_COUNT
     data gr_http200 type /BLCK/P5_COUNT.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -620,8 +616,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-)**) | OK, a number is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
+ 200 | **e_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-count)**) | OK, a number is returned
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -652,31 +648,26 @@ Retrieve a list of all known printers in PLOSSYS P5. A plain query to the endpoi
 *   for parameter i_filter:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_filter type /BLCK/P5_STRING.
-
 *   for parameter i_select:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_select type /BLCK/P5_STRING.
-
 *   for parameter i_skip:
 *   a simple ABAP primitive of type /BLCK/P5_INT
     data gvi_skip type /BLCK/P5_INT.
-
 *   for parameter i_top:
 *   a simple ABAP primitive of type /BLCK/P5_INT
     data gvi_top type /BLCK/P5_INT.
-
 *   for parameter i_orderby:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_orderby type /BLCK/P5_STRING.
-
 *   for parameter i_inlinecount:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_inlinecount type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_PRINTER_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_PRINTER_TT
     data gr_http200 type /BLCK/P5_PRINTER_TT.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
     data gr_http0 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -751,9 +742,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINTER_TT (**[array](#markdown-header-model-)**) | Query OK; an array of printer objects is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
- 0 | **e_0** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/P5_PRINTER_TT (**[array](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 0 | **e_0** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -780,9 +771,10 @@ Returns a JSON object describing the Printer object model
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
-*** create variables for input and output as needed*   when the the result of the call is HTTP200 we expect type /BLCK/P5_METADATA
+*** create variables for input and output as needed
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_METADATA
     data gr_http200 type /BLCK/P5_METADATA.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
         
 
@@ -824,8 +816,8 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_METADATA (**[Metadata](#markdown-header-model-)**) | Query OK, metadata document is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
+ 200 | **e_200** | /BLCK/P5_METADATA (**[Metadata](#markdown-header-model-metadata)**) | Query OK, metadata document is returned
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -856,13 +848,13 @@ Retrieves printer configuration of the printer with the given printerName and re
 *   for parameter i_printer_name:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_printer_name type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_PRINTER
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_PRINTER
     data gr_http200 type /BLCK/P5_PRINTER.
-*   when the the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
     data gr_http404 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
     data gr_http0 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -917,10 +909,10 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-)**) | Printer configuration
- 404 | **e_404** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Printer not found
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
- 0 | **e_0** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Unexpected Error
+ 200 | **e_200** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-printer)**) | Printer configuration
+ 404 | **e_404** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Printer not found
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 0 | **e_0** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected Error
 
 ### HTTP request headers
 
@@ -951,11 +943,11 @@ Retrieve log entries for the given printer.
 *   for parameter i_printer_name:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_printer_name type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_LOGS
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_LOGS
     data gr_http200 type /BLCK/P5_LOGS.
-*   when the the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
     data gr_http404 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -1007,9 +999,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_LOGS (**[Logs](#markdown-header-model-)**) | OK, log entries are returned
- 404 | **e_404** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | No log entries found
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
+ 200 | **e_200** | /BLCK/P5_LOGS (**[Logs](#markdown-header-model-logs)**) | OK, log entries are returned
+ 404 | **e_404** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | No log entries found
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -1040,9 +1032,9 @@ Returns a PrinterStatus object describing the current status of the printer.
 *   for parameter i_printer_name:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_printer_name type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_PRINTER_STATUS
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_PRINTER_STATUS
     data gr_http200 type /BLCK/P5_PRINTER_STATUS.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -1091,8 +1083,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINTER_STATUS (**[PrinterStatus](#markdown-header-model-)**) | Query OK, status is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
+ 200 | **e_200** | /BLCK/P5_PRINTER_STATUS (**[PrinterStatus](#markdown-header-model-printer_status)**) | Query OK, status is returned
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -1127,11 +1119,11 @@ Aggregates count the number of objects matching a given query and aggregate resu
 *   for parameter i_body:
 *   a reference to model type /BLCK/P5_AGGREGATEQUERY
     data gm_body type /BLCK/P5_AGGREGATEQUERY.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_AGGREGATERESPO
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_AGGREGATERESPO
     data gr_http200 type /BLCK/P5_AGGREGATERESPO.
-*   when the the result of the call is HTTP400 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP400 we expect type /BLCK/P5_ERROR
     data gr_http400 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -1184,9 +1176,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_AGGREGATERESPO (**[AggregateResponse](#markdown-header-model-)**) | OK, an aggregate json object is returned
- 400 | **e_400** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Missing required paramenter
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
+ 200 | **e_200** | /BLCK/P5_AGGREGATERESPO (**[AggregateResponse](#markdown-header-model-aggregaterespo)**) | OK, an aggregate json object is returned
+ 400 | **e_400** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Missing required paramenter
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -1217,9 +1209,9 @@ This route provides access to the number of print jobs known in PLOSSYS P5; eith
 *   for parameter i_filter:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_filter type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_COUNT
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_COUNT
     data gr_http200 type /BLCK/P5_COUNT.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -1268,8 +1260,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-)**) | OK, a number is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
+ 200 | **e_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-count)**) | OK, a number is returned
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -1300,29 +1292,24 @@ A GET query to this path provides access to the list of print jobs in PLOSSYS P5
 *   for parameter i_filter:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_filter type /BLCK/P5_STRING.
-
 *   for parameter i_select:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_select type /BLCK/P5_STRING.
-
 *   for parameter i_skip:
 *   a simple ABAP primitive of type /BLCK/P5_INT
     data gvi_skip type /BLCK/P5_INT.
-
 *   for parameter i_top:
 *   a simple ABAP primitive of type /BLCK/P5_INT
     data gvi_top type /BLCK/P5_INT.
-
 *   for parameter i_orderby:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_orderby type /BLCK/P5_STRING.
-
 *   for parameter i_inlinecount:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_inlinecount type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_PRINT_JOB_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_PRINT_JOB_TT
     data gr_http200 type /BLCK/P5_PRINT_JOB_TT.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -1394,8 +1381,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINT_JOB_TT (**[array](#markdown-header-model-)**) | Query OK; an array of PrintJob objects is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
+ 200 | **e_200** | /BLCK/P5_PRINT_JOB_TT (**[array](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -1426,11 +1413,11 @@ A DELETE query to a job instance path stops and deletes the job.
 *   for parameter i_job_id:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_job_id type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_PRINT_JOB
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_PRINT_JOB
     data gr_http200 type /BLCK/P5_PRINT_JOB.
-*   when the the result of the call is HTTP412 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP412 we expect type /BLCK/P5_ERROR
     data gr_http412 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -1482,9 +1469,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINT_JOB (**[PrintJob](#markdown-header-model-)**) | OK, a json object is returned
- 412 | **e_412** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Wrong Printer Status.
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
+ 200 | **e_200** | /BLCK/P5_PRINT_JOB (**[PrintJob](#markdown-header-model-print_job)**) | OK, a json object is returned
+ 412 | **e_412** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Wrong Printer Status.
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -1515,9 +1502,9 @@ A GET query to this route returns a json object containing status information an
 *   for parameter i_job_id:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_job_id type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_PRINT_JOB
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_PRINT_JOB
     data gr_http200 type /BLCK/P5_PRINT_JOB.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -1566,8 +1553,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINT_JOB (**[PrintJob](#markdown-header-model-)**) | OK, a json object is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
+ 200 | **e_200** | /BLCK/P5_PRINT_JOB (**[PrintJob](#markdown-header-model-print_job)**) | OK, a json object is returned
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -1598,17 +1585,16 @@ A print job which has been suspended using the /jobs/{jobID}/pause function can 
 *   for parameter i_body:
 *   a reference to model type /BLCK/P5_JOB_TARGET
     data gm_body type /BLCK/P5_JOB_TARGET.
-
 *   for parameter i_job_id:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_job_id type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
     data gr_http404 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP412 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP412 we expect type /BLCK/P5_ERROR
     data gr_http412 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
     data gr_http0 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -1644,6 +1630,8 @@ A print job which has been suspended using the /jobs/{jobID}/pause function can 
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 200.
+*       handle code 200
       when 404.
 *       do something with gr_http404 (type /BLCK/P5_ERROR)
       when 412.
@@ -1696,13 +1684,13 @@ Print job processing can be paused by a PUT query against this functional ressou
 *   for parameter i_job_id:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_job_id type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
     data gr_http404 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP412 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP412 we expect type /BLCK/P5_ERROR
     data gr_http412 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
     data gr_http0 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -1734,6 +1722,8 @@ Print job processing can be paused by a PUT query against this functional ressou
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 200.
+*       handle code 200
       when 404.
 *       do something with gr_http404 (type /BLCK/P5_ERROR)
       when 412.
@@ -1785,13 +1775,13 @@ A print job which has been printed before or failed can be repeated by a PUT que
 *   for parameter i_job_id:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_job_id type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
     data gr_http404 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP412 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP412 we expect type /BLCK/P5_ERROR
     data gr_http412 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
     data gr_http0 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -1823,6 +1813,8 @@ A print job which has been printed before or failed can be repeated by a PUT que
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 200.
+*       handle code 200
       when 404.
 *       do something with gr_http404 (type /BLCK/P5_ERROR)
       when 412.
@@ -1874,13 +1866,13 @@ A print job which has been suspended using the /jobs/{jobID}/pause function can 
 *   for parameter i_job_id:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_job_id type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
     data gr_http404 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP412 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP412 we expect type /BLCK/P5_ERROR
     data gr_http412 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
     data gr_http0 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -1912,6 +1904,8 @@ A print job which has been suspended using the /jobs/{jobID}/pause function can 
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 200.
+*       handle code 200
       when 404.
 *       do something with gr_http404 (type /BLCK/P5_ERROR)
       when 412.
@@ -1959,9 +1953,10 @@ Returns a JSON object describing the PrintJob object model
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
-*** create variables for input and output as needed*   when the the result of the call is HTTP200 we expect type /BLCK/P5_METADATA
+*** create variables for input and output as needed
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_METADATA
     data gr_http200 type /BLCK/P5_METADATA.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
         
 
@@ -2003,8 +1998,8 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_METADATA (**[Metadata](#markdown-header-model-)**) | Query OK, metadata document is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
+ 200 | **e_200** | /BLCK/P5_METADATA (**[Metadata](#markdown-header-model-metadata)**) | Query OK, metadata document is returned
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -2039,11 +2034,11 @@ A DELETE query to a job instance path stops and deletes the job.
 *   for parameter i_job_id:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_job_id type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_PRINT_JOB
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_PRINT_JOB
     data gr_http200 type /BLCK/P5_PRINT_JOB.
-*   when the the result of the call is HTTP412 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP412 we expect type /BLCK/P5_ERROR
     data gr_http412 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -2095,9 +2090,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINT_JOB (**[PrintJob](#markdown-header-model-)**) | OK, a json object is returned
- 412 | **e_412** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Wrong Printer Status.
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
+ 200 | **e_200** | /BLCK/P5_PRINT_JOB (**[PrintJob](#markdown-header-model-print_job)**) | OK, a json object is returned
+ 412 | **e_412** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Wrong Printer Status.
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -2128,17 +2123,16 @@ A print job which has been suspended using the /jobs/{jobID}/pause function can 
 *   for parameter i_body:
 *   a reference to model type /BLCK/P5_JOB_TARGET
     data gm_body type /BLCK/P5_JOB_TARGET.
-
 *   for parameter i_job_id:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_job_id type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
     data gr_http404 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP412 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP412 we expect type /BLCK/P5_ERROR
     data gr_http412 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
     data gr_http0 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -2174,6 +2168,8 @@ A print job which has been suspended using the /jobs/{jobID}/pause function can 
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 200.
+*       handle code 200
       when 404.
 *       do something with gr_http404 (type /BLCK/P5_ERROR)
       when 412.
@@ -2226,13 +2222,13 @@ Print job processing can be paused by a PUT query against this functional ressou
 *   for parameter i_job_id:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_job_id type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
     data gr_http404 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP412 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP412 we expect type /BLCK/P5_ERROR
     data gr_http412 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
     data gr_http0 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -2264,6 +2260,8 @@ Print job processing can be paused by a PUT query against this functional ressou
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 200.
+*       handle code 200
       when 404.
 *       do something with gr_http404 (type /BLCK/P5_ERROR)
       when 412.
@@ -2315,13 +2313,13 @@ A print job which has been printed before or failed can be repeated by a PUT que
 *   for parameter i_job_id:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_job_id type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
     data gr_http404 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP412 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP412 we expect type /BLCK/P5_ERROR
     data gr_http412 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
     data gr_http0 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -2353,6 +2351,8 @@ A print job which has been printed before or failed can be repeated by a PUT que
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 200.
+*       handle code 200
       when 404.
 *       do something with gr_http404 (type /BLCK/P5_ERROR)
       when 412.
@@ -2404,13 +2404,13 @@ A print job which has been suspended using the /jobs/{jobID}/pause function can 
 *   for parameter i_job_id:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_job_id type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
     data gr_http404 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP412 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP412 we expect type /BLCK/P5_ERROR
     data gr_http412 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
     data gr_http0 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -2442,6 +2442,8 @@ A print job which has been suspended using the /jobs/{jobID}/pause function can 
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 200.
+*       handle code 200
       when 404.
 *       do something with gr_http404 (type /BLCK/P5_ERROR)
       when 412.
@@ -2493,11 +2495,11 @@ Adds a new printer to the list of managed printers in PLOSSYS P5. The new printe
 *   for parameter i_body:
 *   a reference to model type /BLCK/P5_PRINTER
     data gm_body type /BLCK/P5_PRINTER.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_PRINTER
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_PRINTER
     data gr_http200 type /BLCK/P5_PRINTER.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_PRINTER
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_PRINTER
     data gr_http500 type /BLCK/P5_PRINTER.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
     data gr_http0 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -2555,9 +2557,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-)**) | OK. The printer was created, details of the new printer are returned
- 500 | **e_500** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-)**) | Error, e.g. in printer already exists
- 0 | **e_0** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Unexpected Error
+ 200 | **e_200** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-printer)**) | OK. The printer was created, details of the new printer are returned
+ 500 | **e_500** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-printer)**) | Error, e.g. in printer already exists
+ 0 | **e_0** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected Error
 
 ### HTTP request headers
 
@@ -2588,11 +2590,11 @@ Deletes the printer with the given name; If the printer is found and deletion is
 *   for parameter i_printer_name:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_printer_name type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP412 we expect type /BLCK/P5_PRINTER
+*   when the result of the call is HTTP412 we expect type /BLCK/P5_PRINTER
     data gr_http412 type /BLCK/P5_PRINTER.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
     data gr_http0 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -2623,6 +2625,8 @@ Deletes the printer with the given name; If the printer is found and deletion is
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 200.
+*       handle code 200
       when 412.
 *       do something with gr_http412 (type /BLCK/P5_PRINTER)
       when 500.
@@ -2672,11 +2676,11 @@ Modifies a printer, replacing the current configuration with the one given in th
 *   for parameter i_body:
 *   a reference to model type /BLCK/P5_PRINTER
     data gm_body type /BLCK/P5_PRINTER.
-*   when the the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
     data gr_http404 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
     data gr_http0 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -2708,6 +2712,8 @@ Modifies a printer, replacing the current configuration with the one given in th
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 200.
+*       handle code 200
       when 404.
 *       do something with gr_http404 (type /BLCK/P5_ERROR)
       when 500.
@@ -2757,9 +2763,9 @@ A predefined test sheet is generated and inserted into the printer queue.
 *   for parameter i_printer_name:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_printer_name type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
     data gr_http0 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -2789,6 +2795,8 @@ A predefined test sheet is generated and inserted into the printer queue.
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 200.
+*       handle code 200
       when 500.
 *       do something with gr_http500 (type /BLCK/P5_ERROR)
       when 0.
@@ -2836,13 +2844,13 @@ A printers operation can be paused by a PUT query against this functional ressou
 *   for parameter i_printer_name:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_printer_name type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
     data gr_http404 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP412 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP412 we expect type /BLCK/P5_ERROR
     data gr_http412 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
     data gr_http0 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -2874,6 +2882,8 @@ A printers operation can be paused by a PUT query against this functional ressou
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 200.
+*       handle code 200
       when 404.
 *       do something with gr_http404 (type /BLCK/P5_ERROR)
       when 412.
@@ -2925,13 +2935,13 @@ A printer can be redirected so that incoming print jobs for that printer are for
 *   for parameter i_printer_name:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_printer_name type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
     data gr_http404 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP412 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP412 we expect type /BLCK/P5_ERROR
     data gr_http412 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
     data gr_http0 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -2963,6 +2973,8 @@ A printer can be redirected so that incoming print jobs for that printer are for
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 200.
+*       handle code 200
       when 404.
 *       do something with gr_http404 (type /BLCK/P5_ERROR)
       when 412.
@@ -3014,13 +3026,13 @@ A printer which has been suspended using the /printers/{printerName}/pause funct
 *   for parameter i_printer_name:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_printer_name type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
     data gr_http404 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP412 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP412 we expect type /BLCK/P5_ERROR
     data gr_http412 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
     data gr_http0 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -3052,6 +3064,8 @@ A printer which has been suspended using the /printers/{printerName}/pause funct
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 200.
+*       handle code 200
       when 404.
 *       do something with gr_http404 (type /BLCK/P5_ERROR)
       when 412.
@@ -3107,9 +3121,9 @@ This route provides access to the number of print jobs known in PLOSSYS P5; eith
 *   for parameter i_filter:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_filter type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_COUNT
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_COUNT
     data gr_http200 type /BLCK/P5_COUNT.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -3158,8 +3172,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-)**) | OK, a number is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
+ 200 | **e_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-count)**) | OK, a number is returned
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -3190,29 +3204,24 @@ A GET query to this path provides access to the list of print jobs in PLOSSYS P5
 *   for parameter i_filter:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_filter type /BLCK/P5_STRING.
-
 *   for parameter i_select:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_select type /BLCK/P5_STRING.
-
 *   for parameter i_skip:
 *   a simple ABAP primitive of type /BLCK/P5_INT
     data gvi_skip type /BLCK/P5_INT.
-
 *   for parameter i_top:
 *   a simple ABAP primitive of type /BLCK/P5_INT
     data gvi_top type /BLCK/P5_INT.
-
 *   for parameter i_orderby:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_orderby type /BLCK/P5_STRING.
-
 *   for parameter i_inlinecount:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_inlinecount type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_PRINT_JOB_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_PRINT_JOB_TT
     data gr_http200 type /BLCK/P5_PRINT_JOB_TT.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -3284,8 +3293,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINT_JOB_TT (**[array](#markdown-header-model-)**) | Query OK; an array of PrintJob objects is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
+ 200 | **e_200** | /BLCK/P5_PRINT_JOB_TT (**[array](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -3316,9 +3325,9 @@ This route provides access to the number of printers registered in PLOSSYS P5; e
 *   for parameter i_filter:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_filter type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_COUNT
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_COUNT
     data gr_http200 type /BLCK/P5_COUNT.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -3367,8 +3376,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-)**) | OK, a number is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
+ 200 | **e_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-count)**) | OK, a number is returned
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -3399,31 +3408,26 @@ Retrieve a list of all known printers in PLOSSYS P5. A plain query to the endpoi
 *   for parameter i_filter:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_filter type /BLCK/P5_STRING.
-
 *   for parameter i_select:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_select type /BLCK/P5_STRING.
-
 *   for parameter i_skip:
 *   a simple ABAP primitive of type /BLCK/P5_INT
     data gvi_skip type /BLCK/P5_INT.
-
 *   for parameter i_top:
 *   a simple ABAP primitive of type /BLCK/P5_INT
     data gvi_top type /BLCK/P5_INT.
-
 *   for parameter i_orderby:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_orderby type /BLCK/P5_STRING.
-
 *   for parameter i_inlinecount:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_inlinecount type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_PRINTER_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_PRINTER_TT
     data gr_http200 type /BLCK/P5_PRINTER_TT.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
     data gr_http0 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -3498,9 +3502,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINTER_TT (**[array](#markdown-header-model-)**) | Query OK; an array of printer objects is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
- 0 | **e_0** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/P5_PRINTER_TT (**[array](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 0 | **e_0** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -3531,11 +3535,11 @@ Retrieve log entries for the given printer.
 *   for parameter i_printer_name:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_printer_name type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_LOGS
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_LOGS
     data gr_http200 type /BLCK/P5_LOGS.
-*   when the the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
     data gr_http404 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -3587,9 +3591,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_LOGS (**[Logs](#markdown-header-model-)**) | OK, log entries are returned
- 404 | **e_404** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | No log entries found
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
+ 200 | **e_200** | /BLCK/P5_LOGS (**[Logs](#markdown-header-model-logs)**) | OK, log entries are returned
+ 404 | **e_404** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | No log entries found
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -3624,11 +3628,11 @@ Aggregates count the number of objects matching a given query and aggregate resu
 *   for parameter i_body:
 *   a reference to model type /BLCK/P5_AGGREGATEQUERY
     data gm_body type /BLCK/P5_AGGREGATEQUERY.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_AGGREGATERESPO
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_AGGREGATERESPO
     data gr_http200 type /BLCK/P5_AGGREGATERESPO.
-*   when the the result of the call is HTTP400 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP400 we expect type /BLCK/P5_ERROR
     data gr_http400 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -3681,9 +3685,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_AGGREGATERESPO (**[AggregateResponse](#markdown-header-model-)**) | OK, an aggregate json object is returned
- 400 | **e_400** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Missing required paramenter
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
+ 200 | **e_200** | /BLCK/P5_AGGREGATERESPO (**[AggregateResponse](#markdown-header-model-aggregaterespo)**) | OK, an aggregate json object is returned
+ 400 | **e_400** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Missing required paramenter
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -3714,9 +3718,9 @@ This route provides access to the number of printers registered in PLOSSYS P5; e
 *   for parameter i_filter:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_filter type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_COUNT
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_COUNT
     data gr_http200 type /BLCK/P5_COUNT.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -3765,8 +3769,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-)**) | OK, a number is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
+ 200 | **e_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-count)**) | OK, a number is returned
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -3797,31 +3801,26 @@ Retrieve a list of all known printers in PLOSSYS P5. A plain query to the endpoi
 *   for parameter i_filter:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_filter type /BLCK/P5_STRING.
-
 *   for parameter i_select:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_select type /BLCK/P5_STRING.
-
 *   for parameter i_skip:
 *   a simple ABAP primitive of type /BLCK/P5_INT
     data gvi_skip type /BLCK/P5_INT.
-
 *   for parameter i_top:
 *   a simple ABAP primitive of type /BLCK/P5_INT
     data gvi_top type /BLCK/P5_INT.
-
 *   for parameter i_orderby:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_orderby type /BLCK/P5_STRING.
-
 *   for parameter i_inlinecount:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_inlinecount type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_PRINTER_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_PRINTER_TT
     data gr_http200 type /BLCK/P5_PRINTER_TT.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
     data gr_http0 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -3896,9 +3895,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINTER_TT (**[array](#markdown-header-model-)**) | Query OK; an array of printer objects is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
- 0 | **e_0** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/P5_PRINTER_TT (**[array](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 0 | **e_0** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -3925,9 +3924,10 @@ Returns a JSON object describing the Printer object model
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
-*** create variables for input and output as needed*   when the the result of the call is HTTP200 we expect type /BLCK/P5_METADATA
+*** create variables for input and output as needed
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_METADATA
     data gr_http200 type /BLCK/P5_METADATA.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
         
 
@@ -3969,8 +3969,8 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_METADATA (**[Metadata](#markdown-header-model-)**) | Query OK, metadata document is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
+ 200 | **e_200** | /BLCK/P5_METADATA (**[Metadata](#markdown-header-model-metadata)**) | Query OK, metadata document is returned
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -4001,11 +4001,11 @@ Adds a new printer to the list of managed printers in PLOSSYS P5. The new printe
 *   for parameter i_body:
 *   a reference to model type /BLCK/P5_PRINTER
     data gm_body type /BLCK/P5_PRINTER.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_PRINTER
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_PRINTER
     data gr_http200 type /BLCK/P5_PRINTER.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_PRINTER
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_PRINTER
     data gr_http500 type /BLCK/P5_PRINTER.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
     data gr_http0 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -4063,9 +4063,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-)**) | OK. The printer was created, details of the new printer are returned
- 500 | **e_500** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-)**) | Error, e.g. in printer already exists
- 0 | **e_0** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Unexpected Error
+ 200 | **e_200** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-printer)**) | OK. The printer was created, details of the new printer are returned
+ 500 | **e_500** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-printer)**) | Error, e.g. in printer already exists
+ 0 | **e_0** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected Error
 
 ### HTTP request headers
 
@@ -4096,11 +4096,11 @@ Deletes the printer with the given name; If the printer is found and deletion is
 *   for parameter i_printer_name:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_printer_name type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP412 we expect type /BLCK/P5_PRINTER
+*   when the result of the call is HTTP412 we expect type /BLCK/P5_PRINTER
     data gr_http412 type /BLCK/P5_PRINTER.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
     data gr_http0 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -4131,6 +4131,8 @@ Deletes the printer with the given name; If the printer is found and deletion is
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 200.
+*       handle code 200
       when 412.
 *       do something with gr_http412 (type /BLCK/P5_PRINTER)
       when 500.
@@ -4180,13 +4182,13 @@ Retrieves printer configuration of the printer with the given printerName and re
 *   for parameter i_printer_name:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_printer_name type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_PRINTER
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_PRINTER
     data gr_http200 type /BLCK/P5_PRINTER.
-*   when the the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
     data gr_http404 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
     data gr_http0 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -4241,10 +4243,10 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-)**) | Printer configuration
- 404 | **e_404** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Printer not found
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
- 0 | **e_0** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Unexpected Error
+ 200 | **e_200** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-printer)**) | Printer configuration
+ 404 | **e_404** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Printer not found
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 0 | **e_0** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected Error
 
 ### HTTP request headers
 
@@ -4275,11 +4277,11 @@ Retrieve log entries for the given printer.
 *   for parameter i_printer_name:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_printer_name type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_LOGS
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_LOGS
     data gr_http200 type /BLCK/P5_LOGS.
-*   when the the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
     data gr_http404 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -4331,9 +4333,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_LOGS (**[Logs](#markdown-header-model-)**) | OK, log entries are returned
- 404 | **e_404** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | No log entries found
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
+ 200 | **e_200** | /BLCK/P5_LOGS (**[Logs](#markdown-header-model-logs)**) | OK, log entries are returned
+ 404 | **e_404** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | No log entries found
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -4364,11 +4366,11 @@ Modifies a printer, replacing the current configuration with the one given in th
 *   for parameter i_body:
 *   a reference to model type /BLCK/P5_PRINTER
     data gm_body type /BLCK/P5_PRINTER.
-*   when the the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
     data gr_http404 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
     data gr_http0 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -4400,6 +4402,8 @@ Modifies a printer, replacing the current configuration with the one given in th
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 200.
+*       handle code 200
       when 404.
 *       do something with gr_http404 (type /BLCK/P5_ERROR)
       when 500.
@@ -4449,9 +4453,9 @@ A predefined test sheet is generated and inserted into the printer queue.
 *   for parameter i_printer_name:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_printer_name type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
     data gr_http0 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -4481,6 +4485,8 @@ A predefined test sheet is generated and inserted into the printer queue.
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 200.
+*       handle code 200
       when 500.
 *       do something with gr_http500 (type /BLCK/P5_ERROR)
       when 0.
@@ -4528,13 +4534,13 @@ A printers operation can be paused by a PUT query against this functional ressou
 *   for parameter i_printer_name:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_printer_name type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
     data gr_http404 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP412 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP412 we expect type /BLCK/P5_ERROR
     data gr_http412 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
     data gr_http0 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -4566,6 +4572,8 @@ A printers operation can be paused by a PUT query against this functional ressou
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 200.
+*       handle code 200
       when 404.
 *       do something with gr_http404 (type /BLCK/P5_ERROR)
       when 412.
@@ -4617,13 +4625,13 @@ A printer can be redirected so that incoming print jobs for that printer are for
 *   for parameter i_printer_name:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_printer_name type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
     data gr_http404 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP412 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP412 we expect type /BLCK/P5_ERROR
     data gr_http412 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
     data gr_http0 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -4655,6 +4663,8 @@ A printer can be redirected so that incoming print jobs for that printer are for
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 200.
+*       handle code 200
       when 404.
 *       do something with gr_http404 (type /BLCK/P5_ERROR)
       when 412.
@@ -4706,13 +4716,13 @@ A printer which has been suspended using the /printers/{printerName}/pause funct
 *   for parameter i_printer_name:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_printer_name type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
     data gr_http404 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP412 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP412 we expect type /BLCK/P5_ERROR
     data gr_http412 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
     data gr_http0 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -4744,6 +4754,8 @@ A printer which has been suspended using the /printers/{printerName}/pause funct
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 200.
+*       handle code 200
       when 404.
 *       do something with gr_http404 (type /BLCK/P5_ERROR)
       when 412.
@@ -4795,9 +4807,9 @@ Returns a PrinterStatus object describing the current status of the printer.
 *   for parameter i_printer_name:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_printer_name type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_PRINTER_STATUS
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_PRINTER_STATUS
     data gr_http200 type /BLCK/P5_PRINTER_STATUS.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -4846,8 +4858,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINTER_STATUS (**[PrinterStatus](#markdown-header-model-)**) | Query OK, status is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
+ 200 | **e_200** | /BLCK/P5_PRINTER_STATUS (**[PrinterStatus](#markdown-header-model-printer_status)**) | Query OK, status is returned
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -4882,11 +4894,11 @@ Aggregates count the number of objects matching a given query and aggregate resu
 *   for parameter i_body:
 *   a reference to model type /BLCK/P5_AGGREGATEQUERY
     data gm_body type /BLCK/P5_AGGREGATEQUERY.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_AGGREGATERESPO
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_AGGREGATERESPO
     data gr_http200 type /BLCK/P5_AGGREGATERESPO.
-*   when the the result of the call is HTTP400 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP400 we expect type /BLCK/P5_ERROR
     data gr_http400 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -4939,9 +4951,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_AGGREGATERESPO (**[AggregateResponse](#markdown-header-model-)**) | OK, an aggregate json object is returned
- 400 | **e_400** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Missing required paramenter
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
+ 200 | **e_200** | /BLCK/P5_AGGREGATERESPO (**[AggregateResponse](#markdown-header-model-aggregaterespo)**) | OK, an aggregate json object is returned
+ 400 | **e_400** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Missing required paramenter
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -4972,9 +4984,9 @@ This route provides access to the number of print jobs known in PLOSSYS P5; eith
 *   for parameter i_filter:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_filter type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_COUNT
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_COUNT
     data gr_http200 type /BLCK/P5_COUNT.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -5023,8 +5035,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-)**) | OK, a number is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
+ 200 | **e_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-count)**) | OK, a number is returned
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -5055,29 +5067,24 @@ A GET query to this path provides access to the list of print jobs in PLOSSYS P5
 *   for parameter i_filter:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_filter type /BLCK/P5_STRING.
-
 *   for parameter i_select:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_select type /BLCK/P5_STRING.
-
 *   for parameter i_skip:
 *   a simple ABAP primitive of type /BLCK/P5_INT
     data gvi_skip type /BLCK/P5_INT.
-
 *   for parameter i_top:
 *   a simple ABAP primitive of type /BLCK/P5_INT
     data gvi_top type /BLCK/P5_INT.
-
 *   for parameter i_orderby:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_orderby type /BLCK/P5_STRING.
-
 *   for parameter i_inlinecount:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_inlinecount type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_PRINT_JOB_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_PRINT_JOB_TT
     data gr_http200 type /BLCK/P5_PRINT_JOB_TT.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -5149,8 +5156,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINT_JOB_TT (**[array](#markdown-header-model-)**) | Query OK; an array of PrintJob objects is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
+ 200 | **e_200** | /BLCK/P5_PRINT_JOB_TT (**[array](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -5181,11 +5188,11 @@ Aggregates count the number of objects matching a given query and aggregate resu
 *   for parameter i_body:
 *   a reference to model type /BLCK/P5_AGGREGATEQUERY
     data gm_body type /BLCK/P5_AGGREGATEQUERY.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_AGGREGATERESPO
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_AGGREGATERESPO
     data gr_http200 type /BLCK/P5_AGGREGATERESPO.
-*   when the the result of the call is HTTP400 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP400 we expect type /BLCK/P5_ERROR
     data gr_http400 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -5238,9 +5245,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_AGGREGATERESPO (**[AggregateResponse](#markdown-header-model-)**) | OK, an aggregate json object is returned
- 400 | **e_400** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Missing required paramenter
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
+ 200 | **e_200** | /BLCK/P5_AGGREGATERESPO (**[AggregateResponse](#markdown-header-model-aggregaterespo)**) | OK, an aggregate json object is returned
+ 400 | **e_400** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Missing required paramenter
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -5271,9 +5278,9 @@ This route provides access to the number of printers registered in PLOSSYS P5; e
 *   for parameter i_filter:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_filter type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_COUNT
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_COUNT
     data gr_http200 type /BLCK/P5_COUNT.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -5322,8 +5329,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-)**) | OK, a number is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
+ 200 | **e_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-count)**) | OK, a number is returned
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -5354,31 +5361,26 @@ Retrieve a list of all known printers in PLOSSYS P5. A plain query to the endpoi
 *   for parameter i_filter:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_filter type /BLCK/P5_STRING.
-
 *   for parameter i_select:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_select type /BLCK/P5_STRING.
-
 *   for parameter i_skip:
 *   a simple ABAP primitive of type /BLCK/P5_INT
     data gvi_skip type /BLCK/P5_INT.
-
 *   for parameter i_top:
 *   a simple ABAP primitive of type /BLCK/P5_INT
     data gvi_top type /BLCK/P5_INT.
-
 *   for parameter i_orderby:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_orderby type /BLCK/P5_STRING.
-
 *   for parameter i_inlinecount:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_inlinecount type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_PRINTER_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_PRINTER_TT
     data gr_http200 type /BLCK/P5_PRINTER_TT.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
     data gr_http0 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -5453,9 +5455,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINTER_TT (**[array](#markdown-header-model-)**) | Query OK; an array of printer objects is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
- 0 | **e_0** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/P5_PRINTER_TT (**[array](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 0 | **e_0** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -5486,11 +5488,11 @@ Retrieve log entries for the given printer.
 *   for parameter i_printer_name:
 *   a simple ABAP primitive of type /BLCK/P5_STRING
     data gvs_printer_name type /BLCK/P5_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P5_LOGS
+*   when the result of the call is HTTP200 we expect type /BLCK/P5_LOGS
     data gr_http200 type /BLCK/P5_LOGS.
-*   when the the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/P5_ERROR
     data gr_http404 type /BLCK/P5_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
@@ -5542,9 +5544,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_LOGS (**[Logs](#markdown-header-model-)**) | OK, log entries are returned
- 404 | **e_404** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | No log entries found
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-)**) | Internal Server Error
+ 200 | **e_200** | /BLCK/P5_LOGS (**[Logs](#markdown-header-model-logs)**) | OK, log entries are returned
+ 404 | **e_404** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | No log entries found
+ 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -5555,7 +5557,7 @@ HTTP Code | Name | Type | Description
 * * *
 <a name="markdown-header-model-aggregatequery"></a> 
 
-# Model: aggregatequery
+# Model: AggregateQuery
 
 
 
@@ -5565,41 +5567,43 @@ HTTP Code | Name | Type | Description
 *** A query for an aggregate
 
 * create our variables..
-    data gcl_aggregatequery type ref to /blck/mdl_cl_aggregatequery.
+    data gr_aggregatequery type /blck/p5_aggregatequery.
     
 * instantiate model and call the setters to set values..
-    gcl_aggregatequery = /blck/mdl_cl_aggregatequery=>create( ).
-    gcl_aggregatequery->set_match( 'ipsum lorem' ). " (type string)
-    gcl_aggregatequery->set_aggregates( l_aggregates ). " (type /blck/api_string_tt)
+    gr_aggregatequery-match = 'ipsum lorem'. " (type /BLCK/P5_STRING)
+
+    gr_aggregatequery-aggregates = l_aggregates. " (type /BLCK/P5_STRING_TT)
     
 * pass to example API method
     gcl_exampleapi->update_aggregatequery(
-    	exporting
-    		i_aggregatequery = gcl_aggregatequery ).
+      exporting
+        i_aggregatequery = gr_aggregatequery ).
     		
-    clear gcl_aggregatequery.
+    clear gr_aggregatequery.
     
 * fetch new instance from example API method
-    gcl_aggregatequery = gcl_exampleapi->get_aggregatequery(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_aggregatequery(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_aggregatequery ).
     		
-    l_match = gcl_aggregatequery->get_match( ). " (type string)
-    l_aggregates = gcl_aggregatequery->get_aggregates( ). " (type /blck/api_string_tt)
+    write: gr_aggregatequery-match. " (type /BLCK/P5_STRING)
+    write: gr_aggregatequery-aggregates. " (type /BLCK/P5_STRING_TT)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**match** | string | Query-rules for objects to aggregate | [optional] [default to null]
-**aggregates** | /blck/api_string_tt | List of aggregates to generate | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**match** | /BLCK/P5_STRING | Query-rules for objects to aggregate
+**aggregates** | /BLCK/P5_STRING_TT | List of aggregates to generate
 
 * * *
 <a name="markdown-header-model-aggregaterespo"></a> 
 
-# Model: aggregaterespo
+# Model: AggregateResponse
 
 
 
@@ -5609,35 +5613,35 @@ Name | Type | Description | Notes
 *** An aggregate generated by PLOSSYS P5
 
 * create our variables..
-    data gcl_aggregaterespo type ref to /blck/mdl_cl_aggregaterespo.
+    data gr_aggregaterespo type /blck/p5_aggregaterespo.
     
-* instantiate model and call the setters to set values..
-    gcl_aggregaterespo = /blck/mdl_cl_aggregaterespo=>create( ).
-    
+* instantiate model and call the setters to set values..    
 * pass to example API method
     gcl_exampleapi->update_aggregaterespo(
-    	exporting
-    		i_aggregaterespo = gcl_aggregaterespo ).
+      exporting
+        i_aggregaterespo = gr_aggregaterespo ).
     		
-    clear gcl_aggregaterespo.
+    clear gr_aggregaterespo.
     
 * fetch new instance from example API method
-    gcl_aggregaterespo = gcl_exampleapi->get_aggregaterespo(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_aggregaterespo(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_aggregaterespo ).
     		
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+Name | Type | Description
+------------ | ------------- | -------------
 
 * * *
 <a name="markdown-header-model-count"></a> 
 
-# Model: count
+# Model: Count
 
 
 
@@ -5647,38 +5651,39 @@ Name | Type | Description | Notes
 *** Key-Value pair containing a number
 
 * create our variables..
-    data gcl_count type ref to /blck/mdl_cl_count.
+    data gr_count type /blck/p5_count.
     
 * instantiate model and call the setters to set values..
-    gcl_count = /blck/mdl_cl_count=>create( ).
-    gcl_count->set_count( 42 ). " (type i)
+    gr_count-count = 42. " (type /BLCK/P5_INT)
     
 * pass to example API method
     gcl_exampleapi->update_count(
-    	exporting
-    		i_count = gcl_count ).
+      exporting
+        i_count = gr_count ).
     		
-    clear gcl_count.
+    clear gr_count.
     
 * fetch new instance from example API method
-    gcl_count = gcl_exampleapi->get_count(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_count(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_count ).
     		
-    l_count = gcl_count->get_count( ). " (type i)
+    write: gr_count-count. " (type /BLCK/P5_INT)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**count** | i | Counted number | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**count** | /BLCK/P5_INT | Counted number
 
 * * *
 <a name="markdown-header-model-error"></a> 
 
-# Model: error
+# Model: Error
 
 
 
@@ -5687,44 +5692,47 @@ Name | Type | Description | Notes
 *** model error example
 
 * create our variables..
-    data gcl_error type ref to /blck/mdl_cl_error.
+    data gr_error type /blck/p5_error.
     
 * instantiate model and call the setters to set values..
-    gcl_error = /blck/mdl_cl_error=>create( ).
-    gcl_error->set_code( 42 ). " (type i)
-    gcl_error->set_message( 'ipsum lorem' ). " (type string)
-    gcl_error->set_fields( 'ipsum lorem' ). " (type string)
+    gr_error-code = 42. " (type /BLCK/P5_INT)
+
+    gr_error-message = 'ipsum lorem'. " (type /BLCK/P5_STRING)
+
+    gr_error-fields = 'ipsum lorem'. " (type /BLCK/P5_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_error(
-    	exporting
-    		i_error = gcl_error ).
+      exporting
+        i_error = gr_error ).
     		
-    clear gcl_error.
+    clear gr_error.
     
 * fetch new instance from example API method
-    gcl_error = gcl_exampleapi->get_error(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_error(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_error ).
     		
-    l_code = gcl_error->get_code( ). " (type i)
-    l_message = gcl_error->get_message( ). " (type string)
-    l_fields = gcl_error->get_fields( ). " (type string)
+    write: gr_error-code. " (type /BLCK/P5_INT)
+    write: gr_error-message. " (type /BLCK/P5_STRING)
+    write: gr_error-fields. " (type /BLCK/P5_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**code** | i |  | [optional] [default to null]
-**message** | string |  | [optional] [default to null]
-**fields** | string |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**code** | /BLCK/P5_INT | 
+**message** | /BLCK/P5_STRING | 
+**fields** | /BLCK/P5_STRING | 
 
 * * *
 <a name="markdown-header-model-job_target"></a> 
 
-# Model: job_target
+# Model: JobTarget
 
 
 
@@ -5734,41 +5742,43 @@ Name | Type | Description | Notes
 *** Server and Printer for handling a job
 
 * create our variables..
-    data gcl_job_target type ref to /blck/mdl_cl_job_target.
+    data gr_job_target type /blck/p5_job_target.
     
 * instantiate model and call the setters to set values..
-    gcl_job_target = /blck/mdl_cl_job_target=>create( ).
-    gcl_job_target->set_target_printer( 'ipsum lorem' ). " (type string)
-    gcl_job_target->set_target_server( 'ipsum lorem' ). " (type string)
+    gr_job_target-target_printer = 'ipsum lorem'. " (type /BLCK/P5_STRING)
+
+    gr_job_target-target_server = 'ipsum lorem'. " (type /BLCK/P5_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_job_target(
-    	exporting
-    		i_job_target = gcl_job_target ).
+      exporting
+        i_job_target = gr_job_target ).
     		
-    clear gcl_job_target.
+    clear gr_job_target.
     
 * fetch new instance from example API method
-    gcl_job_target = gcl_exampleapi->get_job_target(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_job_target(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_job_target ).
     		
-    l_target_printer = gcl_job_target->get_target_printer( ). " (type string)
-    l_target_server = gcl_job_target->get_target_server( ). " (type string)
+    write: gr_job_target-target_printer. " (type /BLCK/P5_STRING)
+    write: gr_job_target-target_server. " (type /BLCK/P5_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**target_printer** | string | PrinterName of the target printer | [optional] [default to null]
-**target_server** | string | Name of the target PLOSSYS P5 server | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**target_printer** | /BLCK/P5_STRING | PrinterName of the target printer
+**target_server** | /BLCK/P5_STRING | Name of the target PLOSSYS P5 server
 
 * * *
 <a name="markdown-header-model-logs"></a> 
 
-# Model: logs
+# Model: Logs
 
 
 
@@ -5778,38 +5788,39 @@ Name | Type | Description | Notes
 *** List of Log entries for a printer
 
 * create our variables..
-    data gcl_logs type ref to /blck/mdl_cl_logs.
+    data gr_logs type /blck/p5_logs.
     
 * instantiate model and call the setters to set values..
-    gcl_logs = /blck/mdl_cl_logs=>create( ).
-    gcl_logs->set_messages( l_messages ). " (type /blck/api_string_tt)
+    gr_logs-messages = l_messages. " (type /BLCK/P5_STRING_TT)
     
 * pass to example API method
     gcl_exampleapi->update_logs(
-    	exporting
-    		i_logs = gcl_logs ).
+      exporting
+        i_logs = gr_logs ).
     		
-    clear gcl_logs.
+    clear gr_logs.
     
 * fetch new instance from example API method
-    gcl_logs = gcl_exampleapi->get_logs(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_logs(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_logs ).
     		
-    l_messages = gcl_logs->get_messages( ). " (type /blck/api_string_tt)
+    write: gr_logs-messages. " (type /BLCK/P5_STRING_TT)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**messages** | /blck/api_string_tt | Array of Log entries | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**messages** | /BLCK/P5_STRING_TT | Array of Log entries
 
 * * *
 <a name="markdown-header-model-metadata"></a> 
 
-# Model: metadata
+# Model: Metadata
 
 
 
@@ -5819,35 +5830,35 @@ Name | Type | Description | Notes
 *** Array of objects describing items in a JSON object used in this API. 
 
 * create our variables..
-    data gcl_metadata type ref to /blck/mdl_cl_metadata.
+    data gr_metadata type /blck/p5_metadata.
     
-* instantiate model and call the setters to set values..
-    gcl_metadata = /blck/mdl_cl_metadata=>create( ).
-    
+* instantiate model and call the setters to set values..    
 * pass to example API method
     gcl_exampleapi->update_metadata(
-    	exporting
-    		i_metadata = gcl_metadata ).
+      exporting
+        i_metadata = gr_metadata ).
     		
-    clear gcl_metadata.
+    clear gr_metadata.
     
 * fetch new instance from example API method
-    gcl_metadata = gcl_exampleapi->get_metadata(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_metadata(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_metadata ).
     		
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+Name | Type | Description
+------------ | ------------- | -------------
 
 * * *
 <a name="markdown-header-model-print_job"></a> 
 
-# Model: print_job
+# Model: PrintJob
 
 
 
@@ -5857,50 +5868,55 @@ Name | Type | Description | Notes
 *** Status information about a print job
 
 * create our variables..
-    data gcl_print_job type ref to /blck/mdl_cl_print_job.
+    data gr_print_job type /blck/p5_print_job.
     
 * instantiate model and call the setters to set values..
-    gcl_print_job = /blck/mdl_cl_print_job=>create( ).
-    gcl_print_job->set_id( 'ipsum lorem' ). " (type string)
-    gcl_print_job->set_status( 'ipsum lorem' ). " (type string)
-    gcl_print_job->set_current( 'ipsum lorem' ). " (type string)
-    gcl_print_job->set_orig( 'ipsum lorem' ). " (type string)
-    gcl_print_job->set_routing( 'ipsum lorem' ). " (type string)
+    gr_print_job-id = 'ipsum lorem'. " (type /BLCK/P5_STRING)
+
+    gr_print_job-status = 'ipsum lorem'. " (type /BLCK/P5_STRING)
+
+    gr_print_job-current = 'ipsum lorem'. " (type /BLCK/P5_STRING)
+
+    gr_print_job-orig = 'ipsum lorem'. " (type /BLCK/P5_STRING)
+
+    gr_print_job-routing = 'ipsum lorem'. " (type /BLCK/P5_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_print_job(
-    	exporting
-    		i_print_job = gcl_print_job ).
+      exporting
+        i_print_job = gr_print_job ).
     		
-    clear gcl_print_job.
+    clear gr_print_job.
     
 * fetch new instance from example API method
-    gcl_print_job = gcl_exampleapi->get_print_job(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_print_job(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_print_job ).
     		
-    l_id = gcl_print_job->get_id( ). " (type string)
-    l_status = gcl_print_job->get_status( ). " (type string)
-    l_current = gcl_print_job->get_current( ). " (type string)
-    l_orig = gcl_print_job->get_orig( ). " (type string)
-    l_routing = gcl_print_job->get_routing( ). " (type string)
+    write: gr_print_job-id. " (type /BLCK/P5_STRING)
+    write: gr_print_job-status. " (type /BLCK/P5_STRING)
+    write: gr_print_job-current. " (type /BLCK/P5_STRING)
+    write: gr_print_job-orig. " (type /BLCK/P5_STRING)
+    write: gr_print_job-routing. " (type /BLCK/P5_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | string | Job identifier | [optional] [default to null]
-**status** | string | Current job status | [optional] [default to null]
-**current** | string | Information about the job as it is used in PLOSSYS P5 at the present time. | [optional] [default to null]
-**orig** | string | Information about the job as it was originally submitted to PLOSSYS P5 | [optional] [default to null]
-**routing** | string | Information about the processor route of the job. | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**id** | /BLCK/P5_STRING | Job identifier
+**status** | /BLCK/P5_STRING | Current job status
+**current** | /BLCK/P5_STRING | Information about the job as it is used in PLOSSYS P5 at the present time.
+**orig** | /BLCK/P5_STRING | Information about the job as it was originally submitted to PLOSSYS P5
+**routing** | /BLCK/P5_STRING | Information about the processor route of the job.
 
 * * *
 <a name="markdown-header-model-printer"></a> 
 
-# Model: printer
+# Model: Printer
 
 
 
@@ -5909,41 +5925,43 @@ Name | Type | Description | Notes
 *** model printer example
 
 * create our variables..
-    data gcl_printer type ref to /blck/mdl_cl_printer.
+    data gr_printer type /blck/p5_printer.
     
 * instantiate model and call the setters to set values..
-    gcl_printer = /blck/mdl_cl_printer=>create( ).
-    gcl_printer->set_id( 'ipsum lorem' ). " (type string)
-    gcl_printer->set_config( 'ipsum lorem' ). " (type string)
+    gr_printer-id = 'ipsum lorem'. " (type /BLCK/P5_STRING)
+
+    gr_printer-config = 'ipsum lorem'. " (type /BLCK/P5_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_printer(
-    	exporting
-    		i_printer = gcl_printer ).
+      exporting
+        i_printer = gr_printer ).
     		
-    clear gcl_printer.
+    clear gr_printer.
     
 * fetch new instance from example API method
-    gcl_printer = gcl_exampleapi->get_printer(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_printer(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_printer ).
     		
-    l_id = gcl_printer->get_id( ). " (type string)
-    l_config = gcl_printer->get_config( ). " (type string)
+    write: gr_printer-id. " (type /BLCK/P5_STRING)
+    write: gr_printer-config. " (type /BLCK/P5_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | string | Internal ID of the printer, auto-generated by PLOSSYS P5 | [optional] [default to null]
-**config** | string |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**id** | /BLCK/P5_STRING | Internal ID of the printer, auto-generated by PLOSSYS P5
+**config** | /BLCK/P5_STRING | 
 
 * * *
 <a name="markdown-header-model-printer_status"></a> 
 
-# Model: printer_status
+# Model: PrinterStatus
 
 
 
@@ -5953,34 +5971,36 @@ Name | Type | Description | Notes
 *** Ressource representing the current printer status.
 
 * create our variables..
-    data gcl_printer_status type ref to /blck/mdl_cl_printer_status.
+    data gr_printer_status type /blck/p5_printer_status.
     
 * instantiate model and call the setters to set values..
-    gcl_printer_status = /blck/mdl_cl_printer_status=>create( ).
-    gcl_printer_status->set_mode( 'ipsum lorem' ). " (type string)
-    gcl_printer_status->set_queue_length( 42 ). " (type i)
+    gr_printer_status-mode = 'ipsum lorem'. " (type /BLCK/P5_STRING)
+
+    gr_printer_status-queue_length = 42. " (type /BLCK/P5_INT)
     
 * pass to example API method
     gcl_exampleapi->update_printer_status(
-    	exporting
-    		i_printer_status = gcl_printer_status ).
+      exporting
+        i_printer_status = gr_printer_status ).
     		
-    clear gcl_printer_status.
+    clear gr_printer_status.
     
 * fetch new instance from example API method
-    gcl_printer_status = gcl_exampleapi->get_printer_status(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_printer_status(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_printer_status ).
     		
-    l_mode = gcl_printer_status->get_mode( ). " (type string)
-    l_queue_length = gcl_printer_status->get_queue_length( ). " (type i)
+    write: gr_printer_status-mode. " (type /BLCK/P5_STRING)
+    write: gr_printer_status-queue_length. " (type /BLCK/P5_INT)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**mode** | string | One of {ready, printing, paused, redirected, error} | [optional] [default to null]
-**queue_length** | i |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**mode** | /BLCK/P5_STRING | One of {ready, printing, paused, redirected, error}
+**queue_length** | /BLCK/P5_INT | 
 

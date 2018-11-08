@@ -23,19 +23,16 @@ Get attribute of document
 *   for parameter i_title:
 *   a simple ABAP primitive of type /BLCK/SP_STRING
     data gvs_title type /BLCK/SP_STRING.
-
 *   for parameter i_doc_id:
 *   a simple ABAP primitive of type /BLCK/SP_INT
     data gvi_doc_id type /BLCK/SP_INT.
-
 *   for parameter i_attr:
 *   a simple ABAP primitive of type /BLCK/SP_STRING
     data gvs_attr type /BLCK/SP_STRING.
-
 *   for parameter i_accept:
 *   a simple ABAP primitive of type /BLCK/SP_STRING
     data gvs_accept type /BLCK/SP_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/SP_DOC_ATTR_VALUE
+*   when the result of the call is HTTP200 we expect type /BLCK/SP_DOC_ATTR_VALUE
     data gr_http200 type /BLCK/SP_DOC_ATTR_VALUE.
         
 *** set data according to requirements of the API call
@@ -75,6 +72,8 @@ Get attribute of document
     case gvi_code.
       when 200.
 *       do something with gr_http200 (type /BLCK/SP_DOC_ATTR_VALUE)
+      when 405.
+*       handle code 405
       when others.
 * handle the general case..
     endcase.
@@ -93,7 +92,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/SP_DOC_ATTR_VALUE (**[DocAttrValue](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/SP_DOC_ATTR_VALUE (**[DocAttrValue](#markdown-header-model-doc_attr_value)**) | successful operation
  405 | value not returned |  | Invalid input
 
 ### HTTP request headers
@@ -123,11 +122,10 @@ Retrieve data of document
 *   for parameter i_title:
 *   a simple ABAP primitive of type /BLCK/SP_STRING
     data gvs_title type /BLCK/SP_STRING.
-
 *   for parameter i_doc_id:
 *   a simple ABAP primitive of type /BLCK/SP_INT
     data gvi_doc_id type /BLCK/SP_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/SP_BINARY
+*   when the result of the call is HTTP200 we expect type /BLCK/SP_BINARY
     data gr_http200 type /BLCK/SP_BINARY.
         
 *** set data according to requirements of the API call
@@ -161,6 +159,8 @@ Retrieve data of document
     case gvi_code.
       when 200.
 *       do something with gr_http200 (type /BLCK/SP_BINARY)
+      when 405.
+*       handle code 405
       when others.
 * handle the general case..
     endcase.
@@ -207,15 +207,13 @@ Retrieve list of documents matching criteria
 *   for parameter i_title:
 *   a simple ABAP primitive of type /BLCK/SP_STRING
     data gvs_title type /BLCK/SP_STRING.
-
 *   for parameter i_filter:
 *   a simple ABAP primitive of type /BLCK/SP_STRING
     data gvs_filter type /BLCK/SP_STRING.
-
 *   for parameter i_accept:
 *   a simple ABAP primitive of type /BLCK/SP_STRING
     data gvs_accept type /BLCK/SP_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/SP_SEAL_DOC_LIST
+*   when the result of the call is HTTP200 we expect type /BLCK/SP_SEAL_DOC_LIST
     data gr_http200 type /BLCK/SP_SEAL_DOC_LIST.
         
 *** set data according to requirements of the API call
@@ -252,6 +250,8 @@ Retrieve list of documents matching criteria
     case gvi_code.
       when 200.
 *       do something with gr_http200 (type /BLCK/SP_SEAL_DOC_LIST)
+      when 405.
+*       handle code 405
       when others.
 * handle the general case..
     endcase.
@@ -269,7 +269,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/SP_SEAL_DOC_LIST (**[SEALDocList](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/SP_SEAL_DOC_LIST (**[SEALDocList](#markdown-header-model-seal_doc_list)**) | successful operation
  405 | value not returned |  | Invalid input
 
 ### HTTP request headers
@@ -301,27 +301,21 @@ Pass in a json formatted body
 *   for parameter i_body:
 *   a simple ABAP primitive of type /BLCK/SP_STRING
     data gvs_body type /BLCK/SP_STRING.
-
 *   for parameter i_title:
 *   a simple ABAP primitive of type /BLCK/SP_STRING
     data gvs_title type /BLCK/SP_STRING.
-
 *   for parameter i_doc_id:
 *   a simple ABAP primitive of type /BLCK/SP_INT
     data gvi_doc_id type /BLCK/SP_INT.
-
 *   for parameter i_accept:
 *   a simple ABAP primitive of type /BLCK/SP_STRING
     data gvs_accept type /BLCK/SP_STRING.
-
 *   for parameter i_content_type:
 *   a simple ABAP primitive of type /BLCK/SP_STRING
     data gvs_content_type type /BLCK/SP_STRING.
-
 *   for parameter i_if_match:
 *   a simple ABAP primitive of type /BLCK/SP_STRING
     data gvs_if_match type /BLCK/SP_STRING.
-
 *   for parameter i_x_http_method:
 *   a simple ABAP primitive of type /BLCK/SP_STRING
     data gvs_x_http_method type /BLCK/SP_STRING.
@@ -368,6 +362,10 @@ Pass in a json formatted body
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 204.
+*       handle code 204
+      when 405.
+*       handle code 405
       when others.
 * handle the general case..
     endcase.
@@ -397,7 +395,7 @@ Name | Type | Description
 * * *
 <a name="markdown-header-model-doc_attr_value"></a> 
 
-# Model: doc_attr_value
+# Model: DocAttrValue
 
 
 
@@ -406,38 +404,39 @@ Name | Type | Description
 *** model doc_attr_value example
 
 * create our variables..
-    data gcl_doc_attr_value type ref to /blck/mdl_cl_doc_attr_value.
+    data gr_doc_attr_value type /blck/sp_doc_attr_value.
     
 * instantiate model and call the setters to set values..
-    gcl_doc_attr_value = /blck/mdl_cl_doc_attr_value=>create( ).
-    gcl_doc_attr_value->set_value( 'ipsum lorem' ). " (type string)
+    gr_doc_attr_value-value = 'ipsum lorem'. " (type /BLCK/SP_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_doc_attr_value(
-    	exporting
-    		i_doc_attr_value = gcl_doc_attr_value ).
+      exporting
+        i_doc_attr_value = gr_doc_attr_value ).
     		
-    clear gcl_doc_attr_value.
+    clear gr_doc_attr_value.
     
 * fetch new instance from example API method
-    gcl_doc_attr_value = gcl_exampleapi->get_doc_attr_value(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_doc_attr_value(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_doc_attr_value ).
     		
-    l_value = gcl_doc_attr_value->get_value( ). " (type string)
+    write: gr_doc_attr_value-value. " (type /BLCK/SP_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**value** | string |  | [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**value** | /BLCK/SP_STRING | 
 
 * * *
 <a name="markdown-header-model-seal_doc"></a> 
 
-# Model: seal_doc
+# Model: SEALDoc
 
 
 
@@ -446,77 +445,91 @@ Name | Type | Description | Notes
 *** model seal_doc example
 
 * create our variables..
-    data gcl_seal_doc type ref to /blck/mdl_cl_seal_doc.
+    data gr_seal_doc type /blck/sp_seal_doc.
     
 * instantiate model and call the setters to set values..
-    gcl_seal_doc = /blck/mdl_cl_seal_doc=>create( ).
-    gcl_seal_doc->set_id( 42 ). " (type i)
-    gcl_seal_doc->set_title( 'ipsum lorem' ). " (type string)
-    gcl_seal_doc->set_doknr( 'ipsum lorem' ). " (type string)
-    gcl_seal_doc->set_dokar( 'ipsum lorem' ). " (type string)
-    gcl_seal_doc->set_dokvr( 'ipsum lorem' ). " (type string)
-    gcl_seal_doc->set_doktl( 'ipsum lorem' ). " (type string)
-    gcl_seal_doc->set_description0( 'ipsum lorem' ). " (type string)
-    gcl_seal_doc->set_dir( 'ipsum lorem' ). " (type string)
-    gcl_seal_doc->set_sap_x0020_upload( 'ipsum lorem' ). " (type string)
-    gcl_seal_doc->set_created( l_created ). " (type timestamp)
-    gcl_seal_doc->set_author_id( 42 ). " (type i)
-    gcl_seal_doc->set_modified( l_modified ). " (type timestamp)
-    gcl_seal_doc->set_editor_id( 42 ). " (type i)
-    gcl_seal_doc->set_guid( 'ipsum lorem' ). " (type string)
+    gr_seal_doc-id = 42. " (type /BLCK/SP_INT)
+
+    gr_seal_doc-title = 'ipsum lorem'. " (type /BLCK/SP_STRING)
+
+    gr_seal_doc-doknr = 'ipsum lorem'. " (type /BLCK/SP_STRING)
+
+    gr_seal_doc-dokar = 'ipsum lorem'. " (type /BLCK/SP_STRING)
+
+    gr_seal_doc-dokvr = 'ipsum lorem'. " (type /BLCK/SP_STRING)
+
+    gr_seal_doc-doktl = 'ipsum lorem'. " (type /BLCK/SP_STRING)
+
+    gr_seal_doc-description0 = 'ipsum lorem'. " (type /BLCK/SP_STRING)
+
+    gr_seal_doc-dir = 'ipsum lorem'. " (type /BLCK/SP_STRING)
+
+    gr_seal_doc-sap_x0020_upload = 'ipsum lorem'. " (type /BLCK/SP_STRING)
+
+    gr_seal_doc-created = l_created. " (type /BLCK/SP_TIMESTAMP)
+
+    gr_seal_doc-author_id = 42. " (type /BLCK/SP_INT)
+
+    gr_seal_doc-modified = l_modified. " (type /BLCK/SP_TIMESTAMP)
+
+    gr_seal_doc-editor_id = 42. " (type /BLCK/SP_INT)
+
+    gr_seal_doc-guid = 'ipsum lorem'. " (type /BLCK/SP_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_seal_doc(
-    	exporting
-    		i_seal_doc = gcl_seal_doc ).
+      exporting
+        i_seal_doc = gr_seal_doc ).
     		
-    clear gcl_seal_doc.
+    clear gr_seal_doc.
     
 * fetch new instance from example API method
-    gcl_seal_doc = gcl_exampleapi->get_seal_doc(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_seal_doc(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_seal_doc ).
     		
-    l_id = gcl_seal_doc->get_id( ). " (type i)
-    l_title = gcl_seal_doc->get_title( ). " (type string)
-    l_doknr = gcl_seal_doc->get_doknr( ). " (type string)
-    l_dokar = gcl_seal_doc->get_dokar( ). " (type string)
-    l_dokvr = gcl_seal_doc->get_dokvr( ). " (type string)
-    l_doktl = gcl_seal_doc->get_doktl( ). " (type string)
-    l_description0 = gcl_seal_doc->get_description0( ). " (type string)
-    l_dir = gcl_seal_doc->get_dir( ). " (type string)
-    l_sap_x0020_upload = gcl_seal_doc->get_sap_x0020_upload( ). " (type string)
-    l_created = gcl_seal_doc->get_created( ). " (type timestamp)
-    l_author_id = gcl_seal_doc->get_author_id( ). " (type i)
-    l_modified = gcl_seal_doc->get_modified( ). " (type timestamp)
-    l_editor_id = gcl_seal_doc->get_editor_id( ). " (type i)
-    l_guid = gcl_seal_doc->get_guid( ). " (type string)
+    write: gr_seal_doc-id. " (type /BLCK/SP_INT)
+    write: gr_seal_doc-title. " (type /BLCK/SP_STRING)
+    write: gr_seal_doc-doknr. " (type /BLCK/SP_STRING)
+    write: gr_seal_doc-dokar. " (type /BLCK/SP_STRING)
+    write: gr_seal_doc-dokvr. " (type /BLCK/SP_STRING)
+    write: gr_seal_doc-doktl. " (type /BLCK/SP_STRING)
+    write: gr_seal_doc-description0. " (type /BLCK/SP_STRING)
+    write: gr_seal_doc-dir. " (type /BLCK/SP_STRING)
+    write: gr_seal_doc-sap_x0020_upload. " (type /BLCK/SP_STRING)
+    write: gr_seal_doc-created. " (type /BLCK/SP_TIMESTAMP)
+    write: gr_seal_doc-author_id. " (type /BLCK/SP_INT)
+    write: gr_seal_doc-modified. " (type /BLCK/SP_TIMESTAMP)
+    write: gr_seal_doc-editor_id. " (type /BLCK/SP_INT)
+    write: gr_seal_doc-guid. " (type /BLCK/SP_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | i |  | [optional] [default to null]
-**title** | string |  | [optional] [default to null]
-**doknr** | string |  | [optional] [default to null]
-**dokar** | string |  | [optional] [default to null]
-**dokvr** | string |  | [optional] [default to null]
-**doktl** | string |  | [optional] [default to null]
-**description0** | string |  | [optional] [default to null]
-**dir** | string |  | [optional] [default to null]
-**sap_x0020_upload** | string |  | [optional] [default to null]
-**created** | timestamp |  | [optional] [default to null]
-**author_id** | i |  | [optional] [default to null]
-**modified** | timestamp |  | [optional] [default to null]
-**editor_id** | i |  | [optional] [default to null]
-**guid** | string |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**id** | /BLCK/SP_INT | 
+**title** | /BLCK/SP_STRING | 
+**doknr** | /BLCK/SP_STRING | 
+**dokar** | /BLCK/SP_STRING | 
+**dokvr** | /BLCK/SP_STRING | 
+**doktl** | /BLCK/SP_STRING | 
+**description0** | /BLCK/SP_STRING | 
+**dir** | /BLCK/SP_STRING | 
+**sap_x0020_upload** | /BLCK/SP_STRING | 
+**created** | /BLCK/SP_TIMESTAMP | 
+**author_id** | /BLCK/SP_INT | 
+**modified** | /BLCK/SP_TIMESTAMP | 
+**editor_id** | /BLCK/SP_INT | 
+**guid** | /BLCK/SP_STRING | 
 
 * * *
 <a name="markdown-header-model-seal_doc_list"></a> 
 
-# Model: seal_doc_list
+# Model: SEALDocList
 
 
 
@@ -525,31 +538,32 @@ Name | Type | Description | Notes
 *** model seal_doc_list example
 
 * create our variables..
-    data gcl_seal_doc_list type ref to /blck/mdl_cl_seal_doc_list.
+    data gr_seal_doc_list type /blck/sp_seal_doc_list.
     
 * instantiate model and call the setters to set values..
-    gcl_seal_doc_list = /blck/mdl_cl_seal_doc_list=>create( ).
-    gcl_seal_doc_list->set_value( l_value ). " (type /BLCK/SP_seal_doc_tt)
+    gr_seal_doc_list-value = l_value. " (type /BLCK/SP_SEAL_DOC_TT)
     
 * pass to example API method
     gcl_exampleapi->update_seal_doc_list(
-    	exporting
-    		i_seal_doc_list = gcl_seal_doc_list ).
+      exporting
+        i_seal_doc_list = gr_seal_doc_list ).
     		
-    clear gcl_seal_doc_list.
+    clear gr_seal_doc_list.
     
 * fetch new instance from example API method
-    gcl_seal_doc_list = gcl_exampleapi->get_seal_doc_list(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_seal_doc_list(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_seal_doc_list ).
     		
-    l_value = gcl_seal_doc_list->get_value( ). " (type /BLCK/SP_seal_doc_tt)
+    write: gr_seal_doc_list-value. " (type /BLCK/SP_SEAL_DOC_TT)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**value** | /BLCK/SP_seal_doc_tt (**[array of seal_doc](#markdown-header-model-seal_doc)**) |  | [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**value** | /BLCK/SP_SEAL_DOC_TT (**[array of seal_doc](#markdown-header-model-seal_doc)**) | 
 

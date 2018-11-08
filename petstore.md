@@ -54,6 +54,8 @@ Add a new pet to the store
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 405.
+*       handle code 405
       when others.
 * handle the general case..
     endcase.
@@ -95,7 +97,6 @@ Deletes a pet
 *   for parameter i_pet_id:
 *   a simple ABAP primitive of type /BLCK/PET_INT
     data gvi_pet_id type /BLCK/PET_INT.
-
 *   for parameter i_api_key:
 *   a simple ABAP primitive of type /BLCK/PET_STRING
     data gvs_api_key type /BLCK/PET_STRING.
@@ -127,6 +128,10 @@ Deletes a pet
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 400.
+*       handle code 400
+      when 404.
+*       handle code 404
       when others.
 * handle the general case..
     endcase.
@@ -171,7 +176,7 @@ Multiple status values can be provided with comma separated strings
 *   for parameter i_status:
 *   a table type /BLCK/PET_STRING_TT
     data gi_status type /BLCK/PET_STRING_TT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/PET_PET_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/PET_PET_TT
     data gr_http200 type /BLCK/PET_PET_TT.
         
 *** set data according to requirements of the API call
@@ -204,6 +209,8 @@ Multiple status values can be provided with comma separated strings
     case gvi_code.
       when 200.
 *       do something with gr_http200 (type /BLCK/PET_PET_TT)
+      when 400.
+*       handle code 400
       when others.
 * handle the general case..
     endcase.
@@ -219,7 +226,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/PET_PET_TT (**[array](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/PET_PET_TT (**[array](#markdown-header-model-pet)**) | successful operation
  400 | value not returned |  | Invalid status value
 
 ### HTTP request headers
@@ -251,7 +258,7 @@ Muliple tags can be provided with comma separated strings. Use tag1, tag2, tag3 
 *   for parameter i_tags:
 *   a table type /BLCK/PET_STRING_TT
     data gi_tags type /BLCK/PET_STRING_TT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/PET_PET_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/PET_PET_TT
     data gr_http200 type /BLCK/PET_PET_TT.
         
 *** set data according to requirements of the API call
@@ -284,6 +291,8 @@ Muliple tags can be provided with comma separated strings. Use tag1, tag2, tag3 
     case gvi_code.
       when 200.
 *       do something with gr_http200 (type /BLCK/PET_PET_TT)
+      when 400.
+*       handle code 400
       when others.
 * handle the general case..
     endcase.
@@ -299,7 +308,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/PET_PET_TT (**[array](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/PET_PET_TT (**[array](#markdown-header-model-pet)**) | successful operation
  400 | value not returned |  | Invalid tag value
 
 ### HTTP request headers
@@ -331,7 +340,7 @@ Returns a single pet
 *   for parameter i_pet_id:
 *   a simple ABAP primitive of type /BLCK/PET_INT
     data gvi_pet_id type /BLCK/PET_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/PET_PET
+*   when the result of the call is HTTP200 we expect type /BLCK/PET_PET
     data gr_http200 type /BLCK/PET_PET.
         
 *** set data according to requirements of the API call
@@ -362,6 +371,10 @@ Returns a single pet
     case gvi_code.
       when 200.
 *       do something with gr_http200 (type /BLCK/PET_PET)
+      when 400.
+*       handle code 400
+      when 404.
+*       handle code 404
       when others.
 * handle the general case..
     endcase.
@@ -377,7 +390,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/PET_PET (**[Pet](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/PET_PET (**[Pet](#markdown-header-model-pet)**) | successful operation
  400 | value not returned |  | Invalid ID supplied
  404 | value not returned |  | Pet not found
 
@@ -439,6 +452,12 @@ Update an existing pet
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 400.
+*       handle code 400
+      when 404.
+*       handle code 404
+      when 405.
+*       handle code 405
       when others.
 * handle the general case..
     endcase.
@@ -480,11 +499,9 @@ Updates a pet in the store with form data
 *   for parameter i_pet_id:
 *   a simple ABAP primitive of type /BLCK/PET_INT
     data gvi_pet_id type /BLCK/PET_INT.
-
 *   for parameter i_name:
 *   a simple ABAP primitive of type /BLCK/PET_STRING
     data gvs_name type /BLCK/PET_STRING.
-
 *   for parameter i_status:
 *   a simple ABAP primitive of type /BLCK/PET_STRING
     data gvs_status type /BLCK/PET_STRING.
@@ -518,6 +535,8 @@ Updates a pet in the store with form data
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 405.
+*       handle code 405
       when others.
 * handle the general case..
     endcase.
@@ -561,15 +580,13 @@ uploads an image
 *   for parameter i_pet_id:
 *   a simple ABAP primitive of type /BLCK/PET_INT
     data gvi_pet_id type /BLCK/PET_INT.
-
 *   for parameter i_additional_metadata:
 *   a simple ABAP primitive of type /BLCK/PET_STRING
     data gvs_additional_metadata type /BLCK/PET_STRING.
-
 *   for parameter i_file:
 *   a simple ABAP primitive of type /BLCK/PET_BINARY
     data gvs_file type /BLCK/PET_BINARY.
-*   when the the result of the call is HTTP200 we expect type /BLCK/PET_API_RESPONSE
+*   when the result of the call is HTTP200 we expect type /BLCK/PET_API_RESPONSE
     data gr_http200 type /BLCK/PET_API_RESPONSE.
         
 *** set data according to requirements of the API call
@@ -621,7 +638,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/PET_API_RESPONSE (**[ApiResponse](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/PET_API_RESPONSE (**[ApiResponse](#markdown-header-model-api_response)**) | successful operation
 
 ### HTTP request headers
 
@@ -682,6 +699,10 @@ For valid response try integer IDs with positive integer value. Negative or non-
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 400.
+*       handle code 400
+      when 404.
+*       handle code 404
       when others.
 * handle the general case..
     endcase.
@@ -721,7 +742,8 @@ Returns a map of status codes to quantities
     gvi_code type /blck/pet_int,
     gvs_msg  type /blck/pet_string.
     
-*** create variables for input and output as needed*   when the the result of the call is HTTP200 we expect type /BLCK/PET_INT_MT
+*** create variables for input and output as needed
+*   when the result of the call is HTTP200 we expect type /BLCK/PET_INT_MT
     data gr_http200 type /BLCK/PET_INT_MT.
         
 
@@ -791,7 +813,7 @@ For valid response try integer IDs with value >= 1 and <= 10. Other values will 
 *   for parameter i_order_id:
 *   a simple ABAP primitive of type /BLCK/PET_INT
     data gvi_order_id type /BLCK/PET_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/PET_ORDER
+*   when the result of the call is HTTP200 we expect type /BLCK/PET_ORDER
     data gr_http200 type /BLCK/PET_ORDER.
         
 *** set data according to requirements of the API call
@@ -822,6 +844,10 @@ For valid response try integer IDs with value >= 1 and <= 10. Other values will 
     case gvi_code.
       when 200.
 *       do something with gr_http200 (type /BLCK/PET_ORDER)
+      when 400.
+*       handle code 400
+      when 404.
+*       handle code 404
       when others.
 * handle the general case..
     endcase.
@@ -837,7 +863,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/PET_ORDER (**[Order](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/PET_ORDER (**[Order](#markdown-header-model-order)**) | successful operation
  400 | value not returned |  | Invalid ID supplied
  404 | value not returned |  | Order not found
 
@@ -868,7 +894,7 @@ Place an order for a pet
 *   for parameter i_body:
 *   a reference to model type /BLCK/PET_ORDER
     data gm_body type /BLCK/PET_ORDER.
-*   when the the result of the call is HTTP200 we expect type /BLCK/PET_ORDER
+*   when the result of the call is HTTP200 we expect type /BLCK/PET_ORDER
     data gr_http200 type /BLCK/PET_ORDER.
         
 *** set data according to requirements of the API call
@@ -904,6 +930,8 @@ Place an order for a pet
     case gvi_code.
       when 200.
 *       do something with gr_http200 (type /BLCK/PET_ORDER)
+      when 400.
+*       handle code 400
       when others.
 * handle the general case..
     endcase.
@@ -919,7 +947,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/PET_ORDER (**[Order](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/PET_ORDER (**[Order](#markdown-header-model-order)**) | successful operation
  400 | value not returned |  | Invalid Order
 
 ### HTTP request headers
@@ -988,6 +1016,8 @@ This can only be done by the logged in user.
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 0.
+*       handle code 0
       when others.
 * handle the general case..
     endcase.
@@ -1057,6 +1087,8 @@ Creates list of users with given input array
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 0.
+*       handle code 0
       when others.
 * handle the general case..
     endcase.
@@ -1126,6 +1158,8 @@ Creates list of users with given input array
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 0.
+*       handle code 0
       when others.
 * handle the general case..
     endcase.
@@ -1195,6 +1229,10 @@ This can only be done by the logged in user.
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 400.
+*       handle code 400
+      when 404.
+*       handle code 404
       when others.
 * handle the general case..
     endcase.
@@ -1236,7 +1274,7 @@ Get user by user name
 *   for parameter i_username:
 *   a simple ABAP primitive of type /BLCK/PET_STRING
     data gvs_username type /BLCK/PET_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/PET_USER
+*   when the result of the call is HTTP200 we expect type /BLCK/PET_USER
     data gr_http200 type /BLCK/PET_USER.
         
 *** set data according to requirements of the API call
@@ -1267,6 +1305,10 @@ Get user by user name
     case gvi_code.
       when 200.
 *       do something with gr_http200 (type /BLCK/PET_USER)
+      when 400.
+*       handle code 400
+      when 404.
+*       handle code 404
       when others.
 * handle the general case..
     endcase.
@@ -1282,7 +1324,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/PET_USER (**[User](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/PET_USER (**[User](#markdown-header-model-user)**) | successful operation
  400 | value not returned |  | Invalid username supplied
  404 | value not returned |  | User not found
 
@@ -1313,11 +1355,10 @@ Logs user into the system
 *   for parameter i_username:
 *   a simple ABAP primitive of type /BLCK/PET_STRING
     data gvs_username type /BLCK/PET_STRING.
-
 *   for parameter i_password:
 *   a simple ABAP primitive of type /BLCK/PET_STRING
     data gvs_password type /BLCK/PET_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/PET_STRING
+*   when the result of the call is HTTP200 we expect type /BLCK/PET_STRING
     data gr_http200 type /BLCK/PET_STRING.
         
 *** set data according to requirements of the API call
@@ -1351,6 +1392,8 @@ Logs user into the system
     case gvi_code.
       when 200.
 *       do something with gr_http200 (type /BLCK/PET_STRING)
+      when 400.
+*       handle code 400
       when others.
 * handle the general case..
     endcase.
@@ -1393,7 +1436,8 @@ Logs out current logged in user session
     gvi_code type /blck/pet_int,
     gvs_msg  type /blck/pet_string.
     
-*** create variables for input and output as needed        
+*** create variables for input and output as needed
+        
 
 
 *** optional: instantiate descendant of /blck/api_cl_auth and assign to 
@@ -1414,6 +1458,8 @@ Logs out current logged in user session
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 0.
+*       handle code 0
       when others.
 * handle the general case..
     endcase.
@@ -1455,7 +1501,6 @@ This can only be done by the logged in user.
 *   for parameter i_body:
 *   a reference to model type /BLCK/PET_USER
     data gm_body type /BLCK/PET_USER.
-
 *   for parameter i_username:
 *   a simple ABAP primitive of type /BLCK/PET_STRING
     data gvs_username type /BLCK/PET_STRING.
@@ -1495,6 +1540,10 @@ This can only be done by the logged in user.
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 400.
+*       handle code 400
+      when 404.
+*       handle code 404
       when others.
 * handle the general case..
     endcase.
@@ -1519,7 +1568,7 @@ Name | Type | Description
 * * *
 <a name="markdown-header-model-api_response"></a> 
 
-# Model: api_response
+# Model: ApiResponse
 
 
 
@@ -1528,44 +1577,47 @@ Name | Type | Description
 *** model api_response example
 
 * create our variables..
-    data gcl_api_response type ref to /blck/mdl_cl_api_response.
+    data gr_api_response type /blck/pet_api_response.
     
 * instantiate model and call the setters to set values..
-    gcl_api_response = /blck/mdl_cl_api_response=>create( ).
-    gcl_api_response->set_code( 42 ). " (type i)
-    gcl_api_response->set_type( 'ipsum lorem' ). " (type string)
-    gcl_api_response->set_message( 'ipsum lorem' ). " (type string)
+    gr_api_response-code = 42. " (type /BLCK/PET_INT)
+
+    gr_api_response-type = 'ipsum lorem'. " (type /BLCK/PET_STRING)
+
+    gr_api_response-message = 'ipsum lorem'. " (type /BLCK/PET_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_api_response(
-    	exporting
-    		i_api_response = gcl_api_response ).
+      exporting
+        i_api_response = gr_api_response ).
     		
-    clear gcl_api_response.
+    clear gr_api_response.
     
 * fetch new instance from example API method
-    gcl_api_response = gcl_exampleapi->get_api_response(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_api_response(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_api_response ).
     		
-    l_code = gcl_api_response->get_code( ). " (type i)
-    l_type = gcl_api_response->get_type( ). " (type string)
-    l_message = gcl_api_response->get_message( ). " (type string)
+    write: gr_api_response-code. " (type /BLCK/PET_INT)
+    write: gr_api_response-type. " (type /BLCK/PET_STRING)
+    write: gr_api_response-message. " (type /BLCK/PET_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**code** | i |  | [optional] [default to null]
-**type** | string |  | [optional] [default to null]
-**message** | string |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**code** | /BLCK/PET_INT | 
+**type** | /BLCK/PET_STRING | 
+**message** | /BLCK/PET_STRING | 
 
 * * *
 <a name="markdown-header-model-category"></a> 
 
-# Model: category
+# Model: Category
 
 
 
@@ -1574,41 +1626,43 @@ Name | Type | Description | Notes
 *** model category example
 
 * create our variables..
-    data gcl_category type ref to /blck/mdl_cl_category.
+    data gr_category type /blck/pet_category.
     
 * instantiate model and call the setters to set values..
-    gcl_category = /blck/mdl_cl_category=>create( ).
-    gcl_category->set_id( 42 ). " (type i)
-    gcl_category->set_name( 'ipsum lorem' ). " (type string)
+    gr_category-id = 42. " (type /BLCK/PET_INT)
+
+    gr_category-name = 'ipsum lorem'. " (type /BLCK/PET_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_category(
-    	exporting
-    		i_category = gcl_category ).
+      exporting
+        i_category = gr_category ).
     		
-    clear gcl_category.
+    clear gr_category.
     
 * fetch new instance from example API method
-    gcl_category = gcl_exampleapi->get_category(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_category(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_category ).
     		
-    l_id = gcl_category->get_id( ). " (type i)
-    l_name = gcl_category->get_name( ). " (type string)
+    write: gr_category-id. " (type /BLCK/PET_INT)
+    write: gr_category-name. " (type /BLCK/PET_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | i |  | [optional] [default to null]
-**name** | string |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**id** | /BLCK/PET_INT | 
+**name** | /BLCK/PET_STRING | 
 
 * * *
 <a name="markdown-header-model-order"></a> 
 
-# Model: order
+# Model: Order
 
 
 
@@ -1617,53 +1671,59 @@ Name | Type | Description | Notes
 *** model order example
 
 * create our variables..
-    data gcl_order type ref to /blck/mdl_cl_order.
+    data gr_order type /blck/pet_order.
     
 * instantiate model and call the setters to set values..
-    gcl_order = /blck/mdl_cl_order=>create( ).
-    gcl_order->set_id( 42 ). " (type i)
-    gcl_order->set_pet_id( 42 ). " (type i)
-    gcl_order->set_quantity( 42 ). " (type i)
-    gcl_order->set_ship_date( l_ship_date ). " (type timestamp)
-    gcl_order->set_status( 'ipsum lorem' ). " (type string)
-    gcl_order->set_complete( 'X' ). " (type flag)
+    gr_order-id = 42. " (type /BLCK/PET_INT)
+
+    gr_order-pet_id = 42. " (type /BLCK/PET_INT)
+
+    gr_order-quantity = 42. " (type /BLCK/PET_INT)
+
+    gr_order-ship_date = l_ship_date. " (type /BLCK/PET_TIMESTAMP)
+
+    gr_order-status = 'ipsum lorem'. " (type /BLCK/PET_STRING)
+
+    gr_order-complete = 'X'. " (type /BLCK/PET_BOOL)
     
 * pass to example API method
     gcl_exampleapi->update_order(
-    	exporting
-    		i_order = gcl_order ).
+      exporting
+        i_order = gr_order ).
     		
-    clear gcl_order.
+    clear gr_order.
     
 * fetch new instance from example API method
-    gcl_order = gcl_exampleapi->get_order(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_order(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_order ).
     		
-    l_id = gcl_order->get_id( ). " (type i)
-    l_pet_id = gcl_order->get_pet_id( ). " (type i)
-    l_quantity = gcl_order->get_quantity( ). " (type i)
-    l_ship_date = gcl_order->get_ship_date( ). " (type timestamp)
-    l_status = gcl_order->get_status( ). " (type string)
-    l_complete = gcl_order->get_complete( ). " (type flag)
+    write: gr_order-id. " (type /BLCK/PET_INT)
+    write: gr_order-pet_id. " (type /BLCK/PET_INT)
+    write: gr_order-quantity. " (type /BLCK/PET_INT)
+    write: gr_order-ship_date. " (type /BLCK/PET_TIMESTAMP)
+    write: gr_order-status. " (type /BLCK/PET_STRING)
+    write: gr_order-complete. " (type /BLCK/PET_BOOL)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | i |  | [optional] [default to null]
-**pet_id** | i |  | [optional] [default to null]
-**quantity** | i |  | [optional] [default to null]
-**ship_date** | timestamp |  | [optional] [default to null]
-**status** | string | Order Status | [optional] [default to null]
-**complete** | flag |  | [optional] [default to false]
+Name | Type | Description
+------------ | ------------- | -------------
+**id** | /BLCK/PET_INT | 
+**pet_id** | /BLCK/PET_INT | 
+**quantity** | /BLCK/PET_INT | 
+**ship_date** | /BLCK/PET_TIMESTAMP | 
+**status** | /BLCK/PET_STRING | Order Status
+**complete** | /BLCK/PET_BOOL | 
 
 * * *
 <a name="markdown-header-model-tag"></a> 
 
-# Model: tag
+# Model: Tag
 
 
 
@@ -1672,41 +1732,43 @@ Name | Type | Description | Notes
 *** model tag example
 
 * create our variables..
-    data gcl_tag type ref to /blck/mdl_cl_tag.
+    data gr_tag type /blck/pet_tag.
     
 * instantiate model and call the setters to set values..
-    gcl_tag = /blck/mdl_cl_tag=>create( ).
-    gcl_tag->set_id( 42 ). " (type i)
-    gcl_tag->set_name( 'ipsum lorem' ). " (type string)
+    gr_tag-id = 42. " (type /BLCK/PET_INT)
+
+    gr_tag-name = 'ipsum lorem'. " (type /BLCK/PET_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_tag(
-    	exporting
-    		i_tag = gcl_tag ).
+      exporting
+        i_tag = gr_tag ).
     		
-    clear gcl_tag.
+    clear gr_tag.
     
 * fetch new instance from example API method
-    gcl_tag = gcl_exampleapi->get_tag(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_tag(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_tag ).
     		
-    l_id = gcl_tag->get_id( ). " (type i)
-    l_name = gcl_tag->get_name( ). " (type string)
+    write: gr_tag-id. " (type /BLCK/PET_INT)
+    write: gr_tag-name. " (type /BLCK/PET_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | i |  | [optional] [default to null]
-**name** | string |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**id** | /BLCK/PET_INT | 
+**name** | /BLCK/PET_STRING | 
 
 * * *
 <a name="markdown-header-model-pet"></a> 
 
-# Model: pet
+# Model: Pet
 
 
 
@@ -1715,53 +1777,59 @@ Name | Type | Description | Notes
 *** model pet example
 
 * create our variables..
-    data gcl_pet type ref to /blck/mdl_cl_pet.
+    data gr_pet type /blck/pet_pet.
     
 * instantiate model and call the setters to set values..
-    gcl_pet = /blck/mdl_cl_pet=>create( ).
-    gcl_pet->set_id( 42 ). " (type i)
-    gcl_pet->set_category( l_category ). " (type /BLCK/PET_category)
-    gcl_pet->set_name( 'ipsum lorem' ). " (type string)
-    gcl_pet->set_photo_urls( l_photo_urls ). " (type /blck/api_string_tt)
-    gcl_pet->set_tags( l_tags ). " (type /BLCK/PET_tag_tt)
-    gcl_pet->set_status( 'ipsum lorem' ). " (type string)
+    gr_pet-id = 42. " (type /BLCK/PET_INT)
+
+    gr_pet-category = l_category. " (type /BLCK/PET_CATEGORY)
+
+    gr_pet-name = 'ipsum lorem'. " (type /BLCK/PET_STRING)
+
+    gr_pet-photo_urls = l_photo_urls. " (type /BLCK/PET_STRING_TT)
+
+    gr_pet-tags = l_tags. " (type /BLCK/PET_TAG_TT)
+
+    gr_pet-status = 'ipsum lorem'. " (type /BLCK/PET_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_pet(
-    	exporting
-    		i_pet = gcl_pet ).
+      exporting
+        i_pet = gr_pet ).
     		
-    clear gcl_pet.
+    clear gr_pet.
     
 * fetch new instance from example API method
-    gcl_pet = gcl_exampleapi->get_pet(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_pet(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_pet ).
     		
-    l_id = gcl_pet->get_id( ). " (type i)
-    l_category = gcl_pet->get_category( ). " (type /BLCK/PET_category)
-    l_name = gcl_pet->get_name( ). " (type string)
-    l_photo_urls = gcl_pet->get_photo_urls( ). " (type /blck/api_string_tt)
-    l_tags = gcl_pet->get_tags( ). " (type /BLCK/PET_tag_tt)
-    l_status = gcl_pet->get_status( ). " (type string)
+    write: gr_pet-id. " (type /BLCK/PET_INT)
+    write: gr_pet-category. " (type /BLCK/PET_CATEGORY)
+    write: gr_pet-name. " (type /BLCK/PET_STRING)
+    write: gr_pet-photo_urls. " (type /BLCK/PET_STRING_TT)
+    write: gr_pet-tags. " (type /BLCK/PET_TAG_TT)
+    write: gr_pet-status. " (type /BLCK/PET_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | i |  | [optional] [default to null]
-**category** | /BLCK/PET_category (**[category](#markdown-header-model-category)**) |  | [optional] [default to null]
-**name** | string |  | [default to null]
-**photo_urls** | /blck/api_string_tt |  | [default to null]
-**tags** | /BLCK/PET_tag_tt (**[array of tag](#markdown-header-model-tag)**) |  | [optional] [default to null]
-**status** | string | pet status in the store | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**id** | /BLCK/PET_INT | 
+**category** | /BLCK/PET_CATEGORY (**[category](#markdown-header-model-category)**) | 
+**name** | /BLCK/PET_STRING | 
+**photo_urls** | /BLCK/PET_STRING_TT | 
+**tags** | /BLCK/PET_TAG_TT (**[array of tag](#markdown-header-model-tag)**) | 
+**status** | /BLCK/PET_STRING | pet status in the store
 
 * * *
 <a name="markdown-header-model-user"></a> 
 
-# Model: user
+# Model: User
 
 
 
@@ -1770,52 +1838,60 @@ Name | Type | Description | Notes
 *** model user example
 
 * create our variables..
-    data gcl_user type ref to /blck/mdl_cl_user.
+    data gr_user type /blck/pet_user.
     
 * instantiate model and call the setters to set values..
-    gcl_user = /blck/mdl_cl_user=>create( ).
-    gcl_user->set_id( 42 ). " (type i)
-    gcl_user->set_username( 'ipsum lorem' ). " (type string)
-    gcl_user->set_first_name( 'ipsum lorem' ). " (type string)
-    gcl_user->set_last_name( 'ipsum lorem' ). " (type string)
-    gcl_user->set_email( 'ipsum lorem' ). " (type string)
-    gcl_user->set_password( 'ipsum lorem' ). " (type string)
-    gcl_user->set_phone( 'ipsum lorem' ). " (type string)
-    gcl_user->set_user_status( 42 ). " (type i)
+    gr_user-id = 42. " (type /BLCK/PET_INT)
+
+    gr_user-username = 'ipsum lorem'. " (type /BLCK/PET_STRING)
+
+    gr_user-first_name = 'ipsum lorem'. " (type /BLCK/PET_STRING)
+
+    gr_user-last_name = 'ipsum lorem'. " (type /BLCK/PET_STRING)
+
+    gr_user-email = 'ipsum lorem'. " (type /BLCK/PET_STRING)
+
+    gr_user-password = 'ipsum lorem'. " (type /BLCK/PET_STRING)
+
+    gr_user-phone = 'ipsum lorem'. " (type /BLCK/PET_STRING)
+
+    gr_user-user_status = 42. " (type /BLCK/PET_INT)
     
 * pass to example API method
     gcl_exampleapi->update_user(
-    	exporting
-    		i_user = gcl_user ).
+      exporting
+        i_user = gr_user ).
     		
-    clear gcl_user.
+    clear gr_user.
     
 * fetch new instance from example API method
-    gcl_user = gcl_exampleapi->get_user(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_user(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_user ).
     		
-    l_id = gcl_user->get_id( ). " (type i)
-    l_username = gcl_user->get_username( ). " (type string)
-    l_first_name = gcl_user->get_first_name( ). " (type string)
-    l_last_name = gcl_user->get_last_name( ). " (type string)
-    l_email = gcl_user->get_email( ). " (type string)
-    l_password = gcl_user->get_password( ). " (type string)
-    l_phone = gcl_user->get_phone( ). " (type string)
-    l_user_status = gcl_user->get_user_status( ). " (type i)
+    write: gr_user-id. " (type /BLCK/PET_INT)
+    write: gr_user-username. " (type /BLCK/PET_STRING)
+    write: gr_user-first_name. " (type /BLCK/PET_STRING)
+    write: gr_user-last_name. " (type /BLCK/PET_STRING)
+    write: gr_user-email. " (type /BLCK/PET_STRING)
+    write: gr_user-password. " (type /BLCK/PET_STRING)
+    write: gr_user-phone. " (type /BLCK/PET_STRING)
+    write: gr_user-user_status. " (type /BLCK/PET_INT)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | i |  | [optional] [default to null]
-**username** | string |  | [optional] [default to null]
-**first_name** | string |  | [optional] [default to null]
-**last_name** | string |  | [optional] [default to null]
-**email** | string |  | [optional] [default to null]
-**password** | string |  | [optional] [default to null]
-**phone** | string |  | [optional] [default to null]
-**user_status** | i | User Status | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**id** | /BLCK/PET_INT | 
+**username** | /BLCK/PET_STRING | 
+**first_name** | /BLCK/PET_STRING | 
+**last_name** | /BLCK/PET_STRING | 
+**email** | /BLCK/PET_STRING | 
+**password** | /BLCK/PET_STRING | 
+**phone** | /BLCK/PET_STRING | 
+**user_status** | /BLCK/PET_INT | User Status
 

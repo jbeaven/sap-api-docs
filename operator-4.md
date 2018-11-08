@@ -25,23 +25,22 @@ Creates a new record in the command resource. It returns a JSON object containin
 *   for parameter i_body:
 *   a reference to model type /BLCK/OP4_COMMAND
     data gm_body type /BLCK/OP4_COMMAND.
-
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_COMMAND_STATUS
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_COMMAND_STATUS
     data gr_http200 type /BLCK/OP4_COMMAND_STATUS.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -115,13 +114,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_COMMAND_STATUS (**[CommandStatus](#markdown-header-model-)**) | OK, entry created. Command id will be returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | The service does not provide commands
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Conflict, ressource could not be created. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_COMMAND_STATUS (**[CommandStatus](#markdown-header-model-command_status)**) | OK, entry created. Command id will be returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide commands
+ 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -152,37 +151,32 @@ Some services (not all) expose access to documents. All documents available thro
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_offset:
 *   a simple ABAP primitive of type /BLCK/OP4_INT
     data gvi_offset type /BLCK/OP4_INT.
-
 *   for parameter i_limit:
 *   a simple ABAP primitive of type /BLCK/OP4_INT
     data gvi_limit type /BLCK/OP4_INT.
-
 *   for parameter i_sort:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sort type /BLCK/OP4_STRING.
-
 *   for parameter i_scope:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_scope type /BLCK/OP4_STRING.
-
 *   for parameter i_embed:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_embed type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY_TT
     data gr_http200 type /BLCK/OP4_REPO_ENTRY_TT.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -268,12 +262,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_REPO_ENTRY_TT (**[array](#markdown-header-model-)**) | OK, collection of entries is returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | The service does not provide a repository
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_REPO_ENTRY_TT (**[array](#markdown-header-model-repo_entry)**) | OK, collection of entries is returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide a repository
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -304,23 +298,22 @@ Creates a new record in the current Repository, inside the root collection, and 
 *   for parameter i_body:
 *   a reference to model type /BLCK/OP4_BASEREPOENTRY
     data gm_body type /BLCK/OP4_BASEREPOENTRY.
-
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY
     data gr_http200 type /BLCK/OP4_REPO_ENTRY.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -390,13 +383,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-)**) | OK, entry created. Entry metadata returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | The service does not provide a repository
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Conflict, ressource could not be created. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry created. Entry metadata returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide a repository
+ 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -427,25 +420,23 @@ Removes the current entry from the repository. This will not only remove the ref
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_uuid type /BLCK/OP4_STRING.
-
 *   for parameter i_force:
 *   a simple ABAP primitive of type /BLCK/OP4_BOOL
     data gv_force type /BLCK/OP4_BOOL.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/OP4_TASK_TT
+*   when the result of the call is HTTP409 we expect type /BLCK/OP4_TASK_TT
     data gr_http409 type /BLCK/OP4_TASK_TT.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -485,6 +476,8 @@ Removes the current entry from the repository. This will not only remove the ref
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 204.
+*       handle code 204
       when 401.
 *       do something with gr_http401 (type /BLCK/OP4_ERROR)
       when 403.
@@ -542,21 +535,20 @@ Given a 'uuid' parameter, this route retrieves an entry's metadata. The entry ma
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_uuid type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY
     data gr_http200 type /BLCK/OP4_REPO_ENTRY.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -621,12 +613,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-)**) | OK, entry metadata returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | The given uuid was not found.
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry metadata returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The given uuid was not found.
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -657,27 +649,25 @@ Update the given entry's metadata. Only data given with the patch will be change
 *   for parameter i_body:
 *   a reference to model type /BLCK/OP4_BASEREPOENTRY
     data gm_body type /BLCK/OP4_BASEREPOENTRY.
-
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_uuid type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY
     data gr_http200 type /BLCK/OP4_REPO_ENTRY.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -751,13 +741,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-)**) | OK, entry metadata replaced, new metadata returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | No entry found at the given &#x27;uuid&#x27;.
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry metadata replaced, new metadata returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | No entry found at the given &#x27;uuid&#x27;.
+ 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -788,29 +778,27 @@ If the entry under the given uuid is a collection, then a POST request to this r
 *   for parameter i_body:
 *   a reference to model type /BLCK/OP4_BASEREPOENTRY
     data gm_body type /BLCK/OP4_BASEREPOENTRY.
-
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_uuid type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY
     data gr_http200 type /BLCK/OP4_REPO_ENTRY.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP405 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP405 we expect type /BLCK/OP4_ERROR
     data gr_http405 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -887,14 +875,14 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-)**) | OK, new entry created, metadata of the entry returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | No entry found at the given &#x27;uuid&#x27;.
- 405 | **e_405** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Method not allowed. The entry under &#x27;uuid&#x27; is not a collection. 
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, new entry created, metadata of the entry returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | No entry found at the given &#x27;uuid&#x27;.
+ 405 | **e_405** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Method not allowed. The entry under &#x27;uuid&#x27; is not a collection. 
+ 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -925,27 +913,25 @@ Completely replace the metadata record of the given entry. Only record metadata 
 *   for parameter i_body:
 *   a reference to model type /BLCK/OP4_BASEREPOENTRY
     data gm_body type /BLCK/OP4_BASEREPOENTRY.
-
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_uuid type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY
     data gr_http200 type /BLCK/OP4_REPO_ENTRY.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -1020,13 +1006,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-)**) | OK, entry metadata replaced, new metadata returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | No entry found under the given &#x27;uuid&#x27;.
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry metadata replaced, new metadata returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | No entry found under the given &#x27;uuid&#x27;.
+ 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -1057,21 +1043,20 @@ Returns a JSON object containing the status of the command. Command resources ar
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_cid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_cid type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_COMMAND_STATUS
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_COMMAND_STATUS
     data gr_http200 type /BLCK/OP4_COMMAND_STATUS.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -1136,12 +1121,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_COMMAND_STATUS (**[CommandStatus](#markdown-header-model-)**) | OK, status of command resource is returned
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | The service does not provide the given resource.
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_COMMAND_STATUS (**[CommandStatus](#markdown-header-model-command_status)**) | OK, status of command resource is returned
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide the given resource.
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -1172,37 +1157,32 @@ Some services (not all) expose access to documents. All documents available thro
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_uuid type /BLCK/OP4_STRING.
-
 *   for parameter i_offset:
 *   a simple ABAP primitive of type /BLCK/OP4_INT
     data gvi_offset type /BLCK/OP4_INT.
-
 *   for parameter i_limit:
 *   a simple ABAP primitive of type /BLCK/OP4_INT
     data gvi_limit type /BLCK/OP4_INT.
-
 *   for parameter i_sort:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sort type /BLCK/OP4_STRING.
-
 *   for parameter i_embed:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_embed type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY_TT
     data gr_http200 type /BLCK/OP4_REPO_ENTRY_TT.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -1289,12 +1269,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_REPO_ENTRY_TT (**[array](#markdown-header-model-)**) | OK, collection of entries is returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | The service does not provide a repository
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_REPO_ENTRY_TT (**[array](#markdown-header-model-repo_entry)**) | OK, collection of entries is returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide a repository
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -1329,13 +1309,13 @@ Deletes a single ConfigItem at the given path or all ConfigItems in the whole tr
 *   for parameter i_path:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_path type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_CONFIG_ITEM
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_CONFIG_ITEM
     data gr_http200 type /BLCK/OP4_CONFIG_ITEM.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -1371,6 +1351,8 @@ Deletes a single ConfigItem at the given path or all ConfigItems in the whole tr
 *       do something with gr_http200 (type /BLCK/OP4_CONFIG_ITEM)
       when 401.
 *       do something with gr_http401 (type /BLCK/OP4_ERROR)
+      when 403.
+*       handle code 403
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
       when 0.
@@ -1390,11 +1372,11 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-)**) | OK, configuration deleted.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
+ 200 | **e_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-config_item)**) | OK, configuration deleted.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
  403 | value not returned |  | Forbidden. User lacks access rights to change configuration. schema:   _ref: &#x27;#/definitions/Error&#x27; 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -1425,21 +1407,20 @@ Use this route to browse the configuration. Configuration is structured unix fil
 *   for parameter i_path:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_path type /BLCK/OP4_STRING.
-
 *   for parameter i_keys:
 *   a simple ABAP primitive of type /BLCK/OP4_BOOL
     data gv_keys type /BLCK/OP4_BOOL.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_STRING
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_STRING
     data gr_http200 type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -1508,11 +1489,11 @@ Name | Type | Description
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
  200 | **e_200** | /BLCK/OP4_STRING | OK, configuration items returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | The given ConfigItem was not found.
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The given ConfigItem was not found.
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -1543,17 +1524,16 @@ Stores the ConfigItem in the request body at the given path.
 *   for parameter i_body:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_body type /BLCK/OP4_STRING.
-
 *   for parameter i_path:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_path type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_CONFIG_ITEM
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_CONFIG_ITEM
     data gr_http200 type /BLCK/OP4_CONFIG_ITEM.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -1591,6 +1571,8 @@ Stores the ConfigItem in the request body at the given path.
 *       do something with gr_http200 (type /BLCK/OP4_CONFIG_ITEM)
       when 401.
 *       do something with gr_http401 (type /BLCK/OP4_ERROR)
+      when 403.
+*       handle code 403
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
       when 0.
@@ -1611,11 +1593,11 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-)**) | OK, configuration stored.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
+ 200 | **e_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-config_item)**) | OK, configuration stored.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
  403 | value not returned |  | Forbidden. User lacks access rights to change configuration. schema:   _ref: &#x27;#/definitions/Error&#x27; 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -1650,17 +1632,17 @@ FIXME
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_SERVICE
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_SERVICE
     data gr_http200 type /BLCK/OP4_SERVICE.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -1721,12 +1703,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_SERVICE (**[Service](#markdown-header-model-)**) | OK, service metadata is returned
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks acces rights to access the service metadata. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | The requested Service was not found.
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_SERVICE (**[Service](#markdown-header-model-service)**) | OK, service metadata is returned
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service metadata. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The requested Service was not found.
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -1757,21 +1739,20 @@ A POST call to this route will create new jobs and return their connector id's (
 *   for parameter i_body:
 *   a reference to model type /BLCK/OP4_CID_COMMAND
     data gm_body type /BLCK/OP4_CID_COMMAND.
-
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_CID_STATUS
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_CID_STATUS
     data gr_http200 type /BLCK/OP4_CID_STATUS.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -1837,12 +1818,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_CID_STATUS (**[CidStatus](#markdown-header-model-)**) | OK, task data for update is returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks acces rights to access the service list. 
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Conflict, ressource could not be created. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_CID_STATUS (**[CidStatus](#markdown-header-model-cid_status)**) | OK, task data for update is returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service list. 
+ 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -1873,21 +1854,20 @@ A PUT call to this route returns an array with status and output listItems for a
 *   for parameter i_body:
 *   a table type /BLCK/OP4_CID_TASKDATA_TTT
     data gi_body type /BLCK/OP4_CID_TASKDATA_TTT.
-
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_CID_STATUS_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_CID_STATUS_TT
     data gr_http200 type /BLCK/OP4_CID_STATUS_TT.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -1954,12 +1934,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_CID_STATUS_TT (**[array](#markdown-header-model-)**) | OK, array of task data for update is returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks acces rights to access the service list. 
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Conflict, ressource could not be created. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_CID_STATUS_TT (**[array](#markdown-header-model-cid_status)**) | OK, array of task data for update is returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service list. 
+ 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -1986,15 +1966,16 @@ The SEAL Operator user interface provides the user with a set of default panels 
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
-*** create variables for input and output as needed*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_PANEL_ITEM_TT
+*** create variables for input and output as needed
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_PANEL_ITEM_TT
     data gr_http200 type /BLCK/OP4_PANEL_ITEM_TT.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 
@@ -2045,11 +2026,11 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_PANEL_ITEM_TT (**[array](#markdown-header-model-)**) | OK, list of UI panel configurations returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_PANEL_ITEM_TT (**[array](#markdown-header-model-panel_item)**) | OK, list of UI panel configurations returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -2080,15 +2061,15 @@ A GET call to this route returns a JSON object containing the default configurat
 *   for parameter i_pid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_pid type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_CONFIG_ITEM
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_CONFIG_ITEM
     data gr_http200 type /BLCK/OP4_CONFIG_ITEM.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -2145,11 +2126,11 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-)**) | OK, panel configuration is returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-config_item)**) | OK, panel configuration is returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -2184,23 +2165,22 @@ Creates a new record in the command resource. It returns a JSON object containin
 *   for parameter i_body:
 *   a reference to model type /BLCK/OP4_COMMAND
     data gm_body type /BLCK/OP4_COMMAND.
-
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_COMMAND_STATUS
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_COMMAND_STATUS
     data gr_http200 type /BLCK/OP4_COMMAND_STATUS.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -2274,13 +2254,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_COMMAND_STATUS (**[CommandStatus](#markdown-header-model-)**) | OK, entry created. Command id will be returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | The service does not provide commands
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Conflict, ressource could not be created. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_COMMAND_STATUS (**[CommandStatus](#markdown-header-model-command_status)**) | OK, entry created. Command id will be returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide commands
+ 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -2311,37 +2291,32 @@ Some services (not all) expose access to documents. All documents available thro
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_offset:
 *   a simple ABAP primitive of type /BLCK/OP4_INT
     data gvi_offset type /BLCK/OP4_INT.
-
 *   for parameter i_limit:
 *   a simple ABAP primitive of type /BLCK/OP4_INT
     data gvi_limit type /BLCK/OP4_INT.
-
 *   for parameter i_sort:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sort type /BLCK/OP4_STRING.
-
 *   for parameter i_scope:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_scope type /BLCK/OP4_STRING.
-
 *   for parameter i_embed:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_embed type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY_TT
     data gr_http200 type /BLCK/OP4_REPO_ENTRY_TT.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -2427,12 +2402,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_REPO_ENTRY_TT (**[array](#markdown-header-model-)**) | OK, collection of entries is returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | The service does not provide a repository
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_REPO_ENTRY_TT (**[array](#markdown-header-model-repo_entry)**) | OK, collection of entries is returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide a repository
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -2463,23 +2438,22 @@ Creates a new record in the current Repository, inside the root collection, and 
 *   for parameter i_body:
 *   a reference to model type /BLCK/OP4_BASEREPOENTRY
     data gm_body type /BLCK/OP4_BASEREPOENTRY.
-
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY
     data gr_http200 type /BLCK/OP4_REPO_ENTRY.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -2549,13 +2523,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-)**) | OK, entry created. Entry metadata returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | The service does not provide a repository
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Conflict, ressource could not be created. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry created. Entry metadata returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide a repository
+ 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -2586,25 +2560,23 @@ Removes the current entry from the repository. This will not only remove the ref
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_uuid type /BLCK/OP4_STRING.
-
 *   for parameter i_force:
 *   a simple ABAP primitive of type /BLCK/OP4_BOOL
     data gv_force type /BLCK/OP4_BOOL.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/OP4_TASK_TT
+*   when the result of the call is HTTP409 we expect type /BLCK/OP4_TASK_TT
     data gr_http409 type /BLCK/OP4_TASK_TT.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -2644,6 +2616,8 @@ Removes the current entry from the repository. This will not only remove the ref
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 204.
+*       handle code 204
       when 401.
 *       do something with gr_http401 (type /BLCK/OP4_ERROR)
       when 403.
@@ -2701,21 +2675,20 @@ Given a 'uuid' parameter, this route retrieves an entry's metadata. The entry ma
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_uuid type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY
     data gr_http200 type /BLCK/OP4_REPO_ENTRY.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -2780,12 +2753,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-)**) | OK, entry metadata returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | The given uuid was not found.
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry metadata returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The given uuid was not found.
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -2816,27 +2789,25 @@ Update the given entry's metadata. Only data given with the patch will be change
 *   for parameter i_body:
 *   a reference to model type /BLCK/OP4_BASEREPOENTRY
     data gm_body type /BLCK/OP4_BASEREPOENTRY.
-
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_uuid type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY
     data gr_http200 type /BLCK/OP4_REPO_ENTRY.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -2910,13 +2881,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-)**) | OK, entry metadata replaced, new metadata returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | No entry found at the given &#x27;uuid&#x27;.
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry metadata replaced, new metadata returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | No entry found at the given &#x27;uuid&#x27;.
+ 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -2947,27 +2918,25 @@ Completely replace the metadata record of the given entry. Only record metadata 
 *   for parameter i_body:
 *   a reference to model type /BLCK/OP4_BASEREPOENTRY
     data gm_body type /BLCK/OP4_BASEREPOENTRY.
-
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_uuid type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY
     data gr_http200 type /BLCK/OP4_REPO_ENTRY.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -3042,13 +3011,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-)**) | OK, entry metadata replaced, new metadata returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | No entry found under the given &#x27;uuid&#x27;.
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry metadata replaced, new metadata returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | No entry found under the given &#x27;uuid&#x27;.
+ 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -3079,21 +3048,20 @@ Returns a JSON object containing the status of the command. Command resources ar
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_cid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_cid type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_COMMAND_STATUS
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_COMMAND_STATUS
     data gr_http200 type /BLCK/OP4_COMMAND_STATUS.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -3158,12 +3126,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_COMMAND_STATUS (**[CommandStatus](#markdown-header-model-)**) | OK, status of command resource is returned
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | The service does not provide the given resource.
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_COMMAND_STATUS (**[CommandStatus](#markdown-header-model-command_status)**) | OK, status of command resource is returned
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide the given resource.
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -3194,23 +3162,22 @@ Deletes the binary content of a document, leaving metadata only. Note that some 
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_uuid type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP405 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP405 we expect type /BLCK/OP4_ERROR
     data gr_http405 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/OP4_TASK_TT
+*   when the result of the call is HTTP409 we expect type /BLCK/OP4_TASK_TT
     data gr_http409 type /BLCK/OP4_TASK_TT.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -3248,6 +3215,8 @@ Deletes the binary content of a document, leaving metadata only. Note that some 
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 204.
+*       handle code 204
       when 401.
 *       do something with gr_http401 (type /BLCK/OP4_ERROR)
       when 403.
@@ -3306,19 +3275,18 @@ If the entry under 'uuid' is a document, then this route provides access to the 
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_uuid type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -3354,6 +3322,8 @@ If the entry under 'uuid' is a document, then this route provides access to the 
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 200.
+*       handle code 200
       when 401.
 *       do something with gr_http401 (type /BLCK/OP4_ERROR)
       when 403.
@@ -3408,27 +3378,25 @@ Upload binary content of a document. Create if none exists, or replace existing 
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_uuid type /BLCK/OP4_STRING.
-
 *   for parameter i_content:
 *   a simple ABAP primitive of type /BLCK/OP4_BINARY
     data gvs_content type /BLCK/OP4_BINARY.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP406 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP406 we expect type /BLCK/OP4_ERROR
     data gr_http406 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -3468,6 +3436,8 @@ Upload binary content of a document. Create if none exists, or replace existing 
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 204.
+*       handle code 204
       when 401.
 *       do something with gr_http401 (type /BLCK/OP4_ERROR)
       when 403.
@@ -3527,19 +3497,18 @@ If the entry under 'uuid' is a document, then this route provides access to the 
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_uuid type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -3575,6 +3544,8 @@ If the entry under 'uuid' is a document, then this route provides access to the 
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 200.
+*       handle code 200
       when 401.
 *       do something with gr_http401 (type /BLCK/OP4_ERROR)
       when 403.
@@ -3633,21 +3604,19 @@ This route triggers a connector specific function and returns the result. The fu
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_fid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_fid type /BLCK/OP4_STRING.
-
 *   for parameter i_params:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_params type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -3686,6 +3655,8 @@ This route triggers a connector specific function and returns the result. The fu
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 200.
+*       handle code 200
       when 401.
 *       do something with gr_http401 (type /BLCK/OP4_ERROR)
       when 404.
@@ -3739,15 +3710,15 @@ For panels static configuration data is sometimes not sufficient, dynamically re
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_FUNCTIONS
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_FUNCTIONS
     data gr_http200 type /BLCK/OP4_FUNCTIONS.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -3805,11 +3776,11 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_FUNCTIONS (**[Functions](#markdown-header-model-)**) | OK, list of entries is returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | The service does not provide functions
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_FUNCTIONS (**[Functions](#markdown-header-model-functions)**) | OK, list of entries is returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide functions
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -3844,29 +3815,26 @@ This is the list of Lists of the authenticated user. Use metadata property names
 *   for parameter i_offset:
 *   a simple ABAP primitive of type /BLCK/OP4_INT
     data gvi_offset type /BLCK/OP4_INT.
-
 *   for parameter i_limit:
 *   a simple ABAP primitive of type /BLCK/OP4_INT
     data gvi_limit type /BLCK/OP4_INT.
-
 *   for parameter i_sort:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sort type /BLCK/OP4_STRING.
-
 *   for parameter i_embed:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_embed type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_LIST_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST_TT
     data gr_http200 type /BLCK/OP4_LIST_TT.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -3945,12 +3913,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST_TT (**[array](#markdown-header-model-)**) | OK, collection of lists is returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | No lists available
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_LIST_TT (**[array](#markdown-header-model-list)**) | OK, collection of lists is returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | No lists available
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -3981,15 +3949,15 @@ Deletes the current list inclusive all it's items, but not the documents.
 *   for parameter i_lid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_lid type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -4022,6 +3990,8 @@ Deletes the current list inclusive all it's items, but not the documents.
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 204.
+*       handle code 204
       when 401.
 *       do something with gr_http401 (type /BLCK/OP4_ERROR)
       when 403.
@@ -4075,21 +4045,20 @@ This is the root record for a given list. It contains List-level metadata. Use t
 *   for parameter i_lid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_lid type /BLCK/OP4_STRING.
-
 *   for parameter i_embed:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_embed type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_LIST
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST
     data gr_http200 type /BLCK/OP4_LIST.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -4156,12 +4125,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-)**) | OK, metadata is returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Not found
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | OK, metadata is returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -4192,33 +4161,29 @@ This is the collection of items currently in the List. For performance reasons, 
 *   for parameter i_lid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_lid type /BLCK/OP4_STRING.
-
 *   for parameter i_offset:
 *   a simple ABAP primitive of type /BLCK/OP4_INT
     data gvi_offset type /BLCK/OP4_INT.
-
 *   for parameter i_limit:
 *   a simple ABAP primitive of type /BLCK/OP4_INT
     data gvi_limit type /BLCK/OP4_INT.
-
 *   for parameter i_sort:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sort type /BLCK/OP4_STRING.
-
 *   for parameter i_embed:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_embed type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_LIST_ITEM_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST_ITEM_TT
     data gr_http200 type /BLCK/OP4_LIST_ITEM_TT.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -4297,12 +4262,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST_ITEM_TT (**[array](#markdown-header-model-)**) | OK, collection of list items is returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Not found
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_LIST_ITEM_TT (**[array](#markdown-header-model-list_item)**) | OK, collection of list items is returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -4333,19 +4298,18 @@ Deletes an entry from a list. Only the list entry is removed, not the document. 
 *   for parameter i_lid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_lid type /BLCK/OP4_STRING.
-
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_id type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -4381,6 +4345,8 @@ Deletes an entry from a list. Only the list entry is removed, not the document. 
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 204.
+*       handle code 204
       when 401.
 *       do something with gr_http401 (type /BLCK/OP4_ERROR)
       when 403.
@@ -4435,21 +4401,20 @@ Get metadata record of a list item. Note that the 'id' is NOT the index, which i
 *   for parameter i_lid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_lid type /BLCK/OP4_STRING.
-
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_id type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_LIST_ITEM
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST_ITEM
     data gr_http200 type /BLCK/OP4_LIST_ITEM.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -4514,12 +4479,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-)**) | OK, List item data is returned
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Not found
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, List item data is returned
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -4550,31 +4515,28 @@ Update the metadata record of the current list item, adding missing entries but 
 *   for parameter i_lid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_lid type /BLCK/OP4_STRING.
-
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_id type /BLCK/OP4_STRING.
-
 *   for parameter i_body:
 *   a reference to model type /BLCK/OP4_LIST_ITEM
     data gm_body type /BLCK/OP4_LIST_ITEM.
-
 *   for parameter i_href:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_href type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_LIST_ITEM
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST_ITEM
     data gr_http200 type /BLCK/OP4_LIST_ITEM.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -4654,13 +4616,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-)**) | OK, List item is updated, item data returned
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Not found
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, List item is updated, item data returned
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -4691,27 +4653,25 @@ Update and replace the entire metadata record of the current list item. Note tha
 *   for parameter i_body:
 *   a reference to model type /BLCK/OP4_LIST_ITEM
     data gm_body type /BLCK/OP4_LIST_ITEM.
-
 *   for parameter i_lid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_lid type /BLCK/OP4_STRING.
-
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_id type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_LIST_ITEM
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST_ITEM
     data gr_http200 type /BLCK/OP4_LIST_ITEM.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -4785,13 +4745,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-)**) | OK, List item is updated, item data returned
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Not found
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, List item is updated, item data returned
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -4822,27 +4782,25 @@ Lists are are ordered sets, items have consecutive indices (0..n). Posting this 
 *   for parameter i_lid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_lid type /BLCK/OP4_STRING.
-
 *   for parameter i_body:
 *   a reference to model type /BLCK/OP4_LIST_ITEM
     data gm_body type /BLCK/OP4_LIST_ITEM.
-
 *   for parameter i_href:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_href type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_LIST_ITEM
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST_ITEM
     data gr_http200 type /BLCK/OP4_LIST_ITEM.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -4916,13 +4874,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-)**) | OK, document reference has been added to the list.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Not found
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Conflict, resource could not be created. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, document reference has been added to the list.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be created. See error message for details. 
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -4953,23 +4911,22 @@ Updates or adds part of the List metadata. Only given metadata will be replaced 
 *   for parameter i_lid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_lid type /BLCK/OP4_STRING.
-
 *   for parameter i_body:
 *   a reference to model type /BLCK/OP4_LIST
     data gm_body type /BLCK/OP4_LIST.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_LIST
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST
     data gr_http200 type /BLCK/OP4_LIST.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -5044,13 +5001,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-)**) | OK, document list updated. New metadata returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Not found
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | OK, document list updated. New metadata returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -5081,23 +5038,22 @@ This will completely replace the existing List metadata (if any) by the given me
 *   for parameter i_lid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_lid type /BLCK/OP4_STRING.
-
 *   for parameter i_body:
 *   a reference to model type /BLCK/OP4_LIST
     data gm_body type /BLCK/OP4_LIST.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_LIST
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST
     data gr_http200 type /BLCK/OP4_LIST.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -5172,13 +5128,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-)**) | OK, document list updated. New metadata returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Not found
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | OK, document list updated. New metadata returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -5209,21 +5165,20 @@ Creates a new entry in the list of Lists. The `Content-Type` HTTP header defines
 *   for parameter i_body:
 *   a reference to model type /BLCK/OP4_LIST
     data gm_body type /BLCK/OP4_LIST.
-
 *   for parameter i_href:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_href type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_LIST
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST
     data gr_http200 type /BLCK/OP4_LIST.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -5295,12 +5250,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-)**) | OK, list created. List metadata returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Conflict, resource could not be created. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | OK, list created. List metadata returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be created. See error message for details. 
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -5335,23 +5290,21 @@ Every user has his own list of messages containing info, warning and error messa
 *   for parameter i_offset:
 *   a simple ABAP primitive of type /BLCK/OP4_INT
     data gvi_offset type /BLCK/OP4_INT.
-
 *   for parameter i_limit:
 *   a simple ABAP primitive of type /BLCK/OP4_INT
     data gvi_limit type /BLCK/OP4_INT.
-
 *   for parameter i_sort:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sort type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_MESSAGE_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_MESSAGE_TT
     data gr_http200 type /BLCK/OP4_MESSAGE_TT.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -5418,11 +5371,11 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_MESSAGE_TT (**[array](#markdown-header-model-)**) | OK, list of entries is returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | The service does not provide messages
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_MESSAGE_TT (**[array](#markdown-header-model-message)**) | OK, list of entries is returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide messages
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -5453,17 +5406,17 @@ Creates a new record in the message list and assigns the posted data. The server
 *   for parameter i_body:
 *   a reference to model type /BLCK/OP4_MESSAGE
     data gm_body type /BLCK/OP4_MESSAGE.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_MESSAGE
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_MESSAGE
     data gr_http200 type /BLCK/OP4_MESSAGE.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -5529,12 +5482,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_MESSAGE (**[Message](#markdown-header-model-)**) | OK, entry created. Entry metadata returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | The service does not provide messages
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Conflict, ressource could not be created. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_MESSAGE (**[Message](#markdown-header-model-message)**) | OK, entry created. Entry metadata returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide messages
+ 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -5565,21 +5518,20 @@ Update a message entry. Only data given with the patch will be  changed/added; n
 *   for parameter i_body:
 *   a reference to model type /BLCK/OP4_MESSAGE
     data gm_body type /BLCK/OP4_MESSAGE.
-
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_uuid type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_MESSAGE
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_MESSAGE
     data gr_http200 type /BLCK/OP4_MESSAGE.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -5649,12 +5601,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_MESSAGE (**[Message](#markdown-header-model-)**) | OK, message entry updated, new message returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | The service does not provide messages
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Conflict, ressource could not be created. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_MESSAGE (**[Message](#markdown-header-model-message)**) | OK, message entry updated, new message returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide messages
+ 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -5685,15 +5637,16 @@ The SEAL Operator user interface provides the user with a set of panels to use. 
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
-*** create variables for input and output as needed*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_CONFIG_ITEM_TT
+*** create variables for input and output as needed
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_CONFIG_ITEM_TT
     data gr_http200 type /BLCK/OP4_CONFIG_ITEM_TT.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 
@@ -5744,11 +5697,11 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_CONFIG_ITEM_TT (**[array](#markdown-header-model-)**) | OK, list of UI panel configurations returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_CONFIG_ITEM_TT (**[array](#markdown-header-model-config_item)**) | OK, list of UI panel configurations returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -5779,13 +5732,13 @@ User-defined panel configurations can be delete by a DELETE request to this rout
 *   for parameter i_pid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_pid type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_CONFIG_ITEM
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_CONFIG_ITEM
     data gr_http200 type /BLCK/OP4_CONFIG_ITEM.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -5821,6 +5774,8 @@ User-defined panel configurations can be delete by a DELETE request to this rout
 *       do something with gr_http200 (type /BLCK/OP4_CONFIG_ITEM)
       when 401.
 *       do something with gr_http401 (type /BLCK/OP4_ERROR)
+      when 403.
+*       handle code 403
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
       when 0.
@@ -5840,11 +5795,11 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-)**) | OK, panel configuration was deleted, return deleted configuration.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
+ 200 | **e_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-config_item)**) | OK, panel configuration was deleted, return deleted configuration.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
  403 | value not returned |  | Forbidden. The current user lacks access rights, or is trying to delete a read-only default configuration. schema:   _ref: &#x27;#/definitions/Error&#x27; 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -5875,17 +5830,17 @@ Returns a ConfigItem containing configuration for a stored panel.
 *   for parameter i_pid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_pid type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_CONFIG_ITEM
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_CONFIG_ITEM
     data gr_http200 type /BLCK/OP4_CONFIG_ITEM.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -5946,12 +5901,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-)**) | OK, configuration returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Not found. The given pid is unknown.
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-config_item)**) | OK, configuration returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found. The given pid is unknown.
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -5982,17 +5937,16 @@ A PUT request to a panel configuration will replace the entire stored configurat
 *   for parameter i_body:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_body type /BLCK/OP4_STRING.
-
 *   for parameter i_pid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_pid type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_CONFIG_ITEM
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_CONFIG_ITEM
     data gr_http200 type /BLCK/OP4_CONFIG_ITEM.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -6031,6 +5985,10 @@ A PUT request to a panel configuration will replace the entire stored configurat
 *       do something with gr_http200 (type /BLCK/OP4_CONFIG_ITEM)
       when 401.
 *       do something with gr_http401 (type /BLCK/OP4_ERROR)
+      when 403.
+*       handle code 403
+      when 409.
+*       handle code 409
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
       when 0.
@@ -6051,12 +6009,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-)**) | OK, configuration updated.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
+ 200 | **e_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-config_item)**) | OK, configuration updated.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
  403 | value not returned |  | Forbidden. The current user lacks access rights, or is trying to update a read-only default configuration. schema:   _ref: &#x27;#/definitions/Error&#x27; 
  409 | value not returned |  | Conflict. A panel configuration under the \&quot;name\&quot; given in the ConfigItem already exists. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -6087,15 +6045,15 @@ Users can save panel configurations they intend to (re-)use in later sessions un
 *   for parameter i_body:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_body type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_CONFIG_ITEM
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_CONFIG_ITEM
     data gr_http200 type /BLCK/OP4_CONFIG_ITEM.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -6134,6 +6092,8 @@ Users can save panel configurations they intend to (re-)use in later sessions un
 *       do something with gr_http401 (type /BLCK/OP4_ERROR)
       when 403.
 *       do something with gr_http403 (type /BLCK/OP4_ERROR)
+      when 409.
+*       handle code 409
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
       when 0.
@@ -6153,12 +6113,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-)**) | OK, configuration was saved. The returned configItem contains the generated ID. 
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
+ 200 | **e_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-config_item)**) | OK, configuration was saved. The returned configItem contains the generated ID. 
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
  409 | value not returned |  | Conflict. A panel configuration under the \&quot;name\&quot; given in the ConfigItem already exists. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -6185,15 +6145,16 @@ The SEAL Operator user interface provides the user with a set of default panels 
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
-*** create variables for input and output as needed*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_PANEL_ITEM_TT
+*** create variables for input and output as needed
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_PANEL_ITEM_TT
     data gr_http200 type /BLCK/OP4_PANEL_ITEM_TT.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 
@@ -6244,11 +6205,11 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_PANEL_ITEM_TT (**[array](#markdown-header-model-)**) | OK, list of UI panel configurations returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_PANEL_ITEM_TT (**[array](#markdown-header-model-panel_item)**) | OK, list of UI panel configurations returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -6279,15 +6240,15 @@ A GET call to this route returns a JSON object containing the default configurat
 *   for parameter i_pid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_pid type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_CONFIG_ITEM
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_CONFIG_ITEM
     data gr_http200 type /BLCK/OP4_CONFIG_ITEM.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -6344,11 +6305,11 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-)**) | OK, panel configuration is returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-config_item)**) | OK, panel configuration is returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -6379,15 +6340,16 @@ A GET call to this route will return a list of active services currently availab
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
-*** create variables for input and output as needed*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_SERVICE_TT
+*** create variables for input and output as needed
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_SERVICE_TT
     data gr_http200 type /BLCK/OP4_SERVICE_TT.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 
@@ -6438,11 +6400,11 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_SERVICE_TT (**[array](#markdown-header-model-)**) | OK, collection of services is returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks acces rights to access the service list. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_SERVICE_TT (**[array](#markdown-header-model-service)**) | OK, collection of services is returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service list. 
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -6473,17 +6435,17 @@ FIXME
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_SERVICE
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_SERVICE
     data gr_http200 type /BLCK/OP4_SERVICE.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -6544,12 +6506,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_SERVICE (**[Service](#markdown-header-model-)**) | OK, service metadata is returned
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks acces rights to access the service metadata. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | The requested Service was not found.
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_SERVICE (**[Service](#markdown-header-model-service)**) | OK, service metadata is returned
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service metadata. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The requested Service was not found.
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -6580,15 +6542,16 @@ Get number of currently established sessions of user
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
-*** create variables for input and output as needed*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_SESSION_INFO
+*** create variables for input and output as needed
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_SESSION_INFO
     data gr_http200 type /BLCK/OP4_SESSION_INFO.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 
@@ -6639,11 +6602,11 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_SESSION_INFO (**[SessionInfo](#markdown-header-model-)**) | OK, return object with session information
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks acces rights to access the service list. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_SESSION_INFO (**[SessionInfo](#markdown-header-model-session_info)**) | OK, return object with session information
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service list. 
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -6678,41 +6641,35 @@ This route provides access to the root collection of known tasks for the current
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_offset:
 *   a simple ABAP primitive of type /BLCK/OP4_INT
     data gvi_offset type /BLCK/OP4_INT.
-
 *   for parameter i_limit:
 *   a simple ABAP primitive of type /BLCK/OP4_INT
     data gvi_limit type /BLCK/OP4_INT.
-
 *   for parameter i_sort:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sort type /BLCK/OP4_STRING.
-
 *   for parameter i_input_document:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_input_document type /BLCK/OP4_STRING.
-
 *   for parameter i_embed:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_embed type /BLCK/OP4_STRING.
-
 *   for parameter i_inline_count:
 *   a simple ABAP primitive of type /BLCK/OP4_BOOL
     data gv_inline_count type /BLCK/OP4_BOOL.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_TASK_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_TASK_TT
     data gr_http200 type /BLCK/OP4_TASK_TT.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -6803,12 +6760,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_TASK_TT (**[array](#markdown-header-model-)**) | OK, collection of tasks or count is returned. Example for count: &#x60;&#x60;&#x60; {   count: 0 } &#x60;&#x60;&#x60; 
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Not found
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_TASK_TT (**[array](#markdown-header-model-task)**) | OK, collection of tasks or count is returned. Example for count: &#x60;&#x60;&#x60; {   count: 0 } &#x60;&#x60;&#x60; 
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -6839,23 +6796,22 @@ Adds a new Task to the collection. Given metadata is assigned, input list must b
 *   for parameter i_body:
 *   a reference to model type /BLCK/OP4_TASK
     data gm_body type /BLCK/OP4_TASK.
-
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_TASK
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_TASK
     data gr_http200 type /BLCK/OP4_TASK.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -6934,13 +6890,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_TASK (**[Task](#markdown-header-model-)**) | OK, task created. Task metadata returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Not found
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Conflict, resource could not be created. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_TASK (**[Task](#markdown-header-model-task)**) | OK, task created. Task metadata returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be created. See error message for details. 
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -6971,21 +6927,20 @@ Deletes a Task from the collection. This is only possible if the Task is not cur
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_tid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_tid type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -7022,6 +6977,8 @@ Deletes a Task from the collection. This is only possible if the Task is not cur
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 204.
+*       handle code 204
       when 401.
 *       do something with gr_http401 (type /BLCK/OP4_ERROR)
       when 403.
@@ -7078,29 +7035,26 @@ This route provides access to a Task's root record. The record contains taks met
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_tid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_tid type /BLCK/OP4_STRING.
-
 *   for parameter i_embed:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_embed type /BLCK/OP4_STRING.
-
 *   for parameter i_force:
 *   a simple ABAP primitive of type /BLCK/OP4_BOOL
     data gv_force type /BLCK/OP4_BOOL.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_TASK
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_TASK
     data gr_http200 type /BLCK/OP4_TASK.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -7174,12 +7128,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_TASK (**[Task](#markdown-header-model-)**) | OK. Task metadata returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Not found
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_TASK (**[Task](#markdown-header-model-task)**) | OK. Task metadata returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -7210,27 +7164,25 @@ Does a partial update to the Task metadata. Given metadata replaces existing one
 *   for parameter i_body:
 *   a reference to model type /BLCK/OP4_TASK_METADATA
     data gm_body type /BLCK/OP4_TASK_METADATA.
-
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_tid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_tid type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_TASK
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_TASK
     data gr_http200 type /BLCK/OP4_TASK.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -7303,13 +7255,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_TASK (**[Task](#markdown-header-model-)**) | OK, task updated and returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Not found
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_TASK (**[Task](#markdown-header-model-task)**) | OK, task updated and returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -7340,27 +7292,25 @@ A put call to the task root record completely replaces task metadata, but does n
 *   for parameter i_body:
 *   a reference to model type /BLCK/OP4_TASK_METADATA
     data gm_body type /BLCK/OP4_TASK_METADATA.
-
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_tid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_tid type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_TASK
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_TASK
     data gr_http200 type /BLCK/OP4_TASK.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -7433,13 +7383,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_TASK (**[Task](#markdown-header-model-)**) | OK, task updated and returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Not found
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_TASK (**[Task](#markdown-header-model-task)**) | OK, task updated and returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -7470,25 +7420,23 @@ Trigger a new action on the current task. Currently supported actions are `start
 *   for parameter i_body:
 *   a reference to model type /BLCK/OP4_ACTION
     data gm_body type /BLCK/OP4_ACTION.
-
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_tid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_tid type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -7528,6 +7476,8 @@ Trigger a new action on the current task. Currently supported actions are `start
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 204.
+*       handle code 204
       when 401.
 *       do something with gr_http401 (type /BLCK/OP4_ERROR)
       when 403.
@@ -7585,25 +7535,23 @@ This route provides access to a Task's list of input documents. Input lists of T
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_tid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_tid type /BLCK/OP4_STRING.
-
 *   for parameter i_embed:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_embed type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_LIST
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST
     data gr_http200 type /BLCK/OP4_LIST.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -7673,12 +7621,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-)**) | OK, collection of input list items returned
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Not found
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | OK, collection of input list items returned
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -7709,25 +7657,23 @@ Deletes an item from a Task's input list. The deleted ID is permanently orphaned
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_tid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_tid type /BLCK/OP4_STRING.
-
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_id type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -7767,6 +7713,8 @@ Deletes an item from a Task's input list. The deleted ID is permanently orphaned
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 204.
+*       handle code 204
       when 401.
 *       do something with gr_http401 (type /BLCK/OP4_ERROR)
       when 403.
@@ -7824,25 +7772,23 @@ FIXME
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_tid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_tid type /BLCK/OP4_STRING.
-
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_id type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_LIST_ITEM
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST_ITEM
     data gr_http200 type /BLCK/OP4_LIST_ITEM.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -7911,12 +7857,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-)**) | OK, input list item data returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Not found
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, input list item data returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -7947,31 +7893,28 @@ Updates task input list item metadata, replacing present entries and adding miss
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_tid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_tid type /BLCK/OP4_STRING.
-
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_id type /BLCK/OP4_STRING.
-
 *   for parameter i_body:
 *   a reference to model type /BLCK/OP4_LIST_ITEM
     data gm_body type /BLCK/OP4_LIST_ITEM.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_LIST_ITEM
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST_ITEM
     data gr_http200 type /BLCK/OP4_LIST_ITEM.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -8049,13 +7992,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-)**) | OK, task input list item updated. Item data returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Not found
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, task input list item updated. Item data returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -8086,31 +8029,28 @@ Replaces the task input list item's metadata, including the document reference.
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_tid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_tid type /BLCK/OP4_STRING.
-
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_id type /BLCK/OP4_STRING.
-
 *   for parameter i_body:
 *   a reference to model type /BLCK/OP4_LIST_ITEM
     data gm_body type /BLCK/OP4_LIST_ITEM.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_LIST_ITEM
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST_ITEM
     data gr_http200 type /BLCK/OP4_LIST_ITEM.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -8188,13 +8128,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-)**) | OK, list item updated. Item data returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Not found
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, list item updated. Item data returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -8225,31 +8165,28 @@ Does a partial update to the input list metadata. Given metadata replaces existi
 *   for parameter i_body:
 *   a reference to model type /BLCK/OP4_LIST
     data gm_body type /BLCK/OP4_LIST.
-
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_tid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_tid type /BLCK/OP4_STRING.
-
 *   for parameter i_embed:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_embed type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_LIST
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST
     data gr_http200 type /BLCK/OP4_LIST.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -8333,13 +8270,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-)**) | OK, input list updated and returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Not found
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | OK, input list updated and returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -8370,31 +8307,28 @@ Creates a new entry in the given Task's input list. Given metadata is assigned t
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_tid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_tid type /BLCK/OP4_STRING.
-
 *   for parameter i_body:
 *   a reference to model type /BLCK/OP4_LIST_ITEM
     data gm_body type /BLCK/OP4_LIST_ITEM.
-
 *   for parameter i_href:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_href type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_LIST_ITEM
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST_ITEM
     data gr_http200 type /BLCK/OP4_LIST_ITEM.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -8474,13 +8408,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-)**) | OK, task input list item created, item data returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Not found
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, task input list item created, item data returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -8511,27 +8445,25 @@ A put call to the input list root record completely replaces the metadata, but d
 *   for parameter i_body:
 *   a reference to model type /BLCK/OP4_TASK_METADATA
     data gm_body type /BLCK/OP4_TASK_METADATA.
-
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_tid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_tid type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_LIST
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST
     data gr_http200 type /BLCK/OP4_LIST.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -8604,13 +8536,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-)**) | OK, input list updated and returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Not found
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | OK, input list updated and returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -8641,25 +8573,23 @@ This route provides access to a Task's list of output documents. Output lists of
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_tid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_tid type /BLCK/OP4_STRING.
-
 *   for parameter i_embed:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_embed type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_LIST
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST
     data gr_http200 type /BLCK/OP4_LIST.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -8729,12 +8659,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-)**) | OK, collection of output list items returned
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Not found
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | OK, collection of output list items returned
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -8765,25 +8695,23 @@ This route provides access to individual task output items.
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-
 *   for parameter i_tid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_tid type /BLCK/OP4_STRING.
-
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_id type /BLCK/OP4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_LIST_ITEM
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST_ITEM
     data gr_http200 type /BLCK/OP4_LIST_ITEM.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -8852,12 +8780,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-)**) | OK, output list item data returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Not found
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, output list item data returned.
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -8888,25 +8816,23 @@ This route provides access to the root collection of known tasks for all service
 *   for parameter i_input_document:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_input_document type /BLCK/OP4_STRING.
-
 *   for parameter i_embed:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_embed type /BLCK/OP4_STRING.
-
 *   for parameter i_inline_count:
 *   a simple ABAP primitive of type /BLCK/OP4_BOOL
     data gv_inline_count type /BLCK/OP4_BOOL.
-*   when the the result of the call is HTTP200 we expect type /BLCK/OP4_TASK_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/OP4_TASK_TT
     data gr_http200 type /BLCK/OP4_TASK_TT.
-*   when the the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
     data gr_http0 type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -8980,12 +8906,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_TASK_TT (**[array](#markdown-header-model-)**) | OK, collection of tasks or count is returned. Example for count: &#x60;&#x60;&#x60; {   count: 0 } &#x60;&#x60;&#x60; 
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Not found
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/OP4_TASK_TT (**[array](#markdown-header-model-task)**) | OK, collection of tasks or count is returned. Example for count: &#x60;&#x60;&#x60; {   count: 0 } &#x60;&#x60;&#x60; 
+ 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -8996,7 +8922,7 @@ HTTP Code | Name | Type | Description
 * * *
 <a name="markdown-header-model-action"></a> 
 
-# Model: action
+# Model: Action
 
 
 
@@ -9007,38 +8933,39 @@ HTTP Code | Name | Type | Description
 *** paramters.
 
 * create our variables..
-    data gcl_action type ref to /blck/mdl_cl_action.
+    data gr_action type /blck/op4_action.
     
 * instantiate model and call the setters to set values..
-    gcl_action = /blck/mdl_cl_action=>create( ).
-    gcl_action->set_action( 'ipsum lorem' ). " (type string)
+    gr_action-action = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_action(
-    	exporting
-    		i_action = gcl_action ).
+      exporting
+        i_action = gr_action ).
     		
-    clear gcl_action.
+    clear gr_action.
     
 * fetch new instance from example API method
-    gcl_action = gcl_exampleapi->get_action(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_action(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_action ).
     		
-    l_action = gcl_action->get_action( ). " (type string)
+    write: gr_action-action. " (type /BLCK/OP4_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**action** | string |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**action** | /BLCK/OP4_STRING | 
 
 * * *
 <a name="markdown-header-model-baserepoentry"></a> 
 
-# Model: baserepoentry
+# Model: BaseRepoEntry
 
 
 
@@ -9049,44 +8976,47 @@ Name | Type | Description | Notes
 *** properties and two mandatory properties &#x27;name&#x27; and &#x27;type&#x27;.
 
 * create our variables..
-    data gcl_baserepoentry type ref to /blck/mdl_cl_baserepoentry.
+    data gr_baserepoentry type /blck/op4_baserepoentry.
     
 * instantiate model and call the setters to set values..
-    gcl_baserepoentry = /blck/mdl_cl_baserepoentry=>create( ).
-    gcl_baserepoentry->set_name( 'ipsum lorem' ). " (type string)
-    gcl_baserepoentry->set_type( 'ipsum lorem' ). " (type string)
-    gcl_baserepoentry->set_metadata( 'ipsum lorem' ). " (type string)
+    gr_baserepoentry-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+
+    gr_baserepoentry-type = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+
+    gr_baserepoentry-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_baserepoentry(
-    	exporting
-    		i_baserepoentry = gcl_baserepoentry ).
+      exporting
+        i_baserepoentry = gr_baserepoentry ).
     		
-    clear gcl_baserepoentry.
+    clear gr_baserepoentry.
     
 * fetch new instance from example API method
-    gcl_baserepoentry = gcl_exampleapi->get_baserepoentry(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_baserepoentry(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_baserepoentry ).
     		
-    l_name = gcl_baserepoentry->get_name( ). " (type string)
-    l_type = gcl_baserepoentry->get_type( ). " (type string)
-    l_metadata = gcl_baserepoentry->get_metadata( ). " (type string)
+    write: gr_baserepoentry-name. " (type /BLCK/OP4_STRING)
+    write: gr_baserepoentry-type. " (type /BLCK/OP4_STRING)
+    write: gr_baserepoentry-metadata. " (type /BLCK/OP4_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | string | (File) name of the Entry | [optional] [default to null]
-**type** | string | Type of RepoEntry. | [optional] [default to null]
-**metadata** | string | Metadata assigned to the entry | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**name** | /BLCK/OP4_STRING | (File) name of the Entry
+**type** | /BLCK/OP4_STRING | Type of RepoEntry.
+**metadata** | /BLCK/OP4_STRING | Metadata assigned to the entry
 
 * * *
 <a name="markdown-header-model-cid"></a> 
 
-# Model: cid
+# Model: CID
 
 
 
@@ -9096,35 +9026,35 @@ Name | Type | Description | Notes
 *** An arbitrary id representing a job in the backend system.
 
 * create our variables..
-    data gcl_cid type ref to /blck/mdl_cl_cid.
+    data gr_cid type /blck/op4_cid.
     
-* instantiate model and call the setters to set values..
-    gcl_cid = /blck/mdl_cl_cid=>create( ).
-    
+* instantiate model and call the setters to set values..    
 * pass to example API method
     gcl_exampleapi->update_cid(
-    	exporting
-    		i_cid = gcl_cid ).
+      exporting
+        i_cid = gr_cid ).
     		
-    clear gcl_cid.
+    clear gr_cid.
     
 * fetch new instance from example API method
-    gcl_cid = gcl_exampleapi->get_cid(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_cid(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_cid ).
     		
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+Name | Type | Description
+------------ | ------------- | -------------
 
 * * *
 <a name="markdown-header-model-cid_command"></a> 
 
-# Model: cid_command
+# Model: CidCommand
 
 
 
@@ -9134,41 +9064,43 @@ Name | Type | Description | Notes
 *** A task action and it&#x27;s parameters
 
 * create our variables..
-    data gcl_cid_command type ref to /blck/mdl_cl_cid_command.
+    data gr_cid_command type /blck/op4_cid_command.
     
 * instantiate model and call the setters to set values..
-    gcl_cid_command = /blck/mdl_cl_cid_command=>create( ).
-    gcl_cid_command->set_action( l_action ). " (type /BLCK/OP4_action)
-    gcl_cid_command->set_data( 'ipsum lorem' ). " (type string)
+    gr_cid_command-action = l_action. " (type /BLCK/OP4_ACTION)
+
+    gr_cid_command-data = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_cid_command(
-    	exporting
-    		i_cid_command = gcl_cid_command ).
+      exporting
+        i_cid_command = gr_cid_command ).
     		
-    clear gcl_cid_command.
+    clear gr_cid_command.
     
 * fetch new instance from example API method
-    gcl_cid_command = gcl_exampleapi->get_cid_command(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_cid_command(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_cid_command ).
     		
-    l_action = gcl_cid_command->get_action( ). " (type /BLCK/OP4_action)
-    l_data = gcl_cid_command->get_data( ). " (type string)
+    write: gr_cid_command-action. " (type /BLCK/OP4_ACTION)
+    write: gr_cid_command-data. " (type /BLCK/OP4_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**action** | /BLCK/OP4_action (**[action](#markdown-header-model-action)**) |  | [optional] [default to null]
-**data** | string | Data depending on the action. - start: &#x60;data&#x60; contains complete task data in operator-server internal structure - abort: &#x60;data&#x60; contains tid and cids part of task data to abort - pause: &#x60;data&#x60; contains tid and cids part of task data to pause - resume: &#x60;data&#x60; contains tid and cids part of task data to resume  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**action** | /BLCK/OP4_ACTION (**[action](#markdown-header-model-action)**) | 
+**data** | /BLCK/OP4_STRING | Data depending on the action. - start: &#x60;data&#x60; contains complete task data in operator-server internal structure - abort: &#x60;data&#x60; contains tid and cids part of task data to abort - pause: &#x60;data&#x60; contains tid and cids part of task data to pause - resume: &#x60;data&#x60; contains tid and cids part of task data to resume 
 
 * * *
 <a name="markdown-header-model-list_item"></a> 
 
-# Model: list_item
+# Model: ListItem
 
 
 
@@ -9177,44 +9109,47 @@ Name | Type | Description | Notes
 *** model list_item example
 
 * create our variables..
-    data gcl_list_item type ref to /blck/mdl_cl_list_item.
+    data gr_list_item type /blck/op4_list_item.
     
 * instantiate model and call the setters to set values..
-    gcl_list_item = /blck/mdl_cl_list_item=>create( ).
-    gcl_list_item->set_index( 42 ). " (type i)
-    gcl_list_item->set_href( 'ipsum lorem' ). " (type string)
-    gcl_list_item->set_metadata( 'ipsum lorem' ). " (type string)
+    gr_list_item-index = 42. " (type /BLCK/OP4_INT)
+
+    gr_list_item-href = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+
+    gr_list_item-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_list_item(
-    	exporting
-    		i_list_item = gcl_list_item ).
+      exporting
+        i_list_item = gr_list_item ).
     		
-    clear gcl_list_item.
+    clear gr_list_item.
     
 * fetch new instance from example API method
-    gcl_list_item = gcl_exampleapi->get_list_item(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_list_item(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_list_item ).
     		
-    l_index = gcl_list_item->get_index( ). " (type i)
-    l_href = gcl_list_item->get_href( ). " (type string)
-    l_metadata = gcl_list_item->get_metadata( ). " (type string)
+    write: gr_list_item-index. " (type /BLCK/OP4_INT)
+    write: gr_list_item-href. " (type /BLCK/OP4_STRING)
+    write: gr_list_item-metadata. " (type /BLCK/OP4_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**index** | i | This is the index of an item in a List. The index is maintained by the SEAL Operator backend. Setting the index to a value beyond the end of the list will move the item to the end of the list. Setting the index to 0 will move th item to the top of the list. Setting the index to a value in use by another item will replace this item, moving it (and all with higher indices) one space down in the list, by increasing their index values.  | [optional] [default to null]
-**href** | string | URL location of linked ressource | [optional] [default to null]
-**metadata** | string | Additional data to be stored with the link | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**index** | /BLCK/OP4_INT | This is the index of an item in a List. The index is maintained by the SEAL Operator backend. Setting the index to a value beyond the end of the list will move the item to the end of the list. Setting the index to 0 will move th item to the top of the list. Setting the index to a value in use by another item will replace this item, moving it (and all with higher indices) one space down in the list, by increasing their index values. 
+**href** | /BLCK/OP4_STRING | URL location of linked ressource
+**metadata** | /BLCK/OP4_STRING | Additional data to be stored with the link
 
 * * *
 <a name="markdown-header-enum-status_type"></a> 
 
-# Enum: status_type
+# Enum: StatusType
 
 
 
@@ -9224,41 +9159,39 @@ Name | Type | Description | Notes
 *** Definition of allowed status names
 
 * create our variables..
-    data gcl_status_type type ref to /blck/mdl_cl_status_type.
+    data gv_status_type type /blck/op4_status_type.
     
-* instantiate model relevant to the enum value we want
-    gcl_status_type = /blck/mdl_cl_status_type=>enum_open( ).
+* set the enum value we want
+    gv_status_type = /blck/op4_cl_model=>status_type-open.
     
 * pass the enum to the example API via method
     gcl_exampleapi->set_status_type_state(
-    	exporting
-    		i_status_type = gcl_status_type ).
+      exporting
+        i_status_type = gv_status_type ).
     		
-    clear gcl_status_type.
+    clear gv_status_type.
     
 * fetch result from example API method
-    gcl_status_type = gcl_exampleapi->get_status_type_state(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_status_type_state(
+      exporting
+        i_id = 1
+      importing
+        e_200 = gv_status_type ).
     	
-* we have two ways to handle the result, either "if" with individual cases..
-  if gcl_status_type->is_open( ) eq 'X'.
-*   do something specific to open case..
-  endif.
-  
-* .. or use a case clause to handle all scenarios:
-  case gcl_status_type->get_value( ).
-    when /blck/mdl_cl_status_type=>mce_open.
+* we can handle the result with either "if" with individual cases
+* or use a case clause to handle all scenarios:
+  case gv_status_type.
+    when /blck/op4_cl_model=>status_type-open.
 *     do something specific to open case..
-    when /blck/mdl_cl_status_type=>mce_processing.
+    when /blck/op4_cl_model=>status_type-processing.
 *     do something specific to processing case..
-    when /blck/mdl_cl_status_type=>mce_completed.
+    when /blck/op4_cl_model=>status_type-completed.
 *     do something specific to completed case..
-    when /blck/mdl_cl_status_type=>mce_paused.
+    when /blck/op4_cl_model=>status_type-paused.
 *     do something specific to paused case..
-    when /blck/mdl_cl_status_type=>mce_aborted.
+    when /blck/op4_cl_model=>status_type-aborted.
 *     do something specific to aborted case..
-    when /blck/mdl_cl_status_type=>mce_failed.
+    when /blck/op4_cl_model=>status_type-failed.
 *     do something specific to failed case..
   endcase.
 
@@ -9267,19 +9200,19 @@ Name | Type | Description | Notes
 
 ## Enum Values
 
-Name | Value | Instantiation
+Name | Value | Constant
 ------------ | ------------- | -------------
-**open** | open | /blck/mdl_cl_status_type=>enum_open( ).
-**processing** | processing | /blck/mdl_cl_status_type=>enum_processing( ).
-**completed** | completed | /blck/mdl_cl_status_type=>enum_completed( ).
-**paused** | paused | /blck/mdl_cl_status_type=>enum_paused( ).
-**aborted** | aborted | /blck/mdl_cl_status_type=>enum_aborted( ).
-**failed** | failed | /blck/mdl_cl_status_type=>enum_failed( ).
+**open** | open | /blck/op4_cl_model=>status_type-open.
+**processing** | processing | /blck/op4_cl_model=>status_type-processing.
+**completed** | completed | /blck/op4_cl_model=>status_type-completed.
+**paused** | paused | /blck/op4_cl_model=>status_type-paused.
+**aborted** | aborted | /blck/op4_cl_model=>status_type-aborted.
+**failed** | failed | /blck/op4_cl_model=>status_type-failed.
 
 * * *
 <a name="markdown-header-model-cid_status"></a> 
 
-# Model: cid_status
+# Model: CidStatus
 
 
 
@@ -9289,56 +9222,63 @@ Name | Value | Instantiation
 *** The status of a cid job
 
 * create our variables..
-    data gcl_cid_status type ref to /blck/mdl_cl_cid_status.
+    data gr_cid_status type /blck/op4_cid_status.
     
 * instantiate model and call the setters to set values..
-    gcl_cid_status = /blck/mdl_cl_cid_status=>create( ).
-    gcl_cid_status->set_tid( 'ipsum lorem' ). " (type string)
-    gcl_cid_status->set_status( l_status ). " (type /BLCK/OP4_status_type)
-    gcl_cid_status->set_started( 42 ). " (type i)
-    gcl_cid_status->set_finished( 42 ). " (type i)
-    gcl_cid_status->set_cids( l_cids ). " (type /BLCK/OP4_cid_tt)
-    gcl_cid_status->set_cstats( l_cstats ). " (type /blck/api_string_tt)
-    gcl_cid_status->set_list_items( l_list_items ). " (type /BLCK/OP4_list_item_tt)
+    gr_cid_status-tid = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+
+    gr_cid_status-status = l_status. " (type /BLCK/OP4_STATUS_TYPE)
+
+    gr_cid_status-started = 42. " (type /BLCK/OP4_INT)
+
+    gr_cid_status-finished = 42. " (type /BLCK/OP4_INT)
+
+    gr_cid_status-cids = l_cids. " (type /BLCK/OP4_CID_TT)
+
+    gr_cid_status-cstats = l_cstats. " (type /BLCK/OP4_STRING_TT)
+
+    gr_cid_status-list_items = l_list_items. " (type /BLCK/OP4_LIST_ITEM_TT)
     
 * pass to example API method
     gcl_exampleapi->update_cid_status(
-    	exporting
-    		i_cid_status = gcl_cid_status ).
+      exporting
+        i_cid_status = gr_cid_status ).
     		
-    clear gcl_cid_status.
+    clear gr_cid_status.
     
 * fetch new instance from example API method
-    gcl_cid_status = gcl_exampleapi->get_cid_status(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_cid_status(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_cid_status ).
     		
-    l_tid = gcl_cid_status->get_tid( ). " (type string)
-    l_status = gcl_cid_status->get_status( ). " (type /BLCK/OP4_status_type)
-    l_started = gcl_cid_status->get_started( ). " (type i)
-    l_finished = gcl_cid_status->get_finished( ). " (type i)
-    l_cids = gcl_cid_status->get_cids( ). " (type /BLCK/OP4_cid_tt)
-    l_cstats = gcl_cid_status->get_cstats( ). " (type /blck/api_string_tt)
-    l_list_items = gcl_cid_status->get_list_items( ). " (type /BLCK/OP4_list_item_tt)
+    write: gr_cid_status-tid. " (type /BLCK/OP4_STRING)
+    write: gr_cid_status-status. " (type /BLCK/OP4_STATUS_TYPE)
+    write: gr_cid_status-started. " (type /BLCK/OP4_INT)
+    write: gr_cid_status-finished. " (type /BLCK/OP4_INT)
+    write: gr_cid_status-cids. " (type /BLCK/OP4_CID_TT)
+    write: gr_cid_status-cstats. " (type /BLCK/OP4_STRING_TT)
+    write: gr_cid_status-list_items. " (type /BLCK/OP4_LIST_ITEM_TT)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**tid** | string |  | [optional] [default to null]
-**status** | /BLCK/OP4_status_type (**[status_type](#markdown-header-enum-status_type)**) |  | [optional] [default to null]
-**started** | i | Timestamp when the cid job started | [optional] [default to null]
-**finished** | i | Timestamp when the cid job finished | [optional] [default to null]
-**cids** | /BLCK/OP4_cid_tt (**[array of cid](#markdown-header-model-cid)**) | list of cid&#x27;s | [optional] [default to null]
-**cstats** | /blck/api_string_tt | list with status for each cid | [optional] [default to null]
-**list_items** | /BLCK/OP4_list_item_tt (**[array of list_item](#markdown-header-model-list_item)**) | Output documents list | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**tid** | /BLCK/OP4_STRING | 
+**status** | /BLCK/OP4_STATUS_TYPE (**[status_type](#markdown-header-enum-status_type)**) | 
+**started** | /BLCK/OP4_INT | Timestamp when the cid job started
+**finished** | /BLCK/OP4_INT | Timestamp when the cid job finished
+**cids** | /BLCK/OP4_CID_TT (**[array of cid](#markdown-header-model-cid)**) | list of cid&#x27;s
+**cstats** | /BLCK/OP4_STRING_TT | list with status for each cid
+**list_items** | /BLCK/OP4_LIST_ITEM_TT (**[array of list_item](#markdown-header-model-list_item)**) | Output documents list
 
 * * *
 <a name="markdown-header-model-cid_taskdata"></a> 
 
-# Model: cid_taskdata
+# Model: CidTaskdata
 
 
 
@@ -9348,41 +9288,43 @@ Name | Type | Description | Notes
 *** Object containing a list of cid&#x27;s 
 
 * create our variables..
-    data gcl_cid_taskdata type ref to /blck/mdl_cl_cid_taskdata.
+    data gr_cid_taskdata type /blck/op4_cid_taskdata.
     
 * instantiate model and call the setters to set values..
-    gcl_cid_taskdata = /blck/mdl_cl_cid_taskdata=>create( ).
-    gcl_cid_taskdata->set_tid( 'ipsum lorem' ). " (type string)
-    gcl_cid_taskdata->set_cids( l_cids ). " (type /BLCK/OP4_cid_tt)
+    gr_cid_taskdata-tid = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+
+    gr_cid_taskdata-cids = l_cids. " (type /BLCK/OP4_CID_TT)
     
 * pass to example API method
     gcl_exampleapi->update_cid_taskdata(
-    	exporting
-    		i_cid_taskdata = gcl_cid_taskdata ).
+      exporting
+        i_cid_taskdata = gr_cid_taskdata ).
     		
-    clear gcl_cid_taskdata.
+    clear gr_cid_taskdata.
     
 * fetch new instance from example API method
-    gcl_cid_taskdata = gcl_exampleapi->get_cid_taskdata(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_cid_taskdata(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_cid_taskdata ).
     		
-    l_tid = gcl_cid_taskdata->get_tid( ). " (type string)
-    l_cids = gcl_cid_taskdata->get_cids( ). " (type /BLCK/OP4_cid_tt)
+    write: gr_cid_taskdata-tid. " (type /BLCK/OP4_STRING)
+    write: gr_cid_taskdata-cids. " (type /BLCK/OP4_CID_TT)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**tid** | string | Task id | [optional] [default to null]
-**cids** | /BLCK/OP4_cid_tt (**[array of cid](#markdown-header-model-cid)**) | list of cid&#x27;s | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**tid** | /BLCK/OP4_STRING | Task id
+**cids** | /BLCK/OP4_CID_TT (**[array of cid](#markdown-header-model-cid)**) | list of cid&#x27;s
 
 * * *
 <a name="markdown-header-model-command"></a> 
 
-# Model: command
+# Model: Command
 
 
 
@@ -9393,41 +9335,43 @@ Name | Type | Description | Notes
 *** paramters.
 
 * create our variables..
-    data gcl_command type ref to /blck/mdl_cl_command.
+    data gr_command type /blck/op4_command.
     
 * instantiate model and call the setters to set values..
-    gcl_command = /blck/mdl_cl_command=>create( ).
-    gcl_command->set_action( 'ipsum lorem' ). " (type string)
-    gcl_command->set_parameter( 'ipsum lorem' ). " (type string)
+    gr_command-action = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+
+    gr_command-parameter = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_command(
-    	exporting
-    		i_command = gcl_command ).
+      exporting
+        i_command = gr_command ).
     		
-    clear gcl_command.
+    clear gr_command.
     
 * fetch new instance from example API method
-    gcl_command = gcl_exampleapi->get_command(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_command(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_command ).
     		
-    l_action = gcl_command->get_action( ). " (type string)
-    l_parameter = gcl_command->get_parameter( ). " (type string)
+    write: gr_command-action. " (type /BLCK/OP4_STRING)
+    write: gr_command-parameter. " (type /BLCK/OP4_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**action** | string |  | [optional] [default to null]
-**parameter** | string | Command specific parameter, e.g. href&#x27;s of documents  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**action** | /BLCK/OP4_STRING | 
+**parameter** | /BLCK/OP4_STRING | Command specific parameter, e.g. href&#x27;s of documents 
 
 * * *
 <a name="markdown-header-model-command_status"></a> 
 
-# Model: command_status
+# Model: CommandStatus
 
 
 
@@ -9437,44 +9381,47 @@ Name | Type | Description | Notes
 *** A JSON object containing a command and it&#x27;s current status
 
 * create our variables..
-    data gcl_command_status type ref to /blck/mdl_cl_command_status.
+    data gr_command_status type /blck/op4_command_status.
     
 * instantiate model and call the setters to set values..
-    gcl_command_status = /blck/mdl_cl_command_status=>create( ).
-    gcl_command_status->set_cid( 'ipsum lorem' ). " (type string)
-    gcl_command_status->set_status( l_status ). " (type /BLCK/OP4_status_type)
-    gcl_command_status->set_command( l_command ). " (type /BLCK/OP4_command)
+    gr_command_status-cid = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+
+    gr_command_status-status = l_status. " (type /BLCK/OP4_STATUS_TYPE)
+
+    gr_command_status-command = l_command. " (type /BLCK/OP4_COMMAND)
     
 * pass to example API method
     gcl_exampleapi->update_command_status(
-    	exporting
-    		i_command_status = gcl_command_status ).
+      exporting
+        i_command_status = gr_command_status ).
     		
-    clear gcl_command_status.
+    clear gr_command_status.
     
 * fetch new instance from example API method
-    gcl_command_status = gcl_exampleapi->get_command_status(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_command_status(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_command_status ).
     		
-    l_cid = gcl_command_status->get_cid( ). " (type string)
-    l_status = gcl_command_status->get_status( ). " (type /BLCK/OP4_status_type)
-    l_command = gcl_command_status->get_command( ). " (type /BLCK/OP4_command)
+    write: gr_command_status-cid. " (type /BLCK/OP4_STRING)
+    write: gr_command_status-status. " (type /BLCK/OP4_STATUS_TYPE)
+    write: gr_command_status-command. " (type /BLCK/OP4_COMMAND)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**cid** | string |  | [optional] [default to null]
-**status** | /BLCK/OP4_status_type (**[status_type](#markdown-header-enum-status_type)**) |  | [optional] [default to null]
-**command** | /BLCK/OP4_command (**[command](#markdown-header-model-command)**) |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**cid** | /BLCK/OP4_STRING | 
+**status** | /BLCK/OP4_STATUS_TYPE (**[status_type](#markdown-header-enum-status_type)**) | 
+**command** | /BLCK/OP4_COMMAND (**[command](#markdown-header-model-command)**) | 
 
 * * *
 <a name="markdown-header-model-config_item"></a> 
 
-# Model: config_item
+# Model: ConfigItem
 
 
 
@@ -9484,35 +9431,35 @@ Name | Type | Description | Notes
 *** A JSON object containing key-value pairs representing the configuration. 
 
 * create our variables..
-    data gcl_config_item type ref to /blck/mdl_cl_config_item.
+    data gr_config_item type /blck/op4_config_item.
     
-* instantiate model and call the setters to set values..
-    gcl_config_item = /blck/mdl_cl_config_item=>create( ).
-    
+* instantiate model and call the setters to set values..    
 * pass to example API method
     gcl_exampleapi->update_config_item(
-    	exporting
-    		i_config_item = gcl_config_item ).
+      exporting
+        i_config_item = gr_config_item ).
     		
-    clear gcl_config_item.
+    clear gr_config_item.
     
 * fetch new instance from example API method
-    gcl_config_item = gcl_exampleapi->get_config_item(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_config_item(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_config_item ).
     		
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+Name | Type | Description
+------------ | ------------- | -------------
 
 * * *
 <a name="markdown-header-model-error"></a> 
 
-# Model: error
+# Model: Error
 
 
 
@@ -9521,44 +9468,47 @@ Name | Type | Description | Notes
 *** model error example
 
 * create our variables..
-    data gcl_error type ref to /blck/mdl_cl_error.
+    data gr_error type /blck/op4_error.
     
 * instantiate model and call the setters to set values..
-    gcl_error = /blck/mdl_cl_error=>create( ).
-    gcl_error->set_code( 42 ). " (type i)
-    gcl_error->set_message( 'ipsum lorem' ). " (type string)
-    gcl_error->set_metadata( 'ipsum lorem' ). " (type string)
+    gr_error-code = 42. " (type /BLCK/OP4_INT)
+
+    gr_error-message = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+
+    gr_error-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_error(
-    	exporting
-    		i_error = gcl_error ).
+      exporting
+        i_error = gr_error ).
     		
-    clear gcl_error.
+    clear gr_error.
     
 * fetch new instance from example API method
-    gcl_error = gcl_exampleapi->get_error(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_error(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_error ).
     		
-    l_code = gcl_error->get_code( ). " (type i)
-    l_message = gcl_error->get_message( ). " (type string)
-    l_metadata = gcl_error->get_metadata( ). " (type string)
+    write: gr_error-code. " (type /BLCK/OP4_INT)
+    write: gr_error-message. " (type /BLCK/OP4_STRING)
+    write: gr_error-metadata. " (type /BLCK/OP4_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**code** | i |  | [optional] [default to null]
-**message** | string |  | [optional] [default to null]
-**metadata** | string |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**code** | /BLCK/OP4_INT | 
+**message** | /BLCK/OP4_STRING | 
+**metadata** | /BLCK/OP4_STRING | 
 
 * * *
 <a name="markdown-header-model-functions"></a> 
 
-# Model: functions
+# Model: Functions
 
 
 
@@ -9569,35 +9519,35 @@ Name | Type | Description | Notes
 *** function. Key of each object is the function name.
 
 * create our variables..
-    data gcl_functions type ref to /blck/mdl_cl_functions.
+    data gr_functions type /blck/op4_functions.
     
-* instantiate model and call the setters to set values..
-    gcl_functions = /blck/mdl_cl_functions=>create( ).
-    
+* instantiate model and call the setters to set values..    
 * pass to example API method
     gcl_exampleapi->update_functions(
-    	exporting
-    		i_functions = gcl_functions ).
+      exporting
+        i_functions = gr_functions ).
     		
-    clear gcl_functions.
+    clear gr_functions.
     
 * fetch new instance from example API method
-    gcl_functions = gcl_exampleapi->get_functions(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_functions(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_functions ).
     		
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+Name | Type | Description
+------------ | ------------- | -------------
 
 * * *
 <a name="markdown-header-model-list"></a> 
 
-# Model: list
+# Model: List
 
 
 
@@ -9611,59 +9561,67 @@ Name | Type | Description | Notes
 *** to the same document (but most likely with different item metadata).
 
 * create our variables..
-    data gcl_list type ref to /blck/mdl_cl_list.
+    data gr_list type /blck/op4_list.
     
 * instantiate model and call the setters to set values..
-    gcl_list = /blck/mdl_cl_list=>create( ).
-    gcl_list->set_uuid( 'ipsum lorem' ). " (type string)
-    gcl_list->set_name( 'ipsum lorem' ). " (type string)
-    gcl_list->set_created( 42 ). " (type i)
-    gcl_list->set_last_modified( 42 ). " (type i)
-    gcl_list->set_list_length( 42 ). " (type i)
-    gcl_list->set_links( 'ipsum lorem' ). " (type string)
-    gcl_list->set_embedded( 'ipsum lorem' ). " (type string)
-    gcl_list->set_metadata( 'ipsum lorem' ). " (type string)
+    gr_list-uuid = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+
+    gr_list-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+
+    gr_list-created = 42. " (type /BLCK/OP4_INT)
+
+    gr_list-last_modified = 42. " (type /BLCK/OP4_INT)
+
+    gr_list-list_length = 42. " (type /BLCK/OP4_INT)
+
+    gr_list-links = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+
+    gr_list-embedded = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+
+    gr_list-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_list(
-    	exporting
-    		i_list = gcl_list ).
+      exporting
+        i_list = gr_list ).
     		
-    clear gcl_list.
+    clear gr_list.
     
 * fetch new instance from example API method
-    gcl_list = gcl_exampleapi->get_list(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_list(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_list ).
     		
-    l_uuid = gcl_list->get_uuid( ). " (type string)
-    l_name = gcl_list->get_name( ). " (type string)
-    l_created = gcl_list->get_created( ). " (type i)
-    l_last_modified = gcl_list->get_last_modified( ). " (type i)
-    l_list_length = gcl_list->get_list_length( ). " (type i)
-    l_links = gcl_list->get_links( ). " (type string)
-    l_embedded = gcl_list->get_embedded( ). " (type string)
-    l_metadata = gcl_list->get_metadata( ). " (type string)
+    write: gr_list-uuid. " (type /BLCK/OP4_STRING)
+    write: gr_list-name. " (type /BLCK/OP4_STRING)
+    write: gr_list-created. " (type /BLCK/OP4_INT)
+    write: gr_list-last_modified. " (type /BLCK/OP4_INT)
+    write: gr_list-list_length. " (type /BLCK/OP4_INT)
+    write: gr_list-links. " (type /BLCK/OP4_STRING)
+    write: gr_list-embedded. " (type /BLCK/OP4_STRING)
+    write: gr_list-metadata. " (type /BLCK/OP4_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**uuid** | string | Unique identifier of the list, generated by SEAL Operator. | [optional] [default to null]
-**name** | string | User defined name for the list. Doesn&#x27;t have to be unique. | [optional] [default to null]
-**created** | i | Timestamp of list creation | [optional] [default to null]
-**last_modified** | i | Timestamp of list creation | [optional] [default to null]
-**list_length** | i | Number of items in list | [optional] [default to null]
-**links** | string | If requested by MIME type, the links section contains hrefs to - \&quot;self\&quot;: the List itself  | [optional] [default to null]
-**embedded** | string | Embedded sub-ressources or sub-collections, as requested throught the \&quot;embed\&quot; query parameter  | [optional] [default to null]
-**metadata** | string | List metadata. Note that these do not contain item metadata. | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**uuid** | /BLCK/OP4_STRING | Unique identifier of the list, generated by SEAL Operator.
+**name** | /BLCK/OP4_STRING | User defined name for the list. Doesn&#x27;t have to be unique.
+**created** | /BLCK/OP4_INT | Timestamp of list creation
+**last_modified** | /BLCK/OP4_INT | Timestamp of list creation
+**list_length** | /BLCK/OP4_INT | Number of items in list
+**links** | /BLCK/OP4_STRING | If requested by MIME type, the links section contains hrefs to - \&quot;self\&quot;: the List itself 
+**embedded** | /BLCK/OP4_STRING | Embedded sub-ressources or sub-collections, as requested throught the \&quot;embed\&quot; query parameter 
+**metadata** | /BLCK/OP4_STRING | List metadata. Note that these do not contain item metadata.
 
 * * *
 <a name="markdown-header-model-message"></a> 
 
-# Model: message
+# Model: Message
 
 
 
@@ -9673,53 +9631,59 @@ Name | Type | Description | Notes
 *** A JSON object containing a message 
 
 * create our variables..
-    data gcl_message type ref to /blck/mdl_cl_message.
+    data gr_message type /blck/op4_message.
     
 * instantiate model and call the setters to set values..
-    gcl_message = /blck/mdl_cl_message=>create( ).
-    gcl_message->set_uuid( 'ipsum lorem' ). " (type string)
-    gcl_message->set_type( 'ipsum lorem' ). " (type string)
-    gcl_message->set_text( 'ipsum lorem' ). " (type string)
-    gcl_message->set_date( 42 ). " (type i)
-    gcl_message->set_source( 'ipsum lorem' ). " (type string)
-    gcl_message->set_read( 'X' ). " (type flag)
+    gr_message-uuid = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+
+    gr_message-type = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+
+    gr_message-text = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+
+    gr_message-date = 42. " (type /BLCK/OP4_INT)
+
+    gr_message-source = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+
+    gr_message-read = 'X'. " (type /BLCK/OP4_BOOL)
     
 * pass to example API method
     gcl_exampleapi->update_message(
-    	exporting
-    		i_message = gcl_message ).
+      exporting
+        i_message = gr_message ).
     		
-    clear gcl_message.
+    clear gr_message.
     
 * fetch new instance from example API method
-    gcl_message = gcl_exampleapi->get_message(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_message(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_message ).
     		
-    l_uuid = gcl_message->get_uuid( ). " (type string)
-    l_type = gcl_message->get_type( ). " (type string)
-    l_text = gcl_message->get_text( ). " (type string)
-    l_date = gcl_message->get_date( ). " (type i)
-    l_source = gcl_message->get_source( ). " (type string)
-    l_read = gcl_message->get_read( ). " (type flag)
+    write: gr_message-uuid. " (type /BLCK/OP4_STRING)
+    write: gr_message-type. " (type /BLCK/OP4_STRING)
+    write: gr_message-text. " (type /BLCK/OP4_STRING)
+    write: gr_message-date. " (type /BLCK/OP4_INT)
+    write: gr_message-source. " (type /BLCK/OP4_STRING)
+    write: gr_message-read. " (type /BLCK/OP4_BOOL)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**uuid** | string | A server side defined uuid for each new entry | [optional] [default to null]
-**type** | string | The message type | [optional] [default to null]
-**text** | string | The message text | [optional] [default to null]
-**date** | i | The creation time of the message as timestamp | [optional] [default to null]
-**source** | string | Name of the panel which created the message | [optional] [default to null]
-**read** | flag | Flag if the message has already been read by user | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**uuid** | /BLCK/OP4_STRING | A server side defined uuid for each new entry
+**type** | /BLCK/OP4_STRING | The message type
+**text** | /BLCK/OP4_STRING | The message text
+**date** | /BLCK/OP4_INT | The creation time of the message as timestamp
+**source** | /BLCK/OP4_STRING | Name of the panel which created the message
+**read** | /BLCK/OP4_BOOL | Flag if the message has already been read by user
 
 * * *
 <a name="markdown-header-model-panel_item"></a> 
 
-# Model: panel_item
+# Model: PanelItem
 
 
 
@@ -9729,44 +9693,47 @@ Name | Type | Description | Notes
 *** A JSON object containing name and id of a PanelListItem
 
 * create our variables..
-    data gcl_panel_item type ref to /blck/mdl_cl_panel_item.
+    data gr_panel_item type /blck/op4_panel_item.
     
 * instantiate model and call the setters to set values..
-    gcl_panel_item = /blck/mdl_cl_panel_item=>create( ).
-    gcl_panel_item->set_pid( 'ipsum lorem' ). " (type string)
-    gcl_panel_item->set_name( 'ipsum lorem' ). " (type string)
-    gcl_panel_item->set_type( 'ipsum lorem' ). " (type string)
+    gr_panel_item-pid = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+
+    gr_panel_item-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+
+    gr_panel_item-type = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_panel_item(
-    	exporting
-    		i_panel_item = gcl_panel_item ).
+      exporting
+        i_panel_item = gr_panel_item ).
     		
-    clear gcl_panel_item.
+    clear gr_panel_item.
     
 * fetch new instance from example API method
-    gcl_panel_item = gcl_exampleapi->get_panel_item(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_panel_item(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_panel_item ).
     		
-    l_pid = gcl_panel_item->get_pid( ). " (type string)
-    l_name = gcl_panel_item->get_name( ). " (type string)
-    l_type = gcl_panel_item->get_type( ). " (type string)
+    write: gr_panel_item-pid. " (type /BLCK/OP4_STRING)
+    write: gr_panel_item-name. " (type /BLCK/OP4_STRING)
+    write: gr_panel_item-type. " (type /BLCK/OP4_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**pid** | string | unique id of the PanelListItem | [optional] [default to null]
-**name** | string |  | [optional] [default to null]
-**type** | string | the panel type the configuration is for, e.g. scratch, p4,... | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**pid** | /BLCK/OP4_STRING | unique id of the PanelListItem
+**name** | /BLCK/OP4_STRING | 
+**type** | /BLCK/OP4_STRING | the panel type the configuration is for, e.g. scratch, p4,...
 
 * * *
 <a name="markdown-header-model-repo_entry"></a> 
 
-# Model: repo_entry
+# Model: RepoEntry
 
 
 
@@ -9779,56 +9746,63 @@ Name | Type | Description | Notes
 *** children, while documents may have binary content.
 
 * create our variables..
-    data gcl_repo_entry type ref to /blck/mdl_cl_repo_entry.
+    data gr_repo_entry type /blck/op4_repo_entry.
     
 * instantiate model and call the setters to set values..
-    gcl_repo_entry = /blck/mdl_cl_repo_entry=>create( ).
-    gcl_repo_entry->set_id( 'ipsum lorem' ). " (type string)
-    gcl_repo_entry->set_uuid( 'ipsum lorem' ). " (type string)
-    gcl_repo_entry->set_name( 'ipsum lorem' ). " (type string)
-    gcl_repo_entry->set_type( 'ipsum lorem' ). " (type string)
-    gcl_repo_entry->set_links( 'ipsum lorem' ). " (type string)
-    gcl_repo_entry->set_embedded( 'ipsum lorem' ). " (type string)
-    gcl_repo_entry->set_metadata( 'ipsum lorem' ). " (type string)
+    gr_repo_entry-id = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+
+    gr_repo_entry-uuid = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+
+    gr_repo_entry-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+
+    gr_repo_entry-type = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+
+    gr_repo_entry-links = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+
+    gr_repo_entry-embedded = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+
+    gr_repo_entry-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_repo_entry(
-    	exporting
-    		i_repo_entry = gcl_repo_entry ).
+      exporting
+        i_repo_entry = gr_repo_entry ).
     		
-    clear gcl_repo_entry.
+    clear gr_repo_entry.
     
 * fetch new instance from example API method
-    gcl_repo_entry = gcl_exampleapi->get_repo_entry(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_repo_entry(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_repo_entry ).
     		
-    l_id = gcl_repo_entry->get_id( ). " (type string)
-    l_uuid = gcl_repo_entry->get_uuid( ). " (type string)
-    l_name = gcl_repo_entry->get_name( ). " (type string)
-    l_type = gcl_repo_entry->get_type( ). " (type string)
-    l_links = gcl_repo_entry->get_links( ). " (type string)
-    l_embedded = gcl_repo_entry->get_embedded( ). " (type string)
-    l_metadata = gcl_repo_entry->get_metadata( ). " (type string)
+    write: gr_repo_entry-id. " (type /BLCK/OP4_STRING)
+    write: gr_repo_entry-uuid. " (type /BLCK/OP4_STRING)
+    write: gr_repo_entry-name. " (type /BLCK/OP4_STRING)
+    write: gr_repo_entry-type. " (type /BLCK/OP4_STRING)
+    write: gr_repo_entry-links. " (type /BLCK/OP4_STRING)
+    write: gr_repo_entry-embedded. " (type /BLCK/OP4_STRING)
+    write: gr_repo_entry-metadata. " (type /BLCK/OP4_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | string | Local ID of the document within the repository. | [optional] [default to null]
-**uuid** | string | Global ID of the document, created by SEAL Operator | [optional] [default to null]
-**name** | string | (File) name of the Entry | [optional] [default to null]
-**type** | string | Type of RepoEntry. | [optional] [default to null]
-**links** | string | If requested by MIME type, the links section contains hrefs to - \&quot;self\&quot;: the document itself - \&quot;parent\&quot;: the collection containing the document - \&quot;permissions\&quot;: an object describing user permissions on the document  | [optional] [default to null]
-**embedded** | string | Embedded sub-ressources as requested through the \&quot;embed\&quot; query parameter, e.g. \&quot;permissions\&quot;, \&quot;icon\&quot;, \&quot;thumb\&quot;.  | [optional] [default to null]
-**metadata** | string | Metadata assigned to the entry | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**id** | /BLCK/OP4_STRING | Local ID of the document within the repository.
+**uuid** | /BLCK/OP4_STRING | Global ID of the document, created by SEAL Operator
+**name** | /BLCK/OP4_STRING | (File) name of the Entry
+**type** | /BLCK/OP4_STRING | Type of RepoEntry.
+**links** | /BLCK/OP4_STRING | If requested by MIME type, the links section contains hrefs to - \&quot;self\&quot;: the document itself - \&quot;parent\&quot;: the collection containing the document - \&quot;permissions\&quot;: an object describing user permissions on the document 
+**embedded** | /BLCK/OP4_STRING | Embedded sub-ressources as requested through the \&quot;embed\&quot; query parameter, e.g. \&quot;permissions\&quot;, \&quot;icon\&quot;, \&quot;thumb\&quot;. 
+**metadata** | /BLCK/OP4_STRING | Metadata assigned to the entry
 
 * * *
 <a name="markdown-header-model-service"></a> 
 
-# Model: service
+# Model: Service
 
 
 
@@ -9840,50 +9814,55 @@ Name | Type | Description | Notes
 *** documents, under its /tasks and /repo routes.
 
 * create our variables..
-    data gcl_service type ref to /blck/mdl_cl_service.
+    data gr_service type /blck/op4_service.
     
 * instantiate model and call the setters to set values..
-    gcl_service = /blck/mdl_cl_service=>create( ).
-    gcl_service->set_id( 'ipsum lorem' ). " (type string)
-    gcl_service->set_name( 'ipsum lorem' ). " (type string)
-    gcl_service->set_metadata( 'ipsum lorem' ). " (type string)
-    gcl_service->set_links( 'ipsum lorem' ). " (type string)
-    gcl_service->set_embedded( 'ipsum lorem' ). " (type string)
+    gr_service-id = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+
+    gr_service-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+
+    gr_service-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+
+    gr_service-links = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+
+    gr_service-embedded = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_service(
-    	exporting
-    		i_service = gcl_service ).
+      exporting
+        i_service = gr_service ).
     		
-    clear gcl_service.
+    clear gr_service.
     
 * fetch new instance from example API method
-    gcl_service = gcl_exampleapi->get_service(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_service(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_service ).
     		
-    l_id = gcl_service->get_id( ). " (type string)
-    l_name = gcl_service->get_name( ). " (type string)
-    l_metadata = gcl_service->get_metadata( ). " (type string)
-    l_links = gcl_service->get_links( ). " (type string)
-    l_embedded = gcl_service->get_embedded( ). " (type string)
+    write: gr_service-id. " (type /BLCK/OP4_STRING)
+    write: gr_service-name. " (type /BLCK/OP4_STRING)
+    write: gr_service-metadata. " (type /BLCK/OP4_STRING)
+    write: gr_service-links. " (type /BLCK/OP4_STRING)
+    write: gr_service-embedded. " (type /BLCK/OP4_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | string | Identifier of the Service within the SEAL Operator | [optional] [default to null]
-**name** | string | Label describing the Service | [optional] [default to null]
-**metadata** | string | Metadata of the Service | [optional] [default to null]
-**links** | string | If requested by MIME type, the links section contains hrefs to - \&quot;self\&quot;: The Service itself - \&quot;permissions\&quot;: User permissions on the Service  | [optional] [default to null]
-**embedded** | string | Sub-collections and/or sub-ressources requested through the embed query parameter.  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**id** | /BLCK/OP4_STRING | Identifier of the Service within the SEAL Operator
+**name** | /BLCK/OP4_STRING | Label describing the Service
+**metadata** | /BLCK/OP4_STRING | Metadata of the Service
+**links** | /BLCK/OP4_STRING | If requested by MIME type, the links section contains hrefs to - \&quot;self\&quot;: The Service itself - \&quot;permissions\&quot;: User permissions on the Service 
+**embedded** | /BLCK/OP4_STRING | Sub-collections and/or sub-ressources requested through the embed query parameter. 
 
 * * *
 <a name="markdown-header-model-session_info"></a> 
 
-# Model: session_info
+# Model: SessionInfo
 
 
 
@@ -9893,38 +9872,39 @@ Name | Type | Description | Notes
 *** Informations about users sessions
 
 * create our variables..
-    data gcl_session_info type ref to /blck/mdl_cl_session_info.
+    data gr_session_info type /blck/op4_session_info.
     
 * instantiate model and call the setters to set values..
-    gcl_session_info = /blck/mdl_cl_session_info=>create( ).
-    gcl_session_info->set_false( 42 ). " (type i)
+    gr_session_info-false = 42. " (type /BLCK/OP4_INT)
     
 * pass to example API method
     gcl_exampleapi->update_session_info(
-    	exporting
-    		i_session_info = gcl_session_info ).
+      exporting
+        i_session_info = gr_session_info ).
     		
-    clear gcl_session_info.
+    clear gr_session_info.
     
 * fetch new instance from example API method
-    gcl_session_info = gcl_exampleapi->get_session_info(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_session_info(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_session_info ).
     		
-    l_false = gcl_session_info->get_false( ). " (type i)
+    write: gr_session_info-false. " (type /BLCK/OP4_INT)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**false** | i | number of currently open sessions of this user | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**false** | /BLCK/OP4_INT | number of currently open sessions of this user
 
 * * *
 <a name="markdown-header-model-task"></a> 
 
-# Model: task
+# Model: Task
 
 
 
@@ -9933,71 +9913,83 @@ Name | Type | Description | Notes
 *** model task example
 
 * create our variables..
-    data gcl_task type ref to /blck/mdl_cl_task.
+    data gr_task type /blck/op4_task.
     
 * instantiate model and call the setters to set values..
-    gcl_task = /blck/mdl_cl_task=>create( ).
-    gcl_task->set_name( 'ipsum lorem' ). " (type string)
-    gcl_task->set_sid( 'ipsum lorem' ). " (type string)
-    gcl_task->set_tid( 'ipsum lorem' ). " (type string)
-    gcl_task->set_metadata( 'ipsum lorem' ). " (type string)
-    gcl_task->set_created( 42 ). " (type i)
-    gcl_task->set_started( 42 ). " (type i)
-    gcl_task->set_finished( 42 ). " (type i)
-    gcl_task->set_input_list_length( 42 ). " (type i)
-    gcl_task->set_output_list_length( 42 ). " (type i)
-    gcl_task->set_status( l_status ). " (type /BLCK/OP4_status_type)
-    gcl_task->set_links( 'ipsum lorem' ). " (type string)
-    gcl_task->set_embedded( 'ipsum lorem' ). " (type string)
+    gr_task-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+
+    gr_task-sid = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+
+    gr_task-tid = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+
+    gr_task-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+
+    gr_task-created = 42. " (type /BLCK/OP4_INT)
+
+    gr_task-started = 42. " (type /BLCK/OP4_INT)
+
+    gr_task-finished = 42. " (type /BLCK/OP4_INT)
+
+    gr_task-input_list_length = 42. " (type /BLCK/OP4_INT)
+
+    gr_task-output_list_length = 42. " (type /BLCK/OP4_INT)
+
+    gr_task-status = l_status. " (type /BLCK/OP4_STATUS_TYPE)
+
+    gr_task-links = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+
+    gr_task-embedded = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_task(
-    	exporting
-    		i_task = gcl_task ).
+      exporting
+        i_task = gr_task ).
     		
-    clear gcl_task.
+    clear gr_task.
     
 * fetch new instance from example API method
-    gcl_task = gcl_exampleapi->get_task(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_task(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_task ).
     		
-    l_name = gcl_task->get_name( ). " (type string)
-    l_sid = gcl_task->get_sid( ). " (type string)
-    l_tid = gcl_task->get_tid( ). " (type string)
-    l_metadata = gcl_task->get_metadata( ). " (type string)
-    l_created = gcl_task->get_created( ). " (type i)
-    l_started = gcl_task->get_started( ). " (type i)
-    l_finished = gcl_task->get_finished( ). " (type i)
-    l_input_list_length = gcl_task->get_input_list_length( ). " (type i)
-    l_output_list_length = gcl_task->get_output_list_length( ). " (type i)
-    l_status = gcl_task->get_status( ). " (type /BLCK/OP4_status_type)
-    l_links = gcl_task->get_links( ). " (type string)
-    l_embedded = gcl_task->get_embedded( ). " (type string)
+    write: gr_task-name. " (type /BLCK/OP4_STRING)
+    write: gr_task-sid. " (type /BLCK/OP4_STRING)
+    write: gr_task-tid. " (type /BLCK/OP4_STRING)
+    write: gr_task-metadata. " (type /BLCK/OP4_STRING)
+    write: gr_task-created. " (type /BLCK/OP4_INT)
+    write: gr_task-started. " (type /BLCK/OP4_INT)
+    write: gr_task-finished. " (type /BLCK/OP4_INT)
+    write: gr_task-input_list_length. " (type /BLCK/OP4_INT)
+    write: gr_task-output_list_length. " (type /BLCK/OP4_INT)
+    write: gr_task-status. " (type /BLCK/OP4_STATUS_TYPE)
+    write: gr_task-links. " (type /BLCK/OP4_STRING)
+    write: gr_task-embedded. " (type /BLCK/OP4_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | string |  | [optional] [default to null]
-**sid** | string |  | [optional] [default to null]
-**tid** | string |  | [optional] [default to null]
-**metadata** | string | Task metadata. Note that these do not contain item metadata. | [optional] [default to null]
-**created** | i | Timestamp of task creation | [optional] [default to null]
-**started** | i | Timestamp of task started | [optional] [default to null]
-**finished** | i | Timestamp of task finished | [optional] [default to null]
-**input_list_length** | i | Number of items in input list | [optional] [default to null]
-**output_list_length** | i | Number of items in output list | [optional] [default to null]
-**status** | /BLCK/OP4_status_type (**[status_type](#markdown-header-enum-status_type)**) |  | [optional] [default to null]
-**links** | string | If requested, the links section contains hrefs to - \&quot;self\&quot;: the Task itself - \&quot;input\&quot;: input documents - \&quot;output\&quot;: output documents  | [optional] [default to null]
-**embedded** | string | Embedded sub-ressources or sub-collections, as requested throught the \&quot;embed\&quot; query parameter  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**name** | /BLCK/OP4_STRING | 
+**sid** | /BLCK/OP4_STRING | 
+**tid** | /BLCK/OP4_STRING | 
+**metadata** | /BLCK/OP4_STRING | Task metadata. Note that these do not contain item metadata.
+**created** | /BLCK/OP4_INT | Timestamp of task creation
+**started** | /BLCK/OP4_INT | Timestamp of task started
+**finished** | /BLCK/OP4_INT | Timestamp of task finished
+**input_list_length** | /BLCK/OP4_INT | Number of items in input list
+**output_list_length** | /BLCK/OP4_INT | Number of items in output list
+**status** | /BLCK/OP4_STATUS_TYPE (**[status_type](#markdown-header-enum-status_type)**) | 
+**links** | /BLCK/OP4_STRING | If requested, the links section contains hrefs to - \&quot;self\&quot;: the Task itself - \&quot;input\&quot;: input documents - \&quot;output\&quot;: output documents 
+**embedded** | /BLCK/OP4_STRING | Embedded sub-ressources or sub-collections, as requested throught the \&quot;embed\&quot; query parameter 
 
 * * *
 <a name="markdown-header-model-task_metadata"></a> 
 
-# Model: task_metadata
+# Model: TaskMetadata
 
 
 
@@ -10008,34 +10000,36 @@ Name | Type | Description | Notes
 *** arbitrary properties and the optional property &#x27;name&#x27;.
 
 * create our variables..
-    data gcl_task_metadata type ref to /blck/mdl_cl_task_metadata.
+    data gr_task_metadata type /blck/op4_task_metadata.
     
 * instantiate model and call the setters to set values..
-    gcl_task_metadata = /blck/mdl_cl_task_metadata=>create( ).
-    gcl_task_metadata->set_name( 'ipsum lorem' ). " (type string)
-    gcl_task_metadata->set_metadata( 'ipsum lorem' ). " (type string)
+    gr_task_metadata-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+
+    gr_task_metadata-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_task_metadata(
-    	exporting
-    		i_task_metadata = gcl_task_metadata ).
+      exporting
+        i_task_metadata = gr_task_metadata ).
     		
-    clear gcl_task_metadata.
+    clear gr_task_metadata.
     
 * fetch new instance from example API method
-    gcl_task_metadata = gcl_exampleapi->get_task_metadata(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_task_metadata(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_task_metadata ).
     		
-    l_name = gcl_task_metadata->get_name( ). " (type string)
-    l_metadata = gcl_task_metadata->get_metadata( ). " (type string)
+    write: gr_task_metadata-name. " (type /BLCK/OP4_STRING)
+    write: gr_task_metadata-metadata. " (type /BLCK/OP4_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | string | Name of the Task | [optional] [default to null]
-**metadata** | string | Metadata assigned to the task | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**name** | /BLCK/OP4_STRING | Name of the Task
+**metadata** | /BLCK/OP4_STRING | Metadata assigned to the task
 

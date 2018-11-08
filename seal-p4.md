@@ -21,15 +21,16 @@ Opens a websocket connection and returns status changes of all jobs send by Oper
     gvi_code type /blck/p4_int,
     gvs_msg  type /blck/p4_string.
     
-*** create variables for input and output as needed*   when the the result of the call is HTTP200 we expect type /BLCK/P4_JOBSTATUSEVENT
+*** create variables for input and output as needed
+*   when the result of the call is HTTP200 we expect type /BLCK/P4_JOBSTATUSEVENT
     data gr_http200 type /BLCK/P4_JOBSTATUSEVENT.
-*   when the the result of the call is HTTP401 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/P4_ERROR
     data gr_http401 type /BLCK/P4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/P4_ERROR
     data gr_http403 type /BLCK/P4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
     data gr_http500 type /BLCK/P4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P4_ERROR
     data gr_http0 type /BLCK/P4_ERROR.
         
 
@@ -80,11 +81,11 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P4_JOBSTATUSEVENT (**[JobStatusEvent](#markdown-header-model-)**) | OK, job status is returned
- 401 | **e_401** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks acces rights. 
- 500 | **e_500** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/P4_JOBSTATUSEVENT (**[JobStatusEvent](#markdown-header-model-jobstatusevent)**) | OK, job status is returned
+ 401 | **e_401** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights. 
+ 500 | **e_500** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -119,17 +120,17 @@ A POST call to this route will create a new jobs and return it's uuid.
 *   for parameter i_body:
 *   a simple ABAP primitive of type /BLCK/P4_STRING
     data gvs_body type /BLCK/P4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P4_JOB_ID
+*   when the result of the call is HTTP200 we expect type /BLCK/P4_JOB_ID
     data gr_http200 type /BLCK/P4_JOB_ID.
-*   when the the result of the call is HTTP401 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/P4_ERROR
     data gr_http401 type /BLCK/P4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/P4_ERROR
     data gr_http403 type /BLCK/P4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/P4_ERROR
     data gr_http409 type /BLCK/P4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
     data gr_http500 type /BLCK/P4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P4_ERROR
     data gr_http0 type /BLCK/P4_ERROR.
         
 *** set data according to requirements of the API call
@@ -190,12 +191,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P4_JOB_ID (**[JobId](#markdown-header-model-)**) | OK, job ID is returned.
- 401 | **e_401** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks acces rights to access the service list. 
- 409 | **e_409** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-)**) | Conflict, ressource could not be created. See error message for details. 
- 500 | **e_500** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/P4_JOB_ID (**[JobId](#markdown-header-model-job_id)**) | OK, job ID is returned.
+ 401 | **e_401** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service list. 
+ 409 | **e_409** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
+ 500 | **e_500** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -226,15 +227,15 @@ A POST call to this route will abort a running job.
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/P4_STRING
     data gvs_uuid type /BLCK/P4_STRING.
-*   when the the result of the call is HTTP401 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/P4_ERROR
     data gr_http401 type /BLCK/P4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/P4_ERROR
     data gr_http403 type /BLCK/P4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/P4_ERROR
     data gr_http409 type /BLCK/P4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
     data gr_http500 type /BLCK/P4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P4_ERROR
     data gr_http0 type /BLCK/P4_ERROR.
         
 *** set data according to requirements of the API call
@@ -267,6 +268,8 @@ A POST call to this route will abort a running job.
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 204.
+*       handle code 204
       when 401.
 *       do something with gr_http401 (type /BLCK/P4_ERROR)
       when 403.
@@ -320,17 +323,17 @@ returns status of given job
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/P4_STRING
     data gvs_uuid type /BLCK/P4_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/P4_JOB_STATUS
+*   when the result of the call is HTTP200 we expect type /BLCK/P4_JOB_STATUS
     data gr_http200 type /BLCK/P4_JOB_STATUS.
-*   when the the result of the call is HTTP401 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/P4_ERROR
     data gr_http401 type /BLCK/P4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/P4_ERROR
     data gr_http403 type /BLCK/P4_ERROR.
-*   when the the result of the call is HTTP404 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP404 we expect type /BLCK/P4_ERROR
     data gr_http404 type /BLCK/P4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
     data gr_http500 type /BLCK/P4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P4_ERROR
     data gr_http0 type /BLCK/P4_ERROR.
         
 *** set data according to requirements of the API call
@@ -391,12 +394,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P4_JOB_STATUS (**[JobStatus](#markdown-header-model-)**) | OK, job status is returned
- 401 | **e_401** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks acces rights to access the service metadata. 
- 404 | **e_404** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-)**) | The requested Service was not found.
- 500 | **e_500** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/P4_JOB_STATUS (**[JobStatus](#markdown-header-model-job_status)**) | OK, job status is returned
+ 401 | **e_401** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service metadata. 
+ 404 | **e_404** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | The requested Service was not found.
+ 500 | **e_500** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -427,15 +430,15 @@ A POST call to this route will pause a running job.
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/P4_STRING
     data gvs_uuid type /BLCK/P4_STRING.
-*   when the the result of the call is HTTP401 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/P4_ERROR
     data gr_http401 type /BLCK/P4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/P4_ERROR
     data gr_http403 type /BLCK/P4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/P4_ERROR
     data gr_http409 type /BLCK/P4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
     data gr_http500 type /BLCK/P4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P4_ERROR
     data gr_http0 type /BLCK/P4_ERROR.
         
 *** set data according to requirements of the API call
@@ -468,6 +471,8 @@ A POST call to this route will pause a running job.
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 204.
+*       handle code 204
       when 401.
 *       do something with gr_http401 (type /BLCK/P4_ERROR)
       when 403.
@@ -521,15 +526,15 @@ A PUT call to this route will add a new file to the job. Data type is given in H
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/P4_STRING
     data gvs_uuid type /BLCK/P4_STRING.
-*   when the the result of the call is HTTP401 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/P4_ERROR
     data gr_http401 type /BLCK/P4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/P4_ERROR
     data gr_http403 type /BLCK/P4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/P4_ERROR
     data gr_http409 type /BLCK/P4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
     data gr_http500 type /BLCK/P4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P4_ERROR
     data gr_http0 type /BLCK/P4_ERROR.
         
 *** set data according to requirements of the API call
@@ -562,6 +567,8 @@ A PUT call to this route will add a new file to the job. Data type is given in H
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 204.
+*       handle code 204
       when 401.
 *       do something with gr_http401 (type /BLCK/P4_ERROR)
       when 403.
@@ -615,15 +622,15 @@ A POST call to this route will resume a paused job.
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/P4_STRING
     data gvs_uuid type /BLCK/P4_STRING.
-*   when the the result of the call is HTTP401 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/P4_ERROR
     data gr_http401 type /BLCK/P4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/P4_ERROR
     data gr_http403 type /BLCK/P4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/P4_ERROR
     data gr_http409 type /BLCK/P4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
     data gr_http500 type /BLCK/P4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P4_ERROR
     data gr_http0 type /BLCK/P4_ERROR.
         
 *** set data according to requirements of the API call
@@ -656,6 +663,8 @@ A POST call to this route will resume a paused job.
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 204.
+*       handle code 204
       when 401.
 *       do something with gr_http401 (type /BLCK/P4_ERROR)
       when 403.
@@ -709,15 +718,15 @@ A POST call to this route will start a previously created job.
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/P4_STRING
     data gvs_uuid type /BLCK/P4_STRING.
-*   when the the result of the call is HTTP401 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/P4_ERROR
     data gr_http401 type /BLCK/P4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/P4_ERROR
     data gr_http403 type /BLCK/P4_ERROR.
-*   when the the result of the call is HTTP409 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP409 we expect type /BLCK/P4_ERROR
     data gr_http409 type /BLCK/P4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
     data gr_http500 type /BLCK/P4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P4_ERROR
     data gr_http0 type /BLCK/P4_ERROR.
         
 *** set data according to requirements of the API call
@@ -750,6 +759,8 @@ A POST call to this route will start a previously created job.
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 204.
+*       handle code 204
       when 401.
 *       do something with gr_http401 (type /BLCK/P4_ERROR)
       when 403.
@@ -803,15 +814,16 @@ Returns list of available printers inluding their capabilities
     gvi_code type /blck/p4_int,
     gvs_msg  type /blck/p4_string.
     
-*** create variables for input and output as needed*   when the the result of the call is HTTP200 we expect type /BLCK/P4_PRINTER_TT
+*** create variables for input and output as needed
+*   when the result of the call is HTTP200 we expect type /BLCK/P4_PRINTER_TT
     data gr_http200 type /BLCK/P4_PRINTER_TT.
-*   when the the result of the call is HTTP401 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP401 we expect type /BLCK/P4_ERROR
     data gr_http401 type /BLCK/P4_ERROR.
-*   when the the result of the call is HTTP403 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP403 we expect type /BLCK/P4_ERROR
     data gr_http403 type /BLCK/P4_ERROR.
-*   when the the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
     data gr_http500 type /BLCK/P4_ERROR.
-*   when the the result of the call is HTTP0 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP0 we expect type /BLCK/P4_ERROR
     data gr_http0 type /BLCK/P4_ERROR.
         
 
@@ -862,11 +874,11 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P4_PRINTER_TT (**[array](#markdown-header-model-)**) | OK, array of printer objects is returned
- 401 | **e_401** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-)**) | Forbidden. The user lacks acces rights. 
- 500 | **e_500** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-)**) | Application Error
- 0 | **e_0** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-)**) | Unexpected error
+ 200 | **e_200** | /BLCK/P4_PRINTER_TT (**[array](#markdown-header-model-printer)**) | OK, array of printer objects is returned
+ 401 | **e_401** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_403** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights. 
+ 500 | **e_500** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ 0 | **e_0** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -877,7 +889,7 @@ HTTP Code | Name | Type | Description
 * * *
 <a name="markdown-header-model-error"></a> 
 
-# Model: error
+# Model: Error
 
 
 
@@ -886,44 +898,47 @@ HTTP Code | Name | Type | Description
 *** model error example
 
 * create our variables..
-    data gcl_error type ref to /blck/mdl_cl_error.
+    data gr_error type /blck/p4_error.
     
 * instantiate model and call the setters to set values..
-    gcl_error = /blck/mdl_cl_error=>create( ).
-    gcl_error->set_code( 42 ). " (type i)
-    gcl_error->set_message( 'ipsum lorem' ). " (type string)
-    gcl_error->set_metadata( 'ipsum lorem' ). " (type string)
+    gr_error-code = 42. " (type /BLCK/P4_INT)
+
+    gr_error-message = 'ipsum lorem'. " (type /BLCK/P4_STRING)
+
+    gr_error-metadata = 'ipsum lorem'. " (type /BLCK/P4_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_error(
-    	exporting
-    		i_error = gcl_error ).
+      exporting
+        i_error = gr_error ).
     		
-    clear gcl_error.
+    clear gr_error.
     
 * fetch new instance from example API method
-    gcl_error = gcl_exampleapi->get_error(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_error(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_error ).
     		
-    l_code = gcl_error->get_code( ). " (type i)
-    l_message = gcl_error->get_message( ). " (type string)
-    l_metadata = gcl_error->get_metadata( ). " (type string)
+    write: gr_error-code. " (type /BLCK/P4_INT)
+    write: gr_error-message. " (type /BLCK/P4_STRING)
+    write: gr_error-metadata. " (type /BLCK/P4_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**code** | i |  | [optional] [default to null]
-**message** | string |  | [optional] [default to null]
-**metadata** | string |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**code** | /BLCK/P4_INT | 
+**message** | /BLCK/P4_STRING | 
+**metadata** | /BLCK/P4_STRING | 
 
 * * *
 <a name="markdown-header-model-job_header"></a> 
 
-# Model: job_header
+# Model: JobHeader
 
 
 
@@ -933,35 +948,35 @@ Name | Type | Description | Notes
 *** key value entries of a PLOSSYS 4 header
 
 * create our variables..
-    data gcl_job_header type ref to /blck/mdl_cl_job_header.
+    data gr_job_header type /blck/p4_job_header.
     
-* instantiate model and call the setters to set values..
-    gcl_job_header = /blck/mdl_cl_job_header=>create( ).
-    
+* instantiate model and call the setters to set values..    
 * pass to example API method
     gcl_exampleapi->update_job_header(
-    	exporting
-    		i_job_header = gcl_job_header ).
+      exporting
+        i_job_header = gr_job_header ).
     		
-    clear gcl_job_header.
+    clear gr_job_header.
     
 * fetch new instance from example API method
-    gcl_job_header = gcl_exampleapi->get_job_header(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_job_header(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_job_header ).
     		
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+Name | Type | Description
+------------ | ------------- | -------------
 
 * * *
 <a name="markdown-header-model-job_id"></a> 
 
-# Model: job_id
+# Model: JobId
 
 
 
@@ -971,38 +986,39 @@ Name | Type | Description | Notes
 *** A JobId represents a PLOSSYS 4 job
 
 * create our variables..
-    data gcl_job_id type ref to /blck/mdl_cl_job_id.
+    data gr_job_id type /blck/p4_job_id.
     
 * instantiate model and call the setters to set values..
-    gcl_job_id = /blck/mdl_cl_job_id=>create( ).
-    gcl_job_id->set_uuid( 'ipsum lorem' ). " (type string)
+    gr_job_id-uuid = 'ipsum lorem'. " (type /BLCK/P4_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_job_id(
-    	exporting
-    		i_job_id = gcl_job_id ).
+      exporting
+        i_job_id = gr_job_id ).
     		
-    clear gcl_job_id.
+    clear gr_job_id.
     
 * fetch new instance from example API method
-    gcl_job_id = gcl_exampleapi->get_job_id(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_job_id(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_job_id ).
     		
-    l_uuid = gcl_job_id->get_uuid( ). " (type string)
+    write: gr_job_id-uuid. " (type /BLCK/P4_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**uuid** | string | Identifier of the job | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**uuid** | /BLCK/P4_STRING | Identifier of the job
 
 * * *
 <a name="markdown-header-enum-status_type"></a> 
 
-# Enum: status_type
+# Enum: StatusType
 
 
 
@@ -1012,41 +1028,39 @@ Name | Type | Description | Notes
 *** Definition of allowed status names
 
 * create our variables..
-    data gcl_status_type type ref to /blck/mdl_cl_status_type.
+    data gv_status_type type /blck/p4_status_type.
     
-* instantiate model relevant to the enum value we want
-    gcl_status_type = /blck/mdl_cl_status_type=>enum_open( ).
+* set the enum value we want
+    gv_status_type = /blck/p4_cl_model=>status_type-open.
     
 * pass the enum to the example API via method
     gcl_exampleapi->set_status_type_state(
-    	exporting
-    		i_status_type = gcl_status_type ).
+      exporting
+        i_status_type = gv_status_type ).
     		
-    clear gcl_status_type.
+    clear gv_status_type.
     
 * fetch result from example API method
-    gcl_status_type = gcl_exampleapi->get_status_type_state(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_status_type_state(
+      exporting
+        i_id = 1
+      importing
+        e_200 = gv_status_type ).
     	
-* we have two ways to handle the result, either "if" with individual cases..
-  if gcl_status_type->is_open( ) eq 'X'.
-*   do something specific to open case..
-  endif.
-  
-* .. or use a case clause to handle all scenarios:
-  case gcl_status_type->get_value( ).
-    when /blck/mdl_cl_status_type=>mce_open.
+* we can handle the result with either "if" with individual cases
+* or use a case clause to handle all scenarios:
+  case gv_status_type.
+    when /blck/p4_cl_model=>status_type-open.
 *     do something specific to open case..
-    when /blck/mdl_cl_status_type=>mce_processing.
+    when /blck/p4_cl_model=>status_type-processing.
 *     do something specific to processing case..
-    when /blck/mdl_cl_status_type=>mce_completed.
+    when /blck/p4_cl_model=>status_type-completed.
 *     do something specific to completed case..
-    when /blck/mdl_cl_status_type=>mce_paused.
+    when /blck/p4_cl_model=>status_type-paused.
 *     do something specific to paused case..
-    when /blck/mdl_cl_status_type=>mce_aborted.
+    when /blck/p4_cl_model=>status_type-aborted.
 *     do something specific to aborted case..
-    when /blck/mdl_cl_status_type=>mce_failed.
+    when /blck/p4_cl_model=>status_type-failed.
 *     do something specific to failed case..
   endcase.
 
@@ -1055,19 +1069,19 @@ Name | Type | Description | Notes
 
 ## Enum Values
 
-Name | Value | Instantiation
+Name | Value | Constant
 ------------ | ------------- | -------------
-**open** | open | /blck/mdl_cl_status_type=>enum_open( ).
-**processing** | processing | /blck/mdl_cl_status_type=>enum_processing( ).
-**completed** | completed | /blck/mdl_cl_status_type=>enum_completed( ).
-**paused** | paused | /blck/mdl_cl_status_type=>enum_paused( ).
-**aborted** | aborted | /blck/mdl_cl_status_type=>enum_aborted( ).
-**failed** | failed | /blck/mdl_cl_status_type=>enum_failed( ).
+**open** | open | /blck/p4_cl_model=>status_type-open.
+**processing** | processing | /blck/p4_cl_model=>status_type-processing.
+**completed** | completed | /blck/p4_cl_model=>status_type-completed.
+**paused** | paused | /blck/p4_cl_model=>status_type-paused.
+**aborted** | aborted | /blck/p4_cl_model=>status_type-aborted.
+**failed** | failed | /blck/p4_cl_model=>status_type-failed.
 
 * * *
 <a name="markdown-header-model-job_status"></a> 
 
-# Model: job_status
+# Model: JobStatus
 
 
 
@@ -1077,38 +1091,39 @@ Name | Value | Instantiation
 *** The status of a job
 
 * create our variables..
-    data gcl_job_status type ref to /blck/mdl_cl_job_status.
+    data gr_job_status type /blck/p4_job_status.
     
 * instantiate model and call the setters to set values..
-    gcl_job_status = /blck/mdl_cl_job_status=>create( ).
-    gcl_job_status->set_status( l_status ). " (type /BLCK/P4_status_type)
+    gr_job_status-status = l_status. " (type /BLCK/P4_STATUS_TYPE)
     
 * pass to example API method
     gcl_exampleapi->update_job_status(
-    	exporting
-    		i_job_status = gcl_job_status ).
+      exporting
+        i_job_status = gr_job_status ).
     		
-    clear gcl_job_status.
+    clear gr_job_status.
     
 * fetch new instance from example API method
-    gcl_job_status = gcl_exampleapi->get_job_status(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_job_status(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_job_status ).
     		
-    l_status = gcl_job_status->get_status( ). " (type /BLCK/P4_status_type)
+    write: gr_job_status-status. " (type /BLCK/P4_STATUS_TYPE)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**status** | /BLCK/P4_status_type (**[status_type](#markdown-header-enum-status_type)**) |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**status** | /BLCK/P4_STATUS_TYPE (**[status_type](#markdown-header-enum-status_type)**) | 
 
 * * *
 <a name="markdown-header-model-jobstatusevent"></a> 
 
-# Model: jobstatusevent
+# Model: JobStatusEvent
 
 
 
@@ -1118,44 +1133,47 @@ Name | Type | Description | Notes
 *** Status of a PLOSSYS 4 job
 
 * create our variables..
-    data gcl_jobstatusevent type ref to /blck/mdl_cl_jobstatusevent.
+    data gr_jobstatusevent type /blck/p4_jobstatusevent.
     
 * instantiate model and call the setters to set values..
-    gcl_jobstatusevent = /blck/mdl_cl_jobstatusevent=>create( ).
-    gcl_jobstatusevent->set_type( 'ipsum lorem' ). " (type string)
-    gcl_jobstatusevent->set_scope( 'ipsum lorem' ). " (type string)
-    gcl_jobstatusevent->set_parameters( 'ipsum lorem' ). " (type string)
+    gr_jobstatusevent-type = 'ipsum lorem'. " (type /BLCK/P4_STRING)
+
+    gr_jobstatusevent-scope = 'ipsum lorem'. " (type /BLCK/P4_STRING)
+
+    gr_jobstatusevent-parameters = 'ipsum lorem'. " (type /BLCK/P4_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_jobstatusevent(
-    	exporting
-    		i_jobstatusevent = gcl_jobstatusevent ).
+      exporting
+        i_jobstatusevent = gr_jobstatusevent ).
     		
-    clear gcl_jobstatusevent.
+    clear gr_jobstatusevent.
     
 * fetch new instance from example API method
-    gcl_jobstatusevent = gcl_exampleapi->get_jobstatusevent(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_jobstatusevent(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_jobstatusevent ).
     		
-    l_type = gcl_jobstatusevent->get_type( ). " (type string)
-    l_scope = gcl_jobstatusevent->get_scope( ). " (type string)
-    l_parameters = gcl_jobstatusevent->get_parameters( ). " (type string)
+    write: gr_jobstatusevent-type. " (type /BLCK/P4_STRING)
+    write: gr_jobstatusevent-scope. " (type /BLCK/P4_STRING)
+    write: gr_jobstatusevent-parameters. " (type /BLCK/P4_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**type** | string | name of event, possible values: &#x27;UPDATE_JOB&#x27;  | [optional] [default to null]
-**scope** | string | uuid of PLOSSYS 4 job | [optional] [default to null]
-**parameters** | string | key/value pairs with event specific parameters. E.g. for UPDATE_JOB: &#x27;status: completed&#x27;  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**type** | /BLCK/P4_STRING | name of event, possible values: &#x27;UPDATE_JOB&#x27; 
+**scope** | /BLCK/P4_STRING | uuid of PLOSSYS 4 job
+**parameters** | /BLCK/P4_STRING | key/value pairs with event specific parameters. E.g. for UPDATE_JOB: &#x27;status: completed&#x27; 
 
 * * *
 <a name="markdown-header-model-printer"></a> 
 
-# Model: printer
+# Model: Printer
 
 
 
@@ -1165,55 +1183,64 @@ Name | Type | Description | Notes
 *** Printer capabilities
 
 * create our variables..
-    data gcl_printer type ref to /blck/mdl_cl_printer.
+    data gr_printer type /blck/p4_printer.
     
 * instantiate model and call the setters to set values..
-    gcl_printer = /blck/mdl_cl_printer=>create( ).
-    gcl_printer->set_printer( 'ipsum lorem' ). " (type string)
-    gcl_printer->set_display_name( 'ipsum lorem' ). " (type string)
-    gcl_printer->set_comment( 'ipsum lorem' ). " (type string)
-    gcl_printer->set_color( 'X' ). " (type flag)
-    gcl_printer->set_color_default( 'X' ). " (type flag)
-    gcl_printer->set_duplex( 'X' ). " (type flag)
-    gcl_printer->set_duplex_default( 'ipsum lorem' ). " (type string)
-    gcl_printer->set_trays( l_trays ). " (type /blck/api_string_tt)
-    gcl_printer->set_tray_media( l_tray_media ). " (type /blck/api_string_tt)
+    gr_printer-printer = 'ipsum lorem'. " (type /BLCK/P4_STRING)
+
+    gr_printer-display_name = 'ipsum lorem'. " (type /BLCK/P4_STRING)
+
+    gr_printer-comment = 'ipsum lorem'. " (type /BLCK/P4_STRING)
+
+    gr_printer-color = 'X'. " (type /BLCK/P4_BOOL)
+
+    gr_printer-color_default = 'X'. " (type /BLCK/P4_BOOL)
+
+    gr_printer-duplex = 'X'. " (type /BLCK/P4_BOOL)
+
+    gr_printer-duplex_default = 'ipsum lorem'. " (type /BLCK/P4_STRING)
+
+    gr_printer-trays = l_trays. " (type /BLCK/P4_STRING_TT)
+
+    gr_printer-tray_media = l_tray_media. " (type /BLCK/P4_STRING_TT)
     
 * pass to example API method
     gcl_exampleapi->update_printer(
-    	exporting
-    		i_printer = gcl_printer ).
+      exporting
+        i_printer = gr_printer ).
     		
-    clear gcl_printer.
+    clear gr_printer.
     
 * fetch new instance from example API method
-    gcl_printer = gcl_exampleapi->get_printer(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_printer(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_printer ).
     		
-    l_printer = gcl_printer->get_printer( ). " (type string)
-    l_display_name = gcl_printer->get_display_name( ). " (type string)
-    l_comment = gcl_printer->get_comment( ). " (type string)
-    l_color = gcl_printer->get_color( ). " (type flag)
-    l_color_default = gcl_printer->get_color_default( ). " (type flag)
-    l_duplex = gcl_printer->get_duplex( ). " (type flag)
-    l_duplex_default = gcl_printer->get_duplex_default( ). " (type string)
-    l_trays = gcl_printer->get_trays( ). " (type /blck/api_string_tt)
-    l_tray_media = gcl_printer->get_tray_media( ). " (type /blck/api_string_tt)
+    write: gr_printer-printer. " (type /BLCK/P4_STRING)
+    write: gr_printer-display_name. " (type /BLCK/P4_STRING)
+    write: gr_printer-comment. " (type /BLCK/P4_STRING)
+    write: gr_printer-color. " (type /BLCK/P4_BOOL)
+    write: gr_printer-color_default. " (type /BLCK/P4_BOOL)
+    write: gr_printer-duplex. " (type /BLCK/P4_BOOL)
+    write: gr_printer-duplex_default. " (type /BLCK/P4_STRING)
+    write: gr_printer-trays. " (type /BLCK/P4_STRING_TT)
+    write: gr_printer-tray_media. " (type /BLCK/P4_STRING_TT)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**printer** | string | Printer name | [optional] [default to null]
-**display_name** | string | Name used for displaying the printer (if empty use Printer instead) | [optional] [default to null]
-**comment** | string | Text describing the printer | [optional] [default to null]
-**color** | flag | True if printer is capable of printing color, otherwise false | [optional] [default to null]
-**color_default** | flag | Default color setting for jobs, sent to this printer | [optional] [default to null]
-**duplex** | flag | True if printer is capable of printin in duplex mode, otherwise false | [optional] [default to null]
-**duplex_default** | string | Default duplex setting for jobs, sent to this printer | [optional] [default to null]
-**trays** | /blck/api_string_tt | Paper format loaded in each of the printer&#x27;s input trays | [optional] [default to null]
-**tray_media** | /blck/api_string_tt | Media type loaded in each of the printer&#x27;s input trays | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**printer** | /BLCK/P4_STRING | Printer name
+**display_name** | /BLCK/P4_STRING | Name used for displaying the printer (if empty use Printer instead)
+**comment** | /BLCK/P4_STRING | Text describing the printer
+**color** | /BLCK/P4_BOOL | True if printer is capable of printing color, otherwise false
+**color_default** | /BLCK/P4_BOOL | Default color setting for jobs, sent to this printer
+**duplex** | /BLCK/P4_BOOL | True if printer is capable of printin in duplex mode, otherwise false
+**duplex_default** | /BLCK/P4_STRING | Default duplex setting for jobs, sent to this printer
+**trays** | /BLCK/P4_STRING_TT | Paper format loaded in each of the printer&#x27;s input trays
+**tray_media** | /BLCK/P4_STRING_TT | Media type loaded in each of the printer&#x27;s input trays
 

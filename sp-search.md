@@ -24,11 +24,10 @@ Query
 *   for parameter i_querytext:
 *   a simple ABAP primitive of type /BLCK/SPS_STRING
     data gvs_querytext type /BLCK/SPS_STRING.
-
 *   for parameter i_selectproperties:
 *   a simple ABAP primitive of type /BLCK/SPS_STRING
     data gvs_selectproperties type /BLCK/SPS_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/SPS_QUERY
+*   when the result of the call is HTTP200 we expect type /BLCK/SPS_QUERY
     data gr_http200 type /BLCK/SPS_QUERY.
         
 *** set data according to requirements of the API call
@@ -78,7 +77,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/SPS_QUERY (**[Query](#markdown-header-model-)**) | OK
+ 200 | **e_200** | /BLCK/SPS_QUERY (**[Query](#markdown-header-model-query)**) | OK
 
 ### HTTP request headers
 
@@ -89,7 +88,7 @@ HTTP Code | Name | Type | Description
 * * *
 <a name="markdown-header-model-cells"></a> 
 
-# Model: cells
+# Model: Cells
 
 
 
@@ -99,44 +98,47 @@ HTTP Code | Name | Type | Description
 *** Model for Cells
 
 * create our variables..
-    data gcl_cells type ref to /blck/mdl_cl_cells.
+    data gr_cells type /blck/sps_cells.
     
 * instantiate model and call the setters to set values..
-    gcl_cells = /blck/mdl_cl_cells=>create( ).
-    gcl_cells->set_key( 'ipsum lorem' ). " (type string)
-    gcl_cells->set_value( 'ipsum lorem' ). " (type string)
-    gcl_cells->set_value_type( 'ipsum lorem' ). " (type string)
+    gr_cells-key = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
+
+    gr_cells-value = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
+
+    gr_cells-value_type = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_cells(
-    	exporting
-    		i_cells = gcl_cells ).
+      exporting
+        i_cells = gr_cells ).
     		
-    clear gcl_cells.
+    clear gr_cells.
     
 * fetch new instance from example API method
-    gcl_cells = gcl_exampleapi->get_cells(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_cells(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_cells ).
     		
-    l_key = gcl_cells->get_key( ). " (type string)
-    l_value = gcl_cells->get_value( ). " (type string)
-    l_value_type = gcl_cells->get_value_type( ). " (type string)
+    write: gr_cells-key. " (type /BLCK/SPS_STRING)
+    write: gr_cells-value. " (type /BLCK/SPS_STRING)
+    write: gr_cells-value_type. " (type /BLCK/SPS_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**key** | string |  | [default to null]
-**value** | string |  | [optional] [default to null]
-**value_type** | string |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**key** | /BLCK/SPS_STRING | 
+**value** | /BLCK/SPS_STRING | 
+**value_type** | /BLCK/SPS_STRING | 
 
 * * *
 <a name="markdown-header-model-properties"></a> 
 
-# Model: properties
+# Model: Properties
 
 
 
@@ -146,44 +148,47 @@ Name | Type | Description | Notes
 *** Model for Properties
 
 * create our variables..
-    data gcl_properties type ref to /blck/mdl_cl_properties.
+    data gr_properties type /blck/sps_properties.
     
 * instantiate model and call the setters to set values..
-    gcl_properties = /blck/mdl_cl_properties=>create( ).
-    gcl_properties->set_key( 'ipsum lorem' ). " (type string)
-    gcl_properties->set_value( 'ipsum lorem' ). " (type string)
-    gcl_properties->set_value_type( 'ipsum lorem' ). " (type string)
+    gr_properties-key = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
+
+    gr_properties-value = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
+
+    gr_properties-value_type = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_properties(
-    	exporting
-    		i_properties = gcl_properties ).
+      exporting
+        i_properties = gr_properties ).
     		
-    clear gcl_properties.
+    clear gr_properties.
     
 * fetch new instance from example API method
-    gcl_properties = gcl_exampleapi->get_properties(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_properties(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_properties ).
     		
-    l_key = gcl_properties->get_key( ). " (type string)
-    l_value = gcl_properties->get_value( ). " (type string)
-    l_value_type = gcl_properties->get_value_type( ). " (type string)
+    write: gr_properties-key. " (type /BLCK/SPS_STRING)
+    write: gr_properties-value. " (type /BLCK/SPS_STRING)
+    write: gr_properties-value_type. " (type /BLCK/SPS_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**key** | string |  | [default to null]
-**value** | string |  | [optional] [default to null]
-**value_type** | string |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**key** | /BLCK/SPS_STRING | 
+**value** | /BLCK/SPS_STRING | 
+**value_type** | /BLCK/SPS_STRING | 
 
 * * *
 <a name="markdown-header-model-rows"></a> 
 
-# Model: rows
+# Model: Rows
 
 
 
@@ -193,38 +198,39 @@ Name | Type | Description | Notes
 *** Model for Rows
 
 * create our variables..
-    data gcl_rows type ref to /blck/mdl_cl_rows.
+    data gr_rows type /blck/sps_rows.
     
 * instantiate model and call the setters to set values..
-    gcl_rows = /blck/mdl_cl_rows=>create( ).
-    gcl_rows->set_cells( l_cells ). " (type /BLCK/SPS_cells_tt)
+    gr_rows-cells = l_cells. " (type /BLCK/SPS_CELLS_TT)
     
 * pass to example API method
     gcl_exampleapi->update_rows(
-    	exporting
-    		i_rows = gcl_rows ).
+      exporting
+        i_rows = gr_rows ).
     		
-    clear gcl_rows.
+    clear gr_rows.
     
 * fetch new instance from example API method
-    gcl_rows = gcl_exampleapi->get_rows(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_rows(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_rows ).
     		
-    l_cells = gcl_rows->get_cells( ). " (type /BLCK/SPS_cells_tt)
+    write: gr_rows-cells. " (type /BLCK/SPS_CELLS_TT)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**cells** | /BLCK/SPS_cells_tt (**[array of cells](#markdown-header-model-cells)**) |  | [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**cells** | /BLCK/SPS_CELLS_TT (**[array of cells](#markdown-header-model-cells)**) | 
 
 * * *
 <a name="markdown-header-model-table"></a> 
 
-# Model: table
+# Model: Table
 
 
 
@@ -234,38 +240,39 @@ Name | Type | Description | Notes
 *** Model for Table
 
 * create our variables..
-    data gcl_table type ref to /blck/mdl_cl_table.
+    data gr_table type /blck/sps_table.
     
 * instantiate model and call the setters to set values..
-    gcl_table = /blck/mdl_cl_table=>create( ).
-    gcl_table->set_rows( l_rows ). " (type /BLCK/SPS_rows_tt)
+    gr_table-rows = l_rows. " (type /BLCK/SPS_ROWS_TT)
     
 * pass to example API method
     gcl_exampleapi->update_table(
-    	exporting
-    		i_table = gcl_table ).
+      exporting
+        i_table = gr_table ).
     		
-    clear gcl_table.
+    clear gr_table.
     
 * fetch new instance from example API method
-    gcl_table = gcl_exampleapi->get_table(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_table(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_table ).
     		
-    l_rows = gcl_table->get_rows( ). " (type /BLCK/SPS_rows_tt)
+    write: gr_table-rows. " (type /BLCK/SPS_ROWS_TT)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**rows** | /BLCK/SPS_rows_tt (**[array of rows](#markdown-header-model-rows)**) |  | [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**rows** | /BLCK/SPS_ROWS_TT (**[array of rows](#markdown-header-model-rows)**) | 
 
 * * *
 <a name="markdown-header-model-relevantresult"></a> 
 
-# Model: relevantresult
+# Model: RelevantResults
 
 
 
@@ -275,62 +282,71 @@ Name | Type | Description | Notes
 *** Model for RelevantResults
 
 * create our variables..
-    data gcl_relevantresult type ref to /blck/mdl_cl_relevantresult.
+    data gr_relevantresult type /blck/sps_relevantresult.
     
 * instantiate model and call the setters to set values..
-    gcl_relevantresult = /blck/mdl_cl_relevantresult=>create( ).
-    gcl_relevantresult->set_group_template_id( 'ipsum lorem' ). " (type string)
-    gcl_relevantresult->set_item_template_id( 'ipsum lorem' ). " (type string)
-    gcl_relevantresult->set_properties( l_properties ). " (type /BLCK/SPS_properties_tt)
-    gcl_relevantresult->set_result_title( 'ipsum lorem' ). " (type string)
-    gcl_relevantresult->set_result_title_url( 'ipsum lorem' ). " (type string)
-    gcl_relevantresult->set_row_count( 42 ). " (type i)
-    gcl_relevantresult->set_table( l_table ). " (type /BLCK/SPS_table)
-    gcl_relevantresult->set_total_rows( 42 ). " (type i)
-    gcl_relevantresult->set_totalrowsincludingduplicat( 42 ). " (type i)
+    gr_relevantresult-group_template_id = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
+
+    gr_relevantresult-item_template_id = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
+
+    gr_relevantresult-properties = l_properties. " (type /BLCK/SPS_PROPERTIES_TT)
+
+    gr_relevantresult-result_title = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
+
+    gr_relevantresult-result_title_url = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
+
+    gr_relevantresult-row_count = 42. " (type /BLCK/SPS_INT)
+
+    gr_relevantresult-table = l_table. " (type /BLCK/SPS_TABLE)
+
+    gr_relevantresult-total_rows = 42. " (type /BLCK/SPS_INT)
+
+    gr_relevantresult-totalrowsincludingduplicat = 42. " (type /BLCK/SPS_INT)
     
 * pass to example API method
     gcl_exampleapi->update_relevantresult(
-    	exporting
-    		i_relevantresult = gcl_relevantresult ).
+      exporting
+        i_relevantresult = gr_relevantresult ).
     		
-    clear gcl_relevantresult.
+    clear gr_relevantresult.
     
 * fetch new instance from example API method
-    gcl_relevantresult = gcl_exampleapi->get_relevantresult(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_relevantresult(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_relevantresult ).
     		
-    l_group_template_id = gcl_relevantresult->get_group_template_id( ). " (type string)
-    l_item_template_id = gcl_relevantresult->get_item_template_id( ). " (type string)
-    l_properties = gcl_relevantresult->get_properties( ). " (type /BLCK/SPS_properties_tt)
-    l_result_title = gcl_relevantresult->get_result_title( ). " (type string)
-    l_result_title_url = gcl_relevantresult->get_result_title_url( ). " (type string)
-    l_row_count = gcl_relevantresult->get_row_count( ). " (type i)
-    l_table = gcl_relevantresult->get_table( ). " (type /BLCK/SPS_table)
-    l_total_rows = gcl_relevantresult->get_total_rows( ). " (type i)
-    l_totalrowsincludingduplicat = gcl_relevantresult->get_totalrowsincludingduplicat( ). " (type i)
+    write: gr_relevantresult-group_template_id. " (type /BLCK/SPS_STRING)
+    write: gr_relevantresult-item_template_id. " (type /BLCK/SPS_STRING)
+    write: gr_relevantresult-properties. " (type /BLCK/SPS_PROPERTIES_TT)
+    write: gr_relevantresult-result_title. " (type /BLCK/SPS_STRING)
+    write: gr_relevantresult-result_title_url. " (type /BLCK/SPS_STRING)
+    write: gr_relevantresult-row_count. " (type /BLCK/SPS_INT)
+    write: gr_relevantresult-table. " (type /BLCK/SPS_TABLE)
+    write: gr_relevantresult-total_rows. " (type /BLCK/SPS_INT)
+    write: gr_relevantresult-totalrowsincludingduplicat. " (type /BLCK/SPS_INT)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**group_template_id** | string |  | [default to null]
-**item_template_id** | string |  | [optional] [default to null]
-**properties** | /BLCK/SPS_properties_tt (**[array of properties](#markdown-header-model-properties)**) |  | [optional] [default to null]
-**result_title** | string |  | [optional] [default to null]
-**result_title_url** | string |  | [optional] [default to null]
-**row_count** | i |  | [optional] [default to null]
-**table** | /BLCK/SPS_table (**[table](#markdown-header-model-table)**) |  | [optional] [default to null]
-**total_rows** | i |  | [optional] [default to null]
-**totalrowsincludingduplicat** | i |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**group_template_id** | /BLCK/SPS_STRING | 
+**item_template_id** | /BLCK/SPS_STRING | 
+**properties** | /BLCK/SPS_PROPERTIES_TT (**[array of properties](#markdown-header-model-properties)**) | 
+**result_title** | /BLCK/SPS_STRING | 
+**result_title_url** | /BLCK/SPS_STRING | 
+**row_count** | /BLCK/SPS_INT | 
+**table** | /BLCK/SPS_TABLE (**[table](#markdown-header-model-table)**) | 
+**total_rows** | /BLCK/SPS_INT | 
+**totalrowsincludingduplicat** | /BLCK/SPS_INT | 
 
 * * *
 <a name="markdown-header-model-primaryqueryre"></a> 
 
-# Model: primaryqueryre
+# Model: PrimaryQueryResult
 
 
 
@@ -340,53 +356,59 @@ Name | Type | Description | Notes
 *** Model for PrimaryQueryResult
 
 * create our variables..
-    data gcl_primaryqueryre type ref to /blck/mdl_cl_primaryqueryre.
+    data gr_primaryqueryre type /blck/sps_primaryqueryre.
     
 * instantiate model and call the setters to set values..
-    gcl_primaryqueryre = /blck/mdl_cl_primaryqueryre=>create( ).
-    gcl_primaryqueryre->set_custom_results( l_custom_results ). " (type /blck/api_string_tt)
-    gcl_primaryqueryre->set_query_id( 'ipsum lorem' ). " (type string)
-    gcl_primaryqueryre->set_query_rule_id( 'ipsum lorem' ). " (type string)
-    gcl_primaryqueryre->set_refinement_results( 'ipsum lorem' ). " (type string)
-    gcl_primaryqueryre->set_relevant_results( l_relevant_results ). " (type /BLCK/SPS_relevantresult)
-    gcl_primaryqueryre->set_special_term_results( 'ipsum lorem' ). " (type string)
+    gr_primaryqueryre-custom_results = l_custom_results. " (type /BLCK/SPS_STRING_TT)
+
+    gr_primaryqueryre-query_id = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
+
+    gr_primaryqueryre-query_rule_id = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
+
+    gr_primaryqueryre-refinement_results = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
+
+    gr_primaryqueryre-relevant_results = l_relevant_results. " (type /BLCK/SPS_RELEVANTRESULT)
+
+    gr_primaryqueryre-special_term_results = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_primaryqueryre(
-    	exporting
-    		i_primaryqueryre = gcl_primaryqueryre ).
+      exporting
+        i_primaryqueryre = gr_primaryqueryre ).
     		
-    clear gcl_primaryqueryre.
+    clear gr_primaryqueryre.
     
 * fetch new instance from example API method
-    gcl_primaryqueryre = gcl_exampleapi->get_primaryqueryre(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_primaryqueryre(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_primaryqueryre ).
     		
-    l_custom_results = gcl_primaryqueryre->get_custom_results( ). " (type /blck/api_string_tt)
-    l_query_id = gcl_primaryqueryre->get_query_id( ). " (type string)
-    l_query_rule_id = gcl_primaryqueryre->get_query_rule_id( ). " (type string)
-    l_refinement_results = gcl_primaryqueryre->get_refinement_results( ). " (type string)
-    l_relevant_results = gcl_primaryqueryre->get_relevant_results( ). " (type /BLCK/SPS_relevantresult)
-    l_special_term_results = gcl_primaryqueryre->get_special_term_results( ). " (type string)
+    write: gr_primaryqueryre-custom_results. " (type /BLCK/SPS_STRING_TT)
+    write: gr_primaryqueryre-query_id. " (type /BLCK/SPS_STRING)
+    write: gr_primaryqueryre-query_rule_id. " (type /BLCK/SPS_STRING)
+    write: gr_primaryqueryre-refinement_results. " (type /BLCK/SPS_STRING)
+    write: gr_primaryqueryre-relevant_results. " (type /BLCK/SPS_RELEVANTRESULT)
+    write: gr_primaryqueryre-special_term_results. " (type /BLCK/SPS_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**custom_results** | /blck/api_string_tt |  | [default to null]
-**query_id** | string |  | [optional] [default to null]
-**query_rule_id** | string |  | [optional] [default to null]
-**refinement_results** | string |  | [optional] [default to null]
-**relevant_results** | /BLCK/SPS_relevantresult (**[relevantresult](#markdown-header-model-relevantresult)**) |  | [optional] [default to null]
-**special_term_results** | string |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**custom_results** | /BLCK/SPS_STRING_TT | 
+**query_id** | /BLCK/SPS_STRING | 
+**query_rule_id** | /BLCK/SPS_STRING | 
+**refinement_results** | /BLCK/SPS_STRING | 
+**relevant_results** | /BLCK/SPS_RELEVANTRESULT (**[relevantresult](#markdown-header-model-relevantresult)**) | 
+**special_term_results** | /BLCK/SPS_STRING | 
 
 * * *
 <a name="markdown-header-model-properties2"></a> 
 
-# Model: properties2
+# Model: Properties2
 
 
 
@@ -396,44 +418,47 @@ Name | Type | Description | Notes
 *** Model for Properties2
 
 * create our variables..
-    data gcl_properties2 type ref to /blck/mdl_cl_properties2.
+    data gr_properties2 type /blck/sps_properties2.
     
 * instantiate model and call the setters to set values..
-    gcl_properties2 = /blck/mdl_cl_properties2=>create( ).
-    gcl_properties2->set_key( 'ipsum lorem' ). " (type string)
-    gcl_properties2->set_value( 'ipsum lorem' ). " (type string)
-    gcl_properties2->set_value_type( 'ipsum lorem' ). " (type string)
+    gr_properties2-key = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
+
+    gr_properties2-value = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
+
+    gr_properties2-value_type = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_properties2(
-    	exporting
-    		i_properties2 = gcl_properties2 ).
+      exporting
+        i_properties2 = gr_properties2 ).
     		
-    clear gcl_properties2.
+    clear gr_properties2.
     
 * fetch new instance from example API method
-    gcl_properties2 = gcl_exampleapi->get_properties2(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_properties2(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_properties2 ).
     		
-    l_key = gcl_properties2->get_key( ). " (type string)
-    l_value = gcl_properties2->get_value( ). " (type string)
-    l_value_type = gcl_properties2->get_value_type( ). " (type string)
+    write: gr_properties2-key. " (type /BLCK/SPS_STRING)
+    write: gr_properties2-value. " (type /BLCK/SPS_STRING)
+    write: gr_properties2-value_type. " (type /BLCK/SPS_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**key** | string |  | [default to null]
-**value** | string |  | [optional] [default to null]
-**value_type** | string |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**key** | /BLCK/SPS_STRING | 
+**value** | /BLCK/SPS_STRING | 
+**value_type** | /BLCK/SPS_STRING | 
 
 * * *
 <a name="markdown-header-model-query"></a> 
 
-# Model: query
+# Model: Query
 
 
 
@@ -443,49 +468,56 @@ Name | Type | Description | Notes
 *** Model for Query
 
 * create our variables..
-    data gcl_query type ref to /blck/mdl_cl_query.
+    data gr_query type /blck/sps_query.
     
 * instantiate model and call the setters to set values..
-    gcl_query = /blck/mdl_cl_query=>create( ).
-    gcl_query->set_elapsed_time( 42 ). " (type i)
-    gcl_query->set_odata_metadata( 'ipsum lorem' ). " (type string)
-    gcl_query->set_primary_query_result( l_primary_query_result ). " (type /BLCK/SPS_primaryqueryre)
-    gcl_query->set_properties( l_properties ). " (type /BLCK/SPS_properties2_tt)
-    gcl_query->set_secondary_query_results( l_secondary_query_results ). " (type /blck/api_string_tt)
-    gcl_query->set_spelling_suggestion( 'ipsum lorem' ). " (type string)
-    gcl_query->set_triggered_rules( l_triggered_rules ). " (type /blck/api_string_tt)
+    gr_query-elapsed_time = 42. " (type /BLCK/SPS_INT)
+
+    gr_query-odata_metadata = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
+
+    gr_query-primary_query_result = l_primary_query_result. " (type /BLCK/SPS_PRIMARYQUERYRE)
+
+    gr_query-properties = l_properties. " (type /BLCK/SPS_PROPERTIES2_TT)
+
+    gr_query-secondary_query_results = l_secondary_query_results. " (type /BLCK/SPS_STRING_TT)
+
+    gr_query-spelling_suggestion = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
+
+    gr_query-triggered_rules = l_triggered_rules. " (type /BLCK/SPS_STRING_TT)
     
 * pass to example API method
     gcl_exampleapi->update_query(
-    	exporting
-    		i_query = gcl_query ).
+      exporting
+        i_query = gr_query ).
     		
-    clear gcl_query.
+    clear gr_query.
     
 * fetch new instance from example API method
-    gcl_query = gcl_exampleapi->get_query(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_query(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_query ).
     		
-    l_elapsed_time = gcl_query->get_elapsed_time( ). " (type i)
-    l_odata_metadata = gcl_query->get_odata_metadata( ). " (type string)
-    l_primary_query_result = gcl_query->get_primary_query_result( ). " (type /BLCK/SPS_primaryqueryre)
-    l_properties = gcl_query->get_properties( ). " (type /BLCK/SPS_properties2_tt)
-    l_secondary_query_results = gcl_query->get_secondary_query_results( ). " (type /blck/api_string_tt)
-    l_spelling_suggestion = gcl_query->get_spelling_suggestion( ). " (type string)
-    l_triggered_rules = gcl_query->get_triggered_rules( ). " (type /blck/api_string_tt)
+    write: gr_query-elapsed_time. " (type /BLCK/SPS_INT)
+    write: gr_query-odata_metadata. " (type /BLCK/SPS_STRING)
+    write: gr_query-primary_query_result. " (type /BLCK/SPS_PRIMARYQUERYRE)
+    write: gr_query-properties. " (type /BLCK/SPS_PROPERTIES2_TT)
+    write: gr_query-secondary_query_results. " (type /BLCK/SPS_STRING_TT)
+    write: gr_query-spelling_suggestion. " (type /BLCK/SPS_STRING)
+    write: gr_query-triggered_rules. " (type /BLCK/SPS_STRING_TT)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**elapsed_time** | i |  | [default to null]
-**odata_metadata** | string |  | [optional] [default to null]
-**primary_query_result** | /BLCK/SPS_primaryqueryre (**[primaryqueryre](#markdown-header-model-primaryqueryre)**) |  | [optional] [default to null]
-**properties** | /BLCK/SPS_properties2_tt (**[array of properties2](#markdown-header-model-properties2)**) |  | [optional] [default to null]
-**secondary_query_results** | /blck/api_string_tt |  | [optional] [default to null]
-**spelling_suggestion** | string |  | [optional] [default to null]
-**triggered_rules** | /blck/api_string_tt |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**elapsed_time** | /BLCK/SPS_INT | 
+**odata_metadata** | /BLCK/SPS_STRING | 
+**primary_query_result** | /BLCK/SPS_PRIMARYQUERYRE (**[primaryqueryre](#markdown-header-model-primaryqueryre)**) | 
+**properties** | /BLCK/SPS_PROPERTIES2_TT (**[array of properties2](#markdown-header-model-properties2)**) | 
+**secondary_query_results** | /BLCK/SPS_STRING_TT | 
+**spelling_suggestion** | /BLCK/SPS_STRING | 
+**triggered_rules** | /BLCK/SPS_STRING_TT | 
 

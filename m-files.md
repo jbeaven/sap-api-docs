@@ -23,7 +23,7 @@ Adds an object to the favorites.
 *   for parameter i_body:
 *   a reference to model type /BLCK/MFI_OBJ_ID
     data gm_body type /BLCK/MFI_OBJ_ID.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT.
         
 *** set data according to requirements of the API call
@@ -71,7 +71,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
 
 ### HTTP request headers
 
@@ -100,11 +100,10 @@ Retrieves object version information on the favorite object
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_objectid type /BLCK/MFI_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION.
         
 *** set data according to requirements of the API call
@@ -152,7 +151,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION (**[ObjectVersion](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION (**[ObjectVersion](#markdown-header-model-object_version)**) | successful operation
 
 ### HTTP request headers
 
@@ -177,7 +176,8 @@ Retrieves favorite objects.
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
-*** create variables for input and output as needed*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION_TT
+*** create variables for input and output as needed
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION_TT
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION_TT.
         
 
@@ -216,7 +216,7 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array](#markdown-header-model-object_version)**) | successful operation
 
 ### HTTP request headers
 
@@ -245,11 +245,10 @@ Removes an object from favorites.
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_objectid type /BLCK/MFI_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT.
         
 *** set data according to requirements of the API call
@@ -297,7 +296,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
 
 ### HTTP request headers
 
@@ -332,7 +331,7 @@ Stores a temporary file on the server and assigns an ID for it. Once uploaded th
 *   for parameter i_body:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_body type /BLCK/MFI_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_UPLOAD_INFO
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_UPLOAD_INFO
     data gr_http200 type /BLCK/MFI_UPLOAD_INFO.
         
 *** set data according to requirements of the API call
@@ -377,7 +376,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_UPLOAD_INFO (**[UploadInfo](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_UPLOAD_INFO (**[UploadInfo](#markdown-header-model-upload_info)**) | successful operation
 
 ### HTTP request headers
 
@@ -410,19 +409,16 @@ Adds a comment to an object
 *   for parameter i_body:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_body type /BLCK/MFI_STRING.
-
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT.
         
 *** set data according to requirements of the API call
@@ -477,7 +473,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
 
 ### HTTP request headers
 
@@ -506,19 +502,16 @@ Adds a new file to the object.
 *   for parameter i_body:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_body type /BLCK/MFI_STRING.
-
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION.
         
 *** set data according to requirements of the API call
@@ -573,7 +566,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION (**[ObjectVersion](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION (**[ObjectVersion](#markdown-header-model-object_version)**) | successful operation
 
 ### HTTP request headers
 
@@ -602,11 +595,10 @@ Creates a new object of type.
 *   for parameter i_body:
 *   a reference to model type /BLCK/MFI_OBJECTCREATION
     data gm_body type /BLCK/MFI_OBJECTCREATION.
-
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION.
         
 *** set data according to requirements of the API call
@@ -655,7 +647,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION (**[ObjectVersion](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION (**[ObjectVersion](#markdown-header-model-object_version)**) | successful operation
 
 ### HTTP request headers
 
@@ -684,7 +676,7 @@ Demotes external objects that have been previously promoted.
 *   for parameter i_body:
 *   a table type /BLCK/MFI_OBJ_ID_TTT
     data gi_body type /BLCK/MFI_OBJ_ID_TTT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT_TT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT_TT.
         
 *** set data according to requirements of the API call
@@ -732,7 +724,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT_TT (**[array](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT_TT (**[array](#markdown-header-model-extendedobject)**) | successful operation
 
 ### HTTP request headers
 
@@ -763,19 +755,15 @@ As checked in versions cannot be destroyed this can only be performed on a check
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-
 *   for parameter i_force:
 *   a simple ABAP primitive of type /BLCK/MFI_BOOL
     data gv_force type /BLCK/MFI_BOOL.
-
 *   for parameter i_all_versions:
 *   a simple ABAP primitive of type /BLCK/MFI_BOOL
     data gv_all_versions type /BLCK/MFI_BOOL.
@@ -816,6 +804,8 @@ As checked in versions cannot be destroyed this can only be performed on a check
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 204.
+*       handle code 204
       when others.
 * handle the general case..
     endcase.
@@ -861,7 +851,7 @@ Retrieves automatic metadata based on specified request info.
 *   for parameter i_body:
 *   a reference to model type /BLCK/MFI_AUTOMATICMETAD
     data gm_body type /BLCK/MFI_AUTOMATICMETAD.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_PROPERTYVALUES_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_PROPERTYVALUES_TT
     data gr_http200 type /BLCK/MFI_PROPERTYVALUES_TT.
         
 *** set data according to requirements of the API call
@@ -912,7 +902,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_PROPERTYVALUES_TT (**[array](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_PROPERTYVALUES_TT (**[array](#markdown-header-model-propertyvalues)**) | successful operation
 
 ### HTTP request headers
 
@@ -941,15 +931,13 @@ Retrieves the current check out status.
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_MFCHECKOUTSTAT
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_MFCHECKOUTSTAT
     data gr_http200 type /BLCK/MFI_MFCHECKOUTSTAT.
         
 *** set data according to requirements of the API call
@@ -1000,7 +988,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_MFCHECKOUTSTAT (**[MFCheckOutStatus](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_MFCHECKOUTSTAT (**[MFCheckOutStatus](#markdown-header-model-mfcheckoutstat)**) | successful operation
 
 ### HTTP request headers
 
@@ -1029,15 +1017,13 @@ Retrieves the comments written on the object.
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_VERSIONCOMMENT_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_VERSIONCOMMENT_TT
     data gr_http200 type /BLCK/MFI_VERSIONCOMMENT_TT.
         
 *** set data according to requirements of the API call
@@ -1088,7 +1074,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_VERSIONCOMMENT_TT (**[array](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_VERSIONCOMMENT_TT (**[array](#markdown-header-model-versioncomment)**) | successful operation
 
 ### HTTP request headers
 
@@ -1117,7 +1103,7 @@ Retrieves the deleted status of the object.
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_BOOL
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_BOOL
     data gr_http200 type /BLCK/MFI_BOOL.
         
 *** set data according to requirements of the API call
@@ -1191,27 +1177,22 @@ Retrieves the object file contents.
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-
 *   for parameter i_file:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_file type /BLCK/MFI_INT.
-
 *   for parameter i_x_hmac:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_x_hmac type /BLCK/MFI_STRING.
-
 *   for parameter i_mac:
 *   a simple ABAP primitive of type /BLCK/MFI_BOOL
     data gv_mac type /BLCK/MFI_BOOL.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_BINARY
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_BINARY
     data gr_http200 type /BLCK/MFI_BINARY.
         
 *** set data according to requirements of the API call
@@ -1303,19 +1284,16 @@ Retrieves the object file information for the specific object file.
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-
 *   for parameter i_file:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_file type /BLCK/MFI_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_FILE
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_FILE
     data gr_http200 type /BLCK/MFI_OBJECT_FILE.
         
 *** set data according to requirements of the API call
@@ -1369,7 +1347,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_FILE (**[ObjectFile](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_FILE (**[ObjectFile](#markdown-header-model-object_file)**) | successful operation
 
 ### HTTP request headers
 
@@ -1398,37 +1376,30 @@ Retrieves the file preview.
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-
 *   for parameter i_file:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_file type /BLCK/MFI_INT.
-
 *   for parameter i_force:
 *   a simple ABAP primitive of type /BLCK/MFI_BOOL
     data gv_force type /BLCK/MFI_BOOL.
-
 *   for parameter i_size:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_size type /BLCK/MFI_INT.
-
 *   for parameter i_width:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_width type /BLCK/MFI_INT.
-
 *   for parameter i_height:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_height type /BLCK/MFI_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_BINARY
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_BINARY
     data gr_http200 type /BLCK/MFI_BINARY.
-*   when the the result of the call is HTTP404 we expect type /BLCK/MFI_BINARY
+*   when the result of the call is HTTP404 we expect type /BLCK/MFI_BINARY
     data gr_http404 type /BLCK/MFI_BINARY.
         
 *** set data according to requirements of the API call
@@ -1533,19 +1504,16 @@ Retrieves the current object file name.
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-
 *   for parameter i_file:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_file type /BLCK/MFI_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_STRING
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_STRING
     data gr_http200 type /BLCK/MFI_STRING.
         
 *** set data according to requirements of the API call
@@ -1628,15 +1596,13 @@ Retrieves the object file information for all the files on an object.
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_FILE_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_FILE_TT
     data gr_http200 type /BLCK/MFI_OBJECT_FILE_TT.
         
 *** set data according to requirements of the API call
@@ -1687,7 +1653,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_FILE_TT (**[array](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_FILE_TT (**[array](#markdown-header-model-object_file)**) | successful operation
 
 ### HTTP request headers
 
@@ -1718,7 +1684,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/properti
 *   for parameter i_object_ids:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_object_ids type /BLCK/MFI_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION_TT
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION_TT.
         
 *** set data according to requirements of the API call
@@ -1765,7 +1731,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array](#markdown-header-model-object_version)**) | successful operation
 
 ### HTTP request headers
 
@@ -1796,15 +1762,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_STRING
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_STRING
     data gr_http200 type /BLCK/MFI_STRING.
         
 *** set data according to requirements of the API call
@@ -1886,19 +1850,16 @@ Parameters: ?include - A list of additional fields to include in the ExtendedObj
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-
 *   for parameter i_include:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_include type /BLCK/MFI_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT.
         
 *** set data according to requirements of the API call
@@ -1952,7 +1913,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
 
 ### HTTP request headers
 
@@ -1983,31 +1944,25 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-
 *   for parameter i_force:
 *   a simple ABAP primitive of type /BLCK/MFI_BOOL
     data gv_force type /BLCK/MFI_BOOL.
-
 *   for parameter i_size:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_size type /BLCK/MFI_INT.
-
 *   for parameter i_width:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_width type /BLCK/MFI_INT.
-
 *   for parameter i_height:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_height type /BLCK/MFI_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_BINARY
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_BINARY
     data gr_http200 type /BLCK/MFI_BINARY.
         
 *** set data according to requirements of the API call
@@ -2055,6 +2010,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
     case gvi_code.
       when 200.
 *       do something with gr_http200 (type /BLCK/MFI_BINARY)
+      when 404.
+*       handle code 404
       when others.
 * handle the general case..
     endcase.
@@ -2106,7 +2063,7 @@ Retrieves all the available versions of the object.
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION_TT
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION_TT.
         
 *** set data according to requirements of the API call
@@ -2151,7 +2108,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array](#markdown-header-model-object_version)**) | successful operation
 
 ### HTTP request headers
 
@@ -2178,7 +2135,8 @@ The amount of returned objects is limited by the server, by default to 500 items
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
-*** create variables for input and output as needed*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_RESULTSOBJECTV
+*** create variables for input and output as needed
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_RESULTSOBJECTV
     data gr_http200 type /BLCK/MFI_RESULTSOBJECTV.
         
 
@@ -2217,7 +2175,7 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_RESULTSOBJECTV (**[ResultsObjectVersion](#markdown-header-model-)**) | Retrieves objects. The amount of returned objects is limited by the server, by default to 500 items.
+ 200 | **e_200** | /BLCK/MFI_RESULTSOBJECTV (**[ResultsObjectVersion](#markdown-header-model-resultsobjectv)**) | Retrieves objects. The amount of returned objects is limited by the server, by default to 500 items.
 
 ### HTTP request headers
 
@@ -2246,7 +2204,7 @@ Collection of objects filtered by object type.
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_RESULTSOBJECTV
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_RESULTSOBJECTV
     data gr_http200 type /BLCK/MFI_RESULTSOBJECTV.
         
 *** set data according to requirements of the API call
@@ -2291,7 +2249,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_RESULTSOBJECTV (**[ResultsObjectVersion](#markdown-header-model-)**) | Retrieves objects of the given type. The amount of returned objects is limited by the server.
+ 200 | **e_200** | /BLCK/MFI_RESULTSOBJECTV (**[ResultsObjectVersion](#markdown-header-model-resultsobjectv)**) | Retrieves objects of the given type. The amount of returned objects is limited by the server.
 
 ### HTTP request headers
 
@@ -2322,19 +2280,16 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-
 *   for parameter i_for_display:
 *   a simple ABAP primitive of type /BLCK/MFI_BOOL
     data gv_for_display type /BLCK/MFI_BOOL.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_PROPERTY_VALUE_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_PROPERTY_VALUE_TT
     data gr_http200 type /BLCK/MFI_PROPERTY_VALUE_TT.
         
 *** set data according to requirements of the API call
@@ -2391,7 +2346,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_PROPERTY_VALUE_TT (**[array](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_PROPERTY_VALUE_TT (**[array](#markdown-header-model-property_value)**) | successful operation
 
 ### HTTP request headers
 
@@ -2422,19 +2377,16 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_id type /BLCK/MFI_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_PROPERTY_VALUE
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_PROPERTY_VALUE
     data gr_http200 type /BLCK/MFI_PROPERTY_VALUE.
         
 *** set data according to requirements of the API call
@@ -2488,7 +2440,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_PROPERTY_VALUE (**[PropertyValue](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_PROPERTY_VALUE (**[PropertyValue](#markdown-header-model-property_value)**) | successful operation
 
 ### HTTP request headers
 
@@ -2519,23 +2471,19 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-
 *   for parameter i_objtype:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objtype type /BLCK/MFI_INT.
-
 *   for parameter i_direction:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_direction type /BLCK/MFI_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_INT
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_INT
     data gr_http200 type /BLCK/MFI_INT.
         
 *** set data according to requirements of the API call
@@ -2628,23 +2576,19 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-
 *   for parameter i_objtype:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objtype type /BLCK/MFI_INT.
-
 *   for parameter i_direction:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_direction type /BLCK/MFI_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION_TT
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION_TT.
         
 *** set data according to requirements of the API call
@@ -2706,7 +2650,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array](#markdown-header-model-object_version)**) | successful operation
 
 ### HTTP request headers
 
@@ -2737,15 +2681,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECTWORKFLOW
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECTWORKFLOW
     data gr_http200 type /BLCK/MFI_OBJECTWORKFLOW.
         
 *** set data according to requirements of the API call
@@ -2796,7 +2738,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECTWORKFLOW (**[ObjectWorkflowState](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECTWORKFLOW (**[ObjectWorkflowState](#markdown-header-model-objectworkflow)**) | successful operation
 
 ### HTTP request headers
 
@@ -2827,15 +2769,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_INT
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_INT
     data gr_http200 type /BLCK/MFI_INT.
         
 *** set data according to requirements of the API call
@@ -2917,15 +2857,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION_TT
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION_TT.
         
 *** set data according to requirements of the API call
@@ -2976,7 +2914,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array](#markdown-header-model-object_version)**) | successful operation
 
 ### HTTP request headers
 
@@ -3005,15 +2943,12 @@ Removes the file from the object.
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-
 *   for parameter i_file:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_file type /BLCK/MFI_INT.
@@ -3048,6 +2983,8 @@ Removes the file from the object.
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 203.
+*       handle code 203
       when others.
 * handle the general case..
     endcase.
@@ -3094,19 +3031,16 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_id type /BLCK/MFI_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT.
         
 *** set data according to requirements of the API call
@@ -3160,7 +3094,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
 
 ### HTTP request headers
 
@@ -3191,19 +3125,16 @@ Sets the check out status. This is allowed only when the object isn't checked ou
 *   for parameter i_body:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_body type /BLCK/MFI_INT.
-
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-*   when the the result of the call is HTTP204 we expect type /BLCK/MFI_OBJECT_VERSION
+*   when the result of the call is HTTP204 we expect type /BLCK/MFI_OBJECT_VERSION
     data gr_http204 type /BLCK/MFI_OBJECT_VERSION.
         
 *** set data according to requirements of the API call
@@ -3257,7 +3188,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 204 | **e_204** | /BLCK/MFI_OBJECT_VERSION (**[ObjectVersion](#markdown-header-model-)**) | successful operation
+ 204 | **e_204** | /BLCK/MFI_OBJECT_VERSION (**[ObjectVersion](#markdown-header-model-object_version)**) | successful operation
 
 ### HTTP request headers
 
@@ -3286,11 +3217,10 @@ Sets the deleted status of the object.
 *   for parameter i_body:
 *   a simple ABAP primitive of type /BLCK/MFI_BOOL
     data gv_body type /BLCK/MFI_BOOL.
-
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION.
         
 *** set data according to requirements of the API call
@@ -3338,7 +3268,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION (**[ObjectVersion](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION (**[ObjectVersion](#markdown-header-model-object_version)**) | successful operation
 
 ### HTTP request headers
 
@@ -3367,23 +3297,19 @@ Replaces the object file contents.
 *   for parameter i_body:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_body type /BLCK/MFI_STRING.
-
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-
 *   for parameter i_file:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_file type /BLCK/MFI_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION.
         
 *** set data according to requirements of the API call
@@ -3441,7 +3367,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION (**[ObjectVersion](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION (**[ObjectVersion](#markdown-header-model-object_version)**) | successful operation
 
 ### HTTP request headers
 
@@ -3470,23 +3396,19 @@ Sets the name on the object file.
 *   for parameter i_body:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_body type /BLCK/MFI_STRING.
-
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-
 *   for parameter i_file:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_file type /BLCK/MFI_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION.
         
 *** set data according to requirements of the API call
@@ -3544,7 +3466,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION (**[ObjectVersion](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION (**[ObjectVersion](#markdown-header-model-object_version)**) | successful operation
 
 ### HTTP request headers
 
@@ -3576,7 +3498,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/setmulti
 *   for parameter i_body:
 *   a reference to model type /BLCK/MFI_OBJECTSUPDATEI
     data gm_body type /BLCK/MFI_OBJECTSUPDATEI.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT_TT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT_TT.
         
 *** set data according to requirements of the API call
@@ -3621,7 +3543,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT_TT (**[array](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT_TT (**[array](#markdown-header-model-extendedobject)**) | successful operation
 
 ### HTTP request headers
 
@@ -3652,19 +3574,16 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   for parameter i_body:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_body type /BLCK/MFI_STRING.
-
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION.
         
 *** set data according to requirements of the API call
@@ -3701,6 +3620,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
     case gvi_code.
       when 200.
 *       do something with gr_http200 (type /BLCK/MFI_OBJECT_VERSION)
+      when 401.
+*       handle code 401
       when others.
 * handle the general case..
     endcase.
@@ -3719,7 +3640,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION (**[ObjectVersion](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION (**[ObjectVersion](#markdown-header-model-object_version)**) | successful operation
  401 | value not returned |  | If the object has an automatic title PUT will result in 401.
 
 ### HTTP request headers
@@ -3752,19 +3673,16 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   for parameter i_body:
 *   a table type /BLCK/MFI_PROPERTY_VALUE_TTT
     data gi_body type /BLCK/MFI_PROPERTY_VALUE_TTT.
-
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT.
         
 *** set data according to requirements of the API call
@@ -3820,7 +3738,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
 
 ### HTTP request headers
 
@@ -3851,23 +3769,19 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   for parameter i_body:
 *   a reference to model type /BLCK/MFI_PROPERTY_VALUE
     data gm_body type /BLCK/MFI_PROPERTY_VALUE.
-
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_id type /BLCK/MFI_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT.
         
 *** set data according to requirements of the API call
@@ -3925,7 +3839,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
 
 ### HTTP request headers
 
@@ -3956,19 +3870,16 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   for parameter i_body:
 *   a reference to model type /BLCK/MFI_OBJECTWORKFLOW
     data gm_body type /BLCK/MFI_OBJECTWORKFLOW.
-
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT.
         
 *** set data according to requirements of the API call
@@ -4010,6 +3921,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
     case gvi_code.
       when 200.
 *       do something with gr_http200 (type /BLCK/MFI_EXTENDEDOBJECT)
+      when 401.
+*       handle code 401
       when others.
 * handle the general case..
     endcase.
@@ -4028,7 +3941,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
  401 | value not returned |  | If the object has an automatic workflow state PUT will result in 401.
 
 ### HTTP request headers
@@ -4061,19 +3974,16 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   for parameter i_body:
 *   a table type /BLCK/MFI_PROPERTY_VALUE_TTT
     data gi_body type /BLCK/MFI_PROPERTY_VALUE_TTT.
-
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT.
         
 *** set data according to requirements of the API call
@@ -4129,7 +4039,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
 
 ### HTTP request headers
 
@@ -4164,7 +4074,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/recentlyaccessed
 *   for parameter i_body:
 *   a reference to model type /BLCK/MFI_OBJ_ID
     data gm_body type /BLCK/MFI_OBJ_ID.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT.
         
 *** set data according to requirements of the API call
@@ -4212,7 +4122,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
 
 ### HTTP request headers
 
@@ -4239,7 +4149,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/recentlyaccessed
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
-*** create variables for input and output as needed*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION_TT
+*** create variables for input and output as needed
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION_TT
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION_TT.
         
 
@@ -4278,7 +4189,7 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array](#markdown-header-model-object_version)**) | successful operation
 
 ### HTTP request headers
 
@@ -4310,7 +4221,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/repositories/
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
-*** create variables for input and output as needed*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_REPOSITORYAUTH_TT
+*** create variables for input and output as needed
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_REPOSITORYAUTH_TT
     data gr_http200 type /BLCK/MFI_REPOSITORYAUTH_TT.
         
 
@@ -4349,7 +4261,7 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_REPOSITORYAUTH_TT (**[array](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_REPOSITORYAUTH_TT (**[array](#markdown-header-model-repositoryauth)**) | successful operation
 
 ### HTTP request headers
 
@@ -4381,11 +4293,10 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/repositories/ses
 *   for parameter i_body:
 *   a reference to model type /BLCK/MFI_REPOSITORYAUT3
     data gm_body type /BLCK/MFI_REPOSITORYAUT3.
-
 *   for parameter i_targetid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_targetid type /BLCK/MFI_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_REPOSITORYAUT2
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_REPOSITORYAUT2
     data gr_http200 type /BLCK/MFI_REPOSITORYAUT2.
         
 *** set data according to requirements of the API call
@@ -4437,7 +4348,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_REPOSITORYAUT2 (**[RepositoryAuthenticationStatus](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_REPOSITORYAUT2 (**[RepositoryAuthenticationStatus](#markdown-header-model-repositoryaut2)**) | successful operation
 
 ### HTTP request headers
 
@@ -4493,6 +4404,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/repositories/ses
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 200.
+*       handle code 200
       when others.
 * handle the general case..
     endcase.
@@ -4541,7 +4454,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/authentic
 *   for parameter i_body:
 *   a reference to model type /BLCK/MFI_AUTHENTICATION
     data gm_body type /BLCK/MFI_AUTHENTICATION.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_STRING
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_STRING
     data gr_http200 type /BLCK/MFI_STRING.
         
 *** set data according to requirements of the API call
@@ -4622,7 +4535,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/publickey
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
-*** create variables for input and output as needed*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_PUBLIC_KEY
+*** create variables for input and output as needed
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_PUBLIC_KEY
     data gr_http200 type /BLCK/MFI_PUBLIC_KEY.
         
 
@@ -4661,7 +4575,7 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_PUBLIC_KEY (**[PublicKey](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_PUBLIC_KEY (**[PublicKey](#markdown-header-model-public_key)**) | successful operation
 
 ### HTTP request headers
 
@@ -4689,7 +4603,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/status/
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
-*** create variables for input and output as needed*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_STATUSRESPONSE
+*** create variables for input and output as needed
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_STATUSRESPONSE
     data gr_http200 type /BLCK/MFI_STATUSRESPONSE.
         
 
@@ -4715,6 +4630,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/status/
     case gvi_code.
       when 200.
 *       do something with gr_http200 (type /BLCK/MFI_STATUSRESPONSE)
+      when 503.
+*       handle code 503
       when others.
 * handle the general case..
     endcase.
@@ -4728,7 +4645,7 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_STATUSRESPONSE (**[StatusResponse](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_STATUSRESPONSE (**[StatusResponse](#markdown-header-model-statusresponse)**) | successful operation
  503 | value not returned |  | the M-Files server is unavailable
 
 ### HTTP request headers
@@ -4760,7 +4677,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/vaults/
 *   for parameter i_online:
 *   a simple ABAP primitive of type /BLCK/MFI_BOOL
     data gv_online type /BLCK/MFI_BOOL.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_REPOSITORYAUTH_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_REPOSITORYAUTH_TT
     data gr_http200 type /BLCK/MFI_REPOSITORYAUTH_TT.
         
 *** set data according to requirements of the API call
@@ -4806,7 +4723,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_REPOSITORYAUTH_TT (**[array](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_REPOSITORYAUTH_TT (**[array](#markdown-header-model-repositoryauth)**) | successful operation
 
 ### HTTP request headers
 
@@ -4837,7 +4754,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/authenti
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
-*** create variables for input and output as needed*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_STRING
+*** create variables for input and output as needed
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_STRING
     data gr_http200 type /BLCK/MFI_STRING.
         
 
@@ -4903,7 +4821,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
-*** create variables for input and output as needed*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_SESSION_INFO
+*** create variables for input and output as needed
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_SESSION_INFO
     data gr_http200 type /BLCK/MFI_SESSION_INFO.
         
 
@@ -4942,7 +4861,7 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_SESSION_INFO (**[SessionInfo](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_SESSION_INFO (**[SessionInfo](#markdown-header-model-session_info)**) | successful operation
 
 ### HTTP request headers
 
@@ -4969,7 +4888,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/userid/
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
-*** create variables for input and output as needed*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_PRIMITIVETYPEI
+*** create variables for input and output as needed
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_PRIMITIVETYPEI
     data gr_http200 type /BLCK/MFI_PRIMITIVETYPEI.
         
 
@@ -5008,7 +4928,7 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_PRIMITIVETYPEI (**[PrimitiveTypeInt](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_PRIMITIVETYPEI (**[PrimitiveTypeInt](#markdown-header-model-primitivetypei)**) | successful operation
 
 ### HTTP request headers
 
@@ -5035,7 +4955,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/vault/
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
-*** create variables for input and output as needed*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_VAULT
+*** create variables for input and output as needed
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_VAULT
     data gr_http200 type /BLCK/MFI_VAULT.
         
 
@@ -5074,7 +4995,7 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_VAULT (**[Vault](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_VAULT (**[Vault](#markdown-header-model-vault)**) | successful operation
 
 ### HTTP request headers
 
@@ -5105,7 +5026,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/
 *   for parameter i_body:
 *   a reference to model type /BLCK/MFI_AUTHENTICATION
     data gm_body type /BLCK/MFI_AUTHENTICATION.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_VAULT_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_VAULT_TT
     data gr_http200 type /BLCK/MFI_VAULT_TT.
         
 *** set data according to requirements of the API call
@@ -5159,7 +5080,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_VAULT_TT (**[array](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_VAULT_TT (**[array](#markdown-header-model-vault)**) | successful operation
 
 ### HTTP request headers
 
@@ -5186,7 +5107,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
-*** create variables for input and output as needed        
+*** create variables for input and output as needed
+        
 
 
 *** optional: instantiate descendant of /blck/api_cl_auth and assign to 
@@ -5207,6 +5129,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/
 
 *** do something with the result if applicable..
     case gvi_code.
+      when 204.
+*       handle code 204
       when others.
 * handle the general case..
     endcase.
@@ -5248,7 +5172,7 @@ The request must have either the GUID or the Name of the vault filled. In case b
 *   for parameter i_body:
 *   a reference to model type /BLCK/MFI_VAULT
     data gm_body type /BLCK/MFI_VAULT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_VAULT
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_VAULT
     data gr_http200 type /BLCK/MFI_VAULT.
         
 *** set data according to requirements of the API call
@@ -5280,6 +5204,8 @@ The request must have either the GUID or the Name of the vault filled. In case b
     case gvi_code.
       when 200.
 *       do something with gr_http200 (type /BLCK/MFI_VAULT)
+      when 409.
+*       handle code 409
       when others.
 * handle the general case..
     endcase.
@@ -5295,7 +5221,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_VAULT (**[Vault](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_VAULT (**[Vault](#markdown-header-model-vault)**) | successful operation
  409 | value not returned |  | there are multiple vaults with the same name
 
 ### HTTP request headers
@@ -5331,11 +5257,10 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *   for parameter i_body:
 *   a reference to model type /BLCK/MFI_VALUELISTITEM
     data gm_body type /BLCK/MFI_VALUELISTITEM.
-
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_id type /BLCK/MFI_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_VALUELISTITEM
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_VALUELISTITEM
     data gr_http200 type /BLCK/MFI_VALUELISTITEM.
         
 *** set data according to requirements of the API call
@@ -5390,7 +5315,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_VALUELISTITEM (**[ValueListItem](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_VALUELISTITEM (**[ValueListItem](#markdown-header-model-valuelistitem)**) | successful operation
 
 ### HTTP request headers
 
@@ -5421,11 +5346,10 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_id type /BLCK/MFI_INT.
-
 *   for parameter i_size:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_size type /BLCK/MFI_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_BINARY
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_BINARY
     data gr_http200 type /BLCK/MFI_BINARY.
         
 *** set data according to requirements of the API call
@@ -5505,7 +5429,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
 *   for parameter i_guid:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_guid type /BLCK/MFI_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_INT
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_INT
     data gr_http200 type /BLCK/MFI_INT.
         
 *** set data according to requirements of the API call
@@ -5581,11 +5505,10 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_id type /BLCK/MFI_INT.
-
 *   for parameter i_include:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_include type /BLCK/MFI_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJEC2
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJEC2
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJEC2.
         
 *** set data according to requirements of the API call
@@ -5636,7 +5559,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJEC2 (**[ExtendedObjectClass](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJEC2 (**[ExtendedObjectClass](#markdown-header-model-extendedobjec2)**) | successful operation
 
 ### HTTP request headers
 
@@ -5667,11 +5590,10 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_id type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_VALUELISTITEM
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_VALUELISTITEM
     data gr_http200 type /BLCK/MFI_VALUELISTITEM.
         
 *** set data according to requirements of the API call
@@ -5719,7 +5641,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_VALUELISTITEM (**[ValueListItem](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_VALUELISTITEM (**[ValueListItem](#markdown-header-model-valuelistitem)**) | successful operation
 
 ### HTTP request headers
 
@@ -5750,11 +5672,10 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_id type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_STRING
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_STRING
     data gr_http200 type /BLCK/MFI_STRING.
         
 *** set data according to requirements of the API call
@@ -5833,19 +5754,16 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_id type /BLCK/MFI_INT.
-
 *   for parameter i_filter:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_filter type /BLCK/MFI_STRING.
-
 *   for parameter i_filter_item:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_filter_item type /BLCK/MFI_STRING.
-
 *   for parameter i_condition_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_condition_type type /BLCK/MFI_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_RESULTSVALUELI
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_RESULTSVALUELI
     data gr_http200 type /BLCK/MFI_RESULTSVALUELI.
         
 *** set data according to requirements of the API call
@@ -5903,7 +5821,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_RESULTSVALUELI (**[ResultsValueListItem](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_RESULTSVALUELI (**[ResultsValueListItem](#markdown-header-model-resultsvalueli)**) | successful operation
 
 ### HTTP request headers
 
@@ -5934,7 +5852,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
 *   for parameter i_objtype:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objtype type /BLCK/MFI_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_CLASS_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_CLASS_TT
     data gr_http200 type /BLCK/MFI_OBJECT_CLASS_TT.
         
 *** set data according to requirements of the API call
@@ -5981,7 +5899,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_CLASS_TT (**[array](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_CLASS_TT (**[array](#markdown-header-model-object_class)**) | successful operation
 
 ### HTTP request headers
 
@@ -6012,7 +5930,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_OBJ_TYPE
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJ_TYPE
     data gr_http200 type /BLCK/MFI_OBJ_TYPE.
         
 *** set data according to requirements of the API call
@@ -6057,7 +5975,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJ_TYPE (**[ObjType](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJ_TYPE (**[ObjType](#markdown-header-model-obj_type)**) | successful operation
 
 ### HTTP request headers
 
@@ -6088,7 +6006,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_CLASS_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_CLASS_TT
     data gr_http200 type /BLCK/MFI_OBJECT_CLASS_TT.
         
 *** set data according to requirements of the API call
@@ -6133,7 +6051,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_CLASS_TT (**[array](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_CLASS_TT (**[array](#markdown-header-model-object_class)**) | successful operation
 
 ### HTTP request headers
 
@@ -6164,7 +6082,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_BINARY
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_BINARY
     data gr_http200 type /BLCK/MFI_BINARY.
         
 *** set data according to requirements of the API call
@@ -6236,7 +6154,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
-*** create variables for input and output as needed*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_OBJ_TYPE_TT
+*** create variables for input and output as needed
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJ_TYPE_TT
     data gr_http200 type /BLCK/MFI_OBJ_TYPE_TT.
         
 
@@ -6275,7 +6194,7 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJ_TYPE_TT (**[array](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJ_TYPE_TT (**[array](#markdown-header-model-obj_type)**) | successful operation
 
 ### HTTP request headers
 
@@ -6306,7 +6225,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_id type /BLCK/MFI_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_OBJ_TYPE
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJ_TYPE
     data gr_http200 type /BLCK/MFI_OBJ_TYPE.
         
 *** set data according to requirements of the API call
@@ -6351,7 +6270,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJ_TYPE (**[ObjType](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJ_TYPE (**[ObjType](#markdown-header-model-obj_type)**) | successful operation
 
 ### HTTP request headers
 
@@ -6378,7 +6297,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
-*** create variables for input and output as needed*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_OBJ_TYPE_TT
+*** create variables for input and output as needed
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJ_TYPE_TT
     data gr_http200 type /BLCK/MFI_OBJ_TYPE_TT.
         
 
@@ -6417,7 +6337,7 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJ_TYPE_TT (**[array](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJ_TYPE_TT (**[array](#markdown-header-model-obj_type)**) | successful operation
 
 ### HTTP request headers
 
@@ -6444,7 +6364,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/proper
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
-*** create variables for input and output as needed*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_PROPERTY_DEF_TT
+*** create variables for input and output as needed
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_PROPERTY_DEF_TT
     data gr_http200 type /BLCK/MFI_PROPERTY_DEF_TT.
         
 
@@ -6483,7 +6404,7 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_PROPERTY_DEF_TT (**[array](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_PROPERTY_DEF_TT (**[array](#markdown-header-model-property_def)**) | successful operation
 
 ### HTTP request headers
 
@@ -6514,7 +6435,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/proper
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_id type /BLCK/MFI_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_PROPERTY_DEF
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_PROPERTY_DEF
     data gr_http200 type /BLCK/MFI_PROPERTY_DEF.
         
 *** set data according to requirements of the API call
@@ -6559,7 +6480,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_PROPERTY_DEF (**[PropertyDef](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_PROPERTY_DEF (**[PropertyDef](#markdown-header-model-property_def)**) | successful operation
 
 ### HTTP request headers
 
@@ -6590,7 +6511,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_id type /BLCK/MFI_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_WORKFLOW
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_WORKFLOW
     data gr_http200 type /BLCK/MFI_WORKFLOW.
         
 *** set data according to requirements of the API call
@@ -6635,7 +6556,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_WORKFLOW (**[Workflow](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_WORKFLOW (**[Workflow](#markdown-header-model-workflow)**) | successful operation
 
 ### HTTP request headers
 
@@ -6666,11 +6587,10 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_id type /BLCK/MFI_INT.
-
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_sid type /BLCK/MFI_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_WORKFLOW_STATE
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_WORKFLOW_STATE
     data gr_http200 type /BLCK/MFI_WORKFLOW_STATE.
         
 *** set data according to requirements of the API call
@@ -6720,7 +6640,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_WORKFLOW_STATE (**[WorkflowState](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_WORKFLOW_STATE (**[WorkflowState](#markdown-header-model-workflow_state)**) | successful operation
 
 ### HTTP request headers
 
@@ -6751,11 +6671,10 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_id type /BLCK/MFI_INT.
-
 *   for parameter i_currentstate:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_currentstate type /BLCK/MFI_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_WORKFLOW_STATE_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_WORKFLOW_STATE_TT
     data gr_http200 type /BLCK/MFI_WORKFLOW_STATE_TT.
         
 *** set data according to requirements of the API call
@@ -6805,7 +6724,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_WORKFLOW_STATE_TT (**[array](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_WORKFLOW_STATE_TT (**[array](#markdown-header-model-workflow_state)**) | successful operation
 
 ### HTTP request headers
 
@@ -6836,11 +6755,10 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_id type /BLCK/MFI_INT.
-
 *   for parameter i_currentstate:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_currentstate type /BLCK/MFI_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_WORKFLOW_STATE_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_WORKFLOW_STATE_TT
     data gr_http200 type /BLCK/MFI_WORKFLOW_STATE_TT.
         
 *** set data according to requirements of the API call
@@ -6890,7 +6808,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_WORKFLOW_STATE_TT (**[array](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_WORKFLOW_STATE_TT (**[array](#markdown-header-model-workflow_state)**) | successful operation
 
 ### HTTP request headers
 
@@ -6921,7 +6839,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_id type /BLCK/MFI_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_WORKFLOW_TT
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_WORKFLOW_TT
     data gr_http200 type /BLCK/MFI_WORKFLOW_TT.
         
 *** set data according to requirements of the API call
@@ -6966,7 +6884,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_WORKFLOW_TT (**[array](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_WORKFLOW_TT (**[array](#markdown-header-model-workflow)**) | successful operation
 
 ### HTTP request headers
 
@@ -6997,11 +6915,10 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_id type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_VALUELISTITEM
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_VALUELISTITEM
     data gr_http200 type /BLCK/MFI_VALUELISTITEM.
         
 *** set data according to requirements of the API call
@@ -7049,7 +6966,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_VALUELISTITEM (**[ValueListItem](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_VALUELISTITEM (**[ValueListItem](#markdown-header-model-valuelistitem)**) | successful operation
 
 ### HTTP request headers
 
@@ -7080,15 +6997,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *   for parameter i_body:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_body type /BLCK/MFI_STRING.
-
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_id type /BLCK/MFI_INT.
-
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_VALUELISTITEM
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_VALUELISTITEM
     data gr_http200 type /BLCK/MFI_VALUELISTITEM.
         
 *** set data according to requirements of the API call
@@ -7139,7 +7054,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_VALUELISTITEM (**[ValueListItem](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_VALUELISTITEM (**[ValueListItem](#markdown-header-model-valuelistitem)**) | successful operation
 
 ### HTTP request headers
 
@@ -7170,11 +7085,10 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
 *   for parameter i_body:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_body type /BLCK/MFI_INT.
-
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_MFREFRESHSTATU
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_MFREFRESHSTATU
     data gr_http200 type /BLCK/MFI_MFREFRESHSTATU.
         
 *** set data according to requirements of the API call
@@ -7222,7 +7136,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_MFREFRESHSTATU (**[MFRefreshStatus](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_MFREFRESHSTATU (**[MFRefreshStatus](#markdown-header-model-mfrefreshstatu)**) | successful operation
 
 ### HTTP request headers
 
@@ -7257,7 +7171,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/views/path/items
 *   for parameter i_path:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_path type /BLCK/MFI_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_FOLDERCONTENTI
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_FOLDERCONTENTI
     data gr_http200 type /BLCK/MFI_FOLDERCONTENTI.
         
 *** set data according to requirements of the API call
@@ -7303,7 +7217,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_FOLDERCONTENTI (**[FolderContentItems](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_FOLDERCONTENTI (**[FolderContentItems](#markdown-header-model-foldercontenti)**) | successful operation
 
 ### HTTP request headers
 
@@ -7334,7 +7248,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/views/path/items
 *   for parameter i_path:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_path type /BLCK/MFI_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_INT
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_INT
     data gr_http200 type /BLCK/MFI_INT.
         
 *** set data according to requirements of the API call
@@ -7411,7 +7325,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/views/path/objec
 *   for parameter i_path:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_path type /BLCK/MFI_STRING.
-*   when the the result of the call is HTTP200 we expect type /BLCK/MFI_RESULTSOBJECTV
+*   when the result of the call is HTTP200 we expect type /BLCK/MFI_RESULTSOBJECTV
     data gr_http200 type /BLCK/MFI_RESULTSOBJECTV.
         
 *** set data according to requirements of the API call
@@ -7457,7 +7371,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_RESULTSOBJECTV (**[ResultsObjectVersion](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_RESULTSOBJECTV (**[ResultsObjectVersion](#markdown-header-model-resultsobjectv)**) | successful operation
 
 ### HTTP request headers
 
@@ -7468,7 +7382,7 @@ HTTP Code | Name | Type | Description
 * * *
 <a name="markdown-header-model-associatedprop"></a> 
 
-# Model: associatedprop
+# Model: AssociatedPropertyDef
 
 
 
@@ -7478,41 +7392,43 @@ HTTP Code | Name | Type | Description
 *** https://www.m-files.com/api/documentation/latest/index.html#MFilesAPI~AssociatedPropertyDef.html
 
 * create our variables..
-    data gcl_associatedprop type ref to /blck/mdl_cl_associatedprop.
+    data gr_associatedprop type /blck/mfi_associatedprop.
     
 * instantiate model and call the setters to set values..
-    gcl_associatedprop = /blck/mdl_cl_associatedprop=>create( ).
-    gcl_associatedprop->set_property_def( 42 ). " (type i)
-    gcl_associatedprop->set_required( 'X' ). " (type flag)
+    gr_associatedprop-property_def = 42. " (type /BLCK/MFI_INT)
+
+    gr_associatedprop-required = 'X'. " (type /BLCK/MFI_BOOL)
     
 * pass to example API method
     gcl_exampleapi->update_associatedprop(
-    	exporting
-    		i_associatedprop = gcl_associatedprop ).
+      exporting
+        i_associatedprop = gr_associatedprop ).
     		
-    clear gcl_associatedprop.
+    clear gr_associatedprop.
     
 * fetch new instance from example API method
-    gcl_associatedprop = gcl_exampleapi->get_associatedprop(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_associatedprop(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_associatedprop ).
     		
-    l_property_def = gcl_associatedprop->get_property_def( ). " (type i)
-    l_required = gcl_associatedprop->get_required( ). " (type flag)
+    write: gr_associatedprop-property_def. " (type /BLCK/MFI_INT)
+    write: gr_associatedprop-required. " (type /BLCK/MFI_BOOL)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**property_def** | i |  | [optional] [default to null]
-**required** | flag |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**property_def** | /BLCK/MFI_INT | 
+**required** | /BLCK/MFI_BOOL | 
 
 * * *
 <a name="markdown-header-model-authentication"></a> 
 
-# Model: authentication
+# Model: Authentication
 
 
 
@@ -7522,65 +7438,75 @@ Name | Type | Description | Notes
 *** Structures the details used for authentication with the M-Files Web Service.
 
 * create our variables..
-    data gcl_authentication type ref to /blck/mdl_cl_authentication.
+    data gr_authentication type /blck/mfi_authentication.
     
 * instantiate model and call the setters to set values..
-    gcl_authentication = /blck/mdl_cl_authentication=>create( ).
-    gcl_authentication->set_username( 'ipsum lorem' ). " (type string)
-    gcl_authentication->set_password( 'ipsum lorem' ). " (type string)
-    gcl_authentication->set_domain( 'ipsum lorem' ). " (type string)
-    gcl_authentication->set_windows_user( 'X' ). " (type flag)
-    gcl_authentication->set_computer_name( 'ipsum lorem' ). " (type string)
-    gcl_authentication->set_vault_guid( 'ipsum lorem' ). " (type string)
-    gcl_authentication->set_expiration( 'ipsum lorem' ). " (type string)
-    gcl_authentication->set_read_only( 'X' ). " (type flag)
-    gcl_authentication->set_url( 'ipsum lorem' ). " (type string)
-    gcl_authentication->set_method( 'ipsum lorem' ). " (type string)
+    gr_authentication-username = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_authentication-password = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_authentication-domain = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_authentication-windows_user = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_authentication-computer_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_authentication-vault_guid = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_authentication-expiration = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_authentication-read_only = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_authentication-url = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_authentication-method = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_authentication(
-    	exporting
-    		i_authentication = gcl_authentication ).
+      exporting
+        i_authentication = gr_authentication ).
     		
-    clear gcl_authentication.
+    clear gr_authentication.
     
 * fetch new instance from example API method
-    gcl_authentication = gcl_exampleapi->get_authentication(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_authentication(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_authentication ).
     		
-    l_username = gcl_authentication->get_username( ). " (type string)
-    l_password = gcl_authentication->get_password( ). " (type string)
-    l_domain = gcl_authentication->get_domain( ). " (type string)
-    l_windows_user = gcl_authentication->get_windows_user( ). " (type flag)
-    l_computer_name = gcl_authentication->get_computer_name( ). " (type string)
-    l_vault_guid = gcl_authentication->get_vault_guid( ). " (type string)
-    l_expiration = gcl_authentication->get_expiration( ). " (type string)
-    l_read_only = gcl_authentication->get_read_only( ). " (type flag)
-    l_url = gcl_authentication->get_url( ). " (type string)
-    l_method = gcl_authentication->get_method( ). " (type string)
+    write: gr_authentication-username. " (type /BLCK/MFI_STRING)
+    write: gr_authentication-password. " (type /BLCK/MFI_STRING)
+    write: gr_authentication-domain. " (type /BLCK/MFI_STRING)
+    write: gr_authentication-windows_user. " (type /BLCK/MFI_BOOL)
+    write: gr_authentication-computer_name. " (type /BLCK/MFI_STRING)
+    write: gr_authentication-vault_guid. " (type /BLCK/MFI_STRING)
+    write: gr_authentication-expiration. " (type /BLCK/MFI_STRING)
+    write: gr_authentication-read_only. " (type /BLCK/MFI_BOOL)
+    write: gr_authentication-url. " (type /BLCK/MFI_STRING)
+    write: gr_authentication-method. " (type /BLCK/MFI_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**username** | string |  | [optional] [default to null]
-**password** | string |  | [optional] [default to null]
-**domain** | string |  | [optional] [default to null]
-**windows_user** | flag |  | [optional] [default to null]
-**computer_name** | string |  | [optional] [default to null]
-**vault_guid** | string |  | [optional] [default to null]
-**expiration** | string |  | [optional] [default to null]
-**read_only** | flag |  | [optional] [default to null]
-**url** | string |  | [optional] [default to null]
-**method** | string |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**username** | /BLCK/MFI_STRING | 
+**password** | /BLCK/MFI_STRING | 
+**domain** | /BLCK/MFI_STRING | 
+**windows_user** | /BLCK/MFI_BOOL | 
+**computer_name** | /BLCK/MFI_STRING | 
+**vault_guid** | /BLCK/MFI_STRING | 
+**expiration** | /BLCK/MFI_STRING | 
+**read_only** | /BLCK/MFI_BOOL | 
+**url** | /BLCK/MFI_STRING | 
+**method** | /BLCK/MFI_STRING | 
 
 * * *
 <a name="markdown-header-model-obj_ver"></a> 
 
-# Model: obj_ver
+# Model: ObjVer
 
 
 
@@ -7590,53 +7516,59 @@ Name | Type | Description | Notes
 *** https://www.m-files.com/api/documentation/latest/index.html#MFilesAPI~ObjVer.html
 
 * create our variables..
-    data gcl_obj_ver type ref to /blck/mdl_cl_obj_ver.
+    data gr_obj_ver type /blck/mfi_obj_ver.
     
 * instantiate model and call the setters to set values..
-    gcl_obj_ver = /blck/mdl_cl_obj_ver=>create( ).
-    gcl_obj_ver->set_id( 42 ). " (type i)
-    gcl_obj_ver->set_type( 42 ). " (type i)
-    gcl_obj_ver->set_version( 42 ). " (type i)
-    gcl_obj_ver->set_external_repository_name( 'ipsum lorem' ). " (type string)
-    gcl_obj_ver->set_externalrepositoryobjectid( 'ipsum lorem' ). " (type string)
-    gcl_obj_ver->set_externalrepositoryobjectve( 'ipsum lorem' ). " (type string)
+    gr_obj_ver-id = 42. " (type /BLCK/MFI_INT)
+
+    gr_obj_ver-type = 42. " (type /BLCK/MFI_INT)
+
+    gr_obj_ver-version = 42. " (type /BLCK/MFI_INT)
+
+    gr_obj_ver-external_repository_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_obj_ver-externalrepositoryobjectid = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_obj_ver-externalrepositoryobjectve = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_obj_ver(
-    	exporting
-    		i_obj_ver = gcl_obj_ver ).
+      exporting
+        i_obj_ver = gr_obj_ver ).
     		
-    clear gcl_obj_ver.
+    clear gr_obj_ver.
     
 * fetch new instance from example API method
-    gcl_obj_ver = gcl_exampleapi->get_obj_ver(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_obj_ver(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_obj_ver ).
     		
-    l_id = gcl_obj_ver->get_id( ). " (type i)
-    l_type = gcl_obj_ver->get_type( ). " (type i)
-    l_version = gcl_obj_ver->get_version( ). " (type i)
-    l_external_repository_name = gcl_obj_ver->get_external_repository_name( ). " (type string)
-    l_externalrepositoryobjectid = gcl_obj_ver->get_externalrepositoryobjectid( ). " (type string)
-    l_externalrepositoryobjectve = gcl_obj_ver->get_externalrepositoryobjectve( ). " (type string)
+    write: gr_obj_ver-id. " (type /BLCK/MFI_INT)
+    write: gr_obj_ver-type. " (type /BLCK/MFI_INT)
+    write: gr_obj_ver-version. " (type /BLCK/MFI_INT)
+    write: gr_obj_ver-external_repository_name. " (type /BLCK/MFI_STRING)
+    write: gr_obj_ver-externalrepositoryobjectid. " (type /BLCK/MFI_STRING)
+    write: gr_obj_ver-externalrepositoryobjectve. " (type /BLCK/MFI_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | i |  | [optional] [default to null]
-**type** | i |  | [optional] [default to null]
-**version** | i |  | [optional] [default to null]
-**external_repository_name** | string | (for external objects only) | [optional] [default to null]
-**externalrepositoryobjectid** | string | (for external objects only) | [optional] [default to null]
-**externalrepositoryobjectve** | string |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**id** | /BLCK/MFI_INT | 
+**type** | /BLCK/MFI_INT | 
+**version** | /BLCK/MFI_INT | 
+**external_repository_name** | /BLCK/MFI_STRING | (for external objects only)
+**externalrepositoryobjectid** | /BLCK/MFI_STRING | (for external objects only)
+**externalrepositoryobjectve** | /BLCK/MFI_STRING | 
 
 * * *
 <a name="markdown-header-model-lookup"></a> 
 
-# Model: lookup
+# Model: Lookup
 
 
 
@@ -7646,50 +7578,55 @@ Name | Type | Description | Notes
 *** https://www.m-files.com/api/documentation/latest/index.html#MFilesAPI~Lookup.html
 
 * create our variables..
-    data gcl_lookup type ref to /blck/mdl_cl_lookup.
+    data gr_lookup type /blck/mfi_lookup.
     
 * instantiate model and call the setters to set values..
-    gcl_lookup = /blck/mdl_cl_lookup=>create( ).
-    gcl_lookup->set_deleted( 'X' ). " (type flag)
-    gcl_lookup->set_display_value( 'ipsum lorem' ). " (type string)
-    gcl_lookup->set_hidden( 'X' ). " (type flag)
-    gcl_lookup->set_item( 42 ). " (type i)
-    gcl_lookup->set_version( 42 ). " (type i)
+    gr_lookup-deleted = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_lookup-display_value = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_lookup-hidden = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_lookup-item = 42. " (type /BLCK/MFI_INT)
+
+    gr_lookup-version = 42. " (type /BLCK/MFI_INT)
     
 * pass to example API method
     gcl_exampleapi->update_lookup(
-    	exporting
-    		i_lookup = gcl_lookup ).
+      exporting
+        i_lookup = gr_lookup ).
     		
-    clear gcl_lookup.
+    clear gr_lookup.
     
 * fetch new instance from example API method
-    gcl_lookup = gcl_exampleapi->get_lookup(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_lookup(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_lookup ).
     		
-    l_deleted = gcl_lookup->get_deleted( ). " (type flag)
-    l_display_value = gcl_lookup->get_display_value( ). " (type string)
-    l_hidden = gcl_lookup->get_hidden( ). " (type flag)
-    l_item = gcl_lookup->get_item( ). " (type i)
-    l_version = gcl_lookup->get_version( ). " (type i)
+    write: gr_lookup-deleted. " (type /BLCK/MFI_BOOL)
+    write: gr_lookup-display_value. " (type /BLCK/MFI_STRING)
+    write: gr_lookup-hidden. " (type /BLCK/MFI_BOOL)
+    write: gr_lookup-item. " (type /BLCK/MFI_INT)
+    write: gr_lookup-version. " (type /BLCK/MFI_INT)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**deleted** | flag |  | [optional] [default to null]
-**display_value** | string |  | [optional] [default to null]
-**hidden** | flag |  | [optional] [default to null]
-**item** | i |  | [optional] [default to null]
-**version** | i |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**deleted** | /BLCK/MFI_BOOL | 
+**display_value** | /BLCK/MFI_STRING | 
+**hidden** | /BLCK/MFI_BOOL | 
+**item** | /BLCK/MFI_INT | 
+**version** | /BLCK/MFI_INT | 
 
 * * *
 <a name="markdown-header-enum-mf_data_type"></a> 
 
-# Enum: mf_data_type
+# Enum: MFDataType
 
 
 
@@ -7702,57 +7639,55 @@ Name | Type | Description | Notes
 *** MultiLineText 14: ACL
 
 * create our variables..
-    data gcl_mf_data_type type ref to /blck/mdl_cl_mf_data_type.
+    data gv_mf_data_type type /blck/mfi_mf_data_type.
     
-* instantiate model relevant to the enum value we want
-    gcl_mf_data_type = /blck/mdl_cl_mf_data_type=>enum_uninitialized( ).
+* set the enum value we want
+    gv_mf_data_type = /blck/mfi_cl_model=>mf_data_type-uninitialized.
     
 * pass the enum to the example API via method
     gcl_exampleapi->set_mf_data_type_state(
-    	exporting
-    		i_mf_data_type = gcl_mf_data_type ).
+      exporting
+        i_mf_data_type = gv_mf_data_type ).
     		
-    clear gcl_mf_data_type.
+    clear gv_mf_data_type.
     
 * fetch result from example API method
-    gcl_mf_data_type = gcl_exampleapi->get_mf_data_type_state(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_mf_data_type_state(
+      exporting
+        i_id = 1
+      importing
+        e_200 = gv_mf_data_type ).
     	
-* we have two ways to handle the result, either "if" with individual cases..
-  if gcl_mf_data_type->is_uninitialized( ) eq 'X'.
-*   do something specific to uninitialized case..
-  endif.
-  
-* .. or use a case clause to handle all scenarios:
-  case gcl_mf_data_type->get_value( ).
-    when /blck/mdl_cl_mf_data_type=>mce_uninitialized.
+* we can handle the result with either "if" with individual cases
+* or use a case clause to handle all scenarios:
+  case gv_mf_data_type.
+    when /blck/mfi_cl_model=>mf_data_type-uninitialized.
 *     do something specific to uninitialized case..
-    when /blck/mdl_cl_mf_data_type=>mce_text.
+    when /blck/mfi_cl_model=>mf_data_type-text.
 *     do something specific to text case..
-    when /blck/mdl_cl_mf_data_type=>mce_integer.
+    when /blck/mfi_cl_model=>mf_data_type-integer.
 *     do something specific to integer case..
-    when /blck/mdl_cl_mf_data_type=>mce_floating.
+    when /blck/mfi_cl_model=>mf_data_type-floating.
 *     do something specific to floating case..
-    when /blck/mdl_cl_mf_data_type=>mce_date.
+    when /blck/mfi_cl_model=>mf_data_type-date.
 *     do something specific to date case..
-    when /blck/mdl_cl_mf_data_type=>mce_time.
+    when /blck/mfi_cl_model=>mf_data_type-time.
 *     do something specific to time case..
-    when /blck/mdl_cl_mf_data_type=>mce_timestamp.
+    when /blck/mfi_cl_model=>mf_data_type-timestamp.
 *     do something specific to timestamp case..
-    when /blck/mdl_cl_mf_data_type=>mce_boolean.
+    when /blck/mfi_cl_model=>mf_data_type-boolean.
 *     do something specific to boolean case..
-    when /blck/mdl_cl_mf_data_type=>mce_lookup.
+    when /blck/mfi_cl_model=>mf_data_type-lookup.
 *     do something specific to lookup case..
-    when /blck/mdl_cl_mf_data_type=>mce_multi_select_lookup.
+    when /blck/mfi_cl_model=>mf_data_type-multi_select_lookup.
 *     do something specific to multi_select_lookup case..
-    when /blck/mdl_cl_mf_data_type=>mce_integer64.
+    when /blck/mfi_cl_model=>mf_data_type-integer64.
 *     do something specific to integer64 case..
-    when /blck/mdl_cl_mf_data_type=>mce_filetime.
+    when /blck/mfi_cl_model=>mf_data_type-filetime.
 *     do something specific to filetime case..
-    when /blck/mdl_cl_mf_data_type=>mce_multi_line_text.
+    when /blck/mfi_cl_model=>mf_data_type-multi_line_text.
 *     do something specific to multi_line_text case..
-    when /blck/mdl_cl_mf_data_type=>mce_acl.
+    when /blck/mfi_cl_model=>mf_data_type-acl.
 *     do something specific to acl case..
   endcase.
 
@@ -7761,27 +7696,27 @@ Name | Type | Description | Notes
 
 ## Enum Values
 
-Name | Value | Instantiation
+Name | Value | Constant
 ------------ | ------------- | -------------
-**uninitialized** | 0 | /blck/mdl_cl_mf_data_type=>enum_uninitialized( ).
-**text** | 1 | /blck/mdl_cl_mf_data_type=>enum_text( ).
-**integer** | 2 | /blck/mdl_cl_mf_data_type=>enum_integer( ).
-**floating** | 3 | /blck/mdl_cl_mf_data_type=>enum_floating( ).
-**date** | 5 | /blck/mdl_cl_mf_data_type=>enum_date( ).
-**time** | 6 | /blck/mdl_cl_mf_data_type=>enum_time( ).
-**timestamp** | 7 | /blck/mdl_cl_mf_data_type=>enum_timestamp( ).
-**boolean** | 8 | /blck/mdl_cl_mf_data_type=>enum_boolean( ).
-**lookup** | 9 | /blck/mdl_cl_mf_data_type=>enum_lookup( ).
-**multi_select_lookup** | 10 | /blck/mdl_cl_mf_data_type=>enum_multi_select_lookup( ).
-**integer64** | 11 | /blck/mdl_cl_mf_data_type=>enum_integer64( ).
-**filetime** | 12 | /blck/mdl_cl_mf_data_type=>enum_filetime( ).
-**multi_line_text** | 13 | /blck/mdl_cl_mf_data_type=>enum_multi_line_text( ).
-**acl** | 14 | /blck/mdl_cl_mf_data_type=>enum_acl( ).
+**uninitialized** | 0 | /blck/mfi_cl_model=>mf_data_type-uninitialized.
+**text** | 1 | /blck/mfi_cl_model=>mf_data_type-text.
+**integer** | 2 | /blck/mfi_cl_model=>mf_data_type-integer.
+**floating** | 3 | /blck/mfi_cl_model=>mf_data_type-floating.
+**date** | 5 | /blck/mfi_cl_model=>mf_data_type-date.
+**time** | 6 | /blck/mfi_cl_model=>mf_data_type-time.
+**timestamp** | 7 | /blck/mfi_cl_model=>mf_data_type-timestamp.
+**boolean** | 8 | /blck/mfi_cl_model=>mf_data_type-boolean.
+**lookup** | 9 | /blck/mfi_cl_model=>mf_data_type-lookup.
+**multi_select_lookup** | 10 | /blck/mfi_cl_model=>mf_data_type-multi_select_lookup.
+**integer64** | 11 | /blck/mfi_cl_model=>mf_data_type-integer64.
+**filetime** | 12 | /blck/mfi_cl_model=>mf_data_type-filetime.
+**multi_line_text** | 13 | /blck/mfi_cl_model=>mf_data_type-multi_line_text.
+**acl** | 14 | /blck/mfi_cl_model=>mf_data_type-acl.
 
 * * *
 <a name="markdown-header-model-typed_value"></a> 
 
-# Model: typed_value
+# Model: TypedValue
 
 
 
@@ -7793,59 +7728,67 @@ Name | Value | Instantiation
 *** https://www.m-files.com/api/documentation/latest/index.html#MFilesAPI~TypedValue.html
 
 * create our variables..
-    data gcl_typed_value type ref to /blck/mdl_cl_typed_value.
+    data gr_typed_value type /blck/mfi_typed_value.
     
 * instantiate model and call the setters to set values..
-    gcl_typed_value = /blck/mdl_cl_typed_value=>create( ).
-    gcl_typed_value->set_data_type( l_data_type ). " (type /BLCK/MFI_mf_data_type)
-    gcl_typed_value->set_has_value( 'X' ). " (type flag)
-    gcl_typed_value->set_value( 'ipsum lorem' ). " (type string)
-    gcl_typed_value->set_lookup( l_lookup ). " (type /BLCK/MFI_lookup)
-    gcl_typed_value->set_lookups( l_lookups ). " (type /BLCK/MFI_lookup_tt)
-    gcl_typed_value->set_display_value( 'ipsum lorem' ). " (type string)
-    gcl_typed_value->set_sorting_key( 'ipsum lorem' ). " (type string)
-    gcl_typed_value->set_serialized_value( 'ipsum lorem' ). " (type string)
+    gr_typed_value-data_type = l_data_type. " (type /BLCK/MFI_MF_DATA_TYPE)
+
+    gr_typed_value-has_value = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_typed_value-value = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_typed_value-lookup = l_lookup. " (type /BLCK/MFI_LOOKUP)
+
+    gr_typed_value-lookups = l_lookups. " (type /BLCK/MFI_LOOKUP_TT)
+
+    gr_typed_value-display_value = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_typed_value-sorting_key = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_typed_value-serialized_value = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_typed_value(
-    	exporting
-    		i_typed_value = gcl_typed_value ).
+      exporting
+        i_typed_value = gr_typed_value ).
     		
-    clear gcl_typed_value.
+    clear gr_typed_value.
     
 * fetch new instance from example API method
-    gcl_typed_value = gcl_exampleapi->get_typed_value(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_typed_value(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_typed_value ).
     		
-    l_data_type = gcl_typed_value->get_data_type( ). " (type /BLCK/MFI_mf_data_type)
-    l_has_value = gcl_typed_value->get_has_value( ). " (type flag)
-    l_value = gcl_typed_value->get_value( ). " (type string)
-    l_lookup = gcl_typed_value->get_lookup( ). " (type /BLCK/MFI_lookup)
-    l_lookups = gcl_typed_value->get_lookups( ). " (type /BLCK/MFI_lookup_tt)
-    l_display_value = gcl_typed_value->get_display_value( ). " (type string)
-    l_sorting_key = gcl_typed_value->get_sorting_key( ). " (type string)
-    l_serialized_value = gcl_typed_value->get_serialized_value( ). " (type string)
+    write: gr_typed_value-data_type. " (type /BLCK/MFI_MF_DATA_TYPE)
+    write: gr_typed_value-has_value. " (type /BLCK/MFI_BOOL)
+    write: gr_typed_value-value. " (type /BLCK/MFI_STRING)
+    write: gr_typed_value-lookup. " (type /BLCK/MFI_LOOKUP)
+    write: gr_typed_value-lookups. " (type /BLCK/MFI_LOOKUP_TT)
+    write: gr_typed_value-display_value. " (type /BLCK/MFI_STRING)
+    write: gr_typed_value-sorting_key. " (type /BLCK/MFI_STRING)
+    write: gr_typed_value-serialized_value. " (type /BLCK/MFI_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**data_type** | /BLCK/MFI_mf_data_type (**[mf_data_type](#markdown-header-enum-mf_data_type)**) |  | [optional] [default to null]
-**has_value** | flag | Specifies whether the typed value contains a real value. | [optional] [default to null]
-**value** | string | Specifies the string, number or boolean value when the DataType is not a lookup type. | [optional] [default to null]
-**lookup** | /BLCK/MFI_lookup (**[lookup](#markdown-header-model-lookup)**) |  | [optional] [default to null]
-**lookups** | /BLCK/MFI_lookup_tt (**[array of lookup](#markdown-header-model-lookup)**) | Specifies the collection of Lookups when the DataType is MultiSelectLookup. | [optional] [default to null]
-**display_value** | string | Provides the value formatted for display. | [optional] [default to null]
-**sorting_key** | string | Provides a key that can be used to sort TypedValues | [optional] [default to null]
-**serialized_value** | string | Provides the typed value in a serialized format suitable to be used in URIs. | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**data_type** | /BLCK/MFI_MF_DATA_TYPE (**[mf_data_type](#markdown-header-enum-mf_data_type)**) | 
+**has_value** | /BLCK/MFI_BOOL | Specifies whether the typed value contains a real value.
+**value** | /BLCK/MFI_STRING | Specifies the string, number or boolean value when the DataType is not a lookup type.
+**lookup** | /BLCK/MFI_LOOKUP (**[lookup](#markdown-header-model-lookup)**) | 
+**lookups** | /BLCK/MFI_LOOKUP_TT (**[array of lookup](#markdown-header-model-lookup)**) | Specifies the collection of Lookups when the DataType is MultiSelectLookup.
+**display_value** | /BLCK/MFI_STRING | Provides the value formatted for display.
+**sorting_key** | /BLCK/MFI_STRING | Provides a key that can be used to sort TypedValues
+**serialized_value** | /BLCK/MFI_STRING | Provides the typed value in a serialized format suitable to be used in URIs.
 
 * * *
 <a name="markdown-header-model-property_value"></a> 
 
-# Model: property_value
+# Model: PropertyValue
 
 
 
@@ -7855,41 +7798,43 @@ Name | Type | Description | Notes
 *** https://www.m-files.com/api/documentation/latest/index.html#MFilesAPI~PropertyValue.html
 
 * create our variables..
-    data gcl_property_value type ref to /blck/mdl_cl_property_value.
+    data gr_property_value type /blck/mfi_property_value.
     
 * instantiate model and call the setters to set values..
-    gcl_property_value = /blck/mdl_cl_property_value=>create( ).
-    gcl_property_value->set_property_def( 42 ). " (type i)
-    gcl_property_value->set_typed_value( l_typed_value ). " (type /BLCK/MFI_typed_value)
+    gr_property_value-property_def = 42. " (type /BLCK/MFI_INT)
+
+    gr_property_value-typed_value = l_typed_value. " (type /BLCK/MFI_TYPED_VALUE)
     
 * pass to example API method
     gcl_exampleapi->update_property_value(
-    	exporting
-    		i_property_value = gcl_property_value ).
+      exporting
+        i_property_value = gr_property_value ).
     		
-    clear gcl_property_value.
+    clear gr_property_value.
     
 * fetch new instance from example API method
-    gcl_property_value = gcl_exampleapi->get_property_value(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_property_value(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_property_value ).
     		
-    l_property_def = gcl_property_value->get_property_def( ). " (type i)
-    l_typed_value = gcl_property_value->get_typed_value( ). " (type /BLCK/MFI_typed_value)
+    write: gr_property_value-property_def. " (type /BLCK/MFI_INT)
+    write: gr_property_value-typed_value. " (type /BLCK/MFI_TYPED_VALUE)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**property_def** | i |  | [optional] [default to null]
-**typed_value** | /BLCK/MFI_typed_value (**[typed_value](#markdown-header-model-typed_value)**) |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**property_def** | /BLCK/MFI_INT | 
+**typed_value** | /BLCK/MFI_TYPED_VALUE (**[typed_value](#markdown-header-model-typed_value)**) | 
 
 * * *
 <a name="markdown-header-model-automaticmetad"></a> 
 
-# Model: automaticmetad
+# Model: AutomaticMetadataRequestInfo
 
 
 
@@ -7900,53 +7845,59 @@ Name | Type | Description | Notes
 *** This struct is used when automatic metadata is fetched from server.
 
 * create our variables..
-    data gcl_automaticmetad type ref to /blck/mdl_cl_automaticmetad.
+    data gr_automaticmetad type /blck/mfi_automaticmetad.
     
 * instantiate model and call the setters to set values..
-    gcl_automaticmetad = /blck/mdl_cl_automaticmetad=>create( ).
-    gcl_automaticmetad->set_upload_ids( l_upload_ids ). " (type /blck/api_i_tt)
-    gcl_automaticmetad->set_property_values( l_property_values ). " (type /BLCK/MFI_property_value_tt)
-    gcl_automaticmetad->set_obj_ver( l_obj_ver ). " (type /BLCK/MFI_obj_ver)
-    gcl_automaticmetad->set_object_type( 42 ). " (type i)
-    gcl_automaticmetad->set_metadata_provider_ids( l_metadata_provider_ids ). " (type /blck/api_string_tt)
-    gcl_automaticmetad->set_custom_data( 'ipsum lorem' ). " (type string)
+    gr_automaticmetad-upload_ids = l_upload_ids. " (type /BLCK/MFI_INT_TT)
+
+    gr_automaticmetad-property_values = l_property_values. " (type /BLCK/MFI_PROPERTY_VALUE_TT)
+
+    gr_automaticmetad-obj_ver = l_obj_ver. " (type /BLCK/MFI_OBJ_VER)
+
+    gr_automaticmetad-object_type = 42. " (type /BLCK/MFI_INT)
+
+    gr_automaticmetad-metadata_provider_ids = l_metadata_provider_ids. " (type /BLCK/MFI_STRING_TT)
+
+    gr_automaticmetad-custom_data = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_automaticmetad(
-    	exporting
-    		i_automaticmetad = gcl_automaticmetad ).
+      exporting
+        i_automaticmetad = gr_automaticmetad ).
     		
-    clear gcl_automaticmetad.
+    clear gr_automaticmetad.
     
 * fetch new instance from example API method
-    gcl_automaticmetad = gcl_exampleapi->get_automaticmetad(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_automaticmetad(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_automaticmetad ).
     		
-    l_upload_ids = gcl_automaticmetad->get_upload_ids( ). " (type /blck/api_i_tt)
-    l_property_values = gcl_automaticmetad->get_property_values( ). " (type /BLCK/MFI_property_value_tt)
-    l_obj_ver = gcl_automaticmetad->get_obj_ver( ). " (type /BLCK/MFI_obj_ver)
-    l_object_type = gcl_automaticmetad->get_object_type( ). " (type i)
-    l_metadata_provider_ids = gcl_automaticmetad->get_metadata_provider_ids( ). " (type /blck/api_string_tt)
-    l_custom_data = gcl_automaticmetad->get_custom_data( ). " (type string)
+    write: gr_automaticmetad-upload_ids. " (type /BLCK/MFI_INT_TT)
+    write: gr_automaticmetad-property_values. " (type /BLCK/MFI_PROPERTY_VALUE_TT)
+    write: gr_automaticmetad-obj_ver. " (type /BLCK/MFI_OBJ_VER)
+    write: gr_automaticmetad-object_type. " (type /BLCK/MFI_INT)
+    write: gr_automaticmetad-metadata_provider_ids. " (type /BLCK/MFI_STRING_TT)
+    write: gr_automaticmetad-custom_data. " (type /BLCK/MFI_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**upload_ids** | /blck/api_i_tt | List of temporary file upload ids. | [optional] [default to null]
-**property_values** | /BLCK/MFI_property_value_tt (**[array of property_value](#markdown-header-model-property_value)**) | Array of object’s current property values. | [optional] [default to null]
-**obj_ver** | /BLCK/MFI_obj_ver (**[obj_ver](#markdown-header-model-obj_ver)**) |  | [optional] [default to null]
-**object_type** | i | The object type of the new object. | [optional] [default to null]
-**metadata_provider_ids** | /blck/api_string_tt | List of metadata provider ids. | [optional] [default to null]
-**custom_data** | string | Custom data provided to the providers. | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**upload_ids** | /BLCK/MFI_INT_TT | List of temporary file upload ids.
+**property_values** | /BLCK/MFI_PROPERTY_VALUE_TT (**[array of property_value](#markdown-header-model-property_value)**) | Array of object’s current property values.
+**obj_ver** | /BLCK/MFI_OBJ_VER (**[obj_ver](#markdown-header-model-obj_ver)**) | 
+**object_type** | /BLCK/MFI_INT | The object type of the new object.
+**metadata_provider_ids** | /BLCK/MFI_STRING_TT | List of metadata provider ids.
+**custom_data** | /BLCK/MFI_STRING | Custom data provided to the providers.
 
 * * *
 <a name="markdown-header-model-class_group"></a> 
 
-# Model: class_group
+# Model: ClassGroup
 
 
 
@@ -7956,38 +7907,39 @@ Name | Type | Description | Notes
 *** https://www.m-files.com/api/documentation/latest/index.html#MFilesAPI~ClassGroup.html
 
 * create our variables..
-    data gcl_class_group type ref to /blck/mdl_cl_class_group.
+    data gr_class_group type /blck/mfi_class_group.
     
 * instantiate model and call the setters to set values..
-    gcl_class_group = /blck/mdl_cl_class_group=>create( ).
-    gcl_class_group->set_name( 'ipsum lorem' ). " (type string)
+    gr_class_group-name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_class_group(
-    	exporting
-    		i_class_group = gcl_class_group ).
+      exporting
+        i_class_group = gr_class_group ).
     		
-    clear gcl_class_group.
+    clear gr_class_group.
     
 * fetch new instance from example API method
-    gcl_class_group = gcl_exampleapi->get_class_group(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_class_group(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_class_group ).
     		
-    l_name = gcl_class_group->get_name( ). " (type string)
+    write: gr_class_group-name. " (type /BLCK/MFI_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | string |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**name** | /BLCK/MFI_STRING | 
 
 * * *
 <a name="markdown-header-model-stacktraceelem"></a> 
 
-# Model: stacktraceelem
+# Model: StackTraceElement
 
 
 
@@ -7997,47 +7949,51 @@ Name | Type | Description | Notes
 *** M-Files Web Service error stack trace element.
 
 * create our variables..
-    data gcl_stacktraceelem type ref to /blck/mdl_cl_stacktraceelem.
+    data gr_stacktraceelem type /blck/mfi_stacktraceelem.
     
 * instantiate model and call the setters to set values..
-    gcl_stacktraceelem = /blck/mdl_cl_stacktraceelem=>create( ).
-    gcl_stacktraceelem->set_file_name( 'ipsum lorem' ). " (type string)
-    gcl_stacktraceelem->set_line_number( 42 ). " (type i)
-    gcl_stacktraceelem->set_class_name( 'ipsum lorem' ). " (type string)
-    gcl_stacktraceelem->set_method_name( 'ipsum lorem' ). " (type string)
+    gr_stacktraceelem-file_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_stacktraceelem-line_number = 42. " (type /BLCK/MFI_INT)
+
+    gr_stacktraceelem-class_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_stacktraceelem-method_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_stacktraceelem(
-    	exporting
-    		i_stacktraceelem = gcl_stacktraceelem ).
+      exporting
+        i_stacktraceelem = gr_stacktraceelem ).
     		
-    clear gcl_stacktraceelem.
+    clear gr_stacktraceelem.
     
 * fetch new instance from example API method
-    gcl_stacktraceelem = gcl_exampleapi->get_stacktraceelem(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_stacktraceelem(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_stacktraceelem ).
     		
-    l_file_name = gcl_stacktraceelem->get_file_name( ). " (type string)
-    l_line_number = gcl_stacktraceelem->get_line_number( ). " (type i)
-    l_class_name = gcl_stacktraceelem->get_class_name( ). " (type string)
-    l_method_name = gcl_stacktraceelem->get_method_name( ). " (type string)
+    write: gr_stacktraceelem-file_name. " (type /BLCK/MFI_STRING)
+    write: gr_stacktraceelem-line_number. " (type /BLCK/MFI_INT)
+    write: gr_stacktraceelem-class_name. " (type /BLCK/MFI_STRING)
+    write: gr_stacktraceelem-method_name. " (type /BLCK/MFI_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**file_name** | string |  | [optional] [default to null]
-**line_number** | i |  | [optional] [default to null]
-**class_name** | string |  | [optional] [default to null]
-**method_name** | string |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**file_name** | /BLCK/MFI_STRING | 
+**line_number** | /BLCK/MFI_INT | 
+**class_name** | /BLCK/MFI_STRING | 
+**method_name** | /BLCK/MFI_STRING | 
 
 * * *
 <a name="markdown-header-model-exceptioninfo3"></a> 
 
-# Model: exceptioninfo3
+# Model: ExceptionInfo3
 
 
 
@@ -8046,41 +8002,43 @@ Name | Type | Description | Notes
 *** model exceptioninfo3 example
 
 * create our variables..
-    data gcl_exceptioninfo3 type ref to /blck/mdl_cl_exceptioninfo3.
+    data gr_exceptioninfo3 type /blck/mfi_exceptioninfo3.
     
 * instantiate model and call the setters to set values..
-    gcl_exceptioninfo3 = /blck/mdl_cl_exceptioninfo3=>create( ).
-    gcl_exceptioninfo3->set_message( 'ipsum lorem' ). " (type string)
-    gcl_exceptioninfo3->set_stack( l_stack ). " (type /BLCK/MFI_stacktraceelem_tt)
+    gr_exceptioninfo3-message = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_exceptioninfo3-stack = l_stack. " (type /BLCK/MFI_STACKTRACEELEM_TT)
     
 * pass to example API method
     gcl_exampleapi->update_exceptioninfo3(
-    	exporting
-    		i_exceptioninfo3 = gcl_exceptioninfo3 ).
+      exporting
+        i_exceptioninfo3 = gr_exceptioninfo3 ).
     		
-    clear gcl_exceptioninfo3.
+    clear gr_exceptioninfo3.
     
 * fetch new instance from example API method
-    gcl_exceptioninfo3 = gcl_exampleapi->get_exceptioninfo3(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_exceptioninfo3(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_exceptioninfo3 ).
     		
-    l_message = gcl_exceptioninfo3->get_message( ). " (type string)
-    l_stack = gcl_exceptioninfo3->get_stack( ). " (type /BLCK/MFI_stacktraceelem_tt)
+    write: gr_exceptioninfo3-message. " (type /BLCK/MFI_STRING)
+    write: gr_exceptioninfo3-stack. " (type /BLCK/MFI_STACKTRACEELEM_TT)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**message** | string | The raw error message. | [optional] [default to null]
-**stack** | /BLCK/MFI_stacktraceelem_tt (**[array of stacktraceelem](#markdown-header-model-stacktraceelem)**) | M-Files Web Service server-side stack trace. | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**message** | /BLCK/MFI_STRING | The raw error message.
+**stack** | /BLCK/MFI_STACKTRACEELEM_TT (**[array of stacktraceelem](#markdown-header-model-stacktraceelem)**) | M-Files Web Service server-side stack trace.
 
 * * *
 <a name="markdown-header-model-exceptioninfo2"></a> 
 
-# Model: exceptioninfo2
+# Model: ExceptionInfo2
 
 
 
@@ -8089,44 +8047,47 @@ Name | Type | Description | Notes
 *** model exceptioninfo2 example
 
 * create our variables..
-    data gcl_exceptioninfo2 type ref to /blck/mdl_cl_exceptioninfo2.
+    data gr_exceptioninfo2 type /blck/mfi_exceptioninfo2.
     
 * instantiate model and call the setters to set values..
-    gcl_exceptioninfo2 = /blck/mdl_cl_exceptioninfo2=>create( ).
-    gcl_exceptioninfo2->set_message( 'ipsum lorem' ). " (type string)
-    gcl_exceptioninfo2->set_inner_exception( l_inner_exception ). " (type /BLCK/MFI_exceptioninfo3)
-    gcl_exceptioninfo2->set_stack( l_stack ). " (type /BLCK/MFI_stacktraceelem_tt)
+    gr_exceptioninfo2-message = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_exceptioninfo2-inner_exception = l_inner_exception. " (type /BLCK/MFI_EXCEPTIONINFO3)
+
+    gr_exceptioninfo2-stack = l_stack. " (type /BLCK/MFI_STACKTRACEELEM_TT)
     
 * pass to example API method
     gcl_exampleapi->update_exceptioninfo2(
-    	exporting
-    		i_exceptioninfo2 = gcl_exceptioninfo2 ).
+      exporting
+        i_exceptioninfo2 = gr_exceptioninfo2 ).
     		
-    clear gcl_exceptioninfo2.
+    clear gr_exceptioninfo2.
     
 * fetch new instance from example API method
-    gcl_exceptioninfo2 = gcl_exampleapi->get_exceptioninfo2(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_exceptioninfo2(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_exceptioninfo2 ).
     		
-    l_message = gcl_exceptioninfo2->get_message( ). " (type string)
-    l_inner_exception = gcl_exceptioninfo2->get_inner_exception( ). " (type /BLCK/MFI_exceptioninfo3)
-    l_stack = gcl_exceptioninfo2->get_stack( ). " (type /BLCK/MFI_stacktraceelem_tt)
+    write: gr_exceptioninfo2-message. " (type /BLCK/MFI_STRING)
+    write: gr_exceptioninfo2-inner_exception. " (type /BLCK/MFI_EXCEPTIONINFO3)
+    write: gr_exceptioninfo2-stack. " (type /BLCK/MFI_STACKTRACEELEM_TT)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**message** | string | The raw error message. | [optional] [default to null]
-**inner_exception** | /BLCK/MFI_exceptioninfo3 (**[exceptioninfo3](#markdown-header-model-exceptioninfo3)**) |  | [optional] [default to null]
-**stack** | /BLCK/MFI_stacktraceelem_tt (**[array of stacktraceelem](#markdown-header-model-stacktraceelem)**) | M-Files Web Service server-side stack trace. | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**message** | /BLCK/MFI_STRING | The raw error message.
+**inner_exception** | /BLCK/MFI_EXCEPTIONINFO3 (**[exceptioninfo3](#markdown-header-model-exceptioninfo3)**) | 
+**stack** | /BLCK/MFI_STACKTRACEELEM_TT (**[array of stacktraceelem](#markdown-header-model-stacktraceelem)**) | M-Files Web Service server-side stack trace.
 
 * * *
 <a name="markdown-header-model-exception_info"></a> 
 
-# Model: exception_info
+# Model: ExceptionInfo
 
 
 
@@ -8135,44 +8096,47 @@ Name | Type | Description | Notes
 *** model exception_info example
 
 * create our variables..
-    data gcl_exception_info type ref to /blck/mdl_cl_exception_info.
+    data gr_exception_info type /blck/mfi_exception_info.
     
 * instantiate model and call the setters to set values..
-    gcl_exception_info = /blck/mdl_cl_exception_info=>create( ).
-    gcl_exception_info->set_message( 'ipsum lorem' ). " (type string)
-    gcl_exception_info->set_inner_exception( l_inner_exception ). " (type /BLCK/MFI_exceptioninfo2)
-    gcl_exception_info->set_stack( l_stack ). " (type /BLCK/MFI_stacktraceelem_tt)
+    gr_exception_info-message = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_exception_info-inner_exception = l_inner_exception. " (type /BLCK/MFI_EXCEPTIONINFO2)
+
+    gr_exception_info-stack = l_stack. " (type /BLCK/MFI_STACKTRACEELEM_TT)
     
 * pass to example API method
     gcl_exampleapi->update_exception_info(
-    	exporting
-    		i_exception_info = gcl_exception_info ).
+      exporting
+        i_exception_info = gr_exception_info ).
     		
-    clear gcl_exception_info.
+    clear gr_exception_info.
     
 * fetch new instance from example API method
-    gcl_exception_info = gcl_exampleapi->get_exception_info(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_exception_info(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_exception_info ).
     		
-    l_message = gcl_exception_info->get_message( ). " (type string)
-    l_inner_exception = gcl_exception_info->get_inner_exception( ). " (type /BLCK/MFI_exceptioninfo2)
-    l_stack = gcl_exception_info->get_stack( ). " (type /BLCK/MFI_stacktraceelem_tt)
+    write: gr_exception_info-message. " (type /BLCK/MFI_STRING)
+    write: gr_exception_info-inner_exception. " (type /BLCK/MFI_EXCEPTIONINFO2)
+    write: gr_exception_info-stack. " (type /BLCK/MFI_STACKTRACEELEM_TT)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**message** | string | The raw error message. | [optional] [default to null]
-**inner_exception** | /BLCK/MFI_exceptioninfo2 (**[exceptioninfo2](#markdown-header-model-exceptioninfo2)**) |  | [optional] [default to null]
-**stack** | /BLCK/MFI_stacktraceelem_tt (**[array of stacktraceelem](#markdown-header-model-stacktraceelem)**) | M-Files Web Service server-side stack trace. | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**message** | /BLCK/MFI_STRING | The raw error message.
+**inner_exception** | /BLCK/MFI_EXCEPTIONINFO2 (**[exceptioninfo2](#markdown-header-model-exceptioninfo2)**) | 
+**stack** | /BLCK/MFI_STACKTRACEELEM_TT (**[array of stacktraceelem](#markdown-header-model-stacktraceelem)**) | M-Files Web Service server-side stack trace.
 
 * * *
 <a name="markdown-header-enum-mfobjectversio"></a> 
 
-# Enum: mfobjectversio
+# Enum: MFObjectVersionFlag
 
 
 
@@ -8183,35 +8147,33 @@ Name | Type | Description | Notes
 *** 0: None 1: Completed 2: HasRelatedObjects
 
 * create our variables..
-    data gcl_mfobjectversio type ref to /blck/mdl_cl_mfobjectversio.
+    data gv_mfobjectversio type /blck/mfi_mfobjectversio.
     
-* instantiate model relevant to the enum value we want
-    gcl_mfobjectversio = /blck/mdl_cl_mfobjectversio=>enum_none( ).
+* set the enum value we want
+    gv_mfobjectversio = /blck/mfi_cl_model=>mfobjectversio-none.
     
 * pass the enum to the example API via method
     gcl_exampleapi->set_mfobjectversio_state(
-    	exporting
-    		i_mfobjectversio = gcl_mfobjectversio ).
+      exporting
+        i_mfobjectversio = gv_mfobjectversio ).
     		
-    clear gcl_mfobjectversio.
+    clear gv_mfobjectversio.
     
 * fetch result from example API method
-    gcl_mfobjectversio = gcl_exampleapi->get_mfobjectversio_state(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_mfobjectversio_state(
+      exporting
+        i_id = 1
+      importing
+        e_200 = gv_mfobjectversio ).
     	
-* we have two ways to handle the result, either "if" with individual cases..
-  if gcl_mfobjectversio->is_none( ) eq 'X'.
-*   do something specific to none case..
-  endif.
-  
-* .. or use a case clause to handle all scenarios:
-  case gcl_mfobjectversio->get_value( ).
-    when /blck/mdl_cl_mfobjectversio=>mce_none.
+* we can handle the result with either "if" with individual cases
+* or use a case clause to handle all scenarios:
+  case gv_mfobjectversio.
+    when /blck/mfi_cl_model=>mfobjectversio-none.
 *     do something specific to none case..
-    when /blck/mdl_cl_mfobjectversio=>mce_completed.
+    when /blck/mfi_cl_model=>mfobjectversio-completed.
 *     do something specific to completed case..
-    when /blck/mdl_cl_mfobjectversio=>mce_has_related_objects.
+    when /blck/mfi_cl_model=>mfobjectversio-has_related_objects.
 *     do something specific to has_related_objects case..
   endcase.
 
@@ -8220,16 +8182,16 @@ Name | Type | Description | Notes
 
 ## Enum Values
 
-Name | Value | Instantiation
+Name | Value | Constant
 ------------ | ------------- | -------------
-**none** | 0 | /blck/mdl_cl_mfobjectversio=>enum_none( ).
-**completed** | 1 | /blck/mdl_cl_mfobjectversio=>enum_completed( ).
-**has_related_objects** | 2 | /blck/mdl_cl_mfobjectversio=>enum_has_related_objects( ).
+**none** | 0 | /blck/mfi_cl_model=>mfobjectversio-none.
+**completed** | 1 | /blck/mfi_cl_model=>mfobjectversio-completed.
+**has_related_objects** | 2 | /blck/mfi_cl_model=>mfobjectversio-has_related_objects.
 
 * * *
 <a name="markdown-header-model-object_file"></a> 
 
-# Model: object_file
+# Model: ObjectFile
 
 
 
@@ -8239,50 +8201,55 @@ Name | Value | Instantiation
 *** https://www.m-files.com/api/documentation/latest/index.html#MFilesAPI~ObjectFile.html
 
 * create our variables..
-    data gcl_object_file type ref to /blck/mdl_cl_object_file.
+    data gr_object_file type /blck/mfi_object_file.
     
 * instantiate model and call the setters to set values..
-    gcl_object_file = /blck/mdl_cl_object_file=>create( ).
-    gcl_object_file->set_change_time_utc( 'ipsum lorem' ). " (type string)
-    gcl_object_file->set_extension( 'ipsum lorem' ). " (type string)
-    gcl_object_file->set_id( 42 ). " (type i)
-    gcl_object_file->set_name( 'ipsum lorem' ). " (type string)
-    gcl_object_file->set_version( 42 ). " (type i)
+    gr_object_file-change_time_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_object_file-extension = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_object_file-id = 42. " (type /BLCK/MFI_INT)
+
+    gr_object_file-name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_object_file-version = 42. " (type /BLCK/MFI_INT)
     
 * pass to example API method
     gcl_exampleapi->update_object_file(
-    	exporting
-    		i_object_file = gcl_object_file ).
+      exporting
+        i_object_file = gr_object_file ).
     		
-    clear gcl_object_file.
+    clear gr_object_file.
     
 * fetch new instance from example API method
-    gcl_object_file = gcl_exampleapi->get_object_file(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_object_file(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_object_file ).
     		
-    l_change_time_utc = gcl_object_file->get_change_time_utc( ). " (type string)
-    l_extension = gcl_object_file->get_extension( ). " (type string)
-    l_id = gcl_object_file->get_id( ). " (type i)
-    l_name = gcl_object_file->get_name( ). " (type string)
-    l_version = gcl_object_file->get_version( ). " (type i)
+    write: gr_object_file-change_time_utc. " (type /BLCK/MFI_STRING)
+    write: gr_object_file-extension. " (type /BLCK/MFI_STRING)
+    write: gr_object_file-id. " (type /BLCK/MFI_INT)
+    write: gr_object_file-name. " (type /BLCK/MFI_STRING)
+    write: gr_object_file-version. " (type /BLCK/MFI_INT)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**change_time_utc** | string |  | [optional] [default to null]
-**extension** | string |  | [optional] [default to null]
-**id** | i |  | [optional] [default to null]
-**name** | string |  | [optional] [default to null]
-**version** | i |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**change_time_utc** | /BLCK/MFI_STRING | 
+**extension** | /BLCK/MFI_STRING | 
+**id** | /BLCK/MFI_INT | 
+**name** | /BLCK/MFI_STRING | 
+**version** | /BLCK/MFI_INT | 
 
 * * *
 <a name="markdown-header-model-object_version"></a> 
 
-# Model: object_version
+# Model: ObjectVersion
 
 
 
@@ -8292,101 +8259,123 @@ Name | Type | Description | Notes
 *** https://www.m-files.com/api/documentation/latest/index.html#MFilesAPI~ObjectVersion.html
 
 * create our variables..
-    data gcl_object_version type ref to /blck/mdl_cl_object_version.
+    data gr_object_version type /blck/mfi_object_version.
     
 * instantiate model and call the setters to set values..
-    gcl_object_version = /blck/mdl_cl_object_version=>create( ).
-    gcl_object_version->set_accessed_by_me_utc( 'ipsum lorem' ). " (type string)
-    gcl_object_version->set_checked_out_at_utc( 'ipsum lorem' ). " (type string)
-    gcl_object_version->set_checked_out_to( 42 ). " (type i)
-    gcl_object_version->set_checked_out_to_user_name( 'ipsum lorem' ). " (type string)
-    gcl_object_version->set_class( 42 ). " (type i)
-    gcl_object_version->set_created_utc( 'ipsum lorem' ). " (type string)
-    gcl_object_version->set_deleted( 'X' ). " (type flag)
-    gcl_object_version->set_display_id( 'ipsum lorem' ). " (type string)
-    gcl_object_version->set_files( l_files ). " (type /BLCK/MFI_object_file_tt)
-    gcl_object_version->set_has_assignments( 'X' ). " (type flag)
-    gcl_object_version->set_hasrelationshipsfromthis( 'X' ). " (type flag)
-    gcl_object_version->set_has_relationships_to_this( 'X' ). " (type flag)
-    gcl_object_version->set_is_stub( 'X' ). " (type flag)
-    gcl_object_version->set_last_modified_utc( 'ipsum lorem' ). " (type string)
-    gcl_object_version->set_object_checked_out( 'X' ). " (type flag)
-    gcl_object_version->set_objectcheckedouttothisuser( 'X' ). " (type flag)
-    gcl_object_version->set_object_version_flags( l_object_version_flags ). " (type /BLCK/MFI_mfobjectversio)
-    gcl_object_version->set_obj_ver( l_obj_ver ). " (type /BLCK/MFI_obj_ver)
-    gcl_object_version->set_single_file( 'X' ). " (type flag)
-    gcl_object_version->set_thisversionlatesttothisuse( 'X' ). " (type flag)
-    gcl_object_version->set_title( 'ipsum lorem' ). " (type string)
-    gcl_object_version->set_visible_after_operation( 'X' ). " (type flag)
+    gr_object_version-accessed_by_me_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_object_version-checked_out_at_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_object_version-checked_out_to = 42. " (type /BLCK/MFI_INT)
+
+    gr_object_version-checked_out_to_user_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_object_version-class = 42. " (type /BLCK/MFI_INT)
+
+    gr_object_version-created_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_object_version-deleted = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_object_version-display_id = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_object_version-files = l_files. " (type /BLCK/MFI_OBJECT_FILE_TT)
+
+    gr_object_version-has_assignments = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_object_version-hasrelationshipsfromthis = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_object_version-has_relationships_to_this = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_object_version-is_stub = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_object_version-last_modified_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_object_version-object_checked_out = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_object_version-objectcheckedouttothisuser = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_object_version-object_version_flags = l_object_version_flags. " (type /BLCK/MFI_MFOBJECTVERSIO)
+
+    gr_object_version-obj_ver = l_obj_ver. " (type /BLCK/MFI_OBJ_VER)
+
+    gr_object_version-single_file = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_object_version-thisversionlatesttothisuse = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_object_version-title = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_object_version-visible_after_operation = 'X'. " (type /BLCK/MFI_BOOL)
     
 * pass to example API method
     gcl_exampleapi->update_object_version(
-    	exporting
-    		i_object_version = gcl_object_version ).
+      exporting
+        i_object_version = gr_object_version ).
     		
-    clear gcl_object_version.
+    clear gr_object_version.
     
 * fetch new instance from example API method
-    gcl_object_version = gcl_exampleapi->get_object_version(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_object_version(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_object_version ).
     		
-    l_accessed_by_me_utc = gcl_object_version->get_accessed_by_me_utc( ). " (type string)
-    l_checked_out_at_utc = gcl_object_version->get_checked_out_at_utc( ). " (type string)
-    l_checked_out_to = gcl_object_version->get_checked_out_to( ). " (type i)
-    l_checked_out_to_user_name = gcl_object_version->get_checked_out_to_user_name( ). " (type string)
-    l_class = gcl_object_version->get_class( ). " (type i)
-    l_created_utc = gcl_object_version->get_created_utc( ). " (type string)
-    l_deleted = gcl_object_version->get_deleted( ). " (type flag)
-    l_display_id = gcl_object_version->get_display_id( ). " (type string)
-    l_files = gcl_object_version->get_files( ). " (type /BLCK/MFI_object_file_tt)
-    l_has_assignments = gcl_object_version->get_has_assignments( ). " (type flag)
-    l_hasrelationshipsfromthis = gcl_object_version->get_hasrelationshipsfromthis( ). " (type flag)
-    l_has_relationships_to_this = gcl_object_version->get_has_relationships_to_this( ). " (type flag)
-    l_is_stub = gcl_object_version->get_is_stub( ). " (type flag)
-    l_last_modified_utc = gcl_object_version->get_last_modified_utc( ). " (type string)
-    l_object_checked_out = gcl_object_version->get_object_checked_out( ). " (type flag)
-    l_objectcheckedouttothisuser = gcl_object_version->get_objectcheckedouttothisuser( ). " (type flag)
-    l_object_version_flags = gcl_object_version->get_object_version_flags( ). " (type /BLCK/MFI_mfobjectversio)
-    l_obj_ver = gcl_object_version->get_obj_ver( ). " (type /BLCK/MFI_obj_ver)
-    l_single_file = gcl_object_version->get_single_file( ). " (type flag)
-    l_thisversionlatesttothisuse = gcl_object_version->get_thisversionlatesttothisuse( ). " (type flag)
-    l_title = gcl_object_version->get_title( ). " (type string)
-    l_visible_after_operation = gcl_object_version->get_visible_after_operation( ). " (type flag)
+    write: gr_object_version-accessed_by_me_utc. " (type /BLCK/MFI_STRING)
+    write: gr_object_version-checked_out_at_utc. " (type /BLCK/MFI_STRING)
+    write: gr_object_version-checked_out_to. " (type /BLCK/MFI_INT)
+    write: gr_object_version-checked_out_to_user_name. " (type /BLCK/MFI_STRING)
+    write: gr_object_version-class. " (type /BLCK/MFI_INT)
+    write: gr_object_version-created_utc. " (type /BLCK/MFI_STRING)
+    write: gr_object_version-deleted. " (type /BLCK/MFI_BOOL)
+    write: gr_object_version-display_id. " (type /BLCK/MFI_STRING)
+    write: gr_object_version-files. " (type /BLCK/MFI_OBJECT_FILE_TT)
+    write: gr_object_version-has_assignments. " (type /BLCK/MFI_BOOL)
+    write: gr_object_version-hasrelationshipsfromthis. " (type /BLCK/MFI_BOOL)
+    write: gr_object_version-has_relationships_to_this. " (type /BLCK/MFI_BOOL)
+    write: gr_object_version-is_stub. " (type /BLCK/MFI_BOOL)
+    write: gr_object_version-last_modified_utc. " (type /BLCK/MFI_STRING)
+    write: gr_object_version-object_checked_out. " (type /BLCK/MFI_BOOL)
+    write: gr_object_version-objectcheckedouttothisuser. " (type /BLCK/MFI_BOOL)
+    write: gr_object_version-object_version_flags. " (type /BLCK/MFI_MFOBJECTVERSIO)
+    write: gr_object_version-obj_ver. " (type /BLCK/MFI_OBJ_VER)
+    write: gr_object_version-single_file. " (type /BLCK/MFI_BOOL)
+    write: gr_object_version-thisversionlatesttothisuse. " (type /BLCK/MFI_BOOL)
+    write: gr_object_version-title. " (type /BLCK/MFI_STRING)
+    write: gr_object_version-visible_after_operation. " (type /BLCK/MFI_BOOL)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**accessed_by_me_utc** | string |  | [optional] [default to null]
-**checked_out_at_utc** | string |  | [optional] [default to null]
-**checked_out_to** | i |  | [optional] [default to null]
-**checked_out_to_user_name** | string |  | [optional] [default to null]
-**class** | i |  | [optional] [default to null]
-**created_utc** | string |  | [optional] [default to null]
-**deleted** | flag |  | [optional] [default to null]
-**display_id** | string |  | [optional] [default to null]
-**files** | /BLCK/MFI_object_file_tt (**[array of object_file](#markdown-header-model-object_file)**) |  | [optional] [default to null]
-**has_assignments** | flag |  | [optional] [default to null]
-**hasrelationshipsfromthis** | flag |  | [optional] [default to null]
-**has_relationships_to_this** | flag |  | [optional] [default to null]
-**is_stub** | flag |  | [optional] [default to null]
-**last_modified_utc** | string |  | [optional] [default to null]
-**object_checked_out** | flag |  | [optional] [default to null]
-**objectcheckedouttothisuser** | flag |  | [optional] [default to null]
-**object_version_flags** | /BLCK/MFI_mfobjectversio (**[mfobjectversio](#markdown-header-enum-mfobjectversio)**) |  | [optional] [default to null]
-**obj_ver** | /BLCK/MFI_obj_ver (**[obj_ver](#markdown-header-model-obj_ver)**) |  | [optional] [default to null]
-**single_file** | flag |  | [optional] [default to null]
-**thisversionlatesttothisuse** | flag |  | [optional] [default to null]
-**title** | string |  | [optional] [default to null]
-**visible_after_operation** | flag |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**accessed_by_me_utc** | /BLCK/MFI_STRING | 
+**checked_out_at_utc** | /BLCK/MFI_STRING | 
+**checked_out_to** | /BLCK/MFI_INT | 
+**checked_out_to_user_name** | /BLCK/MFI_STRING | 
+**class** | /BLCK/MFI_INT | 
+**created_utc** | /BLCK/MFI_STRING | 
+**deleted** | /BLCK/MFI_BOOL | 
+**display_id** | /BLCK/MFI_STRING | 
+**files** | /BLCK/MFI_OBJECT_FILE_TT (**[array of object_file](#markdown-header-model-object_file)**) | 
+**has_assignments** | /BLCK/MFI_BOOL | 
+**hasrelationshipsfromthis** | /BLCK/MFI_BOOL | 
+**has_relationships_to_this** | /BLCK/MFI_BOOL | 
+**is_stub** | /BLCK/MFI_BOOL | 
+**last_modified_utc** | /BLCK/MFI_STRING | 
+**object_checked_out** | /BLCK/MFI_BOOL | 
+**objectcheckedouttothisuser** | /BLCK/MFI_BOOL | 
+**object_version_flags** | /BLCK/MFI_MFOBJECTVERSIO (**[mfobjectversio](#markdown-header-enum-mfobjectversio)**) | 
+**obj_ver** | /BLCK/MFI_OBJ_VER (**[obj_ver](#markdown-header-model-obj_ver)**) | 
+**single_file** | /BLCK/MFI_BOOL | 
+**thisversionlatesttothisuse** | /BLCK/MFI_BOOL | 
+**title** | /BLCK/MFI_STRING | 
+**visible_after_operation** | /BLCK/MFI_BOOL | 
 
 * * *
 <a name="markdown-header-model-extendedobjec2"></a> 
 
-# Model: extendedobjec2
+# Model: ExtendedObjectClass
 
 
 
@@ -8395,53 +8384,59 @@ Name | Type | Description | Notes
 *** model extendedobjec2 example
 
 * create our variables..
-    data gcl_extendedobjec2 type ref to /blck/mdl_cl_extendedobjec2.
+    data gr_extendedobjec2 type /blck/mfi_extendedobjec2.
     
 * instantiate model and call the setters to set values..
-    gcl_extendedobjec2 = /blck/mdl_cl_extendedobjec2=>create( ).
-    gcl_extendedobjec2->set_id( 42 ). " (type i)
-    gcl_extendedobjec2->set_name( 'ipsum lorem' ). " (type string)
-    gcl_extendedobjec2->set_name_property_def( 42 ). " (type i)
-    gcl_extendedobjec2->set_workflow( 42 ). " (type i)
-    gcl_extendedobjec2->set_associated_property_defs( l_associated_property_defs ). " (type /BLCK/MFI_associatedprop_tt)
-    gcl_extendedobjec2->set_templates( l_templates ). " (type /BLCK/MFI_object_version_tt)
+    gr_extendedobjec2-id = 42. " (type /BLCK/MFI_INT)
+
+    gr_extendedobjec2-name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_extendedobjec2-name_property_def = 42. " (type /BLCK/MFI_INT)
+
+    gr_extendedobjec2-workflow = 42. " (type /BLCK/MFI_INT)
+
+    gr_extendedobjec2-associated_property_defs = l_associated_property_defs. " (type /BLCK/MFI_ASSOCIATEDPROP_TT)
+
+    gr_extendedobjec2-templates = l_templates. " (type /BLCK/MFI_OBJECT_VERSION_TT)
     
 * pass to example API method
     gcl_exampleapi->update_extendedobjec2(
-    	exporting
-    		i_extendedobjec2 = gcl_extendedobjec2 ).
+      exporting
+        i_extendedobjec2 = gr_extendedobjec2 ).
     		
-    clear gcl_extendedobjec2.
+    clear gr_extendedobjec2.
     
 * fetch new instance from example API method
-    gcl_extendedobjec2 = gcl_exampleapi->get_extendedobjec2(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_extendedobjec2(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_extendedobjec2 ).
     		
-    l_id = gcl_extendedobjec2->get_id( ). " (type i)
-    l_name = gcl_extendedobjec2->get_name( ). " (type string)
-    l_name_property_def = gcl_extendedobjec2->get_name_property_def( ). " (type i)
-    l_workflow = gcl_extendedobjec2->get_workflow( ). " (type i)
-    l_associated_property_defs = gcl_extendedobjec2->get_associated_property_defs( ). " (type /BLCK/MFI_associatedprop_tt)
-    l_templates = gcl_extendedobjec2->get_templates( ). " (type /BLCK/MFI_object_version_tt)
+    write: gr_extendedobjec2-id. " (type /BLCK/MFI_INT)
+    write: gr_extendedobjec2-name. " (type /BLCK/MFI_STRING)
+    write: gr_extendedobjec2-name_property_def. " (type /BLCK/MFI_INT)
+    write: gr_extendedobjec2-workflow. " (type /BLCK/MFI_INT)
+    write: gr_extendedobjec2-associated_property_defs. " (type /BLCK/MFI_ASSOCIATEDPROP_TT)
+    write: gr_extendedobjec2-templates. " (type /BLCK/MFI_OBJECT_VERSION_TT)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | i |  | [optional] [default to null]
-**name** | string |  | [optional] [default to null]
-**name_property_def** | i |  | [optional] [default to null]
-**workflow** | i |  | [optional] [default to null]
-**associated_property_defs** | /BLCK/MFI_associatedprop_tt (**[array of associatedprop](#markdown-header-model-associatedprop)**) | Property definitions associated with this class. | [optional] [default to null]
-**templates** | /BLCK/MFI_object_version_tt (**[array of object_version](#markdown-header-model-object_version)**) | Templates available for use with this class. | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**id** | /BLCK/MFI_INT | 
+**name** | /BLCK/MFI_STRING | 
+**name_property_def** | /BLCK/MFI_INT | 
+**workflow** | /BLCK/MFI_INT | 
+**associated_property_defs** | /BLCK/MFI_ASSOCIATEDPROP_TT (**[array of associatedprop](#markdown-header-model-associatedprop)**) | Property definitions associated with this class.
+**templates** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of object_version](#markdown-header-model-object_version)**) | Templates available for use with this class.
 
 * * *
 <a name="markdown-header-model-extendedobject"></a> 
 
-# Model: extendedobject
+# Model: ExtendedObjectVersion
 
 
 
@@ -8450,104 +8445,127 @@ Name | Type | Description | Notes
 *** model extendedobject example
 
 * create our variables..
-    data gcl_extendedobject type ref to /blck/mdl_cl_extendedobject.
+    data gr_extendedobject type /blck/mfi_extendedobject.
     
 * instantiate model and call the setters to set values..
-    gcl_extendedobject = /blck/mdl_cl_extendedobject=>create( ).
-    gcl_extendedobject->set_accessed_by_me_utc( 'ipsum lorem' ). " (type string)
-    gcl_extendedobject->set_checked_out_at_utc( 'ipsum lorem' ). " (type string)
-    gcl_extendedobject->set_checked_out_to( 42 ). " (type i)
-    gcl_extendedobject->set_checked_out_to_user_name( 'ipsum lorem' ). " (type string)
-    gcl_extendedobject->set_class( 42 ). " (type i)
-    gcl_extendedobject->set_created_utc( 'ipsum lorem' ). " (type string)
-    gcl_extendedobject->set_deleted( 'X' ). " (type flag)
-    gcl_extendedobject->set_display_id( 'ipsum lorem' ). " (type string)
-    gcl_extendedobject->set_files( l_files ). " (type /BLCK/MFI_object_file_tt)
-    gcl_extendedobject->set_has_assignments( 'X' ). " (type flag)
-    gcl_extendedobject->set_hasrelationshipsfromthis( 'X' ). " (type flag)
-    gcl_extendedobject->set_has_relationships_to_this( 'X' ). " (type flag)
-    gcl_extendedobject->set_is_stub( 'X' ). " (type flag)
-    gcl_extendedobject->set_last_modified_utc( 'ipsum lorem' ). " (type string)
-    gcl_extendedobject->set_object_checked_out( 'X' ). " (type flag)
-    gcl_extendedobject->set_objectcheckedouttothisuser( 'X' ). " (type flag)
-    gcl_extendedobject->set_object_version_flags( l_object_version_flags ). " (type /BLCK/MFI_mfobjectversio)
-    gcl_extendedobject->set_obj_ver( l_obj_ver ). " (type /BLCK/MFI_obj_ver)
-    gcl_extendedobject->set_single_file( 'X' ). " (type flag)
-    gcl_extendedobject->set_thisversionlatesttothisuse( 'X' ). " (type flag)
-    gcl_extendedobject->set_title( 'ipsum lorem' ). " (type string)
-    gcl_extendedobject->set_visible_after_operation( 'X' ). " (type flag)
-    gcl_extendedobject->set_properties( l_properties ). " (type /BLCK/MFI_property_value_tt)
+    gr_extendedobject-accessed_by_me_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_extendedobject-checked_out_at_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_extendedobject-checked_out_to = 42. " (type /BLCK/MFI_INT)
+
+    gr_extendedobject-checked_out_to_user_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_extendedobject-class = 42. " (type /BLCK/MFI_INT)
+
+    gr_extendedobject-created_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_extendedobject-deleted = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_extendedobject-display_id = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_extendedobject-files = l_files. " (type /BLCK/MFI_OBJECT_FILE_TT)
+
+    gr_extendedobject-has_assignments = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_extendedobject-hasrelationshipsfromthis = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_extendedobject-has_relationships_to_this = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_extendedobject-is_stub = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_extendedobject-last_modified_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_extendedobject-object_checked_out = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_extendedobject-objectcheckedouttothisuser = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_extendedobject-object_version_flags = l_object_version_flags. " (type /BLCK/MFI_MFOBJECTVERSIO)
+
+    gr_extendedobject-obj_ver = l_obj_ver. " (type /BLCK/MFI_OBJ_VER)
+
+    gr_extendedobject-single_file = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_extendedobject-thisversionlatesttothisuse = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_extendedobject-title = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_extendedobject-visible_after_operation = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_extendedobject-properties = l_properties. " (type /BLCK/MFI_PROPERTY_VALUE_TT)
     
 * pass to example API method
     gcl_exampleapi->update_extendedobject(
-    	exporting
-    		i_extendedobject = gcl_extendedobject ).
+      exporting
+        i_extendedobject = gr_extendedobject ).
     		
-    clear gcl_extendedobject.
+    clear gr_extendedobject.
     
 * fetch new instance from example API method
-    gcl_extendedobject = gcl_exampleapi->get_extendedobject(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_extendedobject(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_extendedobject ).
     		
-    l_accessed_by_me_utc = gcl_extendedobject->get_accessed_by_me_utc( ). " (type string)
-    l_checked_out_at_utc = gcl_extendedobject->get_checked_out_at_utc( ). " (type string)
-    l_checked_out_to = gcl_extendedobject->get_checked_out_to( ). " (type i)
-    l_checked_out_to_user_name = gcl_extendedobject->get_checked_out_to_user_name( ). " (type string)
-    l_class = gcl_extendedobject->get_class( ). " (type i)
-    l_created_utc = gcl_extendedobject->get_created_utc( ). " (type string)
-    l_deleted = gcl_extendedobject->get_deleted( ). " (type flag)
-    l_display_id = gcl_extendedobject->get_display_id( ). " (type string)
-    l_files = gcl_extendedobject->get_files( ). " (type /BLCK/MFI_object_file_tt)
-    l_has_assignments = gcl_extendedobject->get_has_assignments( ). " (type flag)
-    l_hasrelationshipsfromthis = gcl_extendedobject->get_hasrelationshipsfromthis( ). " (type flag)
-    l_has_relationships_to_this = gcl_extendedobject->get_has_relationships_to_this( ). " (type flag)
-    l_is_stub = gcl_extendedobject->get_is_stub( ). " (type flag)
-    l_last_modified_utc = gcl_extendedobject->get_last_modified_utc( ). " (type string)
-    l_object_checked_out = gcl_extendedobject->get_object_checked_out( ). " (type flag)
-    l_objectcheckedouttothisuser = gcl_extendedobject->get_objectcheckedouttothisuser( ). " (type flag)
-    l_object_version_flags = gcl_extendedobject->get_object_version_flags( ). " (type /BLCK/MFI_mfobjectversio)
-    l_obj_ver = gcl_extendedobject->get_obj_ver( ). " (type /BLCK/MFI_obj_ver)
-    l_single_file = gcl_extendedobject->get_single_file( ). " (type flag)
-    l_thisversionlatesttothisuse = gcl_extendedobject->get_thisversionlatesttothisuse( ). " (type flag)
-    l_title = gcl_extendedobject->get_title( ). " (type string)
-    l_visible_after_operation = gcl_extendedobject->get_visible_after_operation( ). " (type flag)
-    l_properties = gcl_extendedobject->get_properties( ). " (type /BLCK/MFI_property_value_tt)
+    write: gr_extendedobject-accessed_by_me_utc. " (type /BLCK/MFI_STRING)
+    write: gr_extendedobject-checked_out_at_utc. " (type /BLCK/MFI_STRING)
+    write: gr_extendedobject-checked_out_to. " (type /BLCK/MFI_INT)
+    write: gr_extendedobject-checked_out_to_user_name. " (type /BLCK/MFI_STRING)
+    write: gr_extendedobject-class. " (type /BLCK/MFI_INT)
+    write: gr_extendedobject-created_utc. " (type /BLCK/MFI_STRING)
+    write: gr_extendedobject-deleted. " (type /BLCK/MFI_BOOL)
+    write: gr_extendedobject-display_id. " (type /BLCK/MFI_STRING)
+    write: gr_extendedobject-files. " (type /BLCK/MFI_OBJECT_FILE_TT)
+    write: gr_extendedobject-has_assignments. " (type /BLCK/MFI_BOOL)
+    write: gr_extendedobject-hasrelationshipsfromthis. " (type /BLCK/MFI_BOOL)
+    write: gr_extendedobject-has_relationships_to_this. " (type /BLCK/MFI_BOOL)
+    write: gr_extendedobject-is_stub. " (type /BLCK/MFI_BOOL)
+    write: gr_extendedobject-last_modified_utc. " (type /BLCK/MFI_STRING)
+    write: gr_extendedobject-object_checked_out. " (type /BLCK/MFI_BOOL)
+    write: gr_extendedobject-objectcheckedouttothisuser. " (type /BLCK/MFI_BOOL)
+    write: gr_extendedobject-object_version_flags. " (type /BLCK/MFI_MFOBJECTVERSIO)
+    write: gr_extendedobject-obj_ver. " (type /BLCK/MFI_OBJ_VER)
+    write: gr_extendedobject-single_file. " (type /BLCK/MFI_BOOL)
+    write: gr_extendedobject-thisversionlatesttothisuse. " (type /BLCK/MFI_BOOL)
+    write: gr_extendedobject-title. " (type /BLCK/MFI_STRING)
+    write: gr_extendedobject-visible_after_operation. " (type /BLCK/MFI_BOOL)
+    write: gr_extendedobject-properties. " (type /BLCK/MFI_PROPERTY_VALUE_TT)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**accessed_by_me_utc** | string |  | [optional] [default to null]
-**checked_out_at_utc** | string |  | [optional] [default to null]
-**checked_out_to** | i |  | [optional] [default to null]
-**checked_out_to_user_name** | string |  | [optional] [default to null]
-**class** | i |  | [optional] [default to null]
-**created_utc** | string |  | [optional] [default to null]
-**deleted** | flag |  | [optional] [default to null]
-**display_id** | string |  | [optional] [default to null]
-**files** | /BLCK/MFI_object_file_tt (**[array of object_file](#markdown-header-model-object_file)**) |  | [optional] [default to null]
-**has_assignments** | flag |  | [optional] [default to null]
-**hasrelationshipsfromthis** | flag |  | [optional] [default to null]
-**has_relationships_to_this** | flag |  | [optional] [default to null]
-**is_stub** | flag |  | [optional] [default to null]
-**last_modified_utc** | string |  | [optional] [default to null]
-**object_checked_out** | flag |  | [optional] [default to null]
-**objectcheckedouttothisuser** | flag |  | [optional] [default to null]
-**object_version_flags** | /BLCK/MFI_mfobjectversio (**[mfobjectversio](#markdown-header-enum-mfobjectversio)**) |  | [optional] [default to null]
-**obj_ver** | /BLCK/MFI_obj_ver (**[obj_ver](#markdown-header-model-obj_ver)**) |  | [optional] [default to null]
-**single_file** | flag |  | [optional] [default to null]
-**thisversionlatesttothisuse** | flag |  | [optional] [default to null]
-**title** | string |  | [optional] [default to null]
-**visible_after_operation** | flag |  | [optional] [default to null]
-**properties** | /BLCK/MFI_property_value_tt (**[array of property_value](#markdown-header-model-property_value)**) | Object properties | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**accessed_by_me_utc** | /BLCK/MFI_STRING | 
+**checked_out_at_utc** | /BLCK/MFI_STRING | 
+**checked_out_to** | /BLCK/MFI_INT | 
+**checked_out_to_user_name** | /BLCK/MFI_STRING | 
+**class** | /BLCK/MFI_INT | 
+**created_utc** | /BLCK/MFI_STRING | 
+**deleted** | /BLCK/MFI_BOOL | 
+**display_id** | /BLCK/MFI_STRING | 
+**files** | /BLCK/MFI_OBJECT_FILE_TT (**[array of object_file](#markdown-header-model-object_file)**) | 
+**has_assignments** | /BLCK/MFI_BOOL | 
+**hasrelationshipsfromthis** | /BLCK/MFI_BOOL | 
+**has_relationships_to_this** | /BLCK/MFI_BOOL | 
+**is_stub** | /BLCK/MFI_BOOL | 
+**last_modified_utc** | /BLCK/MFI_STRING | 
+**object_checked_out** | /BLCK/MFI_BOOL | 
+**objectcheckedouttothisuser** | /BLCK/MFI_BOOL | 
+**object_version_flags** | /BLCK/MFI_MFOBJECTVERSIO (**[mfobjectversio](#markdown-header-enum-mfobjectversio)**) | 
+**obj_ver** | /BLCK/MFI_OBJ_VER (**[obj_ver](#markdown-header-model-obj_ver)**) | 
+**single_file** | /BLCK/MFI_BOOL | 
+**thisversionlatesttothisuse** | /BLCK/MFI_BOOL | 
+**title** | /BLCK/MFI_STRING | 
+**visible_after_operation** | /BLCK/MFI_BOOL | 
+**properties** | /BLCK/MFI_PROPERTY_VALUE_TT (**[array of property_value](#markdown-header-model-property_value)**) | Object properties
 
 * * *
 <a name="markdown-header-enum-mffolderconten"></a> 
 
-# Enum: mffolderconten
+# Enum: MFFolderContentItemType
 
 
 
@@ -8559,41 +8577,39 @@ Name | Type | Description | Notes
 *** ObjectVersion 5: ExternalViewFolder
 
 * create our variables..
-    data gcl_mffolderconten type ref to /blck/mdl_cl_mffolderconten.
+    data gv_mffolderconten type /blck/mfi_mffolderconten.
     
-* instantiate model relevant to the enum value we want
-    gcl_mffolderconten = /blck/mdl_cl_mffolderconten=>enum_unknown( ).
+* set the enum value we want
+    gv_mffolderconten = /blck/mfi_cl_model=>mffolderconten-unknown.
     
 * pass the enum to the example API via method
     gcl_exampleapi->set_mffolderconten_state(
-    	exporting
-    		i_mffolderconten = gcl_mffolderconten ).
+      exporting
+        i_mffolderconten = gv_mffolderconten ).
     		
-    clear gcl_mffolderconten.
+    clear gv_mffolderconten.
     
 * fetch result from example API method
-    gcl_mffolderconten = gcl_exampleapi->get_mffolderconten_state(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_mffolderconten_state(
+      exporting
+        i_id = 1
+      importing
+        e_200 = gv_mffolderconten ).
     	
-* we have two ways to handle the result, either "if" with individual cases..
-  if gcl_mffolderconten->is_unknown( ) eq 'X'.
-*   do something specific to unknown case..
-  endif.
-  
-* .. or use a case clause to handle all scenarios:
-  case gcl_mffolderconten->get_value( ).
-    when /blck/mdl_cl_mffolderconten=>mce_unknown.
+* we can handle the result with either "if" with individual cases
+* or use a case clause to handle all scenarios:
+  case gv_mffolderconten.
+    when /blck/mfi_cl_model=>mffolderconten-unknown.
 *     do something specific to unknown case..
-    when /blck/mdl_cl_mffolderconten=>mce_view_folder.
+    when /blck/mfi_cl_model=>mffolderconten-view_folder.
 *     do something specific to view_folder case..
-    when /blck/mdl_cl_mffolderconten=>mce_property_folder.
+    when /blck/mfi_cl_model=>mffolderconten-property_folder.
 *     do something specific to property_folder case..
-    when /blck/mdl_cl_mffolderconten=>mce_traditional_folder.
+    when /blck/mfi_cl_model=>mffolderconten-traditional_folder.
 *     do something specific to traditional_folder case..
-    when /blck/mdl_cl_mffolderconten=>mce_object_version.
+    when /blck/mfi_cl_model=>mffolderconten-object_version.
 *     do something specific to object_version case..
-    when /blck/mdl_cl_mffolderconten=>mce_external_view_folder.
+    when /blck/mfi_cl_model=>mffolderconten-external_view_folder.
 *     do something specific to external_view_folder case..
   endcase.
 
@@ -8602,19 +8618,19 @@ Name | Type | Description | Notes
 
 ## Enum Values
 
-Name | Value | Instantiation
+Name | Value | Constant
 ------------ | ------------- | -------------
-**unknown** | 0 | /blck/mdl_cl_mffolderconten=>enum_unknown( ).
-**view_folder** | 1 | /blck/mdl_cl_mffolderconten=>enum_view_folder( ).
-**property_folder** | 2 | /blck/mdl_cl_mffolderconten=>enum_property_folder( ).
-**traditional_folder** | 3 | /blck/mdl_cl_mffolderconten=>enum_traditional_folder( ).
-**object_version** | 4 | /blck/mdl_cl_mffolderconten=>enum_object_version( ).
-**external_view_folder** | 5 | /blck/mdl_cl_mffolderconten=>enum_external_view_folder( ).
+**unknown** | 0 | /blck/mfi_cl_model=>mffolderconten-unknown.
+**view_folder** | 1 | /blck/mfi_cl_model=>mffolderconten-view_folder.
+**property_folder** | 2 | /blck/mfi_cl_model=>mffolderconten-property_folder.
+**traditional_folder** | 3 | /blck/mfi_cl_model=>mffolderconten-traditional_folder.
+**object_version** | 4 | /blck/mfi_cl_model=>mffolderconten-object_version.
+**external_view_folder** | 5 | /blck/mfi_cl_model=>mffolderconten-external_view_folder.
 
 * * *
 <a name="markdown-header-model-view_location"></a> 
 
-# Model: view_location
+# Model: ViewLocation
 
 
 
@@ -8624,41 +8640,43 @@ Name | Value | Instantiation
 *** https://www.m-files.com/api/documentation/latest/index.html#MFilesAPI~ViewLocation.html
 
 * create our variables..
-    data gcl_view_location type ref to /blck/mdl_cl_view_location.
+    data gr_view_location type /blck/mfi_view_location.
     
 * instantiate model and call the setters to set values..
-    gcl_view_location = /blck/mdl_cl_view_location=>create( ).
-    gcl_view_location->set_overlapped_folder( l_overlapped_folder ). " (type /BLCK/MFI_typed_value)
-    gcl_view_location->set_overlapping( 'X' ). " (type flag)
+    gr_view_location-overlapped_folder = l_overlapped_folder. " (type /BLCK/MFI_TYPED_VALUE)
+
+    gr_view_location-overlapping = 'X'. " (type /BLCK/MFI_BOOL)
     
 * pass to example API method
     gcl_exampleapi->update_view_location(
-    	exporting
-    		i_view_location = gcl_view_location ).
+      exporting
+        i_view_location = gr_view_location ).
     		
-    clear gcl_view_location.
+    clear gr_view_location.
     
 * fetch new instance from example API method
-    gcl_view_location = gcl_exampleapi->get_view_location(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_view_location(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_view_location ).
     		
-    l_overlapped_folder = gcl_view_location->get_overlapped_folder( ). " (type /BLCK/MFI_typed_value)
-    l_overlapping = gcl_view_location->get_overlapping( ). " (type flag)
+    write: gr_view_location-overlapped_folder. " (type /BLCK/MFI_TYPED_VALUE)
+    write: gr_view_location-overlapping. " (type /BLCK/MFI_BOOL)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**overlapped_folder** | /BLCK/MFI_typed_value (**[typed_value](#markdown-header-model-typed_value)**) |  | [optional] [default to null]
-**overlapping** | flag |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**overlapped_folder** | /BLCK/MFI_TYPED_VALUE (**[typed_value](#markdown-header-model-typed_value)**) | 
+**overlapping** | /BLCK/MFI_BOOL | 
 
 * * *
 <a name="markdown-header-model-view"></a> 
 
-# Model: view
+# Model: View
 
 
 
@@ -8668,50 +8686,55 @@ Name | Type | Description | Notes
 *** https://www.m-files.com/api/documentation/latest/index.html#MFilesAPI~View.html
 
 * create our variables..
-    data gcl_view type ref to /blck/mdl_cl_view.
+    data gr_view type /blck/mfi_view.
     
 * instantiate model and call the setters to set values..
-    gcl_view = /blck/mdl_cl_view=>create( ).
-    gcl_view->set_common( 'X' ). " (type flag)
-    gcl_view->set_id( 42 ). " (type i)
-    gcl_view->set_name( 'ipsum lorem' ). " (type string)
-    gcl_view->set_parent( 42 ). " (type i)
-    gcl_view->set_view_location( l_view_location ). " (type /BLCK/MFI_view_location)
+    gr_view-common = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_view-id = 42. " (type /BLCK/MFI_INT)
+
+    gr_view-name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_view-parent = 42. " (type /BLCK/MFI_INT)
+
+    gr_view-view_location = l_view_location. " (type /BLCK/MFI_VIEW_LOCATION)
     
 * pass to example API method
     gcl_exampleapi->update_view(
-    	exporting
-    		i_view = gcl_view ).
+      exporting
+        i_view = gr_view ).
     		
-    clear gcl_view.
+    clear gr_view.
     
 * fetch new instance from example API method
-    gcl_view = gcl_exampleapi->get_view(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_view(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_view ).
     		
-    l_common = gcl_view->get_common( ). " (type flag)
-    l_id = gcl_view->get_id( ). " (type i)
-    l_name = gcl_view->get_name( ). " (type string)
-    l_parent = gcl_view->get_parent( ). " (type i)
-    l_view_location = gcl_view->get_view_location( ). " (type /BLCK/MFI_view_location)
+    write: gr_view-common. " (type /BLCK/MFI_BOOL)
+    write: gr_view-id. " (type /BLCK/MFI_INT)
+    write: gr_view-name. " (type /BLCK/MFI_STRING)
+    write: gr_view-parent. " (type /BLCK/MFI_INT)
+    write: gr_view-view_location. " (type /BLCK/MFI_VIEW_LOCATION)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**common** | flag |  | [optional] [default to null]
-**id** | i |  | [optional] [default to null]
-**name** | string |  | [optional] [default to null]
-**parent** | i |  | [optional] [default to null]
-**view_location** | /BLCK/MFI_view_location (**[view_location](#markdown-header-model-view_location)**) |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**common** | /BLCK/MFI_BOOL | 
+**id** | /BLCK/MFI_INT | 
+**name** | /BLCK/MFI_STRING | 
+**parent** | /BLCK/MFI_INT | 
+**view_location** | /BLCK/MFI_VIEW_LOCATION (**[view_location](#markdown-header-model-view_location)**) | 
 
 * * *
 <a name="markdown-header-model-foldercontent2"></a> 
 
-# Model: foldercontent2
+# Model: FolderContentItem
 
 
 
@@ -8721,50 +8744,55 @@ Name | Type | Description | Notes
 *** https://www.m-files.com/api/documentation/latest/index.html#MFilesAPI~FolderContentItem.html
 
 * create our variables..
-    data gcl_foldercontent2 type ref to /blck/mdl_cl_foldercontent2.
+    data gr_foldercontent2 type /blck/mfi_foldercontent2.
     
 * instantiate model and call the setters to set values..
-    gcl_foldercontent2 = /blck/mdl_cl_foldercontent2=>create( ).
-    gcl_foldercontent2->set_folder_content_item_type( l_folder_content_item_type ). " (type /BLCK/MFI_mffolderconten)
-    gcl_foldercontent2->set_object_version( l_object_version ). " (type /BLCK/MFI_object_version)
-    gcl_foldercontent2->set_property_folder( l_property_folder ). " (type /BLCK/MFI_typed_value)
-    gcl_foldercontent2->set_traditional_folder( l_traditional_folder ). " (type /BLCK/MFI_lookup)
-    gcl_foldercontent2->set_view( l_view ). " (type /BLCK/MFI_view)
+    gr_foldercontent2-folder_content_item_type = l_folder_content_item_type. " (type /BLCK/MFI_MFFOLDERCONTEN)
+
+    gr_foldercontent2-object_version = l_object_version. " (type /BLCK/MFI_OBJECT_VERSION)
+
+    gr_foldercontent2-property_folder = l_property_folder. " (type /BLCK/MFI_TYPED_VALUE)
+
+    gr_foldercontent2-traditional_folder = l_traditional_folder. " (type /BLCK/MFI_LOOKUP)
+
+    gr_foldercontent2-view = l_view. " (type /BLCK/MFI_VIEW)
     
 * pass to example API method
     gcl_exampleapi->update_foldercontent2(
-    	exporting
-    		i_foldercontent2 = gcl_foldercontent2 ).
+      exporting
+        i_foldercontent2 = gr_foldercontent2 ).
     		
-    clear gcl_foldercontent2.
+    clear gr_foldercontent2.
     
 * fetch new instance from example API method
-    gcl_foldercontent2 = gcl_exampleapi->get_foldercontent2(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_foldercontent2(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_foldercontent2 ).
     		
-    l_folder_content_item_type = gcl_foldercontent2->get_folder_content_item_type( ). " (type /BLCK/MFI_mffolderconten)
-    l_object_version = gcl_foldercontent2->get_object_version( ). " (type /BLCK/MFI_object_version)
-    l_property_folder = gcl_foldercontent2->get_property_folder( ). " (type /BLCK/MFI_typed_value)
-    l_traditional_folder = gcl_foldercontent2->get_traditional_folder( ). " (type /BLCK/MFI_lookup)
-    l_view = gcl_foldercontent2->get_view( ). " (type /BLCK/MFI_view)
+    write: gr_foldercontent2-folder_content_item_type. " (type /BLCK/MFI_MFFOLDERCONTEN)
+    write: gr_foldercontent2-object_version. " (type /BLCK/MFI_OBJECT_VERSION)
+    write: gr_foldercontent2-property_folder. " (type /BLCK/MFI_TYPED_VALUE)
+    write: gr_foldercontent2-traditional_folder. " (type /BLCK/MFI_LOOKUP)
+    write: gr_foldercontent2-view. " (type /BLCK/MFI_VIEW)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**folder_content_item_type** | /BLCK/MFI_mffolderconten (**[mffolderconten](#markdown-header-enum-mffolderconten)**) |  | [optional] [default to null]
-**object_version** | /BLCK/MFI_object_version (**[object_version](#markdown-header-model-object_version)**) |  | [optional] [default to null]
-**property_folder** | /BLCK/MFI_typed_value (**[typed_value](#markdown-header-model-typed_value)**) |  | [optional] [default to null]
-**traditional_folder** | /BLCK/MFI_lookup (**[lookup](#markdown-header-model-lookup)**) |  | [optional] [default to null]
-**view** | /BLCK/MFI_view (**[view](#markdown-header-model-view)**) |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**folder_content_item_type** | /BLCK/MFI_MFFOLDERCONTEN (**[mffolderconten](#markdown-header-enum-mffolderconten)**) | 
+**object_version** | /BLCK/MFI_OBJECT_VERSION (**[object_version](#markdown-header-model-object_version)**) | 
+**property_folder** | /BLCK/MFI_TYPED_VALUE (**[typed_value](#markdown-header-model-typed_value)**) | 
+**traditional_folder** | /BLCK/MFI_LOOKUP (**[lookup](#markdown-header-model-lookup)**) | 
+**view** | /BLCK/MFI_VIEW (**[view](#markdown-header-model-view)**) | 
 
 * * *
 <a name="markdown-header-model-foldercontenti"></a> 
 
-# Model: foldercontenti
+# Model: FolderContentItems
 
 
 
@@ -8774,44 +8802,47 @@ Name | Type | Description | Notes
 *** https://www.m-files.com/api/documentation/latest/index.html#MFilesAPI~FolderContentItems.html
 
 * create our variables..
-    data gcl_foldercontenti type ref to /blck/mdl_cl_foldercontenti.
+    data gr_foldercontenti type /blck/mfi_foldercontenti.
     
 * instantiate model and call the setters to set values..
-    gcl_foldercontenti = /blck/mdl_cl_foldercontenti=>create( ).
-    gcl_foldercontenti->set_path( 'ipsum lorem' ). " (type string)
-    gcl_foldercontenti->set_more_results( 'X' ). " (type flag)
-    gcl_foldercontenti->set_items( l_items ). " (type /BLCK/MFI_foldercontent2_tt)
+    gr_foldercontenti-path = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_foldercontenti-more_results = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_foldercontenti-items = l_items. " (type /BLCK/MFI_FOLDERCONTENT2_TT)
     
 * pass to example API method
     gcl_exampleapi->update_foldercontenti(
-    	exporting
-    		i_foldercontenti = gcl_foldercontenti ).
+      exporting
+        i_foldercontenti = gr_foldercontenti ).
     		
-    clear gcl_foldercontenti.
+    clear gr_foldercontenti.
     
 * fetch new instance from example API method
-    gcl_foldercontenti = gcl_exampleapi->get_foldercontenti(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_foldercontenti(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_foldercontenti ).
     		
-    l_path = gcl_foldercontenti->get_path( ). " (type string)
-    l_more_results = gcl_foldercontenti->get_more_results( ). " (type flag)
-    l_items = gcl_foldercontenti->get_items( ). " (type /BLCK/MFI_foldercontent2_tt)
+    write: gr_foldercontenti-path. " (type /BLCK/MFI_STRING)
+    write: gr_foldercontenti-more_results. " (type /BLCK/MFI_BOOL)
+    write: gr_foldercontenti-items. " (type /BLCK/MFI_FOLDERCONTENT2_TT)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**path** | string | The path to the current folder. | [optional] [default to null]
-**more_results** | flag | Specifies whether there are more results in the folder. | [optional] [default to null]
-**items** | /BLCK/MFI_foldercontent2_tt (**[array of foldercontent2](#markdown-header-model-foldercontent2)**) | The actual folder contents. | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**path** | /BLCK/MFI_STRING | The path to the current folder.
+**more_results** | /BLCK/MFI_BOOL | Specifies whether there are more results in the folder.
+**items** | /BLCK/MFI_FOLDERCONTENT2_TT (**[array of foldercontent2](#markdown-header-model-foldercontent2)**) | The actual folder contents.
 
 * * *
 <a name="markdown-header-enum-mf_auth_type"></a> 
 
-# Enum: mf_auth_type
+# Enum: MFAuthType
 
 
 
@@ -8823,37 +8854,35 @@ Name | Type | Description | Notes
 *** SpecificMFilesUser
 
 * create our variables..
-    data gcl_mf_auth_type type ref to /blck/mdl_cl_mf_auth_type.
+    data gv_mf_auth_type type /blck/mfi_mf_auth_type.
     
-* instantiate model relevant to the enum value we want
-    gcl_mf_auth_type = /blck/mdl_cl_mf_auth_type=>enum_unknown( ).
+* set the enum value we want
+    gv_mf_auth_type = /blck/mfi_cl_model=>mf_auth_type-unknown.
     
 * pass the enum to the example API via method
     gcl_exampleapi->set_mf_auth_type_state(
-    	exporting
-    		i_mf_auth_type = gcl_mf_auth_type ).
+      exporting
+        i_mf_auth_type = gv_mf_auth_type ).
     		
-    clear gcl_mf_auth_type.
+    clear gv_mf_auth_type.
     
 * fetch result from example API method
-    gcl_mf_auth_type = gcl_exampleapi->get_mf_auth_type_state(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_mf_auth_type_state(
+      exporting
+        i_id = 1
+      importing
+        e_200 = gv_mf_auth_type ).
     	
-* we have two ways to handle the result, either "if" with individual cases..
-  if gcl_mf_auth_type->is_unknown( ) eq 'X'.
-*   do something specific to unknown case..
-  endif.
-  
-* .. or use a case clause to handle all scenarios:
-  case gcl_mf_auth_type->get_value( ).
-    when /blck/mdl_cl_mf_auth_type=>mce_unknown.
+* we can handle the result with either "if" with individual cases
+* or use a case clause to handle all scenarios:
+  case gv_mf_auth_type.
+    when /blck/mfi_cl_model=>mf_auth_type-unknown.
 *     do something specific to unknown case..
-    when /blck/mdl_cl_mf_auth_type=>mce_logged_on_windows_user.
+    when /blck/mfi_cl_model=>mf_auth_type-logged_on_windows_user.
 *     do something specific to logged_on_windows_user case..
-    when /blck/mdl_cl_mf_auth_type=>mce_specific_windows_user.
+    when /blck/mfi_cl_model=>mf_auth_type-specific_windows_user.
 *     do something specific to specific_windows_user case..
-    when /blck/mdl_cl_mf_auth_type=>mce_specific_m_files_user.
+    when /blck/mfi_cl_model=>mf_auth_type-specific_m_files_user.
 *     do something specific to specific_m_files_user case..
   endcase.
 
@@ -8862,17 +8891,17 @@ Name | Type | Description | Notes
 
 ## Enum Values
 
-Name | Value | Instantiation
+Name | Value | Constant
 ------------ | ------------- | -------------
-**unknown** | 0 | /blck/mdl_cl_mf_auth_type=>enum_unknown( ).
-**logged_on_windows_user** | 1 | /blck/mdl_cl_mf_auth_type=>enum_logged_on_windows_user( ).
-**specific_windows_user** | 2 | /blck/mdl_cl_mf_auth_type=>enum_specific_windows_user( ).
-**specific_m_files_user** | 3 | /blck/mdl_cl_mf_auth_type=>enum_specific_m_files_user( ).
+**unknown** | 0 | /blck/mfi_cl_model=>mf_auth_type-unknown.
+**logged_on_windows_user** | 1 | /blck/mfi_cl_model=>mf_auth_type-logged_on_windows_user.
+**specific_windows_user** | 2 | /blck/mfi_cl_model=>mf_auth_type-specific_windows_user.
+**specific_m_files_user** | 3 | /blck/mfi_cl_model=>mf_auth_type-specific_m_files_user.
 
 * * *
 <a name="markdown-header-enum-mfacl_mode"></a> 
 
-# Enum: mfacl_mode
+# Enum: MFACLMode
 
 
 
@@ -8883,33 +8912,31 @@ Name | Value | Instantiation
 *** 0: Simple 1: AutomaticPermissionsWithComponents
 
 * create our variables..
-    data gcl_mfacl_mode type ref to /blck/mdl_cl_mfacl_mode.
+    data gv_mfacl_mode type /blck/mfi_mfacl_mode.
     
-* instantiate model relevant to the enum value we want
-    gcl_mfacl_mode = /blck/mdl_cl_mfacl_mode=>enum_simple( ).
+* set the enum value we want
+    gv_mfacl_mode = /blck/mfi_cl_model=>mfacl_mode-simple.
     
 * pass the enum to the example API via method
     gcl_exampleapi->set_mfacl_mode_state(
-    	exporting
-    		i_mfacl_mode = gcl_mfacl_mode ).
+      exporting
+        i_mfacl_mode = gv_mfacl_mode ).
     		
-    clear gcl_mfacl_mode.
+    clear gv_mfacl_mode.
     
 * fetch result from example API method
-    gcl_mfacl_mode = gcl_exampleapi->get_mfacl_mode_state(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_mfacl_mode_state(
+      exporting
+        i_id = 1
+      importing
+        e_200 = gv_mfacl_mode ).
     	
-* we have two ways to handle the result, either "if" with individual cases..
-  if gcl_mfacl_mode->is_simple( ) eq 'X'.
-*   do something specific to simple case..
-  endif.
-  
-* .. or use a case clause to handle all scenarios:
-  case gcl_mfacl_mode->get_value( ).
-    when /blck/mdl_cl_mfacl_mode=>mce_simple.
+* we can handle the result with either "if" with individual cases
+* or use a case clause to handle all scenarios:
+  case gv_mfacl_mode.
+    when /blck/mfi_cl_model=>mfacl_mode-simple.
 *     do something specific to simple case..
-    when /blck/mdl_cl_mfacl_mode=>mce_automaticpermissionswithc.
+    when /blck/mfi_cl_model=>mfacl_mode-automaticpermissionswithc.
 *     do something specific to automaticpermissionswithc case..
   endcase.
 
@@ -8918,15 +8945,15 @@ Name | Value | Instantiation
 
 ## Enum Values
 
-Name | Value | Instantiation
+Name | Value | Constant
 ------------ | ------------- | -------------
-**simple** | 0 | /blck/mdl_cl_mfacl_mode=>enum_simple( ).
-**automaticpermissionswithc** | 1 | /blck/mdl_cl_mfacl_mode=>enum_automaticpermissionswithc( ).
+**simple** | 0 | /blck/mfi_cl_model=>mfacl_mode-simple.
+**automaticpermissionswithc** | 1 | /blck/mfi_cl_model=>mfacl_mode-automaticpermissionswithc.
 
 * * *
 <a name="markdown-header-enum-mfautomaticval"></a> 
 
-# Enum: mfautomaticval
+# Enum: MFAutomaticValueType
 
 
 
@@ -8938,39 +8965,37 @@ Name | Value | Instantiation
 *** AutoNumberSimple 4: WithVBScript
 
 * create our variables..
-    data gcl_mfautomaticval type ref to /blck/mdl_cl_mfautomaticval.
+    data gv_mfautomaticval type /blck/mfi_mfautomaticval.
     
-* instantiate model relevant to the enum value we want
-    gcl_mfautomaticval = /blck/mdl_cl_mfautomaticval=>enum_none( ).
+* set the enum value we want
+    gv_mfautomaticval = /blck/mfi_cl_model=>mfautomaticval-none.
     
 * pass the enum to the example API via method
     gcl_exampleapi->set_mfautomaticval_state(
-    	exporting
-    		i_mfautomaticval = gcl_mfautomaticval ).
+      exporting
+        i_mfautomaticval = gv_mfautomaticval ).
     		
-    clear gcl_mfautomaticval.
+    clear gv_mfautomaticval.
     
 * fetch result from example API method
-    gcl_mfautomaticval = gcl_exampleapi->get_mfautomaticval_state(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_mfautomaticval_state(
+      exporting
+        i_id = 1
+      importing
+        e_200 = gv_mfautomaticval ).
     	
-* we have two ways to handle the result, either "if" with individual cases..
-  if gcl_mfautomaticval->is_none( ) eq 'X'.
-*   do something specific to none case..
-  endif.
-  
-* .. or use a case clause to handle all scenarios:
-  case gcl_mfautomaticval->get_value( ).
-    when /blck/mdl_cl_mfautomaticval=>mce_none.
+* we can handle the result with either "if" with individual cases
+* or use a case clause to handle all scenarios:
+  case gv_mfautomaticval.
+    when /blck/mfi_cl_model=>mfautomaticval-none.
 *     do something specific to none case..
-    when /blck/mdl_cl_mfautomaticval=>mce_calculatedwithplaceholder.
+    when /blck/mfi_cl_model=>mfautomaticval-calculatedwithplaceholder.
 *     do something specific to calculatedwithplaceholder case..
-    when /blck/mdl_cl_mfautomaticval=>mce_calculated_with_vb_script.
+    when /blck/mfi_cl_model=>mfautomaticval-calculated_with_vb_script.
 *     do something specific to calculated_with_vb_script case..
-    when /blck/mdl_cl_mfautomaticval=>mce_auto_number_simple.
+    when /blck/mfi_cl_model=>mfautomaticval-auto_number_simple.
 *     do something specific to auto_number_simple case..
-    when /blck/mdl_cl_mfautomaticval=>mce_with_vb_script.
+    when /blck/mfi_cl_model=>mfautomaticval-with_vb_script.
 *     do something specific to with_vb_script case..
   endcase.
 
@@ -8979,18 +9004,18 @@ Name | Value | Instantiation
 
 ## Enum Values
 
-Name | Value | Instantiation
+Name | Value | Constant
 ------------ | ------------- | -------------
-**none** | 0 | /blck/mdl_cl_mfautomaticval=>enum_none( ).
-**calculatedwithplaceholder** | 1 | /blck/mdl_cl_mfautomaticval=>enum_calculatedwithplaceholder( ).
-**calculated_with_vb_script** | 2 | /blck/mdl_cl_mfautomaticval=>enum_calculated_with_vb_script( ).
-**auto_number_simple** | 3 | /blck/mdl_cl_mfautomaticval=>enum_auto_number_simple( ).
-**with_vb_script** | 4 | /blck/mdl_cl_mfautomaticval=>enum_with_vb_script( ).
+**none** | 0 | /blck/mfi_cl_model=>mfautomaticval-none.
+**calculatedwithplaceholder** | 1 | /blck/mfi_cl_model=>mfautomaticval-calculatedwithplaceholder.
+**calculated_with_vb_script** | 2 | /blck/mfi_cl_model=>mfautomaticval-calculated_with_vb_script.
+**auto_number_simple** | 3 | /blck/mfi_cl_model=>mfautomaticval-auto_number_simple.
+**with_vb_script** | 4 | /blck/mfi_cl_model=>mfautomaticval-with_vb_script.
 
 * * *
 <a name="markdown-header-enum-mfcheckoutstat"></a> 
 
-# Enum: mfcheckoutstat
+# Enum: MFCheckOutStatus
 
 
 
@@ -9002,35 +9027,33 @@ Name | Value | Instantiation
 *** use value !&#x3D; CheckedIn instead. 0: CheckedIn 1: CheckedOut 2: CheckedOutToMe
 
 * create our variables..
-    data gcl_mfcheckoutstat type ref to /blck/mdl_cl_mfcheckoutstat.
+    data gv_mfcheckoutstat type /blck/mfi_mfcheckoutstat.
     
-* instantiate model relevant to the enum value we want
-    gcl_mfcheckoutstat = /blck/mdl_cl_mfcheckoutstat=>enum_checked_in( ).
+* set the enum value we want
+    gv_mfcheckoutstat = /blck/mfi_cl_model=>mfcheckoutstat-checked_in.
     
 * pass the enum to the example API via method
     gcl_exampleapi->set_mfcheckoutstat_state(
-    	exporting
-    		i_mfcheckoutstat = gcl_mfcheckoutstat ).
+      exporting
+        i_mfcheckoutstat = gv_mfcheckoutstat ).
     		
-    clear gcl_mfcheckoutstat.
+    clear gv_mfcheckoutstat.
     
 * fetch result from example API method
-    gcl_mfcheckoutstat = gcl_exampleapi->get_mfcheckoutstat_state(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_mfcheckoutstat_state(
+      exporting
+        i_id = 1
+      importing
+        e_200 = gv_mfcheckoutstat ).
     	
-* we have two ways to handle the result, either "if" with individual cases..
-  if gcl_mfcheckoutstat->is_checked_in( ) eq 'X'.
-*   do something specific to checked_in case..
-  endif.
-  
-* .. or use a case clause to handle all scenarios:
-  case gcl_mfcheckoutstat->get_value( ).
-    when /blck/mdl_cl_mfcheckoutstat=>mce_checked_in.
+* we can handle the result with either "if" with individual cases
+* or use a case clause to handle all scenarios:
+  case gv_mfcheckoutstat.
+    when /blck/mfi_cl_model=>mfcheckoutstat-checked_in.
 *     do something specific to checked_in case..
-    when /blck/mdl_cl_mfcheckoutstat=>mce_checked_out.
+    when /blck/mfi_cl_model=>mfcheckoutstat-checked_out.
 *     do something specific to checked_out case..
-    when /blck/mdl_cl_mfcheckoutstat=>mce_checked_out_to_me.
+    when /blck/mfi_cl_model=>mfcheckoutstat-checked_out_to_me.
 *     do something specific to checked_out_to_me case..
   endcase.
 
@@ -9039,16 +9062,16 @@ Name | Value | Instantiation
 
 ## Enum Values
 
-Name | Value | Instantiation
+Name | Value | Constant
 ------------ | ------------- | -------------
-**checked_in** | 0 | /blck/mdl_cl_mfcheckoutstat=>enum_checked_in( ).
-**checked_out** | 1 | /blck/mdl_cl_mfcheckoutstat=>enum_checked_out( ).
-**checked_out_to_me** | 2 | /blck/mdl_cl_mfcheckoutstat=>enum_checked_out_to_me( ).
+**checked_in** | 0 | /blck/mfi_cl_model=>mfcheckoutstat-checked_in.
+**checked_out** | 1 | /blck/mfi_cl_model=>mfcheckoutstat-checked_out.
+**checked_out_to_me** | 2 | /blck/mfi_cl_model=>mfcheckoutstat-checked_out_to_me.
 
 * * *
 <a name="markdown-header-enum-mfextensionaut"></a> 
 
-# Enum: mfextensionaut
+# Enum: MFExtensionAuthenticationSpecialUserType
 
 
 
@@ -9058,37 +9081,35 @@ Name | Value | Instantiation
 *** 0: None 1: Common 2: Indexer 3: Permissions
 
 * create our variables..
-    data gcl_mfextensionaut type ref to /blck/mdl_cl_mfextensionaut.
+    data gv_mfextensionaut type /blck/mfi_mfextensionaut.
     
-* instantiate model relevant to the enum value we want
-    gcl_mfextensionaut = /blck/mdl_cl_mfextensionaut=>enum_none( ).
+* set the enum value we want
+    gv_mfextensionaut = /blck/mfi_cl_model=>mfextensionaut-none.
     
 * pass the enum to the example API via method
     gcl_exampleapi->set_mfextensionaut_state(
-    	exporting
-    		i_mfextensionaut = gcl_mfextensionaut ).
+      exporting
+        i_mfextensionaut = gv_mfextensionaut ).
     		
-    clear gcl_mfextensionaut.
+    clear gv_mfextensionaut.
     
 * fetch result from example API method
-    gcl_mfextensionaut = gcl_exampleapi->get_mfextensionaut_state(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_mfextensionaut_state(
+      exporting
+        i_id = 1
+      importing
+        e_200 = gv_mfextensionaut ).
     	
-* we have two ways to handle the result, either "if" with individual cases..
-  if gcl_mfextensionaut->is_none( ) eq 'X'.
-*   do something specific to none case..
-  endif.
-  
-* .. or use a case clause to handle all scenarios:
-  case gcl_mfextensionaut->get_value( ).
-    when /blck/mdl_cl_mfextensionaut=>mce_none.
+* we can handle the result with either "if" with individual cases
+* or use a case clause to handle all scenarios:
+  case gv_mfextensionaut.
+    when /blck/mfi_cl_model=>mfextensionaut-none.
 *     do something specific to none case..
-    when /blck/mdl_cl_mfextensionaut=>mce_common.
+    when /blck/mfi_cl_model=>mfextensionaut-common.
 *     do something specific to common case..
-    when /blck/mdl_cl_mfextensionaut=>mce_indexer.
+    when /blck/mfi_cl_model=>mfextensionaut-indexer.
 *     do something specific to indexer case..
-    when /blck/mdl_cl_mfextensionaut=>mce_permissions.
+    when /blck/mfi_cl_model=>mfextensionaut-permissions.
 *     do something specific to permissions case..
   endcase.
 
@@ -9097,17 +9118,17 @@ Name | Value | Instantiation
 
 ## Enum Values
 
-Name | Value | Instantiation
+Name | Value | Constant
 ------------ | ------------- | -------------
-**none** | 0 | /blck/mdl_cl_mfextensionaut=>enum_none( ).
-**common** | 1 | /blck/mdl_cl_mfextensionaut=>enum_common( ).
-**indexer** | 2 | /blck/mdl_cl_mfextensionaut=>enum_indexer( ).
-**permissions** | 3 | /blck/mdl_cl_mfextensionaut=>enum_permissions( ).
+**none** | 0 | /blck/mfi_cl_model=>mfextensionaut-none.
+**common** | 1 | /blck/mfi_cl_model=>mfextensionaut-common.
+**indexer** | 2 | /blck/mfi_cl_model=>mfextensionaut-indexer.
+**permissions** | 3 | /blck/mfi_cl_model=>mfextensionaut-permissions.
 
 * * *
 <a name="markdown-header-enum-mfrefreshstatu"></a> 
 
-# Enum: mfrefreshstatu
+# Enum: MFRefreshStatus
 
 
 
@@ -9117,35 +9138,33 @@ Name | Value | Instantiation
 *** 0: None 1: Quick 2: Full
 
 * create our variables..
-    data gcl_mfrefreshstatu type ref to /blck/mdl_cl_mfrefreshstatu.
+    data gv_mfrefreshstatu type /blck/mfi_mfrefreshstatu.
     
-* instantiate model relevant to the enum value we want
-    gcl_mfrefreshstatu = /blck/mdl_cl_mfrefreshstatu=>enum_none( ).
+* set the enum value we want
+    gv_mfrefreshstatu = /blck/mfi_cl_model=>mfrefreshstatu-none.
     
 * pass the enum to the example API via method
     gcl_exampleapi->set_mfrefreshstatu_state(
-    	exporting
-    		i_mfrefreshstatu = gcl_mfrefreshstatu ).
+      exporting
+        i_mfrefreshstatu = gv_mfrefreshstatu ).
     		
-    clear gcl_mfrefreshstatu.
+    clear gv_mfrefreshstatu.
     
 * fetch result from example API method
-    gcl_mfrefreshstatu = gcl_exampleapi->get_mfrefreshstatu_state(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_mfrefreshstatu_state(
+      exporting
+        i_id = 1
+      importing
+        e_200 = gv_mfrefreshstatu ).
     	
-* we have two ways to handle the result, either "if" with individual cases..
-  if gcl_mfrefreshstatu->is_none( ) eq 'X'.
-*   do something specific to none case..
-  endif.
-  
-* .. or use a case clause to handle all scenarios:
-  case gcl_mfrefreshstatu->get_value( ).
-    when /blck/mdl_cl_mfrefreshstatu=>mce_none.
+* we can handle the result with either "if" with individual cases
+* or use a case clause to handle all scenarios:
+  case gv_mfrefreshstatu.
+    when /blck/mfi_cl_model=>mfrefreshstatu-none.
 *     do something specific to none case..
-    when /blck/mdl_cl_mfrefreshstatu=>mce_quick.
+    when /blck/mfi_cl_model=>mfrefreshstatu-quick.
 *     do something specific to quick case..
-    when /blck/mdl_cl_mfrefreshstatu=>mce_full.
+    when /blck/mfi_cl_model=>mfrefreshstatu-full.
 *     do something specific to full case..
   endcase.
 
@@ -9154,16 +9173,16 @@ Name | Value | Instantiation
 
 ## Enum Values
 
-Name | Value | Instantiation
+Name | Value | Constant
 ------------ | ------------- | -------------
-**none** | 0 | /blck/mdl_cl_mfrefreshstatu=>enum_none( ).
-**quick** | 1 | /blck/mdl_cl_mfrefreshstatu=>enum_quick( ).
-**full** | 2 | /blck/mdl_cl_mfrefreshstatu=>enum_full( ).
+**none** | 0 | /blck/mfi_cl_model=>mfrefreshstatu-none.
+**quick** | 1 | /blck/mfi_cl_model=>mfrefreshstatu-quick.
+**full** | 2 | /blck/mfi_cl_model=>mfrefreshstatu-full.
 
 * * *
 <a name="markdown-header-model-obj_id"></a> 
 
-# Model: obj_id
+# Model: ObjID
 
 
 
@@ -9173,47 +9192,51 @@ Name | Value | Instantiation
 *** https://www.m-files.com/api/documentation/latest/index.html#MFilesAPI~ObjID.html
 
 * create our variables..
-    data gcl_obj_id type ref to /blck/mdl_cl_obj_id.
+    data gr_obj_id type /blck/mfi_obj_id.
     
 * instantiate model and call the setters to set values..
-    gcl_obj_id = /blck/mdl_cl_obj_id=>create( ).
-    gcl_obj_id->set_id( 42 ). " (type i)
-    gcl_obj_id->set_type( 42 ). " (type i)
-    gcl_obj_id->set_external_repository_name( 'ipsum lorem' ). " (type string)
-    gcl_obj_id->set_externalrepositoryobjectid( 'ipsum lorem' ). " (type string)
+    gr_obj_id-id = 42. " (type /BLCK/MFI_INT)
+
+    gr_obj_id-type = 42. " (type /BLCK/MFI_INT)
+
+    gr_obj_id-external_repository_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_obj_id-externalrepositoryobjectid = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_obj_id(
-    	exporting
-    		i_obj_id = gcl_obj_id ).
+      exporting
+        i_obj_id = gr_obj_id ).
     		
-    clear gcl_obj_id.
+    clear gr_obj_id.
     
 * fetch new instance from example API method
-    gcl_obj_id = gcl_exampleapi->get_obj_id(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_obj_id(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_obj_id ).
     		
-    l_id = gcl_obj_id->get_id( ). " (type i)
-    l_type = gcl_obj_id->get_type( ). " (type i)
-    l_external_repository_name = gcl_obj_id->get_external_repository_name( ). " (type string)
-    l_externalrepositoryobjectid = gcl_obj_id->get_externalrepositoryobjectid( ). " (type string)
+    write: gr_obj_id-id. " (type /BLCK/MFI_INT)
+    write: gr_obj_id-type. " (type /BLCK/MFI_INT)
+    write: gr_obj_id-external_repository_name. " (type /BLCK/MFI_STRING)
+    write: gr_obj_id-externalrepositoryobjectid. " (type /BLCK/MFI_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | i |  | [optional] [default to null]
-**type** | i |  | [optional] [default to null]
-**external_repository_name** | string | (for external objects only) | [optional] [default to null]
-**externalrepositoryobjectid** | string | (for external objects only) | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**id** | /BLCK/MFI_INT | 
+**type** | /BLCK/MFI_INT | 
+**external_repository_name** | /BLCK/MFI_STRING | (for external objects only)
+**externalrepositoryobjectid** | /BLCK/MFI_STRING | (for external objects only)
 
 * * *
 <a name="markdown-header-model-obj_type"></a> 
 
-# Model: obj_type
+# Model: ObjType
 
 
 
@@ -9223,68 +9246,79 @@ Name | Type | Description | Notes
 *** https://www.m-files.com/api/documentation/latest/index.html#MFilesAPI~ObjType.html
 
 * create our variables..
-    data gcl_obj_type type ref to /blck/mdl_cl_obj_type.
+    data gr_obj_type type /blck/mfi_obj_type.
     
 * instantiate model and call the setters to set values..
-    gcl_obj_type = /blck/mdl_cl_obj_type=>create( ).
-    gcl_obj_type->set_allow_adding( 'X' ). " (type flag)
-    gcl_obj_type->set_can_have_files( 'X' ). " (type flag)
-    gcl_obj_type->set_default_property_def( 42 ). " (type i)
-    gcl_obj_type->set_external( 'X' ). " (type flag)
-    gcl_obj_type->set_id( 42 ). " (type i)
-    gcl_obj_type->set_name_plural( 'ipsum lorem' ). " (type string)
-    gcl_obj_type->set_name( 'ipsum lorem' ). " (type string)
-    gcl_obj_type->set_owner_property_def( 42 ). " (type i)
-    gcl_obj_type->set_readonlypropertiesduringin( l_readonlypropertiesduringin ). " (type /blck/api_i_tt)
-    gcl_obj_type->set_readonlypropertiesduringup( l_readonlypropertiesduringup ). " (type /blck/api_i_tt)
-    gcl_obj_type->set_real_object_type( 'X' ). " (type flag)
+    gr_obj_type-allow_adding = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_obj_type-can_have_files = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_obj_type-default_property_def = 42. " (type /BLCK/MFI_INT)
+
+    gr_obj_type-external = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_obj_type-id = 42. " (type /BLCK/MFI_INT)
+
+    gr_obj_type-name_plural = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_obj_type-name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_obj_type-owner_property_def = 42. " (type /BLCK/MFI_INT)
+
+    gr_obj_type-readonlypropertiesduringin = l_readonlypropertiesduringin. " (type /BLCK/MFI_INT_TT)
+
+    gr_obj_type-readonlypropertiesduringup = l_readonlypropertiesduringup. " (type /BLCK/MFI_INT_TT)
+
+    gr_obj_type-real_object_type = 'X'. " (type /BLCK/MFI_BOOL)
     
 * pass to example API method
     gcl_exampleapi->update_obj_type(
-    	exporting
-    		i_obj_type = gcl_obj_type ).
+      exporting
+        i_obj_type = gr_obj_type ).
     		
-    clear gcl_obj_type.
+    clear gr_obj_type.
     
 * fetch new instance from example API method
-    gcl_obj_type = gcl_exampleapi->get_obj_type(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_obj_type(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_obj_type ).
     		
-    l_allow_adding = gcl_obj_type->get_allow_adding( ). " (type flag)
-    l_can_have_files = gcl_obj_type->get_can_have_files( ). " (type flag)
-    l_default_property_def = gcl_obj_type->get_default_property_def( ). " (type i)
-    l_external = gcl_obj_type->get_external( ). " (type flag)
-    l_id = gcl_obj_type->get_id( ). " (type i)
-    l_name_plural = gcl_obj_type->get_name_plural( ). " (type string)
-    l_name = gcl_obj_type->get_name( ). " (type string)
-    l_owner_property_def = gcl_obj_type->get_owner_property_def( ). " (type i)
-    l_readonlypropertiesduringin = gcl_obj_type->get_readonlypropertiesduringin( ). " (type /blck/api_i_tt)
-    l_readonlypropertiesduringup = gcl_obj_type->get_readonlypropertiesduringup( ). " (type /blck/api_i_tt)
-    l_real_object_type = gcl_obj_type->get_real_object_type( ). " (type flag)
+    write: gr_obj_type-allow_adding. " (type /BLCK/MFI_BOOL)
+    write: gr_obj_type-can_have_files. " (type /BLCK/MFI_BOOL)
+    write: gr_obj_type-default_property_def. " (type /BLCK/MFI_INT)
+    write: gr_obj_type-external. " (type /BLCK/MFI_BOOL)
+    write: gr_obj_type-id. " (type /BLCK/MFI_INT)
+    write: gr_obj_type-name_plural. " (type /BLCK/MFI_STRING)
+    write: gr_obj_type-name. " (type /BLCK/MFI_STRING)
+    write: gr_obj_type-owner_property_def. " (type /BLCK/MFI_INT)
+    write: gr_obj_type-readonlypropertiesduringin. " (type /BLCK/MFI_INT_TT)
+    write: gr_obj_type-readonlypropertiesduringup. " (type /BLCK/MFI_INT_TT)
+    write: gr_obj_type-real_object_type. " (type /BLCK/MFI_BOOL)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**allow_adding** | flag |  | [optional] [default to null]
-**can_have_files** | flag |  | [optional] [default to null]
-**default_property_def** | i |  | [optional] [default to null]
-**external** | flag |  | [optional] [default to null]
-**id** | i |  | [optional] [default to null]
-**name_plural** | string |  | [optional] [default to null]
-**name** | string |  | [optional] [default to null]
-**owner_property_def** | i |  | [optional] [default to null]
-**readonlypropertiesduringin** | /blck/api_i_tt |  | [optional] [default to null]
-**readonlypropertiesduringup** | /blck/api_i_tt |  | [optional] [default to null]
-**real_object_type** | flag |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**allow_adding** | /BLCK/MFI_BOOL | 
+**can_have_files** | /BLCK/MFI_BOOL | 
+**default_property_def** | /BLCK/MFI_INT | 
+**external** | /BLCK/MFI_BOOL | 
+**id** | /BLCK/MFI_INT | 
+**name_plural** | /BLCK/MFI_STRING | 
+**name** | /BLCK/MFI_STRING | 
+**owner_property_def** | /BLCK/MFI_INT | 
+**readonlypropertiesduringin** | /BLCK/MFI_INT_TT | 
+**readonlypropertiesduringup** | /BLCK/MFI_INT_TT | 
+**real_object_type** | /BLCK/MFI_BOOL | 
 
 * * *
 <a name="markdown-header-model-object_class"></a> 
 
-# Model: object_class
+# Model: ObjectClass
 
 
 
@@ -9294,47 +9328,51 @@ Name | Type | Description | Notes
 *** https://www.m-files.com/api/documentation/latest/index.html#MFilesAPI~ObjectClass.html
 
 * create our variables..
-    data gcl_object_class type ref to /blck/mdl_cl_object_class.
+    data gr_object_class type /blck/mfi_object_class.
     
 * instantiate model and call the setters to set values..
-    gcl_object_class = /blck/mdl_cl_object_class=>create( ).
-    gcl_object_class->set_id( 42 ). " (type i)
-    gcl_object_class->set_name( 'ipsum lorem' ). " (type string)
-    gcl_object_class->set_name_property_def( 42 ). " (type i)
-    gcl_object_class->set_workflow( 42 ). " (type i)
+    gr_object_class-id = 42. " (type /BLCK/MFI_INT)
+
+    gr_object_class-name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_object_class-name_property_def = 42. " (type /BLCK/MFI_INT)
+
+    gr_object_class-workflow = 42. " (type /BLCK/MFI_INT)
     
 * pass to example API method
     gcl_exampleapi->update_object_class(
-    	exporting
-    		i_object_class = gcl_object_class ).
+      exporting
+        i_object_class = gr_object_class ).
     		
-    clear gcl_object_class.
+    clear gr_object_class.
     
 * fetch new instance from example API method
-    gcl_object_class = gcl_exampleapi->get_object_class(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_object_class(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_object_class ).
     		
-    l_id = gcl_object_class->get_id( ). " (type i)
-    l_name = gcl_object_class->get_name( ). " (type string)
-    l_name_property_def = gcl_object_class->get_name_property_def( ). " (type i)
-    l_workflow = gcl_object_class->get_workflow( ). " (type i)
+    write: gr_object_class-id. " (type /BLCK/MFI_INT)
+    write: gr_object_class-name. " (type /BLCK/MFI_STRING)
+    write: gr_object_class-name_property_def. " (type /BLCK/MFI_INT)
+    write: gr_object_class-workflow. " (type /BLCK/MFI_INT)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | i |  | [optional] [default to null]
-**name** | string |  | [optional] [default to null]
-**name_property_def** | i |  | [optional] [default to null]
-**workflow** | i |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**id** | /BLCK/MFI_INT | 
+**name** | /BLCK/MFI_STRING | 
+**name_property_def** | /BLCK/MFI_INT | 
+**workflow** | /BLCK/MFI_INT | 
 
 * * *
 <a name="markdown-header-model-upload_info"></a> 
 
-# Model: upload_info
+# Model: UploadInfo
 
 
 
@@ -9344,47 +9382,51 @@ Name | Type | Description | Notes
 *** Contains the information on a temporary upload.
 
 * create our variables..
-    data gcl_upload_info type ref to /blck/mdl_cl_upload_info.
+    data gr_upload_info type /blck/mfi_upload_info.
     
 * instantiate model and call the setters to set values..
-    gcl_upload_info = /blck/mdl_cl_upload_info=>create( ).
-    gcl_upload_info->set_upload_id( 42 ). " (type i)
-    gcl_upload_info->set_title( 'ipsum lorem' ). " (type string)
-    gcl_upload_info->set_extension( 'ipsum lorem' ). " (type string)
-    gcl_upload_info->set_size( 42 ). " (type i)
+    gr_upload_info-upload_id = 42. " (type /BLCK/MFI_INT)
+
+    gr_upload_info-title = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_upload_info-extension = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_upload_info-size = 42. " (type /BLCK/MFI_INT)
     
 * pass to example API method
     gcl_exampleapi->update_upload_info(
-    	exporting
-    		i_upload_info = gcl_upload_info ).
+      exporting
+        i_upload_info = gr_upload_info ).
     		
-    clear gcl_upload_info.
+    clear gr_upload_info.
     
 * fetch new instance from example API method
-    gcl_upload_info = gcl_exampleapi->get_upload_info(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_upload_info(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_upload_info ).
     		
-    l_upload_id = gcl_upload_info->get_upload_id( ). " (type i)
-    l_title = gcl_upload_info->get_title( ). " (type string)
-    l_extension = gcl_upload_info->get_extension( ). " (type string)
-    l_size = gcl_upload_info->get_size( ). " (type i)
+    write: gr_upload_info-upload_id. " (type /BLCK/MFI_INT)
+    write: gr_upload_info-title. " (type /BLCK/MFI_STRING)
+    write: gr_upload_info-extension. " (type /BLCK/MFI_STRING)
+    write: gr_upload_info-size. " (type /BLCK/MFI_INT)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**upload_id** | i | Temporary upload ID given by the server. | [optional] [default to null]
-**title** | string | File name without extension. | [optional] [default to null]
-**extension** | string | File extension. | [optional] [default to null]
-**size** | i | File size. | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**upload_id** | /BLCK/MFI_INT | Temporary upload ID given by the server.
+**title** | /BLCK/MFI_STRING | File name without extension.
+**extension** | /BLCK/MFI_STRING | File extension.
+**size** | /BLCK/MFI_INT | File size.
 
 * * *
 <a name="markdown-header-model-objectcreation"></a> 
 
-# Model: objectcreation
+# Model: ObjectCreationInfo
 
 
 
@@ -9394,41 +9436,43 @@ Name | Type | Description | Notes
 *** Specifies the information required when creating a new object.
 
 * create our variables..
-    data gcl_objectcreation type ref to /blck/mdl_cl_objectcreation.
+    data gr_objectcreation type /blck/mfi_objectcreation.
     
 * instantiate model and call the setters to set values..
-    gcl_objectcreation = /blck/mdl_cl_objectcreation=>create( ).
-    gcl_objectcreation->set_property_values( l_property_values ). " (type /BLCK/MFI_property_value_tt)
-    gcl_objectcreation->set_files( l_files ). " (type /BLCK/MFI_upload_info_tt)
+    gr_objectcreation-property_values = l_property_values. " (type /BLCK/MFI_PROPERTY_VALUE_TT)
+
+    gr_objectcreation-files = l_files. " (type /BLCK/MFI_UPLOAD_INFO_TT)
     
 * pass to example API method
     gcl_exampleapi->update_objectcreation(
-    	exporting
-    		i_objectcreation = gcl_objectcreation ).
+      exporting
+        i_objectcreation = gr_objectcreation ).
     		
-    clear gcl_objectcreation.
+    clear gr_objectcreation.
     
 * fetch new instance from example API method
-    gcl_objectcreation = gcl_exampleapi->get_objectcreation(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_objectcreation(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_objectcreation ).
     		
-    l_property_values = gcl_objectcreation->get_property_values( ). " (type /BLCK/MFI_property_value_tt)
-    l_files = gcl_objectcreation->get_files( ). " (type /BLCK/MFI_upload_info_tt)
+    write: gr_objectcreation-property_values. " (type /BLCK/MFI_PROPERTY_VALUE_TT)
+    write: gr_objectcreation-files. " (type /BLCK/MFI_UPLOAD_INFO_TT)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**property_values** | /BLCK/MFI_property_value_tt (**[array of property_value](#markdown-header-model-property_value)**) | Properties for the new object. | [optional] [default to null]
-**files** | /BLCK/MFI_upload_info_tt (**[array of upload_info](#markdown-header-model-upload_info)**) | References previously uploaded files. | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**property_values** | /BLCK/MFI_PROPERTY_VALUE_TT (**[array of property_value](#markdown-header-model-property_value)**) | Properties for the new object.
+**files** | /BLCK/MFI_UPLOAD_INFO_TT (**[array of upload_info](#markdown-header-model-upload_info)**) | References previously uploaded files.
 
 * * *
 <a name="markdown-header-model-objectversionu"></a> 
 
-# Model: objectversionu
+# Model: ObjectVersionUpdateInformation
 
 
 
@@ -9437,107 +9481,131 @@ Name | Type | Description | Notes
 *** model objectversionu example
 
 * create our variables..
-    data gcl_objectversionu type ref to /blck/mdl_cl_objectversionu.
+    data gr_objectversionu type /blck/mfi_objectversionu.
     
 * instantiate model and call the setters to set values..
-    gcl_objectversionu = /blck/mdl_cl_objectversionu=>create( ).
-    gcl_objectversionu->set_properties( l_properties ). " (type /BLCK/MFI_property_value_tt)
-    gcl_objectversionu->set_accessed_by_me_utc( 'ipsum lorem' ). " (type string)
-    gcl_objectversionu->set_checked_out_at_utc( 'ipsum lorem' ). " (type string)
-    gcl_objectversionu->set_checked_out_to( 42 ). " (type i)
-    gcl_objectversionu->set_checked_out_to_user_name( 'ipsum lorem' ). " (type string)
-    gcl_objectversionu->set_class( 42 ). " (type i)
-    gcl_objectversionu->set_created_utc( 'ipsum lorem' ). " (type string)
-    gcl_objectversionu->set_deleted( 'X' ). " (type flag)
-    gcl_objectversionu->set_display_id( 'ipsum lorem' ). " (type string)
-    gcl_objectversionu->set_files( l_files ). " (type /BLCK/MFI_object_file_tt)
-    gcl_objectversionu->set_has_assignments( 'X' ). " (type flag)
-    gcl_objectversionu->set_hasrelationshipsfromthis( 'X' ). " (type flag)
-    gcl_objectversionu->set_has_relationships_to_this( 'X' ). " (type flag)
-    gcl_objectversionu->set_is_stub( 'X' ). " (type flag)
-    gcl_objectversionu->set_last_modified_utc( 'ipsum lorem' ). " (type string)
-    gcl_objectversionu->set_object_checked_out( 'X' ). " (type flag)
-    gcl_objectversionu->set_objectcheckedouttothisuser( 'X' ). " (type flag)
-    gcl_objectversionu->set_object_version_flags( l_object_version_flags ). " (type /BLCK/MFI_mfobjectversio)
-    gcl_objectversionu->set_obj_ver( l_obj_ver ). " (type /BLCK/MFI_obj_ver)
-    gcl_objectversionu->set_single_file( 'X' ). " (type flag)
-    gcl_objectversionu->set_thisversionlatesttothisuse( 'X' ). " (type flag)
-    gcl_objectversionu->set_title( 'ipsum lorem' ). " (type string)
-    gcl_objectversionu->set_visible_after_operation( 'X' ). " (type flag)
-    gcl_objectversionu->set_allow_name_change( 'X' ). " (type flag)
+    gr_objectversionu-properties = l_properties. " (type /BLCK/MFI_PROPERTY_VALUE_TT)
+
+    gr_objectversionu-accessed_by_me_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_objectversionu-checked_out_at_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_objectversionu-checked_out_to = 42. " (type /BLCK/MFI_INT)
+
+    gr_objectversionu-checked_out_to_user_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_objectversionu-class = 42. " (type /BLCK/MFI_INT)
+
+    gr_objectversionu-created_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_objectversionu-deleted = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_objectversionu-display_id = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_objectversionu-files = l_files. " (type /BLCK/MFI_OBJECT_FILE_TT)
+
+    gr_objectversionu-has_assignments = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_objectversionu-hasrelationshipsfromthis = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_objectversionu-has_relationships_to_this = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_objectversionu-is_stub = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_objectversionu-last_modified_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_objectversionu-object_checked_out = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_objectversionu-objectcheckedouttothisuser = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_objectversionu-object_version_flags = l_object_version_flags. " (type /BLCK/MFI_MFOBJECTVERSIO)
+
+    gr_objectversionu-obj_ver = l_obj_ver. " (type /BLCK/MFI_OBJ_VER)
+
+    gr_objectversionu-single_file = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_objectversionu-thisversionlatesttothisuse = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_objectversionu-title = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_objectversionu-visible_after_operation = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_objectversionu-allow_name_change = 'X'. " (type /BLCK/MFI_BOOL)
     
 * pass to example API method
     gcl_exampleapi->update_objectversionu(
-    	exporting
-    		i_objectversionu = gcl_objectversionu ).
+      exporting
+        i_objectversionu = gr_objectversionu ).
     		
-    clear gcl_objectversionu.
+    clear gr_objectversionu.
     
 * fetch new instance from example API method
-    gcl_objectversionu = gcl_exampleapi->get_objectversionu(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_objectversionu(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_objectversionu ).
     		
-    l_properties = gcl_objectversionu->get_properties( ). " (type /BLCK/MFI_property_value_tt)
-    l_accessed_by_me_utc = gcl_objectversionu->get_accessed_by_me_utc( ). " (type string)
-    l_checked_out_at_utc = gcl_objectversionu->get_checked_out_at_utc( ). " (type string)
-    l_checked_out_to = gcl_objectversionu->get_checked_out_to( ). " (type i)
-    l_checked_out_to_user_name = gcl_objectversionu->get_checked_out_to_user_name( ). " (type string)
-    l_class = gcl_objectversionu->get_class( ). " (type i)
-    l_created_utc = gcl_objectversionu->get_created_utc( ). " (type string)
-    l_deleted = gcl_objectversionu->get_deleted( ). " (type flag)
-    l_display_id = gcl_objectversionu->get_display_id( ). " (type string)
-    l_files = gcl_objectversionu->get_files( ). " (type /BLCK/MFI_object_file_tt)
-    l_has_assignments = gcl_objectversionu->get_has_assignments( ). " (type flag)
-    l_hasrelationshipsfromthis = gcl_objectversionu->get_hasrelationshipsfromthis( ). " (type flag)
-    l_has_relationships_to_this = gcl_objectversionu->get_has_relationships_to_this( ). " (type flag)
-    l_is_stub = gcl_objectversionu->get_is_stub( ). " (type flag)
-    l_last_modified_utc = gcl_objectversionu->get_last_modified_utc( ). " (type string)
-    l_object_checked_out = gcl_objectversionu->get_object_checked_out( ). " (type flag)
-    l_objectcheckedouttothisuser = gcl_objectversionu->get_objectcheckedouttothisuser( ). " (type flag)
-    l_object_version_flags = gcl_objectversionu->get_object_version_flags( ). " (type /BLCK/MFI_mfobjectversio)
-    l_obj_ver = gcl_objectversionu->get_obj_ver( ). " (type /BLCK/MFI_obj_ver)
-    l_single_file = gcl_objectversionu->get_single_file( ). " (type flag)
-    l_thisversionlatesttothisuse = gcl_objectversionu->get_thisversionlatesttothisuse( ). " (type flag)
-    l_title = gcl_objectversionu->get_title( ). " (type string)
-    l_visible_after_operation = gcl_objectversionu->get_visible_after_operation( ). " (type flag)
-    l_allow_name_change = gcl_objectversionu->get_allow_name_change( ). " (type flag)
+    write: gr_objectversionu-properties. " (type /BLCK/MFI_PROPERTY_VALUE_TT)
+    write: gr_objectversionu-accessed_by_me_utc. " (type /BLCK/MFI_STRING)
+    write: gr_objectversionu-checked_out_at_utc. " (type /BLCK/MFI_STRING)
+    write: gr_objectversionu-checked_out_to. " (type /BLCK/MFI_INT)
+    write: gr_objectversionu-checked_out_to_user_name. " (type /BLCK/MFI_STRING)
+    write: gr_objectversionu-class. " (type /BLCK/MFI_INT)
+    write: gr_objectversionu-created_utc. " (type /BLCK/MFI_STRING)
+    write: gr_objectversionu-deleted. " (type /BLCK/MFI_BOOL)
+    write: gr_objectversionu-display_id. " (type /BLCK/MFI_STRING)
+    write: gr_objectversionu-files. " (type /BLCK/MFI_OBJECT_FILE_TT)
+    write: gr_objectversionu-has_assignments. " (type /BLCK/MFI_BOOL)
+    write: gr_objectversionu-hasrelationshipsfromthis. " (type /BLCK/MFI_BOOL)
+    write: gr_objectversionu-has_relationships_to_this. " (type /BLCK/MFI_BOOL)
+    write: gr_objectversionu-is_stub. " (type /BLCK/MFI_BOOL)
+    write: gr_objectversionu-last_modified_utc. " (type /BLCK/MFI_STRING)
+    write: gr_objectversionu-object_checked_out. " (type /BLCK/MFI_BOOL)
+    write: gr_objectversionu-objectcheckedouttothisuser. " (type /BLCK/MFI_BOOL)
+    write: gr_objectversionu-object_version_flags. " (type /BLCK/MFI_MFOBJECTVERSIO)
+    write: gr_objectversionu-obj_ver. " (type /BLCK/MFI_OBJ_VER)
+    write: gr_objectversionu-single_file. " (type /BLCK/MFI_BOOL)
+    write: gr_objectversionu-thisversionlatesttothisuse. " (type /BLCK/MFI_BOOL)
+    write: gr_objectversionu-title. " (type /BLCK/MFI_STRING)
+    write: gr_objectversionu-visible_after_operation. " (type /BLCK/MFI_BOOL)
+    write: gr_objectversionu-allow_name_change. " (type /BLCK/MFI_BOOL)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**properties** | /BLCK/MFI_property_value_tt (**[array of property_value](#markdown-header-model-property_value)**) | Object properties | [optional] [default to null]
-**accessed_by_me_utc** | string |  | [optional] [default to null]
-**checked_out_at_utc** | string |  | [optional] [default to null]
-**checked_out_to** | i |  | [optional] [default to null]
-**checked_out_to_user_name** | string |  | [optional] [default to null]
-**class** | i |  | [optional] [default to null]
-**created_utc** | string |  | [optional] [default to null]
-**deleted** | flag |  | [optional] [default to null]
-**display_id** | string |  | [optional] [default to null]
-**files** | /BLCK/MFI_object_file_tt (**[array of object_file](#markdown-header-model-object_file)**) |  | [optional] [default to null]
-**has_assignments** | flag |  | [optional] [default to null]
-**hasrelationshipsfromthis** | flag |  | [optional] [default to null]
-**has_relationships_to_this** | flag |  | [optional] [default to null]
-**is_stub** | flag |  | [optional] [default to null]
-**last_modified_utc** | string |  | [optional] [default to null]
-**object_checked_out** | flag |  | [optional] [default to null]
-**objectcheckedouttothisuser** | flag |  | [optional] [default to null]
-**object_version_flags** | /BLCK/MFI_mfobjectversio (**[mfobjectversio](#markdown-header-enum-mfobjectversio)**) |  | [optional] [default to null]
-**obj_ver** | /BLCK/MFI_obj_ver (**[obj_ver](#markdown-header-model-obj_ver)**) |  | [optional] [default to null]
-**single_file** | flag |  | [optional] [default to null]
-**thisversionlatesttothisuse** | flag |  | [optional] [default to null]
-**title** | string |  | [optional] [default to null]
-**visible_after_operation** | flag |  | [optional] [default to null]
-**allow_name_change** | flag |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**properties** | /BLCK/MFI_PROPERTY_VALUE_TT (**[array of property_value](#markdown-header-model-property_value)**) | Object properties
+**accessed_by_me_utc** | /BLCK/MFI_STRING | 
+**checked_out_at_utc** | /BLCK/MFI_STRING | 
+**checked_out_to** | /BLCK/MFI_INT | 
+**checked_out_to_user_name** | /BLCK/MFI_STRING | 
+**class** | /BLCK/MFI_INT | 
+**created_utc** | /BLCK/MFI_STRING | 
+**deleted** | /BLCK/MFI_BOOL | 
+**display_id** | /BLCK/MFI_STRING | 
+**files** | /BLCK/MFI_OBJECT_FILE_TT (**[array of object_file](#markdown-header-model-object_file)**) | 
+**has_assignments** | /BLCK/MFI_BOOL | 
+**hasrelationshipsfromthis** | /BLCK/MFI_BOOL | 
+**has_relationships_to_this** | /BLCK/MFI_BOOL | 
+**is_stub** | /BLCK/MFI_BOOL | 
+**last_modified_utc** | /BLCK/MFI_STRING | 
+**object_checked_out** | /BLCK/MFI_BOOL | 
+**objectcheckedouttothisuser** | /BLCK/MFI_BOOL | 
+**object_version_flags** | /BLCK/MFI_MFOBJECTVERSIO (**[mfobjectversio](#markdown-header-enum-mfobjectversio)**) | 
+**obj_ver** | /BLCK/MFI_OBJ_VER (**[obj_ver](#markdown-header-model-obj_ver)**) | 
+**single_file** | /BLCK/MFI_BOOL | 
+**thisversionlatesttothisuse** | /BLCK/MFI_BOOL | 
+**title** | /BLCK/MFI_STRING | 
+**visible_after_operation** | /BLCK/MFI_BOOL | 
+**allow_name_change** | /BLCK/MFI_BOOL | 
 
 * * *
 <a name="markdown-header-model-objectsupdatei"></a> 
 
-# Model: objectsupdatei
+# Model: ObjectsUpdateInfo
 
 
 
@@ -9548,38 +9616,39 @@ Name | Type | Description | Notes
 *** https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/setmultipleobjproperties/
 
 * create our variables..
-    data gcl_objectsupdatei type ref to /blck/mdl_cl_objectsupdatei.
+    data gr_objectsupdatei type /blck/mfi_objectsupdatei.
     
 * instantiate model and call the setters to set values..
-    gcl_objectsupdatei = /blck/mdl_cl_objectsupdatei=>create( ).
-    gcl_objectsupdatei->set_multiple_object_info( l_multiple_object_info ). " (type /BLCK/MFI_objectversionu)
+    gr_objectsupdatei-multiple_object_info = l_multiple_object_info. " (type /BLCK/MFI_OBJECTVERSIONU)
     
 * pass to example API method
     gcl_exampleapi->update_objectsupdatei(
-    	exporting
-    		i_objectsupdatei = gcl_objectsupdatei ).
+      exporting
+        i_objectsupdatei = gr_objectsupdatei ).
     		
-    clear gcl_objectsupdatei.
+    clear gr_objectsupdatei.
     
 * fetch new instance from example API method
-    gcl_objectsupdatei = gcl_exampleapi->get_objectsupdatei(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_objectsupdatei(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_objectsupdatei ).
     		
-    l_multiple_object_info = gcl_objectsupdatei->get_multiple_object_info( ). " (type /BLCK/MFI_objectversionu)
+    write: gr_objectsupdatei-multiple_object_info. " (type /BLCK/MFI_OBJECTVERSIONU)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**multiple_object_info** | /BLCK/MFI_objectversionu (**[objectversionu](#markdown-header-model-objectversionu)**) |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**multiple_object_info** | /BLCK/MFI_OBJECTVERSIONU (**[objectversionu](#markdown-header-model-objectversionu)**) | 
 
 * * *
 <a name="markdown-header-model-objectworkflow"></a> 
 
-# Model: objectworkflow
+# Model: ObjectWorkflowState
 
 
 
@@ -9588,56 +9657,63 @@ Name | Type | Description | Notes
 *** model objectworkflow example
 
 * create our variables..
-    data gcl_objectworkflow type ref to /blck/mdl_cl_objectworkflow.
+    data gr_objectworkflow type /blck/mfi_objectworkflow.
     
 * instantiate model and call the setters to set values..
-    gcl_objectworkflow = /blck/mdl_cl_objectworkflow=>create( ).
-    gcl_objectworkflow->set_state( l_state ). " (type /BLCK/MFI_property_value)
-    gcl_objectworkflow->set_state_id( 42 ). " (type i)
-    gcl_objectworkflow->set_state_name( 'ipsum lorem' ). " (type string)
-    gcl_objectworkflow->set_workflow( l_workflow ). " (type /BLCK/MFI_property_value)
-    gcl_objectworkflow->set_workflow_id( 42 ). " (type i)
-    gcl_objectworkflow->set_workflow_name( 'ipsum lorem' ). " (type string)
-    gcl_objectworkflow->set_version_comment( 'ipsum lorem' ). " (type string)
+    gr_objectworkflow-state = l_state. " (type /BLCK/MFI_PROPERTY_VALUE)
+
+    gr_objectworkflow-state_id = 42. " (type /BLCK/MFI_INT)
+
+    gr_objectworkflow-state_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_objectworkflow-workflow = l_workflow. " (type /BLCK/MFI_PROPERTY_VALUE)
+
+    gr_objectworkflow-workflow_id = 42. " (type /BLCK/MFI_INT)
+
+    gr_objectworkflow-workflow_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_objectworkflow-version_comment = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_objectworkflow(
-    	exporting
-    		i_objectworkflow = gcl_objectworkflow ).
+      exporting
+        i_objectworkflow = gr_objectworkflow ).
     		
-    clear gcl_objectworkflow.
+    clear gr_objectworkflow.
     
 * fetch new instance from example API method
-    gcl_objectworkflow = gcl_exampleapi->get_objectworkflow(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_objectworkflow(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_objectworkflow ).
     		
-    l_state = gcl_objectworkflow->get_state( ). " (type /BLCK/MFI_property_value)
-    l_state_id = gcl_objectworkflow->get_state_id( ). " (type i)
-    l_state_name = gcl_objectworkflow->get_state_name( ). " (type string)
-    l_workflow = gcl_objectworkflow->get_workflow( ). " (type /BLCK/MFI_property_value)
-    l_workflow_id = gcl_objectworkflow->get_workflow_id( ). " (type i)
-    l_workflow_name = gcl_objectworkflow->get_workflow_name( ). " (type string)
-    l_version_comment = gcl_objectworkflow->get_version_comment( ). " (type string)
+    write: gr_objectworkflow-state. " (type /BLCK/MFI_PROPERTY_VALUE)
+    write: gr_objectworkflow-state_id. " (type /BLCK/MFI_INT)
+    write: gr_objectworkflow-state_name. " (type /BLCK/MFI_STRING)
+    write: gr_objectworkflow-workflow. " (type /BLCK/MFI_PROPERTY_VALUE)
+    write: gr_objectworkflow-workflow_id. " (type /BLCK/MFI_INT)
+    write: gr_objectworkflow-workflow_name. " (type /BLCK/MFI_STRING)
+    write: gr_objectworkflow-version_comment. " (type /BLCK/MFI_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**state** | /BLCK/MFI_property_value (**[property_value](#markdown-header-model-property_value)**) |  | [optional] [default to null]
-**state_id** | i | The workflow state ID. | [optional] [default to null]
-**state_name** | string | The workflow state name. | [optional] [default to null]
-**workflow** | /BLCK/MFI_property_value (**[property_value](#markdown-header-model-property_value)**) |  | [optional] [default to null]
-**workflow_id** | i | The workflow ID. | [optional] [default to null]
-**workflow_name** | string | The workflow name. | [optional] [default to null]
-**version_comment** | string | Version comment defined on the workflow transition. | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**state** | /BLCK/MFI_PROPERTY_VALUE (**[property_value](#markdown-header-model-property_value)**) | 
+**state_id** | /BLCK/MFI_INT | The workflow state ID.
+**state_name** | /BLCK/MFI_STRING | The workflow state name.
+**workflow** | /BLCK/MFI_PROPERTY_VALUE (**[property_value](#markdown-header-model-property_value)**) | 
+**workflow_id** | /BLCK/MFI_INT | The workflow ID.
+**workflow_name** | /BLCK/MFI_STRING | The workflow name.
+**version_comment** | /BLCK/MFI_STRING | Version comment defined on the workflow transition.
 
 * * *
 <a name="markdown-header-model-passwordchange"></a> 
 
-# Model: passwordchange
+# Model: PasswordChange
 
 
 
@@ -9647,41 +9723,43 @@ Name | Type | Description | Notes
 *** Information required for changing password.
 
 * create our variables..
-    data gcl_passwordchange type ref to /blck/mdl_cl_passwordchange.
+    data gr_passwordchange type /blck/mfi_passwordchange.
     
 * instantiate model and call the setters to set values..
-    gcl_passwordchange = /blck/mdl_cl_passwordchange=>create( ).
-    gcl_passwordchange->set_old_password( 'ipsum lorem' ). " (type string)
-    gcl_passwordchange->set_new_password( 'ipsum lorem' ). " (type string)
+    gr_passwordchange-old_password = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_passwordchange-new_password = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_passwordchange(
-    	exporting
-    		i_passwordchange = gcl_passwordchange ).
+      exporting
+        i_passwordchange = gr_passwordchange ).
     		
-    clear gcl_passwordchange.
+    clear gr_passwordchange.
     
 * fetch new instance from example API method
-    gcl_passwordchange = gcl_exampleapi->get_passwordchange(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_passwordchange(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_passwordchange ).
     		
-    l_old_password = gcl_passwordchange->get_old_password( ). " (type string)
-    l_new_password = gcl_passwordchange->get_new_password( ). " (type string)
+    write: gr_passwordchange-old_password. " (type /BLCK/MFI_STRING)
+    write: gr_passwordchange-new_password. " (type /BLCK/MFI_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**old_password** | string | The current password. | [optional] [default to null]
-**new_password** | string | The new password. | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**old_password** | /BLCK/MFI_STRING | The current password.
+**new_password** | /BLCK/MFI_STRING | The new password.
 
 * * *
 <a name="markdown-header-model-plugininfoconf"></a> 
 
-# Model: plugininfoconf
+# Model: PluginInfoConfiguration
 
 
 
@@ -9691,59 +9769,67 @@ Name | Type | Description | Notes
 *** The configuration for authentication plugin.
 
 * create our variables..
-    data gcl_plugininfoconf type ref to /blck/mdl_cl_plugininfoconf.
+    data gr_plugininfoconf type /blck/mfi_plugininfoconf.
     
 * instantiate model and call the setters to set values..
-    gcl_plugininfoconf = /blck/mdl_cl_plugininfoconf=>create( ).
-    gcl_plugininfoconf->set_name( 'ipsum lorem' ). " (type string)
-    gcl_plugininfoconf->set_is_default( 'X' ). " (type flag)
-    gcl_plugininfoconf->set_assembly_name( 'ipsum lorem' ). " (type string)
-    gcl_plugininfoconf->set_bridge_class_name( 'ipsum lorem' ). " (type string)
-    gcl_plugininfoconf->set_is_scope_independent( 'X' ). " (type flag)
-    gcl_plugininfoconf->set_protocol( 'ipsum lorem' ). " (type string)
-    gcl_plugininfoconf->set_configuration( l_configuration ). " (type /blck/api_string_mt)
-    gcl_plugininfoconf->set_configuration_source( l_configuration_source ). " (type /blck/api_string_mt)
+    gr_plugininfoconf-name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_plugininfoconf-is_default = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_plugininfoconf-assembly_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_plugininfoconf-bridge_class_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_plugininfoconf-is_scope_independent = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_plugininfoconf-protocol = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_plugininfoconf-configuration = l_configuration. " (type /BLCK/MFI_STRING_MT)
+
+    gr_plugininfoconf-configuration_source = l_configuration_source. " (type /BLCK/MFI_STRING_MT)
     
 * pass to example API method
     gcl_exampleapi->update_plugininfoconf(
-    	exporting
-    		i_plugininfoconf = gcl_plugininfoconf ).
+      exporting
+        i_plugininfoconf = gr_plugininfoconf ).
     		
-    clear gcl_plugininfoconf.
+    clear gr_plugininfoconf.
     
 * fetch new instance from example API method
-    gcl_plugininfoconf = gcl_exampleapi->get_plugininfoconf(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_plugininfoconf(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_plugininfoconf ).
     		
-    l_name = gcl_plugininfoconf->get_name( ). " (type string)
-    l_is_default = gcl_plugininfoconf->get_is_default( ). " (type flag)
-    l_assembly_name = gcl_plugininfoconf->get_assembly_name( ). " (type string)
-    l_bridge_class_name = gcl_plugininfoconf->get_bridge_class_name( ). " (type string)
-    l_is_scope_independent = gcl_plugininfoconf->get_is_scope_independent( ). " (type flag)
-    l_protocol = gcl_plugininfoconf->get_protocol( ). " (type string)
-    l_configuration = gcl_plugininfoconf->get_configuration( ). " (type /blck/api_string_mt)
-    l_configuration_source = gcl_plugininfoconf->get_configuration_source( ). " (type /blck/api_string_mt)
+    write: gr_plugininfoconf-name. " (type /BLCK/MFI_STRING)
+    write: gr_plugininfoconf-is_default. " (type /BLCK/MFI_BOOL)
+    write: gr_plugininfoconf-assembly_name. " (type /BLCK/MFI_STRING)
+    write: gr_plugininfoconf-bridge_class_name. " (type /BLCK/MFI_STRING)
+    write: gr_plugininfoconf-is_scope_independent. " (type /BLCK/MFI_BOOL)
+    write: gr_plugininfoconf-protocol. " (type /BLCK/MFI_STRING)
+    write: gr_plugininfoconf-configuration. " (type /BLCK/MFI_STRING_MT)
+    write: gr_plugininfoconf-configuration_source. " (type /BLCK/MFI_STRING_MT)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | string | The name of the plugin configuration. | [optional] [default to null]
-**is_default** | flag | Specifies if this is the default plugin configuration. | [optional] [default to null]
-**assembly_name** | string | Assembly name. | [optional] [default to null]
-**bridge_class_name** | string | Bridge class name. | [optional] [default to null]
-**is_scope_independent** | flag | Specifies if this plugin configuration is independent of scope. | [optional] [default to null]
-**protocol** | string | The used protocol for the plug-in, e.g. SAMLv2.0. | [optional] [default to null]
-**configuration** | /blck/api_string_mt | The name of the plugin configuration. | [optional] [default to null]
-**configuration_source** | /blck/api_string_mt | The name of the plugin configuration. | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**name** | /BLCK/MFI_STRING | The name of the plugin configuration.
+**is_default** | /BLCK/MFI_BOOL | Specifies if this is the default plugin configuration.
+**assembly_name** | /BLCK/MFI_STRING | Assembly name.
+**bridge_class_name** | /BLCK/MFI_STRING | Bridge class name.
+**is_scope_independent** | /BLCK/MFI_BOOL | Specifies if this plugin configuration is independent of scope.
+**protocol** | /BLCK/MFI_STRING | The used protocol for the plug-in, e.g. SAMLv2.0.
+**configuration** | /BLCK/MFI_STRING_MT | The name of the plugin configuration.
+**configuration_source** | /BLCK/MFI_STRING_MT | The name of the plugin configuration.
 
 * * *
 <a name="markdown-header-model-primitivetypei"></a> 
 
-# Model: primitivetypei
+# Model: PrimitiveTypeInt
 
 
 
@@ -9753,38 +9839,39 @@ Name | Type | Description | Notes
 *** https://developer.m-files.com/APIs/REST-API/Reference/structs/primitivetypet/
 
 * create our variables..
-    data gcl_primitivetypei type ref to /blck/mdl_cl_primitivetypei.
+    data gr_primitivetypei type /blck/mfi_primitivetypei.
     
 * instantiate model and call the setters to set values..
-    gcl_primitivetypei = /blck/mdl_cl_primitivetypei=>create( ).
-    gcl_primitivetypei->set_value( 42 ). " (type i)
+    gr_primitivetypei-value = 42. " (type /BLCK/MFI_INT)
     
 * pass to example API method
     gcl_exampleapi->update_primitivetypei(
-    	exporting
-    		i_primitivetypei = gcl_primitivetypei ).
+      exporting
+        i_primitivetypei = gr_primitivetypei ).
     		
-    clear gcl_primitivetypei.
+    clear gr_primitivetypei.
     
 * fetch new instance from example API method
-    gcl_primitivetypei = gcl_exampleapi->get_primitivetypei(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_primitivetypei(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_primitivetypei ).
     		
-    l_value = gcl_primitivetypei->get_value( ). " (type i)
+    write: gr_primitivetypei-value. " (type /BLCK/MFI_INT)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**value** | i | Primitive value. | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**value** | /BLCK/MFI_INT | Primitive value.
 
 * * *
 <a name="markdown-header-model-property_def"></a> 
 
-# Model: property_def
+# Model: PropertyDef
 
 
 
@@ -9794,62 +9881,71 @@ Name | Type | Description | Notes
 *** https://www.m-files.com/api/documentation/latest/index.html#MFilesAPI~PropertyDef.html
 
 * create our variables..
-    data gcl_property_def type ref to /blck/mdl_cl_property_def.
+    data gr_property_def type /blck/mfi_property_def.
     
 * instantiate model and call the setters to set values..
-    gcl_property_def = /blck/mdl_cl_property_def=>create( ).
-    gcl_property_def->set_all_object_types( 'X' ). " (type flag)
-    gcl_property_def->set_automatic_value( 'ipsum lorem' ). " (type string)
-    gcl_property_def->set_automatic_value_type( l_automatic_value_type ). " (type /BLCK/MFI_mfautomaticval)
-    gcl_property_def->set_based_on_value_list( 'X' ). " (type flag)
-    gcl_property_def->set_data_type( l_data_type ). " (type /BLCK/MFI_mf_data_type)
-    gcl_property_def->set_id( 42 ). " (type i)
-    gcl_property_def->set_name( 'ipsum lorem' ). " (type string)
-    gcl_property_def->set_object_type( 42 ). " (type i)
-    gcl_property_def->set_value_list( 42 ). " (type i)
+    gr_property_def-all_object_types = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_property_def-automatic_value = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_property_def-automatic_value_type = l_automatic_value_type. " (type /BLCK/MFI_MFAUTOMATICVAL)
+
+    gr_property_def-based_on_value_list = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_property_def-data_type = l_data_type. " (type /BLCK/MFI_MF_DATA_TYPE)
+
+    gr_property_def-id = 42. " (type /BLCK/MFI_INT)
+
+    gr_property_def-name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_property_def-object_type = 42. " (type /BLCK/MFI_INT)
+
+    gr_property_def-value_list = 42. " (type /BLCK/MFI_INT)
     
 * pass to example API method
     gcl_exampleapi->update_property_def(
-    	exporting
-    		i_property_def = gcl_property_def ).
+      exporting
+        i_property_def = gr_property_def ).
     		
-    clear gcl_property_def.
+    clear gr_property_def.
     
 * fetch new instance from example API method
-    gcl_property_def = gcl_exampleapi->get_property_def(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_property_def(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_property_def ).
     		
-    l_all_object_types = gcl_property_def->get_all_object_types( ). " (type flag)
-    l_automatic_value = gcl_property_def->get_automatic_value( ). " (type string)
-    l_automatic_value_type = gcl_property_def->get_automatic_value_type( ). " (type /BLCK/MFI_mfautomaticval)
-    l_based_on_value_list = gcl_property_def->get_based_on_value_list( ). " (type flag)
-    l_data_type = gcl_property_def->get_data_type( ). " (type /BLCK/MFI_mf_data_type)
-    l_id = gcl_property_def->get_id( ). " (type i)
-    l_name = gcl_property_def->get_name( ). " (type string)
-    l_object_type = gcl_property_def->get_object_type( ). " (type i)
-    l_value_list = gcl_property_def->get_value_list( ). " (type i)
+    write: gr_property_def-all_object_types. " (type /BLCK/MFI_BOOL)
+    write: gr_property_def-automatic_value. " (type /BLCK/MFI_STRING)
+    write: gr_property_def-automatic_value_type. " (type /BLCK/MFI_MFAUTOMATICVAL)
+    write: gr_property_def-based_on_value_list. " (type /BLCK/MFI_BOOL)
+    write: gr_property_def-data_type. " (type /BLCK/MFI_MF_DATA_TYPE)
+    write: gr_property_def-id. " (type /BLCK/MFI_INT)
+    write: gr_property_def-name. " (type /BLCK/MFI_STRING)
+    write: gr_property_def-object_type. " (type /BLCK/MFI_INT)
+    write: gr_property_def-value_list. " (type /BLCK/MFI_INT)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**all_object_types** | flag |  | [optional] [default to null]
-**automatic_value** | string |  | [optional] [default to null]
-**automatic_value_type** | /BLCK/MFI_mfautomaticval (**[mfautomaticval](#markdown-header-enum-mfautomaticval)**) |  | [optional] [default to null]
-**based_on_value_list** | flag |  | [optional] [default to null]
-**data_type** | /BLCK/MFI_mf_data_type (**[mf_data_type](#markdown-header-enum-mf_data_type)**) |  | [optional] [default to null]
-**id** | i |  | [optional] [default to null]
-**name** | string |  | [optional] [default to null]
-**object_type** | i |  | [optional] [default to null]
-**value_list** | i |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**all_object_types** | /BLCK/MFI_BOOL | 
+**automatic_value** | /BLCK/MFI_STRING | 
+**automatic_value_type** | /BLCK/MFI_MFAUTOMATICVAL (**[mfautomaticval](#markdown-header-enum-mfautomaticval)**) | 
+**based_on_value_list** | /BLCK/MFI_BOOL | 
+**data_type** | /BLCK/MFI_MF_DATA_TYPE (**[mf_data_type](#markdown-header-enum-mf_data_type)**) | 
+**id** | /BLCK/MFI_INT | 
+**name** | /BLCK/MFI_STRING | 
+**object_type** | /BLCK/MFI_INT | 
+**value_list** | /BLCK/MFI_INT | 
 
 * * *
 <a name="markdown-header-model-propertyvalues"></a> 
 
-# Model: propertyvalues
+# Model: PropertyValueSuggestion
 
 
 
@@ -9858,53 +9954,59 @@ Name | Type | Description | Notes
 *** model propertyvalues example
 
 * create our variables..
-    data gcl_propertyvalues type ref to /blck/mdl_cl_propertyvalues.
+    data gr_propertyvalues type /blck/mfi_propertyvalues.
     
 * instantiate model and call the setters to set values..
-    gcl_propertyvalues = /blck/mdl_cl_propertyvalues=>create( ).
-    gcl_propertyvalues->set_display_value( 'ipsum lorem' ). " (type string)
-    gcl_propertyvalues->set_is_fact( 'X' ). " (type flag)
-    gcl_propertyvalues->set_is_new_value( 'X' ). " (type flag)
-    gcl_propertyvalues->set_property_def( 'ipsum lorem' ). " (type string)
-    gcl_propertyvalues->set_quality( 42 ). " (type i)
-    gcl_propertyvalues->set_typed_value( l_typed_value ). " (type /BLCK/MFI_typed_value)
+    gr_propertyvalues-display_value = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_propertyvalues-is_fact = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_propertyvalues-is_new_value = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_propertyvalues-property_def = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_propertyvalues-quality = 42. " (type /BLCK/MFI_INT)
+
+    gr_propertyvalues-typed_value = l_typed_value. " (type /BLCK/MFI_TYPED_VALUE)
     
 * pass to example API method
     gcl_exampleapi->update_propertyvalues(
-    	exporting
-    		i_propertyvalues = gcl_propertyvalues ).
+      exporting
+        i_propertyvalues = gr_propertyvalues ).
     		
-    clear gcl_propertyvalues.
+    clear gr_propertyvalues.
     
 * fetch new instance from example API method
-    gcl_propertyvalues = gcl_exampleapi->get_propertyvalues(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_propertyvalues(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_propertyvalues ).
     		
-    l_display_value = gcl_propertyvalues->get_display_value( ). " (type string)
-    l_is_fact = gcl_propertyvalues->get_is_fact( ). " (type flag)
-    l_is_new_value = gcl_propertyvalues->get_is_new_value( ). " (type flag)
-    l_property_def = gcl_propertyvalues->get_property_def( ). " (type string)
-    l_quality = gcl_propertyvalues->get_quality( ). " (type i)
-    l_typed_value = gcl_propertyvalues->get_typed_value( ). " (type /BLCK/MFI_typed_value)
+    write: gr_propertyvalues-display_value. " (type /BLCK/MFI_STRING)
+    write: gr_propertyvalues-is_fact. " (type /BLCK/MFI_BOOL)
+    write: gr_propertyvalues-is_new_value. " (type /BLCK/MFI_BOOL)
+    write: gr_propertyvalues-property_def. " (type /BLCK/MFI_STRING)
+    write: gr_propertyvalues-quality. " (type /BLCK/MFI_INT)
+    write: gr_propertyvalues-typed_value. " (type /BLCK/MFI_TYPED_VALUE)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**display_value** | string |  | [optional] [default to null]
-**is_fact** | flag |  | [optional] [default to null]
-**is_new_value** | flag |  | [optional] [default to null]
-**property_def** | string |  | [optional] [default to null]
-**quality** | i |  | [optional] [default to null]
-**typed_value** | /BLCK/MFI_typed_value (**[typed_value](#markdown-header-model-typed_value)**) |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**display_value** | /BLCK/MFI_STRING | 
+**is_fact** | /BLCK/MFI_BOOL | 
+**is_new_value** | /BLCK/MFI_BOOL | 
+**property_def** | /BLCK/MFI_STRING | 
+**quality** | /BLCK/MFI_INT | 
+**typed_value** | /BLCK/MFI_TYPED_VALUE (**[typed_value](#markdown-header-model-typed_value)**) | 
 
 * * *
 <a name="markdown-header-model-public_key"></a> 
 
-# Model: public_key
+# Model: PublicKey
 
 
 
@@ -9914,41 +10016,43 @@ Name | Type | Description | Notes
 *** Server public key information.
 
 * create our variables..
-    data gcl_public_key type ref to /blck/mdl_cl_public_key.
+    data gr_public_key type /blck/mfi_public_key.
     
 * instantiate model and call the setters to set values..
-    gcl_public_key = /blck/mdl_cl_public_key=>create( ).
-    gcl_public_key->set_exponent( 'ipsum lorem' ). " (type string)
-    gcl_public_key->set_modulus( 'ipsum lorem' ). " (type string)
+    gr_public_key-exponent = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_public_key-modulus = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_public_key(
-    	exporting
-    		i_public_key = gcl_public_key ).
+      exporting
+        i_public_key = gr_public_key ).
     		
-    clear gcl_public_key.
+    clear gr_public_key.
     
 * fetch new instance from example API method
-    gcl_public_key = gcl_exampleapi->get_public_key(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_public_key(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_public_key ).
     		
-    l_exponent = gcl_public_key->get_exponent( ). " (type string)
-    l_modulus = gcl_public_key->get_modulus( ). " (type string)
+    write: gr_public_key-exponent. " (type /BLCK/MFI_STRING)
+    write: gr_public_key-modulus. " (type /BLCK/MFI_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**exponent** | string | Base64URL encoded exponent. | [optional] [default to null]
-**modulus** | string | Base64URL encoded modulus. | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**exponent** | /BLCK/MFI_STRING | Base64URL encoded exponent.
+**modulus** | /BLCK/MFI_STRING | Base64URL encoded modulus.
 
 * * *
 <a name="markdown-header-model-repositoryaut2"></a> 
 
-# Model: repositoryaut2
+# Model: RepositoryAuthenticationStatus
 
 
 
@@ -9958,47 +10062,51 @@ Name | Type | Description | Notes
 *** Structure defining one external repository authentication status.
 
 * create our variables..
-    data gcl_repositoryaut2 type ref to /blck/mdl_cl_repositoryaut2.
+    data gr_repositoryaut2 type /blck/mfi_repositoryaut2.
     
 * instantiate model and call the setters to set values..
-    gcl_repositoryaut2 = /blck/mdl_cl_repositoryaut2=>create( ).
-    gcl_repositoryaut2->set_account_name( 'ipsum lorem' ). " (type string)
-    gcl_repositoryaut2->set_extensionauthenticationspe( l_extensionauthenticationspe ). " (type /BLCK/MFI_mfextensionaut)
-    gcl_repositoryaut2->set_target_id( 'ipsum lorem' ). " (type string)
-    gcl_repositoryaut2->set_user_id( 42 ). " (type i)
+    gr_repositoryaut2-account_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_repositoryaut2-extensionauthenticationspe = l_extensionauthenticationspe. " (type /BLCK/MFI_MFEXTENSIONAUT)
+
+    gr_repositoryaut2-target_id = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_repositoryaut2-user_id = 42. " (type /BLCK/MFI_INT)
     
 * pass to example API method
     gcl_exampleapi->update_repositoryaut2(
-    	exporting
-    		i_repositoryaut2 = gcl_repositoryaut2 ).
+      exporting
+        i_repositoryaut2 = gr_repositoryaut2 ).
     		
-    clear gcl_repositoryaut2.
+    clear gr_repositoryaut2.
     
 * fetch new instance from example API method
-    gcl_repositoryaut2 = gcl_exampleapi->get_repositoryaut2(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_repositoryaut2(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_repositoryaut2 ).
     		
-    l_account_name = gcl_repositoryaut2->get_account_name( ). " (type string)
-    l_extensionauthenticationspe = gcl_repositoryaut2->get_extensionauthenticationspe( ). " (type /BLCK/MFI_mfextensionaut)
-    l_target_id = gcl_repositoryaut2->get_target_id( ). " (type string)
-    l_user_id = gcl_repositoryaut2->get_user_id( ). " (type i)
+    write: gr_repositoryaut2-account_name. " (type /BLCK/MFI_STRING)
+    write: gr_repositoryaut2-extensionauthenticationspe. " (type /BLCK/MFI_MFEXTENSIONAUT)
+    write: gr_repositoryaut2-target_id. " (type /BLCK/MFI_STRING)
+    write: gr_repositoryaut2-user_id. " (type /BLCK/MFI_INT)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**account_name** | string | Account name used for authentication. | [optional] [default to null]
-**extensionauthenticationspe** | /BLCK/MFI_mfextensionaut (**[mfextensionaut](#markdown-header-enum-mfextensionaut)**) |  | [optional] [default to null]
-**target_id** | string | ID of the target repository. | [optional] [default to null]
-**user_id** | i | ID of the authenticated M-Files user. | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**account_name** | /BLCK/MFI_STRING | Account name used for authentication.
+**extensionauthenticationspe** | /BLCK/MFI_MFEXTENSIONAUT (**[mfextensionaut](#markdown-header-enum-mfextensionaut)**) | 
+**target_id** | /BLCK/MFI_STRING | ID of the target repository.
+**user_id** | /BLCK/MFI_INT | ID of the authenticated M-Files user.
 
 * * *
 <a name="markdown-header-model-repositoryaut3"></a> 
 
-# Model: repositoryaut3
+# Model: RepositoryAuthentication
 
 
 
@@ -10013,50 +10121,55 @@ Name | Type | Description | Notes
 *** used.https://developer.m-files.com/APIs/REST-API/Reference/structs/repositoryauthenticationtarget/
 
 * create our variables..
-    data gcl_repositoryaut3 type ref to /blck/mdl_cl_repositoryaut3.
+    data gr_repositoryaut3 type /blck/mfi_repositoryaut3.
     
 * instantiate model and call the setters to set values..
-    gcl_repositoryaut3 = /blck/mdl_cl_repositoryaut3=>create( ).
-    gcl_repositoryaut3->set_configuration_name( 'ipsum lorem' ). " (type string)
-    gcl_repositoryaut3->set_username( 'ipsum lorem' ). " (type string)
-    gcl_repositoryaut3->set_password( 'ipsum lorem' ). " (type string)
-    gcl_repositoryaut3->set_authentication_token( 'ipsum lorem' ). " (type string)
-    gcl_repositoryaut3->set_refresh_token( 'ipsum lorem' ). " (type string)
+    gr_repositoryaut3-configuration_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_repositoryaut3-username = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_repositoryaut3-password = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_repositoryaut3-authentication_token = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_repositoryaut3-refresh_token = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_repositoryaut3(
-    	exporting
-    		i_repositoryaut3 = gcl_repositoryaut3 ).
+      exporting
+        i_repositoryaut3 = gr_repositoryaut3 ).
     		
-    clear gcl_repositoryaut3.
+    clear gr_repositoryaut3.
     
 * fetch new instance from example API method
-    gcl_repositoryaut3 = gcl_exampleapi->get_repositoryaut3(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_repositoryaut3(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_repositoryaut3 ).
     		
-    l_configuration_name = gcl_repositoryaut3->get_configuration_name( ). " (type string)
-    l_username = gcl_repositoryaut3->get_username( ). " (type string)
-    l_password = gcl_repositoryaut3->get_password( ). " (type string)
-    l_authentication_token = gcl_repositoryaut3->get_authentication_token( ). " (type string)
-    l_refresh_token = gcl_repositoryaut3->get_refresh_token( ). " (type string)
+    write: gr_repositoryaut3-configuration_name. " (type /BLCK/MFI_STRING)
+    write: gr_repositoryaut3-username. " (type /BLCK/MFI_STRING)
+    write: gr_repositoryaut3-password. " (type /BLCK/MFI_STRING)
+    write: gr_repositoryaut3-authentication_token. " (type /BLCK/MFI_STRING)
+    write: gr_repositoryaut3-refresh_token. " (type /BLCK/MFI_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**configuration_name** | string | Name of the authentication configuration. | [optional] [default to null]
-**username** | string | Username used for basic authentication. | [optional] [default to null]
-**password** | string | Password used for basic authentication. | [optional] [default to null]
-**authentication_token** | string | The authentication token for plugin authentication. Must be null if using basic username/password authentication | [optional] [default to null]
-**refresh_token** | string | The refresh token for plugin authentication. | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**configuration_name** | /BLCK/MFI_STRING | Name of the authentication configuration.
+**username** | /BLCK/MFI_STRING | Username used for basic authentication.
+**password** | /BLCK/MFI_STRING | Password used for basic authentication.
+**authentication_token** | /BLCK/MFI_STRING | The authentication token for plugin authentication. Must be null if using basic username/password authentication
+**refresh_token** | /BLCK/MFI_STRING | The refresh token for plugin authentication.
 
 * * *
 <a name="markdown-header-model-repositoryauth"></a> 
 
-# Model: repositoryauth
+# Model: RepositoryAuthenticationTarget
 
 
 
@@ -10065,53 +10178,59 @@ Name | Type | Description | Notes
 *** model repositoryauth example
 
 * create our variables..
-    data gcl_repositoryauth type ref to /blck/mdl_cl_repositoryauth.
+    data gr_repositoryauth type /blck/mfi_repositoryauth.
     
 * instantiate model and call the setters to set values..
-    gcl_repositoryauth = /blck/mdl_cl_repositoryauth=>create( ).
-    gcl_repositoryauth->set_display_name( 'ipsum lorem' ). " (type string)
-    gcl_repositoryauth->set_icon_id( 'ipsum lorem' ). " (type string)
-    gcl_repositoryauth->set_id( 'ipsum lorem' ). " (type string)
-    gcl_repositoryauth->set_plugin_info_configurations( l_plugin_info_configurations ). " (type /BLCK/MFI_plugininfoconf)
-    gcl_repositoryauth->set_requiresuserspecificauthen( 'ipsum lorem' ). " (type string)
-    gcl_repositoryauth->set_repositoryauthenticationst( l_repositoryauthenticationst ). " (type /BLCK/MFI_repositoryaut2)
+    gr_repositoryauth-display_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_repositoryauth-icon_id = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_repositoryauth-id = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_repositoryauth-plugin_info_configurations = l_plugin_info_configurations. " (type /BLCK/MFI_PLUGININFOCONF)
+
+    gr_repositoryauth-requiresuserspecificauthen = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_repositoryauth-repositoryauthenticationst = l_repositoryauthenticationst. " (type /BLCK/MFI_REPOSITORYAUT2)
     
 * pass to example API method
     gcl_exampleapi->update_repositoryauth(
-    	exporting
-    		i_repositoryauth = gcl_repositoryauth ).
+      exporting
+        i_repositoryauth = gr_repositoryauth ).
     		
-    clear gcl_repositoryauth.
+    clear gr_repositoryauth.
     
 * fetch new instance from example API method
-    gcl_repositoryauth = gcl_exampleapi->get_repositoryauth(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_repositoryauth(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_repositoryauth ).
     		
-    l_display_name = gcl_repositoryauth->get_display_name( ). " (type string)
-    l_icon_id = gcl_repositoryauth->get_icon_id( ). " (type string)
-    l_id = gcl_repositoryauth->get_id( ). " (type string)
-    l_plugin_info_configurations = gcl_repositoryauth->get_plugin_info_configurations( ). " (type /BLCK/MFI_plugininfoconf)
-    l_requiresuserspecificauthen = gcl_repositoryauth->get_requiresuserspecificauthen( ). " (type string)
-    l_repositoryauthenticationst = gcl_repositoryauth->get_repositoryauthenticationst( ). " (type /BLCK/MFI_repositoryaut2)
+    write: gr_repositoryauth-display_name. " (type /BLCK/MFI_STRING)
+    write: gr_repositoryauth-icon_id. " (type /BLCK/MFI_STRING)
+    write: gr_repositoryauth-id. " (type /BLCK/MFI_STRING)
+    write: gr_repositoryauth-plugin_info_configurations. " (type /BLCK/MFI_PLUGININFOCONF)
+    write: gr_repositoryauth-requiresuserspecificauthen. " (type /BLCK/MFI_STRING)
+    write: gr_repositoryauth-repositoryauthenticationst. " (type /BLCK/MFI_REPOSITORYAUT2)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**display_name** | string | Display name of the target repository. | [optional] [default to null]
-**icon_id** | string | Icon id of the target repository. | [optional] [default to null]
-**id** | string | ID of the target repository. | [optional] [default to null]
-**plugin_info_configurations** | /BLCK/MFI_plugininfoconf (**[plugininfoconf](#markdown-header-model-plugininfoconf)**) |  | [optional] [default to null]
-**requiresuserspecificauthen** | string | Flag indicating if user specific authentication is required. | [optional] [default to null]
-**repositoryauthenticationst** | /BLCK/MFI_repositoryaut2 (**[repositoryaut2](#markdown-header-model-repositoryaut2)**) |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**display_name** | /BLCK/MFI_STRING | Display name of the target repository.
+**icon_id** | /BLCK/MFI_STRING | Icon id of the target repository.
+**id** | /BLCK/MFI_STRING | ID of the target repository.
+**plugin_info_configurations** | /BLCK/MFI_PLUGININFOCONF (**[plugininfoconf](#markdown-header-model-plugininfoconf)**) | 
+**requiresuserspecificauthen** | /BLCK/MFI_STRING | Flag indicating if user specific authentication is required.
+**repositoryauthenticationst** | /BLCK/MFI_REPOSITORYAUT2 (**[repositoryaut2](#markdown-header-model-repositoryaut2)**) | 
 
 * * *
 <a name="markdown-header-model-resultsobjectv"></a> 
 
-# Model: resultsobjectv
+# Model: ResultsObjectVersion
 
 
 
@@ -10121,41 +10240,43 @@ Name | Type | Description | Notes
 *** Results of a query which might leave only a partial set of items..
 
 * create our variables..
-    data gcl_resultsobjectv type ref to /blck/mdl_cl_resultsobjectv.
+    data gr_resultsobjectv type /blck/mfi_resultsobjectv.
     
 * instantiate model and call the setters to set values..
-    gcl_resultsobjectv = /blck/mdl_cl_resultsobjectv=>create( ).
-    gcl_resultsobjectv->set_items( l_items ). " (type /BLCK/MFI_object_version_tt)
-    gcl_resultsobjectv->set_more_results( 'X' ). " (type flag)
+    gr_resultsobjectv-items = l_items. " (type /BLCK/MFI_OBJECT_VERSION_TT)
+
+    gr_resultsobjectv-more_results = 'X'. " (type /BLCK/MFI_BOOL)
     
 * pass to example API method
     gcl_exampleapi->update_resultsobjectv(
-    	exporting
-    		i_resultsobjectv = gcl_resultsobjectv ).
+      exporting
+        i_resultsobjectv = gr_resultsobjectv ).
     		
-    clear gcl_resultsobjectv.
+    clear gr_resultsobjectv.
     
 * fetch new instance from example API method
-    gcl_resultsobjectv = gcl_exampleapi->get_resultsobjectv(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_resultsobjectv(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_resultsobjectv ).
     		
-    l_items = gcl_resultsobjectv->get_items( ). " (type /BLCK/MFI_object_version_tt)
-    l_more_results = gcl_resultsobjectv->get_more_results( ). " (type flag)
+    write: gr_resultsobjectv-items. " (type /BLCK/MFI_OBJECT_VERSION_TT)
+    write: gr_resultsobjectv-more_results. " (type /BLCK/MFI_BOOL)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**items** | /BLCK/MFI_object_version_tt (**[array of object_version](#markdown-header-model-object_version)**) | Contains results of a query | [optional] [default to null]
-**more_results** | flag | True if there were more results which were left out. | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**items** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of object_version](#markdown-header-model-object_version)**) | Contains results of a query
+**more_results** | /BLCK/MFI_BOOL | True if there were more results which were left out.
 
 * * *
 <a name="markdown-header-model-valuelistitem"></a> 
 
-# Model: valuelistitem
+# Model: ValueListItem
 
 
 
@@ -10165,59 +10286,67 @@ Name | Type | Description | Notes
 *** https://www.m-files.com/api/documentation/latest/index.html#MFilesAPI~ValueListItem.html
 
 * create our variables..
-    data gcl_valuelistitem type ref to /blck/mdl_cl_valuelistitem.
+    data gr_valuelistitem type /blck/mfi_valuelistitem.
     
 * instantiate model and call the setters to set values..
-    gcl_valuelistitem = /blck/mdl_cl_valuelistitem=>create( ).
-    gcl_valuelistitem->set_display_id( 'ipsum lorem' ). " (type string)
-    gcl_valuelistitem->set_has_owner( 'X' ). " (type flag)
-    gcl_valuelistitem->set_has_parent( 'X' ). " (type flag)
-    gcl_valuelistitem->set_id( 42 ). " (type i)
-    gcl_valuelistitem->set_name( 'ipsum lorem' ). " (type string)
-    gcl_valuelistitem->set_owner_id( 42 ). " (type i)
-    gcl_valuelistitem->set_parent_id( 42 ). " (type i)
-    gcl_valuelistitem->set_value_list_id( 42 ). " (type i)
+    gr_valuelistitem-display_id = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_valuelistitem-has_owner = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_valuelistitem-has_parent = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_valuelistitem-id = 42. " (type /BLCK/MFI_INT)
+
+    gr_valuelistitem-name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_valuelistitem-owner_id = 42. " (type /BLCK/MFI_INT)
+
+    gr_valuelistitem-parent_id = 42. " (type /BLCK/MFI_INT)
+
+    gr_valuelistitem-value_list_id = 42. " (type /BLCK/MFI_INT)
     
 * pass to example API method
     gcl_exampleapi->update_valuelistitem(
-    	exporting
-    		i_valuelistitem = gcl_valuelistitem ).
+      exporting
+        i_valuelistitem = gr_valuelistitem ).
     		
-    clear gcl_valuelistitem.
+    clear gr_valuelistitem.
     
 * fetch new instance from example API method
-    gcl_valuelistitem = gcl_exampleapi->get_valuelistitem(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_valuelistitem(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_valuelistitem ).
     		
-    l_display_id = gcl_valuelistitem->get_display_id( ). " (type string)
-    l_has_owner = gcl_valuelistitem->get_has_owner( ). " (type flag)
-    l_has_parent = gcl_valuelistitem->get_has_parent( ). " (type flag)
-    l_id = gcl_valuelistitem->get_id( ). " (type i)
-    l_name = gcl_valuelistitem->get_name( ). " (type string)
-    l_owner_id = gcl_valuelistitem->get_owner_id( ). " (type i)
-    l_parent_id = gcl_valuelistitem->get_parent_id( ). " (type i)
-    l_value_list_id = gcl_valuelistitem->get_value_list_id( ). " (type i)
+    write: gr_valuelistitem-display_id. " (type /BLCK/MFI_STRING)
+    write: gr_valuelistitem-has_owner. " (type /BLCK/MFI_BOOL)
+    write: gr_valuelistitem-has_parent. " (type /BLCK/MFI_BOOL)
+    write: gr_valuelistitem-id. " (type /BLCK/MFI_INT)
+    write: gr_valuelistitem-name. " (type /BLCK/MFI_STRING)
+    write: gr_valuelistitem-owner_id. " (type /BLCK/MFI_INT)
+    write: gr_valuelistitem-parent_id. " (type /BLCK/MFI_INT)
+    write: gr_valuelistitem-value_list_id. " (type /BLCK/MFI_INT)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**display_id** | string |  | [optional] [default to null]
-**has_owner** | flag |  | [optional] [default to null]
-**has_parent** | flag |  | [optional] [default to null]
-**id** | i |  | [optional] [default to null]
-**name** | string |  | [optional] [default to null]
-**owner_id** | i |  | [optional] [default to null]
-**parent_id** | i |  | [optional] [default to null]
-**value_list_id** | i |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**display_id** | /BLCK/MFI_STRING | 
+**has_owner** | /BLCK/MFI_BOOL | 
+**has_parent** | /BLCK/MFI_BOOL | 
+**id** | /BLCK/MFI_INT | 
+**name** | /BLCK/MFI_STRING | 
+**owner_id** | /BLCK/MFI_INT | 
+**parent_id** | /BLCK/MFI_INT | 
+**value_list_id** | /BLCK/MFI_INT | 
 
 * * *
 <a name="markdown-header-model-resultsvalueli"></a> 
 
-# Model: resultsvalueli
+# Model: ResultsValueListItem
 
 
 
@@ -10227,41 +10356,43 @@ Name | Type | Description | Notes
 *** Results of a query which might leave only a partial set of items..
 
 * create our variables..
-    data gcl_resultsvalueli type ref to /blck/mdl_cl_resultsvalueli.
+    data gr_resultsvalueli type /blck/mfi_resultsvalueli.
     
 * instantiate model and call the setters to set values..
-    gcl_resultsvalueli = /blck/mdl_cl_resultsvalueli=>create( ).
-    gcl_resultsvalueli->set_items( l_items ). " (type /BLCK/MFI_valuelistitem_tt)
-    gcl_resultsvalueli->set_more_results( 'X' ). " (type flag)
+    gr_resultsvalueli-items = l_items. " (type /BLCK/MFI_VALUELISTITEM_TT)
+
+    gr_resultsvalueli-more_results = 'X'. " (type /BLCK/MFI_BOOL)
     
 * pass to example API method
     gcl_exampleapi->update_resultsvalueli(
-    	exporting
-    		i_resultsvalueli = gcl_resultsvalueli ).
+      exporting
+        i_resultsvalueli = gr_resultsvalueli ).
     		
-    clear gcl_resultsvalueli.
+    clear gr_resultsvalueli.
     
 * fetch new instance from example API method
-    gcl_resultsvalueli = gcl_exampleapi->get_resultsvalueli(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_resultsvalueli(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_resultsvalueli ).
     		
-    l_items = gcl_resultsvalueli->get_items( ). " (type /BLCK/MFI_valuelistitem_tt)
-    l_more_results = gcl_resultsvalueli->get_more_results( ). " (type flag)
+    write: gr_resultsvalueli-items. " (type /BLCK/MFI_VALUELISTITEM_TT)
+    write: gr_resultsvalueli-more_results. " (type /BLCK/MFI_BOOL)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**items** | /BLCK/MFI_valuelistitem_tt (**[array of valuelistitem](#markdown-header-model-valuelistitem)**) | Contains results of a query | [optional] [default to null]
-**more_results** | flag | True if there were more results which were left out. | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**items** | /BLCK/MFI_VALUELISTITEM_TT (**[array of valuelistitem](#markdown-header-model-valuelistitem)**) | Contains results of a query
+**more_results** | /BLCK/MFI_BOOL | True if there were more results which were left out.
 
 * * *
 <a name="markdown-header-model-session_info"></a> 
 
-# Model: session_info
+# Model: SessionInfo
 
 
 
@@ -10271,74 +10402,87 @@ Name | Type | Description | Notes
 *** https://www.m-files.com/api/documentation/latest/index.html#MFilesAPI~SessionInfo.html
 
 * create our variables..
-    data gcl_session_info type ref to /blck/mdl_cl_session_info.
+    data gr_session_info type /blck/mfi_session_info.
     
 * instantiate model and call the setters to set values..
-    gcl_session_info = /blck/mdl_cl_session_info=>create( ).
-    gcl_session_info->set_account_name( 'ipsum lorem' ). " (type string)
-    gcl_session_info->set_acl_mode( l_acl_mode ). " (type /BLCK/MFI_mfacl_mode)
-    gcl_session_info->set_authentication_type( l_authentication_type ). " (type /BLCK/MFI_mf_auth_type)
-    gcl_session_info->set_can_force_undo_checkout( 'X' ). " (type flag)
-    gcl_session_info->set_canmanagecommonuisettings( 'X' ). " (type flag)
-    gcl_session_info->set_can_manage_common_views( 'X' ). " (type flag)
-    gcl_session_info->set_canmanagetraditionalfolder( 'X' ). " (type flag)
-    gcl_session_info->set_can_materialize_views( 'X' ). " (type flag)
-    gcl_session_info->set_can_see_all_objects( 'X' ). " (type flag)
-    gcl_session_info->set_can_see_deleted_objects( 'X' ). " (type flag)
-    gcl_session_info->set_internal_user( 'X' ). " (type flag)
-    gcl_session_info->set_licenseallowsmodifications( 'X' ). " (type flag)
-    gcl_session_info->set_user_id( 42 ). " (type i)
+    gr_session_info-account_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_session_info-acl_mode = l_acl_mode. " (type /BLCK/MFI_MFACL_MODE)
+
+    gr_session_info-authentication_type = l_authentication_type. " (type /BLCK/MFI_MF_AUTH_TYPE)
+
+    gr_session_info-can_force_undo_checkout = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_session_info-canmanagecommonuisettings = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_session_info-can_manage_common_views = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_session_info-canmanagetraditionalfolder = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_session_info-can_materialize_views = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_session_info-can_see_all_objects = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_session_info-can_see_deleted_objects = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_session_info-internal_user = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_session_info-licenseallowsmodifications = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_session_info-user_id = 42. " (type /BLCK/MFI_INT)
     
 * pass to example API method
     gcl_exampleapi->update_session_info(
-    	exporting
-    		i_session_info = gcl_session_info ).
+      exporting
+        i_session_info = gr_session_info ).
     		
-    clear gcl_session_info.
+    clear gr_session_info.
     
 * fetch new instance from example API method
-    gcl_session_info = gcl_exampleapi->get_session_info(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_session_info(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_session_info ).
     		
-    l_account_name = gcl_session_info->get_account_name( ). " (type string)
-    l_acl_mode = gcl_session_info->get_acl_mode( ). " (type /BLCK/MFI_mfacl_mode)
-    l_authentication_type = gcl_session_info->get_authentication_type( ). " (type /BLCK/MFI_mf_auth_type)
-    l_can_force_undo_checkout = gcl_session_info->get_can_force_undo_checkout( ). " (type flag)
-    l_canmanagecommonuisettings = gcl_session_info->get_canmanagecommonuisettings( ). " (type flag)
-    l_can_manage_common_views = gcl_session_info->get_can_manage_common_views( ). " (type flag)
-    l_canmanagetraditionalfolder = gcl_session_info->get_canmanagetraditionalfolder( ). " (type flag)
-    l_can_materialize_views = gcl_session_info->get_can_materialize_views( ). " (type flag)
-    l_can_see_all_objects = gcl_session_info->get_can_see_all_objects( ). " (type flag)
-    l_can_see_deleted_objects = gcl_session_info->get_can_see_deleted_objects( ). " (type flag)
-    l_internal_user = gcl_session_info->get_internal_user( ). " (type flag)
-    l_licenseallowsmodifications = gcl_session_info->get_licenseallowsmodifications( ). " (type flag)
-    l_user_id = gcl_session_info->get_user_id( ). " (type i)
+    write: gr_session_info-account_name. " (type /BLCK/MFI_STRING)
+    write: gr_session_info-acl_mode. " (type /BLCK/MFI_MFACL_MODE)
+    write: gr_session_info-authentication_type. " (type /BLCK/MFI_MF_AUTH_TYPE)
+    write: gr_session_info-can_force_undo_checkout. " (type /BLCK/MFI_BOOL)
+    write: gr_session_info-canmanagecommonuisettings. " (type /BLCK/MFI_BOOL)
+    write: gr_session_info-can_manage_common_views. " (type /BLCK/MFI_BOOL)
+    write: gr_session_info-canmanagetraditionalfolder. " (type /BLCK/MFI_BOOL)
+    write: gr_session_info-can_materialize_views. " (type /BLCK/MFI_BOOL)
+    write: gr_session_info-can_see_all_objects. " (type /BLCK/MFI_BOOL)
+    write: gr_session_info-can_see_deleted_objects. " (type /BLCK/MFI_BOOL)
+    write: gr_session_info-internal_user. " (type /BLCK/MFI_BOOL)
+    write: gr_session_info-licenseallowsmodifications. " (type /BLCK/MFI_BOOL)
+    write: gr_session_info-user_id. " (type /BLCK/MFI_INT)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**account_name** | string |  | [optional] [default to null]
-**acl_mode** | /BLCK/MFI_mfacl_mode (**[mfacl_mode](#markdown-header-enum-mfacl_mode)**) |  | [optional] [default to null]
-**authentication_type** | /BLCK/MFI_mf_auth_type (**[mf_auth_type](#markdown-header-enum-mf_auth_type)**) |  | [optional] [default to null]
-**can_force_undo_checkout** | flag |  | [optional] [default to null]
-**canmanagecommonuisettings** | flag |  | [optional] [default to null]
-**can_manage_common_views** | flag |  | [optional] [default to null]
-**canmanagetraditionalfolder** | flag |  | [optional] [default to null]
-**can_materialize_views** | flag |  | [optional] [default to null]
-**can_see_all_objects** | flag |  | [optional] [default to null]
-**can_see_deleted_objects** | flag |  | [optional] [default to null]
-**internal_user** | flag |  | [optional] [default to null]
-**licenseallowsmodifications** | flag |  | [optional] [default to null]
-**user_id** | i |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**account_name** | /BLCK/MFI_STRING | 
+**acl_mode** | /BLCK/MFI_MFACL_MODE (**[mfacl_mode](#markdown-header-enum-mfacl_mode)**) | 
+**authentication_type** | /BLCK/MFI_MF_AUTH_TYPE (**[mf_auth_type](#markdown-header-enum-mf_auth_type)**) | 
+**can_force_undo_checkout** | /BLCK/MFI_BOOL | 
+**canmanagecommonuisettings** | /BLCK/MFI_BOOL | 
+**can_manage_common_views** | /BLCK/MFI_BOOL | 
+**canmanagetraditionalfolder** | /BLCK/MFI_BOOL | 
+**can_materialize_views** | /BLCK/MFI_BOOL | 
+**can_see_all_objects** | /BLCK/MFI_BOOL | 
+**can_see_deleted_objects** | /BLCK/MFI_BOOL | 
+**internal_user** | /BLCK/MFI_BOOL | 
+**licenseallowsmodifications** | /BLCK/MFI_BOOL | 
+**user_id** | /BLCK/MFI_INT | 
 
 * * *
 <a name="markdown-header-model-statusresponse"></a> 
 
-# Model: statusresponse
+# Model: StatusResponse
 
 
 
@@ -10348,41 +10492,43 @@ Name | Type | Description | Notes
 *** Response for status requests.
 
 * create our variables..
-    data gcl_statusresponse type ref to /blck/mdl_cl_statusresponse.
+    data gr_statusresponse type /blck/mfi_statusresponse.
     
 * instantiate model and call the setters to set values..
-    gcl_statusresponse = /blck/mdl_cl_statusresponse=>create( ).
-    gcl_statusresponse->set_successful( 'X' ). " (type flag)
-    gcl_statusresponse->set_message( 'ipsum lorem' ). " (type string)
+    gr_statusresponse-successful = 'X'. " (type /BLCK/MFI_BOOL)
+
+    gr_statusresponse-message = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_statusresponse(
-    	exporting
-    		i_statusresponse = gcl_statusresponse ).
+      exporting
+        i_statusresponse = gr_statusresponse ).
     		
-    clear gcl_statusresponse.
+    clear gr_statusresponse.
     
 * fetch new instance from example API method
-    gcl_statusresponse = gcl_exampleapi->get_statusresponse(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_statusresponse(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_statusresponse ).
     		
-    l_successful = gcl_statusresponse->get_successful( ). " (type flag)
-    l_message = gcl_statusresponse->get_message( ). " (type string)
+    write: gr_statusresponse-successful. " (type /BLCK/MFI_BOOL)
+    write: gr_statusresponse-message. " (type /BLCK/MFI_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**successful** | flag | The result of the status request. | [optional] [default to null]
-**message** | string | Display message for the status. | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**successful** | /BLCK/MFI_BOOL | The result of the status request.
+**message** | /BLCK/MFI_STRING | Display message for the status.
 
 * * *
 <a name="markdown-header-model-vault"></a> 
 
-# Model: vault
+# Model: Vault
 
 
 
@@ -10392,44 +10538,47 @@ Name | Type | Description | Notes
 *** Vault information.
 
 * create our variables..
-    data gcl_vault type ref to /blck/mdl_cl_vault.
+    data gr_vault type /blck/mfi_vault.
     
 * instantiate model and call the setters to set values..
-    gcl_vault = /blck/mdl_cl_vault=>create( ).
-    gcl_vault->set_name( 'ipsum lorem' ). " (type string)
-    gcl_vault->set_guid( 'ipsum lorem' ). " (type string)
-    gcl_vault->set_authentication( 'ipsum lorem' ). " (type string)
+    gr_vault-name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_vault-guid = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_vault-authentication = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
     gcl_exampleapi->update_vault(
-    	exporting
-    		i_vault = gcl_vault ).
+      exporting
+        i_vault = gr_vault ).
     		
-    clear gcl_vault.
+    clear gr_vault.
     
 * fetch new instance from example API method
-    gcl_vault = gcl_exampleapi->get_vault(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_vault(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_vault ).
     		
-    l_name = gcl_vault->get_name( ). " (type string)
-    l_guid = gcl_vault->get_guid( ). " (type string)
-    l_authentication = gcl_vault->get_authentication( ). " (type string)
+    write: gr_vault-name. " (type /BLCK/MFI_STRING)
+    write: gr_vault-guid. " (type /BLCK/MFI_STRING)
+    write: gr_vault-authentication. " (type /BLCK/MFI_STRING)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | string | Vault name. | [optional] [default to null]
-**guid** | string | Vault GUID. | [optional] [default to null]
-**authentication** | string | Vault-specific authentication token. | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**name** | /BLCK/MFI_STRING | Vault name.
+**guid** | /BLCK/MFI_STRING | Vault GUID.
+**authentication** | /BLCK/MFI_STRING | Vault-specific authentication token.
 
 * * *
 <a name="markdown-header-model-versioncomment"></a> 
 
-# Model: versioncomment
+# Model: VersionComment
 
 
 
@@ -10439,47 +10588,51 @@ Name | Type | Description | Notes
 *** https://www.m-files.com/api/documentation/latest/index.html#MFilesAPI~VersionComment.html
 
 * create our variables..
-    data gcl_versioncomment type ref to /blck/mdl_cl_versioncomment.
+    data gr_versioncomment type /blck/mfi_versioncomment.
     
 * instantiate model and call the setters to set values..
-    gcl_versioncomment = /blck/mdl_cl_versioncomment=>create( ).
-    gcl_versioncomment->set_last_modified_by( l_last_modified_by ). " (type /BLCK/MFI_property_value)
-    gcl_versioncomment->set_obj_ver( l_obj_ver ). " (type /BLCK/MFI_obj_ver)
-    gcl_versioncomment->set_status_changed( l_status_changed ). " (type /BLCK/MFI_property_value)
-    gcl_versioncomment->set_comment( l_comment ). " (type /BLCK/MFI_property_value)
+    gr_versioncomment-last_modified_by = l_last_modified_by. " (type /BLCK/MFI_PROPERTY_VALUE)
+
+    gr_versioncomment-obj_ver = l_obj_ver. " (type /BLCK/MFI_OBJ_VER)
+
+    gr_versioncomment-status_changed = l_status_changed. " (type /BLCK/MFI_PROPERTY_VALUE)
+
+    gr_versioncomment-comment = l_comment. " (type /BLCK/MFI_PROPERTY_VALUE)
     
 * pass to example API method
     gcl_exampleapi->update_versioncomment(
-    	exporting
-    		i_versioncomment = gcl_versioncomment ).
+      exporting
+        i_versioncomment = gr_versioncomment ).
     		
-    clear gcl_versioncomment.
+    clear gr_versioncomment.
     
 * fetch new instance from example API method
-    gcl_versioncomment = gcl_exampleapi->get_versioncomment(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_versioncomment(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_versioncomment ).
     		
-    l_last_modified_by = gcl_versioncomment->get_last_modified_by( ). " (type /BLCK/MFI_property_value)
-    l_obj_ver = gcl_versioncomment->get_obj_ver( ). " (type /BLCK/MFI_obj_ver)
-    l_status_changed = gcl_versioncomment->get_status_changed( ). " (type /BLCK/MFI_property_value)
-    l_comment = gcl_versioncomment->get_comment( ). " (type /BLCK/MFI_property_value)
+    write: gr_versioncomment-last_modified_by. " (type /BLCK/MFI_PROPERTY_VALUE)
+    write: gr_versioncomment-obj_ver. " (type /BLCK/MFI_OBJ_VER)
+    write: gr_versioncomment-status_changed. " (type /BLCK/MFI_PROPERTY_VALUE)
+    write: gr_versioncomment-comment. " (type /BLCK/MFI_PROPERTY_VALUE)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**last_modified_by** | /BLCK/MFI_property_value (**[property_value](#markdown-header-model-property_value)**) |  | [optional] [default to null]
-**obj_ver** | /BLCK/MFI_obj_ver (**[obj_ver](#markdown-header-model-obj_ver)**) |  | [optional] [default to null]
-**status_changed** | /BLCK/MFI_property_value (**[property_value](#markdown-header-model-property_value)**) |  | [optional] [default to null]
-**comment** | /BLCK/MFI_property_value (**[property_value](#markdown-header-model-property_value)**) |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**last_modified_by** | /BLCK/MFI_PROPERTY_VALUE (**[property_value](#markdown-header-model-property_value)**) | 
+**obj_ver** | /BLCK/MFI_OBJ_VER (**[obj_ver](#markdown-header-model-obj_ver)**) | 
+**status_changed** | /BLCK/MFI_PROPERTY_VALUE (**[property_value](#markdown-header-model-property_value)**) | 
+**comment** | /BLCK/MFI_PROPERTY_VALUE (**[property_value](#markdown-header-model-property_value)**) | 
 
 * * *
 <a name="markdown-header-model-webserviceerro"></a> 
 
-# Model: webserviceerro
+# Model: WebServiceError
 
 
 
@@ -10489,47 +10642,51 @@ Name | Type | Description | Notes
 *** M-Files Web Service error object.
 
 * create our variables..
-    data gcl_webserviceerro type ref to /blck/mdl_cl_webserviceerro.
+    data gr_webserviceerro type /blck/mfi_webserviceerro.
     
 * instantiate model and call the setters to set values..
-    gcl_webserviceerro = /blck/mdl_cl_webserviceerro=>create( ).
-    gcl_webserviceerro->set_status( 42 ). " (type i)
-    gcl_webserviceerro->set_url( 'ipsum lorem' ). " (type string)
-    gcl_webserviceerro->set_method( 'ipsum lorem' ). " (type string)
-    gcl_webserviceerro->set_exception( l_exception ). " (type /BLCK/MFI_exception_info)
+    gr_webserviceerro-status = 42. " (type /BLCK/MFI_INT)
+
+    gr_webserviceerro-url = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_webserviceerro-method = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_webserviceerro-exception = l_exception. " (type /BLCK/MFI_EXCEPTION_INFO)
     
 * pass to example API method
     gcl_exampleapi->update_webserviceerro(
-    	exporting
-    		i_webserviceerro = gcl_webserviceerro ).
+      exporting
+        i_webserviceerro = gr_webserviceerro ).
     		
-    clear gcl_webserviceerro.
+    clear gr_webserviceerro.
     
 * fetch new instance from example API method
-    gcl_webserviceerro = gcl_exampleapi->get_webserviceerro(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_webserviceerro(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_webserviceerro ).
     		
-    l_status = gcl_webserviceerro->get_status( ). " (type i)
-    l_url = gcl_webserviceerro->get_url( ). " (type string)
-    l_method = gcl_webserviceerro->get_method( ). " (type string)
-    l_exception = gcl_webserviceerro->get_exception( ). " (type /BLCK/MFI_exception_info)
+    write: gr_webserviceerro-status. " (type /BLCK/MFI_INT)
+    write: gr_webserviceerro-url. " (type /BLCK/MFI_STRING)
+    write: gr_webserviceerro-method. " (type /BLCK/MFI_STRING)
+    write: gr_webserviceerro-exception. " (type /BLCK/MFI_EXCEPTION_INFO)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**status** | i | HTTP Status code | [optional] [default to null]
-**url** | string | The request URL which caused this error. | [optional] [default to null]
-**method** | string | The request method. | [optional] [default to null]
-**exception** | /BLCK/MFI_exception_info (**[exception_info](#markdown-header-model-exception_info)**) |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**status** | /BLCK/MFI_INT | HTTP Status code
+**url** | /BLCK/MFI_STRING | The request URL which caused this error.
+**method** | /BLCK/MFI_STRING | The request method.
+**exception** | /BLCK/MFI_EXCEPTION_INFO (**[exception_info](#markdown-header-model-exception_info)**) | 
 
 * * *
 <a name="markdown-header-model-workflow"></a> 
 
-# Model: workflow
+# Model: Workflow
 
 
 
@@ -10539,44 +10696,47 @@ Name | Type | Description | Notes
 *** https://www.m-files.com/api/documentation/latest/index.html#MFilesAPI~Workflow.html
 
 * create our variables..
-    data gcl_workflow type ref to /blck/mdl_cl_workflow.
+    data gr_workflow type /blck/mfi_workflow.
     
 * instantiate model and call the setters to set values..
-    gcl_workflow = /blck/mdl_cl_workflow=>create( ).
-    gcl_workflow->set_id( 42 ). " (type i)
-    gcl_workflow->set_name( 'ipsum lorem' ). " (type string)
-    gcl_workflow->set_object_class( 42 ). " (type i)
+    gr_workflow-id = 42. " (type /BLCK/MFI_INT)
+
+    gr_workflow-name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_workflow-object_class = 42. " (type /BLCK/MFI_INT)
     
 * pass to example API method
     gcl_exampleapi->update_workflow(
-    	exporting
-    		i_workflow = gcl_workflow ).
+      exporting
+        i_workflow = gr_workflow ).
     		
-    clear gcl_workflow.
+    clear gr_workflow.
     
 * fetch new instance from example API method
-    gcl_workflow = gcl_exampleapi->get_workflow(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_workflow(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_workflow ).
     		
-    l_id = gcl_workflow->get_id( ). " (type i)
-    l_name = gcl_workflow->get_name( ). " (type string)
-    l_object_class = gcl_workflow->get_object_class( ). " (type i)
+    write: gr_workflow-id. " (type /BLCK/MFI_INT)
+    write: gr_workflow-name. " (type /BLCK/MFI_STRING)
+    write: gr_workflow-object_class. " (type /BLCK/MFI_INT)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | i |  | [optional] [default to null]
-**name** | string |  | [optional] [default to null]
-**object_class** | i |  | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**id** | /BLCK/MFI_INT | 
+**name** | /BLCK/MFI_STRING | 
+**object_class** | /BLCK/MFI_INT | 
 
 * * *
 <a name="markdown-header-model-workflow_state"></a> 
 
-# Model: workflow_state
+# Model: WorkflowState
 
 
 
@@ -10587,37 +10747,40 @@ Name | Type | Description | Notes
 *** https://www.m-files.com/api/documentation/latest/index.html#MFilesAPI~State.html
 
 * create our variables..
-    data gcl_workflow_state type ref to /blck/mdl_cl_workflow_state.
+    data gr_workflow_state type /blck/mfi_workflow_state.
     
 * instantiate model and call the setters to set values..
-    gcl_workflow_state = /blck/mdl_cl_workflow_state=>create( ).
-    gcl_workflow_state->set_name( 'ipsum lorem' ). " (type string)
-    gcl_workflow_state->set_id( 42 ). " (type i)
-    gcl_workflow_state->set_selectable( 'X' ). " (type flag)
+    gr_workflow_state-name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+
+    gr_workflow_state-id = 42. " (type /BLCK/MFI_INT)
+
+    gr_workflow_state-selectable = 'X'. " (type /BLCK/MFI_BOOL)
     
 * pass to example API method
     gcl_exampleapi->update_workflow_state(
-    	exporting
-    		i_workflow_state = gcl_workflow_state ).
+      exporting
+        i_workflow_state = gr_workflow_state ).
     		
-    clear gcl_workflow_state.
+    clear gr_workflow_state.
     
 * fetch new instance from example API method
-    gcl_workflow_state = gcl_exampleapi->get_workflow_state(
-    	exporting
-    		i_id = 1 ).
+    gcl_exampleapi->get_workflow_state(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_workflow_state ).
     		
-    l_name = gcl_workflow_state->get_name( ). " (type string)
-    l_id = gcl_workflow_state->get_id( ). " (type i)
-    l_selectable = gcl_workflow_state->get_selectable( ). " (type flag)
+    write: gr_workflow_state-name. " (type /BLCK/MFI_STRING)
+    write: gr_workflow_state-id. " (type /BLCK/MFI_INT)
+    write: gr_workflow_state-selectable. " (type /BLCK/MFI_BOOL)
 
 ```
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | string | Workflow state name. | [optional] [default to null]
-**id** | i | Workflow state ID. | [optional] [default to null]
-**selectable** | flag | Defines whether this state is selectable for the current object. | [optional] [default to null]
+Name | Type | Description
+------------ | ------------- | -------------
+**name** | /BLCK/MFI_STRING | Workflow state name.
+**id** | /BLCK/MFI_INT | Workflow state ID.
+**selectable** | /BLCK/MFI_BOOL | Defines whether this state is selectable for the current object.
 

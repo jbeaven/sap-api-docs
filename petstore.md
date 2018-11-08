@@ -65,7 +65,7 @@ Add a new pet to the store
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/PET_PET (**[pet](#markdown-header-model-pet)**) | Pet object that needs to be added to the store 
+ **i_body** | /BLCK/PET_PET (**[Pet](#markdown-header-model-pet)**) | Pet object that needs to be added to the store 
 
 ### Return types
 
@@ -226,7 +226,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/PET_PET_TT (**[array](#markdown-header-model-pet)**) | successful operation
+ 200 | **e_200** | /BLCK/PET_PET_TT (**[array of pet](#markdown-header-model-pet)**) | successful operation
  400 | value not returned |  | Invalid status value
 
 ### HTTP request headers
@@ -308,7 +308,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/PET_PET_TT (**[array](#markdown-header-model-pet)**) | successful operation
+ 200 | **e_200** | /BLCK/PET_PET_TT (**[array of pet](#markdown-header-model-pet)**) | successful operation
  400 | value not returned |  | Invalid tag value
 
 ### HTTP request headers
@@ -467,7 +467,7 @@ Update an existing pet
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/PET_PET (**[pet](#markdown-header-model-pet)**) | Pet object that needs to be added to the store 
+ **i_body** | /BLCK/PET_PET (**[Pet](#markdown-header-model-pet)**) | Pet object that needs to be added to the store 
 
 ### Return types
 
@@ -782,7 +782,7 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/PET_INT_MT (**[map](#markdown-header-model-)**) | successful operation
+ 200 | **e_200** | /BLCK/PET_INT_MT (**[map of ](#markdown-header-model-)**) | successful operation
 
 ### HTTP request headers
 
@@ -941,7 +941,7 @@ Place an order for a pet
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/PET_ORDER (**[order](#markdown-header-model-order)**) | order placed for purchasing the pet 
+ **i_body** | /BLCK/PET_ORDER (**[Order](#markdown-header-model-order)**) | order placed for purchasing the pet 
 
 ### Return types
 
@@ -1027,7 +1027,7 @@ This can only be done by the logged in user.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/PET_USER (**[user](#markdown-header-model-user)**) | Created user object 
+ **i_body** | /BLCK/PET_USER (**[User](#markdown-header-model-user)**) | Created user object 
 
 ### Return types
 
@@ -1098,7 +1098,7 @@ Creates list of users with given input array
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/PET_USER_TTT (**[array of user](#markdown-header-model-)**) | List of user object 
+ **i_body** | /BLCK/PET_USER_TTT (**[array of user](#markdown-header-model-user)**) | List of user object 
 
 ### Return types
 
@@ -1169,7 +1169,7 @@ Creates list of users with given input array
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/PET_USER_TTT (**[array of user](#markdown-header-model-)**) | List of user object 
+ **i_body** | /BLCK/PET_USER_TTT (**[array of user](#markdown-header-model-user)**) | List of user object 
 
 ### Return types
 
@@ -1553,7 +1553,7 @@ This can only be done by the logged in user.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/PET_USER (**[user](#markdown-header-model-user)**) | Updated user object 
+ **i_body** | /BLCK/PET_USER (**[User](#markdown-header-model-user)**) | Updated user object 
  **i_username** | /BLCK/PET_STRING | name that need to be updated 
 
 ### Return types

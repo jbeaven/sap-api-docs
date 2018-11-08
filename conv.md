@@ -576,7 +576,7 @@ Appends a new input file to the input file list of a job.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/CNV_INPUT_FILE (**[input_file](#markdown-header-model-input_file)**) | File ticket for preprocessing.  
+ **i_body** | /BLCK/CNV_INPUT_FILE (**[InputFile](#markdown-header-model-input_file)**) | File ticket for preprocessing.  
  **i_job_id** | /BLCK/CNV_STRING | Id of a previously created job 
 
 ### Return types
@@ -773,7 +773,7 @@ Create a new job.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/CNV_JOB_TICKET (**[job_ticket](#markdown-header-model-job_ticket)**) | Job ticket for preprocessing.  
+ **i_body** | /BLCK/CNV_JOB_TICKET (**[JobTicket](#markdown-header-model-job_ticket)**) | Job ticket for preprocessing.  
 
 ### Return types
 

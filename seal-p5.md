@@ -76,7 +76,7 @@ Aggregates count the number of objects matching a given query and aggregate resu
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/P5_AGGREGATEQUERY (**[aggregatequery](#markdown-header-model-aggregatequery)**) | Query object containing definition of the requested aggregate  
+ **i_body** | /BLCK/P5_AGGREGATEQUERY (**[AggregateQuery](#markdown-header-model-aggregatequery)**) | Query object containing definition of the requested aggregate  
 
 ### Return types
 
@@ -287,7 +287,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINT_JOB_TT (**[array](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
+ 200 | **e_200** | /BLCK/P5_PRINT_JOB_TT (**[array of print_job](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
  500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
@@ -526,7 +526,7 @@ Aggregates count the number of objects matching a given query and aggregate resu
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/P5_AGGREGATEQUERY (**[aggregatequery](#markdown-header-model-aggregatequery)**) | Query object containing definition of the requested aggregate  
+ **i_body** | /BLCK/P5_AGGREGATEQUERY (**[AggregateQuery](#markdown-header-model-aggregatequery)**) | Query object containing definition of the requested aggregate  
 
 ### Return types
 
@@ -742,7 +742,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINTER_TT (**[array](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
+ 200 | **e_200** | /BLCK/P5_PRINTER_TT (**[array of printer](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
  500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
  0 | **e_0** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
@@ -1170,7 +1170,7 @@ Aggregates count the number of objects matching a given query and aggregate resu
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/P5_AGGREGATEQUERY (**[aggregatequery](#markdown-header-model-aggregatequery)**) | Query object containing definition of the requested aggregate  
+ **i_body** | /BLCK/P5_AGGREGATEQUERY (**[AggregateQuery](#markdown-header-model-aggregatequery)**) | Query object containing definition of the requested aggregate  
 
 ### Return types
 
@@ -1381,7 +1381,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINT_JOB_TT (**[array](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
+ 200 | **e_200** | /BLCK/P5_PRINT_JOB_TT (**[array of print_job](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
  500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
@@ -1649,7 +1649,7 @@ A print job which has been suspended using the /jobs/{jobID}/pause function can 
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/P5_JOB_TARGET (**[job_target](#markdown-header-model-job_target)**) | JSON object describing where to move the job 
+ **i_body** | /BLCK/P5_JOB_TARGET (**[JobTarget](#markdown-header-model-job_target)**) | JSON object describing where to move the job 
  **i_job_id** | /BLCK/P5_STRING | ID of the print job to move 
 
 ### Return types
@@ -2187,7 +2187,7 @@ A print job which has been suspended using the /jobs/{jobID}/pause function can 
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/P5_JOB_TARGET (**[job_target](#markdown-header-model-job_target)**) | JSON object describing where to move the job 
+ **i_body** | /BLCK/P5_JOB_TARGET (**[JobTarget](#markdown-header-model-job_target)**) | JSON object describing where to move the job 
  **i_job_id** | /BLCK/P5_STRING | ID of the print job to move 
 
 ### Return types
@@ -2551,7 +2551,7 @@ Adds a new printer to the list of managed printers in PLOSSYS P5. The new printe
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/P5_PRINTER (**[printer](#markdown-header-model-printer)**) | A JSON object describing the new printer. The &#x27;printer&#x27; property needs to contain a unique name for the new printer (if the name is already in use, the POST request will fail (HTTP 409). The &#x27;connection&#x27; parameter is an arbitrary string (e.g. a URL) used to connect from PLOSSYS to the printer. Example {   \&quot;printer\&quot;: \&quot;newPrinterName\&quot;,   \&quot;connection\&quot;: \&quot;socket://HostOrIp:9100\&quot; }  
+ **i_body** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-printer)**) | A JSON object describing the new printer. The &#x27;printer&#x27; property needs to contain a unique name for the new printer (if the name is already in use, the POST request will fail (HTTP 409). The &#x27;connection&#x27; parameter is an arbitrary string (e.g. a URL) used to connect from PLOSSYS to the printer. Example {   \&quot;printer\&quot;: \&quot;newPrinterName\&quot;,   \&quot;connection\&quot;: \&quot;socket://HostOrIp:9100\&quot; }  
 
 ### Return types
 
@@ -2729,7 +2729,7 @@ Modifies a printer, replacing the current configuration with the one given in th
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/P5_PRINTER (**[printer](#markdown-header-model-printer)**) | JSON object containing updated printer object 
+ **i_body** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-printer)**) | JSON object containing updated printer object 
 
 ### Return types
 
@@ -3293,7 +3293,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINT_JOB_TT (**[array](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
+ 200 | **e_200** | /BLCK/P5_PRINT_JOB_TT (**[array of print_job](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
  500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
@@ -3502,7 +3502,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINTER_TT (**[array](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
+ 200 | **e_200** | /BLCK/P5_PRINTER_TT (**[array of printer](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
  500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
  0 | **e_0** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
@@ -3679,7 +3679,7 @@ Aggregates count the number of objects matching a given query and aggregate resu
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/P5_AGGREGATEQUERY (**[aggregatequery](#markdown-header-model-aggregatequery)**) | Query object containing definition of the requested aggregate  
+ **i_body** | /BLCK/P5_AGGREGATEQUERY (**[AggregateQuery](#markdown-header-model-aggregatequery)**) | Query object containing definition of the requested aggregate  
 
 ### Return types
 
@@ -3895,7 +3895,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINTER_TT (**[array](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
+ 200 | **e_200** | /BLCK/P5_PRINTER_TT (**[array of printer](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
  500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
  0 | **e_0** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
@@ -4057,7 +4057,7 @@ Adds a new printer to the list of managed printers in PLOSSYS P5. The new printe
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/P5_PRINTER (**[printer](#markdown-header-model-printer)**) | A JSON object describing the new printer. The &#x27;printer&#x27; property needs to contain a unique name for the new printer (if the name is already in use, the POST request will fail (HTTP 409). The &#x27;connection&#x27; parameter is an arbitrary string (e.g. a URL) used to connect from PLOSSYS to the printer. Example {   \&quot;printer\&quot;: \&quot;newPrinterName\&quot;,   \&quot;connection\&quot;: \&quot;socket://HostOrIp:9100\&quot; }  
+ **i_body** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-printer)**) | A JSON object describing the new printer. The &#x27;printer&#x27; property needs to contain a unique name for the new printer (if the name is already in use, the POST request will fail (HTTP 409). The &#x27;connection&#x27; parameter is an arbitrary string (e.g. a URL) used to connect from PLOSSYS to the printer. Example {   \&quot;printer\&quot;: \&quot;newPrinterName\&quot;,   \&quot;connection\&quot;: \&quot;socket://HostOrIp:9100\&quot; }  
 
 ### Return types
 
@@ -4419,7 +4419,7 @@ Modifies a printer, replacing the current configuration with the one given in th
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/P5_PRINTER (**[printer](#markdown-header-model-printer)**) | JSON object containing updated printer object 
+ **i_body** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-printer)**) | JSON object containing updated printer object 
 
 ### Return types
 
@@ -4945,7 +4945,7 @@ Aggregates count the number of objects matching a given query and aggregate resu
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/P5_AGGREGATEQUERY (**[aggregatequery](#markdown-header-model-aggregatequery)**) | Query object containing definition of the requested aggregate  
+ **i_body** | /BLCK/P5_AGGREGATEQUERY (**[AggregateQuery](#markdown-header-model-aggregatequery)**) | Query object containing definition of the requested aggregate  
 
 ### Return types
 
@@ -5156,7 +5156,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINT_JOB_TT (**[array](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
+ 200 | **e_200** | /BLCK/P5_PRINT_JOB_TT (**[array of print_job](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
  500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
@@ -5239,7 +5239,7 @@ Aggregates count the number of objects matching a given query and aggregate resu
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/P5_AGGREGATEQUERY (**[aggregatequery](#markdown-header-model-aggregatequery)**) | Query object containing definition of the requested aggregate  
+ **i_body** | /BLCK/P5_AGGREGATEQUERY (**[AggregateQuery](#markdown-header-model-aggregatequery)**) | Query object containing definition of the requested aggregate  
 
 ### Return types
 
@@ -5455,7 +5455,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINTER_TT (**[array](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
+ 200 | **e_200** | /BLCK/P5_PRINTER_TT (**[array of printer](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
  500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
  0 | **e_0** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 

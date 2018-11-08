@@ -65,7 +65,7 @@ Adds an object to the favorites.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/MFI_OBJ_ID (**[obj_id](#markdown-header-model-obj_id)**) |  [optional]
+ **i_body** | /BLCK/MFI_OBJ_ID (**[ObjID](#markdown-header-model-obj_id)**) |  [optional]
 
 ### Return types
 
@@ -216,7 +216,7 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array](#markdown-header-model-object_version)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of object_version](#markdown-header-model-object_version)**) | successful operation
 
 ### HTTP request headers
 
@@ -640,7 +640,7 @@ Creates a new object of type.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/MFI_OBJECTCREATION (**[objectcreation](#markdown-header-model-objectcreation)**) |  
+ **i_body** | /BLCK/MFI_OBJECTCREATION (**[ObjectCreationInfo](#markdown-header-model-objectcreation)**) |  
  **i_type** | /BLCK/MFI_INT |  
 
 ### Return types
@@ -718,13 +718,13 @@ Demotes external objects that have been previously promoted.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/MFI_OBJ_ID_TTT (**[array of obj_id](#markdown-header-model-)**) | Holds file upload ids and property values for fetching automatic metadata. 
+ **i_body** | /BLCK/MFI_OBJ_ID_TTT (**[array of obj_id](#markdown-header-model-obj_id)**) | Holds file upload ids and property values for fetching automatic metadata. 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT_TT (**[array](#markdown-header-model-extendedobject)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT_TT (**[array of extendedobject](#markdown-header-model-extendedobject)**) | successful operation
 
 ### HTTP request headers
 
@@ -896,13 +896,13 @@ Retrieves automatic metadata based on specified request info.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/MFI_AUTOMATICMETAD (**[automaticmetad](#markdown-header-model-automaticmetad)**) | Holds file upload ids and property values for fetching automatic metadata. 
+ **i_body** | /BLCK/MFI_AUTOMATICMETAD (**[AutomaticMetadataRequestInfo](#markdown-header-model-automaticmetad)**) | Holds file upload ids and property values for fetching automatic metadata. 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_PROPERTYVALUES_TT (**[array](#markdown-header-model-propertyvalues)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_PROPERTYVALUES_TT (**[array of propertyvalues](#markdown-header-model-propertyvalues)**) | successful operation
 
 ### HTTP request headers
 
@@ -1074,7 +1074,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_VERSIONCOMMENT_TT (**[array](#markdown-header-model-versioncomment)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_VERSIONCOMMENT_TT (**[array of versioncomment](#markdown-header-model-versioncomment)**) | successful operation
 
 ### HTTP request headers
 
@@ -1653,7 +1653,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_FILE_TT (**[array](#markdown-header-model-object_file)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_FILE_TT (**[array of object_file](#markdown-header-model-object_file)**) | successful operation
 
 ### HTTP request headers
 
@@ -1731,7 +1731,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array](#markdown-header-model-object_version)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of object_version](#markdown-header-model-object_version)**) | successful operation
 
 ### HTTP request headers
 
@@ -2108,7 +2108,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array](#markdown-header-model-object_version)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of object_version](#markdown-header-model-object_version)**) | successful operation
 
 ### HTTP request headers
 
@@ -2346,7 +2346,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_PROPERTY_VALUE_TT (**[array](#markdown-header-model-property_value)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_PROPERTY_VALUE_TT (**[array of property_value](#markdown-header-model-property_value)**) | successful operation
 
 ### HTTP request headers
 
@@ -2650,7 +2650,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array](#markdown-header-model-object_version)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of object_version](#markdown-header-model-object_version)**) | successful operation
 
 ### HTTP request headers
 
@@ -2914,7 +2914,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array](#markdown-header-model-object_version)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of object_version](#markdown-header-model-object_version)**) | successful operation
 
 ### HTTP request headers
 
@@ -3537,13 +3537,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/setmulti
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/MFI_OBJECTSUPDATEI (**[objectsupdatei](#markdown-header-model-objectsupdatei)**) |  
+ **i_body** | /BLCK/MFI_OBJECTSUPDATEI (**[ObjectsUpdateInfo](#markdown-header-model-objectsupdatei)**) |  
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT_TT (**[array](#markdown-header-model-extendedobject)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT_TT (**[array of extendedobject](#markdown-header-model-extendedobject)**) | successful operation
 
 ### HTTP request headers
 
@@ -3729,7 +3729,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/MFI_PROPERTY_VALUE_TTT (**[array of property_value](#markdown-header-model-)**) |  
+ **i_body** | /BLCK/MFI_PROPERTY_VALUE_TTT (**[array of property_value](#markdown-header-model-property_value)**) |  
  **i_type** | /BLCK/MFI_INT |  
  **i_objectid** | /BLCK/MFI_INT |  
  **i_version** | /BLCK/MFI_STRING |  [default "latest"]
@@ -3829,7 +3829,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/MFI_PROPERTY_VALUE (**[property_value](#markdown-header-model-property_value)**) |  
+ **i_body** | /BLCK/MFI_PROPERTY_VALUE (**[PropertyValue](#markdown-header-model-property_value)**) |  
  **i_type** | /BLCK/MFI_INT |  
  **i_objectid** | /BLCK/MFI_INT |  
  **i_version** | /BLCK/MFI_STRING |  [default "latest"]
@@ -3932,7 +3932,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/MFI_OBJECTWORKFLOW (**[objectworkflow](#markdown-header-model-objectworkflow)**) |  
+ **i_body** | /BLCK/MFI_OBJECTWORKFLOW (**[ObjectWorkflowState](#markdown-header-model-objectworkflow)**) |  
  **i_type** | /BLCK/MFI_INT |  
  **i_objectid** | /BLCK/MFI_INT |  
  **i_version** | /BLCK/MFI_STRING |  [default "latest"]
@@ -4030,7 +4030,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/MFI_PROPERTY_VALUE_TTT (**[array of property_value](#markdown-header-model-)**) |  
+ **i_body** | /BLCK/MFI_PROPERTY_VALUE_TTT (**[array of property_value](#markdown-header-model-property_value)**) |  
  **i_type** | /BLCK/MFI_INT |  
  **i_objectid** | /BLCK/MFI_INT |  
  **i_version** | /BLCK/MFI_STRING |  [default "latest"]
@@ -4116,7 +4116,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/recentlyaccessed
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/MFI_OBJ_ID (**[obj_id](#markdown-header-model-obj_id)**) |  
+ **i_body** | /BLCK/MFI_OBJ_ID (**[ObjID](#markdown-header-model-obj_id)**) |  
 
 ### Return types
 
@@ -4189,7 +4189,7 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array](#markdown-header-model-object_version)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of object_version](#markdown-header-model-object_version)**) | successful operation
 
 ### HTTP request headers
 
@@ -4261,7 +4261,7 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_REPOSITORYAUTH_TT (**[array](#markdown-header-model-repositoryauth)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_REPOSITORYAUTH_TT (**[array of repositoryauth](#markdown-header-model-repositoryauth)**) | successful operation
 
 ### HTTP request headers
 
@@ -4341,7 +4341,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/repositories/ses
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/MFI_REPOSITORYAUT3 (**[repositoryaut3](#markdown-header-model-repositoryaut3)**) |  
+ **i_body** | /BLCK/MFI_REPOSITORYAUT3 (**[RepositoryAuthentication](#markdown-header-model-repositoryaut3)**) |  
  **i_targetid** | /BLCK/MFI_INT |  
 
 ### Return types
@@ -4502,7 +4502,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/authentic
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/MFI_AUTHENTICATION (**[authentication](#markdown-header-model-authentication)**) |  
+ **i_body** | /BLCK/MFI_AUTHENTICATION (**[Authentication](#markdown-header-model-authentication)**) |  
 
 ### Return types
 
@@ -4723,7 +4723,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_REPOSITORYAUTH_TT (**[array](#markdown-header-model-repositoryauth)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_REPOSITORYAUTH_TT (**[array of repositoryauth](#markdown-header-model-repositoryauth)**) | successful operation
 
 ### HTTP request headers
 
@@ -5074,13 +5074,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/MFI_AUTHENTICATION (**[authentication](#markdown-header-model-authentication)**) |  
+ **i_body** | /BLCK/MFI_AUTHENTICATION (**[Authentication](#markdown-header-model-authentication)**) |  
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_VAULT_TT (**[array](#markdown-header-model-vault)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_VAULT_TT (**[array of vault](#markdown-header-model-vault)**) | successful operation
 
 ### HTTP request headers
 
@@ -5215,7 +5215,7 @@ The request must have either the GUID or the Name of the vault filled. In case b
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/MFI_VAULT (**[vault](#markdown-header-model-vault)**) |  
+ **i_body** | /BLCK/MFI_VAULT (**[Vault](#markdown-header-model-vault)**) |  
 
 ### Return types
 
@@ -5308,7 +5308,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/MFI_VALUELISTITEM (**[valuelistitem](#markdown-header-model-valuelistitem)**) |  
+ **i_body** | /BLCK/MFI_VALUELISTITEM (**[ValueListItem](#markdown-header-model-valuelistitem)**) |  
  **i_id** | /BLCK/MFI_INT |  
 
 ### Return types
@@ -5899,7 +5899,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_CLASS_TT (**[array](#markdown-header-model-object_class)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_CLASS_TT (**[array of object_class](#markdown-header-model-object_class)**) | successful operation
 
 ### HTTP request headers
 
@@ -6051,7 +6051,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_CLASS_TT (**[array](#markdown-header-model-object_class)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_CLASS_TT (**[array of object_class](#markdown-header-model-object_class)**) | successful operation
 
 ### HTTP request headers
 
@@ -6194,7 +6194,7 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJ_TYPE_TT (**[array](#markdown-header-model-obj_type)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJ_TYPE_TT (**[array of obj_type](#markdown-header-model-obj_type)**) | successful operation
 
 ### HTTP request headers
 
@@ -6337,7 +6337,7 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJ_TYPE_TT (**[array](#markdown-header-model-obj_type)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJ_TYPE_TT (**[array of obj_type](#markdown-header-model-obj_type)**) | successful operation
 
 ### HTTP request headers
 
@@ -6404,7 +6404,7 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_PROPERTY_DEF_TT (**[array](#markdown-header-model-property_def)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_PROPERTY_DEF_TT (**[array of property_def](#markdown-header-model-property_def)**) | successful operation
 
 ### HTTP request headers
 
@@ -6724,7 +6724,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_WORKFLOW_STATE_TT (**[array](#markdown-header-model-workflow_state)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_WORKFLOW_STATE_TT (**[array of workflow_state](#markdown-header-model-workflow_state)**) | successful operation
 
 ### HTTP request headers
 
@@ -6808,7 +6808,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_WORKFLOW_STATE_TT (**[array](#markdown-header-model-workflow_state)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_WORKFLOW_STATE_TT (**[array of workflow_state](#markdown-header-model-workflow_state)**) | successful operation
 
 ### HTTP request headers
 
@@ -6884,7 +6884,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_WORKFLOW_TT (**[array](#markdown-header-model-workflow)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_WORKFLOW_TT (**[array of workflow](#markdown-header-model-workflow)**) | successful operation
 
 ### HTTP request headers
 

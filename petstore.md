@@ -585,14 +585,14 @@ uploads an image
     data gvs_additional_metadata type /BLCK/PET_STRING.
 *   for parameter i_file:
 *   a simple ABAP primitive of type /BLCK/PET_BINARY
-    data gvs_file type /BLCK/PET_BINARY.
+    data gv_file type /BLCK/PET_BINARY.
 *   when the result of the call is HTTP200 we expect type /BLCK/PET_API_RESPONSE
     data gr_http200 type /BLCK/PET_API_RESPONSE.
         
 *** set data according to requirements of the API call
 *   gvi_pet_id = 42.
 *   gvs_additional_metadata = 'ipsum lorem'.
-*   gvs_file = 'ipsum lorem'.
+*   gv_file = ...
 
 
 *** optional: instantiate descendant of /blck/api_cl_auth and assign to 
@@ -611,7 +611,7 @@ uploads an image
       exporting
         i_pet_id = gvi_pet_id
         i_additional_metadata = gvs_additional_metadata
-        i_file = gvs_file
+        i_file = gv_file
       importing
         e_code = gvi_code
         e_message = gvs_msg

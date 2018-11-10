@@ -1,6 +1,6 @@
 # API: CollectionsApi
 
-All URIs are relative to *https://operator-seal.cloudapp.net:3008/v1*
+All URIs are relative to *https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1*
 
 ## operation: **services_sid_repo_command_post**
 Create new command resource.
@@ -14,7 +14,7 @@ Creates a new record in the command resource. It returns a JSON object containin
 *** Create new command resource.
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -140,7 +140,7 @@ Some services (not all) expose access to documents. All documents available thro
 *** Access the document repository within a service
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -287,7 +287,7 @@ Creates a new record in the current Repository, inside the root collection, and 
 *** Create new entry in the root collection of the repository.
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -409,7 +409,7 @@ Removes the current entry from the repository. This will not only remove the ref
 *** Delete the current entry.
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -524,7 +524,7 @@ Given a 'uuid' parameter, this route retrieves an entry's metadata. The entry ma
 *** Retrieve metadata of a specific entry (document or collection).
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -638,7 +638,7 @@ Update the given entry's metadata. Only data given with the patch will be change
 *** Update entry metadata (partial, merge)
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -767,7 +767,7 @@ If the entry under the given uuid is a collection, then a POST request to this r
 *** Create a new entry in the current collection (collections only).
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -902,7 +902,7 @@ Completely replace the metadata record of the given entry. Only record metadata 
 *** Update entry metadata (complete, replace)
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -1032,7 +1032,7 @@ Returns a JSON object containing the status of the command. Command resources ar
 *** Access a command resource within a service
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -1146,7 +1146,7 @@ Some services (not all) expose access to documents. All documents available thro
 *** Access a collections children.
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -1284,7 +1284,7 @@ HTTP Code | Name | Type | Description
 
 # API: ConfigurationApi
 
-All URIs are relative to *https://operator-seal.cloudapp.net:3008/v1*
+All URIs are relative to *https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1*
 
 ## operation: **config_delete**
 Delete a configuration item
@@ -1298,7 +1298,7 @@ Deletes a single ConfigItem at the given path or all ConfigItems in the whole tr
 *** Delete a configuration item
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -1396,7 +1396,7 @@ Use this route to browse the configuration. Configuration is structured unix fil
 *** Access a configuration item or path
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -1513,7 +1513,7 @@ Stores the ConfigItem in the request body at the given path.
 *** Store a configuration item
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -1607,7 +1607,7 @@ HTTP Code | Name | Type | Description
 
 # API: ConnectorsApi
 
-All URIs are relative to *https://operator-seal.cloudapp.net:3008/v1*
+All URIs are relative to *https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1*
 
 ## operation: **services_sid_get**
 Retrieve service metadata
@@ -1621,7 +1621,7 @@ FIXME
 *** Retrieve service metadata
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -1728,7 +1728,7 @@ A POST call to this route will create new jobs and return their connector id's (
 *** Handle jobs in backend system
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -1843,7 +1843,7 @@ A PUT call to this route returns an array with status and output listItems for a
 *** Get status and output files
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -1959,7 +1959,7 @@ The SEAL Operator user interface provides the user with a set of default panels 
 *** Retrieve list of default UI panels available to the user.
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -2050,7 +2050,7 @@ A GET call to this route returns a JSON object containing the default configurat
 *** Retrieve the default configuration of a UI panel.
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -2140,7 +2140,7 @@ HTTP Code | Name | Type | Description
 
 # API: DocumentsApi
 
-All URIs are relative to *https://operator-seal.cloudapp.net:3008/v1*
+All URIs are relative to *https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1*
 
 ## operation: **services_sid_repo_command_post**
 Create new command resource.
@@ -2154,7 +2154,7 @@ Creates a new record in the command resource. It returns a JSON object containin
 *** Create new command resource.
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -2280,7 +2280,7 @@ Some services (not all) expose access to documents. All documents available thro
 *** Access the document repository within a service
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -2427,7 +2427,7 @@ Creates a new record in the current Repository, inside the root collection, and 
 *** Create new entry in the root collection of the repository.
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -2549,7 +2549,7 @@ Removes the current entry from the repository. This will not only remove the ref
 *** Delete the current entry.
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -2664,7 +2664,7 @@ Given a 'uuid' parameter, this route retrieves an entry's metadata. The entry ma
 *** Retrieve metadata of a specific entry (document or collection).
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -2778,7 +2778,7 @@ Update the given entry's metadata. Only data given with the patch will be change
 *** Update entry metadata (partial, merge)
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -2907,7 +2907,7 @@ Completely replace the metadata record of the given entry. Only record metadata 
 *** Update entry metadata (complete, replace)
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -3037,7 +3037,7 @@ Returns a JSON object containing the status of the command. Command resources ar
 *** Access a command resource within a service
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -3151,7 +3151,7 @@ Deletes the binary content of a document, leaving metadata only. Note that some 
 *** Delete document binary content (documents only)
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -3264,7 +3264,7 @@ If the entry under 'uuid' is a document, then this route provides access to the 
 *** Retrieve binary content (documents only)
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -3367,7 +3367,7 @@ Upload binary content of a document. Create if none exists, or replace existing 
 *** Create or update document binary content (documents only)
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -3383,7 +3383,7 @@ Upload binary content of a document. Create if none exists, or replace existing 
     data gvs_uuid type /BLCK/OP4_STRING.
 *   for parameter i_content:
 *   a simple ABAP primitive of type /BLCK/OP4_BINARY
-    data gvs_content type /BLCK/OP4_BINARY.
+    data gv_content type /BLCK/OP4_BINARY.
 *   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
@@ -3402,7 +3402,7 @@ Upload binary content of a document. Create if none exists, or replace existing 
 *** set data according to requirements of the API call
 *   gvs_sid = 'ipsum lorem'.
 *   gvs_uuid = 'ipsum lorem'.
-*   gvs_content = 'ipsum lorem'.
+*   gv_content = ...
 
 
 *** optional: instantiate descendant of /blck/api_cl_auth and assign to 
@@ -3422,7 +3422,7 @@ Upload binary content of a document. Create if none exists, or replace existing 
       exporting
         i_sid = gvs_sid
         i_uuid = gvs_uuid
-        i_content = gvs_content
+        i_content = gv_content
       importing
         e_code = gvi_code
         e_message = gvs_msg
@@ -3486,7 +3486,7 @@ If the entry under 'uuid' is a document, then this route provides access to the 
 *** Retrieve preview of binary content (documents only)
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -3579,7 +3579,7 @@ Name | Type | Description
 
 # API: FunctionsApi
 
-All URIs are relative to *https://operator-seal.cloudapp.net:3008/v1*
+All URIs are relative to *https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1*
 
 ## operation: **services_sid_function_fid_post**
 Access a connector specific function
@@ -3593,7 +3593,7 @@ This route triggers a connector specific function and returns the result. The fu
 *** Access a connector specific function
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -3699,7 +3699,7 @@ For panels static configuration data is sometimes not sufficient, dynamically re
 *** List connector specific functions
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -3790,7 +3790,7 @@ HTTP Code | Name | Type | Description
 
 # API: ListsApi
 
-All URIs are relative to *https://operator-seal.cloudapp.net:3008/v1*
+All URIs are relative to *https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1*
 
 ## operation: **lists_get**
 Get collection of available Lists.
@@ -3804,7 +3804,7 @@ This is the list of Lists of the authenticated user. Use metadata property names
 *** Get collection of available Lists.
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -3938,7 +3938,7 @@ Deletes the current list inclusive all it's items, but not the documents.
 *** Delete the current list
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -4034,7 +4034,7 @@ This is the root record for a given list. It contains List-level metadata. Use t
 *** Retrieve metadata for the current List.
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -4150,7 +4150,7 @@ This is the collection of items currently in the List. For performance reasons, 
 *** Get List items.
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -4287,7 +4287,7 @@ Deletes an entry from a list. Only the list entry is removed, not the document. 
 *** Remove the current element from the list
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -4390,7 +4390,7 @@ Get metadata record of a list item. Note that the 'id' is NOT the index, which i
 *** Retrieve item data of the current list element
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -4504,7 +4504,7 @@ Update the metadata record of the current list item, adding missing entries but 
 *** Update current list item (partial, merge)
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -4642,7 +4642,7 @@ Update and replace the entire metadata record of the current list item. Note tha
 *** Update current list item (complete, replace)
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -4771,7 +4771,7 @@ Lists are are ordered sets, items have consecutive indices (0..n). Posting this 
 *** Appended and item to the list.
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -4900,7 +4900,7 @@ Updates or adds part of the List metadata. Only given metadata will be replaced 
 *** Update List metadata (partial, merge)
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -5027,7 +5027,7 @@ This will completely replace the existing List metadata (if any) by the given me
 *** Update List metadata (complete, replace)
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -5154,7 +5154,7 @@ Creates a new entry in the list of Lists. The `Content-Type` HTTP header defines
 *** Create new List
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -5265,7 +5265,7 @@ HTTP Code | Name | Type | Description
 
 # API: MessagesApi
 
-All URIs are relative to *https://operator-seal.cloudapp.net:3008/v1*
+All URIs are relative to *https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1*
 
 ## operation: **messages_get**
 Access the users messages
@@ -5279,7 +5279,7 @@ Every user has his own list of messages containing info, warning and error messa
 *** Access the users messages
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -5395,7 +5395,7 @@ Creates a new record in the message list and assigns the posted data. The server
 *** Create new message entry.
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -5507,7 +5507,7 @@ Update a message entry. Only data given with the patch will be  changed/added; n
 *** Update a message entry.
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -5616,7 +5616,7 @@ HTTP Code | Name | Type | Description
 
 # API: PanelsApi
 
-All URIs are relative to *https://operator-seal.cloudapp.net:3008/v1*
+All URIs are relative to *https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1*
 
 ## operation: **panels_get**
 Retrieve list of UI panels available to the user.
@@ -5630,7 +5630,7 @@ The SEAL Operator user interface provides the user with a set of panels to use. 
 *** Retrieve list of UI panels available to the user.
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -5721,7 +5721,7 @@ User-defined panel configurations can be delete by a DELETE request to this rout
 *** Delete a stored panel configuration
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -5819,7 +5819,7 @@ Returns a ConfigItem containing configuration for a stored panel.
 *** Retrieve a specific panel configuration
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -5926,7 +5926,7 @@ A PUT request to a panel configuration will replace the entire stored configurat
 *** Updates a saved panel configuration
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -6034,7 +6034,7 @@ Users can save panel configurations they intend to (re-)use in later sessions un
 *** Save a (user-specific) panel configuration.
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -6138,7 +6138,7 @@ The SEAL Operator user interface provides the user with a set of default panels 
 *** Retrieve list of default UI panels available to the user.
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -6229,7 +6229,7 @@ A GET call to this route returns a JSON object containing the default configurat
 *** Retrieve the default configuration of a UI panel.
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -6319,7 +6319,7 @@ HTTP Code | Name | Type | Description
 
 # API: ServicesApi
 
-All URIs are relative to *https://operator-seal.cloudapp.net:3008/v1*
+All URIs are relative to *https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1*
 
 ## operation: **services_get**
 Get list of available services
@@ -6333,7 +6333,7 @@ A GET call to this route will return a list of active services currently availab
 *** Get list of available services
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -6424,7 +6424,7 @@ FIXME
 *** Retrieve service metadata
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -6521,7 +6521,7 @@ HTTP Code | Name | Type | Description
 
 # API: SessionsApi
 
-All URIs are relative to *https://operator-seal.cloudapp.net:3008/v1*
+All URIs are relative to *https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1*
 
 ## operation: **sessions_get**
 Get session information
@@ -6535,7 +6535,7 @@ Get number of currently established sessions of user
 *** Get session information
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -6616,7 +6616,7 @@ HTTP Code | Name | Type | Description
 
 # API: TasksApi
 
-All URIs are relative to *https://operator-seal.cloudapp.net:3008/v1*
+All URIs are relative to *https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1*
 
 ## operation: **services_sid_tasks_get**
 Retrieve collection of tasks managed by the service.
@@ -6630,7 +6630,7 @@ This route provides access to the root collection of known tasks for the current
 *** Retrieve collection of tasks managed by the service.
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -6785,7 +6785,7 @@ Adds a new Task to the collection. Given metadata is assigned, input list must b
 *** Create new task.
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -6916,7 +6916,7 @@ Deletes a Task from the collection. This is only possible if the Task is not cur
 *** Delete a Task.
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -7024,7 +7024,7 @@ This route provides access to a Task's root record. The record contains taks met
 *** Retrieve metadata of current task.
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -7153,7 +7153,7 @@ Does a partial update to the Task metadata. Given metadata replaces existing one
 *** Update Task metadata (partial, merge)
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -7281,7 +7281,7 @@ A put call to the task root record completely replaces task metadata, but does n
 *** Update task metadata (complete, replace)
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -7409,7 +7409,7 @@ Trigger a new action on the current task. Currently supported actions are `start
 *** Trigger an action
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -7524,7 +7524,7 @@ This route provides access to a Task's list of input documents. Input lists of T
 *** Retrieve list of task input items
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -7646,7 +7646,7 @@ Deletes an item from a Task's input list. The deleted ID is permanently orphaned
 *** Delete a task input list item
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -7761,7 +7761,7 @@ FIXME
 *** Retrieve task item details
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -7882,7 +7882,7 @@ Updates task input list item metadata, replacing present entries and adding miss
 *** Update a task input list item (partial, merge)
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -8018,7 +8018,7 @@ Replaces the task input list item's metadata, including the document reference.
 *** Update the current task input list item (complete, replace)
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -8154,7 +8154,7 @@ Does a partial update to the input list metadata. Given metadata replaces existi
 *** Update input list metadata (partial, merge)
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -8296,7 +8296,7 @@ Creates a new entry in the given Task's input list. Given metadata is assigned t
 *** Append a new item to the input list of the task.
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -8434,7 +8434,7 @@ A put call to the input list root record completely replaces the metadata, but d
 *** Update input list metadata (complete, replace)
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -8562,7 +8562,7 @@ This route provides access to a Task's list of output documents. Output lists of
 *** Retrieve list of task output items
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -8684,7 +8684,7 @@ This route provides access to individual task output items.
 *** Retrieve task output list item details
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,
@@ -8805,7 +8805,7 @@ This route provides access to the root collection of known tasks for all service
 *** Retrieve collection of tasks managed by all services.
 
   constants:
-    gcc_basepath type string value 'https://operator-seal.cloudapp.net:3008/v1'.
+    gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
     gcl_auth type ref to /blck/api_cl_auth,

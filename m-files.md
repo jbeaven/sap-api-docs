@@ -1399,8 +1399,6 @@ Retrieves the file preview.
     data gvi_height type /BLCK/MFI_INT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_BINARY
     data gr_http200 type /BLCK/MFI_BINARY.
-*   when the result of the call is HTTP404 we expect type /BLCK/MFI_BINARY
-    data gr_http404 type /BLCK/MFI_BINARY.
         
 *** set data according to requirements of the API call
 *   gvi_type = 42.
@@ -1443,15 +1441,14 @@ Retrieves the file preview.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_404 = gr_http404 ).
+        e_200 = gr_http200 ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
 *       do something with gr_http200 (type /BLCK/MFI_BINARY)
       when 404.
-*       do something with gr_http404 (type /BLCK/MFI_BINARY)
+*       handle code 404
       when others.
 * handle the general case..
     endcase.
@@ -1475,7 +1472,7 @@ Name | Type | Description
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
  200 | **e_200** | /BLCK/MFI_BINARY | successful operation
- 404 | **e_404** | /BLCK/MFI_BINARY | If a preview cannot be generated the service responds with a 404.
+ 404 | value not returned |  | If a preview cannot be generated the service responds with a 404.
 
 ### HTTP request headers
 
@@ -6836,14 +6833,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
     gvs_msg  type /blck/mfi_string.
     
 *** create variables for input and output as needed
-*   for parameter i_id:
-*   a simple ABAP primitive of type /BLCK/MFI_INT
-    data gvi_id type /BLCK/MFI_INT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_WORKFLOW_TT
     data gr_http200 type /BLCK/MFI_WORKFLOW_TT.
         
-*** set data according to requirements of the API call
-*   gvi_id = 42.
 
 
 *** optional: instantiate descendant of /blck/api_cl_auth and assign to 
@@ -6858,8 +6850,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
         
 *** call the API method get_workflows via HTTP GET
     /blck/mfi_cl_VaultApi=>get_workflows(
-      exporting
-        i_id = gvi_id
       importing
         e_code = gvi_code
         e_message = gvs_msg
@@ -6876,9 +6866,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
 ```
 
 ### Parameters
-Name | Type | Description  
-------------- | ------------- | ------------- 
- **i_id** | /BLCK/MFI_INT |  
+This end-point does not need any parameters.
 
 ### Return types
 

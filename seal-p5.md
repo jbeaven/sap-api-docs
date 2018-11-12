@@ -287,7 +287,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINT_JOB_TT (**[array of print_job](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
+ 200 | **e_200** | /BLCK/P5_PRINT_JOB_TT (**[array of PrintJob](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
  500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
@@ -742,7 +742,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINTER_TT (**[array of printer](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
+ 200 | **e_200** | /BLCK/P5_PRINTER_TT (**[array of Printer](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
  500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
  0 | **e_0** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
@@ -1381,7 +1381,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINT_JOB_TT (**[array of print_job](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
+ 200 | **e_200** | /BLCK/P5_PRINT_JOB_TT (**[array of PrintJob](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
  500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
@@ -3293,7 +3293,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINT_JOB_TT (**[array of print_job](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
+ 200 | **e_200** | /BLCK/P5_PRINT_JOB_TT (**[array of PrintJob](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
  500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
@@ -3502,7 +3502,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINTER_TT (**[array of printer](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
+ 200 | **e_200** | /BLCK/P5_PRINTER_TT (**[array of Printer](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
  500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
  0 | **e_0** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
@@ -3895,7 +3895,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINTER_TT (**[array of printer](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
+ 200 | **e_200** | /BLCK/P5_PRINTER_TT (**[array of Printer](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
  500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
  0 | **e_0** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
@@ -5156,7 +5156,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINT_JOB_TT (**[array of print_job](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
+ 200 | **e_200** | /BLCK/P5_PRINT_JOB_TT (**[array of PrintJob](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
  500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
@@ -5455,7 +5455,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINTER_TT (**[array of printer](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
+ 200 | **e_200** | /BLCK/P5_PRINTER_TT (**[array of Printer](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
  500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
  0 | **e_0** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 

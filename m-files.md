@@ -216,7 +216,7 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of object_version](#markdown-header-model-object_version)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of ObjectVersion](#markdown-header-model-object_version)**) | successful operation
 
 ### HTTP request headers
 
@@ -718,13 +718,13 @@ Demotes external objects that have been previously promoted.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/MFI_OBJ_ID_TTT (**[array of obj_id](#markdown-header-model-obj_id)**) | Holds file upload ids and property values for fetching automatic metadata. 
+ **i_body** | /BLCK/MFI_OBJ_ID_TTT (**[array of ObjID](#markdown-header-model-obj_id)**) | Holds file upload ids and property values for fetching automatic metadata. 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT_TT (**[array of extendedobject](#markdown-header-model-extendedobject)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT_TT (**[array of ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
 
 ### HTTP request headers
 
@@ -902,7 +902,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_PROPERTYVALUES_TT (**[array of propertyvalues](#markdown-header-model-propertyvalues)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_PROPERTYVALUES_TT (**[array of PropertyValueSuggestion](#markdown-header-model-propertyvalues)**) | successful operation
 
 ### HTTP request headers
 
@@ -1074,7 +1074,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_VERSIONCOMMENT_TT (**[array of versioncomment](#markdown-header-model-versioncomment)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_VERSIONCOMMENT_TT (**[array of VersionComment](#markdown-header-model-versioncomment)**) | successful operation
 
 ### HTTP request headers
 
@@ -1653,7 +1653,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_FILE_TT (**[array of object_file](#markdown-header-model-object_file)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_FILE_TT (**[array of ObjectFile](#markdown-header-model-object_file)**) | successful operation
 
 ### HTTP request headers
 
@@ -1731,7 +1731,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of object_version](#markdown-header-model-object_version)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of ObjectVersion](#markdown-header-model-object_version)**) | successful operation
 
 ### HTTP request headers
 
@@ -2108,7 +2108,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of object_version](#markdown-header-model-object_version)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of ObjectVersion](#markdown-header-model-object_version)**) | successful operation
 
 ### HTTP request headers
 
@@ -2346,7 +2346,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_PROPERTY_VALUE_TT (**[array of property_value](#markdown-header-model-property_value)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_PROPERTY_VALUE_TT (**[array of PropertyValue](#markdown-header-model-property_value)**) | successful operation
 
 ### HTTP request headers
 
@@ -2650,7 +2650,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of object_version](#markdown-header-model-object_version)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of ObjectVersion](#markdown-header-model-object_version)**) | successful operation
 
 ### HTTP request headers
 
@@ -2914,7 +2914,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of object_version](#markdown-header-model-object_version)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of ObjectVersion](#markdown-header-model-object_version)**) | successful operation
 
 ### HTTP request headers
 
@@ -3543,7 +3543,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT_TT (**[array of extendedobject](#markdown-header-model-extendedobject)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT_TT (**[array of ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
 
 ### HTTP request headers
 
@@ -3729,7 +3729,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/MFI_PROPERTY_VALUE_TTT (**[array of property_value](#markdown-header-model-property_value)**) |  
+ **i_body** | /BLCK/MFI_PROPERTY_VALUE_TTT (**[array of PropertyValue](#markdown-header-model-property_value)**) |  
  **i_type** | /BLCK/MFI_INT |  
  **i_objectid** | /BLCK/MFI_INT |  
  **i_version** | /BLCK/MFI_STRING |  [default "latest"]
@@ -4030,7 +4030,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/MFI_PROPERTY_VALUE_TTT (**[array of property_value](#markdown-header-model-property_value)**) |  
+ **i_body** | /BLCK/MFI_PROPERTY_VALUE_TTT (**[array of PropertyValue](#markdown-header-model-property_value)**) |  
  **i_type** | /BLCK/MFI_INT |  
  **i_objectid** | /BLCK/MFI_INT |  
  **i_version** | /BLCK/MFI_STRING |  [default "latest"]
@@ -4189,7 +4189,7 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of object_version](#markdown-header-model-object_version)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of ObjectVersion](#markdown-header-model-object_version)**) | successful operation
 
 ### HTTP request headers
 
@@ -4261,7 +4261,7 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_REPOSITORYAUTH_TT (**[array of repositoryauth](#markdown-header-model-repositoryauth)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_REPOSITORYAUTH_TT (**[array of RepositoryAuthenticationTarget](#markdown-header-model-repositoryauth)**) | successful operation
 
 ### HTTP request headers
 
@@ -4723,7 +4723,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_REPOSITORYAUTH_TT (**[array of repositoryauth](#markdown-header-model-repositoryauth)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_REPOSITORYAUTH_TT (**[array of RepositoryAuthenticationTarget](#markdown-header-model-repositoryauth)**) | successful operation
 
 ### HTTP request headers
 
@@ -5080,7 +5080,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_VAULT_TT (**[array of vault](#markdown-header-model-vault)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_VAULT_TT (**[array of Vault](#markdown-header-model-vault)**) | successful operation
 
 ### HTTP request headers
 
@@ -5899,7 +5899,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_CLASS_TT (**[array of object_class](#markdown-header-model-object_class)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_CLASS_TT (**[array of ObjectClass](#markdown-header-model-object_class)**) | successful operation
 
 ### HTTP request headers
 
@@ -6051,7 +6051,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_CLASS_TT (**[array of object_class](#markdown-header-model-object_class)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJECT_CLASS_TT (**[array of ObjectClass](#markdown-header-model-object_class)**) | successful operation
 
 ### HTTP request headers
 
@@ -6194,7 +6194,7 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJ_TYPE_TT (**[array of obj_type](#markdown-header-model-obj_type)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJ_TYPE_TT (**[array of ObjType](#markdown-header-model-obj_type)**) | successful operation
 
 ### HTTP request headers
 
@@ -6337,7 +6337,7 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJ_TYPE_TT (**[array of obj_type](#markdown-header-model-obj_type)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_OBJ_TYPE_TT (**[array of ObjType](#markdown-header-model-obj_type)**) | successful operation
 
 ### HTTP request headers
 
@@ -6404,7 +6404,7 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_PROPERTY_DEF_TT (**[array of property_def](#markdown-header-model-property_def)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_PROPERTY_DEF_TT (**[array of PropertyDef](#markdown-header-model-property_def)**) | successful operation
 
 ### HTTP request headers
 
@@ -6724,7 +6724,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_WORKFLOW_STATE_TT (**[array of workflow_state](#markdown-header-model-workflow_state)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_WORKFLOW_STATE_TT (**[array of WorkflowState](#markdown-header-model-workflow_state)**) | successful operation
 
 ### HTTP request headers
 
@@ -6808,7 +6808,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_WORKFLOW_STATE_TT (**[array of workflow_state](#markdown-header-model-workflow_state)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_WORKFLOW_STATE_TT (**[array of WorkflowState](#markdown-header-model-workflow_state)**) | successful operation
 
 ### HTTP request headers
 
@@ -6884,7 +6884,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_WORKFLOW_TT (**[array of workflow](#markdown-header-model-workflow)**) | successful operation
+ 200 | **e_200** | /BLCK/MFI_WORKFLOW_TT (**[array of Workflow](#markdown-header-model-workflow)**) | successful operation
 
 ### HTTP request headers
 
@@ -7776,11 +7776,11 @@ Name | Value | Constant
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**data_type** | /BLCK/MFI_MF_DATA_TYPE (**[mf_data_type](#markdown-header-enum-mf_data_type)**) | 
+**data_type** | /BLCK/MFI_MF_DATA_TYPE (**[MFDataType](#markdown-header-enum-mf_data_type)**) | 
 **has_value** | /BLCK/MFI_BOOL | Specifies whether the typed value contains a real value.
 **value** | /BLCK/MFI_STRING | Specifies the string, number or boolean value when the DataType is not a lookup type.
-**lookup** | /BLCK/MFI_LOOKUP (**[lookup](#markdown-header-model-lookup)**) | 
-**lookups** | /BLCK/MFI_LOOKUP_TT (**[array of lookup](#markdown-header-model-lookup)**) | Specifies the collection of Lookups when the DataType is MultiSelectLookup.
+**lookup** | /BLCK/MFI_LOOKUP (**[Lookup](#markdown-header-model-lookup)**) | 
+**lookups** | /BLCK/MFI_LOOKUP_TT (**[array of Lookup](#markdown-header-model-lookup)**) | Specifies the collection of Lookups when the DataType is MultiSelectLookup.
 **display_value** | /BLCK/MFI_STRING | Provides the value formatted for display.
 **sorting_key** | /BLCK/MFI_STRING | Provides a key that can be used to sort TypedValues
 **serialized_value** | /BLCK/MFI_STRING | Provides the typed value in a serialized format suitable to be used in URIs.
@@ -7829,7 +7829,7 @@ Name | Type | Description
 Name | Type | Description
 ------------ | ------------- | -------------
 **property_def** | /BLCK/MFI_INT | 
-**typed_value** | /BLCK/MFI_TYPED_VALUE (**[typed_value](#markdown-header-model-typed_value)**) | 
+**typed_value** | /BLCK/MFI_TYPED_VALUE (**[TypedValue](#markdown-header-model-typed_value)**) | 
 
 * * *
 <a name="markdown-header-model-automaticmetad"></a> 
@@ -7888,8 +7888,8 @@ Name | Type | Description
 Name | Type | Description
 ------------ | ------------- | -------------
 **upload_ids** | /BLCK/MFI_INT_TT | List of temporary file upload ids.
-**property_values** | /BLCK/MFI_PROPERTY_VALUE_TT (**[array of property_value](#markdown-header-model-property_value)**) | Array of object’s current property values.
-**obj_ver** | /BLCK/MFI_OBJ_VER (**[obj_ver](#markdown-header-model-obj_ver)**) | 
+**property_values** | /BLCK/MFI_PROPERTY_VALUE_TT (**[array of PropertyValue](#markdown-header-model-property_value)**) | Array of object’s current property values.
+**obj_ver** | /BLCK/MFI_OBJ_VER (**[ObjVer](#markdown-header-model-obj_ver)**) | 
 **object_type** | /BLCK/MFI_INT | The object type of the new object.
 **metadata_provider_ids** | /BLCK/MFI_STRING_TT | List of metadata provider ids.
 **custom_data** | /BLCK/MFI_STRING | Custom data provided to the providers.
@@ -8033,7 +8033,7 @@ Name | Type | Description
 Name | Type | Description
 ------------ | ------------- | -------------
 **message** | /BLCK/MFI_STRING | The raw error message.
-**stack** | /BLCK/MFI_STACKTRACEELEM_TT (**[array of stacktraceelem](#markdown-header-model-stacktraceelem)**) | M-Files Web Service server-side stack trace.
+**stack** | /BLCK/MFI_STACKTRACEELEM_TT (**[array of StackTraceElement](#markdown-header-model-stacktraceelem)**) | M-Files Web Service server-side stack trace.
 
 * * *
 <a name="markdown-header-model-exceptioninfo2"></a> 
@@ -8081,8 +8081,8 @@ Name | Type | Description
 Name | Type | Description
 ------------ | ------------- | -------------
 **message** | /BLCK/MFI_STRING | The raw error message.
-**inner_exception** | /BLCK/MFI_EXCEPTIONINFO3 (**[exceptioninfo3](#markdown-header-model-exceptioninfo3)**) | 
-**stack** | /BLCK/MFI_STACKTRACEELEM_TT (**[array of stacktraceelem](#markdown-header-model-stacktraceelem)**) | M-Files Web Service server-side stack trace.
+**inner_exception** | /BLCK/MFI_EXCEPTIONINFO3 (**[ExceptionInfo3](#markdown-header-model-exceptioninfo3)**) | 
+**stack** | /BLCK/MFI_STACKTRACEELEM_TT (**[array of StackTraceElement](#markdown-header-model-stacktraceelem)**) | M-Files Web Service server-side stack trace.
 
 * * *
 <a name="markdown-header-model-exception_info"></a> 
@@ -8130,8 +8130,8 @@ Name | Type | Description
 Name | Type | Description
 ------------ | ------------- | -------------
 **message** | /BLCK/MFI_STRING | The raw error message.
-**inner_exception** | /BLCK/MFI_EXCEPTIONINFO2 (**[exceptioninfo2](#markdown-header-model-exceptioninfo2)**) | 
-**stack** | /BLCK/MFI_STACKTRACEELEM_TT (**[array of stacktraceelem](#markdown-header-model-stacktraceelem)**) | M-Files Web Service server-side stack trace.
+**inner_exception** | /BLCK/MFI_EXCEPTIONINFO2 (**[ExceptionInfo2](#markdown-header-model-exceptioninfo2)**) | 
+**stack** | /BLCK/MFI_STACKTRACEELEM_TT (**[array of StackTraceElement](#markdown-header-model-stacktraceelem)**) | M-Files Web Service server-side stack trace.
 
 * * *
 <a name="markdown-header-enum-mfobjectversio"></a> 
@@ -8357,7 +8357,7 @@ Name | Type | Description
 **created_utc** | /BLCK/MFI_STRING | 
 **deleted** | /BLCK/MFI_BOOL | 
 **display_id** | /BLCK/MFI_STRING | 
-**files** | /BLCK/MFI_OBJECT_FILE_TT (**[array of object_file](#markdown-header-model-object_file)**) | 
+**files** | /BLCK/MFI_OBJECT_FILE_TT (**[array of ObjectFile](#markdown-header-model-object_file)**) | 
 **has_assignments** | /BLCK/MFI_BOOL | 
 **hasrelationshipsfromthis** | /BLCK/MFI_BOOL | 
 **has_relationships_to_this** | /BLCK/MFI_BOOL | 
@@ -8365,8 +8365,8 @@ Name | Type | Description
 **last_modified_utc** | /BLCK/MFI_STRING | 
 **object_checked_out** | /BLCK/MFI_BOOL | 
 **objectcheckedouttothisuser** | /BLCK/MFI_BOOL | 
-**object_version_flags** | /BLCK/MFI_MFOBJECTVERSIO (**[mfobjectversio](#markdown-header-enum-mfobjectversio)**) | 
-**obj_ver** | /BLCK/MFI_OBJ_VER (**[obj_ver](#markdown-header-model-obj_ver)**) | 
+**object_version_flags** | /BLCK/MFI_MFOBJECTVERSIO (**[MFObjectVersionFlag](#markdown-header-enum-mfobjectversio)**) | 
+**obj_ver** | /BLCK/MFI_OBJ_VER (**[ObjVer](#markdown-header-model-obj_ver)**) | 
 **single_file** | /BLCK/MFI_BOOL | 
 **thisversionlatesttothisuse** | /BLCK/MFI_BOOL | 
 **title** | /BLCK/MFI_STRING | 
@@ -8430,8 +8430,8 @@ Name | Type | Description
 **name** | /BLCK/MFI_STRING | 
 **name_property_def** | /BLCK/MFI_INT | 
 **workflow** | /BLCK/MFI_INT | 
-**associated_property_defs** | /BLCK/MFI_ASSOCIATEDPROP_TT (**[array of associatedprop](#markdown-header-model-associatedprop)**) | Property definitions associated with this class.
-**templates** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of object_version](#markdown-header-model-object_version)**) | Templates available for use with this class.
+**associated_property_defs** | /BLCK/MFI_ASSOCIATEDPROP_TT (**[array of AssociatedPropertyDef](#markdown-header-model-associatedprop)**) | Property definitions associated with this class.
+**templates** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of ObjectVersion](#markdown-header-model-object_version)**) | Templates available for use with this class.
 
 * * *
 <a name="markdown-header-model-extendedobject"></a> 
@@ -8546,7 +8546,7 @@ Name | Type | Description
 **created_utc** | /BLCK/MFI_STRING | 
 **deleted** | /BLCK/MFI_BOOL | 
 **display_id** | /BLCK/MFI_STRING | 
-**files** | /BLCK/MFI_OBJECT_FILE_TT (**[array of object_file](#markdown-header-model-object_file)**) | 
+**files** | /BLCK/MFI_OBJECT_FILE_TT (**[array of ObjectFile](#markdown-header-model-object_file)**) | 
 **has_assignments** | /BLCK/MFI_BOOL | 
 **hasrelationshipsfromthis** | /BLCK/MFI_BOOL | 
 **has_relationships_to_this** | /BLCK/MFI_BOOL | 
@@ -8554,13 +8554,13 @@ Name | Type | Description
 **last_modified_utc** | /BLCK/MFI_STRING | 
 **object_checked_out** | /BLCK/MFI_BOOL | 
 **objectcheckedouttothisuser** | /BLCK/MFI_BOOL | 
-**object_version_flags** | /BLCK/MFI_MFOBJECTVERSIO (**[mfobjectversio](#markdown-header-enum-mfobjectversio)**) | 
-**obj_ver** | /BLCK/MFI_OBJ_VER (**[obj_ver](#markdown-header-model-obj_ver)**) | 
+**object_version_flags** | /BLCK/MFI_MFOBJECTVERSIO (**[MFObjectVersionFlag](#markdown-header-enum-mfobjectversio)**) | 
+**obj_ver** | /BLCK/MFI_OBJ_VER (**[ObjVer](#markdown-header-model-obj_ver)**) | 
 **single_file** | /BLCK/MFI_BOOL | 
 **thisversionlatesttothisuse** | /BLCK/MFI_BOOL | 
 **title** | /BLCK/MFI_STRING | 
 **visible_after_operation** | /BLCK/MFI_BOOL | 
-**properties** | /BLCK/MFI_PROPERTY_VALUE_TT (**[array of property_value](#markdown-header-model-property_value)**) | Object properties
+**properties** | /BLCK/MFI_PROPERTY_VALUE_TT (**[array of PropertyValue](#markdown-header-model-property_value)**) | Object properties
 
 * * *
 <a name="markdown-header-enum-mffolderconten"></a> 
@@ -8670,7 +8670,7 @@ Name | Value | Constant
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**overlapped_folder** | /BLCK/MFI_TYPED_VALUE (**[typed_value](#markdown-header-model-typed_value)**) | 
+**overlapped_folder** | /BLCK/MFI_TYPED_VALUE (**[TypedValue](#markdown-header-model-typed_value)**) | 
 **overlapping** | /BLCK/MFI_BOOL | 
 
 * * *
@@ -8729,7 +8729,7 @@ Name | Type | Description
 **id** | /BLCK/MFI_INT | 
 **name** | /BLCK/MFI_STRING | 
 **parent** | /BLCK/MFI_INT | 
-**view_location** | /BLCK/MFI_VIEW_LOCATION (**[view_location](#markdown-header-model-view_location)**) | 
+**view_location** | /BLCK/MFI_VIEW_LOCATION (**[ViewLocation](#markdown-header-model-view_location)**) | 
 
 * * *
 <a name="markdown-header-model-foldercontent2"></a> 
@@ -8783,11 +8783,11 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**folder_content_item_type** | /BLCK/MFI_MFFOLDERCONTEN (**[mffolderconten](#markdown-header-enum-mffolderconten)**) | 
-**object_version** | /BLCK/MFI_OBJECT_VERSION (**[object_version](#markdown-header-model-object_version)**) | 
-**property_folder** | /BLCK/MFI_TYPED_VALUE (**[typed_value](#markdown-header-model-typed_value)**) | 
-**traditional_folder** | /BLCK/MFI_LOOKUP (**[lookup](#markdown-header-model-lookup)**) | 
-**view** | /BLCK/MFI_VIEW (**[view](#markdown-header-model-view)**) | 
+**folder_content_item_type** | /BLCK/MFI_MFFOLDERCONTEN (**[MFFolderContentItemType](#markdown-header-enum-mffolderconten)**) | 
+**object_version** | /BLCK/MFI_OBJECT_VERSION (**[ObjectVersion](#markdown-header-model-object_version)**) | 
+**property_folder** | /BLCK/MFI_TYPED_VALUE (**[TypedValue](#markdown-header-model-typed_value)**) | 
+**traditional_folder** | /BLCK/MFI_LOOKUP (**[Lookup](#markdown-header-model-lookup)**) | 
+**view** | /BLCK/MFI_VIEW (**[View](#markdown-header-model-view)**) | 
 
 * * *
 <a name="markdown-header-model-foldercontenti"></a> 
@@ -8837,7 +8837,7 @@ Name | Type | Description
 ------------ | ------------- | -------------
 **path** | /BLCK/MFI_STRING | The path to the current folder.
 **more_results** | /BLCK/MFI_BOOL | Specifies whether there are more results in the folder.
-**items** | /BLCK/MFI_FOLDERCONTENT2_TT (**[array of foldercontent2](#markdown-header-model-foldercontent2)**) | The actual folder contents.
+**items** | /BLCK/MFI_FOLDERCONTENT2_TT (**[array of FolderContentItem](#markdown-header-model-foldercontent2)**) | The actual folder contents.
 
 * * *
 <a name="markdown-header-enum-mf_auth_type"></a> 
@@ -9466,8 +9466,8 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**property_values** | /BLCK/MFI_PROPERTY_VALUE_TT (**[array of property_value](#markdown-header-model-property_value)**) | Properties for the new object.
-**files** | /BLCK/MFI_UPLOAD_INFO_TT (**[array of upload_info](#markdown-header-model-upload_info)**) | References previously uploaded files.
+**property_values** | /BLCK/MFI_PROPERTY_VALUE_TT (**[array of PropertyValue](#markdown-header-model-property_value)**) | Properties for the new object.
+**files** | /BLCK/MFI_UPLOAD_INFO_TT (**[array of UploadInfo](#markdown-header-model-upload_info)**) | References previously uploaded files.
 
 * * *
 <a name="markdown-header-model-objectversionu"></a> 
@@ -9577,7 +9577,7 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**properties** | /BLCK/MFI_PROPERTY_VALUE_TT (**[array of property_value](#markdown-header-model-property_value)**) | Object properties
+**properties** | /BLCK/MFI_PROPERTY_VALUE_TT (**[array of PropertyValue](#markdown-header-model-property_value)**) | Object properties
 **accessed_by_me_utc** | /BLCK/MFI_STRING | 
 **checked_out_at_utc** | /BLCK/MFI_STRING | 
 **checked_out_to** | /BLCK/MFI_INT | 
@@ -9586,7 +9586,7 @@ Name | Type | Description
 **created_utc** | /BLCK/MFI_STRING | 
 **deleted** | /BLCK/MFI_BOOL | 
 **display_id** | /BLCK/MFI_STRING | 
-**files** | /BLCK/MFI_OBJECT_FILE_TT (**[array of object_file](#markdown-header-model-object_file)**) | 
+**files** | /BLCK/MFI_OBJECT_FILE_TT (**[array of ObjectFile](#markdown-header-model-object_file)**) | 
 **has_assignments** | /BLCK/MFI_BOOL | 
 **hasrelationshipsfromthis** | /BLCK/MFI_BOOL | 
 **has_relationships_to_this** | /BLCK/MFI_BOOL | 
@@ -9594,8 +9594,8 @@ Name | Type | Description
 **last_modified_utc** | /BLCK/MFI_STRING | 
 **object_checked_out** | /BLCK/MFI_BOOL | 
 **objectcheckedouttothisuser** | /BLCK/MFI_BOOL | 
-**object_version_flags** | /BLCK/MFI_MFOBJECTVERSIO (**[mfobjectversio](#markdown-header-enum-mfobjectversio)**) | 
-**obj_ver** | /BLCK/MFI_OBJ_VER (**[obj_ver](#markdown-header-model-obj_ver)**) | 
+**object_version_flags** | /BLCK/MFI_MFOBJECTVERSIO (**[MFObjectVersionFlag](#markdown-header-enum-mfobjectversio)**) | 
+**obj_ver** | /BLCK/MFI_OBJ_VER (**[ObjVer](#markdown-header-model-obj_ver)**) | 
 **single_file** | /BLCK/MFI_BOOL | 
 **thisversionlatesttothisuse** | /BLCK/MFI_BOOL | 
 **title** | /BLCK/MFI_STRING | 
@@ -9643,7 +9643,7 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**multiple_object_info** | /BLCK/MFI_OBJECTVERSIONU (**[objectversionu](#markdown-header-model-objectversionu)**) | 
+**multiple_object_info** | /BLCK/MFI_OBJECTVERSIONU (**[ObjectVersionUpdateInformation](#markdown-header-model-objectversionu)**) | 
 
 * * *
 <a name="markdown-header-model-objectworkflow"></a> 
@@ -9702,10 +9702,10 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**state** | /BLCK/MFI_PROPERTY_VALUE (**[property_value](#markdown-header-model-property_value)**) | 
+**state** | /BLCK/MFI_PROPERTY_VALUE (**[PropertyValue](#markdown-header-model-property_value)**) | 
 **state_id** | /BLCK/MFI_INT | The workflow state ID.
 **state_name** | /BLCK/MFI_STRING | The workflow state name.
-**workflow** | /BLCK/MFI_PROPERTY_VALUE (**[property_value](#markdown-header-model-property_value)**) | 
+**workflow** | /BLCK/MFI_PROPERTY_VALUE (**[PropertyValue](#markdown-header-model-property_value)**) | 
 **workflow_id** | /BLCK/MFI_INT | The workflow ID.
 **workflow_name** | /BLCK/MFI_STRING | The workflow name.
 **version_comment** | /BLCK/MFI_STRING | Version comment defined on the workflow transition.
@@ -9934,9 +9934,9 @@ Name | Type | Description
 ------------ | ------------- | -------------
 **all_object_types** | /BLCK/MFI_BOOL | 
 **automatic_value** | /BLCK/MFI_STRING | 
-**automatic_value_type** | /BLCK/MFI_MFAUTOMATICVAL (**[mfautomaticval](#markdown-header-enum-mfautomaticval)**) | 
+**automatic_value_type** | /BLCK/MFI_MFAUTOMATICVAL (**[MFAutomaticValueType](#markdown-header-enum-mfautomaticval)**) | 
 **based_on_value_list** | /BLCK/MFI_BOOL | 
-**data_type** | /BLCK/MFI_MF_DATA_TYPE (**[mf_data_type](#markdown-header-enum-mf_data_type)**) | 
+**data_type** | /BLCK/MFI_MF_DATA_TYPE (**[MFDataType](#markdown-header-enum-mf_data_type)**) | 
 **id** | /BLCK/MFI_INT | 
 **name** | /BLCK/MFI_STRING | 
 **object_type** | /BLCK/MFI_INT | 
@@ -10001,7 +10001,7 @@ Name | Type | Description
 **is_new_value** | /BLCK/MFI_BOOL | 
 **property_def** | /BLCK/MFI_STRING | 
 **quality** | /BLCK/MFI_INT | 
-**typed_value** | /BLCK/MFI_TYPED_VALUE (**[typed_value](#markdown-header-model-typed_value)**) | 
+**typed_value** | /BLCK/MFI_TYPED_VALUE (**[TypedValue](#markdown-header-model-typed_value)**) | 
 
 * * *
 <a name="markdown-header-model-public_key"></a> 
@@ -10099,7 +10099,7 @@ Name | Type | Description
 Name | Type | Description
 ------------ | ------------- | -------------
 **account_name** | /BLCK/MFI_STRING | Account name used for authentication.
-**extensionauthenticationspe** | /BLCK/MFI_MFEXTENSIONAUT (**[mfextensionaut](#markdown-header-enum-mfextensionaut)**) | 
+**extensionauthenticationspe** | /BLCK/MFI_MFEXTENSIONAUT (**[MFExtensionAuthenticationSpecialUserType](#markdown-header-enum-mfextensionaut)**) | 
 **target_id** | /BLCK/MFI_STRING | ID of the target repository.
 **user_id** | /BLCK/MFI_INT | ID of the authenticated M-Files user.
 
@@ -10223,9 +10223,9 @@ Name | Type | Description
 **display_name** | /BLCK/MFI_STRING | Display name of the target repository.
 **icon_id** | /BLCK/MFI_STRING | Icon id of the target repository.
 **id** | /BLCK/MFI_STRING | ID of the target repository.
-**plugin_info_configurations** | /BLCK/MFI_PLUGININFOCONF (**[plugininfoconf](#markdown-header-model-plugininfoconf)**) | 
+**plugin_info_configurations** | /BLCK/MFI_PLUGININFOCONF (**[PluginInfoConfiguration](#markdown-header-model-plugininfoconf)**) | 
 **requiresuserspecificauthen** | /BLCK/MFI_STRING | Flag indicating if user specific authentication is required.
-**repositoryauthenticationst** | /BLCK/MFI_REPOSITORYAUT2 (**[repositoryaut2](#markdown-header-model-repositoryaut2)**) | 
+**repositoryauthenticationst** | /BLCK/MFI_REPOSITORYAUT2 (**[RepositoryAuthenticationStatus](#markdown-header-model-repositoryaut2)**) | 
 
 * * *
 <a name="markdown-header-model-resultsobjectv"></a> 
@@ -10270,7 +10270,7 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**items** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of object_version](#markdown-header-model-object_version)**) | Contains results of a query
+**items** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of ObjectVersion](#markdown-header-model-object_version)**) | Contains results of a query
 **more_results** | /BLCK/MFI_BOOL | True if there were more results which were left out.
 
 * * *
@@ -10386,7 +10386,7 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**items** | /BLCK/MFI_VALUELISTITEM_TT (**[array of valuelistitem](#markdown-header-model-valuelistitem)**) | Contains results of a query
+**items** | /BLCK/MFI_VALUELISTITEM_TT (**[array of ValueListItem](#markdown-header-model-valuelistitem)**) | Contains results of a query
 **more_results** | /BLCK/MFI_BOOL | True if there were more results which were left out.
 
 * * *
@@ -10466,8 +10466,8 @@ Name | Type | Description
 Name | Type | Description
 ------------ | ------------- | -------------
 **account_name** | /BLCK/MFI_STRING | 
-**acl_mode** | /BLCK/MFI_MFACL_MODE (**[mfacl_mode](#markdown-header-enum-mfacl_mode)**) | 
-**authentication_type** | /BLCK/MFI_MF_AUTH_TYPE (**[mf_auth_type](#markdown-header-enum-mf_auth_type)**) | 
+**acl_mode** | /BLCK/MFI_MFACL_MODE (**[MFACLMode](#markdown-header-enum-mfacl_mode)**) | 
+**authentication_type** | /BLCK/MFI_MF_AUTH_TYPE (**[MFAuthType](#markdown-header-enum-mf_auth_type)**) | 
 **can_force_undo_checkout** | /BLCK/MFI_BOOL | 
 **canmanagecommonuisettings** | /BLCK/MFI_BOOL | 
 **can_manage_common_views** | /BLCK/MFI_BOOL | 
@@ -10624,10 +10624,10 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**last_modified_by** | /BLCK/MFI_PROPERTY_VALUE (**[property_value](#markdown-header-model-property_value)**) | 
-**obj_ver** | /BLCK/MFI_OBJ_VER (**[obj_ver](#markdown-header-model-obj_ver)**) | 
-**status_changed** | /BLCK/MFI_PROPERTY_VALUE (**[property_value](#markdown-header-model-property_value)**) | 
-**comment** | /BLCK/MFI_PROPERTY_VALUE (**[property_value](#markdown-header-model-property_value)**) | 
+**last_modified_by** | /BLCK/MFI_PROPERTY_VALUE (**[PropertyValue](#markdown-header-model-property_value)**) | 
+**obj_ver** | /BLCK/MFI_OBJ_VER (**[ObjVer](#markdown-header-model-obj_ver)**) | 
+**status_changed** | /BLCK/MFI_PROPERTY_VALUE (**[PropertyValue](#markdown-header-model-property_value)**) | 
+**comment** | /BLCK/MFI_PROPERTY_VALUE (**[PropertyValue](#markdown-header-model-property_value)**) | 
 
 * * *
 <a name="markdown-header-model-webserviceerro"></a> 
@@ -10681,7 +10681,7 @@ Name | Type | Description
 **status** | /BLCK/MFI_INT | HTTP Status code
 **url** | /BLCK/MFI_STRING | The request URL which caused this error.
 **method** | /BLCK/MFI_STRING | The request method.
-**exception** | /BLCK/MFI_EXCEPTION_INFO (**[exception_info](#markdown-header-model-exception_info)**) | 
+**exception** | /BLCK/MFI_EXCEPTION_INFO (**[ExceptionInfo](#markdown-header-model-exception_info)**) | 
 
 * * *
 <a name="markdown-header-model-workflow"></a> 

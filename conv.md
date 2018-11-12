@@ -1473,12 +1473,12 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**job_id** | /BLCK/CNV_JOB_ID (**[job_id](#markdown-header-model-job_id)**) | 
-**job_status** | /BLCK/CNV_JOBSTATUSENUM (**[jobstatusenum](#markdown-header-enum-jobstatusenum)**) | 
+**job_id** | /BLCK/CNV_JOB_ID (**[JobId](#markdown-header-model-job_id)**) | 
+**job_status** | /BLCK/CNV_JOBSTATUSENUM (**[JobStatusEnum](#markdown-header-enum-jobstatusenum)**) | 
 **creation_date** | /BLCK/CNV_INT | Time stamp of creation date
-**job_ticket** | /BLCK/CNV_JOB_TICKET (**[job_ticket](#markdown-header-model-job_ticket)**) | 
-**input** | /BLCK/CNV_INPUT_FILE_TT (**[array of input_file](#markdown-header-model-input_file)**) | input file list
-**output** | /BLCK/CNV_OUTPUT_FILE_TT (**[array of output_file](#markdown-header-model-output_file)**) | generated output file list
+**job_ticket** | /BLCK/CNV_JOB_TICKET (**[JobTicket](#markdown-header-model-job_ticket)**) | 
+**input** | /BLCK/CNV_INPUT_FILE_TT (**[array of InputFile](#markdown-header-model-input_file)**) | input file list
+**output** | /BLCK/CNV_OUTPUT_FILE_TT (**[array of OutputFile](#markdown-header-model-output_file)**) | generated output file list
 
 * * *
 <a name="markdown-header-model-job_status"></a> 
@@ -1526,7 +1526,7 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**job_id** | /BLCK/CNV_JOB_ID (**[job_id](#markdown-header-model-job_id)**) | 
-**job_status** | /BLCK/CNV_JOBSTATUSENUM (**[jobstatusenum](#markdown-header-enum-jobstatusenum)**) | 
-**output** | /BLCK/CNV_OUTPUT_FILE_TT (**[array of output_file](#markdown-header-model-output_file)**) | generated output file list
+**job_id** | /BLCK/CNV_JOB_ID (**[JobId](#markdown-header-model-job_id)**) | 
+**job_status** | /BLCK/CNV_JOBSTATUSENUM (**[JobStatusEnum](#markdown-header-enum-jobstatusenum)**) | 
+**output** | /BLCK/CNV_OUTPUT_FILE_TT (**[array of OutputFile](#markdown-header-model-output_file)**) | generated output file list
 

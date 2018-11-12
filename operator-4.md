@@ -262,7 +262,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_REPO_ENTRY_TT (**[array of repo_entry](#markdown-header-model-repo_entry)**) | OK, collection of entries is returned.
+ 200 | **e_200** | /BLCK/OP4_REPO_ENTRY_TT (**[array of RepoEntry](#markdown-header-model-repo_entry)**) | OK, collection of entries is returned.
  401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
  403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
  404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide a repository
@@ -1269,7 +1269,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_REPO_ENTRY_TT (**[array of repo_entry](#markdown-header-model-repo_entry)**) | OK, collection of entries is returned.
+ 200 | **e_200** | /BLCK/OP4_REPO_ENTRY_TT (**[array of RepoEntry](#markdown-header-model-repo_entry)**) | OK, collection of entries is returned.
  401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
  403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
  404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide a repository
@@ -1927,14 +1927,14 @@ A PUT call to this route returns an array with status and output listItems for a
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/OP4_CID_TASKDATA_TTT (**[array of cid_taskdata](#markdown-header-model-cid_taskdata)**) | List of task cids for which to retrieve status 
+ **i_body** | /BLCK/OP4_CID_TASKDATA_TTT (**[array of CidTaskdata](#markdown-header-model-cid_taskdata)**) | List of task cids for which to retrieve status 
  **i_sid** | /BLCK/OP4_STRING | ID of the Service managing the current Task 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_CID_STATUS_TT (**[array of cid_status](#markdown-header-model-cid_status)**) | OK, array of task data for update is returned.
+ 200 | **e_200** | /BLCK/OP4_CID_STATUS_TT (**[array of CidStatus](#markdown-header-model-cid_status)**) | OK, array of task data for update is returned.
  401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
  403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service list. 
  409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
@@ -2026,7 +2026,7 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_PANEL_ITEM_TT (**[array of panel_item](#markdown-header-model-panel_item)**) | OK, list of UI panel configurations returned.
+ 200 | **e_200** | /BLCK/OP4_PANEL_ITEM_TT (**[array of PanelItem](#markdown-header-model-panel_item)**) | OK, list of UI panel configurations returned.
  401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
  403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
  500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
@@ -2402,7 +2402,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_REPO_ENTRY_TT (**[array of repo_entry](#markdown-header-model-repo_entry)**) | OK, collection of entries is returned.
+ 200 | **e_200** | /BLCK/OP4_REPO_ENTRY_TT (**[array of RepoEntry](#markdown-header-model-repo_entry)**) | OK, collection of entries is returned.
  401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
  403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
  404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide a repository
@@ -3913,7 +3913,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST_TT (**[array of list](#markdown-header-model-list)**) | OK, collection of lists is returned.
+ 200 | **e_200** | /BLCK/OP4_LIST_TT (**[array of List](#markdown-header-model-list)**) | OK, collection of lists is returned.
  401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
  403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
  404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | No lists available
@@ -4262,7 +4262,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST_ITEM_TT (**[array of list_item](#markdown-header-model-list_item)**) | OK, collection of list items is returned.
+ 200 | **e_200** | /BLCK/OP4_LIST_ITEM_TT (**[array of ListItem](#markdown-header-model-list_item)**) | OK, collection of list items is returned.
  401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
  403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
  404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
@@ -5371,7 +5371,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_MESSAGE_TT (**[array of message](#markdown-header-model-message)**) | OK, list of entries is returned.
+ 200 | **e_200** | /BLCK/OP4_MESSAGE_TT (**[array of Message](#markdown-header-model-message)**) | OK, list of entries is returned.
  401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
  404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide messages
  500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
@@ -5697,7 +5697,7 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_CONFIG_ITEM_TT (**[array of config_item](#markdown-header-model-config_item)**) | OK, list of UI panel configurations returned.
+ 200 | **e_200** | /BLCK/OP4_CONFIG_ITEM_TT (**[array of ConfigItem](#markdown-header-model-config_item)**) | OK, list of UI panel configurations returned.
  401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
  403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
  500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
@@ -6205,7 +6205,7 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_PANEL_ITEM_TT (**[array of panel_item](#markdown-header-model-panel_item)**) | OK, list of UI panel configurations returned.
+ 200 | **e_200** | /BLCK/OP4_PANEL_ITEM_TT (**[array of PanelItem](#markdown-header-model-panel_item)**) | OK, list of UI panel configurations returned.
  401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
  403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
  500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
@@ -6400,7 +6400,7 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_SERVICE_TT (**[array of service](#markdown-header-model-service)**) | OK, collection of services is returned.
+ 200 | **e_200** | /BLCK/OP4_SERVICE_TT (**[array of Service](#markdown-header-model-service)**) | OK, collection of services is returned.
  401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
  403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service list. 
  500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
@@ -6760,7 +6760,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_TASK_TT (**[array of task](#markdown-header-model-task)**) | OK, collection of tasks or count is returned. Example for count: &#x60;&#x60;&#x60; {   count: 0 } &#x60;&#x60;&#x60; 
+ 200 | **e_200** | /BLCK/OP4_TASK_TT (**[array of Task](#markdown-header-model-task)**) | OK, collection of tasks or count is returned. Example for count: &#x60;&#x60;&#x60; {   count: 0 } &#x60;&#x60;&#x60; 
  401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
  403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
  404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
@@ -8906,7 +8906,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_TASK_TT (**[array of task](#markdown-header-model-task)**) | OK, collection of tasks or count is returned. Example for count: &#x60;&#x60;&#x60; {   count: 0 } &#x60;&#x60;&#x60; 
+ 200 | **e_200** | /BLCK/OP4_TASK_TT (**[array of Task](#markdown-header-model-task)**) | OK, collection of tasks or count is returned. Example for count: &#x60;&#x60;&#x60; {   count: 0 } &#x60;&#x60;&#x60; 
  401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
  403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
  404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
@@ -9094,7 +9094,7 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**action** | /BLCK/OP4_ACTION (**[action](#markdown-header-model-action)**) | 
+**action** | /BLCK/OP4_ACTION (**[Action](#markdown-header-model-action)**) | 
 **data** | /BLCK/OP4_STRING | Data depending on the action. - start: &#x60;data&#x60; contains complete task data in operator-server internal structure - abort: &#x60;data&#x60; contains tid and cids part of task data to abort - pause: &#x60;data&#x60; contains tid and cids part of task data to pause - resume: &#x60;data&#x60; contains tid and cids part of task data to resume 
 
 * * *
@@ -9268,12 +9268,12 @@ Name | Value | Constant
 Name | Type | Description
 ------------ | ------------- | -------------
 **tid** | /BLCK/OP4_STRING | 
-**status** | /BLCK/OP4_STATUS_TYPE (**[status_type](#markdown-header-enum-status_type)**) | 
+**status** | /BLCK/OP4_STATUS_TYPE (**[StatusType](#markdown-header-enum-status_type)**) | 
 **started** | /BLCK/OP4_INT | Timestamp when the cid job started
 **finished** | /BLCK/OP4_INT | Timestamp when the cid job finished
-**cids** | /BLCK/OP4_CID_TT (**[array of cid](#markdown-header-model-cid)**) | list of cid&#x27;s
+**cids** | /BLCK/OP4_CID_TT (**[array of CID](#markdown-header-model-cid)**) | list of cid&#x27;s
 **cstats** | /BLCK/OP4_STRING_TT | list with status for each cid
-**list_items** | /BLCK/OP4_LIST_ITEM_TT (**[array of list_item](#markdown-header-model-list_item)**) | Output documents list
+**list_items** | /BLCK/OP4_LIST_ITEM_TT (**[array of ListItem](#markdown-header-model-list_item)**) | Output documents list
 
 * * *
 <a name="markdown-header-model-cid_taskdata"></a> 
@@ -9319,7 +9319,7 @@ Name | Type | Description
 Name | Type | Description
 ------------ | ------------- | -------------
 **tid** | /BLCK/OP4_STRING | Task id
-**cids** | /BLCK/OP4_CID_TT (**[array of cid](#markdown-header-model-cid)**) | list of cid&#x27;s
+**cids** | /BLCK/OP4_CID_TT (**[array of CID](#markdown-header-model-cid)**) | list of cid&#x27;s
 
 * * *
 <a name="markdown-header-model-command"></a> 
@@ -9415,8 +9415,8 @@ Name | Type | Description
 Name | Type | Description
 ------------ | ------------- | -------------
 **cid** | /BLCK/OP4_STRING | 
-**status** | /BLCK/OP4_STATUS_TYPE (**[status_type](#markdown-header-enum-status_type)**) | 
-**command** | /BLCK/OP4_COMMAND (**[command](#markdown-header-model-command)**) | 
+**status** | /BLCK/OP4_STATUS_TYPE (**[StatusType](#markdown-header-enum-status_type)**) | 
+**command** | /BLCK/OP4_COMMAND (**[Command](#markdown-header-model-command)**) | 
 
 * * *
 <a name="markdown-header-model-config_item"></a> 
@@ -9982,7 +9982,7 @@ Name | Type | Description
 **finished** | /BLCK/OP4_INT | Timestamp of task finished
 **input_list_length** | /BLCK/OP4_INT | Number of items in input list
 **output_list_length** | /BLCK/OP4_INT | Number of items in output list
-**status** | /BLCK/OP4_STATUS_TYPE (**[status_type](#markdown-header-enum-status_type)**) | 
+**status** | /BLCK/OP4_STATUS_TYPE (**[StatusType](#markdown-header-enum-status_type)**) | 
 **links** | /BLCK/OP4_STRING | If requested, the links section contains hrefs to - \&quot;self\&quot;: the Task itself - \&quot;input\&quot;: input documents - \&quot;output\&quot;: output documents 
 **embedded** | /BLCK/OP4_STRING | Embedded sub-ressources or sub-collections, as requested throught the \&quot;embed\&quot; query parameter 
 

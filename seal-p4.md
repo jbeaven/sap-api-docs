@@ -874,7 +874,7 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P4_PRINTER_TT (**[array of printer](#markdown-header-model-printer)**) | OK, array of printer objects is returned
+ 200 | **e_200** | /BLCK/P4_PRINTER_TT (**[array of Printer](#markdown-header-model-printer)**) | OK, array of printer objects is returned
  401 | **e_401** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
  403 | **e_403** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights. 
  500 | **e_500** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
@@ -1118,7 +1118,7 @@ Name | Value | Constant
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**status** | /BLCK/P4_STATUS_TYPE (**[status_type](#markdown-header-enum-status_type)**) | 
+**status** | /BLCK/P4_STATUS_TYPE (**[StatusType](#markdown-header-enum-status_type)**) | 
 
 * * *
 <a name="markdown-header-model-jobstatusevent"></a> 

@@ -226,7 +226,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/PET_PET_TT (**[array of pet](#markdown-header-model-pet)**) | successful operation
+ 200 | **e_200** | /BLCK/PET_PET_TT (**[array of Pet](#markdown-header-model-pet)**) | successful operation
  400 | value not returned |  | Invalid status value
 
 ### HTTP request headers
@@ -308,7 +308,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/PET_PET_TT (**[array of pet](#markdown-header-model-pet)**) | successful operation
+ 200 | **e_200** | /BLCK/PET_PET_TT (**[array of Pet](#markdown-header-model-pet)**) | successful operation
  400 | value not returned |  | Invalid tag value
 
 ### HTTP request headers
@@ -1098,7 +1098,7 @@ Creates list of users with given input array
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/PET_USER_TTT (**[array of user](#markdown-header-model-user)**) | List of user object 
+ **i_body** | /BLCK/PET_USER_TTT (**[array of User](#markdown-header-model-user)**) | List of user object 
 
 ### Return types
 
@@ -1169,7 +1169,7 @@ Creates list of users with given input array
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/PET_USER_TTT (**[array of user](#markdown-header-model-user)**) | List of user object 
+ **i_body** | /BLCK/PET_USER_TTT (**[array of User](#markdown-header-model-user)**) | List of user object 
 
 ### Return types
 
@@ -1820,10 +1820,10 @@ Name | Type | Description
 Name | Type | Description
 ------------ | ------------- | -------------
 **id** | /BLCK/PET_INT | 
-**category** | /BLCK/PET_CATEGORY (**[category](#markdown-header-model-category)**) | 
+**category** | /BLCK/PET_CATEGORY (**[Category](#markdown-header-model-category)**) | 
 **name** | /BLCK/PET_STRING | 
 **photo_urls** | /BLCK/PET_STRING_TT | 
-**tags** | /BLCK/PET_TAG_TT (**[array of tag](#markdown-header-model-tag)**) | 
+**tags** | /BLCK/PET_TAG_TT (**[array of Tag](#markdown-header-model-tag)**) | 
 **status** | /BLCK/PET_STRING | pet status in the store
 
 * * *

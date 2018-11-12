@@ -565,5 +565,5 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**value** | /BLCK/SP_SEAL_DOC_TT (**[array of seal_doc](#markdown-header-model-seal_doc)**) | 
+**value** | /BLCK/SP_SEAL_DOC_TT (**[array of SEALDoc](#markdown-header-model-seal_doc)**) | 
 

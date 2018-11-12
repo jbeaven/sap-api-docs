@@ -225,7 +225,7 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**cells** | /BLCK/SPS_CELLS_TT (**[array of cells](#markdown-header-model-cells)**) | 
+**cells** | /BLCK/SPS_CELLS_TT (**[array of Cells](#markdown-header-model-cells)**) | 
 
 * * *
 <a name="markdown-header-model-table"></a> 
@@ -267,7 +267,7 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**rows** | /BLCK/SPS_ROWS_TT (**[array of rows](#markdown-header-model-rows)**) | 
+**rows** | /BLCK/SPS_ROWS_TT (**[array of Rows](#markdown-header-model-rows)**) | 
 
 * * *
 <a name="markdown-header-model-relevantresult"></a> 
@@ -335,11 +335,11 @@ Name | Type | Description
 ------------ | ------------- | -------------
 **group_template_id** | /BLCK/SPS_STRING | 
 **item_template_id** | /BLCK/SPS_STRING | 
-**properties** | /BLCK/SPS_PROPERTIES_TT (**[array of properties](#markdown-header-model-properties)**) | 
+**properties** | /BLCK/SPS_PROPERTIES_TT (**[array of Properties](#markdown-header-model-properties)**) | 
 **result_title** | /BLCK/SPS_STRING | 
 **result_title_url** | /BLCK/SPS_STRING | 
 **row_count** | /BLCK/SPS_INT | 
-**table** | /BLCK/SPS_TABLE (**[table](#markdown-header-model-table)**) | 
+**table** | /BLCK/SPS_TABLE (**[Table](#markdown-header-model-table)**) | 
 **total_rows** | /BLCK/SPS_INT | 
 **totalrowsincludingduplicat** | /BLCK/SPS_INT | 
 
@@ -402,7 +402,7 @@ Name | Type | Description
 **query_id** | /BLCK/SPS_STRING | 
 **query_rule_id** | /BLCK/SPS_STRING | 
 **refinement_results** | /BLCK/SPS_STRING | 
-**relevant_results** | /BLCK/SPS_RELEVANTRESULT (**[relevantresult](#markdown-header-model-relevantresult)**) | 
+**relevant_results** | /BLCK/SPS_RELEVANTRESULT (**[RelevantResults](#markdown-header-model-relevantresult)**) | 
 **special_term_results** | /BLCK/SPS_STRING | 
 
 * * *
@@ -515,8 +515,8 @@ Name | Type | Description
 ------------ | ------------- | -------------
 **elapsed_time** | /BLCK/SPS_INT | 
 **odata_metadata** | /BLCK/SPS_STRING | 
-**primary_query_result** | /BLCK/SPS_PRIMARYQUERYRE (**[primaryqueryre](#markdown-header-model-primaryqueryre)**) | 
-**properties** | /BLCK/SPS_PROPERTIES2_TT (**[array of properties2](#markdown-header-model-properties2)**) | 
+**primary_query_result** | /BLCK/SPS_PRIMARYQUERYRE (**[PrimaryQueryResult](#markdown-header-model-primaryqueryre)**) | 
+**properties** | /BLCK/SPS_PROPERTIES2_TT (**[array of Properties2](#markdown-header-model-properties2)**) | 
 **secondary_query_results** | /BLCK/SPS_STRING_TT | 
 **spelling_suggestion** | /BLCK/SPS_STRING | 
 **triggered_rules** | /BLCK/SPS_STRING_TT | 

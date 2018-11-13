@@ -7818,14 +7818,14 @@ HTTP Code | Name | Type | Description
     gr_associatedprop-required = 'X'. " (type /BLCK/MFI_BOOL)
     
 * pass to example API method
-    gcl_exampleapi->update_associatedprop(
+    /blck/cl_example_api=>update_associatedprop(
       exporting
         i_associatedprop = gr_associatedprop ).
     		
     clear gr_associatedprop.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_associatedprop(
+    /blck/cl_example_api=>get_associatedprop(
       exporting
         i_id = 1
       importing 
@@ -7871,14 +7871,14 @@ Name | Type | Description
     gr_authentication-method = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_authentication(
+    /blck/cl_example_api=>update_authentication(
       exporting
         i_authentication = gr_authentication ).
     		
     clear gr_authentication.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_authentication(
+    /blck/cl_example_api=>get_authentication(
       exporting
         i_id = 1
       importing 
@@ -7936,14 +7936,14 @@ Name | Type | Description
     gr_obj_ver-externalrepositoryobjectve = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_obj_ver(
+    /blck/cl_example_api=>update_obj_ver(
       exporting
         i_obj_ver = gr_obj_ver ).
     		
     clear gr_obj_ver.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_obj_ver(
+    /blck/cl_example_api=>get_obj_ver(
       exporting
         i_id = 1
       importing 
@@ -7992,14 +7992,14 @@ Name | Type | Description
     gr_lookup-version = 42. " (type /BLCK/MFI_INT)
     
 * pass to example API method
-    gcl_exampleapi->update_lookup(
+    /blck/cl_example_api=>update_lookup(
       exporting
         i_lookup = gr_lookup ).
     		
     clear gr_lookup.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_lookup(
+    /blck/cl_example_api=>get_lookup(
       exporting
         i_id = 1
       importing 
@@ -8045,14 +8045,14 @@ Name | Type | Description
     gv_mf_data_type = /blck/mfi_cl_model=>mf_data_type-uninitialized.
     
 * pass the enum value to the example API via method
-    gcl_exampleapi->set_mf_data_type_state(
+    /blck/cl_example_api=>set_mf_data_type_state(
       exporting
         i_mf_data_type = gv_mf_data_type ).
     		
     clear gv_mf_data_type.
     
 * fetch result from example API method
-    gcl_exampleapi->get_mf_data_type_state(
+    /blck/cl_example_api=>get_mf_data_type_state(
       exporting
         i_id = 1
       importing
@@ -8141,14 +8141,14 @@ Name | Value | Constant
     gr_typed_value-serialized_value = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_typed_value(
+    /blck/cl_example_api=>update_typed_value(
       exporting
         i_typed_value = gr_typed_value ).
     		
     clear gr_typed_value.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_typed_value(
+    /blck/cl_example_api=>get_typed_value(
       exporting
         i_id = 1
       importing 
@@ -8198,14 +8198,14 @@ Name | Type | Description
     gr_property_value-typed_value = l_typed_value. " (type /BLCK/MFI_TYPED_VALUE)
     
 * pass to example API method
-    gcl_exampleapi->update_property_value(
+    /blck/cl_example_api=>update_property_value(
       exporting
         i_property_value = gr_property_value ).
     		
     clear gr_property_value.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_property_value(
+    /blck/cl_example_api=>get_property_value(
       exporting
         i_id = 1
       importing 
@@ -8248,14 +8248,14 @@ Name | Type | Description
     gr_automaticmetad-custom_data = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_automaticmetad(
+    /blck/cl_example_api=>update_automaticmetad(
       exporting
         i_automaticmetad = gr_automaticmetad ).
     		
     clear gr_automaticmetad.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_automaticmetad(
+    /blck/cl_example_api=>get_automaticmetad(
       exporting
         i_id = 1
       importing 
@@ -8300,14 +8300,14 @@ Name | Type | Description
     gr_class_group-name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_class_group(
+    /blck/cl_example_api=>update_class_group(
       exporting
         i_class_group = gr_class_group ).
     		
     clear gr_class_group.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_class_group(
+    /blck/cl_example_api=>get_class_group(
       exporting
         i_id = 1
       importing 
@@ -8345,14 +8345,14 @@ Name | Type | Description
     gr_stacktraceelem-method_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_stacktraceelem(
+    /blck/cl_example_api=>update_stacktraceelem(
       exporting
         i_stacktraceelem = gr_stacktraceelem ).
     		
     clear gr_stacktraceelem.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_stacktraceelem(
+    /blck/cl_example_api=>get_stacktraceelem(
       exporting
         i_id = 1
       importing 
@@ -8393,14 +8393,14 @@ Name | Type | Description
     gr_exceptioninfo3-stack = l_stack. " (type /BLCK/MFI_STACKTRACEELEM_TT)
     
 * pass to example API method
-    gcl_exampleapi->update_exceptioninfo3(
+    /blck/cl_example_api=>update_exceptioninfo3(
       exporting
         i_exceptioninfo3 = gr_exceptioninfo3 ).
     		
     clear gr_exceptioninfo3.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_exceptioninfo3(
+    /blck/cl_example_api=>get_exceptioninfo3(
       exporting
         i_id = 1
       importing 
@@ -8438,14 +8438,14 @@ Name | Type | Description
     gr_exceptioninfo2-stack = l_stack. " (type /BLCK/MFI_STACKTRACEELEM_TT)
     
 * pass to example API method
-    gcl_exampleapi->update_exceptioninfo2(
+    /blck/cl_example_api=>update_exceptioninfo2(
       exporting
         i_exceptioninfo2 = gr_exceptioninfo2 ).
     		
     clear gr_exceptioninfo2.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_exceptioninfo2(
+    /blck/cl_example_api=>get_exceptioninfo2(
       exporting
         i_id = 1
       importing 
@@ -8485,14 +8485,14 @@ Name | Type | Description
     gr_exception_info-stack = l_stack. " (type /BLCK/MFI_STACKTRACEELEM_TT)
     
 * pass to example API method
-    gcl_exampleapi->update_exception_info(
+    /blck/cl_example_api=>update_exception_info(
       exporting
         i_exception_info = gr_exception_info ).
     		
     clear gr_exception_info.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_exception_info(
+    /blck/cl_example_api=>get_exception_info(
       exporting
         i_id = 1
       importing 
@@ -8532,14 +8532,14 @@ Name | Type | Description
     gv_mfobjectversio = /blck/mfi_cl_model=>mfobjectversio-none.
     
 * pass the enum value to the example API via method
-    gcl_exampleapi->set_mfobjectversio_state(
+    /blck/cl_example_api=>set_mfobjectversio_state(
       exporting
         i_mfobjectversio = gv_mfobjectversio ).
     		
     clear gv_mfobjectversio.
     
 * fetch result from example API method
-    gcl_exampleapi->get_mfobjectversio_state(
+    /blck/cl_example_api=>get_mfobjectversio_state(
       exporting
         i_id = 1
       importing
@@ -8590,14 +8590,14 @@ Name | Value | Constant
     gr_object_file-version = 42. " (type /BLCK/MFI_INT)
     
 * pass to example API method
-    gcl_exampleapi->update_object_file(
+    /blck/cl_example_api=>update_object_file(
       exporting
         i_object_file = gr_object_file ).
     		
     clear gr_object_file.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_object_file(
+    /blck/cl_example_api=>get_object_file(
       exporting
         i_id = 1
       importing 
@@ -8661,14 +8661,14 @@ Name | Type | Description
     gr_object_version-visible_after_operation = 'X'. " (type /BLCK/MFI_BOOL)
     
 * pass to example API method
-    gcl_exampleapi->update_object_version(
+    /blck/cl_example_api=>update_object_version(
       exporting
         i_object_version = gr_object_version ).
     		
     clear gr_object_version.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_object_version(
+    /blck/cl_example_api=>get_object_version(
       exporting
         i_id = 1
       importing 
@@ -8749,14 +8749,14 @@ Name | Type | Description
     gr_extendedobjec2-templates = l_templates. " (type /BLCK/MFI_OBJECT_VERSION_TT)
     
 * pass to example API method
-    gcl_exampleapi->update_extendedobjec2(
+    /blck/cl_example_api=>update_extendedobjec2(
       exporting
         i_extendedobjec2 = gr_extendedobjec2 ).
     		
     clear gr_extendedobjec2.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_extendedobjec2(
+    /blck/cl_example_api=>get_extendedobjec2(
       exporting
         i_id = 1
       importing 
@@ -8822,14 +8822,14 @@ Name | Type | Description
     gr_extendedobject-properties = l_properties. " (type /BLCK/MFI_PROPERTY_VALUE_TT)
     
 * pass to example API method
-    gcl_exampleapi->update_extendedobject(
+    /blck/cl_example_api=>update_extendedobject(
       exporting
         i_extendedobject = gr_extendedobject ).
     		
     clear gr_extendedobject.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_extendedobject(
+    /blck/cl_example_api=>get_extendedobject(
       exporting
         i_id = 1
       importing 
@@ -8910,14 +8910,14 @@ Name | Type | Description
     gv_mffolderconten = /blck/mfi_cl_model=>mffolderconten-unknown.
     
 * pass the enum value to the example API via method
-    gcl_exampleapi->set_mffolderconten_state(
+    /blck/cl_example_api=>set_mffolderconten_state(
       exporting
         i_mffolderconten = gv_mffolderconten ).
     		
     clear gv_mffolderconten.
     
 * fetch result from example API method
-    gcl_exampleapi->get_mffolderconten_state(
+    /blck/cl_example_api=>get_mffolderconten_state(
       exporting
         i_id = 1
       importing
@@ -8974,14 +8974,14 @@ Name | Value | Constant
     gr_view_location-overlapping = 'X'. " (type /BLCK/MFI_BOOL)
     
 * pass to example API method
-    gcl_exampleapi->update_view_location(
+    /blck/cl_example_api=>update_view_location(
       exporting
         i_view_location = gr_view_location ).
     		
     clear gr_view_location.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_view_location(
+    /blck/cl_example_api=>get_view_location(
       exporting
         i_id = 1
       importing 
@@ -9022,14 +9022,14 @@ Name | Type | Description
     gr_view-view_location = l_view_location. " (type /BLCK/MFI_VIEW_LOCATION)
     
 * pass to example API method
-    gcl_exampleapi->update_view(
+    /blck/cl_example_api=>update_view(
       exporting
         i_view = gr_view ).
     		
     clear gr_view.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_view(
+    /blck/cl_example_api=>get_view(
       exporting
         i_id = 1
       importing 
@@ -9076,14 +9076,14 @@ Name | Type | Description
     gr_foldercontent2-view = l_view. " (type /BLCK/MFI_VIEW)
     
 * pass to example API method
-    gcl_exampleapi->update_foldercontent2(
+    /blck/cl_example_api=>update_foldercontent2(
       exporting
         i_foldercontent2 = gr_foldercontent2 ).
     		
     clear gr_foldercontent2.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_foldercontent2(
+    /blck/cl_example_api=>get_foldercontent2(
       exporting
         i_id = 1
       importing 
@@ -9128,14 +9128,14 @@ Name | Type | Description
     gr_foldercontenti-items = l_items. " (type /BLCK/MFI_FOLDERCONTENT2_TT)
     
 * pass to example API method
-    gcl_exampleapi->update_foldercontenti(
+    /blck/cl_example_api=>update_foldercontenti(
       exporting
         i_foldercontenti = gr_foldercontenti ).
     		
     clear gr_foldercontenti.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_foldercontenti(
+    /blck/cl_example_api=>get_foldercontenti(
       exporting
         i_id = 1
       importing 
@@ -9176,14 +9176,14 @@ Name | Type | Description
     gv_mf_auth_type = /blck/mfi_cl_model=>mf_auth_type-unknown.
     
 * pass the enum value to the example API via method
-    gcl_exampleapi->set_mf_auth_type_state(
+    /blck/cl_example_api=>set_mf_auth_type_state(
       exporting
         i_mf_auth_type = gv_mf_auth_type ).
     		
     clear gv_mf_auth_type.
     
 * fetch result from example API method
-    gcl_exampleapi->get_mf_auth_type_state(
+    /blck/cl_example_api=>get_mf_auth_type_state(
       exporting
         i_id = 1
       importing
@@ -9234,14 +9234,14 @@ Name | Value | Constant
     gv_mfacl_mode = /blck/mfi_cl_model=>mfacl_mode-simple.
     
 * pass the enum value to the example API via method
-    gcl_exampleapi->set_mfacl_mode_state(
+    /blck/cl_example_api=>set_mfacl_mode_state(
       exporting
         i_mfacl_mode = gv_mfacl_mode ).
     		
     clear gv_mfacl_mode.
     
 * fetch result from example API method
-    gcl_exampleapi->get_mfacl_mode_state(
+    /blck/cl_example_api=>get_mfacl_mode_state(
       exporting
         i_id = 1
       importing
@@ -9287,14 +9287,14 @@ Name | Value | Constant
     gv_mfautomaticval = /blck/mfi_cl_model=>mfautomaticval-none.
     
 * pass the enum value to the example API via method
-    gcl_exampleapi->set_mfautomaticval_state(
+    /blck/cl_example_api=>set_mfautomaticval_state(
       exporting
         i_mfautomaticval = gv_mfautomaticval ).
     		
     clear gv_mfautomaticval.
     
 * fetch result from example API method
-    gcl_exampleapi->get_mfautomaticval_state(
+    /blck/cl_example_api=>get_mfautomaticval_state(
       exporting
         i_id = 1
       importing
@@ -9349,14 +9349,14 @@ Name | Value | Constant
     gv_mfcheckoutstat = /blck/mfi_cl_model=>mfcheckoutstat-checked_in.
     
 * pass the enum value to the example API via method
-    gcl_exampleapi->set_mfcheckoutstat_state(
+    /blck/cl_example_api=>set_mfcheckoutstat_state(
       exporting
         i_mfcheckoutstat = gv_mfcheckoutstat ).
     		
     clear gv_mfcheckoutstat.
     
 * fetch result from example API method
-    gcl_exampleapi->get_mfcheckoutstat_state(
+    /blck/cl_example_api=>get_mfcheckoutstat_state(
       exporting
         i_id = 1
       importing
@@ -9403,14 +9403,14 @@ Name | Value | Constant
     gv_mfextensionaut = /blck/mfi_cl_model=>mfextensionaut-none.
     
 * pass the enum value to the example API via method
-    gcl_exampleapi->set_mfextensionaut_state(
+    /blck/cl_example_api=>set_mfextensionaut_state(
       exporting
         i_mfextensionaut = gv_mfextensionaut ).
     		
     clear gv_mfextensionaut.
     
 * fetch result from example API method
-    gcl_exampleapi->get_mfextensionaut_state(
+    /blck/cl_example_api=>get_mfextensionaut_state(
       exporting
         i_id = 1
       importing
@@ -9460,14 +9460,14 @@ Name | Value | Constant
     gv_mfrefreshstatu = /blck/mfi_cl_model=>mfrefreshstatu-none.
     
 * pass the enum value to the example API via method
-    gcl_exampleapi->set_mfrefreshstatu_state(
+    /blck/cl_example_api=>set_mfrefreshstatu_state(
       exporting
         i_mfrefreshstatu = gv_mfrefreshstatu ).
     		
     clear gv_mfrefreshstatu.
     
 * fetch result from example API method
-    gcl_exampleapi->get_mfrefreshstatu_state(
+    /blck/cl_example_api=>get_mfrefreshstatu_state(
       exporting
         i_id = 1
       importing
@@ -9517,14 +9517,14 @@ Name | Value | Constant
     gr_obj_id-externalrepositoryobjectid = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_obj_id(
+    /blck/cl_example_api=>update_obj_id(
       exporting
         i_obj_id = gr_obj_id ).
     		
     clear gr_obj_id.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_obj_id(
+    /blck/cl_example_api=>get_obj_id(
       exporting
         i_id = 1
       importing 
@@ -9575,14 +9575,14 @@ Name | Type | Description
     gr_obj_type-real_object_type = 'X'. " (type /BLCK/MFI_BOOL)
     
 * pass to example API method
-    gcl_exampleapi->update_obj_type(
+    /blck/cl_example_api=>update_obj_type(
       exporting
         i_obj_type = gr_obj_type ).
     		
     clear gr_obj_type.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_obj_type(
+    /blck/cl_example_api=>get_obj_type(
       exporting
         i_id = 1
       importing 
@@ -9640,14 +9640,14 @@ Name | Type | Description
     gr_object_class-workflow = 42. " (type /BLCK/MFI_INT)
     
 * pass to example API method
-    gcl_exampleapi->update_object_class(
+    /blck/cl_example_api=>update_object_class(
       exporting
         i_object_class = gr_object_class ).
     		
     clear gr_object_class.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_object_class(
+    /blck/cl_example_api=>get_object_class(
       exporting
         i_id = 1
       importing 
@@ -9691,14 +9691,14 @@ Name | Type | Description
     gr_upload_info-size = 42. " (type /BLCK/MFI_INT)
     
 * pass to example API method
-    gcl_exampleapi->update_upload_info(
+    /blck/cl_example_api=>update_upload_info(
       exporting
         i_upload_info = gr_upload_info ).
     		
     clear gr_upload_info.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_upload_info(
+    /blck/cl_example_api=>get_upload_info(
       exporting
         i_id = 1
       importing 
@@ -9740,14 +9740,14 @@ Name | Type | Description
     gr_objectcreation-files = l_files. " (type /BLCK/MFI_UPLOAD_INFO_TT)
     
 * pass to example API method
-    gcl_exampleapi->update_objectcreation(
+    /blck/cl_example_api=>update_objectcreation(
       exporting
         i_objectcreation = gr_objectcreation ).
     		
     clear gr_objectcreation.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_objectcreation(
+    /blck/cl_example_api=>get_objectcreation(
       exporting
         i_id = 1
       importing 
@@ -9806,14 +9806,14 @@ Name | Type | Description
     gr_objectversionu-allow_name_change = 'X'. " (type /BLCK/MFI_BOOL)
     
 * pass to example API method
-    gcl_exampleapi->update_objectversionu(
+    /blck/cl_example_api=>update_objectversionu(
       exporting
         i_objectversionu = gr_objectversionu ).
     		
     clear gr_objectversionu.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_objectversionu(
+    /blck/cl_example_api=>get_objectversionu(
       exporting
         i_id = 1
       importing 
@@ -9895,14 +9895,14 @@ Name | Type | Description
     gr_objectsupdatei-multiple_object_info = l_multiple_object_info. " (type /BLCK/MFI_OBJECTVERSIONU)
     
 * pass to example API method
-    gcl_exampleapi->update_objectsupdatei(
+    /blck/cl_example_api=>update_objectsupdatei(
       exporting
         i_objectsupdatei = gr_objectsupdatei ).
     		
     clear gr_objectsupdatei.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_objectsupdatei(
+    /blck/cl_example_api=>get_objectsupdatei(
       exporting
         i_id = 1
       importing 
@@ -9942,14 +9942,14 @@ Name | Type | Description
     gr_objectworkflow-version_comment = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_objectworkflow(
+    /blck/cl_example_api=>update_objectworkflow(
       exporting
         i_objectworkflow = gr_objectworkflow ).
     		
     clear gr_objectworkflow.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_objectworkflow(
+    /blck/cl_example_api=>get_objectworkflow(
       exporting
         i_id = 1
       importing 
@@ -9997,14 +9997,14 @@ Name | Type | Description
     gr_passwordchange-new_password = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_passwordchange(
+    /blck/cl_example_api=>update_passwordchange(
       exporting
         i_passwordchange = gr_passwordchange ).
     		
     clear gr_passwordchange.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_passwordchange(
+    /blck/cl_example_api=>get_passwordchange(
       exporting
         i_id = 1
       importing 
@@ -10048,14 +10048,14 @@ Name | Type | Description
     gr_plugininfoconf-configuration_source = l_configuration_source. " (type /BLCK/MFI_STRING_MT)
     
 * pass to example API method
-    gcl_exampleapi->update_plugininfoconf(
+    /blck/cl_example_api=>update_plugininfoconf(
       exporting
         i_plugininfoconf = gr_plugininfoconf ).
     		
     clear gr_plugininfoconf.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_plugininfoconf(
+    /blck/cl_example_api=>get_plugininfoconf(
       exporting
         i_id = 1
       importing 
@@ -10104,14 +10104,14 @@ Name | Type | Description
     gr_primitivetypei-value = 42. " (type /BLCK/MFI_INT)
     
 * pass to example API method
-    gcl_exampleapi->update_primitivetypei(
+    /blck/cl_example_api=>update_primitivetypei(
       exporting
         i_primitivetypei = gr_primitivetypei ).
     		
     clear gr_primitivetypei.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_primitivetypei(
+    /blck/cl_example_api=>get_primitivetypei(
       exporting
         i_id = 1
       importing 
@@ -10154,14 +10154,14 @@ Name | Type | Description
     gr_property_def-value_list = 42. " (type /BLCK/MFI_INT)
     
 * pass to example API method
-    gcl_exampleapi->update_property_def(
+    /blck/cl_example_api=>update_property_def(
       exporting
         i_property_def = gr_property_def ).
     		
     clear gr_property_def.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_property_def(
+    /blck/cl_example_api=>get_property_def(
       exporting
         i_id = 1
       importing 
@@ -10216,14 +10216,14 @@ Name | Type | Description
     gr_propertyvalues-typed_value = l_typed_value. " (type /BLCK/MFI_TYPED_VALUE)
     
 * pass to example API method
-    gcl_exampleapi->update_propertyvalues(
+    /blck/cl_example_api=>update_propertyvalues(
       exporting
         i_propertyvalues = gr_propertyvalues ).
     		
     clear gr_propertyvalues.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_propertyvalues(
+    /blck/cl_example_api=>get_propertyvalues(
       exporting
         i_id = 1
       importing 
@@ -10269,14 +10269,14 @@ Name | Type | Description
     gr_public_key-modulus = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_public_key(
+    /blck/cl_example_api=>update_public_key(
       exporting
         i_public_key = gr_public_key ).
     		
     clear gr_public_key.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_public_key(
+    /blck/cl_example_api=>get_public_key(
       exporting
         i_id = 1
       importing 
@@ -10316,14 +10316,14 @@ Name | Type | Description
     gr_repositoryaut2-user_id = 42. " (type /BLCK/MFI_INT)
     
 * pass to example API method
-    gcl_exampleapi->update_repositoryaut2(
+    /blck/cl_example_api=>update_repositoryaut2(
       exporting
         i_repositoryaut2 = gr_repositoryaut2 ).
     		
     clear gr_repositoryaut2.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_repositoryaut2(
+    /blck/cl_example_api=>get_repositoryaut2(
       exporting
         i_id = 1
       importing 
@@ -10373,14 +10373,14 @@ Name | Type | Description
     gr_repositoryaut3-refresh_token = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_repositoryaut3(
+    /blck/cl_example_api=>update_repositoryaut3(
       exporting
         i_repositoryaut3 = gr_repositoryaut3 ).
     		
     clear gr_repositoryaut3.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_repositoryaut3(
+    /blck/cl_example_api=>get_repositoryaut3(
       exporting
         i_id = 1
       importing 
@@ -10427,14 +10427,14 @@ Name | Type | Description
     gr_repositoryauth-repositoryauthenticationst = l_repositoryauthenticationst. " (type /BLCK/MFI_REPOSITORYAUT2)
     
 * pass to example API method
-    gcl_exampleapi->update_repositoryauth(
+    /blck/cl_example_api=>update_repositoryauth(
       exporting
         i_repositoryauth = gr_repositoryauth ).
     		
     clear gr_repositoryauth.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_repositoryauth(
+    /blck/cl_example_api=>get_repositoryauth(
       exporting
         i_id = 1
       importing 
@@ -10480,14 +10480,14 @@ Name | Type | Description
     gr_resultsobjectv-more_results = 'X'. " (type /BLCK/MFI_BOOL)
     
 * pass to example API method
-    gcl_exampleapi->update_resultsobjectv(
+    /blck/cl_example_api=>update_resultsobjectv(
       exporting
         i_resultsobjectv = gr_resultsobjectv ).
     		
     clear gr_resultsobjectv.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_resultsobjectv(
+    /blck/cl_example_api=>get_resultsobjectv(
       exporting
         i_id = 1
       importing 
@@ -10531,14 +10531,14 @@ Name | Type | Description
     gr_valuelistitem-value_list_id = 42. " (type /BLCK/MFI_INT)
     
 * pass to example API method
-    gcl_exampleapi->update_valuelistitem(
+    /blck/cl_example_api=>update_valuelistitem(
       exporting
         i_valuelistitem = gr_valuelistitem ).
     		
     clear gr_valuelistitem.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_valuelistitem(
+    /blck/cl_example_api=>get_valuelistitem(
       exporting
         i_id = 1
       importing 
@@ -10588,14 +10588,14 @@ Name | Type | Description
     gr_resultsvalueli-more_results = 'X'. " (type /BLCK/MFI_BOOL)
     
 * pass to example API method
-    gcl_exampleapi->update_resultsvalueli(
+    /blck/cl_example_api=>update_resultsvalueli(
       exporting
         i_resultsvalueli = gr_resultsvalueli ).
     		
     clear gr_resultsvalueli.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_resultsvalueli(
+    /blck/cl_example_api=>get_resultsvalueli(
       exporting
         i_id = 1
       importing 
@@ -10644,14 +10644,14 @@ Name | Type | Description
     gr_session_info-user_id = 42. " (type /BLCK/MFI_INT)
     
 * pass to example API method
-    gcl_exampleapi->update_session_info(
+    /blck/cl_example_api=>update_session_info(
       exporting
         i_session_info = gr_session_info ).
     		
     clear gr_session_info.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_session_info(
+    /blck/cl_example_api=>get_session_info(
       exporting
         i_id = 1
       importing 
@@ -10711,14 +10711,14 @@ Name | Type | Description
     gr_statusresponse-message = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_statusresponse(
+    /blck/cl_example_api=>update_statusresponse(
       exporting
         i_statusresponse = gr_statusresponse ).
     		
     clear gr_statusresponse.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_statusresponse(
+    /blck/cl_example_api=>get_statusresponse(
       exporting
         i_id = 1
       importing 
@@ -10757,14 +10757,14 @@ Name | Type | Description
     gr_vault-authentication = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_vault(
+    /blck/cl_example_api=>update_vault(
       exporting
         i_vault = gr_vault ).
     		
     clear gr_vault.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_vault(
+    /blck/cl_example_api=>get_vault(
       exporting
         i_id = 1
       importing 
@@ -10806,14 +10806,14 @@ Name | Type | Description
     gr_versioncomment-comment = l_comment. " (type /BLCK/MFI_PROPERTY_VALUE)
     
 * pass to example API method
-    gcl_exampleapi->update_versioncomment(
+    /blck/cl_example_api=>update_versioncomment(
       exporting
         i_versioncomment = gr_versioncomment ).
     		
     clear gr_versioncomment.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_versioncomment(
+    /blck/cl_example_api=>get_versioncomment(
       exporting
         i_id = 1
       importing 
@@ -10857,14 +10857,14 @@ Name | Type | Description
     gr_webserviceerro-exception = l_exception. " (type /BLCK/MFI_EXCEPTION_INFO)
     
 * pass to example API method
-    gcl_exampleapi->update_webserviceerro(
+    /blck/cl_example_api=>update_webserviceerro(
       exporting
         i_webserviceerro = gr_webserviceerro ).
     		
     clear gr_webserviceerro.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_webserviceerro(
+    /blck/cl_example_api=>get_webserviceerro(
       exporting
         i_id = 1
       importing 
@@ -10907,14 +10907,14 @@ Name | Type | Description
     gr_workflow-object_class = 42. " (type /BLCK/MFI_INT)
     
 * pass to example API method
-    gcl_exampleapi->update_workflow(
+    /blck/cl_example_api=>update_workflow(
       exporting
         i_workflow = gr_workflow ).
     		
     clear gr_workflow.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_workflow(
+    /blck/cl_example_api=>get_workflow(
       exporting
         i_id = 1
       importing 
@@ -10956,14 +10956,14 @@ Name | Type | Description
     gr_workflow_state-selectable = 'X'. " (type /BLCK/MFI_BOOL)
     
 * pass to example API method
-    gcl_exampleapi->update_workflow_state(
+    /blck/cl_example_api=>update_workflow_state(
       exporting
         i_workflow_state = gr_workflow_state ).
     		
     clear gr_workflow_state.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_workflow_state(
+    /blck/cl_example_api=>get_workflow_state(
       exporting
         i_id = 1
       importing 

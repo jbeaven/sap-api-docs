@@ -106,14 +106,14 @@ HTTP Code | Name | Type | Description
     gr_cells-value_type = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_cells(
+    /blck/cl_example_api=>update_cells(
       exporting
         i_cells = gr_cells ).
     		
     clear gr_cells.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_cells(
+    /blck/cl_example_api=>get_cells(
       exporting
         i_id = 1
       importing 
@@ -154,14 +154,14 @@ Name | Type | Description
     gr_properties-value_type = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_properties(
+    /blck/cl_example_api=>update_properties(
       exporting
         i_properties = gr_properties ).
     		
     clear gr_properties.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_properties(
+    /blck/cl_example_api=>get_properties(
       exporting
         i_id = 1
       importing 
@@ -200,14 +200,14 @@ Name | Type | Description
     gr_rows-cells = l_cells. " (type /BLCK/SPS_CELLS_TT)
     
 * pass to example API method
-    gcl_exampleapi->update_rows(
+    /blck/cl_example_api=>update_rows(
       exporting
         i_rows = gr_rows ).
     		
     clear gr_rows.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_rows(
+    /blck/cl_example_api=>get_rows(
       exporting
         i_id = 1
       importing 
@@ -242,14 +242,14 @@ Name | Type | Description
     gr_table-rows = l_rows. " (type /BLCK/SPS_ROWS_TT)
     
 * pass to example API method
-    gcl_exampleapi->update_table(
+    /blck/cl_example_api=>update_table(
       exporting
         i_table = gr_table ).
     		
     clear gr_table.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_table(
+    /blck/cl_example_api=>get_table(
       exporting
         i_id = 1
       importing 
@@ -292,14 +292,14 @@ Name | Type | Description
     gr_relevantresult-totalrowsincludingduplicat = 42. " (type /BLCK/SPS_INT)
     
 * pass to example API method
-    gcl_exampleapi->update_relevantresult(
+    /blck/cl_example_api=>update_relevantresult(
       exporting
         i_relevantresult = gr_relevantresult ).
     		
     clear gr_relevantresult.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_relevantresult(
+    /blck/cl_example_api=>get_relevantresult(
       exporting
         i_id = 1
       importing 
@@ -355,14 +355,14 @@ Name | Type | Description
     gr_primaryqueryre-special_term_results = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_primaryqueryre(
+    /blck/cl_example_api=>update_primaryqueryre(
       exporting
         i_primaryqueryre = gr_primaryqueryre ).
     		
     clear gr_primaryqueryre.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_primaryqueryre(
+    /blck/cl_example_api=>get_primaryqueryre(
       exporting
         i_id = 1
       importing 
@@ -409,14 +409,14 @@ Name | Type | Description
     gr_properties2-value_type = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_properties2(
+    /blck/cl_example_api=>update_properties2(
       exporting
         i_properties2 = gr_properties2 ).
     		
     clear gr_properties2.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_properties2(
+    /blck/cl_example_api=>get_properties2(
       exporting
         i_id = 1
       importing 
@@ -461,14 +461,14 @@ Name | Type | Description
     gr_query-triggered_rules = l_triggered_rules. " (type /BLCK/SPS_STRING_TT)
     
 * pass to example API method
-    gcl_exampleapi->update_query(
+    /blck/cl_example_api=>update_query(
       exporting
         i_query = gr_query ).
     		
     clear gr_query.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_query(
+    /blck/cl_example_api=>get_query(
       exporting
         i_id = 1
       importing 

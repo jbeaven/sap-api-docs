@@ -1581,14 +1581,14 @@ Name | Type | Description
     gr_api_response-message = 'ipsum lorem'. " (type /BLCK/PET_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_api_response(
+    /blck/cl_example_api=>update_api_response(
       exporting
         i_api_response = gr_api_response ).
     		
     clear gr_api_response.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_api_response(
+    /blck/cl_example_api=>get_api_response(
       exporting
         i_id = 1
       importing 
@@ -1627,14 +1627,14 @@ Name | Type | Description
     gr_category-name = 'ipsum lorem'. " (type /BLCK/PET_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_category(
+    /blck/cl_example_api=>update_category(
       exporting
         i_category = gr_category ).
     		
     clear gr_category.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_category(
+    /blck/cl_example_api=>get_category(
       exporting
         i_id = 1
       importing 
@@ -1675,14 +1675,14 @@ Name | Type | Description
     gr_order-complete = 'X'. " (type /BLCK/PET_BOOL)
     
 * pass to example API method
-    gcl_exampleapi->update_order(
+    /blck/cl_example_api=>update_order(
       exporting
         i_order = gr_order ).
     		
     clear gr_order.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_order(
+    /blck/cl_example_api=>get_order(
       exporting
         i_id = 1
       importing 
@@ -1727,14 +1727,14 @@ Name | Type | Description
     gr_tag-name = 'ipsum lorem'. " (type /BLCK/PET_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_tag(
+    /blck/cl_example_api=>update_tag(
       exporting
         i_tag = gr_tag ).
     		
     clear gr_tag.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_tag(
+    /blck/cl_example_api=>get_tag(
       exporting
         i_id = 1
       importing 
@@ -1775,14 +1775,14 @@ Name | Type | Description
     gr_pet-status = 'ipsum lorem'. " (type /BLCK/PET_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_pet(
+    /blck/cl_example_api=>update_pet(
       exporting
         i_pet = gr_pet ).
     		
     clear gr_pet.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_pet(
+    /blck/cl_example_api=>get_pet(
       exporting
         i_id = 1
       importing 
@@ -1833,14 +1833,14 @@ Name | Type | Description
     gr_user-user_status = 42. " (type /BLCK/PET_INT)
     
 * pass to example API method
-    gcl_exampleapi->update_user(
+    /blck/cl_example_api=>update_user(
       exporting
         i_user = gr_user ).
     		
     clear gr_user.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_user(
+    /blck/cl_example_api=>get_user(
       exporting
         i_id = 1
       importing 

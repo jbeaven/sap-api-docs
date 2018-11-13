@@ -1103,14 +1103,14 @@ Name | Type | Description
     gr_error-metadata = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_error(
+    /blck/cl_example_api=>update_error(
       exporting
         i_error = gr_error ).
     		
     clear gr_error.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_error(
+    /blck/cl_example_api=>get_error(
       exporting
         i_id = 1
       importing 
@@ -1148,14 +1148,14 @@ Name | Type | Description
 * fill model with data as appropriate..
     
 * pass to example API method
-    gcl_exampleapi->update_file_id(
+    /blck/cl_example_api=>update_file_id(
       exporting
         i_file_id = gr_file_id ).
     		
     clear gr_file_id.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_file_id(
+    /blck/cl_example_api=>get_file_id(
       exporting
         i_id = 1
       importing 
@@ -1189,14 +1189,14 @@ Name | Type | Description
     gr_input_file-metadata = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_input_file(
+    /blck/cl_example_api=>update_input_file(
       exporting
         i_input_file = gr_input_file ).
     		
     clear gr_input_file.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_input_file(
+    /blck/cl_example_api=>get_input_file(
       exporting
         i_id = 1
       importing 
@@ -1232,14 +1232,14 @@ Name | Type | Description
 * fill model with data as appropriate..
     
 * pass to example API method
-    gcl_exampleapi->update_job_id(
+    /blck/cl_example_api=>update_job_id(
       exporting
         i_job_id = gr_job_id ).
     		
     clear gr_job_id.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_job_id(
+    /blck/cl_example_api=>get_job_id(
       exporting
         i_id = 1
       importing 
@@ -1272,14 +1272,14 @@ Name | Type | Description
     gv_jobstatusenum = /blck/cnv_cl_model=>jobstatusenum-open.
     
 * pass the enum value to the example API via method
-    gcl_exampleapi->set_jobstatusenum_state(
+    /blck/cl_example_api=>set_jobstatusenum_state(
       exporting
         i_jobstatusenum = gv_jobstatusenum ).
     		
     clear gv_jobstatusenum.
     
 * fetch result from example API method
-    gcl_exampleapi->get_jobstatusenum_state(
+    /blck/cl_example_api=>get_jobstatusenum_state(
       exporting
         i_id = 1
       importing
@@ -1334,14 +1334,14 @@ Name | Value | Constant
     gr_job_ticket-metadata = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_job_ticket(
+    /blck/cl_example_api=>update_job_ticket(
       exporting
         i_job_ticket = gr_job_ticket ).
     		
     clear gr_job_ticket.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_job_ticket(
+    /blck/cl_example_api=>get_job_ticket(
       exporting
         i_id = 1
       importing 
@@ -1379,14 +1379,14 @@ Name | Type | Description
     gr_output_file-metadata = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_output_file(
+    /blck/cl_example_api=>update_output_file(
       exporting
         i_output_file = gr_output_file ).
     		
     clear gr_output_file.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_output_file(
+    /blck/cl_example_api=>get_output_file(
       exporting
         i_id = 1
       importing 
@@ -1428,14 +1428,14 @@ Name | Type | Description
     gr_job_data-output = l_output. " (type /BLCK/CNV_OUTPUT_FILE_TT)
     
 * pass to example API method
-    gcl_exampleapi->update_job_data(
+    /blck/cl_example_api=>update_job_data(
       exporting
         i_job_data = gr_job_data ).
     		
     clear gr_job_data.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_job_data(
+    /blck/cl_example_api=>get_job_data(
       exporting
         i_id = 1
       importing 
@@ -1482,14 +1482,14 @@ Name | Type | Description
     gr_job_status-output = l_output. " (type /BLCK/CNV_OUTPUT_FILE_TT)
     
 * pass to example API method
-    gcl_exampleapi->update_job_status(
+    /blck/cl_example_api=>update_job_status(
       exporting
         i_job_status = gr_job_status ).
     		
     clear gr_job_status.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_job_status(
+    /blck/cl_example_api=>get_job_status(
       exporting
         i_id = 1
       importing 

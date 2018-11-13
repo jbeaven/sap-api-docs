@@ -8864,14 +8864,14 @@ HTTP Code | Name | Type | Description
     gr_action-action = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_action(
+    /blck/cl_example_api=>update_action(
       exporting
         i_action = gr_action ).
     		
     clear gr_action.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_action(
+    /blck/cl_example_api=>get_action(
       exporting
         i_id = 1
       importing 
@@ -8909,14 +8909,14 @@ Name | Type | Description
     gr_baserepoentry-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_baserepoentry(
+    /blck/cl_example_api=>update_baserepoentry(
       exporting
         i_baserepoentry = gr_baserepoentry ).
     		
     clear gr_baserepoentry.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_baserepoentry(
+    /blck/cl_example_api=>get_baserepoentry(
       exporting
         i_id = 1
       importing 
@@ -8954,14 +8954,14 @@ Name | Type | Description
 * fill model with data as appropriate..
     
 * pass to example API method
-    gcl_exampleapi->update_cid(
+    /blck/cl_example_api=>update_cid(
       exporting
         i_cid = gr_cid ).
     		
     clear gr_cid.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_cid(
+    /blck/cl_example_api=>get_cid(
       exporting
         i_id = 1
       importing 
@@ -8995,14 +8995,14 @@ Name | Type | Description
     gr_cid_command-data = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_cid_command(
+    /blck/cl_example_api=>update_cid_command(
       exporting
         i_cid_command = gr_cid_command ).
     		
     clear gr_cid_command.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_cid_command(
+    /blck/cl_example_api=>get_cid_command(
       exporting
         i_id = 1
       importing 
@@ -9040,14 +9040,14 @@ Name | Type | Description
     gr_list_item-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_list_item(
+    /blck/cl_example_api=>update_list_item(
       exporting
         i_list_item = gr_list_item ).
     		
     clear gr_list_item.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_list_item(
+    /blck/cl_example_api=>get_list_item(
       exporting
         i_id = 1
       importing 
@@ -9086,14 +9086,14 @@ Name | Type | Description
     gv_status_type = /blck/op4_cl_model=>status_type-open.
     
 * pass the enum value to the example API via method
-    gcl_exampleapi->set_status_type_state(
+    /blck/cl_example_api=>set_status_type_state(
       exporting
         i_status_type = gv_status_type ).
     		
     clear gv_status_type.
     
 * fetch result from example API method
-    gcl_exampleapi->get_status_type_state(
+    /blck/cl_example_api=>get_status_type_state(
       exporting
         i_id = 1
       importing
@@ -9155,14 +9155,14 @@ Name | Value | Constant
     gr_cid_status-list_items = l_list_items. " (type /BLCK/OP4_LIST_ITEM_TT)
     
 * pass to example API method
-    gcl_exampleapi->update_cid_status(
+    /blck/cl_example_api=>update_cid_status(
       exporting
         i_cid_status = gr_cid_status ).
     		
     clear gr_cid_status.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_cid_status(
+    /blck/cl_example_api=>get_cid_status(
       exporting
         i_id = 1
       importing 
@@ -9210,14 +9210,14 @@ Name | Type | Description
     gr_cid_taskdata-cids = l_cids. " (type /BLCK/OP4_CID_TT)
     
 * pass to example API method
-    gcl_exampleapi->update_cid_taskdata(
+    /blck/cl_example_api=>update_cid_taskdata(
       exporting
         i_cid_taskdata = gr_cid_taskdata ).
     		
     clear gr_cid_taskdata.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_cid_taskdata(
+    /blck/cl_example_api=>get_cid_taskdata(
       exporting
         i_id = 1
       importing 
@@ -9256,14 +9256,14 @@ Name | Type | Description
     gr_command-parameter = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_command(
+    /blck/cl_example_api=>update_command(
       exporting
         i_command = gr_command ).
     		
     clear gr_command.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_command(
+    /blck/cl_example_api=>get_command(
       exporting
         i_id = 1
       importing 
@@ -9302,14 +9302,14 @@ Name | Type | Description
     gr_command_status-command = l_command. " (type /BLCK/OP4_COMMAND)
     
 * pass to example API method
-    gcl_exampleapi->update_command_status(
+    /blck/cl_example_api=>update_command_status(
       exporting
         i_command_status = gr_command_status ).
     		
     clear gr_command_status.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_command_status(
+    /blck/cl_example_api=>get_command_status(
       exporting
         i_id = 1
       importing 
@@ -9347,14 +9347,14 @@ Name | Type | Description
 * fill model with data as appropriate..
     
 * pass to example API method
-    gcl_exampleapi->update_config_item(
+    /blck/cl_example_api=>update_config_item(
       exporting
         i_config_item = gr_config_item ).
     		
     clear gr_config_item.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_config_item(
+    /blck/cl_example_api=>get_config_item(
       exporting
         i_id = 1
       importing 
@@ -9388,14 +9388,14 @@ Name | Type | Description
     gr_error-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_error(
+    /blck/cl_example_api=>update_error(
       exporting
         i_error = gr_error ).
     		
     clear gr_error.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_error(
+    /blck/cl_example_api=>get_error(
       exporting
         i_id = 1
       importing 
@@ -9434,14 +9434,14 @@ Name | Type | Description
 * fill model with data as appropriate..
     
 * pass to example API method
-    gcl_exampleapi->update_functions(
+    /blck/cl_example_api=>update_functions(
       exporting
         i_functions = gr_functions ).
     		
     clear gr_functions.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_functions(
+    /blck/cl_example_api=>get_functions(
       exporting
         i_id = 1
       importing 
@@ -9485,14 +9485,14 @@ Name | Type | Description
     gr_list-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_list(
+    /blck/cl_example_api=>update_list(
       exporting
         i_list = gr_list ).
     		
     clear gr_list.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_list(
+    /blck/cl_example_api=>get_list(
       exporting
         i_id = 1
       importing 
@@ -9546,14 +9546,14 @@ Name | Type | Description
     gr_message-read = 'X'. " (type /BLCK/OP4_BOOL)
     
 * pass to example API method
-    gcl_exampleapi->update_message(
+    /blck/cl_example_api=>update_message(
       exporting
         i_message = gr_message ).
     		
     clear gr_message.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_message(
+    /blck/cl_example_api=>get_message(
       exporting
         i_id = 1
       importing 
@@ -9600,14 +9600,14 @@ Name | Type | Description
     gr_panel_item-type = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_panel_item(
+    /blck/cl_example_api=>update_panel_item(
       exporting
         i_panel_item = gr_panel_item ).
     		
     clear gr_panel_item.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_panel_item(
+    /blck/cl_example_api=>get_panel_item(
       exporting
         i_id = 1
       importing 
@@ -9655,14 +9655,14 @@ Name | Type | Description
     gr_repo_entry-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_repo_entry(
+    /blck/cl_example_api=>update_repo_entry(
       exporting
         i_repo_entry = gr_repo_entry ).
     		
     clear gr_repo_entry.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_repo_entry(
+    /blck/cl_example_api=>get_repo_entry(
       exporting
         i_id = 1
       importing 
@@ -9715,14 +9715,14 @@ Name | Type | Description
     gr_service-embedded = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_service(
+    /blck/cl_example_api=>update_service(
       exporting
         i_service = gr_service ).
     		
     clear gr_service.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_service(
+    /blck/cl_example_api=>get_service(
       exporting
         i_id = 1
       importing 
@@ -9765,14 +9765,14 @@ Name | Type | Description
     gr_session_info-false = 42. " (type /BLCK/OP4_INT)
     
 * pass to example API method
-    gcl_exampleapi->update_session_info(
+    /blck/cl_example_api=>update_session_info(
       exporting
         i_session_info = gr_session_info ).
     		
     clear gr_session_info.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_session_info(
+    /blck/cl_example_api=>get_session_info(
       exporting
         i_id = 1
       importing 
@@ -9817,14 +9817,14 @@ Name | Type | Description
     gr_task-embedded = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_task(
+    /blck/cl_example_api=>update_task(
       exporting
         i_task = gr_task ).
     		
     clear gr_task.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_task(
+    /blck/cl_example_api=>get_task(
       exporting
         i_id = 1
       importing 
@@ -9883,14 +9883,14 @@ Name | Type | Description
     gr_task_metadata-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_task_metadata(
+    /blck/cl_example_api=>update_task_metadata(
       exporting
         i_task_metadata = gr_task_metadata ).
     		
     clear gr_task_metadata.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_task_metadata(
+    /blck/cl_example_api=>get_task_metadata(
       exporting
         i_id = 1
       importing 

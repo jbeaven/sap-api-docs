@@ -410,14 +410,14 @@ Name | Type | Description
     gr_doc_attr_value-value = 'ipsum lorem'. " (type /BLCK/SP_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_doc_attr_value(
+    /blck/cl_example_api=>update_doc_attr_value(
       exporting
         i_doc_attr_value = gr_doc_attr_value ).
     		
     clear gr_doc_attr_value.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_doc_attr_value(
+    /blck/cl_example_api=>get_doc_attr_value(
       exporting
         i_id = 1
       importing 
@@ -464,14 +464,14 @@ Name | Type | Description
     gr_seal_doc-guid = 'ipsum lorem'. " (type /BLCK/SP_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_seal_doc(
+    /blck/cl_example_api=>update_seal_doc(
       exporting
         i_seal_doc = gr_seal_doc ).
     		
     clear gr_seal_doc.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_seal_doc(
+    /blck/cl_example_api=>get_seal_doc(
       exporting
         i_id = 1
       importing 
@@ -531,14 +531,14 @@ Name | Type | Description
     gr_seal_doc_list-value = l_value. " (type /BLCK/SP_SEAL_DOC_TT)
     
 * pass to example API method
-    gcl_exampleapi->update_seal_doc_list(
+    /blck/cl_example_api=>update_seal_doc_list(
       exporting
         i_seal_doc_list = gr_seal_doc_list ).
     		
     clear gr_seal_doc_list.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_seal_doc_list(
+    /blck/cl_example_api=>get_seal_doc_list(
       exporting
         i_id = 1
       importing 

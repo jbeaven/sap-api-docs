@@ -5546,14 +5546,14 @@ HTTP Code | Name | Type | Description
     gr_aggregatequery-aggregates = l_aggregates. " (type /BLCK/P5_STRING_TT)
     
 * pass to example API method
-    gcl_exampleapi->update_aggregatequery(
+    /blck/cl_example_api=>update_aggregatequery(
       exporting
         i_aggregatequery = gr_aggregatequery ).
     		
     clear gr_aggregatequery.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_aggregatequery(
+    /blck/cl_example_api=>get_aggregatequery(
       exporting
         i_id = 1
       importing 
@@ -5589,14 +5589,14 @@ Name | Type | Description
 * fill model with data as appropriate..
     
 * pass to example API method
-    gcl_exampleapi->update_aggregaterespo(
+    /blck/cl_example_api=>update_aggregaterespo(
       exporting
         i_aggregaterespo = gr_aggregaterespo ).
     		
     clear gr_aggregaterespo.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_aggregaterespo(
+    /blck/cl_example_api=>get_aggregaterespo(
       exporting
         i_id = 1
       importing 
@@ -5629,14 +5629,14 @@ Name | Type | Description
     gr_count-count = 42. " (type /BLCK/P5_INT)
     
 * pass to example API method
-    gcl_exampleapi->update_count(
+    /blck/cl_example_api=>update_count(
       exporting
         i_count = gr_count ).
     		
     clear gr_count.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_count(
+    /blck/cl_example_api=>get_count(
       exporting
         i_id = 1
       importing 
@@ -5672,14 +5672,14 @@ Name | Type | Description
     gr_error-fields = 'ipsum lorem'. " (type /BLCK/P5_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_error(
+    /blck/cl_example_api=>update_error(
       exporting
         i_error = gr_error ).
     		
     clear gr_error.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_error(
+    /blck/cl_example_api=>get_error(
       exporting
         i_id = 1
       importing 
@@ -5719,14 +5719,14 @@ Name | Type | Description
     gr_job_target-target_server = 'ipsum lorem'. " (type /BLCK/P5_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_job_target(
+    /blck/cl_example_api=>update_job_target(
       exporting
         i_job_target = gr_job_target ).
     		
     clear gr_job_target.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_job_target(
+    /blck/cl_example_api=>get_job_target(
       exporting
         i_id = 1
       importing 
@@ -5763,14 +5763,14 @@ Name | Type | Description
     gr_logs-messages = l_messages. " (type /BLCK/P5_STRING_TT)
     
 * pass to example API method
-    gcl_exampleapi->update_logs(
+    /blck/cl_example_api=>update_logs(
       exporting
         i_logs = gr_logs ).
     		
     clear gr_logs.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_logs(
+    /blck/cl_example_api=>get_logs(
       exporting
         i_id = 1
       importing 
@@ -5804,14 +5804,14 @@ Name | Type | Description
 * fill model with data as appropriate..
     
 * pass to example API method
-    gcl_exampleapi->update_metadata(
+    /blck/cl_example_api=>update_metadata(
       exporting
         i_metadata = gr_metadata ).
     		
     clear gr_metadata.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_metadata(
+    /blck/cl_example_api=>get_metadata(
       exporting
         i_id = 1
       importing 
@@ -5848,14 +5848,14 @@ Name | Type | Description
     gr_print_job-routing = 'ipsum lorem'. " (type /BLCK/P5_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_print_job(
+    /blck/cl_example_api=>update_print_job(
       exporting
         i_print_job = gr_print_job ).
     		
     clear gr_print_job.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_print_job(
+    /blck/cl_example_api=>get_print_job(
       exporting
         i_id = 1
       importing 
@@ -5898,14 +5898,14 @@ Name | Type | Description
     gr_printer-config = 'ipsum lorem'. " (type /BLCK/P5_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_printer(
+    /blck/cl_example_api=>update_printer(
       exporting
         i_printer = gr_printer ).
     		
     clear gr_printer.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_printer(
+    /blck/cl_example_api=>get_printer(
       exporting
         i_id = 1
       importing 
@@ -5943,14 +5943,14 @@ Name | Type | Description
     gr_printer_status-queue_length = 42. " (type /BLCK/P5_INT)
     
 * pass to example API method
-    gcl_exampleapi->update_printer_status(
+    /blck/cl_example_api=>update_printer_status(
       exporting
         i_printer_status = gr_printer_status ).
     		
     clear gr_printer_status.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_printer_status(
+    /blck/cl_example_api=>get_printer_status(
       exporting
         i_id = 1
       importing 

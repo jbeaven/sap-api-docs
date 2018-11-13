@@ -897,14 +897,14 @@ HTTP Code | Name | Type | Description
     gr_error-metadata = 'ipsum lorem'. " (type /BLCK/P4_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_error(
+    /blck/cl_example_api=>update_error(
       exporting
         i_error = gr_error ).
     		
     clear gr_error.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_error(
+    /blck/cl_example_api=>get_error(
       exporting
         i_id = 1
       importing 
@@ -942,14 +942,14 @@ Name | Type | Description
 * fill model with data as appropriate..
     
 * pass to example API method
-    gcl_exampleapi->update_job_header(
+    /blck/cl_example_api=>update_job_header(
       exporting
         i_job_header = gr_job_header ).
     		
     clear gr_job_header.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_job_header(
+    /blck/cl_example_api=>get_job_header(
       exporting
         i_id = 1
       importing 
@@ -982,14 +982,14 @@ Name | Type | Description
     gr_job_id-uuid = 'ipsum lorem'. " (type /BLCK/P4_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_job_id(
+    /blck/cl_example_api=>update_job_id(
       exporting
         i_job_id = gr_job_id ).
     		
     clear gr_job_id.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_job_id(
+    /blck/cl_example_api=>get_job_id(
       exporting
         i_id = 1
       importing 
@@ -1024,14 +1024,14 @@ Name | Type | Description
     gv_status_type = /blck/p4_cl_model=>status_type-open.
     
 * pass the enum value to the example API via method
-    gcl_exampleapi->set_status_type_state(
+    /blck/cl_example_api=>set_status_type_state(
       exporting
         i_status_type = gv_status_type ).
     		
     clear gv_status_type.
     
 * fetch result from example API method
-    gcl_exampleapi->get_status_type_state(
+    /blck/cl_example_api=>get_status_type_state(
       exporting
         i_id = 1
       importing
@@ -1087,14 +1087,14 @@ Name | Value | Constant
     gr_job_status-status = l_status. " (type /BLCK/P4_STATUS_TYPE)
     
 * pass to example API method
-    gcl_exampleapi->update_job_status(
+    /blck/cl_example_api=>update_job_status(
       exporting
         i_job_status = gr_job_status ).
     		
     clear gr_job_status.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_job_status(
+    /blck/cl_example_api=>get_job_status(
       exporting
         i_id = 1
       importing 
@@ -1131,14 +1131,14 @@ Name | Type | Description
     gr_jobstatusevent-parameters = 'ipsum lorem'. " (type /BLCK/P4_STRING)
     
 * pass to example API method
-    gcl_exampleapi->update_jobstatusevent(
+    /blck/cl_example_api=>update_jobstatusevent(
       exporting
         i_jobstatusevent = gr_jobstatusevent ).
     		
     clear gr_jobstatusevent.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_jobstatusevent(
+    /blck/cl_example_api=>get_jobstatusevent(
       exporting
         i_id = 1
       importing 
@@ -1185,14 +1185,14 @@ Name | Type | Description
     gr_printer-tray_media = l_tray_media. " (type /BLCK/P4_STRING_TT)
     
 * pass to example API method
-    gcl_exampleapi->update_printer(
+    /blck/cl_example_api=>update_printer(
       exporting
         i_printer = gr_printer ).
     		
     clear gr_printer.
     
 * fetch model data from example API method
-    gcl_exampleapi->get_printer(
+    /blck/cl_example_api=>get_printer(
       exporting
         i_id = 1
       importing 

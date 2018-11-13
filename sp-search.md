@@ -55,7 +55,7 @@ Query
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -77,7 +77,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/SPS_QUERY (**[Query](#markdown-header-model-query)**) | OK
+ 200 | **e_code_200** | /BLCK/SPS_QUERY (**[Query](#markdown-header-model-query)**) | OK
 
 ### HTTP request headers
 

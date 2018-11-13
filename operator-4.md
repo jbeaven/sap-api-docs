@@ -40,8 +40,8 @@ Creates a new record in the command resource. It returns a JSON object containin
     data gr_http409 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gm_body-action = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
@@ -74,13 +74,13 @@ Creates a new record in the command resource. It returns a JSON object containin
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -96,10 +96,9 @@ Creates a new record in the command resource. It returns a JSON object containin
 *       do something with gr_http409 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -114,13 +113,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_COMMAND_STATUS (**[CommandStatus](#markdown-header-model-command_status)**) | OK, entry created. Command id will be returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide commands
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_COMMAND_STATUS (**[CommandStatus](#markdown-header-model-command_status)**) | OK, entry created. Command id will be returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide commands
+ 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -176,8 +175,8 @@ Some services (not all) expose access to documents. All documents available thro
     data gr_http404 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_sid = 'ipsum lorem'.
@@ -221,12 +220,12 @@ Some services (not all) expose access to documents. All documents available thro
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -240,10 +239,9 @@ Some services (not all) expose access to documents. All documents available thro
 *       do something with gr_http404 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -262,12 +260,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_REPO_ENTRY_TT (**[array of RepoEntry](#markdown-header-model-repo_entry)**) | OK, collection of entries is returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide a repository
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_REPO_ENTRY_TT (**[array of RepoEntry](#markdown-header-model-repo_entry)**) | OK, collection of entries is returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide a repository
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -313,8 +311,8 @@ Creates a new record in the current Repository, inside the root collection, and 
     data gr_http409 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gm_body-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
@@ -343,13 +341,13 @@ Creates a new record in the current Repository, inside the root collection, and 
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -365,10 +363,9 @@ Creates a new record in the current Repository, inside the root collection, and 
 *       do something with gr_http409 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -383,13 +380,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry created. Entry metadata returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide a repository
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry created. Entry metadata returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide a repository
+ 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -436,8 +433,8 @@ Removes the current entry from the repository. This will not only remove the ref
     data gr_http409 type /BLCK/OP4_TASK_TT.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_sid = 'ipsum lorem'.
@@ -467,17 +464,17 @@ Removes the current entry from the repository. This will not only remove the ref
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 204.
-*       handle code 204
+*       handle code 204, e_message => gvs_msg
       when 401.
 *       do something with gr_http401 (type /BLCK/OP4_ERROR)
       when 403.
@@ -488,10 +485,9 @@ Removes the current entry from the repository. This will not only remove the ref
 *       do something with gr_http409 (type /BLCK/OP4_TASK_TT)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -548,8 +544,8 @@ Given a 'uuid' parameter, this route retrieves an entry's metadata. The entry ma
     data gr_http404 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_sid = 'ipsum lorem'.
@@ -576,12 +572,12 @@ Given a 'uuid' parameter, this route retrieves an entry's metadata. The entry ma
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -595,10 +591,9 @@ Given a 'uuid' parameter, this route retrieves an entry's metadata. The entry ma
 *       do something with gr_http404 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -613,12 +608,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry metadata returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The given uuid was not found.
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry metadata returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The given uuid was not found.
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -667,8 +662,8 @@ Update the given entry's metadata. Only data given with the patch will be change
     data gr_http409 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gm_body-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
@@ -700,13 +695,13 @@ Update the given entry's metadata. Only data given with the patch will be change
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -722,10 +717,9 @@ Update the given entry's metadata. Only data given with the patch will be change
 *       do something with gr_http409 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -741,13 +735,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry metadata replaced, new metadata returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | No entry found at the given &#x27;uuid&#x27;.
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry metadata replaced, new metadata returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | No entry found at the given &#x27;uuid&#x27;.
+ 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -798,8 +792,8 @@ If the entry under the given uuid is a collection, then a POST request to this r
     data gr_http409 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gm_body-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
@@ -831,14 +825,14 @@ If the entry under the given uuid is a collection, then a POST request to this r
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_405 = gr_http405
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_405 = gr_http405
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -856,10 +850,9 @@ If the entry under the given uuid is a collection, then a POST request to this r
 *       do something with gr_http409 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -875,14 +868,14 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, new entry created, metadata of the entry returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | No entry found at the given &#x27;uuid&#x27;.
- 405 | **e_405** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Method not allowed. The entry under &#x27;uuid&#x27; is not a collection. 
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, new entry created, metadata of the entry returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | No entry found at the given &#x27;uuid&#x27;.
+ 405 | **e_code_405** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Method not allowed. The entry under &#x27;uuid&#x27; is not a collection. 
+ 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -931,8 +924,8 @@ Completely replace the metadata record of the given entry. Only record metadata 
     data gr_http409 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gm_body-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
@@ -965,13 +958,13 @@ Completely replace the metadata record of the given entry. Only record metadata 
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -987,10 +980,9 @@ Completely replace the metadata record of the given entry. Only record metadata 
 *       do something with gr_http409 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -1006,13 +998,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry metadata replaced, new metadata returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | No entry found under the given &#x27;uuid&#x27;.
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry metadata replaced, new metadata returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | No entry found under the given &#x27;uuid&#x27;.
+ 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -1056,8 +1048,8 @@ Returns a JSON object containing the status of the command. Command resources ar
     data gr_http404 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_sid = 'ipsum lorem'.
@@ -1084,12 +1076,12 @@ Returns a JSON object containing the status of the command. Command resources ar
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -1103,10 +1095,9 @@ Returns a JSON object containing the status of the command. Command resources ar
 *       do something with gr_http404 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -1121,12 +1112,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_COMMAND_STATUS (**[CommandStatus](#markdown-header-model-command_status)**) | OK, status of command resource is returned
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide the given resource.
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_COMMAND_STATUS (**[CommandStatus](#markdown-header-model-command_status)**) | OK, status of command resource is returned
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide the given resource.
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -1182,8 +1173,8 @@ Some services (not all) expose access to documents. All documents available thro
     data gr_http404 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_sid = 'ipsum lorem'.
@@ -1228,12 +1219,12 @@ Some services (not all) expose access to documents. All documents available thro
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -1247,10 +1238,9 @@ Some services (not all) expose access to documents. All documents available thro
 *       do something with gr_http404 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -1269,12 +1259,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_REPO_ENTRY_TT (**[array of RepoEntry](#markdown-header-model-repo_entry)**) | OK, collection of entries is returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide a repository
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_REPO_ENTRY_TT (**[array of RepoEntry](#markdown-header-model-repo_entry)**) | OK, collection of entries is returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide a repository
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -1315,8 +1305,8 @@ Deletes a single ConfigItem at the given path or all ConfigItems in the whole tr
     data gr_http401 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_path = 'ipsum lorem'.
@@ -1340,10 +1330,10 @@ Deletes a single ConfigItem at the given path or all ConfigItems in the whole tr
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -1352,13 +1342,12 @@ Deletes a single ConfigItem at the given path or all ConfigItems in the whole tr
       when 401.
 *       do something with gr_http401 (type /BLCK/OP4_ERROR)
       when 403.
-*       handle code 403
+*       handle code 403, e_message => gvs_msg
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -1372,11 +1361,11 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-config_item)**) | OK, configuration deleted.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 200 | **e_code_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-config_item)**) | OK, configuration deleted.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
  403 | value not returned |  | Forbidden. User lacks access rights to change configuration. schema:   _ref: &#x27;#/definitions/Error&#x27; 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -1420,8 +1409,8 @@ Use this route to browse the configuration. Configuration is structured unix fil
     data gr_http404 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_path = 'ipsum lorem'.
@@ -1451,12 +1440,12 @@ Use this route to browse the configuration. Configuration is structured unix fil
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -1470,10 +1459,9 @@ Use this route to browse the configuration. Configuration is structured unix fil
 *       do something with gr_http404 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -1488,12 +1476,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_STRING | OK, configuration items returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The given ConfigItem was not found.
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_STRING | OK, configuration items returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The given ConfigItem was not found.
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -1533,8 +1521,8 @@ Stores the ConfigItem in the request body at the given path.
     data gr_http401 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_body = 'ipsum lorem'.
@@ -1560,10 +1548,10 @@ Stores the ConfigItem in the request body at the given path.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -1572,13 +1560,12 @@ Stores the ConfigItem in the request body at the given path.
       when 401.
 *       do something with gr_http401 (type /BLCK/OP4_ERROR)
       when 403.
-*       handle code 403
+*       handle code 403, e_message => gvs_msg
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -1593,11 +1580,11 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-config_item)**) | OK, configuration stored.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 200 | **e_code_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-config_item)**) | OK, configuration stored.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
  403 | value not returned |  | Forbidden. User lacks access rights to change configuration. schema:   _ref: &#x27;#/definitions/Error&#x27; 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -1642,8 +1629,8 @@ FIXME
     data gr_http404 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_sid = 'ipsum lorem'.
@@ -1667,12 +1654,12 @@ FIXME
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -1686,10 +1673,9 @@ FIXME
 *       do something with gr_http404 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -1703,12 +1689,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_SERVICE (**[Service](#markdown-header-model-service)**) | OK, service metadata is returned
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service metadata. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The requested Service was not found.
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_SERVICE (**[Service](#markdown-header-model-service)**) | OK, service metadata is returned
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service metadata. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The requested Service was not found.
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -1752,8 +1738,8 @@ A POST call to this route will create new jobs and return their connector id's (
     data gr_http409 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gm_body-action = l_action. " (type /BLCK/OP4_ACTION)
@@ -1781,12 +1767,12 @@ A POST call to this route will create new jobs and return their connector id's (
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -1800,10 +1786,9 @@ A POST call to this route will create new jobs and return their connector id's (
 *       do something with gr_http409 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -1818,12 +1803,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_CID_STATUS (**[CidStatus](#markdown-header-model-cid_status)**) | OK, task data for update is returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service list. 
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_CID_STATUS (**[CidStatus](#markdown-header-model-cid_status)**) | OK, task data for update is returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service list. 
+ 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -1867,8 +1852,8 @@ A PUT call to this route returns an array with status and output listItems for a
     data gr_http409 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   data lr_body like line of gi_body.
@@ -1897,12 +1882,12 @@ A PUT call to this route returns an array with status and output listItems for a
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -1916,10 +1901,9 @@ A PUT call to this route returns an array with status and output listItems for a
 *       do something with gr_http409 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -1934,12 +1918,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_CID_STATUS_TT (**[array of CidStatus](#markdown-header-model-cid_status)**) | OK, array of task data for update is returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service list. 
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_CID_STATUS_TT (**[array of CidStatus](#markdown-header-model-cid_status)**) | OK, array of task data for update is returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service list. 
+ 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -1975,8 +1959,8 @@ The SEAL Operator user interface provides the user with a set of default panels 
     data gr_http403 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 
 
@@ -1995,11 +1979,11 @@ The SEAL Operator user interface provides the user with a set of default panels 
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -2011,10 +1995,9 @@ The SEAL Operator user interface provides the user with a set of default panels 
 *       do something with gr_http403 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -2026,11 +2009,11 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_PANEL_ITEM_TT (**[array of PanelItem](#markdown-header-model-panel_item)**) | OK, list of UI panel configurations returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_PANEL_ITEM_TT (**[array of PanelItem](#markdown-header-model-panel_item)**) | OK, list of UI panel configurations returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -2069,8 +2052,8 @@ A GET call to this route returns a JSON object containing the default configurat
     data gr_http403 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_pid = 'ipsum lorem'.
@@ -2093,11 +2076,11 @@ A GET call to this route returns a JSON object containing the default configurat
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -2109,10 +2092,9 @@ A GET call to this route returns a JSON object containing the default configurat
 *       do something with gr_http403 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -2126,11 +2108,11 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-config_item)**) | OK, panel configuration is returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-config_item)**) | OK, panel configuration is returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -2180,8 +2162,8 @@ Creates a new record in the command resource. It returns a JSON object containin
     data gr_http409 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gm_body-action = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
@@ -2214,13 +2196,13 @@ Creates a new record in the command resource. It returns a JSON object containin
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -2236,10 +2218,9 @@ Creates a new record in the command resource. It returns a JSON object containin
 *       do something with gr_http409 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -2254,13 +2235,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_COMMAND_STATUS (**[CommandStatus](#markdown-header-model-command_status)**) | OK, entry created. Command id will be returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide commands
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_COMMAND_STATUS (**[CommandStatus](#markdown-header-model-command_status)**) | OK, entry created. Command id will be returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide commands
+ 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -2316,8 +2297,8 @@ Some services (not all) expose access to documents. All documents available thro
     data gr_http404 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_sid = 'ipsum lorem'.
@@ -2361,12 +2342,12 @@ Some services (not all) expose access to documents. All documents available thro
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -2380,10 +2361,9 @@ Some services (not all) expose access to documents. All documents available thro
 *       do something with gr_http404 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -2402,12 +2382,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_REPO_ENTRY_TT (**[array of RepoEntry](#markdown-header-model-repo_entry)**) | OK, collection of entries is returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide a repository
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_REPO_ENTRY_TT (**[array of RepoEntry](#markdown-header-model-repo_entry)**) | OK, collection of entries is returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide a repository
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -2453,8 +2433,8 @@ Creates a new record in the current Repository, inside the root collection, and 
     data gr_http409 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gm_body-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
@@ -2483,13 +2463,13 @@ Creates a new record in the current Repository, inside the root collection, and 
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -2505,10 +2485,9 @@ Creates a new record in the current Repository, inside the root collection, and 
 *       do something with gr_http409 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -2523,13 +2502,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry created. Entry metadata returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide a repository
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry created. Entry metadata returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide a repository
+ 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -2576,8 +2555,8 @@ Removes the current entry from the repository. This will not only remove the ref
     data gr_http409 type /BLCK/OP4_TASK_TT.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_sid = 'ipsum lorem'.
@@ -2607,17 +2586,17 @@ Removes the current entry from the repository. This will not only remove the ref
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 204.
-*       handle code 204
+*       handle code 204, e_message => gvs_msg
       when 401.
 *       do something with gr_http401 (type /BLCK/OP4_ERROR)
       when 403.
@@ -2628,10 +2607,9 @@ Removes the current entry from the repository. This will not only remove the ref
 *       do something with gr_http409 (type /BLCK/OP4_TASK_TT)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -2688,8 +2666,8 @@ Given a 'uuid' parameter, this route retrieves an entry's metadata. The entry ma
     data gr_http404 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_sid = 'ipsum lorem'.
@@ -2716,12 +2694,12 @@ Given a 'uuid' parameter, this route retrieves an entry's metadata. The entry ma
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -2735,10 +2713,9 @@ Given a 'uuid' parameter, this route retrieves an entry's metadata. The entry ma
 *       do something with gr_http404 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -2753,12 +2730,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry metadata returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The given uuid was not found.
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry metadata returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The given uuid was not found.
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -2807,8 +2784,8 @@ Update the given entry's metadata. Only data given with the patch will be change
     data gr_http409 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gm_body-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
@@ -2840,13 +2817,13 @@ Update the given entry's metadata. Only data given with the patch will be change
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -2862,10 +2839,9 @@ Update the given entry's metadata. Only data given with the patch will be change
 *       do something with gr_http409 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -2881,13 +2857,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry metadata replaced, new metadata returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | No entry found at the given &#x27;uuid&#x27;.
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry metadata replaced, new metadata returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | No entry found at the given &#x27;uuid&#x27;.
+ 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -2936,8 +2912,8 @@ Completely replace the metadata record of the given entry. Only record metadata 
     data gr_http409 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gm_body-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
@@ -2970,13 +2946,13 @@ Completely replace the metadata record of the given entry. Only record metadata 
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -2992,10 +2968,9 @@ Completely replace the metadata record of the given entry. Only record metadata 
 *       do something with gr_http409 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -3011,13 +2986,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry metadata replaced, new metadata returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | No entry found under the given &#x27;uuid&#x27;.
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry metadata replaced, new metadata returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | No entry found under the given &#x27;uuid&#x27;.
+ 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -3061,8 +3036,8 @@ Returns a JSON object containing the status of the command. Command resources ar
     data gr_http404 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_sid = 'ipsum lorem'.
@@ -3089,12 +3064,12 @@ Returns a JSON object containing the status of the command. Command resources ar
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -3108,10 +3083,9 @@ Returns a JSON object containing the status of the command. Command resources ar
 *       do something with gr_http404 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -3126,12 +3100,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_COMMAND_STATUS (**[CommandStatus](#markdown-header-model-command_status)**) | OK, status of command resource is returned
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide the given resource.
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_COMMAND_STATUS (**[CommandStatus](#markdown-header-model-command_status)**) | OK, status of command resource is returned
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide the given resource.
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -3177,8 +3151,8 @@ Deletes the binary content of a document, leaving metadata only. Note that some 
     data gr_http409 type /BLCK/OP4_TASK_TT.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_sid = 'ipsum lorem'.
@@ -3205,18 +3179,18 @@ Deletes the binary content of a document, leaving metadata only. Note that some 
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_405 = gr_http405
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_405 = gr_http405
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 204.
-*       handle code 204
+*       handle code 204, e_message => gvs_msg
       when 401.
 *       do something with gr_http401 (type /BLCK/OP4_ERROR)
       when 403.
@@ -3229,10 +3203,9 @@ Deletes the binary content of a document, leaving metadata only. Note that some 
 *       do something with gr_http409 (type /BLCK/OP4_TASK_TT)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -3286,8 +3259,8 @@ If the entry under 'uuid' is a document, then this route provides access to the 
     data gr_http404 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_sid = 'ipsum lorem'.
@@ -3314,16 +3287,16 @@ If the entry under 'uuid' is a document, then this route provides access to the 
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       handle code 200
+*       handle code 200, e_message => gvs_msg
       when 401.
 *       do something with gr_http401 (type /BLCK/OP4_ERROR)
       when 403.
@@ -3332,10 +3305,9 @@ If the entry under 'uuid' is a document, then this route provides access to the 
 *       do something with gr_http404 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -3396,8 +3368,8 @@ Upload binary content of a document. Create if none exists, or replace existing 
     data gr_http409 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_sid = 'ipsum lorem'.
@@ -3426,18 +3398,18 @@ Upload binary content of a document. Create if none exists, or replace existing 
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_406 = gr_http406
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_406 = gr_http406
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 204.
-*       handle code 204
+*       handle code 204, e_message => gvs_msg
       when 401.
 *       do something with gr_http401 (type /BLCK/OP4_ERROR)
       when 403.
@@ -3450,10 +3422,9 @@ Upload binary content of a document. Create if none exists, or replace existing 
 *       do something with gr_http409 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -3508,8 +3479,8 @@ If the entry under 'uuid' is a document, then this route provides access to the 
     data gr_http404 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_sid = 'ipsum lorem'.
@@ -3536,16 +3507,16 @@ If the entry under 'uuid' is a document, then this route provides access to the 
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       handle code 200
+*       handle code 200, e_message => gvs_msg
       when 401.
 *       do something with gr_http401 (type /BLCK/OP4_ERROR)
       when 403.
@@ -3554,10 +3525,9 @@ If the entry under 'uuid' is a document, then this route provides access to the 
 *       do something with gr_http404 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -3616,8 +3586,8 @@ This route triggers a connector specific function and returns the result. The fu
     data gr_http404 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_sid = 'ipsum lorem'.
@@ -3648,25 +3618,24 @@ This route triggers a connector specific function and returns the result. The fu
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_401 = gr_http401
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_401 = gr_http401
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       handle code 200
+*       handle code 200, e_message => gvs_msg
       when 401.
 *       do something with gr_http401 (type /BLCK/OP4_ERROR)
       when 404.
 *       do something with gr_http404 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -3718,8 +3687,8 @@ For panels static configuration data is sometimes not sufficient, dynamically re
     data gr_http404 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_sid = 'ipsum lorem'.
@@ -3743,11 +3712,11 @@ For panels static configuration data is sometimes not sufficient, dynamically re
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -3759,10 +3728,9 @@ For panels static configuration data is sometimes not sufficient, dynamically re
 *       do something with gr_http404 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -3776,11 +3744,11 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_FUNCTIONS (**[Functions](#markdown-header-model-functions)**) | OK, list of entries is returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide functions
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_FUNCTIONS (**[Functions](#markdown-header-model-functions)**) | OK, list of entries is returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide functions
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -3834,8 +3802,8 @@ This is the list of Lists of the authenticated user. Use metadata property names
     data gr_http404 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvi_offset = 42.
@@ -3874,12 +3842,12 @@ This is the list of Lists of the authenticated user. Use metadata property names
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -3893,10 +3861,9 @@ This is the list of Lists of the authenticated user. Use metadata property names
 *       do something with gr_http404 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -3913,12 +3880,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST_TT (**[array of List](#markdown-header-model-list)**) | OK, collection of lists is returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | No lists available
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_LIST_TT (**[array of List](#markdown-header-model-list)**) | OK, collection of lists is returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | No lists available
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -3957,8 +3924,8 @@ Deletes the current list inclusive all it's items, but not the documents.
     data gr_http404 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_lid = 'ipsum lorem'.
@@ -3982,16 +3949,16 @@ Deletes the current list inclusive all it's items, but not the documents.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 204.
-*       handle code 204
+*       handle code 204, e_message => gvs_msg
       when 401.
 *       do something with gr_http401 (type /BLCK/OP4_ERROR)
       when 403.
@@ -4000,10 +3967,9 @@ Deletes the current list inclusive all it's items, but not the documents.
 *       do something with gr_http404 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -4058,8 +4024,8 @@ This is the root record for a given list. It contains List-level metadata. Use t
     data gr_http404 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_lid = 'ipsum lorem'.
@@ -4088,12 +4054,12 @@ This is the root record for a given list. It contains List-level metadata. Use t
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -4107,10 +4073,9 @@ This is the root record for a given list. It contains List-level metadata. Use t
 *       do something with gr_http404 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -4125,12 +4090,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | OK, metadata is returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | OK, metadata is returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -4183,8 +4148,8 @@ This is the collection of items currently in the List. For performance reasons, 
     data gr_http404 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_lid = 'ipsum lorem'.
@@ -4222,12 +4187,12 @@ This is the collection of items currently in the List. For performance reasons, 
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -4241,10 +4206,9 @@ This is the collection of items currently in the List. For performance reasons, 
 *       do something with gr_http404 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -4262,12 +4226,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST_ITEM_TT (**[array of ListItem](#markdown-header-model-list_item)**) | OK, collection of list items is returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_LIST_ITEM_TT (**[array of ListItem](#markdown-header-model-list_item)**) | OK, collection of list items is returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -4309,8 +4273,8 @@ Deletes an entry from a list. Only the list entry is removed, not the document. 
     data gr_http404 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_lid = 'ipsum lorem'.
@@ -4337,16 +4301,16 @@ Deletes an entry from a list. Only the list entry is removed, not the document. 
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 204.
-*       handle code 204
+*       handle code 204, e_message => gvs_msg
       when 401.
 *       do something with gr_http401 (type /BLCK/OP4_ERROR)
       when 403.
@@ -4355,10 +4319,9 @@ Deletes an entry from a list. Only the list entry is removed, not the document. 
 *       do something with gr_http404 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -4414,8 +4377,8 @@ Get metadata record of a list item. Note that the 'id' is NOT the index, which i
     data gr_http404 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_lid = 'ipsum lorem'.
@@ -4442,12 +4405,12 @@ Get metadata record of a list item. Note that the 'id' is NOT the index, which i
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -4461,10 +4424,9 @@ Get metadata record of a list item. Note that the 'id' is NOT the index, which i
 *       do something with gr_http404 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -4479,12 +4441,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, List item data is returned
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, List item data is returned
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -4536,8 +4498,8 @@ Update the metadata record of the current list item, adding missing entries but 
     data gr_http409 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_lid = 'ipsum lorem'.
@@ -4574,13 +4536,13 @@ Update the metadata record of the current list item, adding missing entries but 
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -4596,10 +4558,9 @@ Update the metadata record of the current list item, adding missing entries but 
 *       do something with gr_http409 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -4616,13 +4577,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, List item is updated, item data returned
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, List item is updated, item data returned
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -4671,8 +4632,8 @@ Update and replace the entire metadata record of the current list item. Note tha
     data gr_http409 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gm_body-index = 42. " (type /BLCK/OP4_INT)
@@ -4704,13 +4665,13 @@ Update and replace the entire metadata record of the current list item. Note tha
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -4726,10 +4687,9 @@ Update and replace the entire metadata record of the current list item. Note tha
 *       do something with gr_http409 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -4745,13 +4705,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, List item is updated, item data returned
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, List item is updated, item data returned
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -4800,8 +4760,8 @@ Lists are are ordered sets, items have consecutive indices (0..n). Posting this 
     data gr_http409 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_lid = 'ipsum lorem'.
@@ -4833,13 +4793,13 @@ Lists are are ordered sets, items have consecutive indices (0..n). Posting this 
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -4855,10 +4815,9 @@ Lists are are ordered sets, items have consecutive indices (0..n). Posting this 
 *       do something with gr_http409 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -4874,13 +4833,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, document reference has been added to the list.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be created. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, document reference has been added to the list.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be created. See error message for details. 
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -4926,8 +4885,8 @@ Updates or adds part of the List metadata. Only given metadata will be replaced 
     data gr_http409 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_lid = 'ipsum lorem'.
@@ -4961,13 +4920,13 @@ Updates or adds part of the List metadata. Only given metadata will be replaced 
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -4983,10 +4942,9 @@ Updates or adds part of the List metadata. Only given metadata will be replaced 
 *       do something with gr_http409 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -5001,13 +4959,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | OK, document list updated. New metadata returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | OK, document list updated. New metadata returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -5053,8 +5011,8 @@ This will completely replace the existing List metadata (if any) by the given me
     data gr_http409 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_lid = 'ipsum lorem'.
@@ -5088,13 +5046,13 @@ This will completely replace the existing List metadata (if any) by the given me
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -5110,10 +5068,9 @@ This will completely replace the existing List metadata (if any) by the given me
 *       do something with gr_http409 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -5128,13 +5085,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | OK, document list updated. New metadata returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | OK, document list updated. New metadata returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -5178,8 +5135,8 @@ Creates a new entry in the list of Lists. The `Content-Type` HTTP header defines
     data gr_http409 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gm_body-uuid = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
@@ -5213,12 +5170,12 @@ Creates a new entry in the list of Lists. The `Content-Type` HTTP header defines
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -5232,10 +5189,9 @@ Creates a new entry in the list of Lists. The `Content-Type` HTTP header defines
 *       do something with gr_http409 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -5250,12 +5206,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | OK, list created. List metadata returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be created. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | OK, list created. List metadata returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be created. See error message for details. 
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -5304,8 +5260,8 @@ Every user has his own list of messages containing info, warning and error messa
     data gr_http404 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvi_offset = 42.
@@ -5336,11 +5292,11 @@ Every user has his own list of messages containing info, warning and error messa
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -5352,10 +5308,9 @@ Every user has his own list of messages containing info, warning and error messa
 *       do something with gr_http404 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -5371,11 +5326,11 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_MESSAGE_TT (**[array of Message](#markdown-header-model-message)**) | OK, list of entries is returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide messages
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_MESSAGE_TT (**[array of Message](#markdown-header-model-message)**) | OK, list of entries is returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide messages
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -5416,8 +5371,8 @@ Creates a new record in the message list and assigns the posted data. The server
     data gr_http409 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gm_body-uuid = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
@@ -5446,12 +5401,12 @@ Creates a new record in the message list and assigns the posted data. The server
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_404 = gr_http404
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_404 = gr_http404
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -5465,10 +5420,9 @@ Creates a new record in the message list and assigns the posted data. The server
 *       do something with gr_http409 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -5482,12 +5436,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_MESSAGE (**[Message](#markdown-header-model-message)**) | OK, entry created. Entry metadata returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide messages
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_MESSAGE (**[Message](#markdown-header-model-message)**) | OK, entry created. Entry metadata returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide messages
+ 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -5531,8 +5485,8 @@ Update a message entry. Only data given with the patch will be  changed/added; n
     data gr_http409 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gm_body-uuid = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
@@ -5564,12 +5518,12 @@ Update a message entry. Only data given with the patch will be  changed/added; n
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_404 = gr_http404
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_404 = gr_http404
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -5583,10 +5537,9 @@ Update a message entry. Only data given with the patch will be  changed/added; n
 *       do something with gr_http409 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -5601,12 +5554,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_MESSAGE (**[Message](#markdown-header-model-message)**) | OK, message entry updated, new message returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide messages
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_MESSAGE (**[Message](#markdown-header-model-message)**) | OK, message entry updated, new message returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide messages
+ 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -5646,8 +5599,8 @@ The SEAL Operator user interface provides the user with a set of panels to use. 
     data gr_http403 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 
 
@@ -5666,11 +5619,11 @@ The SEAL Operator user interface provides the user with a set of panels to use. 
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -5682,10 +5635,9 @@ The SEAL Operator user interface provides the user with a set of panels to use. 
 *       do something with gr_http403 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -5697,11 +5649,11 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_CONFIG_ITEM_TT (**[array of ConfigItem](#markdown-header-model-config_item)**) | OK, list of UI panel configurations returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_CONFIG_ITEM_TT (**[array of ConfigItem](#markdown-header-model-config_item)**) | OK, list of UI panel configurations returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -5738,8 +5690,8 @@ User-defined panel configurations can be delete by a DELETE request to this rout
     data gr_http401 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_pid = 'ipsum lorem'.
@@ -5763,10 +5715,10 @@ User-defined panel configurations can be delete by a DELETE request to this rout
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -5775,13 +5727,12 @@ User-defined panel configurations can be delete by a DELETE request to this rout
       when 401.
 *       do something with gr_http401 (type /BLCK/OP4_ERROR)
       when 403.
-*       handle code 403
+*       handle code 403, e_message => gvs_msg
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -5795,11 +5746,11 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-config_item)**) | OK, panel configuration was deleted, return deleted configuration.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 200 | **e_code_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-config_item)**) | OK, panel configuration was deleted, return deleted configuration.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
  403 | value not returned |  | Forbidden. The current user lacks access rights, or is trying to delete a read-only default configuration. schema:   _ref: &#x27;#/definitions/Error&#x27; 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -5840,8 +5791,8 @@ Returns a ConfigItem containing configuration for a stored panel.
     data gr_http404 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_pid = 'ipsum lorem'.
@@ -5865,12 +5816,12 @@ Returns a ConfigItem containing configuration for a stored panel.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -5884,10 +5835,9 @@ Returns a ConfigItem containing configuration for a stored panel.
 *       do something with gr_http404 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -5901,12 +5851,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-config_item)**) | OK, configuration returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found. The given pid is unknown.
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-config_item)**) | OK, configuration returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found. The given pid is unknown.
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -5946,8 +5896,8 @@ A PUT request to a panel configuration will replace the entire stored configurat
     data gr_http401 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_body = 'ipsum lorem'.
@@ -5974,10 +5924,10 @@ A PUT request to a panel configuration will replace the entire stored configurat
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -5986,15 +5936,14 @@ A PUT request to a panel configuration will replace the entire stored configurat
       when 401.
 *       do something with gr_http401 (type /BLCK/OP4_ERROR)
       when 403.
-*       handle code 403
+*       handle code 403, e_message => gvs_msg
       when 409.
-*       handle code 409
+*       handle code 409, e_message => gvs_msg
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -6009,12 +5958,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-config_item)**) | OK, configuration updated.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 200 | **e_code_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-config_item)**) | OK, configuration updated.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
  403 | value not returned |  | Forbidden. The current user lacks access rights, or is trying to update a read-only default configuration. schema:   _ref: &#x27;#/definitions/Error&#x27; 
  409 | value not returned |  | Conflict. A panel configuration under the \&quot;name\&quot; given in the ConfigItem already exists. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -6053,8 +6002,8 @@ Users can save panel configurations they intend to (re-)use in later sessions un
     data gr_http403 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_body = 'ipsum lorem'.
@@ -6078,11 +6027,11 @@ Users can save panel configurations they intend to (re-)use in later sessions un
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -6093,13 +6042,12 @@ Users can save panel configurations they intend to (re-)use in later sessions un
       when 403.
 *       do something with gr_http403 (type /BLCK/OP4_ERROR)
       when 409.
-*       handle code 409
+*       handle code 409, e_message => gvs_msg
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -6113,12 +6061,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-config_item)**) | OK, configuration was saved. The returned configItem contains the generated ID. 
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 200 | **e_code_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-config_item)**) | OK, configuration was saved. The returned configItem contains the generated ID. 
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
  409 | value not returned |  | Conflict. A panel configuration under the \&quot;name\&quot; given in the ConfigItem already exists. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -6154,8 +6102,8 @@ The SEAL Operator user interface provides the user with a set of default panels 
     data gr_http403 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 
 
@@ -6174,11 +6122,11 @@ The SEAL Operator user interface provides the user with a set of default panels 
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -6190,10 +6138,9 @@ The SEAL Operator user interface provides the user with a set of default panels 
 *       do something with gr_http403 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -6205,11 +6152,11 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_PANEL_ITEM_TT (**[array of PanelItem](#markdown-header-model-panel_item)**) | OK, list of UI panel configurations returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_PANEL_ITEM_TT (**[array of PanelItem](#markdown-header-model-panel_item)**) | OK, list of UI panel configurations returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -6248,8 +6195,8 @@ A GET call to this route returns a JSON object containing the default configurat
     data gr_http403 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_pid = 'ipsum lorem'.
@@ -6272,11 +6219,11 @@ A GET call to this route returns a JSON object containing the default configurat
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -6288,10 +6235,9 @@ A GET call to this route returns a JSON object containing the default configurat
 *       do something with gr_http403 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -6305,11 +6251,11 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-config_item)**) | OK, panel configuration is returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-config_item)**) | OK, panel configuration is returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -6349,8 +6295,8 @@ A GET call to this route will return a list of active services currently availab
     data gr_http403 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 
 
@@ -6369,11 +6315,11 @@ A GET call to this route will return a list of active services currently availab
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -6385,10 +6331,9 @@ A GET call to this route will return a list of active services currently availab
 *       do something with gr_http403 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -6400,11 +6345,11 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_SERVICE_TT (**[array of Service](#markdown-header-model-service)**) | OK, collection of services is returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service list. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_SERVICE_TT (**[array of Service](#markdown-header-model-service)**) | OK, collection of services is returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service list. 
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -6445,8 +6390,8 @@ FIXME
     data gr_http404 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_sid = 'ipsum lorem'.
@@ -6470,12 +6415,12 @@ FIXME
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -6489,10 +6434,9 @@ FIXME
 *       do something with gr_http404 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -6506,12 +6450,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_SERVICE (**[Service](#markdown-header-model-service)**) | OK, service metadata is returned
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service metadata. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The requested Service was not found.
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_SERVICE (**[Service](#markdown-header-model-service)**) | OK, service metadata is returned
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service metadata. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The requested Service was not found.
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -6551,8 +6495,8 @@ Get number of currently established sessions of user
     data gr_http403 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 
 
@@ -6571,11 +6515,11 @@ Get number of currently established sessions of user
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -6587,10 +6531,9 @@ Get number of currently established sessions of user
 *       do something with gr_http403 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -6602,11 +6545,11 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_SESSION_INFO (**[SessionInfo](#markdown-header-model-session_info)**) | OK, return object with session information
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service list. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_SESSION_INFO (**[SessionInfo](#markdown-header-model-session_info)**) | OK, return object with session information
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service list. 
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -6669,8 +6612,8 @@ This route provides access to the root collection of known tasks for the current
     data gr_http404 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_sid = 'ipsum lorem'.
@@ -6718,12 +6661,12 @@ This route provides access to the root collection of known tasks for the current
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -6737,10 +6680,9 @@ This route provides access to the root collection of known tasks for the current
 *       do something with gr_http404 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -6760,12 +6702,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_TASK_TT (**[array of Task](#markdown-header-model-task)**) | OK, collection of tasks or count is returned. Example for count: &#x60;&#x60;&#x60; {   count: 0 } &#x60;&#x60;&#x60; 
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_TASK_TT (**[array of Task](#markdown-header-model-task)**) | OK, collection of tasks or count is returned. Example for count: &#x60;&#x60;&#x60; {   count: 0 } &#x60;&#x60;&#x60; 
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -6811,8 +6753,8 @@ Adds a new Task to the collection. Given metadata is assigned, input list must b
     data gr_http409 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gm_body-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
@@ -6850,13 +6792,13 @@ Adds a new Task to the collection. Given metadata is assigned, input list must b
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -6872,10 +6814,9 @@ Adds a new Task to the collection. Given metadata is assigned, input list must b
 *       do something with gr_http409 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -6890,13 +6831,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_TASK (**[Task](#markdown-header-model-task)**) | OK, task created. Task metadata returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be created. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_TASK (**[Task](#markdown-header-model-task)**) | OK, task created. Task metadata returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be created. See error message for details. 
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -6940,8 +6881,8 @@ Deletes a Task from the collection. This is only possible if the Task is not cur
     data gr_http409 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_sid = 'ipsum lorem'.
@@ -6968,17 +6909,17 @@ Deletes a Task from the collection. This is only possible if the Task is not cur
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 204.
-*       handle code 204
+*       handle code 204, e_message => gvs_msg
       when 401.
 *       do something with gr_http401 (type /BLCK/OP4_ERROR)
       when 403.
@@ -6989,10 +6930,9 @@ Deletes a Task from the collection. This is only possible if the Task is not cur
 *       do something with gr_http409 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -7054,8 +6994,8 @@ This route provides access to a Task's root record. The record contains taks met
     data gr_http404 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_sid = 'ipsum lorem'.
@@ -7089,12 +7029,12 @@ This route provides access to a Task's root record. The record contains taks met
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -7108,10 +7048,9 @@ This route provides access to a Task's root record. The record contains taks met
 *       do something with gr_http404 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -7128,12 +7067,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_TASK (**[Task](#markdown-header-model-task)**) | OK. Task metadata returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_TASK (**[Task](#markdown-header-model-task)**) | OK. Task metadata returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -7182,8 +7121,8 @@ Does a partial update to the Task metadata. Given metadata replaces existing one
     data gr_http409 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gm_body-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
@@ -7214,13 +7153,13 @@ Does a partial update to the Task metadata. Given metadata replaces existing one
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -7236,10 +7175,9 @@ Does a partial update to the Task metadata. Given metadata replaces existing one
 *       do something with gr_http409 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -7255,13 +7193,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_TASK (**[Task](#markdown-header-model-task)**) | OK, task updated and returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_TASK (**[Task](#markdown-header-model-task)**) | OK, task updated and returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -7310,8 +7248,8 @@ A put call to the task root record completely replaces task metadata, but does n
     data gr_http409 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gm_body-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
@@ -7342,13 +7280,13 @@ A put call to the task root record completely replaces task metadata, but does n
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -7364,10 +7302,9 @@ A put call to the task root record completely replaces task metadata, but does n
 *       do something with gr_http409 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -7383,13 +7320,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_TASK (**[Task](#markdown-header-model-task)**) | OK, task updated and returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_TASK (**[Task](#markdown-header-model-task)**) | OK, task updated and returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -7436,8 +7373,8 @@ Trigger a new action on the current task. Currently supported actions are `start
     data gr_http409 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gm_body-action = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
@@ -7467,17 +7404,17 @@ Trigger a new action on the current task. Currently supported actions are `start
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 204.
-*       handle code 204
+*       handle code 204, e_message => gvs_msg
       when 401.
 *       do something with gr_http401 (type /BLCK/OP4_ERROR)
       when 403.
@@ -7488,10 +7425,9 @@ Trigger a new action on the current task. Currently supported actions are `start
 *       do something with gr_http409 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -7551,8 +7487,8 @@ This route provides access to a Task's list of input documents. Input lists of T
     data gr_http404 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_sid = 'ipsum lorem'.
@@ -7583,12 +7519,12 @@ This route provides access to a Task's list of input documents. Input lists of T
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -7602,10 +7538,9 @@ This route provides access to a Task's list of input documents. Input lists of T
 *       do something with gr_http404 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -7621,12 +7556,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | OK, collection of input list items returned
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | OK, collection of input list items returned
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -7673,8 +7608,8 @@ Deletes an item from a Task's input list. The deleted ID is permanently orphaned
     data gr_http409 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_sid = 'ipsum lorem'.
@@ -7704,17 +7639,17 @@ Deletes an item from a Task's input list. The deleted ID is permanently orphaned
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 204.
-*       handle code 204
+*       handle code 204, e_message => gvs_msg
       when 401.
 *       do something with gr_http401 (type /BLCK/OP4_ERROR)
       when 403.
@@ -7725,10 +7660,9 @@ Deletes an item from a Task's input list. The deleted ID is permanently orphaned
 *       do something with gr_http409 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -7788,8 +7722,8 @@ FIXME
     data gr_http404 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_sid = 'ipsum lorem'.
@@ -7819,12 +7753,12 @@ FIXME
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -7838,10 +7772,9 @@ FIXME
 *       do something with gr_http404 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -7857,12 +7790,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, input list item data returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, input list item data returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -7914,8 +7847,8 @@ Updates task input list item metadata, replacing present entries and adding miss
     data gr_http409 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_sid = 'ipsum lorem'.
@@ -7950,13 +7883,13 @@ Updates task input list item metadata, replacing present entries and adding miss
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -7972,10 +7905,9 @@ Updates task input list item metadata, replacing present entries and adding miss
 *       do something with gr_http409 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -7992,13 +7924,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, task input list item updated. Item data returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, task input list item updated. Item data returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -8050,8 +7982,8 @@ Replaces the task input list item's metadata, including the document reference.
     data gr_http409 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_sid = 'ipsum lorem'.
@@ -8086,13 +8018,13 @@ Replaces the task input list item's metadata, including the document reference.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -8108,10 +8040,9 @@ Replaces the task input list item's metadata, including the document reference.
 *       do something with gr_http409 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -8128,13 +8059,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, list item updated. Item data returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, list item updated. Item data returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -8186,8 +8117,8 @@ Does a partial update to the input list metadata. Given metadata replaces existi
     data gr_http409 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gm_body-uuid = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
@@ -8228,13 +8159,13 @@ Does a partial update to the input list metadata. Given metadata replaces existi
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -8250,10 +8181,9 @@ Does a partial update to the input list metadata. Given metadata replaces existi
 *       do something with gr_http409 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -8270,13 +8200,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | OK, input list updated and returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | OK, input list updated and returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -8328,8 +8258,8 @@ Creates a new entry in the given Task's input list. Given metadata is assigned t
     data gr_http409 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_sid = 'ipsum lorem'.
@@ -8366,13 +8296,13 @@ Creates a new entry in the given Task's input list. Given metadata is assigned t
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -8388,10 +8318,9 @@ Creates a new entry in the given Task's input list. Given metadata is assigned t
 *       do something with gr_http409 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -8408,13 +8337,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, task input list item created, item data returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, task input list item created, item data returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -8463,8 +8392,8 @@ A put call to the input list root record completely replaces the metadata, but d
     data gr_http409 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gm_body-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
@@ -8495,13 +8424,13 @@ A put call to the input list root record completely replaces the metadata, but d
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -8517,10 +8446,9 @@ A put call to the input list root record completely replaces the metadata, but d
 *       do something with gr_http409 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -8536,13 +8464,13 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | OK, input list updated and returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 409 | **e_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | OK, input list updated and returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -8589,8 +8517,8 @@ This route provides access to a Task's list of output documents. Output lists of
     data gr_http404 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_sid = 'ipsum lorem'.
@@ -8621,12 +8549,12 @@ This route provides access to a Task's list of output documents. Output lists of
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -8640,10 +8568,9 @@ This route provides access to a Task's list of output documents. Output lists of
 *       do something with gr_http404 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -8659,12 +8586,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | OK, collection of output list items returned
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | OK, collection of output list items returned
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -8711,8 +8638,8 @@ This route provides access to individual task output items.
     data gr_http404 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_sid = 'ipsum lorem'.
@@ -8742,12 +8669,12 @@ This route provides access to individual task output items.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -8761,10 +8688,9 @@ This route provides access to individual task output items.
 *       do something with gr_http404 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -8780,12 +8706,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, output list item data returned.
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, output list item data returned.
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -8832,8 +8758,8 @@ This route provides access to the root collection of known tasks for all service
     data gr_http404 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/OP4_ERROR
-    data gr_http0 type /BLCK/OP4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+    data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_input_document = 'ipsum lorem'.
@@ -8868,12 +8794,12 @@ This route provides access to the root collection of known tasks for all service
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -8887,10 +8813,9 @@ This route provides access to the root collection of known tasks for all service
 *       do something with gr_http404 (type /BLCK/OP4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/OP4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/OP4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/OP4_ERROR)
     endcase.
 
 ```
@@ -8906,12 +8831,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/OP4_TASK_TT (**[array of Task](#markdown-header-model-task)**) | OK, collection of tasks or count is returned. Example for count: &#x60;&#x60;&#x60; {   count: 0 } &#x60;&#x60;&#x60; 
- 401 | **e_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 500 | **e_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/OP4_TASK_TT (**[array of Task](#markdown-header-model-task)**) | OK, collection of tasks or count is returned. Example for count: &#x60;&#x60;&#x60; {   count: 0 } &#x60;&#x60;&#x60; 
+ 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 

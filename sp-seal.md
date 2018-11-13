@@ -66,14 +66,14 @@ Get attribute of document
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200 ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
 *       do something with gr_http200 (type /BLCK/SP_DOC_ATTR_VALUE)
       when 405.
-*       handle code 405
+*       handle code 405, e_message => gvs_msg
       when others.
 * handle the general case..
     endcase.
@@ -92,7 +92,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/SP_DOC_ATTR_VALUE (**[DocAttrValue](#markdown-header-model-doc_attr_value)**) | successful operation
+ 200 | **e_code_200** | /BLCK/SP_DOC_ATTR_VALUE (**[DocAttrValue](#markdown-header-model-doc_attr_value)**) | successful operation
  405 | value not returned |  | Invalid input
 
 ### HTTP request headers
@@ -153,14 +153,14 @@ Retrieve data of document
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200 ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
 *       do something with gr_http200 (type /BLCK/SP_BINARY)
       when 405.
-*       handle code 405
+*       handle code 405, e_message => gvs_msg
       when others.
 * handle the general case..
     endcase.
@@ -177,7 +177,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/SP_BINARY | successful operation
+ 200 | **e_code_200** | /BLCK/SP_BINARY | successful operation
  405 | value not returned |  | Invalid input
 
 ### HTTP request headers
@@ -244,14 +244,14 @@ Retrieve list of documents matching criteria
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200 ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
 *       do something with gr_http200 (type /BLCK/SP_SEAL_DOC_LIST)
       when 405.
-*       handle code 405
+*       handle code 405, e_message => gvs_msg
       when others.
 * handle the general case..
     endcase.
@@ -269,7 +269,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/SP_SEAL_DOC_LIST (**[SEALDocList](#markdown-header-model-seal_doc_list)**) | successful operation
+ 200 | **e_code_200** | /BLCK/SP_SEAL_DOC_LIST (**[SEALDocList](#markdown-header-model-seal_doc_list)**) | successful operation
  405 | value not returned |  | Invalid input
 
 ### HTTP request headers
@@ -363,9 +363,9 @@ Pass in a json formatted body
 *** do something with the result if applicable..
     case gvi_code.
       when 204.
-*       handle code 204
+*       handle code 204, e_message => gvs_msg
       when 405.
-*       handle code 405
+*       handle code 405, e_message => gvs_msg
       when others.
 * handle the general case..
     endcase.

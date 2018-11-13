@@ -55,9 +55,9 @@ Aggregates count the number of objects matching a given query and aggregate resu
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_400 = gr_http400
-        e_500 = gr_http500 ).
+        e_code_200 = gr_http200
+        e_code_400 = gr_http400
+        e_code_500 = gr_http500 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -82,9 +82,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_AGGREGATERESPO (**[AggregateResponse](#markdown-header-model-aggregaterespo)**) | OK, an aggregate json object is returned
- 400 | **e_400** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Missing required paramenter
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | /BLCK/P5_AGGREGATERESPO (**[AggregateResponse](#markdown-header-model-aggregaterespo)**) | OK, an aggregate json object is returned
+ 400 | **e_code_400** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Missing required paramenter
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -142,8 +142,8 @@ This route provides access to the number of print jobs known in PLOSSYS P5; eith
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_500 = gr_http500 ).
+        e_code_200 = gr_http200
+        e_code_500 = gr_http500 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -166,8 +166,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-count)**) | OK, a number is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-count)**) | OK, a number is returned
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -258,8 +258,8 @@ A GET query to this path provides access to the list of print jobs in PLOSSYS P5
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_500 = gr_http500 ).
+        e_code_200 = gr_http200
+        e_code_500 = gr_http500 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -287,8 +287,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINT_JOB_TT (**[array of PrintJob](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | /BLCK/P5_PRINT_JOB_TT (**[array of PrintJob](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -346,8 +346,8 @@ A GET query to this route returns a json object containing status information an
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_500 = gr_http500 ).
+        e_code_200 = gr_http200
+        e_code_500 = gr_http500 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -370,8 +370,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINT_JOB (**[PrintJob](#markdown-header-model-print_job)**) | OK, a json object is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | /BLCK/P5_PRINT_JOB (**[PrintJob](#markdown-header-model-print_job)**) | OK, a json object is returned
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -421,8 +421,8 @@ Returns a JSON object describing the PrintJob object model
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_500 = gr_http500 ).
+        e_code_200 = gr_http200
+        e_code_500 = gr_http500 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -443,8 +443,8 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_METADATA (**[Metadata](#markdown-header-model-metadata)**) | Query OK, metadata document is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | /BLCK/P5_METADATA (**[Metadata](#markdown-header-model-metadata)**) | Query OK, metadata document is returned
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -505,9 +505,9 @@ Aggregates count the number of objects matching a given query and aggregate resu
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_400 = gr_http400
-        e_500 = gr_http500 ).
+        e_code_200 = gr_http200
+        e_code_400 = gr_http400
+        e_code_500 = gr_http500 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -532,9 +532,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_AGGREGATERESPO (**[AggregateResponse](#markdown-header-model-aggregaterespo)**) | OK, an aggregate json object is returned
- 400 | **e_400** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Missing required paramenter
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | /BLCK/P5_AGGREGATERESPO (**[AggregateResponse](#markdown-header-model-aggregaterespo)**) | OK, an aggregate json object is returned
+ 400 | **e_code_400** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Missing required paramenter
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -592,8 +592,8 @@ This route provides access to the number of printers registered in PLOSSYS P5; e
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_500 = gr_http500 ).
+        e_code_200 = gr_http200
+        e_code_500 = gr_http500 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -616,8 +616,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-count)**) | OK, a number is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-count)**) | OK, a number is returned
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -667,8 +667,8 @@ Retrieve a list of all known printers in PLOSSYS P5. A plain query to the endpoi
     data gr_http200 type /BLCK/P5_PRINTER_TT.
 *   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
-    data gr_http0 type /BLCK/P5_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P5_ERROR
+    data gr_httpother type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_filter = 'ipsum lorem'.
@@ -710,9 +710,9 @@ Retrieve a list of all known printers in PLOSSYS P5. A plain query to the endpoi
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -720,10 +720,9 @@ Retrieve a list of all known printers in PLOSSYS P5. A plain query to the endpoi
 *       do something with gr_http200 (type /BLCK/P5_PRINTER_TT)
       when 500.
 *       do something with gr_http500 (type /BLCK/P5_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P5_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P5_ERROR)
     endcase.
 
 ```
@@ -742,9 +741,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINTER_TT (**[array of Printer](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
- 0 | **e_0** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/P5_PRINTER_TT (**[array of Printer](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ other | **e_code_other** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -794,8 +793,8 @@ Returns a JSON object describing the Printer object model
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_500 = gr_http500 ).
+        e_code_200 = gr_http200
+        e_code_500 = gr_http500 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -816,8 +815,8 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_METADATA (**[Metadata](#markdown-header-model-metadata)**) | Query OK, metadata document is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | /BLCK/P5_METADATA (**[Metadata](#markdown-header-model-metadata)**) | Query OK, metadata document is returned
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -854,8 +853,8 @@ Retrieves printer configuration of the printer with the given printerName and re
     data gr_http404 type /BLCK/P5_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
-    data gr_http0 type /BLCK/P5_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P5_ERROR
+    data gr_httpother type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_printer_name = 'ipsum lorem'.
@@ -879,10 +878,10 @@ Retrieves printer configuration of the printer with the given printerName and re
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -892,10 +891,9 @@ Retrieves printer configuration of the printer with the given printerName and re
 *       do something with gr_http404 (type /BLCK/P5_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/P5_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P5_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P5_ERROR)
     endcase.
 
 ```
@@ -909,10 +907,10 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-printer)**) | Printer configuration
- 404 | **e_404** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Printer not found
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
- 0 | **e_0** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected Error
+ 200 | **e_code_200** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-printer)**) | Printer configuration
+ 404 | **e_code_404** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Printer not found
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ other | **e_code_other** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected Error
 
 ### HTTP request headers
 
@@ -972,9 +970,9 @@ Retrieve log entries for the given printer.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_404 = gr_http404
-        e_500 = gr_http500 ).
+        e_code_200 = gr_http200
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -999,9 +997,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_LOGS (**[Logs](#markdown-header-model-logs)**) | OK, log entries are returned
- 404 | **e_404** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | No log entries found
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | /BLCK/P5_LOGS (**[Logs](#markdown-header-model-logs)**) | OK, log entries are returned
+ 404 | **e_code_404** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | No log entries found
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -1059,8 +1057,8 @@ Returns a PrinterStatus object describing the current status of the printer.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_500 = gr_http500 ).
+        e_code_200 = gr_http200
+        e_code_500 = gr_http500 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -1083,8 +1081,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINTER_STATUS (**[PrinterStatus](#markdown-header-model-printer_status)**) | Query OK, status is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | /BLCK/P5_PRINTER_STATUS (**[PrinterStatus](#markdown-header-model-printer_status)**) | Query OK, status is returned
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -1149,9 +1147,9 @@ Aggregates count the number of objects matching a given query and aggregate resu
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_400 = gr_http400
-        e_500 = gr_http500 ).
+        e_code_200 = gr_http200
+        e_code_400 = gr_http400
+        e_code_500 = gr_http500 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -1176,9 +1174,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_AGGREGATERESPO (**[AggregateResponse](#markdown-header-model-aggregaterespo)**) | OK, an aggregate json object is returned
- 400 | **e_400** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Missing required paramenter
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | /BLCK/P5_AGGREGATERESPO (**[AggregateResponse](#markdown-header-model-aggregaterespo)**) | OK, an aggregate json object is returned
+ 400 | **e_code_400** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Missing required paramenter
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -1236,8 +1234,8 @@ This route provides access to the number of print jobs known in PLOSSYS P5; eith
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_500 = gr_http500 ).
+        e_code_200 = gr_http200
+        e_code_500 = gr_http500 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -1260,8 +1258,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-count)**) | OK, a number is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-count)**) | OK, a number is returned
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -1352,8 +1350,8 @@ A GET query to this path provides access to the list of print jobs in PLOSSYS P5
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_500 = gr_http500 ).
+        e_code_200 = gr_http200
+        e_code_500 = gr_http500 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -1381,8 +1379,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINT_JOB_TT (**[array of PrintJob](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | /BLCK/P5_PRINT_JOB_TT (**[array of PrintJob](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -1442,9 +1440,9 @@ A DELETE query to a job instance path stops and deletes the job.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_412 = gr_http412
-        e_500 = gr_http500 ).
+        e_code_200 = gr_http200
+        e_code_412 = gr_http412
+        e_code_500 = gr_http500 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -1469,9 +1467,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINT_JOB (**[PrintJob](#markdown-header-model-print_job)**) | OK, a json object is returned
- 412 | **e_412** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Wrong Printer Status.
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | /BLCK/P5_PRINT_JOB (**[PrintJob](#markdown-header-model-print_job)**) | OK, a json object is returned
+ 412 | **e_code_412** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Wrong Printer Status.
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -1529,8 +1527,8 @@ A GET query to this route returns a json object containing status information an
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_500 = gr_http500 ).
+        e_code_200 = gr_http200
+        e_code_500 = gr_http500 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -1553,8 +1551,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINT_JOB (**[PrintJob](#markdown-header-model-print_job)**) | OK, a json object is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | /BLCK/P5_PRINT_JOB (**[PrintJob](#markdown-header-model-print_job)**) | OK, a json object is returned
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -1594,8 +1592,8 @@ A print job which has been suspended using the /jobs/{jobID}/pause function can 
     data gr_http412 type /BLCK/P5_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
-    data gr_http0 type /BLCK/P5_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P5_ERROR
+    data gr_httpother type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
 *   gm_body-target_printer = 'ipsum lorem'. " (type /BLCK/P5_STRING)
@@ -1623,25 +1621,24 @@ A print job which has been suspended using the /jobs/{jobID}/pause function can 
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_404 = gr_http404
-        e_412 = gr_http412
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_404 = gr_http404
+        e_code_412 = gr_http412
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       handle code 200
+*       handle code 200, e_message => gvs_msg
       when 404.
 *       do something with gr_http404 (type /BLCK/P5_ERROR)
       when 412.
 *       do something with gr_http412 (type /BLCK/P5_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/P5_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P5_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P5_ERROR)
     endcase.
 
 ```
@@ -1690,8 +1687,8 @@ Print job processing can be paused by a PUT query against this functional ressou
     data gr_http412 type /BLCK/P5_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
-    data gr_http0 type /BLCK/P5_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P5_ERROR
+    data gr_httpother type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_job_id = 'ipsum lorem'.
@@ -1715,25 +1712,24 @@ Print job processing can be paused by a PUT query against this functional ressou
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_404 = gr_http404
-        e_412 = gr_http412
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_404 = gr_http404
+        e_code_412 = gr_http412
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       handle code 200
+*       handle code 200, e_message => gvs_msg
       when 404.
 *       do something with gr_http404 (type /BLCK/P5_ERROR)
       when 412.
 *       do something with gr_http412 (type /BLCK/P5_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/P5_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P5_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P5_ERROR)
     endcase.
 
 ```
@@ -1781,8 +1777,8 @@ A print job which has been printed before or failed can be repeated by a PUT que
     data gr_http412 type /BLCK/P5_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
-    data gr_http0 type /BLCK/P5_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P5_ERROR
+    data gr_httpother type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_job_id = 'ipsum lorem'.
@@ -1806,25 +1802,24 @@ A print job which has been printed before or failed can be repeated by a PUT que
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_404 = gr_http404
-        e_412 = gr_http412
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_404 = gr_http404
+        e_code_412 = gr_http412
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       handle code 200
+*       handle code 200, e_message => gvs_msg
       when 404.
 *       do something with gr_http404 (type /BLCK/P5_ERROR)
       when 412.
 *       do something with gr_http412 (type /BLCK/P5_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/P5_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P5_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P5_ERROR)
     endcase.
 
 ```
@@ -1872,8 +1867,8 @@ A print job which has been suspended using the /jobs/{jobID}/pause function can 
     data gr_http412 type /BLCK/P5_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
-    data gr_http0 type /BLCK/P5_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P5_ERROR
+    data gr_httpother type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_job_id = 'ipsum lorem'.
@@ -1897,25 +1892,24 @@ A print job which has been suspended using the /jobs/{jobID}/pause function can 
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_404 = gr_http404
-        e_412 = gr_http412
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_404 = gr_http404
+        e_code_412 = gr_http412
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       handle code 200
+*       handle code 200, e_message => gvs_msg
       when 404.
 *       do something with gr_http404 (type /BLCK/P5_ERROR)
       when 412.
 *       do something with gr_http412 (type /BLCK/P5_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/P5_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P5_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P5_ERROR)
     endcase.
 
 ```
@@ -1976,8 +1970,8 @@ Returns a JSON object describing the PrintJob object model
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_500 = gr_http500 ).
+        e_code_200 = gr_http200
+        e_code_500 = gr_http500 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -1998,8 +1992,8 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_METADATA (**[Metadata](#markdown-header-model-metadata)**) | Query OK, metadata document is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | /BLCK/P5_METADATA (**[Metadata](#markdown-header-model-metadata)**) | Query OK, metadata document is returned
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -2063,9 +2057,9 @@ A DELETE query to a job instance path stops and deletes the job.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_412 = gr_http412
-        e_500 = gr_http500 ).
+        e_code_200 = gr_http200
+        e_code_412 = gr_http412
+        e_code_500 = gr_http500 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -2090,9 +2084,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINT_JOB (**[PrintJob](#markdown-header-model-print_job)**) | OK, a json object is returned
- 412 | **e_412** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Wrong Printer Status.
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | /BLCK/P5_PRINT_JOB (**[PrintJob](#markdown-header-model-print_job)**) | OK, a json object is returned
+ 412 | **e_code_412** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Wrong Printer Status.
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -2132,8 +2126,8 @@ A print job which has been suspended using the /jobs/{jobID}/pause function can 
     data gr_http412 type /BLCK/P5_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
-    data gr_http0 type /BLCK/P5_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P5_ERROR
+    data gr_httpother type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
 *   gm_body-target_printer = 'ipsum lorem'. " (type /BLCK/P5_STRING)
@@ -2161,25 +2155,24 @@ A print job which has been suspended using the /jobs/{jobID}/pause function can 
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_404 = gr_http404
-        e_412 = gr_http412
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_404 = gr_http404
+        e_code_412 = gr_http412
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       handle code 200
+*       handle code 200, e_message => gvs_msg
       when 404.
 *       do something with gr_http404 (type /BLCK/P5_ERROR)
       when 412.
 *       do something with gr_http412 (type /BLCK/P5_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/P5_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P5_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P5_ERROR)
     endcase.
 
 ```
@@ -2228,8 +2221,8 @@ Print job processing can be paused by a PUT query against this functional ressou
     data gr_http412 type /BLCK/P5_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
-    data gr_http0 type /BLCK/P5_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P5_ERROR
+    data gr_httpother type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_job_id = 'ipsum lorem'.
@@ -2253,25 +2246,24 @@ Print job processing can be paused by a PUT query against this functional ressou
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_404 = gr_http404
-        e_412 = gr_http412
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_404 = gr_http404
+        e_code_412 = gr_http412
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       handle code 200
+*       handle code 200, e_message => gvs_msg
       when 404.
 *       do something with gr_http404 (type /BLCK/P5_ERROR)
       when 412.
 *       do something with gr_http412 (type /BLCK/P5_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/P5_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P5_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P5_ERROR)
     endcase.
 
 ```
@@ -2319,8 +2311,8 @@ A print job which has been printed before or failed can be repeated by a PUT que
     data gr_http412 type /BLCK/P5_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
-    data gr_http0 type /BLCK/P5_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P5_ERROR
+    data gr_httpother type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_job_id = 'ipsum lorem'.
@@ -2344,25 +2336,24 @@ A print job which has been printed before or failed can be repeated by a PUT que
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_404 = gr_http404
-        e_412 = gr_http412
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_404 = gr_http404
+        e_code_412 = gr_http412
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       handle code 200
+*       handle code 200, e_message => gvs_msg
       when 404.
 *       do something with gr_http404 (type /BLCK/P5_ERROR)
       when 412.
 *       do something with gr_http412 (type /BLCK/P5_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/P5_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P5_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P5_ERROR)
     endcase.
 
 ```
@@ -2410,8 +2401,8 @@ A print job which has been suspended using the /jobs/{jobID}/pause function can 
     data gr_http412 type /BLCK/P5_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
-    data gr_http0 type /BLCK/P5_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P5_ERROR
+    data gr_httpother type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_job_id = 'ipsum lorem'.
@@ -2435,25 +2426,24 @@ A print job which has been suspended using the /jobs/{jobID}/pause function can 
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_404 = gr_http404
-        e_412 = gr_http412
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_404 = gr_http404
+        e_code_412 = gr_http412
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       handle code 200
+*       handle code 200, e_message => gvs_msg
       when 404.
 *       do something with gr_http404 (type /BLCK/P5_ERROR)
       when 412.
 *       do something with gr_http412 (type /BLCK/P5_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/P5_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P5_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P5_ERROR)
     endcase.
 
 ```
@@ -2499,8 +2489,8 @@ Adds a new printer to the list of managed printers in PLOSSYS P5. The new printe
     data gr_http200 type /BLCK/P5_PRINTER.
 *   when the result of the call is HTTP500 we expect type /BLCK/P5_PRINTER
     data gr_http500 type /BLCK/P5_PRINTER.
-*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
-    data gr_http0 type /BLCK/P5_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P5_ERROR
+    data gr_httpother type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
 *   gm_body-id = 'ipsum lorem'. " (type /BLCK/P5_STRING)
@@ -2530,9 +2520,9 @@ Adds a new printer to the list of managed printers in PLOSSYS P5. The new printe
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -2540,10 +2530,9 @@ Adds a new printer to the list of managed printers in PLOSSYS P5. The new printe
 *       do something with gr_http200 (type /BLCK/P5_PRINTER)
       when 500.
 *       do something with gr_http500 (type /BLCK/P5_PRINTER)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P5_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P5_ERROR)
     endcase.
 
 ```
@@ -2557,9 +2546,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-printer)**) | OK. The printer was created, details of the new printer are returned
- 500 | **e_500** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-printer)**) | Error, e.g. in printer already exists
- 0 | **e_0** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected Error
+ 200 | **e_code_200** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-printer)**) | OK. The printer was created, details of the new printer are returned
+ 500 | **e_code_500** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-printer)**) | Error, e.g. in printer already exists
+ other | **e_code_other** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected Error
 
 ### HTTP request headers
 
@@ -2594,8 +2583,8 @@ Deletes the printer with the given name; If the printer is found and deletion is
     data gr_http412 type /BLCK/P5_PRINTER.
 *   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
-    data gr_http0 type /BLCK/P5_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P5_ERROR
+    data gr_httpother type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_printer_name = 'ipsum lorem'.
@@ -2619,22 +2608,21 @@ Deletes the printer with the given name; If the printer is found and deletion is
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_412 = gr_http412
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_412 = gr_http412
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       handle code 200
+*       handle code 200, e_message => gvs_msg
       when 412.
 *       do something with gr_http412 (type /BLCK/P5_PRINTER)
       when 500.
 *       do something with gr_http500 (type /BLCK/P5_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P5_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P5_ERROR)
     endcase.
 
 ```
@@ -2680,8 +2668,8 @@ Modifies a printer, replacing the current configuration with the one given in th
     data gr_http404 type /BLCK/P5_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
-    data gr_http0 type /BLCK/P5_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P5_ERROR
+    data gr_httpother type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
 *   gm_body-id = 'ipsum lorem'. " (type /BLCK/P5_STRING)
@@ -2706,22 +2694,21 @@ Modifies a printer, replacing the current configuration with the one given in th
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       handle code 200
+*       handle code 200, e_message => gvs_msg
       when 404.
 *       do something with gr_http404 (type /BLCK/P5_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/P5_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P5_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P5_ERROR)
     endcase.
 
 ```
@@ -2765,8 +2752,8 @@ A predefined test sheet is generated and inserted into the printer queue.
     data gvs_printer_name type /BLCK/P5_STRING.
 *   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
-    data gr_http0 type /BLCK/P5_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P5_ERROR
+    data gr_httpother type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_printer_name = 'ipsum lorem'.
@@ -2790,19 +2777,18 @@ A predefined test sheet is generated and inserted into the printer queue.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       handle code 200
+*       handle code 200, e_message => gvs_msg
       when 500.
 *       do something with gr_http500 (type /BLCK/P5_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P5_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P5_ERROR)
     endcase.
 
 ```
@@ -2850,8 +2836,8 @@ A printers operation can be paused by a PUT query against this functional ressou
     data gr_http412 type /BLCK/P5_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
-    data gr_http0 type /BLCK/P5_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P5_ERROR
+    data gr_httpother type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_printer_name = 'ipsum lorem'.
@@ -2875,25 +2861,24 @@ A printers operation can be paused by a PUT query against this functional ressou
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_404 = gr_http404
-        e_412 = gr_http412
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_404 = gr_http404
+        e_code_412 = gr_http412
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       handle code 200
+*       handle code 200, e_message => gvs_msg
       when 404.
 *       do something with gr_http404 (type /BLCK/P5_ERROR)
       when 412.
 *       do something with gr_http412 (type /BLCK/P5_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/P5_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P5_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P5_ERROR)
     endcase.
 
 ```
@@ -2941,8 +2926,8 @@ A printer can be redirected so that incoming print jobs for that printer are for
     data gr_http412 type /BLCK/P5_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
-    data gr_http0 type /BLCK/P5_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P5_ERROR
+    data gr_httpother type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_printer_name = 'ipsum lorem'.
@@ -2966,25 +2951,24 @@ A printer can be redirected so that incoming print jobs for that printer are for
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_404 = gr_http404
-        e_412 = gr_http412
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_404 = gr_http404
+        e_code_412 = gr_http412
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       handle code 200
+*       handle code 200, e_message => gvs_msg
       when 404.
 *       do something with gr_http404 (type /BLCK/P5_ERROR)
       when 412.
 *       do something with gr_http412 (type /BLCK/P5_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/P5_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P5_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P5_ERROR)
     endcase.
 
 ```
@@ -3032,8 +3016,8 @@ A printer which has been suspended using the /printers/{printerName}/pause funct
     data gr_http412 type /BLCK/P5_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
-    data gr_http0 type /BLCK/P5_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P5_ERROR
+    data gr_httpother type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_printer_name = 'ipsum lorem'.
@@ -3057,25 +3041,24 @@ A printer which has been suspended using the /printers/{printerName}/pause funct
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_404 = gr_http404
-        e_412 = gr_http412
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_404 = gr_http404
+        e_code_412 = gr_http412
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       handle code 200
+*       handle code 200, e_message => gvs_msg
       when 404.
 *       do something with gr_http404 (type /BLCK/P5_ERROR)
       when 412.
 *       do something with gr_http412 (type /BLCK/P5_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/P5_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P5_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P5_ERROR)
     endcase.
 
 ```
@@ -3148,8 +3131,8 @@ This route provides access to the number of print jobs known in PLOSSYS P5; eith
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_500 = gr_http500 ).
+        e_code_200 = gr_http200
+        e_code_500 = gr_http500 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -3172,8 +3155,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-count)**) | OK, a number is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-count)**) | OK, a number is returned
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -3264,8 +3247,8 @@ A GET query to this path provides access to the list of print jobs in PLOSSYS P5
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_500 = gr_http500 ).
+        e_code_200 = gr_http200
+        e_code_500 = gr_http500 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -3293,8 +3276,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINT_JOB_TT (**[array of PrintJob](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | /BLCK/P5_PRINT_JOB_TT (**[array of PrintJob](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -3352,8 +3335,8 @@ This route provides access to the number of printers registered in PLOSSYS P5; e
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_500 = gr_http500 ).
+        e_code_200 = gr_http200
+        e_code_500 = gr_http500 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -3376,8 +3359,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-count)**) | OK, a number is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-count)**) | OK, a number is returned
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -3427,8 +3410,8 @@ Retrieve a list of all known printers in PLOSSYS P5. A plain query to the endpoi
     data gr_http200 type /BLCK/P5_PRINTER_TT.
 *   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
-    data gr_http0 type /BLCK/P5_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P5_ERROR
+    data gr_httpother type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_filter = 'ipsum lorem'.
@@ -3470,9 +3453,9 @@ Retrieve a list of all known printers in PLOSSYS P5. A plain query to the endpoi
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -3480,10 +3463,9 @@ Retrieve a list of all known printers in PLOSSYS P5. A plain query to the endpoi
 *       do something with gr_http200 (type /BLCK/P5_PRINTER_TT)
       when 500.
 *       do something with gr_http500 (type /BLCK/P5_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P5_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P5_ERROR)
     endcase.
 
 ```
@@ -3502,9 +3484,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINTER_TT (**[array of Printer](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
- 0 | **e_0** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/P5_PRINTER_TT (**[array of Printer](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ other | **e_code_other** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -3564,9 +3546,9 @@ Retrieve log entries for the given printer.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_404 = gr_http404
-        e_500 = gr_http500 ).
+        e_code_200 = gr_http200
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -3591,9 +3573,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_LOGS (**[Logs](#markdown-header-model-logs)**) | OK, log entries are returned
- 404 | **e_404** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | No log entries found
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | /BLCK/P5_LOGS (**[Logs](#markdown-header-model-logs)**) | OK, log entries are returned
+ 404 | **e_code_404** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | No log entries found
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -3658,9 +3640,9 @@ Aggregates count the number of objects matching a given query and aggregate resu
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_400 = gr_http400
-        e_500 = gr_http500 ).
+        e_code_200 = gr_http200
+        e_code_400 = gr_http400
+        e_code_500 = gr_http500 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -3685,9 +3667,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_AGGREGATERESPO (**[AggregateResponse](#markdown-header-model-aggregaterespo)**) | OK, an aggregate json object is returned
- 400 | **e_400** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Missing required paramenter
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | /BLCK/P5_AGGREGATERESPO (**[AggregateResponse](#markdown-header-model-aggregaterespo)**) | OK, an aggregate json object is returned
+ 400 | **e_code_400** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Missing required paramenter
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -3745,8 +3727,8 @@ This route provides access to the number of printers registered in PLOSSYS P5; e
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_500 = gr_http500 ).
+        e_code_200 = gr_http200
+        e_code_500 = gr_http500 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -3769,8 +3751,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-count)**) | OK, a number is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-count)**) | OK, a number is returned
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -3820,8 +3802,8 @@ Retrieve a list of all known printers in PLOSSYS P5. A plain query to the endpoi
     data gr_http200 type /BLCK/P5_PRINTER_TT.
 *   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
-    data gr_http0 type /BLCK/P5_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P5_ERROR
+    data gr_httpother type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_filter = 'ipsum lorem'.
@@ -3863,9 +3845,9 @@ Retrieve a list of all known printers in PLOSSYS P5. A plain query to the endpoi
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -3873,10 +3855,9 @@ Retrieve a list of all known printers in PLOSSYS P5. A plain query to the endpoi
 *       do something with gr_http200 (type /BLCK/P5_PRINTER_TT)
       when 500.
 *       do something with gr_http500 (type /BLCK/P5_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P5_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P5_ERROR)
     endcase.
 
 ```
@@ -3895,9 +3876,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINTER_TT (**[array of Printer](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
- 0 | **e_0** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/P5_PRINTER_TT (**[array of Printer](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ other | **e_code_other** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -3947,8 +3928,8 @@ Returns a JSON object describing the Printer object model
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_500 = gr_http500 ).
+        e_code_200 = gr_http200
+        e_code_500 = gr_http500 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -3969,8 +3950,8 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_METADATA (**[Metadata](#markdown-header-model-metadata)**) | Query OK, metadata document is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | /BLCK/P5_METADATA (**[Metadata](#markdown-header-model-metadata)**) | Query OK, metadata document is returned
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -4005,8 +3986,8 @@ Adds a new printer to the list of managed printers in PLOSSYS P5. The new printe
     data gr_http200 type /BLCK/P5_PRINTER.
 *   when the result of the call is HTTP500 we expect type /BLCK/P5_PRINTER
     data gr_http500 type /BLCK/P5_PRINTER.
-*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
-    data gr_http0 type /BLCK/P5_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P5_ERROR
+    data gr_httpother type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
 *   gm_body-id = 'ipsum lorem'. " (type /BLCK/P5_STRING)
@@ -4036,9 +4017,9 @@ Adds a new printer to the list of managed printers in PLOSSYS P5. The new printe
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -4046,10 +4027,9 @@ Adds a new printer to the list of managed printers in PLOSSYS P5. The new printe
 *       do something with gr_http200 (type /BLCK/P5_PRINTER)
       when 500.
 *       do something with gr_http500 (type /BLCK/P5_PRINTER)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P5_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P5_ERROR)
     endcase.
 
 ```
@@ -4063,9 +4043,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-printer)**) | OK. The printer was created, details of the new printer are returned
- 500 | **e_500** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-printer)**) | Error, e.g. in printer already exists
- 0 | **e_0** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected Error
+ 200 | **e_code_200** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-printer)**) | OK. The printer was created, details of the new printer are returned
+ 500 | **e_code_500** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-printer)**) | Error, e.g. in printer already exists
+ other | **e_code_other** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected Error
 
 ### HTTP request headers
 
@@ -4100,8 +4080,8 @@ Deletes the printer with the given name; If the printer is found and deletion is
     data gr_http412 type /BLCK/P5_PRINTER.
 *   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
-    data gr_http0 type /BLCK/P5_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P5_ERROR
+    data gr_httpother type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_printer_name = 'ipsum lorem'.
@@ -4125,22 +4105,21 @@ Deletes the printer with the given name; If the printer is found and deletion is
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_412 = gr_http412
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_412 = gr_http412
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       handle code 200
+*       handle code 200, e_message => gvs_msg
       when 412.
 *       do something with gr_http412 (type /BLCK/P5_PRINTER)
       when 500.
 *       do something with gr_http500 (type /BLCK/P5_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P5_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P5_ERROR)
     endcase.
 
 ```
@@ -4188,8 +4167,8 @@ Retrieves printer configuration of the printer with the given printerName and re
     data gr_http404 type /BLCK/P5_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
-    data gr_http0 type /BLCK/P5_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P5_ERROR
+    data gr_httpother type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_printer_name = 'ipsum lorem'.
@@ -4213,10 +4192,10 @@ Retrieves printer configuration of the printer with the given printerName and re
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -4226,10 +4205,9 @@ Retrieves printer configuration of the printer with the given printerName and re
 *       do something with gr_http404 (type /BLCK/P5_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/P5_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P5_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P5_ERROR)
     endcase.
 
 ```
@@ -4243,10 +4221,10 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-printer)**) | Printer configuration
- 404 | **e_404** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Printer not found
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
- 0 | **e_0** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected Error
+ 200 | **e_code_200** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-printer)**) | Printer configuration
+ 404 | **e_code_404** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Printer not found
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ other | **e_code_other** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected Error
 
 ### HTTP request headers
 
@@ -4306,9 +4284,9 @@ Retrieve log entries for the given printer.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_404 = gr_http404
-        e_500 = gr_http500 ).
+        e_code_200 = gr_http200
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -4333,9 +4311,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_LOGS (**[Logs](#markdown-header-model-logs)**) | OK, log entries are returned
- 404 | **e_404** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | No log entries found
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | /BLCK/P5_LOGS (**[Logs](#markdown-header-model-logs)**) | OK, log entries are returned
+ 404 | **e_code_404** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | No log entries found
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -4370,8 +4348,8 @@ Modifies a printer, replacing the current configuration with the one given in th
     data gr_http404 type /BLCK/P5_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
-    data gr_http0 type /BLCK/P5_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P5_ERROR
+    data gr_httpother type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
 *   gm_body-id = 'ipsum lorem'. " (type /BLCK/P5_STRING)
@@ -4396,22 +4374,21 @@ Modifies a printer, replacing the current configuration with the one given in th
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       handle code 200
+*       handle code 200, e_message => gvs_msg
       when 404.
 *       do something with gr_http404 (type /BLCK/P5_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/P5_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P5_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P5_ERROR)
     endcase.
 
 ```
@@ -4455,8 +4432,8 @@ A predefined test sheet is generated and inserted into the printer queue.
     data gvs_printer_name type /BLCK/P5_STRING.
 *   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
-    data gr_http0 type /BLCK/P5_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P5_ERROR
+    data gr_httpother type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_printer_name = 'ipsum lorem'.
@@ -4480,19 +4457,18 @@ A predefined test sheet is generated and inserted into the printer queue.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       handle code 200
+*       handle code 200, e_message => gvs_msg
       when 500.
 *       do something with gr_http500 (type /BLCK/P5_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P5_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P5_ERROR)
     endcase.
 
 ```
@@ -4540,8 +4516,8 @@ A printers operation can be paused by a PUT query against this functional ressou
     data gr_http412 type /BLCK/P5_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
-    data gr_http0 type /BLCK/P5_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P5_ERROR
+    data gr_httpother type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_printer_name = 'ipsum lorem'.
@@ -4565,25 +4541,24 @@ A printers operation can be paused by a PUT query against this functional ressou
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_404 = gr_http404
-        e_412 = gr_http412
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_404 = gr_http404
+        e_code_412 = gr_http412
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       handle code 200
+*       handle code 200, e_message => gvs_msg
       when 404.
 *       do something with gr_http404 (type /BLCK/P5_ERROR)
       when 412.
 *       do something with gr_http412 (type /BLCK/P5_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/P5_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P5_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P5_ERROR)
     endcase.
 
 ```
@@ -4631,8 +4606,8 @@ A printer can be redirected so that incoming print jobs for that printer are for
     data gr_http412 type /BLCK/P5_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
-    data gr_http0 type /BLCK/P5_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P5_ERROR
+    data gr_httpother type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_printer_name = 'ipsum lorem'.
@@ -4656,25 +4631,24 @@ A printer can be redirected so that incoming print jobs for that printer are for
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_404 = gr_http404
-        e_412 = gr_http412
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_404 = gr_http404
+        e_code_412 = gr_http412
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       handle code 200
+*       handle code 200, e_message => gvs_msg
       when 404.
 *       do something with gr_http404 (type /BLCK/P5_ERROR)
       when 412.
 *       do something with gr_http412 (type /BLCK/P5_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/P5_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P5_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P5_ERROR)
     endcase.
 
 ```
@@ -4722,8 +4696,8 @@ A printer which has been suspended using the /printers/{printerName}/pause funct
     data gr_http412 type /BLCK/P5_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
-    data gr_http0 type /BLCK/P5_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P5_ERROR
+    data gr_httpother type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_printer_name = 'ipsum lorem'.
@@ -4747,25 +4721,24 @@ A printer which has been suspended using the /printers/{printerName}/pause funct
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_404 = gr_http404
-        e_412 = gr_http412
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_404 = gr_http404
+        e_code_412 = gr_http412
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       handle code 200
+*       handle code 200, e_message => gvs_msg
       when 404.
 *       do something with gr_http404 (type /BLCK/P5_ERROR)
       when 412.
 *       do something with gr_http412 (type /BLCK/P5_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/P5_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P5_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P5_ERROR)
     endcase.
 
 ```
@@ -4834,8 +4807,8 @@ Returns a PrinterStatus object describing the current status of the printer.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_500 = gr_http500 ).
+        e_code_200 = gr_http200
+        e_code_500 = gr_http500 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -4858,8 +4831,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINTER_STATUS (**[PrinterStatus](#markdown-header-model-printer_status)**) | Query OK, status is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | /BLCK/P5_PRINTER_STATUS (**[PrinterStatus](#markdown-header-model-printer_status)**) | Query OK, status is returned
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -4924,9 +4897,9 @@ Aggregates count the number of objects matching a given query and aggregate resu
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_400 = gr_http400
-        e_500 = gr_http500 ).
+        e_code_200 = gr_http200
+        e_code_400 = gr_http400
+        e_code_500 = gr_http500 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -4951,9 +4924,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_AGGREGATERESPO (**[AggregateResponse](#markdown-header-model-aggregaterespo)**) | OK, an aggregate json object is returned
- 400 | **e_400** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Missing required paramenter
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | /BLCK/P5_AGGREGATERESPO (**[AggregateResponse](#markdown-header-model-aggregaterespo)**) | OK, an aggregate json object is returned
+ 400 | **e_code_400** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Missing required paramenter
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -5011,8 +4984,8 @@ This route provides access to the number of print jobs known in PLOSSYS P5; eith
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_500 = gr_http500 ).
+        e_code_200 = gr_http200
+        e_code_500 = gr_http500 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -5035,8 +5008,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-count)**) | OK, a number is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-count)**) | OK, a number is returned
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -5127,8 +5100,8 @@ A GET query to this path provides access to the list of print jobs in PLOSSYS P5
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_500 = gr_http500 ).
+        e_code_200 = gr_http200
+        e_code_500 = gr_http500 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -5156,8 +5129,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINT_JOB_TT (**[array of PrintJob](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | /BLCK/P5_PRINT_JOB_TT (**[array of PrintJob](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -5218,9 +5191,9 @@ Aggregates count the number of objects matching a given query and aggregate resu
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_400 = gr_http400
-        e_500 = gr_http500 ).
+        e_code_200 = gr_http200
+        e_code_400 = gr_http400
+        e_code_500 = gr_http500 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -5245,9 +5218,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_AGGREGATERESPO (**[AggregateResponse](#markdown-header-model-aggregaterespo)**) | OK, an aggregate json object is returned
- 400 | **e_400** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Missing required paramenter
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | /BLCK/P5_AGGREGATERESPO (**[AggregateResponse](#markdown-header-model-aggregaterespo)**) | OK, an aggregate json object is returned
+ 400 | **e_code_400** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Missing required paramenter
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -5305,8 +5278,8 @@ This route provides access to the number of printers registered in PLOSSYS P5; e
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_500 = gr_http500 ).
+        e_code_200 = gr_http200
+        e_code_500 = gr_http500 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -5329,8 +5302,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-count)**) | OK, a number is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-count)**) | OK, a number is returned
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -5380,8 +5353,8 @@ Retrieve a list of all known printers in PLOSSYS P5. A plain query to the endpoi
     data gr_http200 type /BLCK/P5_PRINTER_TT.
 *   when the result of the call is HTTP500 we expect type /BLCK/P5_ERROR
     data gr_http500 type /BLCK/P5_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P5_ERROR
-    data gr_http0 type /BLCK/P5_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P5_ERROR
+    data gr_httpother type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_filter = 'ipsum lorem'.
@@ -5423,9 +5396,9 @@ Retrieve a list of all known printers in PLOSSYS P5. A plain query to the endpoi
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -5433,10 +5406,9 @@ Retrieve a list of all known printers in PLOSSYS P5. A plain query to the endpoi
 *       do something with gr_http200 (type /BLCK/P5_PRINTER_TT)
       when 500.
 *       do something with gr_http500 (type /BLCK/P5_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P5_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P5_ERROR)
     endcase.
 
 ```
@@ -5455,9 +5427,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_PRINTER_TT (**[array of Printer](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
- 0 | **e_0** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/P5_PRINTER_TT (**[array of Printer](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ other | **e_code_other** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -5517,9 +5489,9 @@ Retrieve log entries for the given printer.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_404 = gr_http404
-        e_500 = gr_http500 ).
+        e_code_200 = gr_http200
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -5544,9 +5516,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P5_LOGS (**[Logs](#markdown-header-model-logs)**) | OK, log entries are returned
- 404 | **e_404** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | No log entries found
- 500 | **e_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | /BLCK/P5_LOGS (**[Logs](#markdown-header-model-logs)**) | OK, log entries are returned
+ 404 | **e_code_404** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | No log entries found
+ 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 

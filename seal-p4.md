@@ -30,8 +30,8 @@ Opens a websocket connection and returns status changes of all jobs send by Oper
     data gr_http403 type /BLCK/P4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
     data gr_http500 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P4_ERROR
-    data gr_http0 type /BLCK/P4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P4_ERROR
+    data gr_httpother type /BLCK/P4_ERROR.
         
 
 
@@ -50,11 +50,11 @@ Opens a websocket connection and returns status changes of all jobs send by Oper
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -66,10 +66,9 @@ Opens a websocket connection and returns status changes of all jobs send by Oper
 *       do something with gr_http403 (type /BLCK/P4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/P4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P4_ERROR)
     endcase.
 
 ```
@@ -81,11 +80,11 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P4_JOBSTATUSEVENT (**[JobStatusEvent](#markdown-header-model-jobstatusevent)**) | OK, job status is returned
- 401 | **e_401** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights. 
- 500 | **e_500** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/P4_JOBSTATUSEVENT (**[JobStatusEvent](#markdown-header-model-jobstatusevent)**) | OK, job status is returned
+ 401 | **e_code_401** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights. 
+ 500 | **e_code_500** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -130,8 +129,8 @@ A POST call to this route will create a new jobs and return it's uuid.
     data gr_http409 type /BLCK/P4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
     data gr_http500 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P4_ERROR
-    data gr_http0 type /BLCK/P4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P4_ERROR
+    data gr_httpother type /BLCK/P4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_body = 'ipsum lorem'.
@@ -155,12 +154,12 @@ A POST call to this route will create a new jobs and return it's uuid.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -174,10 +173,9 @@ A POST call to this route will create a new jobs and return it's uuid.
 *       do something with gr_http409 (type /BLCK/P4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/P4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P4_ERROR)
     endcase.
 
 ```
@@ -191,12 +189,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P4_JOB_ID (**[JobId](#markdown-header-model-job_id)**) | OK, job ID is returned.
- 401 | **e_401** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service list. 
- 409 | **e_409** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
- 500 | **e_500** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/P4_JOB_ID (**[JobId](#markdown-header-model-job_id)**) | OK, job ID is returned.
+ 401 | **e_code_401** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service list. 
+ 409 | **e_code_409** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
+ 500 | **e_code_500** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -235,8 +233,8 @@ A POST call to this route will abort a running job.
     data gr_http409 type /BLCK/P4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
     data gr_http500 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P4_ERROR
-    data gr_http0 type /BLCK/P4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P4_ERROR
+    data gr_httpother type /BLCK/P4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_uuid = 'ipsum lorem'.
@@ -260,16 +258,16 @@ A POST call to this route will abort a running job.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 204.
-*       handle code 204
+*       handle code 204, e_message => gvs_msg
       when 401.
 *       do something with gr_http401 (type /BLCK/P4_ERROR)
       when 403.
@@ -278,10 +276,9 @@ A POST call to this route will abort a running job.
 *       do something with gr_http409 (type /BLCK/P4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/P4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P4_ERROR)
     endcase.
 
 ```
@@ -333,8 +330,8 @@ returns status of given job
     data gr_http404 type /BLCK/P4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
     data gr_http500 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P4_ERROR
-    data gr_http0 type /BLCK/P4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P4_ERROR
+    data gr_httpother type /BLCK/P4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_uuid = 'ipsum lorem'.
@@ -358,12 +355,12 @@ returns status of given job
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -377,10 +374,9 @@ returns status of given job
 *       do something with gr_http404 (type /BLCK/P4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/P4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P4_ERROR)
     endcase.
 
 ```
@@ -394,12 +390,12 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P4_JOB_STATUS (**[JobStatus](#markdown-header-model-job_status)**) | OK, job status is returned
- 401 | **e_401** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service metadata. 
- 404 | **e_404** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | The requested Service was not found.
- 500 | **e_500** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/P4_JOB_STATUS (**[JobStatus](#markdown-header-model-job_status)**) | OK, job status is returned
+ 401 | **e_code_401** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service metadata. 
+ 404 | **e_code_404** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | The requested Service was not found.
+ 500 | **e_code_500** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -438,8 +434,8 @@ A POST call to this route will pause a running job.
     data gr_http409 type /BLCK/P4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
     data gr_http500 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P4_ERROR
-    data gr_http0 type /BLCK/P4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P4_ERROR
+    data gr_httpother type /BLCK/P4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_uuid = 'ipsum lorem'.
@@ -463,16 +459,16 @@ A POST call to this route will pause a running job.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 204.
-*       handle code 204
+*       handle code 204, e_message => gvs_msg
       when 401.
 *       do something with gr_http401 (type /BLCK/P4_ERROR)
       when 403.
@@ -481,10 +477,9 @@ A POST call to this route will pause a running job.
 *       do something with gr_http409 (type /BLCK/P4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/P4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P4_ERROR)
     endcase.
 
 ```
@@ -534,8 +529,8 @@ A PUT call to this route will add a new file to the job. Data type is given in H
     data gr_http409 type /BLCK/P4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
     data gr_http500 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P4_ERROR
-    data gr_http0 type /BLCK/P4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P4_ERROR
+    data gr_httpother type /BLCK/P4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_uuid = 'ipsum lorem'.
@@ -559,16 +554,16 @@ A PUT call to this route will add a new file to the job. Data type is given in H
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 204.
-*       handle code 204
+*       handle code 204, e_message => gvs_msg
       when 401.
 *       do something with gr_http401 (type /BLCK/P4_ERROR)
       when 403.
@@ -577,10 +572,9 @@ A PUT call to this route will add a new file to the job. Data type is given in H
 *       do something with gr_http409 (type /BLCK/P4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/P4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P4_ERROR)
     endcase.
 
 ```
@@ -630,8 +624,8 @@ A POST call to this route will resume a paused job.
     data gr_http409 type /BLCK/P4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
     data gr_http500 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P4_ERROR
-    data gr_http0 type /BLCK/P4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P4_ERROR
+    data gr_httpother type /BLCK/P4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_uuid = 'ipsum lorem'.
@@ -655,16 +649,16 @@ A POST call to this route will resume a paused job.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 204.
-*       handle code 204
+*       handle code 204, e_message => gvs_msg
       when 401.
 *       do something with gr_http401 (type /BLCK/P4_ERROR)
       when 403.
@@ -673,10 +667,9 @@ A POST call to this route will resume a paused job.
 *       do something with gr_http409 (type /BLCK/P4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/P4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P4_ERROR)
     endcase.
 
 ```
@@ -726,8 +719,8 @@ A POST call to this route will start a previously created job.
     data gr_http409 type /BLCK/P4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
     data gr_http500 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P4_ERROR
-    data gr_http0 type /BLCK/P4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P4_ERROR
+    data gr_httpother type /BLCK/P4_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_uuid = 'ipsum lorem'.
@@ -751,16 +744,16 @@ A POST call to this route will start a previously created job.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 204.
-*       handle code 204
+*       handle code 204, e_message => gvs_msg
       when 401.
 *       do something with gr_http401 (type /BLCK/P4_ERROR)
       when 403.
@@ -769,10 +762,9 @@ A POST call to this route will start a previously created job.
 *       do something with gr_http409 (type /BLCK/P4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/P4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P4_ERROR)
     endcase.
 
 ```
@@ -823,8 +815,8 @@ Returns list of available printers inluding their capabilities
     data gr_http403 type /BLCK/P4_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
     data gr_http500 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/P4_ERROR
-    data gr_http0 type /BLCK/P4_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/P4_ERROR
+    data gr_httpother type /BLCK/P4_ERROR.
         
 
 
@@ -843,11 +835,11 @@ Returns list of available printers inluding their capabilities
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_403 = gr_http403
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_403 = gr_http403
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -859,10 +851,9 @@ Returns list of available printers inluding their capabilities
 *       do something with gr_http403 (type /BLCK/P4_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/P4_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/P4_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/P4_ERROR)
     endcase.
 
 ```
@@ -874,11 +865,11 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/P4_PRINTER_TT (**[array of Printer](#markdown-header-model-printer)**) | OK, array of printer objects is returned
- 401 | **e_401** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_403** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights. 
- 500 | **e_500** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/P4_PRINTER_TT (**[array of Printer](#markdown-header-model-printer)**) | OK, array of printer objects is returned
+ 401 | **e_code_401** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights. 
+ 500 | **e_code_500** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 

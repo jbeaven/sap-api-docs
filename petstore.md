@@ -55,7 +55,7 @@ Add a new pet to the store
 *** do something with the result if applicable..
     case gvi_code.
       when 405.
-*       handle code 405
+*       handle code 405, e_message => gvs_msg
       when others.
 * handle the general case..
     endcase.
@@ -129,9 +129,9 @@ Deletes a pet
 *** do something with the result if applicable..
     case gvi_code.
       when 400.
-*       handle code 400
+*       handle code 400, e_message => gvs_msg
       when 404.
-*       handle code 404
+*       handle code 404, e_message => gvs_msg
       when others.
 * handle the general case..
     endcase.
@@ -203,14 +203,14 @@ Multiple status values can be provided with comma separated strings
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200 ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
 *       do something with gr_http200 (type /BLCK/PET_PET_TT)
       when 400.
-*       handle code 400
+*       handle code 400, e_message => gvs_msg
       when others.
 * handle the general case..
     endcase.
@@ -226,7 +226,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/PET_PET_TT (**[array of Pet](#markdown-header-model-pet)**) | successful operation
+ 200 | **e_code_200** | /BLCK/PET_PET_TT (**[array of Pet](#markdown-header-model-pet)**) | successful operation
  400 | value not returned |  | Invalid status value
 
 ### HTTP request headers
@@ -285,14 +285,14 @@ Muliple tags can be provided with comma separated strings. Use tag1, tag2, tag3 
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200 ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
 *       do something with gr_http200 (type /BLCK/PET_PET_TT)
       when 400.
-*       handle code 400
+*       handle code 400, e_message => gvs_msg
       when others.
 * handle the general case..
     endcase.
@@ -308,7 +308,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/PET_PET_TT (**[array of Pet](#markdown-header-model-pet)**) | successful operation
+ 200 | **e_code_200** | /BLCK/PET_PET_TT (**[array of Pet](#markdown-header-model-pet)**) | successful operation
  400 | value not returned |  | Invalid tag value
 
 ### HTTP request headers
@@ -365,16 +365,16 @@ Returns a single pet
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200 ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
 *       do something with gr_http200 (type /BLCK/PET_PET)
       when 400.
-*       handle code 400
+*       handle code 400, e_message => gvs_msg
       when 404.
-*       handle code 404
+*       handle code 404, e_message => gvs_msg
       when others.
 * handle the general case..
     endcase.
@@ -390,7 +390,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/PET_PET (**[Pet](#markdown-header-model-pet)**) | successful operation
+ 200 | **e_code_200** | /BLCK/PET_PET (**[Pet](#markdown-header-model-pet)**) | successful operation
  400 | value not returned |  | Invalid ID supplied
  404 | value not returned |  | Pet not found
 
@@ -453,11 +453,11 @@ Update an existing pet
 *** do something with the result if applicable..
     case gvi_code.
       when 400.
-*       handle code 400
+*       handle code 400, e_message => gvs_msg
       when 404.
-*       handle code 404
+*       handle code 404, e_message => gvs_msg
       when 405.
-*       handle code 405
+*       handle code 405, e_message => gvs_msg
       when others.
 * handle the general case..
     endcase.
@@ -536,7 +536,7 @@ Updates a pet in the store with form data
 *** do something with the result if applicable..
     case gvi_code.
       when 405.
-*       handle code 405
+*       handle code 405, e_message => gvs_msg
       when others.
 * handle the general case..
     endcase.
@@ -615,7 +615,7 @@ uploads an image
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -638,7 +638,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/PET_API_RESPONSE (**[ApiResponse](#markdown-header-model-api_response)**) | successful operation
+ 200 | **e_code_200** | /BLCK/PET_API_RESPONSE (**[ApiResponse](#markdown-header-model-api_response)**) | successful operation
 
 ### HTTP request headers
 
@@ -700,9 +700,9 @@ For valid response try integer IDs with positive integer value. Negative or non-
 *** do something with the result if applicable..
     case gvi_code.
       when 400.
-*       handle code 400
+*       handle code 400, e_message => gvs_msg
       when 404.
-*       handle code 404
+*       handle code 404, e_message => gvs_msg
       when others.
 * handle the general case..
     endcase.
@@ -763,7 +763,7 @@ Returns a map of status codes to quantities
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -782,7 +782,7 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/PET_INT_MT (**[map of ](#markdown-header-model-)**) | successful operation
+ 200 | **e_code_200** | /BLCK/PET_INT_MT (**[map of ](#markdown-header-model-)**) | successful operation
 
 ### HTTP request headers
 
@@ -838,16 +838,16 @@ For valid response try integer IDs with value >= 1 and <= 10. Other values will 
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200 ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
 *       do something with gr_http200 (type /BLCK/PET_ORDER)
       when 400.
-*       handle code 400
+*       handle code 400, e_message => gvs_msg
       when 404.
-*       handle code 404
+*       handle code 404, e_message => gvs_msg
       when others.
 * handle the general case..
     endcase.
@@ -863,7 +863,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/PET_ORDER (**[Order](#markdown-header-model-order)**) | successful operation
+ 200 | **e_code_200** | /BLCK/PET_ORDER (**[Order](#markdown-header-model-order)**) | successful operation
  400 | value not returned |  | Invalid ID supplied
  404 | value not returned |  | Order not found
 
@@ -924,14 +924,14 @@ Place an order for a pet
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200 ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
 *       do something with gr_http200 (type /BLCK/PET_ORDER)
       when 400.
-*       handle code 400
+*       handle code 400, e_message => gvs_msg
       when others.
 * handle the general case..
     endcase.
@@ -947,7 +947,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/PET_ORDER (**[Order](#markdown-header-model-order)**) | successful operation
+ 200 | **e_code_200** | /BLCK/PET_ORDER (**[Order](#markdown-header-model-order)**) | successful operation
  400 | value not returned |  | Invalid Order
 
 ### HTTP request headers
@@ -1016,10 +1016,9 @@ This can only be done by the logged in user.
 
 *** do something with the result if applicable..
     case gvi_code.
-      when 0.
-*       handle code 0
       when others.
 * handle the general case..
+*       handle code other, e_message => gvs_msg
     endcase.
 
 ```
@@ -1087,10 +1086,9 @@ Creates list of users with given input array
 
 *** do something with the result if applicable..
     case gvi_code.
-      when 0.
-*       handle code 0
       when others.
 * handle the general case..
+*       handle code other, e_message => gvs_msg
     endcase.
 
 ```
@@ -1158,10 +1156,9 @@ Creates list of users with given input array
 
 *** do something with the result if applicable..
     case gvi_code.
-      when 0.
-*       handle code 0
       when others.
 * handle the general case..
+*       handle code other, e_message => gvs_msg
     endcase.
 
 ```
@@ -1230,9 +1227,9 @@ This can only be done by the logged in user.
 *** do something with the result if applicable..
     case gvi_code.
       when 400.
-*       handle code 400
+*       handle code 400, e_message => gvs_msg
       when 404.
-*       handle code 404
+*       handle code 404, e_message => gvs_msg
       when others.
 * handle the general case..
     endcase.
@@ -1299,16 +1296,16 @@ Get user by user name
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200 ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
 *       do something with gr_http200 (type /BLCK/PET_USER)
       when 400.
-*       handle code 400
+*       handle code 400, e_message => gvs_msg
       when 404.
-*       handle code 404
+*       handle code 404, e_message => gvs_msg
       when others.
 * handle the general case..
     endcase.
@@ -1324,7 +1321,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/PET_USER (**[User](#markdown-header-model-user)**) | successful operation
+ 200 | **e_code_200** | /BLCK/PET_USER (**[User](#markdown-header-model-user)**) | successful operation
  400 | value not returned |  | Invalid username supplied
  404 | value not returned |  | User not found
 
@@ -1386,14 +1383,14 @@ Logs user into the system
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200 ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
 *       do something with gr_http200 (type /BLCK/PET_STRING)
       when 400.
-*       handle code 400
+*       handle code 400, e_message => gvs_msg
       when others.
 * handle the general case..
     endcase.
@@ -1410,7 +1407,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/PET_STRING | successful operation
+ 200 | **e_code_200** | /BLCK/PET_STRING | successful operation
  400 | value not returned |  | Invalid username/password supplied
 
 ### HTTP request headers
@@ -1458,10 +1455,9 @@ Logs out current logged in user session
 
 *** do something with the result if applicable..
     case gvi_code.
-      when 0.
-*       handle code 0
       when others.
 * handle the general case..
+*       handle code other, e_message => gvs_msg
     endcase.
 
 ```
@@ -1541,9 +1537,9 @@ This can only be done by the logged in user.
 *** do something with the result if applicable..
     case gvi_code.
       when 400.
-*       handle code 400
+*       handle code 400, e_message => gvs_msg
       when 404.
-*       handle code 404
+*       handle code 404, e_message => gvs_msg
       when others.
 * handle the general case..
     endcase.

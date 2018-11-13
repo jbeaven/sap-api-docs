@@ -25,6 +25,8 @@ Adds an object to the favorites.
     data gm_body type /BLCK/MFI_OBJ_ID.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gm_body-id = 42. " (type /BLCK/MFI_INT)
@@ -50,7 +52,8 @@ Adds an object to the favorites.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -58,6 +61,7 @@ Adds an object to the favorites.
 *       do something with gr_http200 (type /BLCK/MFI_EXTENDEDOBJECT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -71,7 +75,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -105,6 +110,8 @@ Retrieves object version information on the favorite object
     data gvs_objectid type /BLCK/MFI_STRING.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_type = 42.
@@ -129,7 +136,8 @@ Retrieves object version information on the favorite object
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -137,6 +145,7 @@ Retrieves object version information on the favorite object
 *       do something with gr_http200 (type /BLCK/MFI_OBJECT_VERSION)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -151,7 +160,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION (**[ObjectVersion](#markdown-header-model-object_version)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_OBJECT_VERSION (**[ObjectVersion](#markdown-header-model-object_version)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -179,6 +189,8 @@ Retrieves favorite objects.
 *** create variables for input and output as needed
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION_TT
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION_TT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
 
@@ -197,7 +209,8 @@ Retrieves favorite objects.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -205,6 +218,7 @@ Retrieves favorite objects.
 *       do something with gr_http200 (type /BLCK/MFI_OBJECT_VERSION_TT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -216,7 +230,8 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of ObjectVersion](#markdown-header-model-object_version)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of ObjectVersion](#markdown-header-model-object_version)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -250,6 +265,8 @@ Removes an object from favorites.
     data gvs_objectid type /BLCK/MFI_STRING.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_type = 42.
@@ -274,7 +291,8 @@ Removes an object from favorites.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -282,6 +300,7 @@ Removes an object from favorites.
 *       do something with gr_http200 (type /BLCK/MFI_EXTENDEDOBJECT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -296,7 +315,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -333,6 +353,8 @@ Stores a temporary file on the server and assigns an ID for it. Once uploaded th
     data gvs_body type /BLCK/MFI_STRING.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_UPLOAD_INFO
     data gr_http200 type /BLCK/MFI_UPLOAD_INFO.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvs_body = 'ipsum lorem'.
@@ -355,7 +377,8 @@ Stores a temporary file on the server and assigns an ID for it. Once uploaded th
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -363,6 +386,7 @@ Stores a temporary file on the server and assigns an ID for it. Once uploaded th
 *       do something with gr_http200 (type /BLCK/MFI_UPLOAD_INFO)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -376,7 +400,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_UPLOAD_INFO (**[UploadInfo](#markdown-header-model-upload_info)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_UPLOAD_INFO (**[UploadInfo](#markdown-header-model-upload_info)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -420,6 +445,8 @@ Adds a comment to an object
     data gvs_version type /BLCK/MFI_STRING.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvs_body = 'ipsum lorem'.
@@ -449,7 +476,8 @@ Adds a comment to an object
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -457,6 +485,7 @@ Adds a comment to an object
 *       do something with gr_http200 (type /BLCK/MFI_EXTENDEDOBJECT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -473,7 +502,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -513,6 +543,8 @@ Adds a new file to the object.
     data gvs_version type /BLCK/MFI_STRING.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvs_body = 'ipsum lorem'.
@@ -542,7 +574,8 @@ Adds a new file to the object.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -550,6 +583,7 @@ Adds a new file to the object.
 *       do something with gr_http200 (type /BLCK/MFI_OBJECT_VERSION)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -566,7 +600,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION (**[ObjectVersion](#markdown-header-model-object_version)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_OBJECT_VERSION (**[ObjectVersion](#markdown-header-model-object_version)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -600,6 +635,8 @@ Creates a new object of type.
     data gvi_type type /BLCK/MFI_INT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gm_body-property_values = l_property_values. " (type /BLCK/MFI_PROPERTY_VALUE_TT)
@@ -625,7 +662,8 @@ Creates a new object of type.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -633,6 +671,7 @@ Creates a new object of type.
 *       do something with gr_http200 (type /BLCK/MFI_OBJECT_VERSION)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -647,7 +686,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION (**[ObjectVersion](#markdown-header-model-object_version)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_OBJECT_VERSION (**[ObjectVersion](#markdown-header-model-object_version)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -678,6 +718,8 @@ Demotes external objects that have been previously promoted.
     data gi_body type /BLCK/MFI_OBJ_ID_TTT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT_TT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT_TT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   data lr_body like line of gi_body.
@@ -703,7 +745,8 @@ Demotes external objects that have been previously promoted.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -711,6 +754,7 @@ Demotes external objects that have been previously promoted.
 *       do something with gr_http200 (type /BLCK/MFI_EXTENDEDOBJECT_TT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -724,7 +768,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT_TT (**[array of ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_EXTENDEDOBJECT_TT (**[array of ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -767,6 +812,8 @@ As checked in versions cannot be destroyed this can only be performed on a check
 *   for parameter i_all_versions:
 *   a simple ABAP primitive of type /BLCK/MFI_BOOL
     data gv_all_versions type /BLCK/MFI_BOOL.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_type = 42.
@@ -800,14 +847,16 @@ As checked in versions cannot be destroyed this can only be performed on a check
         i_all_versions = gv_all_versions
       importing
         e_code = gvi_code
-        e_message = gvs_msg ).
+        e_message = gvs_msg
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 204.
-*       handle code 204
+*       handle code 204, e_message => gvs_msg
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -827,7 +876,7 @@ Name | Type | Description
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ## operation: **get_automatic_metadata**
@@ -853,6 +902,8 @@ Retrieves automatic metadata based on specified request info.
     data gm_body type /BLCK/MFI_AUTOMATICMETAD.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_PROPERTYVALUES_TT
     data gr_http200 type /BLCK/MFI_PROPERTYVALUES_TT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gm_body-upload_ids = l_upload_ids. " (type /BLCK/MFI_INT_TT)
@@ -881,7 +932,8 @@ Retrieves automatic metadata based on specified request info.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -889,6 +941,7 @@ Retrieves automatic metadata based on specified request info.
 *       do something with gr_http200 (type /BLCK/MFI_PROPERTYVALUES_TT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -902,7 +955,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_PROPERTYVALUES_TT (**[array of PropertyValueSuggestion](#markdown-header-model-propertyvalues)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_PROPERTYVALUES_TT (**[array of PropertyValueSuggestion](#markdown-header-model-propertyvalues)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -939,6 +993,8 @@ Retrieves the current check out status.
     data gvs_version type /BLCK/MFI_STRING.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_MFCHECKOUTSTAT
     data gr_http200 type /BLCK/MFI_MFCHECKOUTSTAT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_type = 42.
@@ -965,7 +1021,8 @@ Retrieves the current check out status.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -973,6 +1030,7 @@ Retrieves the current check out status.
 *       do something with gr_http200 (type /BLCK/MFI_MFCHECKOUTSTAT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -988,7 +1046,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_MFCHECKOUTSTAT (**[MFCheckOutStatus](#markdown-header-model-mfcheckoutstat)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_MFCHECKOUTSTAT (**[MFCheckOutStatus](#markdown-header-model-mfcheckoutstat)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -1025,6 +1084,8 @@ Retrieves the comments written on the object.
     data gvs_version type /BLCK/MFI_STRING.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_VERSIONCOMMENT_TT
     data gr_http200 type /BLCK/MFI_VERSIONCOMMENT_TT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_type = 42.
@@ -1051,7 +1112,8 @@ Retrieves the comments written on the object.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -1059,6 +1121,7 @@ Retrieves the comments written on the object.
 *       do something with gr_http200 (type /BLCK/MFI_VERSIONCOMMENT_TT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -1074,7 +1137,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_VERSIONCOMMENT_TT (**[array of VersionComment](#markdown-header-model-versioncomment)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_VERSIONCOMMENT_TT (**[array of VersionComment](#markdown-header-model-versioncomment)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -1105,6 +1169,8 @@ Retrieves the deleted status of the object.
     data gvi_type type /BLCK/MFI_INT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_BOOL
     data gr_http200 type /BLCK/MFI_BOOL.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_type = 42.
@@ -1127,7 +1193,8 @@ Retrieves the deleted status of the object.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -1135,6 +1202,7 @@ Retrieves the deleted status of the object.
 *       do something with gr_http200 (type /BLCK/MFI_BOOL)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -1148,7 +1216,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_BOOL | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_BOOL | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -1194,6 +1263,8 @@ Retrieves the object file contents.
     data gv_mac type /BLCK/MFI_BOOL.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_BINARY
     data gr_http200 type /BLCK/MFI_BINARY.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_type = 42.
@@ -1229,7 +1300,8 @@ Retrieves the object file contents.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -1237,6 +1309,7 @@ Retrieves the object file contents.
 *       do something with gr_http200 (type /BLCK/MFI_BINARY)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -1255,7 +1328,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_BINARY | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_BINARY | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -1295,6 +1369,8 @@ Retrieves the object file information for the specific object file.
     data gvi_file type /BLCK/MFI_INT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_FILE
     data gr_http200 type /BLCK/MFI_OBJECT_FILE.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_type = 42.
@@ -1323,7 +1399,8 @@ Retrieves the object file information for the specific object file.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -1331,6 +1408,7 @@ Retrieves the object file information for the specific object file.
 *       do something with gr_http200 (type /BLCK/MFI_OBJECT_FILE)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -1347,7 +1425,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_FILE (**[ObjectFile](#markdown-header-model-object_file)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_OBJECT_FILE (**[ObjectFile](#markdown-header-model-object_file)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -1399,6 +1478,8 @@ Retrieves the file preview.
     data gvi_height type /BLCK/MFI_INT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_BINARY
     data gr_http200 type /BLCK/MFI_BINARY.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_type = 42.
@@ -1441,16 +1522,18 @@ Retrieves the file preview.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
 *       do something with gr_http200 (type /BLCK/MFI_BINARY)
       when 404.
-*       handle code 404
+*       handle code 404, e_message => gvs_msg
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -1471,8 +1554,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_BINARY | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_BINARY | successful operation
  404 | value not returned |  | If a preview cannot be generated the service responds with a 404.
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -1512,6 +1596,8 @@ Retrieves the current object file name.
     data gvi_file type /BLCK/MFI_INT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_STRING
     data gr_http200 type /BLCK/MFI_STRING.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_type = 42.
@@ -1540,7 +1626,8 @@ Retrieves the current object file name.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -1548,6 +1635,7 @@ Retrieves the current object file name.
 *       do something with gr_http200 (type /BLCK/MFI_STRING)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -1564,7 +1652,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_STRING | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_STRING | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -1601,6 +1690,8 @@ Retrieves the object file information for all the files on an object.
     data gvs_version type /BLCK/MFI_STRING.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_FILE_TT
     data gr_http200 type /BLCK/MFI_OBJECT_FILE_TT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_type = 42.
@@ -1627,7 +1718,8 @@ Retrieves the object file information for all the files on an object.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -1635,6 +1727,7 @@ Retrieves the object file information for all the files on an object.
 *       do something with gr_http200 (type /BLCK/MFI_OBJECT_FILE_TT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -1650,7 +1743,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_FILE_TT (**[array of ObjectFile](#markdown-header-model-object_file)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_OBJECT_FILE_TT (**[array of ObjectFile](#markdown-header-model-object_file)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -1683,6 +1777,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/properti
     data gvs_object_ids type /BLCK/MFI_STRING.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION_TT
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION_TT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvs_object_ids = 'ipsum lorem'.
@@ -1707,7 +1803,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/properti
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -1715,6 +1812,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/properti
 *       do something with gr_http200 (type /BLCK/MFI_OBJECT_VERSION_TT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -1728,7 +1826,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of ObjectVersion](#markdown-header-model-object_version)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of ObjectVersion](#markdown-header-model-object_version)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -1767,6 +1866,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
     data gvs_version type /BLCK/MFI_STRING.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_STRING
     data gr_http200 type /BLCK/MFI_STRING.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_type = 42.
@@ -1793,7 +1894,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -1801,6 +1903,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *       do something with gr_http200 (type /BLCK/MFI_STRING)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -1816,7 +1919,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_STRING | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_STRING | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -1858,6 +1962,8 @@ Parameters: ?include - A list of additional fields to include in the ExtendedObj
     data gvs_include type /BLCK/MFI_STRING.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_type = 42.
@@ -1886,7 +1992,8 @@ Parameters: ?include - A list of additional fields to include in the ExtendedObj
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -1894,6 +2001,7 @@ Parameters: ?include - A list of additional fields to include in the ExtendedObj
 *       do something with gr_http200 (type /BLCK/MFI_EXTENDEDOBJECT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -1910,7 +2018,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -1961,6 +2070,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
     data gvi_height type /BLCK/MFI_INT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_BINARY
     data gr_http200 type /BLCK/MFI_BINARY.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_type = 42.
@@ -2001,16 +2112,18 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
 *       do something with gr_http200 (type /BLCK/MFI_BINARY)
       when 404.
-*       handle code 404
+*       handle code 404, e_message => gvs_msg
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -2030,8 +2143,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_BINARY | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_BINARY | successful operation
  404 | value not returned |  | If a preview cannot be generated the service responds with a 404.
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -2062,6 +2176,8 @@ Retrieves all the available versions of the object.
     data gvi_type type /BLCK/MFI_INT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION_TT
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION_TT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_type = 42.
@@ -2084,7 +2200,8 @@ Retrieves all the available versions of the object.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -2092,6 +2209,7 @@ Retrieves all the available versions of the object.
 *       do something with gr_http200 (type /BLCK/MFI_OBJECT_VERSION_TT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -2105,7 +2223,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of ObjectVersion](#markdown-header-model-object_version)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of ObjectVersion](#markdown-header-model-object_version)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -2135,6 +2254,8 @@ The amount of returned objects is limited by the server, by default to 500 items
 *** create variables for input and output as needed
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_RESULTSOBJECTV
     data gr_http200 type /BLCK/MFI_RESULTSOBJECTV.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
 
@@ -2153,7 +2274,8 @@ The amount of returned objects is limited by the server, by default to 500 items
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -2161,6 +2283,7 @@ The amount of returned objects is limited by the server, by default to 500 items
 *       do something with gr_http200 (type /BLCK/MFI_RESULTSOBJECTV)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -2172,7 +2295,8 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_RESULTSOBJECTV (**[ResultsObjectVersion](#markdown-header-model-resultsobjectv)**) | Retrieves objects. The amount of returned objects is limited by the server, by default to 500 items.
+ 200 | **e_code_200** | /BLCK/MFI_RESULTSOBJECTV (**[ResultsObjectVersion](#markdown-header-model-resultsobjectv)**) | Retrieves objects. The amount of returned objects is limited by the server, by default to 500 items.
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -2203,6 +2327,8 @@ Collection of objects filtered by object type.
     data gvi_type type /BLCK/MFI_INT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_RESULTSOBJECTV
     data gr_http200 type /BLCK/MFI_RESULTSOBJECTV.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_type = 42.
@@ -2225,7 +2351,8 @@ Collection of objects filtered by object type.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -2233,6 +2360,7 @@ Collection of objects filtered by object type.
 *       do something with gr_http200 (type /BLCK/MFI_RESULTSOBJECTV)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -2246,7 +2374,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_RESULTSOBJECTV (**[ResultsObjectVersion](#markdown-header-model-resultsobjectv)**) | Retrieves objects of the given type. The amount of returned objects is limited by the server.
+ 200 | **e_code_200** | /BLCK/MFI_RESULTSOBJECTV (**[ResultsObjectVersion](#markdown-header-model-resultsobjectv)**) | Retrieves objects of the given type. The amount of returned objects is limited by the server.
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -2288,6 +2417,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
     data gv_for_display type /BLCK/MFI_BOOL.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_PROPERTY_VALUE_TT
     data gr_http200 type /BLCK/MFI_PROPERTY_VALUE_TT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_type = 42.
@@ -2319,7 +2450,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -2327,6 +2459,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *       do something with gr_http200 (type /BLCK/MFI_PROPERTY_VALUE_TT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -2343,7 +2476,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_PROPERTY_VALUE_TT (**[array of PropertyValue](#markdown-header-model-property_value)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_PROPERTY_VALUE_TT (**[array of PropertyValue](#markdown-header-model-property_value)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -2385,6 +2519,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
     data gvi_id type /BLCK/MFI_INT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_PROPERTY_VALUE
     data gr_http200 type /BLCK/MFI_PROPERTY_VALUE.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_type = 42.
@@ -2413,7 +2549,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -2421,6 +2558,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *       do something with gr_http200 (type /BLCK/MFI_PROPERTY_VALUE)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -2437,7 +2575,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_PROPERTY_VALUE (**[PropertyValue](#markdown-header-model-property_value)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_PROPERTY_VALUE (**[PropertyValue](#markdown-header-model-property_value)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -2482,6 +2621,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
     data gvs_direction type /BLCK/MFI_STRING.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_INT
     data gr_http200 type /BLCK/MFI_INT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_type = 42.
@@ -2517,7 +2658,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -2525,6 +2667,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *       do something with gr_http200 (type /BLCK/MFI_INT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -2542,7 +2685,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_INT | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_INT | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -2587,6 +2731,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
     data gvs_direction type /BLCK/MFI_STRING.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION_TT
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION_TT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_type = 42.
@@ -2622,7 +2768,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -2630,6 +2777,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *       do something with gr_http200 (type /BLCK/MFI_OBJECT_VERSION_TT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -2647,7 +2795,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of ObjectVersion](#markdown-header-model-object_version)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of ObjectVersion](#markdown-header-model-object_version)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -2686,6 +2835,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
     data gvs_version type /BLCK/MFI_STRING.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECTWORKFLOW
     data gr_http200 type /BLCK/MFI_OBJECTWORKFLOW.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_type = 42.
@@ -2712,7 +2863,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -2720,6 +2872,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *       do something with gr_http200 (type /BLCK/MFI_OBJECTWORKFLOW)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -2735,7 +2888,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECTWORKFLOW (**[ObjectWorkflowState](#markdown-header-model-objectworkflow)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_OBJECTWORKFLOW (**[ObjectWorkflowState](#markdown-header-model-objectworkflow)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -2774,6 +2928,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
     data gvs_version type /BLCK/MFI_STRING.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_INT
     data gr_http200 type /BLCK/MFI_INT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_type = 42.
@@ -2800,7 +2956,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -2808,6 +2965,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *       do something with gr_http200 (type /BLCK/MFI_INT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -2823,7 +2981,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_INT | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_INT | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -2862,6 +3021,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
     data gvs_version type /BLCK/MFI_STRING.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION_TT
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION_TT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_type = 42.
@@ -2888,7 +3049,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -2896,6 +3058,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *       do something with gr_http200 (type /BLCK/MFI_OBJECT_VERSION_TT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -2911,7 +3074,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of ObjectVersion](#markdown-header-model-object_version)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of ObjectVersion](#markdown-header-model-object_version)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -2949,6 +3113,8 @@ Removes the file from the object.
 *   for parameter i_file:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_file type /BLCK/MFI_INT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_type = 42.
@@ -2976,14 +3142,16 @@ Removes the file from the object.
         i_file = gvi_file
       importing
         e_code = gvi_code
-        e_message = gvs_msg ).
+        e_message = gvs_msg
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 203.
-*       handle code 203
+*       handle code 203, e_message => gvs_msg
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -3002,7 +3170,7 @@ Name | Type | Description
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ## operation: **remove_property**
@@ -3039,6 +3207,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
     data gvi_id type /BLCK/MFI_INT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_type = 42.
@@ -3067,7 +3237,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -3075,6 +3246,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *       do something with gr_http200 (type /BLCK/MFI_EXTENDEDOBJECT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -3091,7 +3263,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -3133,6 +3306,8 @@ Sets the check out status. This is allowed only when the object isn't checked ou
     data gvs_version type /BLCK/MFI_STRING.
 *   when the result of the call is HTTP204 we expect type /BLCK/MFI_OBJECT_VERSION
     data gr_http204 type /BLCK/MFI_OBJECT_VERSION.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_body = 42.
@@ -3161,7 +3336,8 @@ Sets the check out status. This is allowed only when the object isn't checked ou
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_204 = gr_http204 ).
+        e_code_204 = gr_http204
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -3169,6 +3345,7 @@ Sets the check out status. This is allowed only when the object isn't checked ou
 *       do something with gr_http204 (type /BLCK/MFI_OBJECT_VERSION)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -3185,7 +3362,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 204 | **e_204** | /BLCK/MFI_OBJECT_VERSION (**[ObjectVersion](#markdown-header-model-object_version)**) | successful operation
+ 204 | **e_code_204** | /BLCK/MFI_OBJECT_VERSION (**[ObjectVersion](#markdown-header-model-object_version)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -3219,6 +3397,8 @@ Sets the deleted status of the object.
     data gvi_type type /BLCK/MFI_INT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gv_body = 'X'.
@@ -3243,7 +3423,8 @@ Sets the deleted status of the object.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -3251,6 +3432,7 @@ Sets the deleted status of the object.
 *       do something with gr_http200 (type /BLCK/MFI_OBJECT_VERSION)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -3265,7 +3447,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION (**[ObjectVersion](#markdown-header-model-object_version)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_OBJECT_VERSION (**[ObjectVersion](#markdown-header-model-object_version)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -3308,6 +3491,8 @@ Replaces the object file contents.
     data gvi_file type /BLCK/MFI_INT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvs_body = 'ipsum lorem'.
@@ -3339,7 +3524,8 @@ Replaces the object file contents.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -3347,6 +3533,7 @@ Replaces the object file contents.
 *       do something with gr_http200 (type /BLCK/MFI_OBJECT_VERSION)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -3364,7 +3551,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION (**[ObjectVersion](#markdown-header-model-object_version)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_OBJECT_VERSION (**[ObjectVersion](#markdown-header-model-object_version)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -3407,6 +3595,8 @@ Sets the name on the object file.
     data gvi_file type /BLCK/MFI_INT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvs_body = 'ipsum lorem'.
@@ -3438,7 +3628,8 @@ Sets the name on the object file.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -3446,6 +3637,7 @@ Sets the name on the object file.
 *       do something with gr_http200 (type /BLCK/MFI_OBJECT_VERSION)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -3463,7 +3655,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION (**[ObjectVersion](#markdown-header-model-object_version)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_OBJECT_VERSION (**[ObjectVersion](#markdown-header-model-object_version)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -3497,6 +3690,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/setmulti
     data gm_body type /BLCK/MFI_OBJECTSUPDATEI.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT_TT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT_TT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gm_body-multiple_object_info = l_multiple_object_info. " (type /BLCK/MFI_OBJECTVERSIONU)
@@ -3519,7 +3714,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/setmulti
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -3527,6 +3723,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/setmulti
 *       do something with gr_http200 (type /BLCK/MFI_EXTENDEDOBJECT_TT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -3540,7 +3737,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT_TT (**[array of ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_EXTENDEDOBJECT_TT (**[array of ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -3582,6 +3780,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
     data gvs_version type /BLCK/MFI_STRING.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvs_body = 'ipsum lorem'.
@@ -3611,16 +3811,18 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
 *       do something with gr_http200 (type /BLCK/MFI_OBJECT_VERSION)
       when 401.
-*       handle code 401
+*       handle code 401, e_message => gvs_msg
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -3637,8 +3839,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION (**[ObjectVersion](#markdown-header-model-object_version)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_OBJECT_VERSION (**[ObjectVersion](#markdown-header-model-object_version)**) | successful operation
  401 | value not returned |  | If the object has an automatic title PUT will result in 401.
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -3681,6 +3884,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
     data gvs_version type /BLCK/MFI_STRING.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   data lr_body like line of gi_body.
@@ -3711,7 +3916,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -3719,6 +3925,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *       do something with gr_http200 (type /BLCK/MFI_EXTENDEDOBJECT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -3735,7 +3942,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -3780,6 +3988,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
     data gvi_id type /BLCK/MFI_INT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gm_body-property_def = 42. " (type /BLCK/MFI_INT)
@@ -3811,7 +4021,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -3819,6 +4030,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *       do something with gr_http200 (type /BLCK/MFI_EXTENDEDOBJECT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -3836,7 +4048,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -3878,6 +4091,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
     data gvs_version type /BLCK/MFI_STRING.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gm_body-state = l_state. " (type /BLCK/MFI_PROPERTY_VALUE)
@@ -3912,16 +4127,18 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
 *       do something with gr_http200 (type /BLCK/MFI_EXTENDEDOBJECT)
       when 401.
-*       handle code 401
+*       handle code 401, e_message => gvs_msg
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -3938,8 +4155,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
  401 | value not returned |  | If the object has an automatic workflow state PUT will result in 401.
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -3982,6 +4200,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
     data gvs_version type /BLCK/MFI_STRING.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   data lr_body like line of gi_body.
@@ -4012,7 +4232,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -4020,6 +4241,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *       do something with gr_http200 (type /BLCK/MFI_EXTENDEDOBJECT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -4036,7 +4258,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -4073,6 +4296,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/recentlyaccessed
     data gm_body type /BLCK/MFI_OBJ_ID.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gm_body-id = 42. " (type /BLCK/MFI_INT)
@@ -4098,7 +4323,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/recentlyaccessed
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -4106,6 +4332,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/recentlyaccessed
 *       do something with gr_http200 (type /BLCK/MFI_EXTENDEDOBJECT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -4119,7 +4346,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_EXTENDEDOBJECT (**[ExtendedObjectVersion](#markdown-header-model-extendedobject)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -4149,6 +4377,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/recentlyaccessed
 *** create variables for input and output as needed
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION_TT
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION_TT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
 
@@ -4167,7 +4397,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/recentlyaccessed
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -4175,6 +4406,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/recentlyaccessed
 *       do something with gr_http200 (type /BLCK/MFI_OBJECT_VERSION_TT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -4186,7 +4418,8 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of ObjectVersion](#markdown-header-model-object_version)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_OBJECT_VERSION_TT (**[array of ObjectVersion](#markdown-header-model-object_version)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -4221,6 +4454,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/repositories/
 *** create variables for input and output as needed
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_REPOSITORYAUTH_TT
     data gr_http200 type /BLCK/MFI_REPOSITORYAUTH_TT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
 
@@ -4239,7 +4474,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/repositories/
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -4247,6 +4483,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/repositories/
 *       do something with gr_http200 (type /BLCK/MFI_REPOSITORYAUTH_TT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -4258,7 +4495,8 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_REPOSITORYAUTH_TT (**[array of RepositoryAuthenticationTarget](#markdown-header-model-repositoryauth)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_REPOSITORYAUTH_TT (**[array of RepositoryAuthenticationTarget](#markdown-header-model-repositoryauth)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -4295,6 +4533,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/repositories/ses
     data gvi_targetid type /BLCK/MFI_INT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_REPOSITORYAUT2
     data gr_http200 type /BLCK/MFI_REPOSITORYAUT2.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gm_body-configuration_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
@@ -4323,7 +4563,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/repositories/ses
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -4331,6 +4572,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/repositories/ses
 *       do something with gr_http200 (type /BLCK/MFI_REPOSITORYAUT2)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -4345,7 +4587,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_REPOSITORYAUT2 (**[RepositoryAuthenticationStatus](#markdown-header-model-repositoryaut2)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_REPOSITORYAUT2 (**[RepositoryAuthenticationStatus](#markdown-header-model-repositoryaut2)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -4376,6 +4619,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/repositories/ses
 *   for parameter i_targetid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_targetid type /BLCK/MFI_INT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_targetid = 42.
@@ -4397,14 +4642,16 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/repositories/ses
         i_targetid = gvi_targetid
       importing
         e_code = gvi_code
-        e_message = gvs_msg ).
+        e_message = gvs_msg
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       handle code 200
+*       handle code 200, e_message => gvs_msg
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -4420,7 +4667,7 @@ Name | Type | Description
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 # API: ServerApi
@@ -4453,6 +4700,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/authentic
     data gm_body type /BLCK/MFI_AUTHENTICATION.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_STRING
     data gr_http200 type /BLCK/MFI_STRING.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gm_body-username = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
@@ -4484,7 +4733,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/authentic
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -4492,6 +4742,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/authentic
 *       do something with gr_http200 (type /BLCK/MFI_STRING)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -4505,7 +4756,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_STRING | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_STRING | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -4535,6 +4787,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/publickey
 *** create variables for input and output as needed
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_PUBLIC_KEY
     data gr_http200 type /BLCK/MFI_PUBLIC_KEY.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
 
@@ -4553,7 +4807,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/publickey
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -4561,6 +4816,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/publickey
 *       do something with gr_http200 (type /BLCK/MFI_PUBLIC_KEY)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -4572,7 +4828,8 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_PUBLIC_KEY (**[PublicKey](#markdown-header-model-public_key)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_PUBLIC_KEY (**[PublicKey](#markdown-header-model-public_key)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -4603,6 +4860,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/status/
 *** create variables for input and output as needed
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_STATUSRESPONSE
     data gr_http200 type /BLCK/MFI_STATUSRESPONSE.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
 
@@ -4621,16 +4880,18 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/status/
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
 *       do something with gr_http200 (type /BLCK/MFI_STATUSRESPONSE)
       when 503.
-*       handle code 503
+*       handle code 503, e_message => gvs_msg
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -4642,8 +4903,9 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_STATUSRESPONSE (**[StatusResponse](#markdown-header-model-statusresponse)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_STATUSRESPONSE (**[StatusResponse](#markdown-header-model-statusresponse)**) | successful operation
  503 | value not returned |  | the M-Files server is unavailable
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -4676,6 +4938,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/vaults/
     data gv_online type /BLCK/MFI_BOOL.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_REPOSITORYAUTH_TT
     data gr_http200 type /BLCK/MFI_REPOSITORYAUTH_TT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gv_online = 'X'.
@@ -4699,7 +4963,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/vaults/
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -4707,6 +4972,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/vaults/
 *       do something with gr_http200 (type /BLCK/MFI_REPOSITORYAUTH_TT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -4720,7 +4986,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_REPOSITORYAUTH_TT (**[array of RepositoryAuthenticationTarget](#markdown-header-model-repositoryauth)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_REPOSITORYAUTH_TT (**[array of RepositoryAuthenticationTarget](#markdown-header-model-repositoryauth)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -4754,6 +5021,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/authenti
 *** create variables for input and output as needed
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_STRING
     data gr_http200 type /BLCK/MFI_STRING.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
 
@@ -4772,7 +5041,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/authenti
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -4780,6 +5050,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/authenti
 *       do something with gr_http200 (type /BLCK/MFI_STRING)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -4791,7 +5062,8 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_STRING | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_STRING | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -4821,6 +5093,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/
 *** create variables for input and output as needed
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_SESSION_INFO
     data gr_http200 type /BLCK/MFI_SESSION_INFO.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
 
@@ -4839,7 +5113,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -4847,6 +5122,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/
 *       do something with gr_http200 (type /BLCK/MFI_SESSION_INFO)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -4858,7 +5134,8 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_SESSION_INFO (**[SessionInfo](#markdown-header-model-session_info)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_SESSION_INFO (**[SessionInfo](#markdown-header-model-session_info)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -4888,6 +5165,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/userid/
 *** create variables for input and output as needed
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_PRIMITIVETYPEI
     data gr_http200 type /BLCK/MFI_PRIMITIVETYPEI.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
 
@@ -4906,7 +5185,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/userid/
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -4914,6 +5194,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/userid/
 *       do something with gr_http200 (type /BLCK/MFI_PRIMITIVETYPEI)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -4925,7 +5206,8 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_PRIMITIVETYPEI (**[PrimitiveTypeInt](#markdown-header-model-primitivetypei)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_PRIMITIVETYPEI (**[PrimitiveTypeInt](#markdown-header-model-primitivetypei)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -4955,6 +5237,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/vault/
 *** create variables for input and output as needed
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_VAULT
     data gr_http200 type /BLCK/MFI_VAULT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
 
@@ -4973,7 +5257,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/vault/
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -4981,6 +5266,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/vault/
 *       do something with gr_http200 (type /BLCK/MFI_VAULT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -4992,7 +5278,8 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_VAULT (**[Vault](#markdown-header-model-vault)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_VAULT (**[Vault](#markdown-header-model-vault)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -5025,6 +5312,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/
     data gm_body type /BLCK/MFI_AUTHENTICATION.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_VAULT_TT
     data gr_http200 type /BLCK/MFI_VAULT_TT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gm_body-username = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
@@ -5056,7 +5345,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -5064,6 +5354,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/
 *       do something with gr_http200 (type /BLCK/MFI_VAULT_TT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -5077,7 +5368,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_VAULT_TT (**[array of Vault](#markdown-header-model-vault)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_VAULT_TT (**[array of Vault](#markdown-header-model-vault)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -5105,6 +5397,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/
     gvs_msg  type /blck/mfi_string.
     
 *** create variables for input and output as needed
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
 
@@ -5122,14 +5416,16 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/
     /blck/mfi_cl_SessionApi=>log_out(
       importing
         e_code = gvi_code
-        e_message = gvs_msg ).
+        e_message = gvs_msg
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 204.
-*       handle code 204
+*       handle code 204, e_message => gvs_msg
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -5143,7 +5439,7 @@ This end-point does not need any parameters.
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 
 ## operation: **set_vault_info**
@@ -5171,6 +5467,8 @@ The request must have either the GUID or the Name of the vault filled. In case b
     data gm_body type /BLCK/MFI_VAULT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_VAULT
     data gr_http200 type /BLCK/MFI_VAULT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gm_body-name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
@@ -5195,16 +5493,18 @@ The request must have either the GUID or the Name of the vault filled. In case b
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
 *       do something with gr_http200 (type /BLCK/MFI_VAULT)
       when 409.
-*       handle code 409
+*       handle code 409, e_message => gvs_msg
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -5218,8 +5518,9 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_VAULT (**[Vault](#markdown-header-model-vault)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_VAULT (**[Vault](#markdown-header-model-vault)**) | successful operation
  409 | value not returned |  | there are multiple vaults with the same name
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -5259,6 +5560,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
     data gvi_id type /BLCK/MFI_INT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_VALUELISTITEM
     data gr_http200 type /BLCK/MFI_VALUELISTITEM.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gm_body-display_id = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
@@ -5290,7 +5593,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -5298,6 +5602,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *       do something with gr_http200 (type /BLCK/MFI_VALUELISTITEM)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -5312,7 +5617,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_VALUELISTITEM (**[ValueListItem](#markdown-header-model-valuelistitem)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_VALUELISTITEM (**[ValueListItem](#markdown-header-model-valuelistitem)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -5348,6 +5654,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
     data gvi_size type /BLCK/MFI_INT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_BINARY
     data gr_http200 type /BLCK/MFI_BINARY.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_id = 42.
@@ -5373,7 +5681,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -5381,6 +5690,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
 *       do something with gr_http200 (type /BLCK/MFI_BINARY)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -5395,7 +5705,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_BINARY | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_BINARY | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -5428,6 +5739,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
     data gvs_guid type /BLCK/MFI_STRING.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_INT
     data gr_http200 type /BLCK/MFI_INT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvs_guid = 'ipsum lorem'.
@@ -5450,7 +5763,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -5458,6 +5772,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
 *       do something with gr_http200 (type /BLCK/MFI_INT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -5471,7 +5786,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_INT | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_INT | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -5507,6 +5823,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
     data gvs_include type /BLCK/MFI_STRING.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJEC2
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJEC2.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_id = 42.
@@ -5534,7 +5852,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -5542,6 +5861,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
 *       do something with gr_http200 (type /BLCK/MFI_EXTENDEDOBJEC2)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -5556,7 +5876,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_EXTENDEDOBJEC2 (**[ExtendedObjectClass](#markdown-header-model-extendedobjec2)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_EXTENDEDOBJEC2 (**[ExtendedObjectClass](#markdown-header-model-extendedobjec2)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -5592,6 +5913,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
     data gvi_objectid type /BLCK/MFI_INT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_VALUELISTITEM
     data gr_http200 type /BLCK/MFI_VALUELISTITEM.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_id = 42.
@@ -5616,7 +5939,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -5624,6 +5948,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *       do something with gr_http200 (type /BLCK/MFI_VALUELISTITEM)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -5638,7 +5963,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_VALUELISTITEM (**[ValueListItem](#markdown-header-model-valuelistitem)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_VALUELISTITEM (**[ValueListItem](#markdown-header-model-valuelistitem)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -5674,6 +6000,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
     data gvi_objectid type /BLCK/MFI_INT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_STRING
     data gr_http200 type /BLCK/MFI_STRING.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_id = 42.
@@ -5698,7 +6026,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -5706,6 +6035,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *       do something with gr_http200 (type /BLCK/MFI_STRING)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -5720,7 +6050,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_STRING | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_STRING | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -5762,6 +6093,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
     data gvi_condition_type type /BLCK/MFI_INT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_RESULTSVALUELI
     data gr_http200 type /BLCK/MFI_RESULTSVALUELI.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_id = 42.
@@ -5794,7 +6127,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -5802,6 +6136,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *       do something with gr_http200 (type /BLCK/MFI_RESULTSVALUELI)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -5818,7 +6153,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_RESULTSVALUELI (**[ResultsValueListItem](#markdown-header-model-resultsvalueli)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_RESULTSVALUELI (**[ResultsValueListItem](#markdown-header-model-resultsvalueli)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -5851,6 +6187,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
     data gvi_objtype type /BLCK/MFI_INT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_CLASS_TT
     data gr_http200 type /BLCK/MFI_OBJECT_CLASS_TT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_objtype = 42.
@@ -5875,7 +6213,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -5883,6 +6222,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
 *       do something with gr_http200 (type /BLCK/MFI_OBJECT_CLASS_TT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -5896,7 +6236,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_CLASS_TT (**[array of ObjectClass](#markdown-header-model-object_class)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_OBJECT_CLASS_TT (**[array of ObjectClass](#markdown-header-model-object_class)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -5929,6 +6270,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
     data gvi_type type /BLCK/MFI_INT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJ_TYPE
     data gr_http200 type /BLCK/MFI_OBJ_TYPE.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_type = 42.
@@ -5951,7 +6294,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -5959,6 +6303,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
 *       do something with gr_http200 (type /BLCK/MFI_OBJ_TYPE)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -5972,7 +6317,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJ_TYPE (**[ObjType](#markdown-header-model-obj_type)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_OBJ_TYPE (**[ObjType](#markdown-header-model-obj_type)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -6005,6 +6351,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
     data gvi_type type /BLCK/MFI_INT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_CLASS_TT
     data gr_http200 type /BLCK/MFI_OBJECT_CLASS_TT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_type = 42.
@@ -6027,7 +6375,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -6035,6 +6384,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
 *       do something with gr_http200 (type /BLCK/MFI_OBJECT_CLASS_TT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -6048,7 +6398,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJECT_CLASS_TT (**[array of ObjectClass](#markdown-header-model-object_class)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_OBJECT_CLASS_TT (**[array of ObjectClass](#markdown-header-model-object_class)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -6081,6 +6432,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
     data gvi_type type /BLCK/MFI_INT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_BINARY
     data gr_http200 type /BLCK/MFI_BINARY.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_type = 42.
@@ -6103,7 +6456,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -6111,6 +6465,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
 *       do something with gr_http200 (type /BLCK/MFI_BINARY)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -6124,7 +6479,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_BINARY | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_BINARY | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -6154,6 +6510,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
 *** create variables for input and output as needed
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJ_TYPE_TT
     data gr_http200 type /BLCK/MFI_OBJ_TYPE_TT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
 
@@ -6172,7 +6530,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -6180,6 +6539,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
 *       do something with gr_http200 (type /BLCK/MFI_OBJ_TYPE_TT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -6191,7 +6551,8 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJ_TYPE_TT (**[array of ObjType](#markdown-header-model-obj_type)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_OBJ_TYPE_TT (**[array of ObjType](#markdown-header-model-obj_type)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -6224,6 +6585,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
     data gvi_id type /BLCK/MFI_INT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJ_TYPE
     data gr_http200 type /BLCK/MFI_OBJ_TYPE.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_id = 42.
@@ -6246,7 +6609,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -6254,6 +6618,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *       do something with gr_http200 (type /BLCK/MFI_OBJ_TYPE)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -6267,7 +6632,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJ_TYPE (**[ObjType](#markdown-header-model-obj_type)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_OBJ_TYPE (**[ObjType](#markdown-header-model-obj_type)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -6297,6 +6663,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *** create variables for input and output as needed
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJ_TYPE_TT
     data gr_http200 type /BLCK/MFI_OBJ_TYPE_TT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
 
@@ -6315,7 +6683,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -6323,6 +6692,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *       do something with gr_http200 (type /BLCK/MFI_OBJ_TYPE_TT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -6334,7 +6704,8 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_OBJ_TYPE_TT (**[array of ObjType](#markdown-header-model-obj_type)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_OBJ_TYPE_TT (**[array of ObjType](#markdown-header-model-obj_type)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -6364,6 +6735,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/proper
 *** create variables for input and output as needed
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_PROPERTY_DEF_TT
     data gr_http200 type /BLCK/MFI_PROPERTY_DEF_TT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
 
@@ -6382,7 +6755,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/proper
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -6390,6 +6764,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/proper
 *       do something with gr_http200 (type /BLCK/MFI_PROPERTY_DEF_TT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -6401,7 +6776,8 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_PROPERTY_DEF_TT (**[array of PropertyDef](#markdown-header-model-property_def)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_PROPERTY_DEF_TT (**[array of PropertyDef](#markdown-header-model-property_def)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -6434,6 +6810,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/proper
     data gvi_id type /BLCK/MFI_INT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_PROPERTY_DEF
     data gr_http200 type /BLCK/MFI_PROPERTY_DEF.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_id = 42.
@@ -6456,7 +6834,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/proper
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -6464,6 +6843,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/proper
 *       do something with gr_http200 (type /BLCK/MFI_PROPERTY_DEF)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -6477,7 +6857,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_PROPERTY_DEF (**[PropertyDef](#markdown-header-model-property_def)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_PROPERTY_DEF (**[PropertyDef](#markdown-header-model-property_def)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -6510,6 +6891,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
     data gvi_id type /BLCK/MFI_INT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_WORKFLOW
     data gr_http200 type /BLCK/MFI_WORKFLOW.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_id = 42.
@@ -6532,7 +6915,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -6540,6 +6924,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
 *       do something with gr_http200 (type /BLCK/MFI_WORKFLOW)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -6553,7 +6938,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_WORKFLOW (**[Workflow](#markdown-header-model-workflow)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_WORKFLOW (**[Workflow](#markdown-header-model-workflow)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -6589,6 +6975,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
     data gvi_sid type /BLCK/MFI_INT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_WORKFLOW_STATE
     data gr_http200 type /BLCK/MFI_WORKFLOW_STATE.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_id = 42.
@@ -6615,7 +7003,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -6623,6 +7012,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
 *       do something with gr_http200 (type /BLCK/MFI_WORKFLOW_STATE)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -6637,7 +7027,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_WORKFLOW_STATE (**[WorkflowState](#markdown-header-model-workflow_state)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_WORKFLOW_STATE (**[WorkflowState](#markdown-header-model-workflow_state)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -6673,6 +7064,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
     data gvi_currentstate type /BLCK/MFI_INT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_WORKFLOW_STATE_TT
     data gr_http200 type /BLCK/MFI_WORKFLOW_STATE_TT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_id = 42.
@@ -6699,7 +7092,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -6707,6 +7101,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
 *       do something with gr_http200 (type /BLCK/MFI_WORKFLOW_STATE_TT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -6721,7 +7116,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_WORKFLOW_STATE_TT (**[array of WorkflowState](#markdown-header-model-workflow_state)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_WORKFLOW_STATE_TT (**[array of WorkflowState](#markdown-header-model-workflow_state)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -6757,6 +7153,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
     data gvi_currentstate type /BLCK/MFI_INT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_WORKFLOW_STATE_TT
     data gr_http200 type /BLCK/MFI_WORKFLOW_STATE_TT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_id = 42.
@@ -6783,7 +7181,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -6791,6 +7190,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
 *       do something with gr_http200 (type /BLCK/MFI_WORKFLOW_STATE_TT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -6805,7 +7205,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_WORKFLOW_STATE_TT (**[array of WorkflowState](#markdown-header-model-workflow_state)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_WORKFLOW_STATE_TT (**[array of WorkflowState](#markdown-header-model-workflow_state)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -6835,6 +7236,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
 *** create variables for input and output as needed
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_WORKFLOW_TT
     data gr_http200 type /BLCK/MFI_WORKFLOW_TT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
 
@@ -6853,7 +7256,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -6861,6 +7265,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
 *       do something with gr_http200 (type /BLCK/MFI_WORKFLOW_TT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -6872,7 +7277,8 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_WORKFLOW_TT (**[array of Workflow](#markdown-header-model-workflow)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_WORKFLOW_TT (**[array of Workflow](#markdown-header-model-workflow)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -6932,7 +7338,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200 ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -6954,7 +7360,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_VALUELISTITEM (**[ValueListItem](#markdown-header-model-valuelistitem)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_VALUELISTITEM (**[ValueListItem](#markdown-header-model-valuelistitem)**) | successful operation
 
 ### HTTP request headers
 
@@ -6993,6 +7399,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
     data gvi_objectid type /BLCK/MFI_INT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_VALUELISTITEM
     data gr_http200 type /BLCK/MFI_VALUELISTITEM.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvs_body = 'ipsum lorem'.
@@ -7019,7 +7427,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -7027,6 +7436,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *       do something with gr_http200 (type /BLCK/MFI_VALUELISTITEM)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -7042,7 +7452,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_VALUELISTITEM (**[ValueListItem](#markdown-header-model-valuelistitem)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_VALUELISTITEM (**[ValueListItem](#markdown-header-model-valuelistitem)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -7078,6 +7489,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
     data gvi_type type /BLCK/MFI_INT.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_MFREFRESHSTATU
     data gr_http200 type /BLCK/MFI_MFREFRESHSTATU.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvi_body = 42.
@@ -7102,7 +7515,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -7110,6 +7524,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
 *       do something with gr_http200 (type /BLCK/MFI_MFREFRESHSTATU)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -7124,7 +7539,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_MFREFRESHSTATU (**[MFRefreshStatus](#markdown-header-model-mfrefreshstatu)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_MFREFRESHSTATU (**[MFRefreshStatus](#markdown-header-model-mfrefreshstatu)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -7161,6 +7577,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/views/path/items
     data gvs_path type /BLCK/MFI_STRING.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_FOLDERCONTENTI
     data gr_http200 type /BLCK/MFI_FOLDERCONTENTI.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvs_path = 'ipsum lorem'.
@@ -7184,7 +7602,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/views/path/items
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -7192,6 +7611,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/views/path/items
 *       do something with gr_http200 (type /BLCK/MFI_FOLDERCONTENTI)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -7205,7 +7625,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_FOLDERCONTENTI (**[FolderContentItems](#markdown-header-model-foldercontenti)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_FOLDERCONTENTI (**[FolderContentItems](#markdown-header-model-foldercontenti)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -7238,6 +7659,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/views/path/items
     data gvs_path type /BLCK/MFI_STRING.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_INT
     data gr_http200 type /BLCK/MFI_INT.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvs_path = 'ipsum lorem'.
@@ -7261,7 +7684,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/views/path/items
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -7269,6 +7693,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/views/path/items
 *       do something with gr_http200 (type /BLCK/MFI_INT)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -7282,7 +7707,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_INT | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_INT | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 
@@ -7315,6 +7741,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/views/path/objec
     data gvs_path type /BLCK/MFI_STRING.
 *   when the result of the call is HTTP200 we expect type /BLCK/MFI_RESULTSOBJECTV
     data gr_http200 type /BLCK/MFI_RESULTSOBJECTV.
+*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+    data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
 *   gvs_path = 'ipsum lorem'.
@@ -7338,7 +7766,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/views/path/objec
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200 ).
+        e_code_200 = gr_http200
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -7346,6 +7775,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/views/path/objec
 *       do something with gr_http200 (type /BLCK/MFI_RESULTSOBJECTV)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
     endcase.
 
 ```
@@ -7359,7 +7789,8 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/MFI_RESULTSOBJECTV (**[ResultsObjectVersion](#markdown-header-model-resultsobjectv)**) | successful operation
+ 200 | **e_code_200** | /BLCK/MFI_RESULTSOBJECTV (**[ResultsObjectVersion](#markdown-header-model-resultsobjectv)**) | successful operation
+ other | **e_code_other** | /BLCK/MFI_WEBSERVICEERRO (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
 

@@ -31,8 +31,8 @@ Deletes a job. In case the job is in status processing, it is aborted before rem
     data gr_http404 type /BLCK/CNV_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
     data gr_http500 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/CNV_ERROR
-    data gr_http0 type /BLCK/CNV_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/CNV_ERROR
+    data gr_httpother type /BLCK/CNV_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_job_id = 'ipsum lorem'.
@@ -56,25 +56,24 @@ Deletes a job. In case the job is in status processing, it is aborted before rem
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_401 = gr_http401
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_401 = gr_http401
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 201.
-*       handle code 201
+*       handle code 201, e_message => gvs_msg
       when 401.
 *       do something with gr_http401 (type /BLCK/CNV_ERROR)
       when 404.
 *       do something with gr_http404 (type /BLCK/CNV_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/CNV_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/CNV_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/CNV_ERROR)
     endcase.
 
 ```
@@ -122,8 +121,8 @@ Start processing of a job. If processing is already triggered nothing is done. J
     data gr_http404 type /BLCK/CNV_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
     data gr_http500 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/CNV_ERROR
-    data gr_http0 type /BLCK/CNV_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/CNV_ERROR
+    data gr_httpother type /BLCK/CNV_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_job_id = 'ipsum lorem'.
@@ -147,25 +146,24 @@ Start processing of a job. If processing is already triggered nothing is done. J
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_401 = gr_http401
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_401 = gr_http401
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 201.
-*       handle code 201
+*       handle code 201, e_message => gvs_msg
       when 401.
 *       do something with gr_http401 (type /BLCK/CNV_ERROR)
       when 404.
 *       do something with gr_http404 (type /BLCK/CNV_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/CNV_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/CNV_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/CNV_ERROR)
     endcase.
 
 ```
@@ -215,8 +213,8 @@ Get a object with job status and output information
     data gr_http404 type /BLCK/CNV_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
     data gr_http500 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/CNV_ERROR
-    data gr_http0 type /BLCK/CNV_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/CNV_ERROR
+    data gr_httpother type /BLCK/CNV_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_job_id = 'ipsum lorem'.
@@ -240,11 +238,11 @@ Get a object with job status and output information
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -256,10 +254,9 @@ Get a object with job status and output information
 *       do something with gr_http404 (type /BLCK/CNV_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/CNV_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/CNV_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/CNV_ERROR)
     endcase.
 
 ```
@@ -273,11 +270,11 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/CNV_JOB_STATUS (**[JobStatus](#markdown-header-model-job_status)**) | OK, job status information returned
- 401 | **e_401** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 404 | **e_404** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 500 | **e_500** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/CNV_JOB_STATUS (**[JobStatus](#markdown-header-model-job_status)**) | OK, job status information returned
+ 401 | **e_code_401** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 404 | **e_code_404** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_code_500** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -316,8 +313,8 @@ Easy way to convert with a single REST call: - Creates a single input file with 
     data gr_http409 type /BLCK/CNV_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
     data gr_http500 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/CNV_ERROR
-    data gr_http0 type /BLCK/CNV_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/CNV_ERROR
+    data gr_httpother type /BLCK/CNV_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_jobid = 'ipsum lorem'.
@@ -341,16 +338,16 @@ Easy way to convert with a single REST call: - Creates a single input file with 
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_401 = gr_http401
-        e_404 = gr_http404
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_401 = gr_http401
+        e_code_404 = gr_http404
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       handle code 200
+*       handle code 200, e_message => gvs_msg
       when 401.
 *       do something with gr_http401 (type /BLCK/CNV_ERROR)
       when 404.
@@ -359,10 +356,9 @@ Easy way to convert with a single REST call: - Creates a single input file with 
 *       do something with gr_http409 (type /BLCK/CNV_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/CNV_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/CNV_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/CNV_ERROR)
     endcase.
 
 ```
@@ -416,8 +412,8 @@ Get a object with full job status, input and output information.
     data gr_http404 type /BLCK/CNV_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
     data gr_http500 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/CNV_ERROR
-    data gr_http0 type /BLCK/CNV_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/CNV_ERROR
+    data gr_httpother type /BLCK/CNV_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_job_id = 'ipsum lorem'.
@@ -441,11 +437,11 @@ Get a object with full job status, input and output information.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -457,10 +453,9 @@ Get a object with full job status, input and output information.
 *       do something with gr_http404 (type /BLCK/CNV_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/CNV_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/CNV_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/CNV_ERROR)
     endcase.
 
 ```
@@ -474,11 +469,11 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/CNV_JOB_DATA (**[JobData](#markdown-header-model-job_data)**) | OK, job status information returned
- 401 | **e_401** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 404 | **e_404** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 500 | **e_500** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/CNV_JOB_DATA (**[JobData](#markdown-header-model-job_data)**) | OK, job status information returned
+ 401 | **e_code_401** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 404 | **e_code_404** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_code_500** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -520,8 +515,8 @@ Appends a new input file to the input file list of a job.
     data gr_http409 type /BLCK/CNV_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
     data gr_http500 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/CNV_ERROR
-    data gr_http0 type /BLCK/CNV_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/CNV_ERROR
+    data gr_httpother type /BLCK/CNV_ERROR.
         
 *** set data according to requirements of the API call
 *   gm_body-mime_type = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
@@ -549,11 +544,11 @@ Appends a new input file to the input file list of a job.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -565,10 +560,9 @@ Appends a new input file to the input file list of a job.
 *       do something with gr_http409 (type /BLCK/CNV_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/CNV_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/CNV_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/CNV_ERROR)
     endcase.
 
 ```
@@ -583,11 +577,11 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/CNV_STRING | OK, entry created. Returns fileId as index of created file in input file list, starting with zero.
- 401 | **e_401** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 409 | **e_409** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
- 500 | **e_500** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/CNV_STRING | OK, entry created. Returns fileId as index of created file in input file list, starting with zero.
+ 401 | **e_code_401** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 409 | **e_code_409** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
+ 500 | **e_code_500** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -626,8 +620,8 @@ Easy way to convert with a single REST call: - Creates a single input file with 
     data gr_http409 type /BLCK/CNV_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
     data gr_http500 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/CNV_ERROR
-    data gr_http0 type /BLCK/CNV_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/CNV_ERROR
+    data gr_httpother type /BLCK/CNV_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_jobid = 'ipsum lorem'.
@@ -651,16 +645,16 @@ Easy way to convert with a single REST call: - Creates a single input file with 
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_401 = gr_http401
-        e_404 = gr_http404
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_401 = gr_http401
+        e_code_404 = gr_http404
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       handle code 200
+*       handle code 200, e_message => gvs_msg
       when 401.
 *       do something with gr_http401 (type /BLCK/CNV_ERROR)
       when 404.
@@ -669,10 +663,9 @@ Easy way to convert with a single REST call: - Creates a single input file with 
 *       do something with gr_http409 (type /BLCK/CNV_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/CNV_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/CNV_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/CNV_ERROR)
     endcase.
 
 ```
@@ -720,8 +713,8 @@ Create a new job.
     data gr_http409 type /BLCK/CNV_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
     data gr_http500 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/CNV_ERROR
-    data gr_http0 type /BLCK/CNV_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/CNV_ERROR
+    data gr_httpother type /BLCK/CNV_ERROR.
         
 *** set data according to requirements of the API call
 *   gm_body-name = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
@@ -746,11 +739,11 @@ Create a new job.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_200 = gr_http200
-        e_401 = gr_http401
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_200 = gr_http200
+        e_code_401 = gr_http401
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
@@ -762,10 +755,9 @@ Create a new job.
 *       do something with gr_http409 (type /BLCK/CNV_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/CNV_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/CNV_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/CNV_ERROR)
     endcase.
 
 ```
@@ -779,11 +771,11 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_200** | /BLCK/CNV_STRING | OK, entry created. Returns a job id.
- 401 | **e_401** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 409 | **e_409** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
- 500 | **e_500** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- 0 | **e_0** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | /BLCK/CNV_STRING | OK, entry created. Returns a job id.
+ 401 | **e_code_401** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 409 | **e_code_409** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
+ 500 | **e_code_500** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -825,8 +817,8 @@ Upload input file binary input content.
     data gr_http409 type /BLCK/CNV_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
     data gr_http500 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/CNV_ERROR
-    data gr_http0 type /BLCK/CNV_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/CNV_ERROR
+    data gr_httpother type /BLCK/CNV_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_job_id = 'ipsum lorem'.
@@ -853,16 +845,16 @@ Upload input file binary input content.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_401 = gr_http401
-        e_404 = gr_http404
-        e_409 = gr_http409
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_401 = gr_http401
+        e_code_404 = gr_http404
+        e_code_409 = gr_http409
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 201.
-*       handle code 201
+*       handle code 201, e_message => gvs_msg
       when 401.
 *       do something with gr_http401 (type /BLCK/CNV_ERROR)
       when 404.
@@ -871,10 +863,9 @@ Upload input file binary input content.
 *       do something with gr_http409 (type /BLCK/CNV_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/CNV_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/CNV_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/CNV_ERROR)
     endcase.
 
 ```
@@ -926,8 +917,8 @@ Get processing result binary content.
     data gr_http404 type /BLCK/CNV_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
     data gr_http500 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/CNV_ERROR
-    data gr_http0 type /BLCK/CNV_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/CNV_ERROR
+    data gr_httpother type /BLCK/CNV_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_job_id = 'ipsum lorem'.
@@ -954,25 +945,24 @@ Get processing result binary content.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_401 = gr_http401
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_401 = gr_http401
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       handle code 200
+*       handle code 200, e_message => gvs_msg
       when 401.
 *       do something with gr_http401 (type /BLCK/CNV_ERROR)
       when 404.
 *       do something with gr_http404 (type /BLCK/CNV_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/CNV_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/CNV_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/CNV_ERROR)
     endcase.
 
 ```
@@ -1028,8 +1018,8 @@ Get processing result binary content.
     data gr_http404 type /BLCK/CNV_ERROR.
 *   when the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
     data gr_http500 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP0 we expect type /BLCK/CNV_ERROR
-    data gr_http0 type /BLCK/CNV_ERROR.
+*   when the result of the call is HTTPother we expect type /BLCK/CNV_ERROR
+    data gr_httpother type /BLCK/CNV_ERROR.
         
 *** set data according to requirements of the API call
 *   gvs_job_id = 'ipsum lorem'.
@@ -1056,25 +1046,24 @@ Get processing result binary content.
       importing
         e_code = gvi_code
         e_message = gvs_msg
-        e_401 = gr_http401
-        e_404 = gr_http404
-        e_500 = gr_http500
-        e_0 = gr_http0 ).
+        e_code_401 = gr_http401
+        e_code_404 = gr_http404
+        e_code_500 = gr_http500
+        e_code_other = gr_httpother ).
 
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       handle code 200
+*       handle code 200, e_message => gvs_msg
       when 401.
 *       do something with gr_http401 (type /BLCK/CNV_ERROR)
       when 404.
 *       do something with gr_http404 (type /BLCK/CNV_ERROR)
       when 500.
 *       do something with gr_http500 (type /BLCK/CNV_ERROR)
-      when 0.
-*       do something with gr_http0 (type /BLCK/CNV_ERROR)
       when others.
 * handle the general case..
+*       do something with gr_httpother (type /BLCK/CNV_ERROR)
     endcase.
 
 ```

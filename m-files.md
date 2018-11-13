@@ -4710,7 +4710,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/authentic
 *   gm_body-windows_user = 'X'. " (type /BLCK/MFI_BOOL)
 *   gm_body-computer_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
 *   gm_body-vault_guid = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-*   gm_body-expiration = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+*   gm_body-expiration = 'ipsum lorem'. " (type /BLCK/MFI_TIMESTAMP)
 *   gm_body-read_only = 'X'. " (type /BLCK/MFI_BOOL)
 *   gm_body-url = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
 *   gm_body-method = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
@@ -5322,7 +5322,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/
 *   gm_body-windows_user = 'X'. " (type /BLCK/MFI_BOOL)
 *   gm_body-computer_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
 *   gm_body-vault_guid = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-*   gm_body-expiration = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+*   gm_body-expiration = 'ipsum lorem'. " (type /BLCK/MFI_TIMESTAMP)
 *   gm_body-read_only = 'X'. " (type /BLCK/MFI_BOOL)
 *   gm_body-url = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
 *   gm_body-method = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
@@ -7865,7 +7865,7 @@ Name | Type | Description
     gr_authentication-windows_user = 'X'. " (type /BLCK/MFI_BOOL)
     gr_authentication-computer_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     gr_authentication-vault_guid = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-    gr_authentication-expiration = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+    gr_authentication-expiration = 'ipsum lorem'. " (type /BLCK/MFI_TIMESTAMP)
     gr_authentication-read_only = 'X'. " (type /BLCK/MFI_BOOL)
     gr_authentication-url = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     gr_authentication-method = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
@@ -7890,7 +7890,7 @@ Name | Type | Description
     write: gr_authentication-windows_user. " (type /BLCK/MFI_BOOL)
     write: gr_authentication-computer_name. " (type /BLCK/MFI_STRING)
     write: gr_authentication-vault_guid. " (type /BLCK/MFI_STRING)
-    write: gr_authentication-expiration. " (type /BLCK/MFI_STRING)
+    write: gr_authentication-expiration. " (type /BLCK/MFI_TIMESTAMP)
     write: gr_authentication-read_only. " (type /BLCK/MFI_BOOL)
     write: gr_authentication-url. " (type /BLCK/MFI_STRING)
     write: gr_authentication-method. " (type /BLCK/MFI_STRING)
@@ -7907,7 +7907,7 @@ Name | Type | Description
 **windows_user** | /BLCK/MFI_BOOL | 
 **computer_name** | /BLCK/MFI_STRING | 
 **vault_guid** | /BLCK/MFI_STRING | 
-**expiration** | /BLCK/MFI_STRING | 
+**expiration** | /BLCK/MFI_TIMESTAMP | 
 **read_only** | /BLCK/MFI_BOOL | 
 **url** | /BLCK/MFI_STRING | 
 **method** | /BLCK/MFI_STRING | 
@@ -8583,7 +8583,7 @@ Name | Value | Constant
     data gr_object_file type /blck/mfi_object_file.
     
 * fill model with data as appropriate..
-    gr_object_file-change_time_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+    gr_object_file-change_time_utc = 'ipsum lorem'. " (type /BLCK/MFI_TIMESTAMP)
     gr_object_file-extension = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     gr_object_file-id = 42. " (type /BLCK/MFI_INT)
     gr_object_file-name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
@@ -8603,7 +8603,7 @@ Name | Value | Constant
       importing 
         e_200 = gr_object_file ).
     		
-    write: gr_object_file-change_time_utc. " (type /BLCK/MFI_STRING)
+    write: gr_object_file-change_time_utc. " (type /BLCK/MFI_TIMESTAMP)
     write: gr_object_file-extension. " (type /BLCK/MFI_STRING)
     write: gr_object_file-id. " (type /BLCK/MFI_INT)
     write: gr_object_file-name. " (type /BLCK/MFI_STRING)
@@ -8615,7 +8615,7 @@ Name | Value | Constant
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**change_time_utc** | /BLCK/MFI_STRING | 
+**change_time_utc** | /BLCK/MFI_TIMESTAMP | 
 **extension** | /BLCK/MFI_STRING | 
 **id** | /BLCK/MFI_INT | 
 **name** | /BLCK/MFI_STRING | 
@@ -8637,12 +8637,12 @@ Name | Type | Description
     data gr_object_version type /blck/mfi_object_version.
     
 * fill model with data as appropriate..
-    gr_object_version-accessed_by_me_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-    gr_object_version-checked_out_at_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+    gr_object_version-accessed_by_me_utc = 'ipsum lorem'. " (type /BLCK/MFI_TIMESTAMP)
+    gr_object_version-checked_out_at_utc = 'ipsum lorem'. " (type /BLCK/MFI_TIMESTAMP)
     gr_object_version-checked_out_to = 42. " (type /BLCK/MFI_INT)
     gr_object_version-checked_out_to_user_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     gr_object_version-class = 42. " (type /BLCK/MFI_INT)
-    gr_object_version-created_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+    gr_object_version-created_utc = 'ipsum lorem'. " (type /BLCK/MFI_TIMESTAMP)
     gr_object_version-deleted = 'X'. " (type /BLCK/MFI_BOOL)
     gr_object_version-display_id = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     gr_object_version-files = l_files. " (type /BLCK/MFI_OBJECT_FILE_TT)
@@ -8650,7 +8650,7 @@ Name | Type | Description
     gr_object_version-hasrelationshipsfromthis = 'X'. " (type /BLCK/MFI_BOOL)
     gr_object_version-has_relationships_to_this = 'X'. " (type /BLCK/MFI_BOOL)
     gr_object_version-is_stub = 'X'. " (type /BLCK/MFI_BOOL)
-    gr_object_version-last_modified_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+    gr_object_version-last_modified_utc = 'ipsum lorem'. " (type /BLCK/MFI_TIMESTAMP)
     gr_object_version-object_checked_out = 'X'. " (type /BLCK/MFI_BOOL)
     gr_object_version-objectcheckedouttothisuser = 'X'. " (type /BLCK/MFI_BOOL)
     gr_object_version-object_version_flags = l_object_version_flags. " (type /BLCK/MFI_MFOBJECTVERSIO)
@@ -8674,12 +8674,12 @@ Name | Type | Description
       importing 
         e_200 = gr_object_version ).
     		
-    write: gr_object_version-accessed_by_me_utc. " (type /BLCK/MFI_STRING)
-    write: gr_object_version-checked_out_at_utc. " (type /BLCK/MFI_STRING)
+    write: gr_object_version-accessed_by_me_utc. " (type /BLCK/MFI_TIMESTAMP)
+    write: gr_object_version-checked_out_at_utc. " (type /BLCK/MFI_TIMESTAMP)
     write: gr_object_version-checked_out_to. " (type /BLCK/MFI_INT)
     write: gr_object_version-checked_out_to_user_name. " (type /BLCK/MFI_STRING)
     write: gr_object_version-class. " (type /BLCK/MFI_INT)
-    write: gr_object_version-created_utc. " (type /BLCK/MFI_STRING)
+    write: gr_object_version-created_utc. " (type /BLCK/MFI_TIMESTAMP)
     write: gr_object_version-deleted. " (type /BLCK/MFI_BOOL)
     write: gr_object_version-display_id. " (type /BLCK/MFI_STRING)
     write: gr_object_version-files. " (type /BLCK/MFI_OBJECT_FILE_TT)
@@ -8687,7 +8687,7 @@ Name | Type | Description
     write: gr_object_version-hasrelationshipsfromthis. " (type /BLCK/MFI_BOOL)
     write: gr_object_version-has_relationships_to_this. " (type /BLCK/MFI_BOOL)
     write: gr_object_version-is_stub. " (type /BLCK/MFI_BOOL)
-    write: gr_object_version-last_modified_utc. " (type /BLCK/MFI_STRING)
+    write: gr_object_version-last_modified_utc. " (type /BLCK/MFI_TIMESTAMP)
     write: gr_object_version-object_checked_out. " (type /BLCK/MFI_BOOL)
     write: gr_object_version-objectcheckedouttothisuser. " (type /BLCK/MFI_BOOL)
     write: gr_object_version-object_version_flags. " (type /BLCK/MFI_MFOBJECTVERSIO)
@@ -8703,12 +8703,12 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**accessed_by_me_utc** | /BLCK/MFI_STRING | 
-**checked_out_at_utc** | /BLCK/MFI_STRING | 
+**accessed_by_me_utc** | /BLCK/MFI_TIMESTAMP | 
+**checked_out_at_utc** | /BLCK/MFI_TIMESTAMP | 
 **checked_out_to** | /BLCK/MFI_INT | 
 **checked_out_to_user_name** | /BLCK/MFI_STRING | 
 **class** | /BLCK/MFI_INT | 
-**created_utc** | /BLCK/MFI_STRING | 
+**created_utc** | /BLCK/MFI_TIMESTAMP | 
 **deleted** | /BLCK/MFI_BOOL | 
 **display_id** | /BLCK/MFI_STRING | 
 **files** | /BLCK/MFI_OBJECT_FILE_TT (**[array of ObjectFile](#markdown-header-model-object_file)**) | 
@@ -8716,7 +8716,7 @@ Name | Type | Description
 **hasrelationshipsfromthis** | /BLCK/MFI_BOOL | 
 **has_relationships_to_this** | /BLCK/MFI_BOOL | 
 **is_stub** | /BLCK/MFI_BOOL | 
-**last_modified_utc** | /BLCK/MFI_STRING | 
+**last_modified_utc** | /BLCK/MFI_TIMESTAMP | 
 **object_checked_out** | /BLCK/MFI_BOOL | 
 **objectcheckedouttothisuser** | /BLCK/MFI_BOOL | 
 **object_version_flags** | /BLCK/MFI_MFOBJECTVERSIO (**[MFObjectVersionFlag](#markdown-header-enum-mfobjectversio)**) | 
@@ -8797,12 +8797,12 @@ Name | Type | Description
     data gr_extendedobject type /blck/mfi_extendedobject.
     
 * fill model with data as appropriate..
-    gr_extendedobject-accessed_by_me_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-    gr_extendedobject-checked_out_at_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+    gr_extendedobject-accessed_by_me_utc = 'ipsum lorem'. " (type /BLCK/MFI_TIMESTAMP)
+    gr_extendedobject-checked_out_at_utc = 'ipsum lorem'. " (type /BLCK/MFI_TIMESTAMP)
     gr_extendedobject-checked_out_to = 42. " (type /BLCK/MFI_INT)
     gr_extendedobject-checked_out_to_user_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     gr_extendedobject-class = 42. " (type /BLCK/MFI_INT)
-    gr_extendedobject-created_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+    gr_extendedobject-created_utc = 'ipsum lorem'. " (type /BLCK/MFI_TIMESTAMP)
     gr_extendedobject-deleted = 'X'. " (type /BLCK/MFI_BOOL)
     gr_extendedobject-display_id = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     gr_extendedobject-files = l_files. " (type /BLCK/MFI_OBJECT_FILE_TT)
@@ -8810,7 +8810,7 @@ Name | Type | Description
     gr_extendedobject-hasrelationshipsfromthis = 'X'. " (type /BLCK/MFI_BOOL)
     gr_extendedobject-has_relationships_to_this = 'X'. " (type /BLCK/MFI_BOOL)
     gr_extendedobject-is_stub = 'X'. " (type /BLCK/MFI_BOOL)
-    gr_extendedobject-last_modified_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+    gr_extendedobject-last_modified_utc = 'ipsum lorem'. " (type /BLCK/MFI_TIMESTAMP)
     gr_extendedobject-object_checked_out = 'X'. " (type /BLCK/MFI_BOOL)
     gr_extendedobject-objectcheckedouttothisuser = 'X'. " (type /BLCK/MFI_BOOL)
     gr_extendedobject-object_version_flags = l_object_version_flags. " (type /BLCK/MFI_MFOBJECTVERSIO)
@@ -8835,12 +8835,12 @@ Name | Type | Description
       importing 
         e_200 = gr_extendedobject ).
     		
-    write: gr_extendedobject-accessed_by_me_utc. " (type /BLCK/MFI_STRING)
-    write: gr_extendedobject-checked_out_at_utc. " (type /BLCK/MFI_STRING)
+    write: gr_extendedobject-accessed_by_me_utc. " (type /BLCK/MFI_TIMESTAMP)
+    write: gr_extendedobject-checked_out_at_utc. " (type /BLCK/MFI_TIMESTAMP)
     write: gr_extendedobject-checked_out_to. " (type /BLCK/MFI_INT)
     write: gr_extendedobject-checked_out_to_user_name. " (type /BLCK/MFI_STRING)
     write: gr_extendedobject-class. " (type /BLCK/MFI_INT)
-    write: gr_extendedobject-created_utc. " (type /BLCK/MFI_STRING)
+    write: gr_extendedobject-created_utc. " (type /BLCK/MFI_TIMESTAMP)
     write: gr_extendedobject-deleted. " (type /BLCK/MFI_BOOL)
     write: gr_extendedobject-display_id. " (type /BLCK/MFI_STRING)
     write: gr_extendedobject-files. " (type /BLCK/MFI_OBJECT_FILE_TT)
@@ -8848,7 +8848,7 @@ Name | Type | Description
     write: gr_extendedobject-hasrelationshipsfromthis. " (type /BLCK/MFI_BOOL)
     write: gr_extendedobject-has_relationships_to_this. " (type /BLCK/MFI_BOOL)
     write: gr_extendedobject-is_stub. " (type /BLCK/MFI_BOOL)
-    write: gr_extendedobject-last_modified_utc. " (type /BLCK/MFI_STRING)
+    write: gr_extendedobject-last_modified_utc. " (type /BLCK/MFI_TIMESTAMP)
     write: gr_extendedobject-object_checked_out. " (type /BLCK/MFI_BOOL)
     write: gr_extendedobject-objectcheckedouttothisuser. " (type /BLCK/MFI_BOOL)
     write: gr_extendedobject-object_version_flags. " (type /BLCK/MFI_MFOBJECTVERSIO)
@@ -8865,12 +8865,12 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**accessed_by_me_utc** | /BLCK/MFI_STRING | 
-**checked_out_at_utc** | /BLCK/MFI_STRING | 
+**accessed_by_me_utc** | /BLCK/MFI_TIMESTAMP | 
+**checked_out_at_utc** | /BLCK/MFI_TIMESTAMP | 
 **checked_out_to** | /BLCK/MFI_INT | 
 **checked_out_to_user_name** | /BLCK/MFI_STRING | 
 **class** | /BLCK/MFI_INT | 
-**created_utc** | /BLCK/MFI_STRING | 
+**created_utc** | /BLCK/MFI_TIMESTAMP | 
 **deleted** | /BLCK/MFI_BOOL | 
 **display_id** | /BLCK/MFI_STRING | 
 **files** | /BLCK/MFI_OBJECT_FILE_TT (**[array of ObjectFile](#markdown-header-model-object_file)**) | 
@@ -8878,7 +8878,7 @@ Name | Type | Description
 **hasrelationshipsfromthis** | /BLCK/MFI_BOOL | 
 **has_relationships_to_this** | /BLCK/MFI_BOOL | 
 **is_stub** | /BLCK/MFI_BOOL | 
-**last_modified_utc** | /BLCK/MFI_STRING | 
+**last_modified_utc** | /BLCK/MFI_TIMESTAMP | 
 **object_checked_out** | /BLCK/MFI_BOOL | 
 **objectcheckedouttothisuser** | /BLCK/MFI_BOOL | 
 **object_version_flags** | /BLCK/MFI_MFOBJECTVERSIO (**[MFObjectVersionFlag](#markdown-header-enum-mfobjectversio)**) | 
@@ -9781,12 +9781,12 @@ Name | Type | Description
     
 * fill model with data as appropriate..
     gr_objectversionu-properties = l_properties. " (type /BLCK/MFI_PROPERTY_VALUE_TT)
-    gr_objectversionu-accessed_by_me_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-    gr_objectversionu-checked_out_at_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+    gr_objectversionu-accessed_by_me_utc = 'ipsum lorem'. " (type /BLCK/MFI_TIMESTAMP)
+    gr_objectversionu-checked_out_at_utc = 'ipsum lorem'. " (type /BLCK/MFI_TIMESTAMP)
     gr_objectversionu-checked_out_to = 42. " (type /BLCK/MFI_INT)
     gr_objectversionu-checked_out_to_user_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     gr_objectversionu-class = 42. " (type /BLCK/MFI_INT)
-    gr_objectversionu-created_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+    gr_objectversionu-created_utc = 'ipsum lorem'. " (type /BLCK/MFI_TIMESTAMP)
     gr_objectversionu-deleted = 'X'. " (type /BLCK/MFI_BOOL)
     gr_objectversionu-display_id = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     gr_objectversionu-files = l_files. " (type /BLCK/MFI_OBJECT_FILE_TT)
@@ -9794,7 +9794,7 @@ Name | Type | Description
     gr_objectversionu-hasrelationshipsfromthis = 'X'. " (type /BLCK/MFI_BOOL)
     gr_objectversionu-has_relationships_to_this = 'X'. " (type /BLCK/MFI_BOOL)
     gr_objectversionu-is_stub = 'X'. " (type /BLCK/MFI_BOOL)
-    gr_objectversionu-last_modified_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+    gr_objectversionu-last_modified_utc = 'ipsum lorem'. " (type /BLCK/MFI_TIMESTAMP)
     gr_objectversionu-object_checked_out = 'X'. " (type /BLCK/MFI_BOOL)
     gr_objectversionu-objectcheckedouttothisuser = 'X'. " (type /BLCK/MFI_BOOL)
     gr_objectversionu-object_version_flags = l_object_version_flags. " (type /BLCK/MFI_MFOBJECTVERSIO)
@@ -9820,12 +9820,12 @@ Name | Type | Description
         e_200 = gr_objectversionu ).
     		
     write: gr_objectversionu-properties. " (type /BLCK/MFI_PROPERTY_VALUE_TT)
-    write: gr_objectversionu-accessed_by_me_utc. " (type /BLCK/MFI_STRING)
-    write: gr_objectversionu-checked_out_at_utc. " (type /BLCK/MFI_STRING)
+    write: gr_objectversionu-accessed_by_me_utc. " (type /BLCK/MFI_TIMESTAMP)
+    write: gr_objectversionu-checked_out_at_utc. " (type /BLCK/MFI_TIMESTAMP)
     write: gr_objectversionu-checked_out_to. " (type /BLCK/MFI_INT)
     write: gr_objectversionu-checked_out_to_user_name. " (type /BLCK/MFI_STRING)
     write: gr_objectversionu-class. " (type /BLCK/MFI_INT)
-    write: gr_objectversionu-created_utc. " (type /BLCK/MFI_STRING)
+    write: gr_objectversionu-created_utc. " (type /BLCK/MFI_TIMESTAMP)
     write: gr_objectversionu-deleted. " (type /BLCK/MFI_BOOL)
     write: gr_objectversionu-display_id. " (type /BLCK/MFI_STRING)
     write: gr_objectversionu-files. " (type /BLCK/MFI_OBJECT_FILE_TT)
@@ -9833,7 +9833,7 @@ Name | Type | Description
     write: gr_objectversionu-hasrelationshipsfromthis. " (type /BLCK/MFI_BOOL)
     write: gr_objectversionu-has_relationships_to_this. " (type /BLCK/MFI_BOOL)
     write: gr_objectversionu-is_stub. " (type /BLCK/MFI_BOOL)
-    write: gr_objectversionu-last_modified_utc. " (type /BLCK/MFI_STRING)
+    write: gr_objectversionu-last_modified_utc. " (type /BLCK/MFI_TIMESTAMP)
     write: gr_objectversionu-object_checked_out. " (type /BLCK/MFI_BOOL)
     write: gr_objectversionu-objectcheckedouttothisuser. " (type /BLCK/MFI_BOOL)
     write: gr_objectversionu-object_version_flags. " (type /BLCK/MFI_MFOBJECTVERSIO)
@@ -9851,12 +9851,12 @@ Name | Type | Description
 Name | Type | Description
 ------------ | ------------- | -------------
 **properties** | /BLCK/MFI_PROPERTY_VALUE_TT (**[array of PropertyValue](#markdown-header-model-property_value)**) | Object properties
-**accessed_by_me_utc** | /BLCK/MFI_STRING | 
-**checked_out_at_utc** | /BLCK/MFI_STRING | 
+**accessed_by_me_utc** | /BLCK/MFI_TIMESTAMP | 
+**checked_out_at_utc** | /BLCK/MFI_TIMESTAMP | 
 **checked_out_to** | /BLCK/MFI_INT | 
 **checked_out_to_user_name** | /BLCK/MFI_STRING | 
 **class** | /BLCK/MFI_INT | 
-**created_utc** | /BLCK/MFI_STRING | 
+**created_utc** | /BLCK/MFI_TIMESTAMP | 
 **deleted** | /BLCK/MFI_BOOL | 
 **display_id** | /BLCK/MFI_STRING | 
 **files** | /BLCK/MFI_OBJECT_FILE_TT (**[array of ObjectFile](#markdown-header-model-object_file)**) | 
@@ -9864,7 +9864,7 @@ Name | Type | Description
 **hasrelationshipsfromthis** | /BLCK/MFI_BOOL | 
 **has_relationships_to_this** | /BLCK/MFI_BOOL | 
 **is_stub** | /BLCK/MFI_BOOL | 
-**last_modified_utc** | /BLCK/MFI_STRING | 
+**last_modified_utc** | /BLCK/MFI_TIMESTAMP | 
 **object_checked_out** | /BLCK/MFI_BOOL | 
 **objectcheckedouttothisuser** | /BLCK/MFI_BOOL | 
 **object_version_flags** | /BLCK/MFI_MFOBJECTVERSIO (**[MFObjectVersionFlag](#markdown-header-enum-mfobjectversio)**) | 

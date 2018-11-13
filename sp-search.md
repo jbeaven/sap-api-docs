@@ -27,7 +27,7 @@ Query
 *   for parameter i_selectproperties:
 *   a simple ABAP primitive of type /BLCK/SPS_STRING
     data gvs_selectproperties type /BLCK/SPS_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/SPS_QUERY
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/SPS_QUERY
     data gr_http200 type /BLCK/SPS_QUERY.
         
 *** set data according to requirements of the API call
@@ -100,11 +100,9 @@ HTTP Code | Name | Type | Description
 * create our variables..
     data gr_cells type /blck/sps_cells.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_cells-key = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
-
     gr_cells-value = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
-
     gr_cells-value_type = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
     
 * pass to example API method
@@ -150,11 +148,9 @@ Name | Type | Description
 * create our variables..
     data gr_properties type /blck/sps_properties.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_properties-key = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
-
     gr_properties-value = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
-
     gr_properties-value_type = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
     
 * pass to example API method
@@ -200,7 +196,7 @@ Name | Type | Description
 * create our variables..
     data gr_rows type /blck/sps_rows.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_rows-cells = l_cells. " (type /BLCK/SPS_CELLS_TT)
     
 * pass to example API method
@@ -242,7 +238,7 @@ Name | Type | Description
 * create our variables..
     data gr_table type /blck/sps_table.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_table-rows = l_rows. " (type /BLCK/SPS_ROWS_TT)
     
 * pass to example API method
@@ -284,23 +280,15 @@ Name | Type | Description
 * create our variables..
     data gr_relevantresult type /blck/sps_relevantresult.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_relevantresult-group_template_id = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
-
     gr_relevantresult-item_template_id = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
-
     gr_relevantresult-properties = l_properties. " (type /BLCK/SPS_PROPERTIES_TT)
-
     gr_relevantresult-result_title = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
-
     gr_relevantresult-result_title_url = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
-
     gr_relevantresult-row_count = 42. " (type /BLCK/SPS_INT)
-
     gr_relevantresult-table = l_table. " (type /BLCK/SPS_TABLE)
-
     gr_relevantresult-total_rows = 42. " (type /BLCK/SPS_INT)
-
     gr_relevantresult-totalrowsincludingduplicat = 42. " (type /BLCK/SPS_INT)
     
 * pass to example API method
@@ -358,17 +346,12 @@ Name | Type | Description
 * create our variables..
     data gr_primaryqueryre type /blck/sps_primaryqueryre.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_primaryqueryre-custom_results = l_custom_results. " (type /BLCK/SPS_STRING_TT)
-
     gr_primaryqueryre-query_id = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
-
     gr_primaryqueryre-query_rule_id = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
-
     gr_primaryqueryre-refinement_results = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
-
     gr_primaryqueryre-relevant_results = l_relevant_results. " (type /BLCK/SPS_RELEVANTRESULT)
-
     gr_primaryqueryre-special_term_results = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
     
 * pass to example API method
@@ -420,11 +403,9 @@ Name | Type | Description
 * create our variables..
     data gr_properties2 type /blck/sps_properties2.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_properties2-key = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
-
     gr_properties2-value = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
-
     gr_properties2-value_type = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
     
 * pass to example API method
@@ -470,19 +451,13 @@ Name | Type | Description
 * create our variables..
     data gr_query type /blck/sps_query.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_query-elapsed_time = 42. " (type /BLCK/SPS_INT)
-
     gr_query-odata_metadata = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
-
     gr_query-primary_query_result = l_primary_query_result. " (type /BLCK/SPS_PRIMARYQUERYRE)
-
     gr_query-properties = l_properties. " (type /BLCK/SPS_PROPERTIES2_TT)
-
     gr_query-secondary_query_results = l_secondary_query_results. " (type /BLCK/SPS_STRING_TT)
-
     gr_query-spelling_suggestion = 'ipsum lorem'. " (type /BLCK/SPS_STRING)
-
     gr_query-triggered_rules = l_triggered_rules. " (type /BLCK/SPS_STRING_TT)
     
 * pass to example API method

@@ -176,7 +176,7 @@ Multiple status values can be provided with comma separated strings
 *   for parameter i_status:
 *   a table type /BLCK/PET_STRING_TT
     data gi_status type /BLCK/PET_STRING_TT.
-*   when the result of the call is HTTP200 we expect type /BLCK/PET_PET_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/PET_PET_TT
     data gr_http200 type /BLCK/PET_PET_TT.
         
 *** set data according to requirements of the API call
@@ -258,7 +258,7 @@ Muliple tags can be provided with comma separated strings. Use tag1, tag2, tag3 
 *   for parameter i_tags:
 *   a table type /BLCK/PET_STRING_TT
     data gi_tags type /BLCK/PET_STRING_TT.
-*   when the result of the call is HTTP200 we expect type /BLCK/PET_PET_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/PET_PET_TT
     data gr_http200 type /BLCK/PET_PET_TT.
         
 *** set data according to requirements of the API call
@@ -340,7 +340,7 @@ Returns a single pet
 *   for parameter i_pet_id:
 *   a simple ABAP primitive of type /BLCK/PET_INT
     data gvi_pet_id type /BLCK/PET_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/PET_PET
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/PET_PET
     data gr_http200 type /BLCK/PET_PET.
         
 *** set data according to requirements of the API call
@@ -586,7 +586,7 @@ uploads an image
 *   for parameter i_file:
 *   a simple ABAP primitive of type /BLCK/PET_BINARY
     data gv_file type /BLCK/PET_BINARY.
-*   when the result of the call is HTTP200 we expect type /BLCK/PET_API_RESPONSE
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/PET_API_RESPONSE
     data gr_http200 type /BLCK/PET_API_RESPONSE.
         
 *** set data according to requirements of the API call
@@ -743,7 +743,7 @@ Returns a map of status codes to quantities
     gvs_msg  type /blck/pet_string.
     
 *** create variables for input and output as needed
-*   when the result of the call is HTTP200 we expect type /BLCK/PET_INT_MT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/PET_INT_MT
     data gr_http200 type /BLCK/PET_INT_MT.
         
 
@@ -813,7 +813,7 @@ For valid response try integer IDs with value >= 1 and <= 10. Other values will 
 *   for parameter i_order_id:
 *   a simple ABAP primitive of type /BLCK/PET_INT
     data gvi_order_id type /BLCK/PET_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/PET_ORDER
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/PET_ORDER
     data gr_http200 type /BLCK/PET_ORDER.
         
 *** set data according to requirements of the API call
@@ -894,7 +894,7 @@ Place an order for a pet
 *   for parameter i_body:
 *   a reference to model type /BLCK/PET_ORDER
     data gm_body type /BLCK/PET_ORDER.
-*   when the result of the call is HTTP200 we expect type /BLCK/PET_ORDER
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/PET_ORDER
     data gr_http200 type /BLCK/PET_ORDER.
         
 *** set data according to requirements of the API call
@@ -1271,7 +1271,7 @@ Get user by user name
 *   for parameter i_username:
 *   a simple ABAP primitive of type /BLCK/PET_STRING
     data gvs_username type /BLCK/PET_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/PET_USER
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/PET_USER
     data gr_http200 type /BLCK/PET_USER.
         
 *** set data according to requirements of the API call
@@ -1355,7 +1355,7 @@ Logs user into the system
 *   for parameter i_password:
 *   a simple ABAP primitive of type /BLCK/PET_STRING
     data gvs_password type /BLCK/PET_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/PET_STRING
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/PET_STRING
     data gr_http200 type /BLCK/PET_STRING.
         
 *** set data according to requirements of the API call
@@ -1575,11 +1575,9 @@ Name | Type | Description
 * create our variables..
     data gr_api_response type /blck/pet_api_response.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_api_response-code = 42. " (type /BLCK/PET_INT)
-
     gr_api_response-type = 'ipsum lorem'. " (type /BLCK/PET_STRING)
-
     gr_api_response-message = 'ipsum lorem'. " (type /BLCK/PET_STRING)
     
 * pass to example API method
@@ -1624,9 +1622,8 @@ Name | Type | Description
 * create our variables..
     data gr_category type /blck/pet_category.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_category-id = 42. " (type /BLCK/PET_INT)
-
     gr_category-name = 'ipsum lorem'. " (type /BLCK/PET_STRING)
     
 * pass to example API method
@@ -1669,17 +1666,12 @@ Name | Type | Description
 * create our variables..
     data gr_order type /blck/pet_order.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_order-id = 42. " (type /BLCK/PET_INT)
-
     gr_order-pet_id = 42. " (type /BLCK/PET_INT)
-
     gr_order-quantity = 42. " (type /BLCK/PET_INT)
-
     gr_order-ship_date = l_ship_date. " (type /BLCK/PET_TIMESTAMP)
-
     gr_order-status = 'ipsum lorem'. " (type /BLCK/PET_STRING)
-
     gr_order-complete = 'X'. " (type /BLCK/PET_BOOL)
     
 * pass to example API method
@@ -1730,9 +1722,8 @@ Name | Type | Description
 * create our variables..
     data gr_tag type /blck/pet_tag.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_tag-id = 42. " (type /BLCK/PET_INT)
-
     gr_tag-name = 'ipsum lorem'. " (type /BLCK/PET_STRING)
     
 * pass to example API method
@@ -1775,17 +1766,12 @@ Name | Type | Description
 * create our variables..
     data gr_pet type /blck/pet_pet.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_pet-id = 42. " (type /BLCK/PET_INT)
-
     gr_pet-category = l_category. " (type /BLCK/PET_CATEGORY)
-
     gr_pet-name = 'ipsum lorem'. " (type /BLCK/PET_STRING)
-
     gr_pet-photo_urls = l_photo_urls. " (type /BLCK/PET_STRING_TT)
-
     gr_pet-tags = l_tags. " (type /BLCK/PET_TAG_TT)
-
     gr_pet-status = 'ipsum lorem'. " (type /BLCK/PET_STRING)
     
 * pass to example API method
@@ -1836,21 +1822,14 @@ Name | Type | Description
 * create our variables..
     data gr_user type /blck/pet_user.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_user-id = 42. " (type /BLCK/PET_INT)
-
     gr_user-username = 'ipsum lorem'. " (type /BLCK/PET_STRING)
-
     gr_user-first_name = 'ipsum lorem'. " (type /BLCK/PET_STRING)
-
     gr_user-last_name = 'ipsum lorem'. " (type /BLCK/PET_STRING)
-
     gr_user-email = 'ipsum lorem'. " (type /BLCK/PET_STRING)
-
     gr_user-password = 'ipsum lorem'. " (type /BLCK/PET_STRING)
-
     gr_user-phone = 'ipsum lorem'. " (type /BLCK/PET_STRING)
-
     gr_user-user_status = 42. " (type /BLCK/PET_INT)
     
 * pass to example API method

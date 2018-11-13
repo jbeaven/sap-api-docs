@@ -25,13 +25,13 @@ Deletes a job. In case the job is in status processing, it is aborted before rem
 *   for parameter i_job_id:
 *   a simple ABAP primitive of type /BLCK/CNV_STRING
     data gvs_job_id type /BLCK/CNV_STRING.
-*   when the result of the call is HTTP401 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/CNV_ERROR
     data gr_http401 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/CNV_ERROR
     data gr_http404 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/CNV_ERROR
     data gr_http500 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/CNV_ERROR
     data gr_httpother type /BLCK/CNV_ERROR.
         
 *** set data according to requirements of the API call
@@ -115,13 +115,13 @@ Start processing of a job. If processing is already triggered nothing is done. J
 *   for parameter i_job_id:
 *   a simple ABAP primitive of type /BLCK/CNV_STRING
     data gvs_job_id type /BLCK/CNV_STRING.
-*   when the result of the call is HTTP401 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/CNV_ERROR
     data gr_http401 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/CNV_ERROR
     data gr_http404 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/CNV_ERROR
     data gr_http500 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/CNV_ERROR
     data gr_httpother type /BLCK/CNV_ERROR.
         
 *** set data according to requirements of the API call
@@ -205,15 +205,15 @@ Get a object with job status and output information
 *   for parameter i_job_id:
 *   a simple ABAP primitive of type /BLCK/CNV_STRING
     data gvs_job_id type /BLCK/CNV_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/CNV_JOB_STATUS
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/CNV_JOB_STATUS
     data gr_http200 type /BLCK/CNV_JOB_STATUS.
-*   when the result of the call is HTTP401 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/CNV_ERROR
     data gr_http401 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/CNV_ERROR
     data gr_http404 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/CNV_ERROR
     data gr_http500 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/CNV_ERROR
     data gr_httpother type /BLCK/CNV_ERROR.
         
 *** set data according to requirements of the API call
@@ -305,15 +305,15 @@ Easy way to convert with a single REST call: - Creates a single input file with 
 *   for parameter i_jobid:
 *   a simple ABAP primitive of type /BLCK/CNV_STRING
     data gvs_jobid type /BLCK/CNV_STRING.
-*   when the result of the call is HTTP401 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/CNV_ERROR
     data gr_http401 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/CNV_ERROR
     data gr_http404 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/CNV_ERROR
     data gr_http409 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/CNV_ERROR
     data gr_http500 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/CNV_ERROR
     data gr_httpother type /BLCK/CNV_ERROR.
         
 *** set data according to requirements of the API call
@@ -404,15 +404,15 @@ Get a object with full job status, input and output information.
 *   for parameter i_job_id:
 *   a simple ABAP primitive of type /BLCK/CNV_STRING
     data gvs_job_id type /BLCK/CNV_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/CNV_JOB_DATA
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/CNV_JOB_DATA
     data gr_http200 type /BLCK/CNV_JOB_DATA.
-*   when the result of the call is HTTP401 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/CNV_ERROR
     data gr_http401 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/CNV_ERROR
     data gr_http404 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/CNV_ERROR
     data gr_http500 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/CNV_ERROR
     data gr_httpother type /BLCK/CNV_ERROR.
         
 *** set data according to requirements of the API call
@@ -507,15 +507,15 @@ Appends a new input file to the input file list of a job.
 *   for parameter i_job_id:
 *   a simple ABAP primitive of type /BLCK/CNV_STRING
     data gvs_job_id type /BLCK/CNV_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/CNV_STRING
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/CNV_STRING
     data gr_http200 type /BLCK/CNV_STRING.
-*   when the result of the call is HTTP401 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/CNV_ERROR
     data gr_http401 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/CNV_ERROR
     data gr_http409 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/CNV_ERROR
     data gr_http500 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/CNV_ERROR
     data gr_httpother type /BLCK/CNV_ERROR.
         
 *** set data according to requirements of the API call
@@ -612,15 +612,15 @@ Easy way to convert with a single REST call: - Creates a single input file with 
 *   for parameter i_jobid:
 *   a simple ABAP primitive of type /BLCK/CNV_STRING
     data gvs_jobid type /BLCK/CNV_STRING.
-*   when the result of the call is HTTP401 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/CNV_ERROR
     data gr_http401 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/CNV_ERROR
     data gr_http404 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/CNV_ERROR
     data gr_http409 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/CNV_ERROR
     data gr_http500 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/CNV_ERROR
     data gr_httpother type /BLCK/CNV_ERROR.
         
 *** set data according to requirements of the API call
@@ -705,15 +705,15 @@ Create a new job.
 *   for parameter i_body:
 *   a reference to model type /BLCK/CNV_JOB_TICKET
     data gm_body type /BLCK/CNV_JOB_TICKET.
-*   when the result of the call is HTTP200 we expect type /BLCK/CNV_STRING
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/CNV_STRING
     data gr_http200 type /BLCK/CNV_STRING.
-*   when the result of the call is HTTP401 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/CNV_ERROR
     data gr_http401 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/CNV_ERROR
     data gr_http409 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/CNV_ERROR
     data gr_http500 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/CNV_ERROR
     data gr_httpother type /BLCK/CNV_ERROR.
         
 *** set data according to requirements of the API call
@@ -809,15 +809,15 @@ Upload input file binary input content.
 *   for parameter i_file_id:
 *   a simple ABAP primitive of type /BLCK/CNV_STRING
     data gvs_file_id type /BLCK/CNV_STRING.
-*   when the result of the call is HTTP401 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/CNV_ERROR
     data gr_http401 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/CNV_ERROR
     data gr_http404 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/CNV_ERROR
     data gr_http409 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/CNV_ERROR
     data gr_http500 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/CNV_ERROR
     data gr_httpother type /BLCK/CNV_ERROR.
         
 *** set data according to requirements of the API call
@@ -911,13 +911,13 @@ Get processing result binary content.
 *   for parameter i_file_id:
 *   a simple ABAP primitive of type /BLCK/CNV_STRING
     data gvs_file_id type /BLCK/CNV_STRING.
-*   when the result of the call is HTTP401 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/CNV_ERROR
     data gr_http401 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/CNV_ERROR
     data gr_http404 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/CNV_ERROR
     data gr_http500 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/CNV_ERROR
     data gr_httpother type /BLCK/CNV_ERROR.
         
 *** set data according to requirements of the API call
@@ -1012,13 +1012,13 @@ Get processing result binary content.
 *   for parameter i_file_id:
 *   a simple ABAP primitive of type /BLCK/CNV_STRING
     data gvs_file_id type /BLCK/CNV_STRING.
-*   when the result of the call is HTTP401 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/CNV_ERROR
     data gr_http401 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/CNV_ERROR
     data gr_http404 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/CNV_ERROR
     data gr_http500 type /BLCK/CNV_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/CNV_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/CNV_ERROR
     data gr_httpother type /BLCK/CNV_ERROR.
         
 *** set data according to requirements of the API call
@@ -1097,11 +1097,9 @@ Name | Type | Description
 * create our variables..
     data gr_error type /blck/cnv_error.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_error-code = 42. " (type /BLCK/CNV_INT)
-
     gr_error-message = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
-
     gr_error-metadata = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
     
 * pass to example API method
@@ -1147,7 +1145,8 @@ Name | Type | Description
 * create our variables..
     data gr_file_id type /blck/cnv_file_id.
     
-* instantiate model and call the setters to set values..    
+* fill model with data as appropriate..
+    
 * pass to example API method
     gcl_exampleapi->update_file_id(
       exporting
@@ -1185,9 +1184,8 @@ Name | Type | Description
 * create our variables..
     data gr_input_file type /blck/cnv_input_file.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_input_file-mime_type = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
-
     gr_input_file-metadata = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
     
 * pass to example API method
@@ -1231,7 +1229,8 @@ Name | Type | Description
 * create our variables..
     data gr_job_id type /blck/cnv_job_id.
     
-* instantiate model and call the setters to set values..    
+* fill model with data as appropriate..
+    
 * pass to example API method
     gcl_exampleapi->update_job_id(
       exporting
@@ -1330,9 +1329,8 @@ Name | Value | Constant
 * create our variables..
     data gr_job_ticket type /blck/cnv_job_ticket.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_job_ticket-name = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
-
     gr_job_ticket-metadata = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
     
 * pass to example API method
@@ -1376,9 +1374,8 @@ Name | Type | Description
 * create our variables..
     data gr_output_file type /blck/cnv_output_file.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_output_file-mime_type = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
-
     gr_output_file-metadata = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
     
 * pass to example API method
@@ -1422,17 +1419,12 @@ Name | Type | Description
 * create our variables..
     data gr_job_data type /blck/cnv_job_data.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_job_data-job_id = l_job_id. " (type /BLCK/CNV_JOB_ID)
-
     gr_job_data-job_status = l_job_status. " (type /BLCK/CNV_JOBSTATUSENUM)
-
     gr_job_data-creation_date = 42. " (type /BLCK/CNV_INT)
-
     gr_job_data-job_ticket = l_job_ticket. " (type /BLCK/CNV_JOB_TICKET)
-
     gr_job_data-input = l_input. " (type /BLCK/CNV_INPUT_FILE_TT)
-
     gr_job_data-output = l_output. " (type /BLCK/CNV_OUTPUT_FILE_TT)
     
 * pass to example API method
@@ -1484,11 +1476,9 @@ Name | Type | Description
 * create our variables..
     data gr_job_status type /blck/cnv_job_status.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_job_status-job_id = l_job_id. " (type /BLCK/CNV_JOB_ID)
-
     gr_job_status-job_status = l_job_status. " (type /BLCK/CNV_JOBSTATUSENUM)
-
     gr_job_status-output = l_output. " (type /BLCK/CNV_OUTPUT_FILE_TT)
     
 * pass to example API method

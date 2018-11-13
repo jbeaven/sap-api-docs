@@ -22,15 +22,15 @@ Opens a websocket connection and returns status changes of all jobs send by Oper
     gvs_msg  type /blck/p4_string.
     
 *** create variables for input and output as needed
-*   when the result of the call is HTTP200 we expect type /BLCK/P4_JOBSTATUSEVENT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/P4_JOBSTATUSEVENT
     data gr_http200 type /BLCK/P4_JOBSTATUSEVENT.
-*   when the result of the call is HTTP401 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/P4_ERROR
     data gr_http401 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/P4_ERROR
     data gr_http403 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/P4_ERROR
     data gr_http500 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/P4_ERROR
     data gr_httpother type /BLCK/P4_ERROR.
         
 
@@ -119,17 +119,17 @@ A POST call to this route will create a new jobs and return it's uuid.
 *   for parameter i_body:
 *   a simple ABAP primitive of type /BLCK/P4_STRING
     data gvs_body type /BLCK/P4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/P4_JOB_ID
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/P4_JOB_ID
     data gr_http200 type /BLCK/P4_JOB_ID.
-*   when the result of the call is HTTP401 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/P4_ERROR
     data gr_http401 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/P4_ERROR
     data gr_http403 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/P4_ERROR
     data gr_http409 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/P4_ERROR
     data gr_http500 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/P4_ERROR
     data gr_httpother type /BLCK/P4_ERROR.
         
 *** set data according to requirements of the API call
@@ -225,15 +225,15 @@ A POST call to this route will abort a running job.
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/P4_STRING
     data gvs_uuid type /BLCK/P4_STRING.
-*   when the result of the call is HTTP401 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/P4_ERROR
     data gr_http401 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/P4_ERROR
     data gr_http403 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/P4_ERROR
     data gr_http409 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/P4_ERROR
     data gr_http500 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/P4_ERROR
     data gr_httpother type /BLCK/P4_ERROR.
         
 *** set data according to requirements of the API call
@@ -320,17 +320,17 @@ returns status of given job
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/P4_STRING
     data gvs_uuid type /BLCK/P4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/P4_JOB_STATUS
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/P4_JOB_STATUS
     data gr_http200 type /BLCK/P4_JOB_STATUS.
-*   when the result of the call is HTTP401 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/P4_ERROR
     data gr_http401 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/P4_ERROR
     data gr_http403 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/P4_ERROR
     data gr_http404 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/P4_ERROR
     data gr_http500 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/P4_ERROR
     data gr_httpother type /BLCK/P4_ERROR.
         
 *** set data according to requirements of the API call
@@ -426,15 +426,15 @@ A POST call to this route will pause a running job.
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/P4_STRING
     data gvs_uuid type /BLCK/P4_STRING.
-*   when the result of the call is HTTP401 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/P4_ERROR
     data gr_http401 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/P4_ERROR
     data gr_http403 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/P4_ERROR
     data gr_http409 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/P4_ERROR
     data gr_http500 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/P4_ERROR
     data gr_httpother type /BLCK/P4_ERROR.
         
 *** set data according to requirements of the API call
@@ -521,15 +521,15 @@ A PUT call to this route will add a new file to the job. Data type is given in H
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/P4_STRING
     data gvs_uuid type /BLCK/P4_STRING.
-*   when the result of the call is HTTP401 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/P4_ERROR
     data gr_http401 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/P4_ERROR
     data gr_http403 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/P4_ERROR
     data gr_http409 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/P4_ERROR
     data gr_http500 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/P4_ERROR
     data gr_httpother type /BLCK/P4_ERROR.
         
 *** set data according to requirements of the API call
@@ -616,15 +616,15 @@ A POST call to this route will resume a paused job.
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/P4_STRING
     data gvs_uuid type /BLCK/P4_STRING.
-*   when the result of the call is HTTP401 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/P4_ERROR
     data gr_http401 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/P4_ERROR
     data gr_http403 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/P4_ERROR
     data gr_http409 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/P4_ERROR
     data gr_http500 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/P4_ERROR
     data gr_httpother type /BLCK/P4_ERROR.
         
 *** set data according to requirements of the API call
@@ -711,15 +711,15 @@ A POST call to this route will start a previously created job.
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/P4_STRING
     data gvs_uuid type /BLCK/P4_STRING.
-*   when the result of the call is HTTP401 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/P4_ERROR
     data gr_http401 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/P4_ERROR
     data gr_http403 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/P4_ERROR
     data gr_http409 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/P4_ERROR
     data gr_http500 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/P4_ERROR
     data gr_httpother type /BLCK/P4_ERROR.
         
 *** set data according to requirements of the API call
@@ -807,15 +807,15 @@ Returns list of available printers inluding their capabilities
     gvs_msg  type /blck/p4_string.
     
 *** create variables for input and output as needed
-*   when the result of the call is HTTP200 we expect type /BLCK/P4_PRINTER_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/P4_PRINTER_TT
     data gr_http200 type /BLCK/P4_PRINTER_TT.
-*   when the result of the call is HTTP401 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/P4_ERROR
     data gr_http401 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/P4_ERROR
     data gr_http403 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/P4_ERROR
     data gr_http500 type /BLCK/P4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/P4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/P4_ERROR
     data gr_httpother type /BLCK/P4_ERROR.
         
 
@@ -891,11 +891,9 @@ HTTP Code | Name | Type | Description
 * create our variables..
     data gr_error type /blck/p4_error.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_error-code = 42. " (type /BLCK/P4_INT)
-
     gr_error-message = 'ipsum lorem'. " (type /BLCK/P4_STRING)
-
     gr_error-metadata = 'ipsum lorem'. " (type /BLCK/P4_STRING)
     
 * pass to example API method
@@ -941,7 +939,8 @@ Name | Type | Description
 * create our variables..
     data gr_job_header type /blck/p4_job_header.
     
-* instantiate model and call the setters to set values..    
+* fill model with data as appropriate..
+    
 * pass to example API method
     gcl_exampleapi->update_job_header(
       exporting
@@ -979,7 +978,7 @@ Name | Type | Description
 * create our variables..
     data gr_job_id type /blck/p4_job_id.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_job_id-uuid = 'ipsum lorem'. " (type /BLCK/P4_STRING)
     
 * pass to example API method
@@ -1084,7 +1083,7 @@ Name | Value | Constant
 * create our variables..
     data gr_job_status type /blck/p4_job_status.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_job_status-status = l_status. " (type /BLCK/P4_STATUS_TYPE)
     
 * pass to example API method
@@ -1126,11 +1125,9 @@ Name | Type | Description
 * create our variables..
     data gr_jobstatusevent type /blck/p4_jobstatusevent.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_jobstatusevent-type = 'ipsum lorem'. " (type /BLCK/P4_STRING)
-
     gr_jobstatusevent-scope = 'ipsum lorem'. " (type /BLCK/P4_STRING)
-
     gr_jobstatusevent-parameters = 'ipsum lorem'. " (type /BLCK/P4_STRING)
     
 * pass to example API method
@@ -1176,23 +1173,15 @@ Name | Type | Description
 * create our variables..
     data gr_printer type /blck/p4_printer.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_printer-printer = 'ipsum lorem'. " (type /BLCK/P4_STRING)
-
     gr_printer-display_name = 'ipsum lorem'. " (type /BLCK/P4_STRING)
-
     gr_printer-comment = 'ipsum lorem'. " (type /BLCK/P4_STRING)
-
     gr_printer-color = 'X'. " (type /BLCK/P4_BOOL)
-
     gr_printer-color_default = 'X'. " (type /BLCK/P4_BOOL)
-
     gr_printer-duplex = 'X'. " (type /BLCK/P4_BOOL)
-
     gr_printer-duplex_default = 'ipsum lorem'. " (type /BLCK/P4_STRING)
-
     gr_printer-trays = l_trays. " (type /BLCK/P4_STRING_TT)
-
     gr_printer-tray_media = l_tray_media. " (type /BLCK/P4_STRING_TT)
     
 * pass to example API method

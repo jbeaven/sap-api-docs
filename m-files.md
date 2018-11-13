@@ -23,9 +23,9 @@ Adds an object to the favorites.
 *   for parameter i_body:
 *   a reference to model type /BLCK/MFI_OBJ_ID
     data gm_body type /BLCK/MFI_OBJ_ID.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_EXTENDEDOBJECT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -108,9 +108,9 @@ Retrieves object version information on the favorite object
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_objectid type /BLCK/MFI_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_OBJECT_VERSION
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -187,9 +187,9 @@ Retrieves favorite objects.
     gvs_msg  type /blck/mfi_string.
     
 *** create variables for input and output as needed
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_OBJECT_VERSION_TT
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION_TT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
@@ -263,9 +263,9 @@ Removes an object from favorites.
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_objectid type /BLCK/MFI_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_EXTENDEDOBJECT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -351,9 +351,9 @@ Stores a temporary file on the server and assigns an ID for it. Once uploaded th
 *   for parameter i_body:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_body type /BLCK/MFI_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_UPLOAD_INFO
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_UPLOAD_INFO
     data gr_http200 type /BLCK/MFI_UPLOAD_INFO.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -443,9 +443,9 @@ Adds a comment to an object
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_EXTENDEDOBJECT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -541,9 +541,9 @@ Adds a new file to the object.
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_OBJECT_VERSION
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -633,9 +633,9 @@ Creates a new object of type.
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_OBJECT_VERSION
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -716,9 +716,9 @@ Demotes external objects that have been previously promoted.
 *   for parameter i_body:
 *   a table type /BLCK/MFI_OBJ_ID_TTT
     data gi_body type /BLCK/MFI_OBJ_ID_TTT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_EXTENDEDOBJECT_TT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT_TT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -812,7 +812,7 @@ As checked in versions cannot be destroyed this can only be performed on a check
 *   for parameter i_all_versions:
 *   a simple ABAP primitive of type /BLCK/MFI_BOOL
     data gv_all_versions type /BLCK/MFI_BOOL.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -900,9 +900,9 @@ Retrieves automatic metadata based on specified request info.
 *   for parameter i_body:
 *   a reference to model type /BLCK/MFI_AUTOMATICMETAD
     data gm_body type /BLCK/MFI_AUTOMATICMETAD.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_PROPERTYVALUES_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_PROPERTYVALUES_TT
     data gr_http200 type /BLCK/MFI_PROPERTYVALUES_TT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -991,9 +991,9 @@ Retrieves the current check out status.
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_MFCHECKOUTSTAT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_MFCHECKOUTSTAT
     data gr_http200 type /BLCK/MFI_MFCHECKOUTSTAT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -1082,9 +1082,9 @@ Retrieves the comments written on the object.
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_VERSIONCOMMENT_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_VERSIONCOMMENT_TT
     data gr_http200 type /BLCK/MFI_VERSIONCOMMENT_TT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -1167,9 +1167,9 @@ Retrieves the deleted status of the object.
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_BOOL
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_BOOL
     data gr_http200 type /BLCK/MFI_BOOL.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -1261,9 +1261,9 @@ Retrieves the object file contents.
 *   for parameter i_mac:
 *   a simple ABAP primitive of type /BLCK/MFI_BOOL
     data gv_mac type /BLCK/MFI_BOOL.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_BINARY
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_BINARY
     data gr_http200 type /BLCK/MFI_BINARY.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -1367,9 +1367,9 @@ Retrieves the object file information for the specific object file.
 *   for parameter i_file:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_file type /BLCK/MFI_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_FILE
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_OBJECT_FILE
     data gr_http200 type /BLCK/MFI_OBJECT_FILE.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -1476,9 +1476,9 @@ Retrieves the file preview.
 *   for parameter i_height:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_height type /BLCK/MFI_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_BINARY
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_BINARY
     data gr_http200 type /BLCK/MFI_BINARY.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -1594,9 +1594,9 @@ Retrieves the current object file name.
 *   for parameter i_file:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_file type /BLCK/MFI_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_STRING
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_STRING
     data gr_http200 type /BLCK/MFI_STRING.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -1688,9 +1688,9 @@ Retrieves the object file information for all the files on an object.
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_FILE_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_OBJECT_FILE_TT
     data gr_http200 type /BLCK/MFI_OBJECT_FILE_TT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -1775,9 +1775,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/properti
 *   for parameter i_object_ids:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_object_ids type /BLCK/MFI_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_OBJECT_VERSION_TT
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION_TT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -1864,9 +1864,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_STRING
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_STRING
     data gr_http200 type /BLCK/MFI_STRING.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -1960,9 +1960,9 @@ Parameters: ?include - A list of additional fields to include in the ExtendedObj
 *   for parameter i_include:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_include type /BLCK/MFI_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_EXTENDEDOBJECT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -2068,9 +2068,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   for parameter i_height:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_height type /BLCK/MFI_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_BINARY
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_BINARY
     data gr_http200 type /BLCK/MFI_BINARY.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -2174,9 +2174,9 @@ Retrieves all the available versions of the object.
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_OBJECT_VERSION_TT
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION_TT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -2252,9 +2252,9 @@ The amount of returned objects is limited by the server, by default to 500 items
     gvs_msg  type /blck/mfi_string.
     
 *** create variables for input and output as needed
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_RESULTSOBJECTV
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_RESULTSOBJECTV
     data gr_http200 type /BLCK/MFI_RESULTSOBJECTV.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
@@ -2325,9 +2325,9 @@ Collection of objects filtered by object type.
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_RESULTSOBJECTV
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_RESULTSOBJECTV
     data gr_http200 type /BLCK/MFI_RESULTSOBJECTV.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -2415,9 +2415,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   for parameter i_for_display:
 *   a simple ABAP primitive of type /BLCK/MFI_BOOL
     data gv_for_display type /BLCK/MFI_BOOL.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_PROPERTY_VALUE_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_PROPERTY_VALUE_TT
     data gr_http200 type /BLCK/MFI_PROPERTY_VALUE_TT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -2517,9 +2517,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_id type /BLCK/MFI_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_PROPERTY_VALUE
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_PROPERTY_VALUE
     data gr_http200 type /BLCK/MFI_PROPERTY_VALUE.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -2619,9 +2619,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   for parameter i_direction:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_direction type /BLCK/MFI_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_INT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_INT
     data gr_http200 type /BLCK/MFI_INT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -2729,9 +2729,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   for parameter i_direction:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_direction type /BLCK/MFI_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_OBJECT_VERSION_TT
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION_TT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -2833,9 +2833,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECTWORKFLOW
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_OBJECTWORKFLOW
     data gr_http200 type /BLCK/MFI_OBJECTWORKFLOW.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -2926,9 +2926,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_INT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_INT
     data gr_http200 type /BLCK/MFI_INT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -3019,9 +3019,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_OBJECT_VERSION_TT
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION_TT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -3113,7 +3113,7 @@ Removes the file from the object.
 *   for parameter i_file:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_file type /BLCK/MFI_INT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -3205,9 +3205,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_id type /BLCK/MFI_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_EXTENDEDOBJECT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -3304,9 +3304,9 @@ Sets the check out status. This is allowed only when the object isn't checked ou
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-*   when the result of the call is HTTP204 we expect type /BLCK/MFI_OBJECT_VERSION
+*   when the result of the call is HTTP Code: 204 we expect type /BLCK/MFI_OBJECT_VERSION
     data gr_http204 type /BLCK/MFI_OBJECT_VERSION.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -3395,9 +3395,9 @@ Sets the deleted status of the object.
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_OBJECT_VERSION
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -3489,9 +3489,9 @@ Replaces the object file contents.
 *   for parameter i_file:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_file type /BLCK/MFI_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_OBJECT_VERSION
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -3593,9 +3593,9 @@ Sets the name on the object file.
 *   for parameter i_file:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_file type /BLCK/MFI_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_OBJECT_VERSION
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -3688,9 +3688,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/setmulti
 *   for parameter i_body:
 *   a reference to model type /BLCK/MFI_OBJECTSUPDATEI
     data gm_body type /BLCK/MFI_OBJECTSUPDATEI.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_EXTENDEDOBJECT_TT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT_TT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -3778,9 +3778,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_OBJECT_VERSION
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -3882,9 +3882,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_EXTENDEDOBJECT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -3986,9 +3986,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_id type /BLCK/MFI_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_EXTENDEDOBJECT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -4089,9 +4089,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_EXTENDEDOBJECT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -4198,9 +4198,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_EXTENDEDOBJECT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -4294,9 +4294,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/recentlyaccessed
 *   for parameter i_body:
 *   a reference to model type /BLCK/MFI_OBJ_ID
     data gm_body type /BLCK/MFI_OBJ_ID.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJECT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_EXTENDEDOBJECT
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJECT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -4375,9 +4375,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/recentlyaccessed
     gvs_msg  type /blck/mfi_string.
     
 *** create variables for input and output as needed
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_VERSION_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_OBJECT_VERSION_TT
     data gr_http200 type /BLCK/MFI_OBJECT_VERSION_TT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
@@ -4452,9 +4452,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/repositories/
     gvs_msg  type /blck/mfi_string.
     
 *** create variables for input and output as needed
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_REPOSITORYAUTH_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_REPOSITORYAUTH_TT
     data gr_http200 type /BLCK/MFI_REPOSITORYAUTH_TT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
@@ -4531,9 +4531,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/repositories/ses
 *   for parameter i_targetid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_targetid type /BLCK/MFI_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_REPOSITORYAUT2
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_REPOSITORYAUT2
     data gr_http200 type /BLCK/MFI_REPOSITORYAUT2.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -4619,7 +4619,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/repositories/ses
 *   for parameter i_targetid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_targetid type /BLCK/MFI_INT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -4698,9 +4698,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/authentic
 *   for parameter i_body:
 *   a reference to model type /BLCK/MFI_AUTHENTICATION
     data gm_body type /BLCK/MFI_AUTHENTICATION.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_STRING
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_STRING
     data gr_http200 type /BLCK/MFI_STRING.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -4785,9 +4785,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/publickey
     gvs_msg  type /blck/mfi_string.
     
 *** create variables for input and output as needed
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_PUBLIC_KEY
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_PUBLIC_KEY
     data gr_http200 type /BLCK/MFI_PUBLIC_KEY.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
@@ -4858,9 +4858,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/status/
     gvs_msg  type /blck/mfi_string.
     
 *** create variables for input and output as needed
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_STATUSRESPONSE
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_STATUSRESPONSE
     data gr_http200 type /BLCK/MFI_STATUSRESPONSE.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
@@ -4936,9 +4936,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/vaults/
 *   for parameter i_online:
 *   a simple ABAP primitive of type /BLCK/MFI_BOOL
     data gv_online type /BLCK/MFI_BOOL.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_REPOSITORYAUTH_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_REPOSITORYAUTH_TT
     data gr_http200 type /BLCK/MFI_REPOSITORYAUTH_TT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -5019,9 +5019,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/authenti
     gvs_msg  type /blck/mfi_string.
     
 *** create variables for input and output as needed
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_STRING
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_STRING
     data gr_http200 type /BLCK/MFI_STRING.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
@@ -5091,9 +5091,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/
     gvs_msg  type /blck/mfi_string.
     
 *** create variables for input and output as needed
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_SESSION_INFO
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_SESSION_INFO
     data gr_http200 type /BLCK/MFI_SESSION_INFO.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
@@ -5163,9 +5163,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/userid/
     gvs_msg  type /blck/mfi_string.
     
 *** create variables for input and output as needed
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_PRIMITIVETYPEI
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_PRIMITIVETYPEI
     data gr_http200 type /BLCK/MFI_PRIMITIVETYPEI.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
@@ -5235,9 +5235,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/vault/
     gvs_msg  type /blck/mfi_string.
     
 *** create variables for input and output as needed
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_VAULT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_VAULT
     data gr_http200 type /BLCK/MFI_VAULT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
@@ -5310,9 +5310,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/
 *   for parameter i_body:
 *   a reference to model type /BLCK/MFI_AUTHENTICATION
     data gm_body type /BLCK/MFI_AUTHENTICATION.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_VAULT_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_VAULT_TT
     data gr_http200 type /BLCK/MFI_VAULT_TT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -5397,7 +5397,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/
     gvs_msg  type /blck/mfi_string.
     
 *** create variables for input and output as needed
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
@@ -5465,9 +5465,9 @@ The request must have either the GUID or the Name of the vault filled. In case b
 *   for parameter i_body:
 *   a reference to model type /BLCK/MFI_VAULT
     data gm_body type /BLCK/MFI_VAULT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_VAULT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_VAULT
     data gr_http200 type /BLCK/MFI_VAULT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -5558,9 +5558,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_id type /BLCK/MFI_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_VALUELISTITEM
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_VALUELISTITEM
     data gr_http200 type /BLCK/MFI_VALUELISTITEM.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -5652,9 +5652,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
 *   for parameter i_size:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_size type /BLCK/MFI_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_BINARY
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_BINARY
     data gr_http200 type /BLCK/MFI_BINARY.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -5737,9 +5737,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
 *   for parameter i_guid:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_guid type /BLCK/MFI_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_INT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_INT
     data gr_http200 type /BLCK/MFI_INT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -5821,9 +5821,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
 *   for parameter i_include:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_include type /BLCK/MFI_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_EXTENDEDOBJEC2
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_EXTENDEDOBJEC2
     data gr_http200 type /BLCK/MFI_EXTENDEDOBJEC2.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -5911,9 +5911,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_VALUELISTITEM
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_VALUELISTITEM
     data gr_http200 type /BLCK/MFI_VALUELISTITEM.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -5998,9 +5998,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_STRING
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_STRING
     data gr_http200 type /BLCK/MFI_STRING.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -6091,9 +6091,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *   for parameter i_condition_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_condition_type type /BLCK/MFI_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_RESULTSVALUELI
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_RESULTSVALUELI
     data gr_http200 type /BLCK/MFI_RESULTSVALUELI.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -6185,9 +6185,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
 *   for parameter i_objtype:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objtype type /BLCK/MFI_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_CLASS_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_OBJECT_CLASS_TT
     data gr_http200 type /BLCK/MFI_OBJECT_CLASS_TT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -6268,9 +6268,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJ_TYPE
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_OBJ_TYPE
     data gr_http200 type /BLCK/MFI_OBJ_TYPE.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -6349,9 +6349,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJECT_CLASS_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_OBJECT_CLASS_TT
     data gr_http200 type /BLCK/MFI_OBJECT_CLASS_TT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -6430,9 +6430,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_BINARY
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_BINARY
     data gr_http200 type /BLCK/MFI_BINARY.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -6508,9 +6508,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
     gvs_msg  type /blck/mfi_string.
     
 *** create variables for input and output as needed
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJ_TYPE_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_OBJ_TYPE_TT
     data gr_http200 type /BLCK/MFI_OBJ_TYPE_TT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
@@ -6583,9 +6583,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_id type /BLCK/MFI_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJ_TYPE
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_OBJ_TYPE
     data gr_http200 type /BLCK/MFI_OBJ_TYPE.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -6661,9 +6661,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
     gvs_msg  type /blck/mfi_string.
     
 *** create variables for input and output as needed
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_OBJ_TYPE_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_OBJ_TYPE_TT
     data gr_http200 type /BLCK/MFI_OBJ_TYPE_TT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
@@ -6733,9 +6733,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/proper
     gvs_msg  type /blck/mfi_string.
     
 *** create variables for input and output as needed
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_PROPERTY_DEF_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_PROPERTY_DEF_TT
     data gr_http200 type /BLCK/MFI_PROPERTY_DEF_TT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
@@ -6808,9 +6808,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/proper
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_id type /BLCK/MFI_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_PROPERTY_DEF
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_PROPERTY_DEF
     data gr_http200 type /BLCK/MFI_PROPERTY_DEF.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -6889,9 +6889,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_id type /BLCK/MFI_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_WORKFLOW
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_WORKFLOW
     data gr_http200 type /BLCK/MFI_WORKFLOW.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -6973,9 +6973,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_sid type /BLCK/MFI_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_WORKFLOW_STATE
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_WORKFLOW_STATE
     data gr_http200 type /BLCK/MFI_WORKFLOW_STATE.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -7062,9 +7062,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
 *   for parameter i_currentstate:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_currentstate type /BLCK/MFI_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_WORKFLOW_STATE_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_WORKFLOW_STATE_TT
     data gr_http200 type /BLCK/MFI_WORKFLOW_STATE_TT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -7151,9 +7151,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
 *   for parameter i_currentstate:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_currentstate type /BLCK/MFI_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_WORKFLOW_STATE_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_WORKFLOW_STATE_TT
     data gr_http200 type /BLCK/MFI_WORKFLOW_STATE_TT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -7234,9 +7234,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
     gvs_msg  type /blck/mfi_string.
     
 *** create variables for input and output as needed
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_WORKFLOW_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_WORKFLOW_TT
     data gr_http200 type /BLCK/MFI_WORKFLOW_TT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
@@ -7312,7 +7312,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_VALUELISTITEM
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_VALUELISTITEM
     data gr_http200 type /BLCK/MFI_VALUELISTITEM.
         
 *** set data according to requirements of the API call
@@ -7397,9 +7397,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_VALUELISTITEM
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_VALUELISTITEM
     data gr_http200 type /BLCK/MFI_VALUELISTITEM.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -7487,9 +7487,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_MFREFRESHSTATU
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_MFREFRESHSTATU
     data gr_http200 type /BLCK/MFI_MFREFRESHSTATU.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -7575,9 +7575,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/views/path/items
 *   for parameter i_path:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_path type /BLCK/MFI_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_FOLDERCONTENTI
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_FOLDERCONTENTI
     data gr_http200 type /BLCK/MFI_FOLDERCONTENTI.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -7657,9 +7657,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/views/path/items
 *   for parameter i_path:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_path type /BLCK/MFI_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_INT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_INT
     data gr_http200 type /BLCK/MFI_INT.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -7739,9 +7739,9 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/views/path/objec
 *   for parameter i_path:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_path type /BLCK/MFI_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/MFI_RESULTSOBJECTV
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_RESULTSOBJECTV
     data gr_http200 type /BLCK/MFI_RESULTSOBJECTV.
-*   when the result of the call is HTTPother we expect type /BLCK/MFI_WEBSERVICEERRO
+*   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
@@ -7813,9 +7813,8 @@ HTTP Code | Name | Type | Description
 * create our variables..
     data gr_associatedprop type /blck/mfi_associatedprop.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_associatedprop-property_def = 42. " (type /BLCK/MFI_INT)
-
     gr_associatedprop-required = 'X'. " (type /BLCK/MFI_BOOL)
     
 * pass to example API method
@@ -7859,25 +7858,16 @@ Name | Type | Description
 * create our variables..
     data gr_authentication type /blck/mfi_authentication.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_authentication-username = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_authentication-password = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_authentication-domain = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_authentication-windows_user = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_authentication-computer_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_authentication-vault_guid = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_authentication-expiration = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_authentication-read_only = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_authentication-url = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_authentication-method = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
@@ -7937,17 +7927,12 @@ Name | Type | Description
 * create our variables..
     data gr_obj_ver type /blck/mfi_obj_ver.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_obj_ver-id = 42. " (type /BLCK/MFI_INT)
-
     gr_obj_ver-type = 42. " (type /BLCK/MFI_INT)
-
     gr_obj_ver-version = 42. " (type /BLCK/MFI_INT)
-
     gr_obj_ver-external_repository_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_obj_ver-externalrepositoryobjectid = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_obj_ver-externalrepositoryobjectve = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
@@ -7999,15 +7984,11 @@ Name | Type | Description
 * create our variables..
     data gr_lookup type /blck/mfi_lookup.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_lookup-deleted = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_lookup-display_value = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_lookup-hidden = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_lookup-item = 42. " (type /BLCK/MFI_INT)
-
     gr_lookup-version = 42. " (type /BLCK/MFI_INT)
     
 * pass to example API method
@@ -8149,21 +8130,14 @@ Name | Value | Constant
 * create our variables..
     data gr_typed_value type /blck/mfi_typed_value.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_typed_value-data_type = l_data_type. " (type /BLCK/MFI_MF_DATA_TYPE)
-
     gr_typed_value-has_value = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_typed_value-value = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_typed_value-lookup = l_lookup. " (type /BLCK/MFI_LOOKUP)
-
     gr_typed_value-lookups = l_lookups. " (type /BLCK/MFI_LOOKUP_TT)
-
     gr_typed_value-display_value = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_typed_value-sorting_key = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_typed_value-serialized_value = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
@@ -8219,9 +8193,8 @@ Name | Type | Description
 * create our variables..
     data gr_property_value type /blck/mfi_property_value.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_property_value-property_def = 42. " (type /BLCK/MFI_INT)
-
     gr_property_value-typed_value = l_typed_value. " (type /BLCK/MFI_TYPED_VALUE)
     
 * pass to example API method
@@ -8266,17 +8239,12 @@ Name | Type | Description
 * create our variables..
     data gr_automaticmetad type /blck/mfi_automaticmetad.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_automaticmetad-upload_ids = l_upload_ids. " (type /BLCK/MFI_INT_TT)
-
     gr_automaticmetad-property_values = l_property_values. " (type /BLCK/MFI_PROPERTY_VALUE_TT)
-
     gr_automaticmetad-obj_ver = l_obj_ver. " (type /BLCK/MFI_OBJ_VER)
-
     gr_automaticmetad-object_type = 42. " (type /BLCK/MFI_INT)
-
     gr_automaticmetad-metadata_provider_ids = l_metadata_provider_ids. " (type /BLCK/MFI_STRING_TT)
-
     gr_automaticmetad-custom_data = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
@@ -8328,7 +8296,7 @@ Name | Type | Description
 * create our variables..
     data gr_class_group type /blck/mfi_class_group.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_class_group-name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
@@ -8370,13 +8338,10 @@ Name | Type | Description
 * create our variables..
     data gr_stacktraceelem type /blck/mfi_stacktraceelem.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_stacktraceelem-file_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_stacktraceelem-line_number = 42. " (type /BLCK/MFI_INT)
-
     gr_stacktraceelem-class_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_stacktraceelem-method_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
@@ -8423,9 +8388,8 @@ Name | Type | Description
 * create our variables..
     data gr_exceptioninfo3 type /blck/mfi_exceptioninfo3.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_exceptioninfo3-message = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_exceptioninfo3-stack = l_stack. " (type /BLCK/MFI_STACKTRACEELEM_TT)
     
 * pass to example API method
@@ -8468,11 +8432,9 @@ Name | Type | Description
 * create our variables..
     data gr_exceptioninfo2 type /blck/mfi_exceptioninfo2.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_exceptioninfo2-message = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_exceptioninfo2-inner_exception = l_inner_exception. " (type /BLCK/MFI_EXCEPTIONINFO3)
-
     gr_exceptioninfo2-stack = l_stack. " (type /BLCK/MFI_STACKTRACEELEM_TT)
     
 * pass to example API method
@@ -8517,11 +8479,9 @@ Name | Type | Description
 * create our variables..
     data gr_exception_info type /blck/mfi_exception_info.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_exception_info-message = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_exception_info-inner_exception = l_inner_exception. " (type /BLCK/MFI_EXCEPTIONINFO2)
-
     gr_exception_info-stack = l_stack. " (type /BLCK/MFI_STACKTRACEELEM_TT)
     
 * pass to example API method
@@ -8622,15 +8582,11 @@ Name | Value | Constant
 * create our variables..
     data gr_object_file type /blck/mfi_object_file.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_object_file-change_time_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_object_file-extension = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_object_file-id = 42. " (type /BLCK/MFI_INT)
-
     gr_object_file-name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_object_file-version = 42. " (type /BLCK/MFI_INT)
     
 * pass to example API method
@@ -8680,49 +8636,28 @@ Name | Type | Description
 * create our variables..
     data gr_object_version type /blck/mfi_object_version.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_object_version-accessed_by_me_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_object_version-checked_out_at_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_object_version-checked_out_to = 42. " (type /BLCK/MFI_INT)
-
     gr_object_version-checked_out_to_user_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_object_version-class = 42. " (type /BLCK/MFI_INT)
-
     gr_object_version-created_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_object_version-deleted = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_object_version-display_id = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_object_version-files = l_files. " (type /BLCK/MFI_OBJECT_FILE_TT)
-
     gr_object_version-has_assignments = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_object_version-hasrelationshipsfromthis = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_object_version-has_relationships_to_this = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_object_version-is_stub = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_object_version-last_modified_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_object_version-object_checked_out = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_object_version-objectcheckedouttothisuser = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_object_version-object_version_flags = l_object_version_flags. " (type /BLCK/MFI_MFOBJECTVERSIO)
-
     gr_object_version-obj_ver = l_obj_ver. " (type /BLCK/MFI_OBJ_VER)
-
     gr_object_version-single_file = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_object_version-thisversionlatesttothisuse = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_object_version-title = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_object_version-visible_after_operation = 'X'. " (type /BLCK/MFI_BOOL)
     
 * pass to example API method
@@ -8805,17 +8740,12 @@ Name | Type | Description
 * create our variables..
     data gr_extendedobjec2 type /blck/mfi_extendedobjec2.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_extendedobjec2-id = 42. " (type /BLCK/MFI_INT)
-
     gr_extendedobjec2-name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_extendedobjec2-name_property_def = 42. " (type /BLCK/MFI_INT)
-
     gr_extendedobjec2-workflow = 42. " (type /BLCK/MFI_INT)
-
     gr_extendedobjec2-associated_property_defs = l_associated_property_defs. " (type /BLCK/MFI_ASSOCIATEDPROP_TT)
-
     gr_extendedobjec2-templates = l_templates. " (type /BLCK/MFI_OBJECT_VERSION_TT)
     
 * pass to example API method
@@ -8866,51 +8796,29 @@ Name | Type | Description
 * create our variables..
     data gr_extendedobject type /blck/mfi_extendedobject.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_extendedobject-accessed_by_me_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_extendedobject-checked_out_at_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_extendedobject-checked_out_to = 42. " (type /BLCK/MFI_INT)
-
     gr_extendedobject-checked_out_to_user_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_extendedobject-class = 42. " (type /BLCK/MFI_INT)
-
     gr_extendedobject-created_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_extendedobject-deleted = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_extendedobject-display_id = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_extendedobject-files = l_files. " (type /BLCK/MFI_OBJECT_FILE_TT)
-
     gr_extendedobject-has_assignments = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_extendedobject-hasrelationshipsfromthis = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_extendedobject-has_relationships_to_this = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_extendedobject-is_stub = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_extendedobject-last_modified_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_extendedobject-object_checked_out = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_extendedobject-objectcheckedouttothisuser = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_extendedobject-object_version_flags = l_object_version_flags. " (type /BLCK/MFI_MFOBJECTVERSIO)
-
     gr_extendedobject-obj_ver = l_obj_ver. " (type /BLCK/MFI_OBJ_VER)
-
     gr_extendedobject-single_file = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_extendedobject-thisversionlatesttothisuse = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_extendedobject-title = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_extendedobject-visible_after_operation = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_extendedobject-properties = l_properties. " (type /BLCK/MFI_PROPERTY_VALUE_TT)
     
 * pass to example API method
@@ -9061,9 +8969,8 @@ Name | Value | Constant
 * create our variables..
     data gr_view_location type /blck/mfi_view_location.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_view_location-overlapped_folder = l_overlapped_folder. " (type /BLCK/MFI_TYPED_VALUE)
-
     gr_view_location-overlapping = 'X'. " (type /BLCK/MFI_BOOL)
     
 * pass to example API method
@@ -9107,15 +9014,11 @@ Name | Type | Description
 * create our variables..
     data gr_view type /blck/mfi_view.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_view-common = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_view-id = 42. " (type /BLCK/MFI_INT)
-
     gr_view-name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_view-parent = 42. " (type /BLCK/MFI_INT)
-
     gr_view-view_location = l_view_location. " (type /BLCK/MFI_VIEW_LOCATION)
     
 * pass to example API method
@@ -9165,15 +9068,11 @@ Name | Type | Description
 * create our variables..
     data gr_foldercontent2 type /blck/mfi_foldercontent2.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_foldercontent2-folder_content_item_type = l_folder_content_item_type. " (type /BLCK/MFI_MFFOLDERCONTEN)
-
     gr_foldercontent2-object_version = l_object_version. " (type /BLCK/MFI_OBJECT_VERSION)
-
     gr_foldercontent2-property_folder = l_property_folder. " (type /BLCK/MFI_TYPED_VALUE)
-
     gr_foldercontent2-traditional_folder = l_traditional_folder. " (type /BLCK/MFI_LOOKUP)
-
     gr_foldercontent2-view = l_view. " (type /BLCK/MFI_VIEW)
     
 * pass to example API method
@@ -9223,11 +9122,9 @@ Name | Type | Description
 * create our variables..
     data gr_foldercontenti type /blck/mfi_foldercontenti.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_foldercontenti-path = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_foldercontenti-more_results = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_foldercontenti-items = l_items. " (type /BLCK/MFI_FOLDERCONTENT2_TT)
     
 * pass to example API method
@@ -9613,13 +9510,10 @@ Name | Value | Constant
 * create our variables..
     data gr_obj_id type /blck/mfi_obj_id.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_obj_id-id = 42. " (type /BLCK/MFI_INT)
-
     gr_obj_id-type = 42. " (type /BLCK/MFI_INT)
-
     gr_obj_id-external_repository_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_obj_id-externalrepositoryobjectid = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
@@ -9667,27 +9561,17 @@ Name | Type | Description
 * create our variables..
     data gr_obj_type type /blck/mfi_obj_type.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_obj_type-allow_adding = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_obj_type-can_have_files = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_obj_type-default_property_def = 42. " (type /BLCK/MFI_INT)
-
     gr_obj_type-external = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_obj_type-id = 42. " (type /BLCK/MFI_INT)
-
     gr_obj_type-name_plural = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_obj_type-name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_obj_type-owner_property_def = 42. " (type /BLCK/MFI_INT)
-
     gr_obj_type-readonlypropertiesduringin = l_readonlypropertiesduringin. " (type /BLCK/MFI_INT_TT)
-
     gr_obj_type-readonlypropertiesduringup = l_readonlypropertiesduringup. " (type /BLCK/MFI_INT_TT)
-
     gr_obj_type-real_object_type = 'X'. " (type /BLCK/MFI_BOOL)
     
 * pass to example API method
@@ -9749,13 +9633,10 @@ Name | Type | Description
 * create our variables..
     data gr_object_class type /blck/mfi_object_class.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_object_class-id = 42. " (type /BLCK/MFI_INT)
-
     gr_object_class-name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_object_class-name_property_def = 42. " (type /BLCK/MFI_INT)
-
     gr_object_class-workflow = 42. " (type /BLCK/MFI_INT)
     
 * pass to example API method
@@ -9803,13 +9684,10 @@ Name | Type | Description
 * create our variables..
     data gr_upload_info type /blck/mfi_upload_info.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_upload_info-upload_id = 42. " (type /BLCK/MFI_INT)
-
     gr_upload_info-title = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_upload_info-extension = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_upload_info-size = 42. " (type /BLCK/MFI_INT)
     
 * pass to example API method
@@ -9857,9 +9735,8 @@ Name | Type | Description
 * create our variables..
     data gr_objectcreation type /blck/mfi_objectcreation.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_objectcreation-property_values = l_property_values. " (type /BLCK/MFI_PROPERTY_VALUE_TT)
-
     gr_objectcreation-files = l_files. " (type /BLCK/MFI_UPLOAD_INFO_TT)
     
 * pass to example API method
@@ -9902,53 +9779,30 @@ Name | Type | Description
 * create our variables..
     data gr_objectversionu type /blck/mfi_objectversionu.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_objectversionu-properties = l_properties. " (type /BLCK/MFI_PROPERTY_VALUE_TT)
-
     gr_objectversionu-accessed_by_me_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_objectversionu-checked_out_at_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_objectversionu-checked_out_to = 42. " (type /BLCK/MFI_INT)
-
     gr_objectversionu-checked_out_to_user_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_objectversionu-class = 42. " (type /BLCK/MFI_INT)
-
     gr_objectversionu-created_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_objectversionu-deleted = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_objectversionu-display_id = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_objectversionu-files = l_files. " (type /BLCK/MFI_OBJECT_FILE_TT)
-
     gr_objectversionu-has_assignments = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_objectversionu-hasrelationshipsfromthis = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_objectversionu-has_relationships_to_this = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_objectversionu-is_stub = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_objectversionu-last_modified_utc = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_objectversionu-object_checked_out = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_objectversionu-objectcheckedouttothisuser = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_objectversionu-object_version_flags = l_object_version_flags. " (type /BLCK/MFI_MFOBJECTVERSIO)
-
     gr_objectversionu-obj_ver = l_obj_ver. " (type /BLCK/MFI_OBJ_VER)
-
     gr_objectversionu-single_file = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_objectversionu-thisversionlatesttothisuse = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_objectversionu-title = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_objectversionu-visible_after_operation = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_objectversionu-allow_name_change = 'X'. " (type /BLCK/MFI_BOOL)
     
 * pass to example API method
@@ -10037,7 +9891,7 @@ Name | Type | Description
 * create our variables..
     data gr_objectsupdatei type /blck/mfi_objectsupdatei.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_objectsupdatei-multiple_object_info = l_multiple_object_info. " (type /BLCK/MFI_OBJECTVERSIONU)
     
 * pass to example API method
@@ -10078,19 +9932,13 @@ Name | Type | Description
 * create our variables..
     data gr_objectworkflow type /blck/mfi_objectworkflow.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_objectworkflow-state = l_state. " (type /BLCK/MFI_PROPERTY_VALUE)
-
     gr_objectworkflow-state_id = 42. " (type /BLCK/MFI_INT)
-
     gr_objectworkflow-state_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_objectworkflow-workflow = l_workflow. " (type /BLCK/MFI_PROPERTY_VALUE)
-
     gr_objectworkflow-workflow_id = 42. " (type /BLCK/MFI_INT)
-
     gr_objectworkflow-workflow_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_objectworkflow-version_comment = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
@@ -10144,9 +9992,8 @@ Name | Type | Description
 * create our variables..
     data gr_passwordchange type /blck/mfi_passwordchange.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_passwordchange-old_password = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_passwordchange-new_password = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
@@ -10190,21 +10037,14 @@ Name | Type | Description
 * create our variables..
     data gr_plugininfoconf type /blck/mfi_plugininfoconf.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_plugininfoconf-name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_plugininfoconf-is_default = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_plugininfoconf-assembly_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_plugininfoconf-bridge_class_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_plugininfoconf-is_scope_independent = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_plugininfoconf-protocol = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_plugininfoconf-configuration = l_configuration. " (type /BLCK/MFI_STRING_MT)
-
     gr_plugininfoconf-configuration_source = l_configuration_source. " (type /BLCK/MFI_STRING_MT)
     
 * pass to example API method
@@ -10260,7 +10100,7 @@ Name | Type | Description
 * create our variables..
     data gr_primitivetypei type /blck/mfi_primitivetypei.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_primitivetypei-value = 42. " (type /BLCK/MFI_INT)
     
 * pass to example API method
@@ -10302,23 +10142,15 @@ Name | Type | Description
 * create our variables..
     data gr_property_def type /blck/mfi_property_def.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_property_def-all_object_types = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_property_def-automatic_value = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_property_def-automatic_value_type = l_automatic_value_type. " (type /BLCK/MFI_MFAUTOMATICVAL)
-
     gr_property_def-based_on_value_list = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_property_def-data_type = l_data_type. " (type /BLCK/MFI_MF_DATA_TYPE)
-
     gr_property_def-id = 42. " (type /BLCK/MFI_INT)
-
     gr_property_def-name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_property_def-object_type = 42. " (type /BLCK/MFI_INT)
-
     gr_property_def-value_list = 42. " (type /BLCK/MFI_INT)
     
 * pass to example API method
@@ -10375,17 +10207,12 @@ Name | Type | Description
 * create our variables..
     data gr_propertyvalues type /blck/mfi_propertyvalues.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_propertyvalues-display_value = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_propertyvalues-is_fact = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_propertyvalues-is_new_value = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_propertyvalues-property_def = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_propertyvalues-quality = 42. " (type /BLCK/MFI_INT)
-
     gr_propertyvalues-typed_value = l_typed_value. " (type /BLCK/MFI_TYPED_VALUE)
     
 * pass to example API method
@@ -10437,9 +10264,8 @@ Name | Type | Description
 * create our variables..
     data gr_public_key type /blck/mfi_public_key.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_public_key-exponent = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_public_key-modulus = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
@@ -10483,13 +10309,10 @@ Name | Type | Description
 * create our variables..
     data gr_repositoryaut2 type /blck/mfi_repositoryaut2.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_repositoryaut2-account_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_repositoryaut2-extensionauthenticationspe = l_extensionauthenticationspe. " (type /BLCK/MFI_MFEXTENSIONAUT)
-
     gr_repositoryaut2-target_id = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_repositoryaut2-user_id = 42. " (type /BLCK/MFI_INT)
     
 * pass to example API method
@@ -10542,15 +10365,11 @@ Name | Type | Description
 * create our variables..
     data gr_repositoryaut3 type /blck/mfi_repositoryaut3.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_repositoryaut3-configuration_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_repositoryaut3-username = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_repositoryaut3-password = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_repositoryaut3-authentication_token = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_repositoryaut3-refresh_token = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
@@ -10599,17 +10418,12 @@ Name | Type | Description
 * create our variables..
     data gr_repositoryauth type /blck/mfi_repositoryauth.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_repositoryauth-display_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_repositoryauth-icon_id = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_repositoryauth-id = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_repositoryauth-plugin_info_configurations = l_plugin_info_configurations. " (type /BLCK/MFI_PLUGININFOCONF)
-
     gr_repositoryauth-requiresuserspecificauthen = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_repositoryauth-repositoryauthenticationst = l_repositoryauthenticationst. " (type /BLCK/MFI_REPOSITORYAUT2)
     
 * pass to example API method
@@ -10661,9 +10475,8 @@ Name | Type | Description
 * create our variables..
     data gr_resultsobjectv type /blck/mfi_resultsobjectv.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_resultsobjectv-items = l_items. " (type /BLCK/MFI_OBJECT_VERSION_TT)
-
     gr_resultsobjectv-more_results = 'X'. " (type /BLCK/MFI_BOOL)
     
 * pass to example API method
@@ -10707,21 +10520,14 @@ Name | Type | Description
 * create our variables..
     data gr_valuelistitem type /blck/mfi_valuelistitem.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_valuelistitem-display_id = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_valuelistitem-has_owner = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_valuelistitem-has_parent = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_valuelistitem-id = 42. " (type /BLCK/MFI_INT)
-
     gr_valuelistitem-name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_valuelistitem-owner_id = 42. " (type /BLCK/MFI_INT)
-
     gr_valuelistitem-parent_id = 42. " (type /BLCK/MFI_INT)
-
     gr_valuelistitem-value_list_id = 42. " (type /BLCK/MFI_INT)
     
 * pass to example API method
@@ -10777,9 +10583,8 @@ Name | Type | Description
 * create our variables..
     data gr_resultsvalueli type /blck/mfi_resultsvalueli.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_resultsvalueli-items = l_items. " (type /BLCK/MFI_VALUELISTITEM_TT)
-
     gr_resultsvalueli-more_results = 'X'. " (type /BLCK/MFI_BOOL)
     
 * pass to example API method
@@ -10823,31 +10628,19 @@ Name | Type | Description
 * create our variables..
     data gr_session_info type /blck/mfi_session_info.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_session_info-account_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_session_info-acl_mode = l_acl_mode. " (type /BLCK/MFI_MFACL_MODE)
-
     gr_session_info-authentication_type = l_authentication_type. " (type /BLCK/MFI_MF_AUTH_TYPE)
-
     gr_session_info-can_force_undo_checkout = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_session_info-canmanagecommonuisettings = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_session_info-can_manage_common_views = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_session_info-canmanagetraditionalfolder = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_session_info-can_materialize_views = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_session_info-can_see_all_objects = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_session_info-can_see_deleted_objects = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_session_info-internal_user = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_session_info-licenseallowsmodifications = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_session_info-user_id = 42. " (type /BLCK/MFI_INT)
     
 * pass to example API method
@@ -10913,9 +10706,8 @@ Name | Type | Description
 * create our variables..
     data gr_statusresponse type /blck/mfi_statusresponse.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_statusresponse-successful = 'X'. " (type /BLCK/MFI_BOOL)
-
     gr_statusresponse-message = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
@@ -10959,11 +10751,9 @@ Name | Type | Description
 * create our variables..
     data gr_vault type /blck/mfi_vault.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_vault-name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_vault-guid = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_vault-authentication = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     
 * pass to example API method
@@ -11009,13 +10799,10 @@ Name | Type | Description
 * create our variables..
     data gr_versioncomment type /blck/mfi_versioncomment.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_versioncomment-last_modified_by = l_last_modified_by. " (type /BLCK/MFI_PROPERTY_VALUE)
-
     gr_versioncomment-obj_ver = l_obj_ver. " (type /BLCK/MFI_OBJ_VER)
-
     gr_versioncomment-status_changed = l_status_changed. " (type /BLCK/MFI_PROPERTY_VALUE)
-
     gr_versioncomment-comment = l_comment. " (type /BLCK/MFI_PROPERTY_VALUE)
     
 * pass to example API method
@@ -11063,13 +10850,10 @@ Name | Type | Description
 * create our variables..
     data gr_webserviceerro type /blck/mfi_webserviceerro.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_webserviceerro-status = 42. " (type /BLCK/MFI_INT)
-
     gr_webserviceerro-url = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_webserviceerro-method = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_webserviceerro-exception = l_exception. " (type /BLCK/MFI_EXCEPTION_INFO)
     
 * pass to example API method
@@ -11117,11 +10901,9 @@ Name | Type | Description
 * create our variables..
     data gr_workflow type /blck/mfi_workflow.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_workflow-id = 42. " (type /BLCK/MFI_INT)
-
     gr_workflow-name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_workflow-object_class = 42. " (type /BLCK/MFI_INT)
     
 * pass to example API method
@@ -11168,11 +10950,9 @@ Name | Type | Description
 * create our variables..
     data gr_workflow_state type /blck/mfi_workflow_state.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_workflow_state-name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-
     gr_workflow_state-id = 42. " (type /BLCK/MFI_INT)
-
     gr_workflow_state-selectable = 'X'. " (type /BLCK/MFI_BOOL)
     
 * pass to example API method

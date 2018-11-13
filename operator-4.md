@@ -28,19 +28,19 @@ Creates a new record in the command resource. It returns a JSON object containin
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_COMMAND_STATUS
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_COMMAND_STATUS
     data gr_http200 type /BLCK/OP4_COMMAND_STATUS.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -165,17 +165,17 @@ Some services (not all) expose access to documents. All documents available thro
 *   for parameter i_embed:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_embed type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_REPO_ENTRY_TT
     data gr_http200 type /BLCK/OP4_REPO_ENTRY_TT.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -299,19 +299,19 @@ Creates a new record in the current Repository, inside the root collection, and 
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_REPO_ENTRY
     data gr_http200 type /BLCK/OP4_REPO_ENTRY.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -423,17 +423,17 @@ Removes the current entry from the repository. This will not only remove the ref
 *   for parameter i_force:
 *   a simple ABAP primitive of type /BLCK/OP4_BOOL
     data gv_force type /BLCK/OP4_BOOL.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/OP4_TASK_TT
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/OP4_TASK_TT
     data gr_http409 type /BLCK/OP4_TASK_TT.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -534,17 +534,17 @@ Given a 'uuid' parameter, this route retrieves an entry's metadata. The entry ma
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_uuid type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_REPO_ENTRY
     data gr_http200 type /BLCK/OP4_REPO_ENTRY.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -650,19 +650,19 @@ Update the given entry's metadata. Only data given with the patch will be change
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_uuid type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_REPO_ENTRY
     data gr_http200 type /BLCK/OP4_REPO_ENTRY.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -778,21 +778,21 @@ If the entry under the given uuid is a collection, then a POST request to this r
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_uuid type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_REPO_ENTRY
     data gr_http200 type /BLCK/OP4_REPO_ENTRY.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP405 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 405 we expect type /BLCK/OP4_ERROR
     data gr_http405 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -912,19 +912,19 @@ Completely replace the metadata record of the given entry. Only record metadata 
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_uuid type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_REPO_ENTRY
     data gr_http200 type /BLCK/OP4_REPO_ENTRY.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -1038,17 +1038,17 @@ Returns a JSON object containing the status of the command. Command resources ar
 *   for parameter i_cid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_cid type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_COMMAND_STATUS
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_COMMAND_STATUS
     data gr_http200 type /BLCK/OP4_COMMAND_STATUS.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -1163,17 +1163,17 @@ Some services (not all) expose access to documents. All documents available thro
 *   for parameter i_embed:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_embed type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_REPO_ENTRY_TT
     data gr_http200 type /BLCK/OP4_REPO_ENTRY_TT.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -1299,13 +1299,13 @@ Deletes a single ConfigItem at the given path or all ConfigItems in the whole tr
 *   for parameter i_path:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_path type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_CONFIG_ITEM
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_CONFIG_ITEM
     data gr_http200 type /BLCK/OP4_CONFIG_ITEM.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -1399,17 +1399,17 @@ Use this route to browse the configuration. Configuration is structured unix fil
 *   for parameter i_keys:
 *   a simple ABAP primitive of type /BLCK/OP4_BOOL
     data gv_keys type /BLCK/OP4_BOOL.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_STRING
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_STRING
     data gr_http200 type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -1515,13 +1515,13 @@ Stores the ConfigItem in the request body at the given path.
 *   for parameter i_path:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_path type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_CONFIG_ITEM
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_CONFIG_ITEM
     data gr_http200 type /BLCK/OP4_CONFIG_ITEM.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -1619,17 +1619,17 @@ FIXME
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_SERVICE
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_SERVICE
     data gr_http200 type /BLCK/OP4_SERVICE.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -1728,17 +1728,17 @@ A POST call to this route will create new jobs and return their connector id's (
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_CID_STATUS
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_CID_STATUS
     data gr_http200 type /BLCK/OP4_CID_STATUS.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -1842,17 +1842,17 @@ A PUT call to this route returns an array with status and output listItems for a
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_CID_STATUS_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_CID_STATUS_TT
     data gr_http200 type /BLCK/OP4_CID_STATUS_TT.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -1951,15 +1951,15 @@ The SEAL Operator user interface provides the user with a set of default panels 
     gvs_msg  type /blck/op4_string.
     
 *** create variables for input and output as needed
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_PANEL_ITEM_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_PANEL_ITEM_TT
     data gr_http200 type /BLCK/OP4_PANEL_ITEM_TT.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 
@@ -2044,15 +2044,15 @@ A GET call to this route returns a JSON object containing the default configurat
 *   for parameter i_pid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_pid type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_CONFIG_ITEM
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_CONFIG_ITEM
     data gr_http200 type /BLCK/OP4_CONFIG_ITEM.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -2150,19 +2150,19 @@ Creates a new record in the command resource. It returns a JSON object containin
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_COMMAND_STATUS
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_COMMAND_STATUS
     data gr_http200 type /BLCK/OP4_COMMAND_STATUS.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -2287,17 +2287,17 @@ Some services (not all) expose access to documents. All documents available thro
 *   for parameter i_embed:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_embed type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_REPO_ENTRY_TT
     data gr_http200 type /BLCK/OP4_REPO_ENTRY_TT.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -2421,19 +2421,19 @@ Creates a new record in the current Repository, inside the root collection, and 
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_REPO_ENTRY
     data gr_http200 type /BLCK/OP4_REPO_ENTRY.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -2545,17 +2545,17 @@ Removes the current entry from the repository. This will not only remove the ref
 *   for parameter i_force:
 *   a simple ABAP primitive of type /BLCK/OP4_BOOL
     data gv_force type /BLCK/OP4_BOOL.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/OP4_TASK_TT
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/OP4_TASK_TT
     data gr_http409 type /BLCK/OP4_TASK_TT.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -2656,17 +2656,17 @@ Given a 'uuid' parameter, this route retrieves an entry's metadata. The entry ma
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_uuid type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_REPO_ENTRY
     data gr_http200 type /BLCK/OP4_REPO_ENTRY.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -2772,19 +2772,19 @@ Update the given entry's metadata. Only data given with the patch will be change
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_uuid type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_REPO_ENTRY
     data gr_http200 type /BLCK/OP4_REPO_ENTRY.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -2900,19 +2900,19 @@ Completely replace the metadata record of the given entry. Only record metadata 
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_uuid type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_REPO_ENTRY
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_REPO_ENTRY
     data gr_http200 type /BLCK/OP4_REPO_ENTRY.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -3026,17 +3026,17 @@ Returns a JSON object containing the status of the command. Command resources ar
 *   for parameter i_cid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_cid type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_COMMAND_STATUS
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_COMMAND_STATUS
     data gr_http200 type /BLCK/OP4_COMMAND_STATUS.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -3139,19 +3139,19 @@ Deletes the binary content of a document, leaving metadata only. Note that some 
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_uuid type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP405 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 405 we expect type /BLCK/OP4_ERROR
     data gr_http405 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/OP4_TASK_TT
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/OP4_TASK_TT
     data gr_http409 type /BLCK/OP4_TASK_TT.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -3251,15 +3251,15 @@ If the entry under 'uuid' is a document, then this route provides access to the 
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_uuid type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -3356,19 +3356,19 @@ Upload binary content of a document. Create if none exists, or replace existing 
 *   for parameter i_content:
 *   a simple ABAP primitive of type /BLCK/OP4_BINARY
     data gv_content type /BLCK/OP4_BINARY.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP406 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 406 we expect type /BLCK/OP4_ERROR
     data gr_http406 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -3471,15 +3471,15 @@ If the entry under 'uuid' is a document, then this route provides access to the 
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_uuid type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -3580,13 +3580,13 @@ This route triggers a connector specific function and returns the result. The fu
 *   for parameter i_params:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_params type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -3679,15 +3679,15 @@ For panels static configuration data is sometimes not sufficient, dynamically re
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_FUNCTIONS
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_FUNCTIONS
     data gr_http200 type /BLCK/OP4_FUNCTIONS.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -3792,17 +3792,17 @@ This is the list of Lists of the authenticated user. Use metadata property names
 *   for parameter i_embed:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_embed type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_LIST_TT
     data gr_http200 type /BLCK/OP4_LIST_TT.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -3916,15 +3916,15 @@ Deletes the current list inclusive all it's items, but not the documents.
 *   for parameter i_lid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_lid type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -4014,17 +4014,17 @@ This is the root record for a given list. It contains List-level metadata. Use t
 *   for parameter i_embed:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_embed type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_LIST
     data gr_http200 type /BLCK/OP4_LIST.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -4138,17 +4138,17 @@ This is the collection of items currently in the List. For performance reasons, 
 *   for parameter i_embed:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_embed type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST_ITEM_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_LIST_ITEM_TT
     data gr_http200 type /BLCK/OP4_LIST_ITEM_TT.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -4265,15 +4265,15 @@ Deletes an entry from a list. Only the list entry is removed, not the document. 
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_id type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -4367,17 +4367,17 @@ Get metadata record of a list item. Note that the 'id' is NOT the index, which i
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_id type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST_ITEM
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_LIST_ITEM
     data gr_http200 type /BLCK/OP4_LIST_ITEM.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -4486,19 +4486,19 @@ Update the metadata record of the current list item, adding missing entries but 
 *   for parameter i_href:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_href type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST_ITEM
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_LIST_ITEM
     data gr_http200 type /BLCK/OP4_LIST_ITEM.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -4620,19 +4620,19 @@ Update and replace the entire metadata record of the current list item. Note tha
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_id type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST_ITEM
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_LIST_ITEM
     data gr_http200 type /BLCK/OP4_LIST_ITEM.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -4748,19 +4748,19 @@ Lists are are ordered sets, items have consecutive indices (0..n). Posting this 
 *   for parameter i_href:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_href type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST_ITEM
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_LIST_ITEM
     data gr_http200 type /BLCK/OP4_LIST_ITEM.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -4873,19 +4873,19 @@ Updates or adds part of the List metadata. Only given metadata will be replaced 
 *   for parameter i_body:
 *   a reference to model type /BLCK/OP4_LIST
     data gm_body type /BLCK/OP4_LIST.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_LIST
     data gr_http200 type /BLCK/OP4_LIST.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -4999,19 +4999,19 @@ This will completely replace the existing List metadata (if any) by the given me
 *   for parameter i_body:
 *   a reference to model type /BLCK/OP4_LIST
     data gm_body type /BLCK/OP4_LIST.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_LIST
     data gr_http200 type /BLCK/OP4_LIST.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -5125,17 +5125,17 @@ Creates a new entry in the list of Lists. The `Content-Type` HTTP header defines
 *   for parameter i_href:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_href type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_LIST
     data gr_http200 type /BLCK/OP4_LIST.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -5252,15 +5252,15 @@ Every user has his own list of messages containing info, warning and error messa
 *   for parameter i_sort:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sort type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_MESSAGE_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_MESSAGE_TT
     data gr_http200 type /BLCK/OP4_MESSAGE_TT.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -5361,17 +5361,17 @@ Creates a new record in the message list and assigns the posted data. The server
 *   for parameter i_body:
 *   a reference to model type /BLCK/OP4_MESSAGE
     data gm_body type /BLCK/OP4_MESSAGE.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_MESSAGE
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_MESSAGE
     data gr_http200 type /BLCK/OP4_MESSAGE.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -5475,17 +5475,17 @@ Update a message entry. Only data given with the patch will be  changed/added; n
 *   for parameter i_uuid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_uuid type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_MESSAGE
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_MESSAGE
     data gr_http200 type /BLCK/OP4_MESSAGE.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -5591,15 +5591,15 @@ The SEAL Operator user interface provides the user with a set of panels to use. 
     gvs_msg  type /blck/op4_string.
     
 *** create variables for input and output as needed
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_CONFIG_ITEM_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_CONFIG_ITEM_TT
     data gr_http200 type /BLCK/OP4_CONFIG_ITEM_TT.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 
@@ -5684,13 +5684,13 @@ User-defined panel configurations can be delete by a DELETE request to this rout
 *   for parameter i_pid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_pid type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_CONFIG_ITEM
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_CONFIG_ITEM
     data gr_http200 type /BLCK/OP4_CONFIG_ITEM.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -5781,17 +5781,17 @@ Returns a ConfigItem containing configuration for a stored panel.
 *   for parameter i_pid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_pid type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_CONFIG_ITEM
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_CONFIG_ITEM
     data gr_http200 type /BLCK/OP4_CONFIG_ITEM.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -5890,13 +5890,13 @@ A PUT request to a panel configuration will replace the entire stored configurat
 *   for parameter i_pid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_pid type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_CONFIG_ITEM
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_CONFIG_ITEM
     data gr_http200 type /BLCK/OP4_CONFIG_ITEM.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -5994,15 +5994,15 @@ Users can save panel configurations they intend to (re-)use in later sessions un
 *   for parameter i_body:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_body type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_CONFIG_ITEM
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_CONFIG_ITEM
     data gr_http200 type /BLCK/OP4_CONFIG_ITEM.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -6094,15 +6094,15 @@ The SEAL Operator user interface provides the user with a set of default panels 
     gvs_msg  type /blck/op4_string.
     
 *** create variables for input and output as needed
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_PANEL_ITEM_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_PANEL_ITEM_TT
     data gr_http200 type /BLCK/OP4_PANEL_ITEM_TT.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 
@@ -6187,15 +6187,15 @@ A GET call to this route returns a JSON object containing the default configurat
 *   for parameter i_pid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_pid type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_CONFIG_ITEM
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_CONFIG_ITEM
     data gr_http200 type /BLCK/OP4_CONFIG_ITEM.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -6287,15 +6287,15 @@ A GET call to this route will return a list of active services currently availab
     gvs_msg  type /blck/op4_string.
     
 *** create variables for input and output as needed
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_SERVICE_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_SERVICE_TT
     data gr_http200 type /BLCK/OP4_SERVICE_TT.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 
@@ -6380,17 +6380,17 @@ FIXME
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_SERVICE
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_SERVICE
     data gr_http200 type /BLCK/OP4_SERVICE.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -6487,15 +6487,15 @@ Get number of currently established sessions of user
     gvs_msg  type /blck/op4_string.
     
 *** create variables for input and output as needed
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_SESSION_INFO
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_SESSION_INFO
     data gr_http200 type /BLCK/OP4_SESSION_INFO.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 
@@ -6602,17 +6602,17 @@ This route provides access to the root collection of known tasks for the current
 *   for parameter i_inline_count:
 *   a simple ABAP primitive of type /BLCK/OP4_BOOL
     data gv_inline_count type /BLCK/OP4_BOOL.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_TASK_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_TASK_TT
     data gr_http200 type /BLCK/OP4_TASK_TT.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -6741,19 +6741,19 @@ Adds a new Task to the collection. Given metadata is assigned, input list must b
 *   for parameter i_sid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_sid type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_TASK
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_TASK
     data gr_http200 type /BLCK/OP4_TASK.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -6871,17 +6871,17 @@ Deletes a Task from the collection. This is only possible if the Task is not cur
 *   for parameter i_tid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_tid type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -6984,17 +6984,17 @@ This route provides access to a Task's root record. The record contains taks met
 *   for parameter i_force:
 *   a simple ABAP primitive of type /BLCK/OP4_BOOL
     data gv_force type /BLCK/OP4_BOOL.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_TASK
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_TASK
     data gr_http200 type /BLCK/OP4_TASK.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -7109,19 +7109,19 @@ Does a partial update to the Task metadata. Given metadata replaces existing one
 *   for parameter i_tid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_tid type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_TASK
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_TASK
     data gr_http200 type /BLCK/OP4_TASK.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -7236,19 +7236,19 @@ A put call to the task root record completely replaces task metadata, but does n
 *   for parameter i_tid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_tid type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_TASK
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_TASK
     data gr_http200 type /BLCK/OP4_TASK.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -7363,17 +7363,17 @@ Trigger a new action on the current task. Currently supported actions are `start
 *   for parameter i_tid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_tid type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -7477,17 +7477,17 @@ This route provides access to a Task's list of input documents. Input lists of T
 *   for parameter i_embed:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_embed type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_LIST
     data gr_http200 type /BLCK/OP4_LIST.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -7598,17 +7598,17 @@ Deletes an item from a Task's input list. The deleted ID is permanently orphaned
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_id type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -7712,17 +7712,17 @@ FIXME
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_id type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST_ITEM
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_LIST_ITEM
     data gr_http200 type /BLCK/OP4_LIST_ITEM.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -7835,19 +7835,19 @@ Updates task input list item metadata, replacing present entries and adding miss
 *   for parameter i_body:
 *   a reference to model type /BLCK/OP4_LIST_ITEM
     data gm_body type /BLCK/OP4_LIST_ITEM.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST_ITEM
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_LIST_ITEM
     data gr_http200 type /BLCK/OP4_LIST_ITEM.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -7970,19 +7970,19 @@ Replaces the task input list item's metadata, including the document reference.
 *   for parameter i_body:
 *   a reference to model type /BLCK/OP4_LIST_ITEM
     data gm_body type /BLCK/OP4_LIST_ITEM.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST_ITEM
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_LIST_ITEM
     data gr_http200 type /BLCK/OP4_LIST_ITEM.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -8105,19 +8105,19 @@ Does a partial update to the input list metadata. Given metadata replaces existi
 *   for parameter i_embed:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_embed type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_LIST
     data gr_http200 type /BLCK/OP4_LIST.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -8246,19 +8246,19 @@ Creates a new entry in the given Task's input list. Given metadata is assigned t
 *   for parameter i_href:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_href type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST_ITEM
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_LIST_ITEM
     data gr_http200 type /BLCK/OP4_LIST_ITEM.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -8380,19 +8380,19 @@ A put call to the input list root record completely replaces the metadata, but d
 *   for parameter i_tid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_tid type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_LIST
     data gr_http200 type /BLCK/OP4_LIST.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP409 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 409 we expect type /BLCK/OP4_ERROR
     data gr_http409 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -8507,17 +8507,17 @@ This route provides access to a Task's list of output documents. Output lists of
 *   for parameter i_embed:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_embed type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_LIST
     data gr_http200 type /BLCK/OP4_LIST.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -8628,17 +8628,17 @@ This route provides access to individual task output items.
 *   for parameter i_id:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_id type /BLCK/OP4_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_LIST_ITEM
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_LIST_ITEM
     data gr_http200 type /BLCK/OP4_LIST_ITEM.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -8748,17 +8748,17 @@ This route provides access to the root collection of known tasks for all service
 *   for parameter i_inline_count:
 *   a simple ABAP primitive of type /BLCK/OP4_BOOL
     data gv_inline_count type /BLCK/OP4_BOOL.
-*   when the result of the call is HTTP200 we expect type /BLCK/OP4_TASK_TT
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_TASK_TT
     data gr_http200 type /BLCK/OP4_TASK_TT.
-*   when the result of the call is HTTP401 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP403 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
     data gr_http403 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP404 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 404 we expect type /BLCK/OP4_ERROR
     data gr_http404 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTP500 we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: 500 we expect type /BLCK/OP4_ERROR
     data gr_http500 type /BLCK/OP4_ERROR.
-*   when the result of the call is HTTPother we expect type /BLCK/OP4_ERROR
+*   when the result of the call is HTTP Code: other we expect type /BLCK/OP4_ERROR
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
@@ -8860,7 +8860,7 @@ HTTP Code | Name | Type | Description
 * create our variables..
     data gr_action type /blck/op4_action.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_action-action = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
@@ -8903,11 +8903,9 @@ Name | Type | Description
 * create our variables..
     data gr_baserepoentry type /blck/op4_baserepoentry.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_baserepoentry-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-
     gr_baserepoentry-type = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-
     gr_baserepoentry-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
@@ -8953,7 +8951,8 @@ Name | Type | Description
 * create our variables..
     data gr_cid type /blck/op4_cid.
     
-* instantiate model and call the setters to set values..    
+* fill model with data as appropriate..
+    
 * pass to example API method
     gcl_exampleapi->update_cid(
       exporting
@@ -8991,9 +8990,8 @@ Name | Type | Description
 * create our variables..
     data gr_cid_command type /blck/op4_cid_command.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_cid_command-action = l_action. " (type /BLCK/OP4_ACTION)
-
     gr_cid_command-data = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
@@ -9036,11 +9034,9 @@ Name | Type | Description
 * create our variables..
     data gr_list_item type /blck/op4_list_item.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_list_item-index = 42. " (type /BLCK/OP4_INT)
-
     gr_list_item-href = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-
     gr_list_item-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
@@ -9149,19 +9145,13 @@ Name | Value | Constant
 * create our variables..
     data gr_cid_status type /blck/op4_cid_status.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_cid_status-tid = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-
     gr_cid_status-status = l_status. " (type /BLCK/OP4_STATUS_TYPE)
-
     gr_cid_status-started = 42. " (type /BLCK/OP4_INT)
-
     gr_cid_status-finished = 42. " (type /BLCK/OP4_INT)
-
     gr_cid_status-cids = l_cids. " (type /BLCK/OP4_CID_TT)
-
     gr_cid_status-cstats = l_cstats. " (type /BLCK/OP4_STRING_TT)
-
     gr_cid_status-list_items = l_list_items. " (type /BLCK/OP4_LIST_ITEM_TT)
     
 * pass to example API method
@@ -9215,9 +9205,8 @@ Name | Type | Description
 * create our variables..
     data gr_cid_taskdata type /blck/op4_cid_taskdata.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_cid_taskdata-tid = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-
     gr_cid_taskdata-cids = l_cids. " (type /BLCK/OP4_CID_TT)
     
 * pass to example API method
@@ -9262,9 +9251,8 @@ Name | Type | Description
 * create our variables..
     data gr_command type /blck/op4_command.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_command-action = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-
     gr_command-parameter = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
@@ -9308,11 +9296,9 @@ Name | Type | Description
 * create our variables..
     data gr_command_status type /blck/op4_command_status.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_command_status-cid = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-
     gr_command_status-status = l_status. " (type /BLCK/OP4_STATUS_TYPE)
-
     gr_command_status-command = l_command. " (type /BLCK/OP4_COMMAND)
     
 * pass to example API method
@@ -9358,7 +9344,8 @@ Name | Type | Description
 * create our variables..
     data gr_config_item type /blck/op4_config_item.
     
-* instantiate model and call the setters to set values..    
+* fill model with data as appropriate..
+    
 * pass to example API method
     gcl_exampleapi->update_config_item(
       exporting
@@ -9395,11 +9382,9 @@ Name | Type | Description
 * create our variables..
     data gr_error type /blck/op4_error.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_error-code = 42. " (type /BLCK/OP4_INT)
-
     gr_error-message = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-
     gr_error-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
@@ -9446,7 +9431,8 @@ Name | Type | Description
 * create our variables..
     data gr_functions type /blck/op4_functions.
     
-* instantiate model and call the setters to set values..    
+* fill model with data as appropriate..
+    
 * pass to example API method
     gcl_exampleapi->update_functions(
       exporting
@@ -9488,21 +9474,14 @@ Name | Type | Description
 * create our variables..
     data gr_list type /blck/op4_list.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_list-uuid = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-
     gr_list-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-
     gr_list-created = 42. " (type /BLCK/OP4_INT)
-
     gr_list-last_modified = 42. " (type /BLCK/OP4_INT)
-
     gr_list-list_length = 42. " (type /BLCK/OP4_INT)
-
     gr_list-links = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-
     gr_list-embedded = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-
     gr_list-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
@@ -9558,17 +9537,12 @@ Name | Type | Description
 * create our variables..
     data gr_message type /blck/op4_message.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_message-uuid = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-
     gr_message-type = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-
     gr_message-text = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-
     gr_message-date = 42. " (type /BLCK/OP4_INT)
-
     gr_message-source = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-
     gr_message-read = 'X'. " (type /BLCK/OP4_BOOL)
     
 * pass to example API method
@@ -9620,11 +9594,9 @@ Name | Type | Description
 * create our variables..
     data gr_panel_item type /blck/op4_panel_item.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_panel_item-pid = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-
     gr_panel_item-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-
     gr_panel_item-type = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
@@ -9673,19 +9645,13 @@ Name | Type | Description
 * create our variables..
     data gr_repo_entry type /blck/op4_repo_entry.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_repo_entry-id = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-
     gr_repo_entry-uuid = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-
     gr_repo_entry-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-
     gr_repo_entry-type = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-
     gr_repo_entry-links = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-
     gr_repo_entry-embedded = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-
     gr_repo_entry-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
@@ -9741,15 +9707,11 @@ Name | Type | Description
 * create our variables..
     data gr_service type /blck/op4_service.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_service-id = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-
     gr_service-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-
     gr_service-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-
     gr_service-links = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-
     gr_service-embedded = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
@@ -9799,7 +9761,7 @@ Name | Type | Description
 * create our variables..
     data gr_session_info type /blck/op4_session_info.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_session_info-false = 42. " (type /BLCK/OP4_INT)
     
 * pass to example API method
@@ -9840,29 +9802,18 @@ Name | Type | Description
 * create our variables..
     data gr_task type /blck/op4_task.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_task-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-
     gr_task-sid = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-
     gr_task-tid = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-
     gr_task-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-
     gr_task-created = 42. " (type /BLCK/OP4_INT)
-
     gr_task-started = 42. " (type /BLCK/OP4_INT)
-
     gr_task-finished = 42. " (type /BLCK/OP4_INT)
-
     gr_task-input_list_length = 42. " (type /BLCK/OP4_INT)
-
     gr_task-output_list_length = 42. " (type /BLCK/OP4_INT)
-
     gr_task-status = l_status. " (type /BLCK/OP4_STATUS_TYPE)
-
     gr_task-links = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-
     gr_task-embedded = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
@@ -9927,9 +9878,8 @@ Name | Type | Description
 * create our variables..
     data gr_task_metadata type /blck/op4_task_metadata.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_task_metadata-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-
     gr_task_metadata-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method

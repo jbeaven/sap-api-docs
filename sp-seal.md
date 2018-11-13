@@ -32,7 +32,7 @@ Get attribute of document
 *   for parameter i_accept:
 *   a simple ABAP primitive of type /BLCK/SP_STRING
     data gvs_accept type /BLCK/SP_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/SP_DOC_ATTR_VALUE
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/SP_DOC_ATTR_VALUE
     data gr_http200 type /BLCK/SP_DOC_ATTR_VALUE.
         
 *** set data according to requirements of the API call
@@ -125,7 +125,7 @@ Retrieve data of document
 *   for parameter i_doc_id:
 *   a simple ABAP primitive of type /BLCK/SP_INT
     data gvi_doc_id type /BLCK/SP_INT.
-*   when the result of the call is HTTP200 we expect type /BLCK/SP_BINARY
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/SP_BINARY
     data gr_http200 type /BLCK/SP_BINARY.
         
 *** set data according to requirements of the API call
@@ -213,7 +213,7 @@ Retrieve list of documents matching criteria
 *   for parameter i_accept:
 *   a simple ABAP primitive of type /BLCK/SP_STRING
     data gvs_accept type /BLCK/SP_STRING.
-*   when the result of the call is HTTP200 we expect type /BLCK/SP_SEAL_DOC_LIST
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/SP_SEAL_DOC_LIST
     data gr_http200 type /BLCK/SP_SEAL_DOC_LIST.
         
 *** set data according to requirements of the API call
@@ -406,7 +406,7 @@ Name | Type | Description
 * create our variables..
     data gr_doc_attr_value type /blck/sp_doc_attr_value.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_doc_attr_value-value = 'ipsum lorem'. " (type /BLCK/SP_STRING)
     
 * pass to example API method
@@ -447,33 +447,20 @@ Name | Type | Description
 * create our variables..
     data gr_seal_doc type /blck/sp_seal_doc.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_seal_doc-id = 42. " (type /BLCK/SP_INT)
-
     gr_seal_doc-title = 'ipsum lorem'. " (type /BLCK/SP_STRING)
-
     gr_seal_doc-doknr = 'ipsum lorem'. " (type /BLCK/SP_STRING)
-
     gr_seal_doc-dokar = 'ipsum lorem'. " (type /BLCK/SP_STRING)
-
     gr_seal_doc-dokvr = 'ipsum lorem'. " (type /BLCK/SP_STRING)
-
     gr_seal_doc-doktl = 'ipsum lorem'. " (type /BLCK/SP_STRING)
-
     gr_seal_doc-description0 = 'ipsum lorem'. " (type /BLCK/SP_STRING)
-
     gr_seal_doc-dir = 'ipsum lorem'. " (type /BLCK/SP_STRING)
-
     gr_seal_doc-sap_x0020_upload = 'ipsum lorem'. " (type /BLCK/SP_STRING)
-
     gr_seal_doc-created = l_created. " (type /BLCK/SP_TIMESTAMP)
-
     gr_seal_doc-author_id = 42. " (type /BLCK/SP_INT)
-
     gr_seal_doc-modified = l_modified. " (type /BLCK/SP_TIMESTAMP)
-
     gr_seal_doc-editor_id = 42. " (type /BLCK/SP_INT)
-
     gr_seal_doc-guid = 'ipsum lorem'. " (type /BLCK/SP_STRING)
     
 * pass to example API method
@@ -540,7 +527,7 @@ Name | Type | Description
 * create our variables..
     data gr_seal_doc_list type /blck/sp_seal_doc_list.
     
-* instantiate model and call the setters to set values..
+* fill model with data as appropriate..
     gr_seal_doc_list-value = l_value. " (type /BLCK/SP_SEAL_DOC_TT)
     
 * pass to example API method

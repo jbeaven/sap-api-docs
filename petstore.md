@@ -1587,7 +1587,7 @@ Name | Type | Description
     		
     clear gr_api_response.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_api_response(
       exporting
         i_id = 1
@@ -1633,7 +1633,7 @@ Name | Type | Description
     		
     clear gr_category.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_category(
       exporting
         i_id = 1
@@ -1681,7 +1681,7 @@ Name | Type | Description
     		
     clear gr_order.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_order(
       exporting
         i_id = 1
@@ -1733,7 +1733,7 @@ Name | Type | Description
     		
     clear gr_tag.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_tag(
       exporting
         i_id = 1
@@ -1781,7 +1781,7 @@ Name | Type | Description
     		
     clear gr_pet.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_pet(
       exporting
         i_id = 1
@@ -1839,7 +1839,7 @@ Name | Type | Description
     		
     clear gr_user.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_user(
       exporting
         i_id = 1

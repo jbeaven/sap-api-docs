@@ -903,7 +903,7 @@ HTTP Code | Name | Type | Description
     		
     clear gr_error.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_error(
       exporting
         i_id = 1
@@ -948,7 +948,7 @@ Name | Type | Description
     		
     clear gr_job_header.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_job_header(
       exporting
         i_id = 1
@@ -988,7 +988,7 @@ Name | Type | Description
     		
     clear gr_job_id.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_job_id(
       exporting
         i_id = 1
@@ -1023,7 +1023,7 @@ Name | Type | Description
 * set the enum value we want
     gv_status_type = /blck/p4_cl_model=>status_type-open.
     
-* pass the enum to the example API via method
+* pass the enum value to the example API via method
     gcl_exampleapi->set_status_type_state(
       exporting
         i_status_type = gv_status_type ).
@@ -1093,7 +1093,7 @@ Name | Value | Constant
     		
     clear gr_job_status.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_job_status(
       exporting
         i_id = 1
@@ -1137,7 +1137,7 @@ Name | Type | Description
     		
     clear gr_jobstatusevent.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_jobstatusevent(
       exporting
         i_id = 1
@@ -1191,7 +1191,7 @@ Name | Type | Description
     		
     clear gr_printer.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_printer(
       exporting
         i_id = 1

@@ -112,7 +112,7 @@ HTTP Code | Name | Type | Description
     		
     clear gr_cells.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_cells(
       exporting
         i_id = 1
@@ -160,7 +160,7 @@ Name | Type | Description
     		
     clear gr_properties.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_properties(
       exporting
         i_id = 1
@@ -206,7 +206,7 @@ Name | Type | Description
     		
     clear gr_rows.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_rows(
       exporting
         i_id = 1
@@ -248,7 +248,7 @@ Name | Type | Description
     		
     clear gr_table.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_table(
       exporting
         i_id = 1
@@ -298,7 +298,7 @@ Name | Type | Description
     		
     clear gr_relevantresult.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_relevantresult(
       exporting
         i_id = 1
@@ -361,7 +361,7 @@ Name | Type | Description
     		
     clear gr_primaryqueryre.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_primaryqueryre(
       exporting
         i_id = 1
@@ -415,7 +415,7 @@ Name | Type | Description
     		
     clear gr_properties2.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_properties2(
       exporting
         i_id = 1
@@ -467,7 +467,7 @@ Name | Type | Description
     		
     clear gr_query.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_query(
       exporting
         i_id = 1

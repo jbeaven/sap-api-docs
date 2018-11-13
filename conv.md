@@ -1109,7 +1109,7 @@ Name | Type | Description
     		
     clear gr_error.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_error(
       exporting
         i_id = 1
@@ -1154,7 +1154,7 @@ Name | Type | Description
     		
     clear gr_file_id.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_file_id(
       exporting
         i_id = 1
@@ -1195,7 +1195,7 @@ Name | Type | Description
     		
     clear gr_input_file.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_input_file(
       exporting
         i_id = 1
@@ -1238,7 +1238,7 @@ Name | Type | Description
     		
     clear gr_job_id.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_job_id(
       exporting
         i_id = 1
@@ -1271,7 +1271,7 @@ Name | Type | Description
 * set the enum value we want
     gv_jobstatusenum = /blck/cnv_cl_model=>jobstatusenum-open.
     
-* pass the enum to the example API via method
+* pass the enum value to the example API via method
     gcl_exampleapi->set_jobstatusenum_state(
       exporting
         i_jobstatusenum = gv_jobstatusenum ).
@@ -1340,7 +1340,7 @@ Name | Value | Constant
     		
     clear gr_job_ticket.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_job_ticket(
       exporting
         i_id = 1
@@ -1385,7 +1385,7 @@ Name | Type | Description
     		
     clear gr_output_file.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_output_file(
       exporting
         i_id = 1
@@ -1434,7 +1434,7 @@ Name | Type | Description
     		
     clear gr_job_data.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_job_data(
       exporting
         i_id = 1
@@ -1488,7 +1488,7 @@ Name | Type | Description
     		
     clear gr_job_status.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_job_status(
       exporting
         i_id = 1

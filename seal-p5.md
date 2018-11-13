@@ -5552,7 +5552,7 @@ HTTP Code | Name | Type | Description
     		
     clear gr_aggregatequery.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_aggregatequery(
       exporting
         i_id = 1
@@ -5595,7 +5595,7 @@ Name | Type | Description
     		
     clear gr_aggregaterespo.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_aggregaterespo(
       exporting
         i_id = 1
@@ -5635,7 +5635,7 @@ Name | Type | Description
     		
     clear gr_count.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_count(
       exporting
         i_id = 1
@@ -5678,7 +5678,7 @@ Name | Type | Description
     		
     clear gr_error.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_error(
       exporting
         i_id = 1
@@ -5725,7 +5725,7 @@ Name | Type | Description
     		
     clear gr_job_target.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_job_target(
       exporting
         i_id = 1
@@ -5769,7 +5769,7 @@ Name | Type | Description
     		
     clear gr_logs.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_logs(
       exporting
         i_id = 1
@@ -5810,7 +5810,7 @@ Name | Type | Description
     		
     clear gr_metadata.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_metadata(
       exporting
         i_id = 1
@@ -5854,7 +5854,7 @@ Name | Type | Description
     		
     clear gr_print_job.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_print_job(
       exporting
         i_id = 1
@@ -5904,7 +5904,7 @@ Name | Type | Description
     		
     clear gr_printer.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_printer(
       exporting
         i_id = 1
@@ -5949,7 +5949,7 @@ Name | Type | Description
     		
     clear gr_printer_status.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_printer_status(
       exporting
         i_id = 1

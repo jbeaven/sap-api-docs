@@ -416,7 +416,7 @@ Name | Type | Description
     		
     clear gr_doc_attr_value.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_doc_attr_value(
       exporting
         i_id = 1
@@ -470,7 +470,7 @@ Name | Type | Description
     		
     clear gr_seal_doc.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_seal_doc(
       exporting
         i_id = 1
@@ -537,7 +537,7 @@ Name | Type | Description
     		
     clear gr_seal_doc_list.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_seal_doc_list(
       exporting
         i_id = 1

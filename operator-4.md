@@ -8870,7 +8870,7 @@ HTTP Code | Name | Type | Description
     		
     clear gr_action.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_action(
       exporting
         i_id = 1
@@ -8915,7 +8915,7 @@ Name | Type | Description
     		
     clear gr_baserepoentry.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_baserepoentry(
       exporting
         i_id = 1
@@ -8960,7 +8960,7 @@ Name | Type | Description
     		
     clear gr_cid.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_cid(
       exporting
         i_id = 1
@@ -9001,7 +9001,7 @@ Name | Type | Description
     		
     clear gr_cid_command.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_cid_command(
       exporting
         i_id = 1
@@ -9046,7 +9046,7 @@ Name | Type | Description
     		
     clear gr_list_item.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_list_item(
       exporting
         i_id = 1
@@ -9085,7 +9085,7 @@ Name | Type | Description
 * set the enum value we want
     gv_status_type = /blck/op4_cl_model=>status_type-open.
     
-* pass the enum to the example API via method
+* pass the enum value to the example API via method
     gcl_exampleapi->set_status_type_state(
       exporting
         i_status_type = gv_status_type ).
@@ -9161,7 +9161,7 @@ Name | Value | Constant
     		
     clear gr_cid_status.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_cid_status(
       exporting
         i_id = 1
@@ -9216,7 +9216,7 @@ Name | Type | Description
     		
     clear gr_cid_taskdata.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_cid_taskdata(
       exporting
         i_id = 1
@@ -9262,7 +9262,7 @@ Name | Type | Description
     		
     clear gr_command.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_command(
       exporting
         i_id = 1
@@ -9308,7 +9308,7 @@ Name | Type | Description
     		
     clear gr_command_status.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_command_status(
       exporting
         i_id = 1
@@ -9353,7 +9353,7 @@ Name | Type | Description
     		
     clear gr_config_item.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_config_item(
       exporting
         i_id = 1
@@ -9394,7 +9394,7 @@ Name | Type | Description
     		
     clear gr_error.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_error(
       exporting
         i_id = 1
@@ -9440,7 +9440,7 @@ Name | Type | Description
     		
     clear gr_functions.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_functions(
       exporting
         i_id = 1
@@ -9491,7 +9491,7 @@ Name | Type | Description
     		
     clear gr_list.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_list(
       exporting
         i_id = 1
@@ -9552,7 +9552,7 @@ Name | Type | Description
     		
     clear gr_message.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_message(
       exporting
         i_id = 1
@@ -9606,7 +9606,7 @@ Name | Type | Description
     		
     clear gr_panel_item.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_panel_item(
       exporting
         i_id = 1
@@ -9661,7 +9661,7 @@ Name | Type | Description
     		
     clear gr_repo_entry.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_repo_entry(
       exporting
         i_id = 1
@@ -9721,7 +9721,7 @@ Name | Type | Description
     		
     clear gr_service.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_service(
       exporting
         i_id = 1
@@ -9771,7 +9771,7 @@ Name | Type | Description
     		
     clear gr_session_info.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_session_info(
       exporting
         i_id = 1
@@ -9823,7 +9823,7 @@ Name | Type | Description
     		
     clear gr_task.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_task(
       exporting
         i_id = 1
@@ -9889,7 +9889,7 @@ Name | Type | Description
     		
     clear gr_task_metadata.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_task_metadata(
       exporting
         i_id = 1

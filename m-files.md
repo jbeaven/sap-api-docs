@@ -7824,7 +7824,7 @@ HTTP Code | Name | Type | Description
     		
     clear gr_associatedprop.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_associatedprop(
       exporting
         i_id = 1
@@ -7877,7 +7877,7 @@ Name | Type | Description
     		
     clear gr_authentication.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_authentication(
       exporting
         i_id = 1
@@ -7942,7 +7942,7 @@ Name | Type | Description
     		
     clear gr_obj_ver.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_obj_ver(
       exporting
         i_id = 1
@@ -7998,7 +7998,7 @@ Name | Type | Description
     		
     clear gr_lookup.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_lookup(
       exporting
         i_id = 1
@@ -8044,7 +8044,7 @@ Name | Type | Description
 * set the enum value we want
     gv_mf_data_type = /blck/mfi_cl_model=>mf_data_type-uninitialized.
     
-* pass the enum to the example API via method
+* pass the enum value to the example API via method
     gcl_exampleapi->set_mf_data_type_state(
       exporting
         i_mf_data_type = gv_mf_data_type ).
@@ -8147,7 +8147,7 @@ Name | Value | Constant
     		
     clear gr_typed_value.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_typed_value(
       exporting
         i_id = 1
@@ -8204,7 +8204,7 @@ Name | Type | Description
     		
     clear gr_property_value.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_property_value(
       exporting
         i_id = 1
@@ -8254,7 +8254,7 @@ Name | Type | Description
     		
     clear gr_automaticmetad.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_automaticmetad(
       exporting
         i_id = 1
@@ -8306,7 +8306,7 @@ Name | Type | Description
     		
     clear gr_class_group.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_class_group(
       exporting
         i_id = 1
@@ -8351,7 +8351,7 @@ Name | Type | Description
     		
     clear gr_stacktraceelem.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_stacktraceelem(
       exporting
         i_id = 1
@@ -8399,7 +8399,7 @@ Name | Type | Description
     		
     clear gr_exceptioninfo3.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_exceptioninfo3(
       exporting
         i_id = 1
@@ -8444,7 +8444,7 @@ Name | Type | Description
     		
     clear gr_exceptioninfo2.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_exceptioninfo2(
       exporting
         i_id = 1
@@ -8491,7 +8491,7 @@ Name | Type | Description
     		
     clear gr_exception_info.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_exception_info(
       exporting
         i_id = 1
@@ -8531,7 +8531,7 @@ Name | Type | Description
 * set the enum value we want
     gv_mfobjectversio = /blck/mfi_cl_model=>mfobjectversio-none.
     
-* pass the enum to the example API via method
+* pass the enum value to the example API via method
     gcl_exampleapi->set_mfobjectversio_state(
       exporting
         i_mfobjectversio = gv_mfobjectversio ).
@@ -8596,7 +8596,7 @@ Name | Value | Constant
     		
     clear gr_object_file.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_object_file(
       exporting
         i_id = 1
@@ -8667,7 +8667,7 @@ Name | Type | Description
     		
     clear gr_object_version.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_object_version(
       exporting
         i_id = 1
@@ -8755,7 +8755,7 @@ Name | Type | Description
     		
     clear gr_extendedobjec2.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_extendedobjec2(
       exporting
         i_id = 1
@@ -8828,7 +8828,7 @@ Name | Type | Description
     		
     clear gr_extendedobject.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_extendedobject(
       exporting
         i_id = 1
@@ -8909,7 +8909,7 @@ Name | Type | Description
 * set the enum value we want
     gv_mffolderconten = /blck/mfi_cl_model=>mffolderconten-unknown.
     
-* pass the enum to the example API via method
+* pass the enum value to the example API via method
     gcl_exampleapi->set_mffolderconten_state(
       exporting
         i_mffolderconten = gv_mffolderconten ).
@@ -8980,7 +8980,7 @@ Name | Value | Constant
     		
     clear gr_view_location.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_view_location(
       exporting
         i_id = 1
@@ -9028,7 +9028,7 @@ Name | Type | Description
     		
     clear gr_view.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_view(
       exporting
         i_id = 1
@@ -9082,7 +9082,7 @@ Name | Type | Description
     		
     clear gr_foldercontent2.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_foldercontent2(
       exporting
         i_id = 1
@@ -9134,7 +9134,7 @@ Name | Type | Description
     		
     clear gr_foldercontenti.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_foldercontenti(
       exporting
         i_id = 1
@@ -9175,7 +9175,7 @@ Name | Type | Description
 * set the enum value we want
     gv_mf_auth_type = /blck/mfi_cl_model=>mf_auth_type-unknown.
     
-* pass the enum to the example API via method
+* pass the enum value to the example API via method
     gcl_exampleapi->set_mf_auth_type_state(
       exporting
         i_mf_auth_type = gv_mf_auth_type ).
@@ -9233,7 +9233,7 @@ Name | Value | Constant
 * set the enum value we want
     gv_mfacl_mode = /blck/mfi_cl_model=>mfacl_mode-simple.
     
-* pass the enum to the example API via method
+* pass the enum value to the example API via method
     gcl_exampleapi->set_mfacl_mode_state(
       exporting
         i_mfacl_mode = gv_mfacl_mode ).
@@ -9286,7 +9286,7 @@ Name | Value | Constant
 * set the enum value we want
     gv_mfautomaticval = /blck/mfi_cl_model=>mfautomaticval-none.
     
-* pass the enum to the example API via method
+* pass the enum value to the example API via method
     gcl_exampleapi->set_mfautomaticval_state(
       exporting
         i_mfautomaticval = gv_mfautomaticval ).
@@ -9348,7 +9348,7 @@ Name | Value | Constant
 * set the enum value we want
     gv_mfcheckoutstat = /blck/mfi_cl_model=>mfcheckoutstat-checked_in.
     
-* pass the enum to the example API via method
+* pass the enum value to the example API via method
     gcl_exampleapi->set_mfcheckoutstat_state(
       exporting
         i_mfcheckoutstat = gv_mfcheckoutstat ).
@@ -9402,7 +9402,7 @@ Name | Value | Constant
 * set the enum value we want
     gv_mfextensionaut = /blck/mfi_cl_model=>mfextensionaut-none.
     
-* pass the enum to the example API via method
+* pass the enum value to the example API via method
     gcl_exampleapi->set_mfextensionaut_state(
       exporting
         i_mfextensionaut = gv_mfextensionaut ).
@@ -9459,7 +9459,7 @@ Name | Value | Constant
 * set the enum value we want
     gv_mfrefreshstatu = /blck/mfi_cl_model=>mfrefreshstatu-none.
     
-* pass the enum to the example API via method
+* pass the enum value to the example API via method
     gcl_exampleapi->set_mfrefreshstatu_state(
       exporting
         i_mfrefreshstatu = gv_mfrefreshstatu ).
@@ -9523,7 +9523,7 @@ Name | Value | Constant
     		
     clear gr_obj_id.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_obj_id(
       exporting
         i_id = 1
@@ -9581,7 +9581,7 @@ Name | Type | Description
     		
     clear gr_obj_type.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_obj_type(
       exporting
         i_id = 1
@@ -9646,7 +9646,7 @@ Name | Type | Description
     		
     clear gr_object_class.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_object_class(
       exporting
         i_id = 1
@@ -9697,7 +9697,7 @@ Name | Type | Description
     		
     clear gr_upload_info.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_upload_info(
       exporting
         i_id = 1
@@ -9746,7 +9746,7 @@ Name | Type | Description
     		
     clear gr_objectcreation.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_objectcreation(
       exporting
         i_id = 1
@@ -9812,7 +9812,7 @@ Name | Type | Description
     		
     clear gr_objectversionu.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_objectversionu(
       exporting
         i_id = 1
@@ -9901,7 +9901,7 @@ Name | Type | Description
     		
     clear gr_objectsupdatei.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_objectsupdatei(
       exporting
         i_id = 1
@@ -9948,7 +9948,7 @@ Name | Type | Description
     		
     clear gr_objectworkflow.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_objectworkflow(
       exporting
         i_id = 1
@@ -10003,7 +10003,7 @@ Name | Type | Description
     		
     clear gr_passwordchange.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_passwordchange(
       exporting
         i_id = 1
@@ -10054,7 +10054,7 @@ Name | Type | Description
     		
     clear gr_plugininfoconf.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_plugininfoconf(
       exporting
         i_id = 1
@@ -10110,7 +10110,7 @@ Name | Type | Description
     		
     clear gr_primitivetypei.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_primitivetypei(
       exporting
         i_id = 1
@@ -10160,7 +10160,7 @@ Name | Type | Description
     		
     clear gr_property_def.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_property_def(
       exporting
         i_id = 1
@@ -10222,7 +10222,7 @@ Name | Type | Description
     		
     clear gr_propertyvalues.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_propertyvalues(
       exporting
         i_id = 1
@@ -10275,7 +10275,7 @@ Name | Type | Description
     		
     clear gr_public_key.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_public_key(
       exporting
         i_id = 1
@@ -10322,7 +10322,7 @@ Name | Type | Description
     		
     clear gr_repositoryaut2.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_repositoryaut2(
       exporting
         i_id = 1
@@ -10379,7 +10379,7 @@ Name | Type | Description
     		
     clear gr_repositoryaut3.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_repositoryaut3(
       exporting
         i_id = 1
@@ -10433,7 +10433,7 @@ Name | Type | Description
     		
     clear gr_repositoryauth.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_repositoryauth(
       exporting
         i_id = 1
@@ -10486,7 +10486,7 @@ Name | Type | Description
     		
     clear gr_resultsobjectv.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_resultsobjectv(
       exporting
         i_id = 1
@@ -10537,7 +10537,7 @@ Name | Type | Description
     		
     clear gr_valuelistitem.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_valuelistitem(
       exporting
         i_id = 1
@@ -10594,7 +10594,7 @@ Name | Type | Description
     		
     clear gr_resultsvalueli.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_resultsvalueli(
       exporting
         i_id = 1
@@ -10650,7 +10650,7 @@ Name | Type | Description
     		
     clear gr_session_info.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_session_info(
       exporting
         i_id = 1
@@ -10717,7 +10717,7 @@ Name | Type | Description
     		
     clear gr_statusresponse.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_statusresponse(
       exporting
         i_id = 1
@@ -10763,7 +10763,7 @@ Name | Type | Description
     		
     clear gr_vault.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_vault(
       exporting
         i_id = 1
@@ -10812,7 +10812,7 @@ Name | Type | Description
     		
     clear gr_versioncomment.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_versioncomment(
       exporting
         i_id = 1
@@ -10863,7 +10863,7 @@ Name | Type | Description
     		
     clear gr_webserviceerro.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_webserviceerro(
       exporting
         i_id = 1
@@ -10913,7 +10913,7 @@ Name | Type | Description
     		
     clear gr_workflow.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_workflow(
       exporting
         i_id = 1
@@ -10962,7 +10962,7 @@ Name | Type | Description
     		
     clear gr_workflow_state.
     
-* fetch new instance from example API method
+* fetch model data from example API method
     gcl_exampleapi->get_workflow_state(
       exporting
         i_id = 1

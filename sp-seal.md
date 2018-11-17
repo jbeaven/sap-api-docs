@@ -15,7 +15,6 @@ Get attribute of document
     gcc_basepath type string value 'https://s3alsystems.sharepoint.com/sites/job'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/sp_int,
     gvs_msg  type /blck/sp_string.
     
@@ -42,15 +41,12 @@ Get attribute of document
 *   gvs_accept = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/sp_cl_DefaultApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_doc_attr via HTTP GET
 *** i_title: Title of the document container
@@ -114,7 +110,6 @@ Retrieve data of document
     gcc_basepath type string value 'https://s3alsystems.sharepoint.com/sites/job'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/sp_int,
     gvs_msg  type /blck/sp_string.
     
@@ -133,15 +128,12 @@ Retrieve data of document
 *   gvi_doc_id = 42.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/sp_cl_DefaultApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_doc_data via HTTP GET
 *** i_title: Title of the document container
@@ -199,7 +191,6 @@ Retrieve list of documents matching criteria
     gcc_basepath type string value 'https://s3alsystems.sharepoint.com/sites/job'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/sp_int,
     gvs_msg  type /blck/sp_string.
     
@@ -222,15 +213,12 @@ Retrieve list of documents matching criteria
 *   gvs_accept = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/sp_cl_DefaultApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_docs via HTTP GET
 *** i_title: Title of the document container
@@ -293,7 +281,6 @@ Pass in a json formatted body
     gcc_basepath type string value 'https://s3alsystems.sharepoint.com/sites/job'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/sp_int,
     gvs_msg  type /blck/sp_string.
     
@@ -330,15 +317,12 @@ Pass in a json formatted body
 *   gvs_x_http_method = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/sp_cl_DefaultApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method set_doc_attr via HTTP POST
 *** i_title: Title of the document container

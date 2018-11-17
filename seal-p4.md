@@ -17,7 +17,7 @@ Opens a websocket connection and returns status changes of all jobs send by Oper
     gcc_basepath type string value 'https://operator-seal.cloudapp.net/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/p4_cl_auth
     gvi_code type /blck/p4_int,
     gvs_msg  type /blck/p4_string.
     
@@ -35,11 +35,11 @@ Opens a websocket connection and returns status changes of all jobs send by Oper
         
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/p4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p4_cl_EventsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -111,7 +111,7 @@ A POST call to this route will create a new jobs and return it's uuid.
     gcc_basepath type string value 'https://operator-seal.cloudapp.net/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/p4_cl_auth
     gvi_code type /blck/p4_int,
     gvs_msg  type /blck/p4_string.
     
@@ -136,11 +136,11 @@ A POST call to this route will create a new jobs and return it's uuid.
 *   gvs_body = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/p4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p4_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -217,7 +217,7 @@ A POST call to this route will abort a running job.
     gcc_basepath type string value 'https://operator-seal.cloudapp.net/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/p4_cl_auth
     gvi_code type /blck/p4_int,
     gvs_msg  type /blck/p4_string.
     
@@ -240,11 +240,11 @@ A POST call to this route will abort a running job.
 *   gvs_uuid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/p4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p4_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -312,7 +312,7 @@ returns status of given job
     gcc_basepath type string value 'https://operator-seal.cloudapp.net/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/p4_cl_auth
     gvi_code type /blck/p4_int,
     gvs_msg  type /blck/p4_string.
     
@@ -337,11 +337,11 @@ returns status of given job
 *   gvs_uuid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/p4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p4_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -418,7 +418,7 @@ A POST call to this route will pause a running job.
     gcc_basepath type string value 'https://operator-seal.cloudapp.net/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/p4_cl_auth
     gvi_code type /blck/p4_int,
     gvs_msg  type /blck/p4_string.
     
@@ -441,11 +441,11 @@ A POST call to this route will pause a running job.
 *   gvs_uuid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/p4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p4_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -513,7 +513,7 @@ A PUT call to this route will add a new file to the job. Data type is given in H
     gcc_basepath type string value 'https://operator-seal.cloudapp.net/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/p4_cl_auth
     gvi_code type /blck/p4_int,
     gvs_msg  type /blck/p4_string.
     
@@ -536,11 +536,11 @@ A PUT call to this route will add a new file to the job. Data type is given in H
 *   gvs_uuid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/p4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p4_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -608,7 +608,7 @@ A POST call to this route will resume a paused job.
     gcc_basepath type string value 'https://operator-seal.cloudapp.net/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/p4_cl_auth
     gvi_code type /blck/p4_int,
     gvs_msg  type /blck/p4_string.
     
@@ -631,11 +631,11 @@ A POST call to this route will resume a paused job.
 *   gvs_uuid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/p4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p4_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -703,7 +703,7 @@ A POST call to this route will start a previously created job.
     gcc_basepath type string value 'https://operator-seal.cloudapp.net/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/p4_cl_auth
     gvi_code type /blck/p4_int,
     gvs_msg  type /blck/p4_string.
     
@@ -726,11 +726,11 @@ A POST call to this route will start a previously created job.
 *   gvs_uuid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/p4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p4_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -802,7 +802,7 @@ Returns list of available printers inluding their capabilities
     gcc_basepath type string value 'https://operator-seal.cloudapp.net/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/p4_cl_auth
     gvi_code type /blck/p4_int,
     gvs_msg  type /blck/p4_string.
     
@@ -820,11 +820,11 @@ Returns list of available printers inluding their capabilities
         
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/p4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p4_cl_PrintersApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -1040,17 +1040,17 @@ Name | Type | Description
 * we can handle the result with either "if" with individual cases
 * or use a case clause to handle all scenarios:
   case gv_status_type.
-    when /blck/p4_cl_model=>status_type-open.
+    when /blck/p4_const=>me_status_type-open.
 *     do something specific to open case..
-    when /blck/p4_cl_model=>status_type-processing.
+    when /blck/p4_const=>me_status_type-processing.
 *     do something specific to processing case..
-    when /blck/p4_cl_model=>status_type-completed.
+    when /blck/p4_const=>me_status_type-completed.
 *     do something specific to completed case..
-    when /blck/p4_cl_model=>status_type-paused.
+    when /blck/p4_const=>me_status_type-paused.
 *     do something specific to paused case..
-    when /blck/p4_cl_model=>status_type-aborted.
+    when /blck/p4_const=>me_status_type-aborted.
 *     do something specific to aborted case..
-    when /blck/p4_cl_model=>status_type-failed.
+    when /blck/p4_const=>me_status_type-failed.
 *     do something specific to failed case..
   endcase.
 

@@ -16,7 +16,6 @@ Query
     gcc_basepath type string value 'https://<<SITEURL.SHAREPOINT.COM>>/_api'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/sps_int,
     gvs_msg  type /blck/sps_string.
     
@@ -35,15 +34,12 @@ Query
 *   gvs_selectproperties = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/sps_cl_SearchApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method query via HTTP GET
 *** i_querytext: querytext

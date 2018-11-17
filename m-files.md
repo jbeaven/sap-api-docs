@@ -38,7 +38,8 @@ Adds an object to the favorites.
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_FavoritesApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -119,7 +120,8 @@ Retrieves object version information on the favorite object
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_FavoritesApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -193,7 +195,8 @@ Retrieves favorite objects.
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_FavoritesApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -270,7 +273,8 @@ Removes an object from favorites.
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_FavoritesApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -355,7 +359,8 @@ Stores a temporary file on the server and assigns an ID for it. Once uploaded th
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_FilesApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -448,7 +453,8 @@ Adds a comment to an object
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -544,7 +550,8 @@ Adds a new file to the object.
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -633,7 +640,8 @@ Creates a new object of type.
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -714,7 +722,8 @@ Demotes external objects that have been previously promoted.
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -808,7 +817,8 @@ As checked in versions cannot be destroyed this can only be performed on a check
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -897,7 +907,8 @@ Retrieves automatic metadata based on specified request info.
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -983,7 +994,8 @@ Retrieves the current check out status.
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1072,7 +1084,8 @@ Retrieves the comments written on the object.
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1153,7 +1166,8 @@ Retrieves the deleted status of the object.
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1250,7 +1264,8 @@ Retrieves the object file contents.
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1352,7 +1367,8 @@ Retrieves the object file information for the specific object file.
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1463,7 +1479,8 @@ Retrieves the file preview.
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1575,7 +1592,8 @@ Retrieves the current object file name.
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1666,7 +1684,8 @@ Retrieves the object file information for all the files on an object.
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1749,7 +1768,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/properti
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1838,7 +1858,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1933,7 +1954,8 @@ Parameters: ?include - A list of additional fields to include in the ExtendedObj
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -2042,7 +2064,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -2140,7 +2163,8 @@ Retrieves all the available versions of the object.
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -2214,7 +2238,8 @@ The amount of returned objects is limited by the server, by default to 500 items
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -2287,7 +2312,8 @@ Collection of objects filtered by object type.
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -2378,7 +2404,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -2478,7 +2505,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -2579,7 +2607,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -2687,7 +2716,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -2787,7 +2817,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -2878,7 +2909,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -2969,7 +3001,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -3060,7 +3093,8 @@ Removes the file from the object.
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -3152,7 +3186,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -3249,7 +3284,8 @@ Sets the check out status. This is allowed only when the object isn't checked ou
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -3336,7 +3372,8 @@ Sets the deleted status of the object.
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -3431,7 +3468,8 @@ Replaces the object file contents.
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -3533,7 +3571,8 @@ Sets the name on the object file.
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -3622,7 +3661,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/setmulti
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -3713,7 +3753,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -3817,7 +3858,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -3919,7 +3961,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4024,7 +4067,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4127,7 +4171,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4219,7 +4264,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/recentlyaccessed
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_RecentApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4293,7 +4339,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/recentlyaccessed
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_RecentApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4368,7 +4415,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/repositories/
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_RepositoriesApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4452,7 +4500,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/repositories/ses
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_RepositoriesApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4531,7 +4580,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/repositories/ses
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_RepositoriesApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4619,7 +4669,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/authentic
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ServerApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4693,7 +4744,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/publickey
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ServerApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4764,7 +4816,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/status/
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ServerApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4842,7 +4895,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/vaults/
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ServerApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4921,7 +4975,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/authenti
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_SessionApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4991,7 +5046,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_SessionApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -5061,7 +5117,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/userid/
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_SessionApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -5131,7 +5188,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/vault/
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_SessionApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -5215,7 +5273,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_SessionApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -5287,7 +5346,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_SessionApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -5359,7 +5419,8 @@ The request must have either the GUID or the Name of the vault filled. In case b
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_SessionApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -5456,7 +5517,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -5541,7 +5603,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -5623,7 +5686,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -5706,7 +5770,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -5794,7 +5859,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -5879,7 +5945,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -5972,7 +6039,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -6061,7 +6129,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -6142,7 +6211,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -6221,7 +6291,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -6300,7 +6371,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -6374,7 +6446,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -6449,7 +6522,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -6523,7 +6597,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -6593,7 +6668,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/proper
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -6668,7 +6744,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/proper
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -6747,7 +6824,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -6830,7 +6908,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -6917,7 +6996,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -7004,7 +7084,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -7082,7 +7163,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -7159,7 +7241,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -7245,7 +7328,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -7332,7 +7416,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -7417,7 +7502,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/views/path/items
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ViewsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -7497,7 +7583,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/views/path/items
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ViewsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -7577,7 +7664,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/views/path/objec
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/mfi_cl_ViewsApi=>config(
       exporting
         i_basepath = gcc_basepath ).

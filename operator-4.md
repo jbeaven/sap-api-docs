@@ -17,7 +17,7 @@ Creates a new record in the command resource. It returns a JSON object containin
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -49,11 +49,11 @@ Creates a new record in the command resource. It returns a JSON object containin
 *   gvs_sid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_CollectionsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -142,7 +142,7 @@ Some services (not all) expose access to documents. All documents available thro
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -187,11 +187,11 @@ Some services (not all) expose access to documents. All documents available thro
 *   gvs_embed = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_CollectionsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -288,7 +288,7 @@ Creates a new record in the current Repository, inside the root collection, and 
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -321,11 +321,11 @@ Creates a new record in the current Repository, inside the root collection, and 
 *   gvs_sid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_CollectionsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -409,7 +409,7 @@ Removes the current entry from the repository. This will not only remove the ref
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -442,11 +442,11 @@ Removes the current entry from the repository. This will not only remove the ref
 *   gv_force = 'X'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_CollectionsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -523,7 +523,7 @@ Given a 'uuid' parameter, this route retrieves an entry's metadata. The entry ma
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -552,11 +552,11 @@ Given a 'uuid' parameter, this route retrieves an entry's metadata. The entry ma
 *   gvs_uuid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_CollectionsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -636,7 +636,7 @@ Update the given entry's metadata. Only data given with the patch will be change
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -673,11 +673,11 @@ Update the given entry's metadata. Only data given with the patch will be change
 *   gvs_uuid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_CollectionsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -764,7 +764,7 @@ If the entry under the given uuid is a collection, then a POST request to this r
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -803,11 +803,11 @@ If the entry under the given uuid is a collection, then a POST request to this r
 *   gvs_uuid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_CollectionsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -898,7 +898,7 @@ Completely replace the metadata record of the given entry. Only record metadata 
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -935,11 +935,11 @@ Completely replace the metadata record of the given entry. Only record metadata 
 *   gvs_uuid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_CollectionsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -1027,7 +1027,7 @@ Returns a JSON object containing the status of the command. Command resources ar
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -1056,11 +1056,11 @@ Returns a JSON object containing the status of the command. Command resources ar
 *   gvs_cid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_CollectionsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -1140,7 +1140,7 @@ Some services (not all) expose access to documents. All documents available thro
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -1185,11 +1185,11 @@ Some services (not all) expose access to documents. All documents available thro
 *   gvs_embed = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_CollectionsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -1291,7 +1291,6 @@ Deletes a single ConfigItem at the given path or all ConfigItems in the whole tr
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -1312,15 +1311,12 @@ Deletes a single ConfigItem at the given path or all ConfigItems in the whole tr
 *   gvs_path = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_ConfigurationApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method config_delete via HTTP DELETE
 *** i_path: Path/to/config/item
@@ -1388,7 +1384,6 @@ Use this route to browse the configuration. Configuration is structured unix fil
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -1417,15 +1412,12 @@ Use this route to browse the configuration. Configuration is structured unix fil
 *   gv_keys = 'X'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_ConfigurationApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method config_get via HTTP GET
 *** i_path: Path/to/config/item
@@ -1504,7 +1496,6 @@ Stores the ConfigItem in the request body at the given path.
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -1529,15 +1520,12 @@ Stores the ConfigItem in the request body at the given path.
 *   gvs_path = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_ConfigurationApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method config_put via HTTP PUT
 *** i_path: Path/to/config/item
@@ -1611,7 +1599,7 @@ FIXME
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -1636,11 +1624,11 @@ FIXME
 *   gvs_sid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_ConnectorsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -1717,7 +1705,7 @@ A POST call to this route will create new jobs and return their connector id's (
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -1747,11 +1735,11 @@ A POST call to this route will create new jobs and return their connector id's (
 *   gvs_sid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_ConnectorsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -1831,7 +1819,7 @@ A PUT call to this route returns an array with status and output listItems for a
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -1862,11 +1850,11 @@ A PUT call to this route returns an array with status and output listItems for a
 *   gvs_sid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_ConnectorsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -1946,7 +1934,7 @@ The SEAL Operator user interface provides the user with a set of default panels 
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -1964,11 +1952,11 @@ The SEAL Operator user interface provides the user with a set of default panels 
         
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_ConnectorsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -2036,7 +2024,7 @@ A GET call to this route returns a JSON object containing the default configurat
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -2059,11 +2047,11 @@ A GET call to this route returns a JSON object containing the default configurat
 *   gvs_pid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_ConnectorsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -2139,7 +2127,7 @@ Creates a new record in the command resource. It returns a JSON object containin
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -2171,11 +2159,11 @@ Creates a new record in the command resource. It returns a JSON object containin
 *   gvs_sid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_DocumentsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -2264,7 +2252,7 @@ Some services (not all) expose access to documents. All documents available thro
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -2309,11 +2297,11 @@ Some services (not all) expose access to documents. All documents available thro
 *   gvs_embed = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_DocumentsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -2410,7 +2398,7 @@ Creates a new record in the current Repository, inside the root collection, and 
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -2443,11 +2431,11 @@ Creates a new record in the current Repository, inside the root collection, and 
 *   gvs_sid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_DocumentsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -2531,7 +2519,7 @@ Removes the current entry from the repository. This will not only remove the ref
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -2564,11 +2552,11 @@ Removes the current entry from the repository. This will not only remove the ref
 *   gv_force = 'X'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_DocumentsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -2645,7 +2633,7 @@ Given a 'uuid' parameter, this route retrieves an entry's metadata. The entry ma
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -2674,11 +2662,11 @@ Given a 'uuid' parameter, this route retrieves an entry's metadata. The entry ma
 *   gvs_uuid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_DocumentsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -2758,7 +2746,7 @@ Update the given entry's metadata. Only data given with the patch will be change
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -2795,11 +2783,11 @@ Update the given entry's metadata. Only data given with the patch will be change
 *   gvs_uuid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_DocumentsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -2886,7 +2874,7 @@ Completely replace the metadata record of the given entry. Only record metadata 
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -2923,11 +2911,11 @@ Completely replace the metadata record of the given entry. Only record metadata 
 *   gvs_uuid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_DocumentsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -3015,7 +3003,7 @@ Returns a JSON object containing the status of the command. Command resources ar
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -3044,11 +3032,11 @@ Returns a JSON object containing the status of the command. Command resources ar
 *   gvs_cid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_DocumentsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -3128,7 +3116,7 @@ Deletes the binary content of a document, leaving metadata only. Note that some 
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -3159,11 +3147,11 @@ Deletes the binary content of a document, leaving metadata only. Note that some 
 *   gvs_uuid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_DocumentsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -3240,7 +3228,7 @@ If the entry under 'uuid' is a document, then this route provides access to the 
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -3267,11 +3255,11 @@ If the entry under 'uuid' is a document, then this route provides access to the 
 *   gvs_uuid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_DocumentsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -3342,7 +3330,7 @@ Upload binary content of a document. Create if none exists, or replace existing 
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -3377,11 +3365,11 @@ Upload binary content of a document. Create if none exists, or replace existing 
 *   gv_content = ...
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_DocumentsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -3460,7 +3448,7 @@ If the entry under 'uuid' is a document, then this route provides access to the 
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -3487,11 +3475,11 @@ If the entry under 'uuid' is a document, then this route provides access to the 
 *   gvs_uuid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_DocumentsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -3566,7 +3554,7 @@ This route triggers a connector specific function and returns the result. The fu
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -3595,11 +3583,11 @@ This route triggers a connector specific function and returns the result. The fu
 *   gvs_params = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_FunctionsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -3671,7 +3659,7 @@ For panels static configuration data is sometimes not sufficient, dynamically re
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -3694,11 +3682,11 @@ For panels static configuration data is sometimes not sufficient, dynamically re
 *   gvs_sid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_FunctionsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -3775,7 +3763,7 @@ This is the list of Lists of the authenticated user. Use metadata property names
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -3812,11 +3800,11 @@ This is the list of Lists of the authenticated user. Use metadata property names
 *   gvs_embed = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_ListsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -3908,7 +3896,7 @@ Deletes the current list inclusive all it's items, but not the documents.
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -3931,11 +3919,11 @@ Deletes the current list inclusive all it's items, but not the documents.
 *   gvs_lid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_ListsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -4003,7 +3991,7 @@ This is the root record for a given list. It contains List-level metadata. Use t
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -4032,11 +4020,11 @@ This is the root record for a given list. It contains List-level metadata. Use t
 *   gvs_embed = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_ListsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -4118,7 +4106,7 @@ This is the collection of items currently in the List. For performance reasons, 
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -4159,11 +4147,11 @@ This is the collection of items currently in the List. For performance reasons, 
 *   gvs_embed = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_ListsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -4254,7 +4242,7 @@ Deletes an entry from a list. Only the list entry is removed, not the document. 
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -4281,11 +4269,11 @@ Deletes an entry from a list. Only the list entry is removed, not the document. 
 *   gvs_id = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_ListsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -4356,7 +4344,7 @@ Get metadata record of a list item. Note that the 'id' is NOT the index, which i
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -4385,11 +4373,11 @@ Get metadata record of a list item. Note that the 'id' is NOT the index, which i
 *   gvs_id = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_ListsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -4469,7 +4457,7 @@ Update the metadata record of the current list item, adding missing entries but 
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -4510,11 +4498,11 @@ Update the metadata record of the current list item, adding missing entries but 
 *   gvs_href = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_ListsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -4606,7 +4594,7 @@ Update and replace the entire metadata record of the current list item. Note tha
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -4643,11 +4631,11 @@ Update and replace the entire metadata record of the current list item. Note tha
 *   gvs_id = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_ListsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -4734,7 +4722,7 @@ Lists are are ordered sets, items have consecutive indices (0..n). Posting this 
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -4771,11 +4759,11 @@ Lists are are ordered sets, items have consecutive indices (0..n). Posting this 
 *   gvs_href = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_ListsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -4862,7 +4850,7 @@ Updates or adds part of the List metadata. Only given metadata will be replaced 
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -4900,11 +4888,11 @@ Updates or adds part of the List metadata. Only given metadata will be replaced 
 *   gm_body-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_ListsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -4988,7 +4976,7 @@ This will completely replace the existing List metadata (if any) by the given me
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -5026,11 +5014,11 @@ This will completely replace the existing List metadata (if any) by the given me
 *   gm_body-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_ListsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -5114,7 +5102,7 @@ Creates a new entry in the list of Lists. The `Content-Type` HTTP header defines
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -5150,11 +5138,11 @@ Creates a new entry in the list of Lists. The `Content-Type` HTTP header defines
 *   gvs_href = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_ListsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -5238,7 +5226,7 @@ Every user has his own list of messages containing info, warning and error messa
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -5269,11 +5257,11 @@ Every user has his own list of messages containing info, warning and error messa
 *   gvs_sort = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_MessagesApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -5353,7 +5341,7 @@ Creates a new record in the message list and assigns the posted data. The server
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -5383,11 +5371,11 @@ Creates a new record in the message list and assigns the posted data. The server
 *   gm_body-read = 'X'. " (type /BLCK/OP4_BOOL)
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_MessagesApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -5464,7 +5452,7 @@ Update a message entry. Only data given with the patch will be  changed/added; n
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -5498,11 +5486,11 @@ Update a message entry. Only data given with the patch will be  changed/added; n
 *   gvs_uuid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_MessagesApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -5586,7 +5574,7 @@ The SEAL Operator user interface provides the user with a set of panels to use. 
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -5604,11 +5592,11 @@ The SEAL Operator user interface provides the user with a set of panels to use. 
         
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_PanelsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -5676,7 +5664,7 @@ User-defined panel configurations can be delete by a DELETE request to this rout
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -5697,11 +5685,11 @@ User-defined panel configurations can be delete by a DELETE request to this rout
 *   gvs_pid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_PanelsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -5773,7 +5761,7 @@ Returns a ConfigItem containing configuration for a stored panel.
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -5798,11 +5786,11 @@ Returns a ConfigItem containing configuration for a stored panel.
 *   gvs_pid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_PanelsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -5879,7 +5867,7 @@ A PUT request to a panel configuration will replace the entire stored configurat
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -5904,11 +5892,11 @@ A PUT request to a panel configuration will replace the entire stored configurat
 *   gvs_pid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_PanelsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -5986,7 +5974,7 @@ Users can save panel configurations they intend to (re-)use in later sessions un
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -6009,11 +5997,11 @@ Users can save panel configurations they intend to (re-)use in later sessions un
 *   gvs_body = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_PanelsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -6089,7 +6077,7 @@ The SEAL Operator user interface provides the user with a set of default panels 
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -6107,11 +6095,11 @@ The SEAL Operator user interface provides the user with a set of default panels 
         
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_PanelsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -6179,7 +6167,7 @@ A GET call to this route returns a JSON object containing the default configurat
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -6202,11 +6190,11 @@ A GET call to this route returns a JSON object containing the default configurat
 *   gvs_pid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_PanelsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -6282,7 +6270,7 @@ A GET call to this route will return a list of active services currently availab
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -6300,11 +6288,11 @@ A GET call to this route will return a list of active services currently availab
         
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_ServicesApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -6372,7 +6360,7 @@ FIXME
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -6397,11 +6385,11 @@ FIXME
 *   gvs_sid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_ServicesApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -6482,7 +6470,7 @@ Get number of currently established sessions of user
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -6500,11 +6488,11 @@ Get number of currently established sessions of user
         
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_SessionsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -6576,7 +6564,7 @@ This route provides access to the root collection of known tasks for the current
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -6625,11 +6613,11 @@ This route provides access to the root collection of known tasks for the current
 *   gv_inline_count = 'X'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -6730,7 +6718,7 @@ Adds a new Task to the collection. Given metadata is assigned, input list must b
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -6772,11 +6760,11 @@ Adds a new Task to the collection. Given metadata is assigned, input list must b
 *   gvs_sid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -6860,7 +6848,7 @@ Deletes a Task from the collection. This is only possible if the Task is not cur
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -6889,11 +6877,11 @@ Deletes a Task from the collection. This is only possible if the Task is not cur
 *   gvs_tid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -6967,7 +6955,7 @@ This route provides access to a Task's root record. The record contains taks met
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -7004,11 +6992,11 @@ This route provides access to a Task's root record. The record contains taks met
 *   gv_force = 'X'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -7095,7 +7083,7 @@ Does a partial update to the Task metadata. Given metadata replaces existing one
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -7131,11 +7119,11 @@ Does a partial update to the Task metadata. Given metadata replaces existing one
 *   gvs_tid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -7222,7 +7210,7 @@ A put call to the task root record completely replaces task metadata, but does n
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -7258,11 +7246,11 @@ A put call to the task root record completely replaces task metadata, but does n
 *   gvs_tid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -7349,7 +7337,7 @@ Trigger a new action on the current task. Currently supported actions are `start
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -7382,11 +7370,11 @@ Trigger a new action on the current task. Currently supported actions are `start
 *   gvs_tid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -7463,7 +7451,7 @@ This route provides access to a Task's list of input documents. Input lists of T
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -7496,11 +7484,11 @@ This route provides access to a Task's list of input documents. Input lists of T
 *   gvs_embed = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -7584,7 +7572,7 @@ Deletes an item from a Task's input list. The deleted ID is permanently orphaned
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -7617,11 +7605,11 @@ Deletes an item from a Task's input list. The deleted ID is permanently orphaned
 *   gvs_id = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -7698,7 +7686,7 @@ FIXME
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -7731,11 +7719,11 @@ FIXME
 *   gvs_id = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -7818,7 +7806,7 @@ Updates task input list item metadata, replacing present entries and adding miss
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -7859,11 +7847,11 @@ Updates task input list item metadata, replacing present entries and adding miss
 *   gm_body-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -7953,7 +7941,7 @@ Replaces the task input list item's metadata, including the document reference.
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -7994,11 +7982,11 @@ Replaces the task input list item's metadata, including the document reference.
 *   gm_body-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -8088,7 +8076,7 @@ Does a partial update to the input list metadata. Given metadata replaces existi
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -8134,11 +8122,11 @@ Does a partial update to the input list metadata. Given metadata replaces existi
 *   gvs_embed = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -8229,7 +8217,7 @@ Creates a new entry in the given Task's input list. Given metadata is assigned t
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -8270,11 +8258,11 @@ Creates a new entry in the given Task's input list. Given metadata is assigned t
 *   gvs_href = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -8366,7 +8354,7 @@ A put call to the input list root record completely replaces the metadata, but d
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -8402,11 +8390,11 @@ A put call to the input list root record completely replaces the metadata, but d
 *   gvs_tid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -8493,7 +8481,7 @@ This route provides access to a Task's list of output documents. Output lists of
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -8526,11 +8514,11 @@ This route provides access to a Task's list of output documents. Output lists of
 *   gvs_embed = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -8614,7 +8602,7 @@ This route provides access to individual task output items.
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -8647,11 +8635,11 @@ This route provides access to individual task output items.
 *   gvs_id = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -8734,7 +8722,7 @@ This route provides access to the root collection of known tasks for all service
     gcc_basepath type string value 'https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/op4_cl_auth
     gvi_code type /blck/op4_int,
     gvs_msg  type /blck/op4_string.
     
@@ -8767,11 +8755,11 @@ This route provides access to the root collection of known tasks for all service
 *   gv_inline_count = 'X'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/op4_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -9102,17 +9090,17 @@ Name | Type | Description
 * we can handle the result with either "if" with individual cases
 * or use a case clause to handle all scenarios:
   case gv_status_type.
-    when /blck/op4_cl_model=>status_type-open.
+    when /blck/op4_const=>me_status_type-open.
 *     do something specific to open case..
-    when /blck/op4_cl_model=>status_type-processing.
+    when /blck/op4_const=>me_status_type-processing.
 *     do something specific to processing case..
-    when /blck/op4_cl_model=>status_type-completed.
+    when /blck/op4_const=>me_status_type-completed.
 *     do something specific to completed case..
-    when /blck/op4_cl_model=>status_type-paused.
+    when /blck/op4_const=>me_status_type-paused.
 *     do something specific to paused case..
-    when /blck/op4_cl_model=>status_type-aborted.
+    when /blck/op4_const=>me_status_type-aborted.
 *     do something specific to aborted case..
-    when /blck/op4_cl_model=>status_type-failed.
+    when /blck/op4_const=>me_status_type-failed.
 *     do something specific to failed case..
   endcase.
 

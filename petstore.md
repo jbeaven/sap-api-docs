@@ -36,7 +36,8 @@ Add a new pet to the store
 *** optional: instantiate descendant of /blck/pet_cl_auth 
 *   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/pet_cl_PetApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -108,7 +109,8 @@ Deletes a pet
 *** optional: instantiate descendant of /blck/pet_cl_auth 
 *   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/pet_cl_PetApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -186,7 +188,8 @@ Multiple status values can be provided with comma separated strings
 *** optional: instantiate descendant of /blck/pet_cl_auth 
 *   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/pet_cl_PetApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -267,7 +270,8 @@ Muliple tags can be provided with comma separated strings. Use tag1, tag2, tag3 
 *** optional: instantiate descendant of /blck/pet_cl_auth 
 *   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/pet_cl_PetApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -346,7 +350,8 @@ Returns a single pet
       exporting
         i_api_key = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/pet_cl_PetApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -428,7 +433,8 @@ Update an existing pet
 *** optional: instantiate descendant of /blck/pet_cl_auth 
 *   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/pet_cl_PetApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -508,7 +514,8 @@ Updates a pet in the store with form data
 *** optional: instantiate descendant of /blck/pet_cl_auth 
 *   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/pet_cl_PetApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -590,7 +597,8 @@ uploads an image
 *** optional: instantiate descendant of /blck/pet_cl_auth 
 *   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/pet_cl_PetApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -669,7 +677,8 @@ For valid response try integer IDs with positive integer value. Negative or non-
 
 
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/pet_cl_StoreApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -737,7 +746,8 @@ Returns a map of status codes to quantities
       exporting
         i_api_key = '1234-5678-9012-3456' ).
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/pet_cl_StoreApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -804,7 +814,8 @@ For valid response try integer IDs with value >= 1 and <= 10. Other values will 
 
 
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/pet_cl_StoreApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -885,7 +896,8 @@ Place an order for a pet
 
 
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/pet_cl_StoreApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -969,7 +981,8 @@ This can only be done by the logged in user.
 
 
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/pet_cl_UserApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1034,7 +1047,8 @@ Creates list of users with given input array
 
 
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/pet_cl_UserApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1099,7 +1113,8 @@ Creates list of users with given input array
 
 
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/pet_cl_UserApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1164,7 +1179,8 @@ This can only be done by the logged in user.
 
 
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/pet_cl_UserApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1232,7 +1248,8 @@ Get user by user name
 
 
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/pet_cl_UserApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1312,7 +1329,8 @@ Logs user into the system
 
 
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/pet_cl_UserApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1381,7 +1399,8 @@ Logs out current logged in user session
 
 
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/pet_cl_UserApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1452,7 +1471,8 @@ This can only be done by the logged in user.
 
 
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/pet_cl_UserApi=>config(
       exporting
         i_basepath = gcc_basepath ).

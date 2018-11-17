@@ -17,7 +17,6 @@ Aggregates count the number of objects matching a given query and aggregate resu
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -37,15 +36,12 @@ Aggregates count the number of objects matching a given query and aggregate resu
 *   gm_body-aggregates = l_aggregates. " (type /BLCK/P5_STRING_TT)
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_InfoApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method jobs_aggregate_put via HTTP PUT
 *** i_body: Query object containing definition of the requested aggregate 
@@ -107,7 +103,6 @@ This route provides access to the number of print jobs known in PLOSSYS P5; eith
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -124,15 +119,12 @@ This route provides access to the number of print jobs known in PLOSSYS P5; eith
 *   gvs_filter = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_InfoApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method jobs_count_get via HTTP GET
 *** i_filter: OData query string describing jobs to count
@@ -190,7 +182,6 @@ A GET query to this path provides access to the list of print jobs in PLOSSYS P5
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -227,15 +218,12 @@ A GET query to this path provides access to the list of print jobs in PLOSSYS P5
 *   gvs_inlinecount = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_InfoApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method jobs_get via HTTP GET
 *** i_filter: OData query for searching jobs, see OData 3.0 Spec 
@@ -311,7 +299,6 @@ A GET query to this route returns a json object containing status information an
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -328,15 +315,12 @@ A GET query to this route returns a json object containing status information an
 *   gvs_job_id = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_InfoApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method jobs_job_id_get via HTTP GET
 *** i_job_id: jobID of the printjob to query
@@ -394,7 +378,6 @@ Returns a JSON object describing the PrintJob object model
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -406,15 +389,12 @@ Returns a JSON object describing the PrintJob object model
         
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_InfoApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method jobs_metadata_get via HTTP GET
     /blck/p5_cl_InfoApi=>jobs_metadata_get(
@@ -467,7 +447,6 @@ Aggregates count the number of objects matching a given query and aggregate resu
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -487,15 +466,12 @@ Aggregates count the number of objects matching a given query and aggregate resu
 *   gm_body-aggregates = l_aggregates. " (type /BLCK/P5_STRING_TT)
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_InfoApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printers_aggregate_put via HTTP PUT
 *** i_body: Query object containing definition of the requested aggregate 
@@ -557,7 +533,6 @@ This route provides access to the number of printers registered in PLOSSYS P5; e
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -574,15 +549,12 @@ This route provides access to the number of printers registered in PLOSSYS P5; e
 *   gvs_filter = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_InfoApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printers_count_get via HTTP GET
 *** i_filter: OData query string describing printers to count
@@ -640,7 +612,6 @@ Retrieve a list of all known printers in PLOSSYS P5. A plain query to the endpoi
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -679,15 +650,12 @@ Retrieve a list of all known printers in PLOSSYS P5. A plain query to the endpoi
 *   gvs_inlinecount = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_InfoApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printers_get via HTTP GET
 *** i_filter: OData query for searching printers, see OData 3.0 Spec 
@@ -766,7 +734,6 @@ Returns a JSON object describing the Printer object model
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -778,15 +745,12 @@ Returns a JSON object describing the Printer object model
         
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_InfoApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printers_metadata_get via HTTP GET
     /blck/p5_cl_InfoApi=>printers_metadata_get(
@@ -839,7 +803,6 @@ Retrieves printer configuration of the printer with the given printerName and re
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -860,15 +823,12 @@ Retrieves printer configuration of the printer with the given printerName and re
 *   gvs_printer_name = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_InfoApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printers_printer_name_get via HTTP GET
 *** i_printer_name: Name (not ID!) of the printer
@@ -933,7 +893,6 @@ Retrieve log entries for the given printer.
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -952,15 +911,12 @@ Retrieve log entries for the given printer.
 *   gvs_printer_name = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_InfoApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printers_printer_name_logs_get via HTTP GET
 *** i_printer_name: Name of the printer to get logs for
@@ -1022,7 +978,6 @@ Returns a PrinterStatus object describing the current status of the printer.
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -1039,15 +994,12 @@ Returns a PrinterStatus object describing the current status of the printer.
 *   gvs_printer_name = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_InfoApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printersprinternamestatusget via HTTP GET
 *** i_printer_name: Name (not ID) of the printer to query
@@ -1109,7 +1061,6 @@ Aggregates count the number of objects matching a given query and aggregate resu
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -1129,15 +1080,12 @@ Aggregates count the number of objects matching a given query and aggregate resu
 *   gm_body-aggregates = l_aggregates. " (type /BLCK/P5_STRING_TT)
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_JobsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method jobs_aggregate_put via HTTP PUT
 *** i_body: Query object containing definition of the requested aggregate 
@@ -1199,7 +1147,6 @@ This route provides access to the number of print jobs known in PLOSSYS P5; eith
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -1216,15 +1163,12 @@ This route provides access to the number of print jobs known in PLOSSYS P5; eith
 *   gvs_filter = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_JobsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method jobs_count_get via HTTP GET
 *** i_filter: OData query string describing jobs to count
@@ -1282,7 +1226,6 @@ A GET query to this path provides access to the list of print jobs in PLOSSYS P5
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -1319,15 +1262,12 @@ A GET query to this path provides access to the list of print jobs in PLOSSYS P5
 *   gvs_inlinecount = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_JobsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method jobs_get via HTTP GET
 *** i_filter: OData query for searching jobs, see OData 3.0 Spec 
@@ -1403,7 +1343,6 @@ A DELETE query to a job instance path stops and deletes the job.
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -1422,15 +1361,12 @@ A DELETE query to a job instance path stops and deletes the job.
 *   gvs_job_id = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_JobsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method jobs_job_id_delete via HTTP DELETE
 *** i_job_id: jobID of the printjob to delete
@@ -1492,7 +1428,6 @@ A GET query to this route returns a json object containing status information an
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -1509,15 +1444,12 @@ A GET query to this route returns a json object containing status information an
 *   gvs_job_id = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_JobsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method jobs_job_id_get via HTTP GET
 *** i_job_id: jobID of the printjob to query
@@ -1575,7 +1507,6 @@ A print job which has been suspended using the /jobs/{jobID}/pause function can 
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -1601,15 +1532,12 @@ A print job which has been suspended using the /jobs/{jobID}/pause function can 
 *   gvs_job_id = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_JobsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method jobs_job_id_move_put via HTTP PUT
 *** i_body: JSON object describing where to move the job
@@ -1673,7 +1601,6 @@ Print job processing can be paused by a PUT query against this functional ressou
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -1694,15 +1621,12 @@ Print job processing can be paused by a PUT query against this functional ressou
 *   gvs_job_id = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_JobsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method jobs_job_id_pause_put via HTTP PUT
 *** i_job_id: ID of the print job to suspend
@@ -1763,7 +1687,6 @@ A print job which has been printed before or failed can be repeated by a PUT que
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -1784,15 +1707,12 @@ A print job which has been printed before or failed can be repeated by a PUT que
 *   gvs_job_id = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_JobsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method jobs_job_id_repeat_put via HTTP PUT
 *** i_job_id: ID of the print job to repeat
@@ -1853,7 +1773,6 @@ A print job which has been suspended using the /jobs/{jobID}/pause function can 
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -1874,15 +1793,12 @@ A print job which has been suspended using the /jobs/{jobID}/pause function can 
 *   gvs_job_id = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_JobsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method jobs_job_id_resume_put via HTTP PUT
 *** i_job_id: ID of the print job to reactivate
@@ -1943,7 +1859,6 @@ Returns a JSON object describing the PrintJob object model
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -1955,15 +1870,12 @@ Returns a JSON object describing the PrintJob object model
         
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_JobsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method jobs_metadata_get via HTTP GET
     /blck/p5_cl_JobsApi=>jobs_metadata_get(
@@ -2020,7 +1932,6 @@ A DELETE query to a job instance path stops and deletes the job.
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -2039,15 +1950,12 @@ A DELETE query to a job instance path stops and deletes the job.
 *   gvs_job_id = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_ManagementApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method jobs_job_id_delete via HTTP DELETE
 *** i_job_id: jobID of the printjob to delete
@@ -2109,7 +2017,6 @@ A print job which has been suspended using the /jobs/{jobID}/pause function can 
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -2135,15 +2042,12 @@ A print job which has been suspended using the /jobs/{jobID}/pause function can 
 *   gvs_job_id = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_ManagementApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method jobs_job_id_move_put via HTTP PUT
 *** i_body: JSON object describing where to move the job
@@ -2207,7 +2111,6 @@ Print job processing can be paused by a PUT query against this functional ressou
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -2228,15 +2131,12 @@ Print job processing can be paused by a PUT query against this functional ressou
 *   gvs_job_id = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_ManagementApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method jobs_job_id_pause_put via HTTP PUT
 *** i_job_id: ID of the print job to suspend
@@ -2297,7 +2197,6 @@ A print job which has been printed before or failed can be repeated by a PUT que
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -2318,15 +2217,12 @@ A print job which has been printed before or failed can be repeated by a PUT que
 *   gvs_job_id = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_ManagementApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method jobs_job_id_repeat_put via HTTP PUT
 *** i_job_id: ID of the print job to repeat
@@ -2387,7 +2283,6 @@ A print job which has been suspended using the /jobs/{jobID}/pause function can 
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -2408,15 +2303,12 @@ A print job which has been suspended using the /jobs/{jobID}/pause function can 
 *   gvs_job_id = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_ManagementApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method jobs_job_id_resume_put via HTTP PUT
 *** i_job_id: ID of the print job to reactivate
@@ -2477,7 +2369,6 @@ Adds a new printer to the list of managed printers in PLOSSYS P5. The new printe
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -2497,15 +2388,12 @@ Adds a new printer to the list of managed printers in PLOSSYS P5. The new printe
 *   gm_body-config = 'ipsum lorem'. " (type /BLCK/P5_STRING)
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_ManagementApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printers_post via HTTP POST
 *** i_body: A  JSON  object  describing the new printer. The 'printer' property needs to
@@ -2571,7 +2459,6 @@ Deletes the printer with the given name; If the printer is found and deletion is
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -2590,15 +2477,12 @@ Deletes the printer with the given name; If the printer is found and deletion is
 *   gvs_printer_name = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_ManagementApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printers_printer_name_delete via HTTP DELETE
 *** i_printer_name: name (not ID!) of the printer to delete
@@ -2656,7 +2540,6 @@ Modifies a printer, replacing the current configuration with the one given in th
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -2676,15 +2559,12 @@ Modifies a printer, replacing the current configuration with the one given in th
 *   gm_body-config = 'ipsum lorem'. " (type /BLCK/P5_STRING)
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_ManagementApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printers_put via HTTP PUT
 *** i_body: JSON object containing updated printer object
@@ -2742,7 +2622,6 @@ A predefined test sheet is generated and inserted into the printer queue.
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -2759,15 +2638,12 @@ A predefined test sheet is generated and inserted into the printer queue.
 *   gvs_printer_name = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_ManagementApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printersprinternamecreatetestj via HTTP PUT
 *** i_printer_name: name (not ID!) of the printer to test
@@ -2822,7 +2698,6 @@ A printers operation can be paused by a PUT query against this functional ressou
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -2843,15 +2718,12 @@ A printers operation can be paused by a PUT query against this functional ressou
 *   gvs_printer_name = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_ManagementApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printersprinternamepauseput via HTTP PUT
 *** i_printer_name: name (not ID!) of the printer to pause
@@ -2912,7 +2784,6 @@ A printer can be redirected so that incoming print jobs for that printer are for
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -2933,15 +2804,12 @@ A printer can be redirected so that incoming print jobs for that printer are for
 *   gvs_printer_name = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_ManagementApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printersprinternameredirectput via HTTP PUT
 *** i_printer_name: name (not ID!) of the printer to redirect
@@ -3002,7 +2870,6 @@ A printer which has been suspended using the /printers/{printerName}/pause funct
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -3023,15 +2890,12 @@ A printer which has been suspended using the /printers/{printerName}/pause funct
 *   gvs_printer_name = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_ManagementApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printersprinternameresumeput via HTTP PUT
 *** i_printer_name: name (not ID!) of the printer to reactivate
@@ -3096,7 +2960,6 @@ This route provides access to the number of print jobs known in PLOSSYS P5; eith
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -3113,15 +2976,12 @@ This route provides access to the number of print jobs known in PLOSSYS P5; eith
 *   gvs_filter = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_ODataApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method jobs_count_get via HTTP GET
 *** i_filter: OData query string describing jobs to count
@@ -3179,7 +3039,6 @@ A GET query to this path provides access to the list of print jobs in PLOSSYS P5
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -3216,15 +3075,12 @@ A GET query to this path provides access to the list of print jobs in PLOSSYS P5
 *   gvs_inlinecount = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_ODataApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method jobs_get via HTTP GET
 *** i_filter: OData query for searching jobs, see OData 3.0 Spec 
@@ -3300,7 +3156,6 @@ This route provides access to the number of printers registered in PLOSSYS P5; e
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -3317,15 +3172,12 @@ This route provides access to the number of printers registered in PLOSSYS P5; e
 *   gvs_filter = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_ODataApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printers_count_get via HTTP GET
 *** i_filter: OData query string describing printers to count
@@ -3383,7 +3235,6 @@ Retrieve a list of all known printers in PLOSSYS P5. A plain query to the endpoi
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -3422,15 +3273,12 @@ Retrieve a list of all known printers in PLOSSYS P5. A plain query to the endpoi
 *   gvs_inlinecount = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_ODataApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printers_get via HTTP GET
 *** i_filter: OData query for searching printers, see OData 3.0 Spec 
@@ -3509,7 +3357,6 @@ Retrieve log entries for the given printer.
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -3528,15 +3375,12 @@ Retrieve log entries for the given printer.
 *   gvs_printer_name = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_ODataApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printers_printer_name_logs_get via HTTP GET
 *** i_printer_name: Name of the printer to get logs for
@@ -3602,7 +3446,6 @@ Aggregates count the number of objects matching a given query and aggregate resu
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -3622,15 +3465,12 @@ Aggregates count the number of objects matching a given query and aggregate resu
 *   gm_body-aggregates = l_aggregates. " (type /BLCK/P5_STRING_TT)
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_PrinterApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printers_aggregate_put via HTTP PUT
 *** i_body: Query object containing definition of the requested aggregate 
@@ -3692,7 +3532,6 @@ This route provides access to the number of printers registered in PLOSSYS P5; e
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -3709,15 +3548,12 @@ This route provides access to the number of printers registered in PLOSSYS P5; e
 *   gvs_filter = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_PrinterApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printers_count_get via HTTP GET
 *** i_filter: OData query string describing printers to count
@@ -3775,7 +3611,6 @@ Retrieve a list of all known printers in PLOSSYS P5. A plain query to the endpoi
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -3814,15 +3649,12 @@ Retrieve a list of all known printers in PLOSSYS P5. A plain query to the endpoi
 *   gvs_inlinecount = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_PrinterApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printers_get via HTTP GET
 *** i_filter: OData query for searching printers, see OData 3.0 Spec 
@@ -3901,7 +3733,6 @@ Returns a JSON object describing the Printer object model
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -3913,15 +3744,12 @@ Returns a JSON object describing the Printer object model
         
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_PrinterApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printers_metadata_get via HTTP GET
     /blck/p5_cl_PrinterApi=>printers_metadata_get(
@@ -3974,7 +3802,6 @@ Adds a new printer to the list of managed printers in PLOSSYS P5. The new printe
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -3994,15 +3821,12 @@ Adds a new printer to the list of managed printers in PLOSSYS P5. The new printe
 *   gm_body-config = 'ipsum lorem'. " (type /BLCK/P5_STRING)
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_PrinterApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printers_post via HTTP POST
 *** i_body: A  JSON  object  describing the new printer. The 'printer' property needs to
@@ -4068,7 +3892,6 @@ Deletes the printer with the given name; If the printer is found and deletion is
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -4087,15 +3910,12 @@ Deletes the printer with the given name; If the printer is found and deletion is
 *   gvs_printer_name = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_PrinterApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printers_printer_name_delete via HTTP DELETE
 *** i_printer_name: name (not ID!) of the printer to delete
@@ -4153,7 +3973,6 @@ Retrieves printer configuration of the printer with the given printerName and re
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -4174,15 +3993,12 @@ Retrieves printer configuration of the printer with the given printerName and re
 *   gvs_printer_name = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_PrinterApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printers_printer_name_get via HTTP GET
 *** i_printer_name: Name (not ID!) of the printer
@@ -4247,7 +4063,6 @@ Retrieve log entries for the given printer.
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -4266,15 +4081,12 @@ Retrieve log entries for the given printer.
 *   gvs_printer_name = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_PrinterApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printers_printer_name_logs_get via HTTP GET
 *** i_printer_name: Name of the printer to get logs for
@@ -4336,7 +4148,6 @@ Modifies a printer, replacing the current configuration with the one given in th
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -4356,15 +4167,12 @@ Modifies a printer, replacing the current configuration with the one given in th
 *   gm_body-config = 'ipsum lorem'. " (type /BLCK/P5_STRING)
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_PrinterApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printers_put via HTTP PUT
 *** i_body: JSON object containing updated printer object
@@ -4422,7 +4230,6 @@ A predefined test sheet is generated and inserted into the printer queue.
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -4439,15 +4246,12 @@ A predefined test sheet is generated and inserted into the printer queue.
 *   gvs_printer_name = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_PrinterApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printersprinternamecreatetestj via HTTP PUT
 *** i_printer_name: name (not ID!) of the printer to test
@@ -4502,7 +4306,6 @@ A printers operation can be paused by a PUT query against this functional ressou
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -4523,15 +4326,12 @@ A printers operation can be paused by a PUT query against this functional ressou
 *   gvs_printer_name = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_PrinterApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printersprinternamepauseput via HTTP PUT
 *** i_printer_name: name (not ID!) of the printer to pause
@@ -4592,7 +4392,6 @@ A printer can be redirected so that incoming print jobs for that printer are for
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -4613,15 +4412,12 @@ A printer can be redirected so that incoming print jobs for that printer are for
 *   gvs_printer_name = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_PrinterApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printersprinternameredirectput via HTTP PUT
 *** i_printer_name: name (not ID!) of the printer to redirect
@@ -4682,7 +4478,6 @@ A printer which has been suspended using the /printers/{printerName}/pause funct
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -4703,15 +4498,12 @@ A printer which has been suspended using the /printers/{printerName}/pause funct
 *   gvs_printer_name = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_PrinterApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printersprinternameresumeput via HTTP PUT
 *** i_printer_name: name (not ID!) of the printer to reactivate
@@ -4772,7 +4564,6 @@ Returns a PrinterStatus object describing the current status of the printer.
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -4789,15 +4580,12 @@ Returns a PrinterStatus object describing the current status of the printer.
 *   gvs_printer_name = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_PrinterApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printersprinternamestatusget via HTTP GET
 *** i_printer_name: Name (not ID) of the printer to query
@@ -4859,7 +4647,6 @@ Aggregates count the number of objects matching a given query and aggregate resu
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -4879,15 +4666,12 @@ Aggregates count the number of objects matching a given query and aggregate resu
 *   gm_body-aggregates = l_aggregates. " (type /BLCK/P5_STRING_TT)
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_SearchApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method jobs_aggregate_put via HTTP PUT
 *** i_body: Query object containing definition of the requested aggregate 
@@ -4949,7 +4733,6 @@ This route provides access to the number of print jobs known in PLOSSYS P5; eith
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -4966,15 +4749,12 @@ This route provides access to the number of print jobs known in PLOSSYS P5; eith
 *   gvs_filter = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_SearchApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method jobs_count_get via HTTP GET
 *** i_filter: OData query string describing jobs to count
@@ -5032,7 +4812,6 @@ A GET query to this path provides access to the list of print jobs in PLOSSYS P5
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -5069,15 +4848,12 @@ A GET query to this path provides access to the list of print jobs in PLOSSYS P5
 *   gvs_inlinecount = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_SearchApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method jobs_get via HTTP GET
 *** i_filter: OData query for searching jobs, see OData 3.0 Spec 
@@ -5153,7 +4929,6 @@ Aggregates count the number of objects matching a given query and aggregate resu
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -5173,15 +4948,12 @@ Aggregates count the number of objects matching a given query and aggregate resu
 *   gm_body-aggregates = l_aggregates. " (type /BLCK/P5_STRING_TT)
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_SearchApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printers_aggregate_put via HTTP PUT
 *** i_body: Query object containing definition of the requested aggregate 
@@ -5243,7 +5015,6 @@ This route provides access to the number of printers registered in PLOSSYS P5; e
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -5260,15 +5031,12 @@ This route provides access to the number of printers registered in PLOSSYS P5; e
 *   gvs_filter = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_SearchApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printers_count_get via HTTP GET
 *** i_filter: OData query string describing printers to count
@@ -5326,7 +5094,6 @@ Retrieve a list of all known printers in PLOSSYS P5. A plain query to the endpoi
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -5365,15 +5132,12 @@ Retrieve a list of all known printers in PLOSSYS P5. A plain query to the endpoi
 *   gvs_inlinecount = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_SearchApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printers_get via HTTP GET
 *** i_filter: OData query for searching printers, see OData 3.0 Spec 
@@ -5452,7 +5216,6 @@ Retrieve log entries for the given printer.
     gcc_basepath type string value 'https://demo.plossys-p5.com/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/p5_int,
     gvs_msg  type /blck/p5_string.
     
@@ -5471,15 +5234,12 @@ Retrieve log entries for the given printer.
 *   gvs_printer_name = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/p5_cl_SearchApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method printers_printer_name_logs_get via HTTP GET
 *** i_printer_name: Name of the printer to get logs for

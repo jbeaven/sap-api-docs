@@ -17,7 +17,7 @@ Deletes a job. In case the job is in status processing, it is aborted before rem
     gcc_basepath type string value 'http://localhost:3015/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/cnv_cl_auth
     gvi_code type /blck/cnv_int,
     gvs_msg  type /blck/cnv_string.
     
@@ -38,11 +38,11 @@ Deletes a job. In case the job is in status processing, it is aborted before rem
 *   gvs_job_id = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/cnv_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/cnv_cl_ControlApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -107,7 +107,7 @@ Start processing of a job. If processing is already triggered nothing is done. J
     gcc_basepath type string value 'http://localhost:3015/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/cnv_cl_auth
     gvi_code type /blck/cnv_int,
     gvs_msg  type /blck/cnv_string.
     
@@ -128,11 +128,11 @@ Start processing of a job. If processing is already triggered nothing is done. J
 *   gvs_job_id = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/cnv_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/cnv_cl_ControlApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -197,7 +197,7 @@ Get a object with job status and output information
     gcc_basepath type string value 'http://localhost:3015/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/cnv_cl_auth
     gvi_code type /blck/cnv_int,
     gvs_msg  type /blck/cnv_string.
     
@@ -220,11 +220,11 @@ Get a object with job status and output information
 *   gvs_job_id = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/cnv_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/cnv_cl_ControlApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -297,7 +297,7 @@ Easy way to convert with a single REST call: - Creates a single input file with 
     gcc_basepath type string value 'http://localhost:3015/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/cnv_cl_auth
     gvi_code type /blck/cnv_int,
     gvs_msg  type /blck/cnv_string.
     
@@ -320,11 +320,11 @@ Easy way to convert with a single REST call: - Creates a single input file with 
 *   gvs_jobid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/cnv_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/cnv_cl_ControlApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -396,7 +396,7 @@ Get a object with full job status, input and output information.
     gcc_basepath type string value 'http://localhost:3015/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/cnv_cl_auth
     gvi_code type /blck/cnv_int,
     gvs_msg  type /blck/cnv_string.
     
@@ -419,11 +419,11 @@ Get a object with full job status, input and output information.
 *   gvs_job_id = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/cnv_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/cnv_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -496,7 +496,7 @@ Appends a new input file to the input file list of a job.
     gcc_basepath type string value 'http://localhost:3015/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/cnv_cl_auth
     gvi_code type /blck/cnv_int,
     gvs_msg  type /blck/cnv_string.
     
@@ -524,11 +524,11 @@ Appends a new input file to the input file list of a job.
 *   gvs_job_id = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/cnv_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/cnv_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -604,7 +604,7 @@ Easy way to convert with a single REST call: - Creates a single input file with 
     gcc_basepath type string value 'http://localhost:3015/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/cnv_cl_auth
     gvi_code type /blck/cnv_int,
     gvs_msg  type /blck/cnv_string.
     
@@ -627,11 +627,11 @@ Easy way to convert with a single REST call: - Creates a single input file with 
 *   gvs_jobid = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/cnv_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/cnv_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -697,7 +697,7 @@ Create a new job.
     gcc_basepath type string value 'http://localhost:3015/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/cnv_cl_auth
     gvi_code type /blck/cnv_int,
     gvs_msg  type /blck/cnv_string.
     
@@ -721,11 +721,11 @@ Create a new job.
 *   gm_body-metadata = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/cnv_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/cnv_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -798,7 +798,7 @@ Upload input file binary input content.
     gcc_basepath type string value 'http://localhost:3015/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/cnv_cl_auth
     gvi_code type /blck/cnv_int,
     gvs_msg  type /blck/cnv_string.
     
@@ -825,11 +825,11 @@ Upload input file binary input content.
 *   gvs_file_id = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/cnv_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/cnv_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -900,7 +900,7 @@ Get processing result binary content.
     gcc_basepath type string value 'http://localhost:3015/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/cnv_cl_auth
     gvi_code type /blck/cnv_int,
     gvs_msg  type /blck/cnv_string.
     
@@ -925,11 +925,11 @@ Get processing result binary content.
 *   gvs_file_id = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/cnv_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/cnv_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -1001,7 +1001,7 @@ Get processing result binary content.
     gcc_basepath type string value 'http://localhost:3015/v1'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/cnv_cl_auth
     gvi_code type /blck/cnv_int,
     gvs_msg  type /blck/cnv_string.
     
@@ -1026,11 +1026,11 @@ Get processing result binary content.
 *   gvs_file_id = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/cnv_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
-*** update the configuration if needed, a default basepath is set from the spec
+*** update the configuration if needed, a default basepath is already set from the spec
+*   so the following call is only necessary if the url should be different
     /blck/cnv_cl_ResultsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -1288,15 +1288,15 @@ Name | Type | Description
 * we can handle the result with either "if" with individual cases
 * or use a case clause to handle all scenarios:
   case gv_jobstatusenum.
-    when /blck/cnv_cl_model=>jobstatusenum-open.
+    when /blck/cnv_const=>me_jobstatusenum-open.
 *     do something specific to open case..
-    when /blck/cnv_cl_model=>jobstatusenum-waiting.
+    when /blck/cnv_const=>me_jobstatusenum-waiting.
 *     do something specific to waiting case..
-    when /blck/cnv_cl_model=>jobstatusenum-processing.
+    when /blck/cnv_const=>me_jobstatusenum-processing.
 *     do something specific to processing case..
-    when /blck/cnv_cl_model=>jobstatusenum-completed.
+    when /blck/cnv_const=>me_jobstatusenum-completed.
 *     do something specific to completed case..
-    when /blck/cnv_cl_model=>jobstatusenum-error.
+    when /blck/cnv_const=>me_jobstatusenum-error.
 *     do something specific to error case..
   endcase.
 

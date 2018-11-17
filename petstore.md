@@ -15,7 +15,7 @@ Add a new pet to the store
     gcc_basepath type string value 'https://petstore.swagger.io/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/pet_cl_auth
     gvi_code type /blck/pet_int,
     gvs_msg  type /blck/pet_string.
     
@@ -33,9 +33,8 @@ Add a new pet to the store
 *   gm_body-status = 'ipsum lorem'. " (type /BLCK/PET_STRING)
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/pet_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/pet_cl_PetApi=>config(
@@ -89,7 +88,7 @@ Deletes a pet
     gcc_basepath type string value 'https://petstore.swagger.io/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/pet_cl_auth
     gvi_code type /blck/pet_int,
     gvs_msg  type /blck/pet_string.
     
@@ -106,9 +105,8 @@ Deletes a pet
 *   gvs_api_key = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/pet_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/pet_cl_PetApi=>config(
@@ -168,7 +166,7 @@ Multiple status values can be provided with comma separated strings
     gcc_basepath type string value 'https://petstore.swagger.io/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/pet_cl_auth
     gvi_code type /blck/pet_int,
     gvs_msg  type /blck/pet_string.
     
@@ -185,9 +183,8 @@ Multiple status values can be provided with comma separated strings
 *   append lr_status to gi_status.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/pet_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/pet_cl_PetApi=>config(
@@ -250,7 +247,7 @@ Muliple tags can be provided with comma separated strings. Use tag1, tag2, tag3 
     gcc_basepath type string value 'https://petstore.swagger.io/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/pet_cl_auth
     gvi_code type /blck/pet_int,
     gvs_msg  type /blck/pet_string.
     
@@ -267,9 +264,8 @@ Muliple tags can be provided with comma separated strings. Use tag1, tag2, tag3 
 *   append lr_tags to gi_tags.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/pet_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/pet_cl_PetApi=>config(
@@ -332,7 +328,6 @@ Returns a single pet
     gcc_basepath type string value 'https://petstore.swagger.io/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/pet_int,
     gvs_msg  type /blck/pet_string.
     
@@ -346,16 +341,15 @@ Returns a single pet
 *** set data according to requirements of the API call
 *   gvi_pet_id = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/pet_cl_api=>set_credentials(
+      exporting
+        i_api_key = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/pet_cl_PetApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_pet_by_id via HTTP GET
 *** i_pet_id: ID of pet to return
@@ -413,7 +407,7 @@ Update an existing pet
     gcc_basepath type string value 'https://petstore.swagger.io/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/pet_cl_auth
     gvi_code type /blck/pet_int,
     gvs_msg  type /blck/pet_string.
     
@@ -431,9 +425,8 @@ Update an existing pet
 *   gm_body-status = 'ipsum lorem'. " (type /BLCK/PET_STRING)
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/pet_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/pet_cl_PetApi=>config(
@@ -491,7 +484,7 @@ Updates a pet in the store with form data
     gcc_basepath type string value 'https://petstore.swagger.io/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/pet_cl_auth
     gvi_code type /blck/pet_int,
     gvs_msg  type /blck/pet_string.
     
@@ -512,9 +505,8 @@ Updates a pet in the store with form data
 *   gvs_status = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/pet_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/pet_cl_PetApi=>config(
@@ -572,7 +564,7 @@ uploads an image
     gcc_basepath type string value 'https://petstore.swagger.io/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
+    gcl_auth type ref to z_api_cl_auth, " descended from /blck/pet_cl_auth
     gvi_code type /blck/pet_int,
     gvs_msg  type /blck/pet_string.
     
@@ -595,9 +587,8 @@ uploads an image
 *   gv_file = ...
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+*** optional: instantiate descendant of /blck/pet_cl_auth 
+*   (gcl_auth) if bespoke auth is needed
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/pet_cl_PetApi=>config(
@@ -665,7 +656,6 @@ For valid response try integer IDs with positive integer value. Negative or non-
     gcc_basepath type string value 'https://petstore.swagger.io/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/pet_int,
     gvs_msg  type /blck/pet_string.
     
@@ -678,15 +668,11 @@ For valid response try integer IDs with positive integer value. Negative or non-
 *   gvi_order_id = 42.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/pet_cl_StoreApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method delete_order via HTTP DELETE
 *** i_order_id: ID of the order that needs to be deleted
@@ -738,7 +724,6 @@ Returns a map of status codes to quantities
     gcc_basepath type string value 'https://petstore.swagger.io/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/pet_int,
     gvs_msg  type /blck/pet_string.
     
@@ -747,16 +732,15 @@ Returns a map of status codes to quantities
     data gr_http200 type /BLCK/PET_INT_MT.
         
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/pet_cl_api=>set_credentials(
+      exporting
+        i_api_key = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/pet_cl_StoreApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_inventory via HTTP GET
     /blck/pet_cl_StoreApi=>get_inventory(
@@ -805,7 +789,6 @@ For valid response try integer IDs with value >= 1 and <= 10. Other values will 
     gcc_basepath type string value 'https://petstore.swagger.io/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/pet_int,
     gvs_msg  type /blck/pet_string.
     
@@ -820,15 +803,11 @@ For valid response try integer IDs with value >= 1 and <= 10. Other values will 
 *   gvi_order_id = 42.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/pet_cl_StoreApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_order_by_id via HTTP GET
 *** i_order_id: ID of pet that needs to be fetched
@@ -886,7 +865,6 @@ Place an order for a pet
     gcc_basepath type string value 'https://petstore.swagger.io/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/pet_int,
     gvs_msg  type /blck/pet_string.
     
@@ -906,15 +884,11 @@ Place an order for a pet
 *   gm_body-complete = 'X'. " (type /BLCK/PET_BOOL)
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/pet_cl_StoreApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method place_order via HTTP POST
 *** i_body: order placed for purchasing the pet
@@ -975,7 +949,6 @@ This can only be done by the logged in user.
     gcc_basepath type string value 'https://petstore.swagger.io/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/pet_int,
     gvs_msg  type /blck/pet_string.
     
@@ -995,15 +968,11 @@ This can only be done by the logged in user.
 *   gm_body-user_status = 42. " (type /BLCK/PET_INT)
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/pet_cl_UserApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method create_user via HTTP POST
 *** i_body: Created user object
@@ -1050,7 +1019,6 @@ Creates list of users with given input array
     gcc_basepath type string value 'https://petstore.swagger.io/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/pet_int,
     gvs_msg  type /blck/pet_string.
     
@@ -1065,15 +1033,11 @@ Creates list of users with given input array
 *   append lr_body to gi_body.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/pet_cl_UserApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method create_users_with_array_input via HTTP POST
 *** i_body: List of user object
@@ -1120,7 +1084,6 @@ Creates list of users with given input array
     gcc_basepath type string value 'https://petstore.swagger.io/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/pet_int,
     gvs_msg  type /blck/pet_string.
     
@@ -1135,15 +1098,11 @@ Creates list of users with given input array
 *   append lr_body to gi_body.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/pet_cl_UserApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method create_users_with_list_input via HTTP POST
 *** i_body: List of user object
@@ -1192,7 +1151,6 @@ This can only be done by the logged in user.
     gcc_basepath type string value 'https://petstore.swagger.io/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/pet_int,
     gvs_msg  type /blck/pet_string.
     
@@ -1205,15 +1163,11 @@ This can only be done by the logged in user.
 *   gvs_username = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/pet_cl_UserApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method delete_user via HTTP DELETE
 *** i_username: The name that needs to be deleted
@@ -1263,7 +1217,6 @@ Get user by user name
     gcc_basepath type string value 'https://petstore.swagger.io/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/pet_int,
     gvs_msg  type /blck/pet_string.
     
@@ -1278,15 +1231,11 @@ Get user by user name
 *   gvs_username = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/pet_cl_UserApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_user_by_name via HTTP GET
 *** i_username: The name that needs to be fetched. Use user1 for testing. 
@@ -1344,7 +1293,6 @@ Logs user into the system
     gcc_basepath type string value 'https://petstore.swagger.io/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/pet_int,
     gvs_msg  type /blck/pet_string.
     
@@ -1363,15 +1311,11 @@ Logs user into the system
 *   gvs_password = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/pet_cl_UserApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method login_user via HTTP GET
 *** i_username: The user name for login
@@ -1429,7 +1373,6 @@ Logs out current logged in user session
     gcc_basepath type string value 'https://petstore.swagger.io/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/pet_int,
     gvs_msg  type /blck/pet_string.
     
@@ -1437,15 +1380,11 @@ Logs out current logged in user session
         
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/pet_cl_UserApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method logout_user via HTTP GET
     /blck/pet_cl_UserApi=>logout_user(
@@ -1489,7 +1428,6 @@ This can only be done by the logged in user.
     gcc_basepath type string value 'https://petstore.swagger.io/v2'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/pet_int,
     gvs_msg  type /blck/pet_string.
     
@@ -1513,15 +1451,11 @@ This can only be done by the logged in user.
 *   gvs_username = 'ipsum lorem'.
 
 
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/pet_cl_UserApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method update_user via HTTP PUT
 *** i_body: Updated user object

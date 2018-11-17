@@ -15,7 +15,6 @@ Adds an object to the favorites.
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -34,16 +33,15 @@ Adds an object to the favorites.
 *   gm_body-external_repository_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
 *   gm_body-externalrepositoryobjectid = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_FavoritesApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method add_favorite via HTTP POST
     /blck/mfi_cl_FavoritesApi=>add_favorite(
@@ -97,7 +95,6 @@ Retrieves object version information on the favorite object
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -117,16 +114,15 @@ Retrieves object version information on the favorite object
 *   gvi_type = 42.
 *   gvs_objectid = 'ipsum lorem'.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_FavoritesApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_favorite via HTTP GET
     /blck/mfi_cl_FavoritesApi=>get_favorite(
@@ -182,7 +178,6 @@ Retrieves favorite objects.
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -193,16 +188,15 @@ Retrieves favorite objects.
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_FavoritesApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_favorites via HTTP GET
     /blck/mfi_cl_FavoritesApi=>get_favorites(
@@ -252,7 +246,6 @@ Removes an object from favorites.
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -272,16 +265,15 @@ Removes an object from favorites.
 *   gvi_type = 42.
 *   gvs_objectid = 'ipsum lorem'.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_FavoritesApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method remove_favorite via HTTP DELETE
     /blck/mfi_cl_FavoritesApi=>remove_favorite(
@@ -343,7 +335,6 @@ Stores a temporary file on the server and assigns an ID for it. Once uploaded th
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -359,16 +350,15 @@ Stores a temporary file on the server and assigns an ID for it. Once uploaded th
 *** set data according to requirements of the API call
 *   gvs_body = 'ipsum lorem'.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_FilesApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method upload via HTTP POST
     /blck/mfi_cl_FilesApi=>upload(
@@ -426,7 +416,6 @@ Adds a comment to an object
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -454,16 +443,15 @@ Adds a comment to an object
 *   gvi_objectid = 42.
 *   gvs_version = 'ipsum lorem'.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method add_comment via HTTP PUT
 *** i_body: Comment to add to object
@@ -524,7 +512,6 @@ Adds a new file to the object.
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -552,16 +539,15 @@ Adds a new file to the object.
 *   gvi_objectid = 42.
 *   gvs_version = 'ipsum lorem'.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method add_file_content via HTTP PUT
 *** i_body: Binary file data
@@ -622,7 +608,6 @@ Creates a new object of type.
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -643,16 +628,15 @@ Creates a new object of type.
 *   gm_body-files = l_files. " (type /BLCK/MFI_UPLOAD_INFO_TT)
 *   gvi_type = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method create_object via HTTP POST
     /blck/mfi_cl_ObjectsApi=>create_object(
@@ -708,7 +692,6 @@ Demotes external objects that have been previously promoted.
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -726,16 +709,15 @@ Demotes external objects that have been previously promoted.
 *   lr_body = ...
 *   append lr_body to gi_body.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method demote_objects via HTTP PUT
 *** i_body: Holds file upload ids and property values for fetching automatic metadata.
@@ -792,7 +774,6 @@ As checked in versions cannot be destroyed this can only be performed on a check
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -822,16 +803,15 @@ As checked in versions cannot be destroyed this can only be performed on a check
 *   gv_force = 'X'.
 *   gv_all_versions = 'X'.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method destroy_object_version via HTTP DELETE
 *** i_force: If  true,  DELETE  will  perform  an  undo checkout even if the object isn’t
@@ -892,7 +872,6 @@ Retrieves automatic metadata based on specified request info.
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -913,16 +892,15 @@ Retrieves automatic metadata based on specified request info.
 *   gm_body-metadata_provider_ids = l_metadata_provider_ids. " (type /BLCK/MFI_STRING_TT)
 *   gm_body-custom_data = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_automatic_metadata via HTTP POST
 *** i_body: Holds file upload ids and property values for fetching automatic metadata.
@@ -977,7 +955,6 @@ Retrieves the current check out status.
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -1001,16 +978,15 @@ Retrieves the current check out status.
 *   gvi_objectid = 42.
 *   gvs_version = 'ipsum lorem'.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_checkout_status via HTTP GET
     /blck/mfi_cl_ObjectsApi=>get_checkout_status(
@@ -1068,7 +1044,6 @@ Retrieves the comments written on the object.
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -1092,16 +1067,15 @@ Retrieves the comments written on the object.
 *   gvi_objectid = 42.
 *   gvs_version = 'ipsum lorem'.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_comments via HTTP GET
     /blck/mfi_cl_ObjectsApi=>get_comments(
@@ -1159,7 +1133,6 @@ Retrieves the deleted status of the object.
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -1175,16 +1148,15 @@ Retrieves the deleted status of the object.
 *** set data according to requirements of the API call
 *   gvi_type = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_deleted_state via HTTP GET
     /blck/mfi_cl_ObjectsApi=>get_deleted_state(
@@ -1238,7 +1210,6 @@ Retrieves the object file contents.
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -1274,16 +1245,15 @@ Retrieves the object file contents.
 *   gvs_x_hmac = 'ipsum lorem'.
 *   gv_mac = 'X'.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_file_content via HTTP GET
 *** i_x_hmac: Specifies the HMAC key
@@ -1350,7 +1320,6 @@ Retrieves the object file information for the specific object file.
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -1378,16 +1347,15 @@ Retrieves the object file information for the specific object file.
 *   gvs_version = 'ipsum lorem'.
 *   gvi_file = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_file_info via HTTP GET
     /blck/mfi_cl_ObjectsApi=>get_file_info(
@@ -1447,7 +1415,6 @@ Retrieves the file preview.
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -1491,16 +1458,15 @@ Retrieves the file preview.
 *   gvi_width = 42.
 *   gvi_height = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_file_thumbnail via HTTP GET
 *** i_force: If  true, the server streams an empty image instead of giving a 404 response
@@ -1577,7 +1543,6 @@ Retrieves the current object file name.
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -1605,16 +1570,15 @@ Retrieves the current object file name.
 *   gvs_version = 'ipsum lorem'.
 *   gvi_file = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_filename via HTTP GET
     /blck/mfi_cl_ObjectsApi=>get_filename(
@@ -1674,7 +1638,6 @@ Retrieves the object file information for all the files on an object.
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -1698,16 +1661,15 @@ Retrieves the object file information for all the files on an object.
 *   gvi_objectid = 42.
 *   gvs_version = 'ipsum lorem'.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_files_info via HTTP GET
     /blck/mfi_cl_ObjectsApi=>get_files_info(
@@ -1767,7 +1729,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/properti
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -1783,16 +1744,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/properti
 *** set data according to requirements of the API call
 *   gvs_object_ids = 'ipsum lorem'.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_multi_obj_props via HTTP GET
 *** i_object_ids: The   object   versions  are  specified,  seperated  with  semicolons,  e.g.
@@ -1850,7 +1810,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -1874,16 +1833,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   gvi_objectid = 42.
 *   gvs_version = 'ipsum lorem'.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_name via HTTP GET
     /blck/mfi_cl_ObjectsApi=>get_name(
@@ -1943,7 +1901,6 @@ Parameters: ?include - A list of additional fields to include in the ExtendedObj
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -1971,16 +1928,15 @@ Parameters: ?include - A list of additional fields to include in the ExtendedObj
 *   gvs_version = 'ipsum lorem'.
 *   gvs_include = 'ipsum lorem'.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_object_info via HTTP GET
     /blck/mfi_cl_ObjectsApi=>get_object_info(
@@ -2042,7 +1998,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -2082,16 +2037,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   gvi_width = 42.
 *   gvi_height = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_object_thumbnail via HTTP GET
 *** i_force: If  true, the server streams an empty image instead of giving a 404 response
@@ -2166,7 +2120,6 @@ Retrieves all the available versions of the object.
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -2182,16 +2135,15 @@ Retrieves all the available versions of the object.
 *** set data according to requirements of the API call
 *   gvi_type = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_object_versions via HTTP GET
     /blck/mfi_cl_ObjectsApi=>get_object_versions(
@@ -2247,7 +2199,6 @@ The amount of returned objects is limited by the server, by default to 500 items
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -2258,16 +2209,15 @@ The amount of returned objects is limited by the server, by default to 500 items
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_objects via HTTP GET
     /blck/mfi_cl_ObjectsApi=>get_objects(
@@ -2317,7 +2267,6 @@ Collection of objects filtered by object type.
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -2333,16 +2282,15 @@ Collection of objects filtered by object type.
 *** set data according to requirements of the API call
 *   gvi_type = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_objects_of_type via HTTP GET
     /blck/mfi_cl_ObjectsApi=>get_objects_of_type(
@@ -2398,7 +2346,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -2426,16 +2373,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   gvs_version = 'ipsum lorem'.
 *   gv_for_display = 'X'.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_properties via HTTP GET
 *** i_for_display: If  true,  the response will be filtered and sorted for display. Each object
@@ -2500,7 +2446,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -2528,16 +2473,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   gvs_version = 'ipsum lorem'.
 *   gvi_id = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_property via HTTP GET
     /blck/mfi_cl_ObjectsApi=>get_property(
@@ -2599,7 +2543,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -2631,16 +2574,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   gvi_objtype = 42.
 *   gvs_direction = 'ipsum lorem'.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_relationship_count via HTTP GET
 *** i_objtype: Only returns related objects of a certain object type.
@@ -2709,7 +2651,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -2741,16 +2682,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   gvi_objtype = 42.
 *   gvs_direction = 'ipsum lorem'.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_relationships via HTTP GET
 *** i_objtype: Only returns related objects of a certain object type.
@@ -2819,7 +2759,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -2843,16 +2782,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   gvi_objectid = 42.
 *   gvs_version = 'ipsum lorem'.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_state via HTTP GET
     /blck/mfi_cl_ObjectsApi=>get_state(
@@ -2912,7 +2850,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -2936,16 +2873,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   gvi_objectid = 42.
 *   gvs_version = 'ipsum lorem'.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_sub_object_count via HTTP GET
     /blck/mfi_cl_ObjectsApi=>get_sub_object_count(
@@ -3005,7 +2941,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -3029,16 +2964,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   gvi_objectid = 42.
 *   gvs_version = 'ipsum lorem'.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_sub_objects via HTTP GET
     /blck/mfi_cl_ObjectsApi=>get_sub_objects(
@@ -3096,7 +3030,6 @@ Removes the file from the object.
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -3122,16 +3055,15 @@ Removes the file from the object.
 *   gvs_version = 'ipsum lorem'.
 *   gvi_file = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method remove_file via HTTP DELETE
     /blck/mfi_cl_ObjectsApi=>remove_file(
@@ -3188,7 +3120,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -3216,16 +3147,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   gvs_version = 'ipsum lorem'.
 *   gvi_id = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method remove_property via HTTP DELETE
     /blck/mfi_cl_ObjectsApi=>remove_property(
@@ -3287,7 +3217,6 @@ Sets the check out status. This is allowed only when the object isn't checked ou
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -3315,16 +3244,15 @@ Sets the check out status. This is allowed only when the object isn't checked ou
 *   gvi_objectid = 42.
 *   gvs_version = 'ipsum lorem'.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method set_checkout_status via HTTP PUT
     /blck/mfi_cl_ObjectsApi=>set_checkout_status(
@@ -3384,7 +3312,6 @@ Sets the deleted status of the object.
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -3404,16 +3331,15 @@ Sets the deleted status of the object.
 *   gv_body = 'X'.
 *   gvi_type = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method set_deleted_state via HTTP POST
     /blck/mfi_cl_ObjectsApi=>set_deleted_state(
@@ -3469,7 +3395,6 @@ Replaces the object file contents.
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -3501,16 +3426,15 @@ Replaces the object file contents.
 *   gvs_version = 'ipsum lorem'.
 *   gvi_file = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method set_file_contents via HTTP PUT
 *** i_body: Binary file data
@@ -3573,7 +3497,6 @@ Sets the name on the object file.
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -3605,16 +3528,15 @@ Sets the name on the object file.
 *   gvs_version = 'ipsum lorem'.
 *   gvi_file = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method set_filename via HTTP PUT
 *** i_body: New filename for file
@@ -3680,7 +3602,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/setmulti
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -3696,16 +3617,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/setmulti
 *** set data according to requirements of the API call
 *   gm_body-multiple_object_info = l_multiple_object_info. " (type /BLCK/MFI_OBJECTVERSIONU)
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method set_multi_obj_props via HTTP PUT
     /blck/mfi_cl_ObjectsApi=>set_multi_obj_props(
@@ -3761,7 +3681,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -3789,16 +3708,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   gvi_objectid = 42.
 *   gvs_version = 'ipsum lorem'.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method set_name via HTTP PUT
 *** i_body: New name for object
@@ -3865,7 +3783,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -3895,16 +3812,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   gvi_objectid = 42.
 *   gvs_version = 'ipsum lorem'.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method set_properties via HTTP PUT
     /blck/mfi_cl_ObjectsApi=>set_properties(
@@ -3966,7 +3882,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -3999,16 +3914,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   gvs_version = 'ipsum lorem'.
 *   gvi_id = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method set_property via HTTP PUT
     /blck/mfi_cl_ObjectsApi=>set_property(
@@ -4072,7 +3986,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -4106,16 +4019,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   gvi_objectid = 42.
 *   gvs_version = 'ipsum lorem'.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method set_workflow_state via HTTP PUT
     /blck/mfi_cl_ObjectsApi=>set_workflow_state(
@@ -4181,7 +4093,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -4211,16 +4122,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   gvi_objectid = 42.
 *   gvs_version = 'ipsum lorem'.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method update_properties via HTTP POST
     /blck/mfi_cl_ObjectsApi=>update_properties(
@@ -4286,7 +4196,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/recentlyaccessed
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -4305,16 +4214,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/recentlyaccessed
 *   gm_body-external_repository_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
 *   gm_body-externalrepositoryobjectid = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_RecentApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method add_recent_object via HTTP POST
     /blck/mfi_cl_RecentApi=>add_recent_object(
@@ -4370,7 +4278,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/recentlyaccessed
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -4381,16 +4288,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/recentlyaccessed
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_RecentApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_recent_objects via HTTP GET
     /blck/mfi_cl_RecentApi=>get_recent_objects(
@@ -4447,7 +4353,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/repositories/
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -4458,16 +4363,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/repositories/
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_RepositoriesApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_repositories via HTTP GET
     /blck/mfi_cl_RepositoriesApi=>get_repositories(
@@ -4520,7 +4424,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/repositories/ses
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -4544,16 +4447,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/repositories/ses
 *   gm_body-refresh_token = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
 *   gvi_targetid = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_RepositoriesApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method log_in_repo via HTTP POST
     /blck/mfi_cl_RepositoriesApi=>log_in_repo(
@@ -4611,7 +4513,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/repositories/ses
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -4625,16 +4526,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/repositories/ses
 *** set data according to requirements of the API call
 *   gvi_targetid = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_RepositoriesApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method log_out_repo via HTTP DELETE
     /blck/mfi_cl_RepositoriesApi=>log_out_repo(
@@ -4690,7 +4590,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/authentic
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -4715,16 +4614,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/authentic
 *   gm_body-url = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
 *   gm_body-method = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ServerApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method authenticate via HTTP POST
     /blck/mfi_cl_ServerApi=>authenticate(
@@ -4780,7 +4678,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/publickey
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -4791,16 +4688,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/publickey
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ServerApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_public_key via HTTP GET
     /blck/mfi_cl_ServerApi=>get_public_key(
@@ -4853,7 +4749,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/status/
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -4864,16 +4759,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/status/
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ServerApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_status via HTTP GET
     /blck/mfi_cl_ServerApi=>get_status(
@@ -4928,7 +4822,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/vaults/
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -4944,16 +4837,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/vaults/
 *** set data according to requirements of the API call
 *   gv_online = 'X'.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ServerApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_vaults via HTTP GET
 *** i_online: If true, return only online vaults.
@@ -5014,7 +4906,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/authenti
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -5025,16 +4916,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/authenti
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_SessionApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_auth_token via HTTP GET
     /blck/mfi_cl_SessionApi=>get_auth_token(
@@ -5086,7 +4976,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -5097,16 +4986,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_SessionApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_session_info via HTTP GET
     /blck/mfi_cl_SessionApi=>get_session_info(
@@ -5158,7 +5046,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/userid/
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -5169,16 +5056,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/userid/
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_SessionApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_user_id via HTTP GET
     /blck/mfi_cl_SessionApi=>get_user_id(
@@ -5230,7 +5116,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/vault/
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -5241,16 +5126,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/vault/
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_SessionApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_vault_info via HTTP GET
     /blck/mfi_cl_SessionApi=>get_vault_info(
@@ -5302,7 +5186,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -5327,16 +5210,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/
 *   gm_body-url = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
 *   gm_body-method = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_SessionApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method log_in via HTTP PUT
     /blck/mfi_cl_SessionApi=>log_in(
@@ -5392,7 +5274,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -5401,16 +5282,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_SessionApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method log_out via HTTP DELETE
     /blck/mfi_cl_SessionApi=>log_out(
@@ -5457,7 +5337,6 @@ The request must have either the GUID or the Name of the vault filled. In case b
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -5475,16 +5354,15 @@ The request must have either the GUID or the Name of the vault filled. In case b
 *   gm_body-guid = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
 *   gm_body-authentication = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_SessionApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method set_vault_info via HTTP PUT
     /blck/mfi_cl_SessionApi=>set_vault_info(
@@ -5547,7 +5425,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -5574,16 +5451,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *   gm_body-value_list_id = 42. " (type /BLCK/MFI_INT)
 *   gvi_id = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_VaultApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method add_item via HTTP POST
     /blck/mfi_cl_VaultApi=>add_item(
@@ -5641,7 +5517,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -5661,16 +5536,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
 *   gvi_id = 42.
 *   gvi_size = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_VaultApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_class_icon via HTTP GET
 *** i_size: Icon dimension. Default is 16.
@@ -5729,7 +5603,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -5745,16 +5618,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
 *** set data according to requirements of the API call
 *   gvs_guid = 'ipsum lorem'.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_VaultApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_class_id via HTTP GET
     /blck/mfi_cl_VaultApi=>get_class_id(
@@ -5810,7 +5682,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -5830,16 +5701,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
 *   gvi_id = 42.
 *   gvs_include = 'ipsum lorem'.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_VaultApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_class_info via HTTP GET
 *** i_include: Comma  separated  list  of  additional  data  sets to return. Currently only
@@ -5900,7 +5770,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -5920,16 +5789,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *   gvi_id = 42.
 *   gvi_objectid = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_VaultApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_item via HTTP GET
     /blck/mfi_cl_VaultApi=>get_item(
@@ -5987,7 +5855,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -6007,16 +5874,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *   gvi_id = 42.
 *   gvi_objectid = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_VaultApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_item_title via HTTP GET
     /blck/mfi_cl_VaultApi=>get_item_title(
@@ -6074,7 +5940,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -6102,16 +5967,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *   gvs_filter_item = 'ipsum lorem'.
 *   gvi_condition_type = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_VaultApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_items via HTTP GET
 *** i_filter: Filter using name. Supports wildcards.
@@ -6177,7 +6041,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -6193,16 +6056,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
 *** set data according to requirements of the API call
 *   gvi_objtype = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_VaultApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_object_classes via HTTP GET
 *** i_objtype: Object  type  ID.  Filters the returned classes by object type. Only classes
@@ -6260,7 +6122,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -6276,16 +6137,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
 *** set data according to requirements of the API call
 *   gvi_type = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_VaultApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_object_type via HTTP GET
     /blck/mfi_cl_VaultApi=>get_object_type(
@@ -6341,7 +6201,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -6357,16 +6216,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
 *** set data according to requirements of the API call
 *   gvi_type = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_VaultApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_object_type_classes via HTTP GET
     /blck/mfi_cl_VaultApi=>get_object_type_classes(
@@ -6422,7 +6280,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -6438,16 +6295,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
 *** set data according to requirements of the API call
 *   gvi_type = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_VaultApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_object_type_icon via HTTP GET
     /blck/mfi_cl_VaultApi=>get_object_type_icon(
@@ -6503,7 +6359,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -6514,16 +6369,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_VaultApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_object_types via HTTP GET
     /blck/mfi_cl_VaultApi=>get_object_types(
@@ -6575,7 +6429,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -6591,16 +6444,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *** set data according to requirements of the API call
 *   gvi_id = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_VaultApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_value_list via HTTP GET
     /blck/mfi_cl_VaultApi=>get_value_list(
@@ -6656,7 +6508,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -6667,16 +6518,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_VaultApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_value_lists via HTTP GET
     /blck/mfi_cl_VaultApi=>get_value_lists(
@@ -6728,7 +6578,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/proper
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -6739,16 +6588,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/proper
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_VaultApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_vault_properties via HTTP GET
     /blck/mfi_cl_VaultApi=>get_vault_properties(
@@ -6800,7 +6648,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/proper
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -6816,16 +6663,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/proper
 *** set data according to requirements of the API call
 *   gvi_id = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_VaultApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_vault_property via HTTP GET
     /blck/mfi_cl_VaultApi=>get_vault_property(
@@ -6881,7 +6727,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -6897,16 +6742,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
 *** set data according to requirements of the API call
 *   gvi_id = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_VaultApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_workflow via HTTP GET
     /blck/mfi_cl_VaultApi=>get_workflow(
@@ -6962,7 +6806,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -6982,16 +6825,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
 *   gvi_id = 42.
 *   gvi_sid = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_VaultApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_workflow_state via HTTP GET
 *** i_id: Workflow ID
@@ -7051,7 +6893,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -7071,16 +6912,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
 *   gvi_id = 42.
 *   gvi_currentstate = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_VaultApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_workflow_states via HTTP GET
 *** i_currentstate: state  ID. Restricts the list of returned states to those that are available
@@ -7140,7 +6980,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -7160,16 +6999,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
 *   gvi_id = 42.
 *   gvi_currentstate = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_VaultApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_workflow_transitions via HTTP GET
 *** i_currentstate: state  ID. Restricts the list of returned states to those that are available
@@ -7229,7 +7067,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -7240,16 +7077,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_VaultApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_workflows via HTTP GET
     /blck/mfi_cl_VaultApi=>get_workflows(
@@ -7301,7 +7137,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -7319,16 +7154,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *   gvi_id = 42.
 *   gvi_objectid = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_VaultApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method remove_item via HTTP DELETE
     /blck/mfi_cl_VaultApi=>remove_item(
@@ -7383,7 +7217,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -7407,16 +7240,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *   gvi_id = 42.
 *   gvi_objectid = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_VaultApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method set_item_title via HTTP PUT
     /blck/mfi_cl_VaultApi=>set_item_title(
@@ -7476,7 +7308,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -7496,16 +7327,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
 *   gvi_body = 42.
 *   gvi_type = 42.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_VaultApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method set_refresh_status via HTTP PUT
     /blck/mfi_cl_VaultApi=>set_refresh_status(
@@ -7567,7 +7397,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/views/path/items
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -7583,16 +7412,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/views/path/items
 *** set data according to requirements of the API call
 *   gvs_path = 'ipsum lorem'.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ViewsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_view_contents via HTTP GET
 *** i_path: Any number of path segments separated with '/'.
@@ -7649,7 +7477,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/views/path/items
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -7665,16 +7492,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/views/path/items
 *** set data according to requirements of the API call
 *   gvs_path = 'ipsum lorem'.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ViewsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_view_contents_count via HTTP GET
 *** i_path: Any number of path segments separated with '/'.
@@ -7731,7 +7557,6 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/views/path/objec
     gcc_basepath type string value 'https://kb.cloudvault.m-files.com/REST'.
     
   data:  
-    gcl_auth type ref to /blck/api_cl_auth,
     gvi_code type /blck/mfi_int,
     gvs_msg  type /blck/mfi_string.
     
@@ -7747,16 +7572,15 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/views/path/objec
 *** set data according to requirements of the API call
 *   gvs_path = 'ipsum lorem'.
 
-
-*** optional: instantiate descendant of /blck/api_cl_auth and assign to 
-*   gcl_auth if bespoke auth is needed
-*   gcl_auth = lcl_my_auth.
+* pass auth credentials to the API as needed
+    /blck/mfi_cl_api=>set_credentials(
+      exporting
+        i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is set from the spec
     /blck/mfi_cl_ViewsApi=>config(
       exporting
-        i_basepath = gcc_basepath
-        i_auth = gcl_auth ).
+        i_basepath = gcc_basepath ).
         
 *** call the API method get_view_objects via HTTP GET
 *** i_path: Any number of path segments separated with '/'.

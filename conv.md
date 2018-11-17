@@ -1,17 +1,17 @@
 # API: ControlApi
-## &nbsp; &nbsp; [Operation: jobs_job_id_delete](#markdown-header-op-ControlApi-jobs_job_id_delete) (method `/blck/cnv_cl_ControlApi=>jobs_job_id_delete`)
-## &nbsp; &nbsp; [Operation: jobs_job_id_start_post](#markdown-header-op-ControlApi-jobs_job_id_start_post) (method `/blck/cnv_cl_ControlApi=>jobs_job_id_start_post`)
-## &nbsp; &nbsp; [Operation: jobs_job_id_status_get](#markdown-header-op-ControlApi-jobs_job_id_status_get) (method `/blck/cnv_cl_ControlApi=>jobs_job_id_status_get`)
-## &nbsp; &nbsp; [Operation: jobs_jobid_process_post](#markdown-header-op-ControlApi-jobs_jobid_process_post) (method `/blck/cnv_cl_ControlApi=>jobs_jobid_process_post`)
+## &nbsp; &nbsp; [Operation: jobs_job_id_delete](#markdown-header-op-ControlApi-jobs_job_id_delete)
+## &nbsp; &nbsp; [Operation: jobs_job_id_start_post](#markdown-header-op-ControlApi-jobs_job_id_start_post)
+## &nbsp; &nbsp; [Operation: jobs_job_id_status_get](#markdown-header-op-ControlApi-jobs_job_id_status_get)
+## &nbsp; &nbsp; [Operation: jobs_jobid_process_post](#markdown-header-op-ControlApi-jobs_jobid_process_post)
 # API: JobsApi
-## &nbsp; &nbsp; [Operation: jobs_job_id_get](#markdown-header-op-JobsApi-jobs_job_id_get) (method `/blck/cnv_cl_JobsApi=>jobs_job_id_get`)
-## &nbsp; &nbsp; [Operation: jobs_job_id_input_post](#markdown-header-op-JobsApi-jobs_job_id_input_post) (method `/blck/cnv_cl_JobsApi=>jobs_job_id_input_post`)
-## &nbsp; &nbsp; [Operation: jobs_jobid_process_post](#markdown-header-op-JobsApi-jobs_jobid_process_post) (method `/blck/cnv_cl_JobsApi=>jobs_jobid_process_post`)
-## &nbsp; &nbsp; [Operation: jobs_post](#markdown-header-op-JobsApi-jobs_post) (method `/blck/cnv_cl_JobsApi=>jobs_post`)
-## &nbsp; &nbsp; [Operation: jobsjobidinputfileidcontentpos](#markdown-header-op-JobsApi-jobsjobidinputfileidcontentpos) (method `/blck/cnv_cl_JobsApi=>jobsjobidinputfileidcontentpos`)
-## &nbsp; &nbsp; [Operation: jobsjobidoutputfileidcontentge](#markdown-header-op-JobsApi-jobsjobidoutputfileidcontentge) (method `/blck/cnv_cl_JobsApi=>jobsjobidoutputfileidcontentge`)
+## &nbsp; &nbsp; [Operation: jobs_job_id_get](#markdown-header-op-JobsApi-jobs_job_id_get)
+## &nbsp; &nbsp; [Operation: jobs_job_id_input_post](#markdown-header-op-JobsApi-jobs_job_id_input_post)
+## &nbsp; &nbsp; [Operation: jobs_jobid_process_post](#markdown-header-op-JobsApi-jobs_jobid_process_post)
+## &nbsp; &nbsp; [Operation: jobs_post](#markdown-header-op-JobsApi-jobs_post)
+## &nbsp; &nbsp; [Operation: jobsjobidinputfileidcontentpos](#markdown-header-op-JobsApi-jobsjobidinputfileidcontentpos)
+## &nbsp; &nbsp; [Operation: jobsjobidoutputfileidcontentge](#markdown-header-op-JobsApi-jobsjobidoutputfileidcontentge)
 # API: ResultsApi
-## &nbsp; &nbsp; [Operation: jobsjobidoutputfileidcontentge](#markdown-header-op-ResultsApi-jobsjobidoutputfileidcontentge) (method `/blck/cnv_cl_ResultsApi=>jobsjobidoutputfileidcontentge`)
+## &nbsp; &nbsp; [Operation: jobsjobidoutputfileidcontentge](#markdown-header-op-ResultsApi-jobsjobidoutputfileidcontentge)
 # Models and Enumerations
 ## &nbsp; &nbsp; [Model: Error](#markdown-header-model-error) (type `/blck/cnv_error`)
 ## &nbsp; &nbsp; [Model: FileId](#markdown-header-model-file_id) (type `/blck/cnv_file_id`)

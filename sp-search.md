@@ -1,5 +1,5 @@
 # API: SearchApi
-## &nbsp; &nbsp; [Operation: query](#markdown-header-op-SearchApi-query) (method `/blck/sps_cl_SearchApi=>query`)
+## &nbsp; &nbsp; [Operation: query](#markdown-header-op-SearchApi-query)
 # Models and Enumerations
 ## &nbsp; &nbsp; [Model: Cells](#markdown-header-model-cells) (type `/blck/sps_cells`)
 ## &nbsp; &nbsp; [Model: Properties](#markdown-header-model-properties) (type `/blck/sps_properties`)

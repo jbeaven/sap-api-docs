@@ -1,15 +1,15 @@
 # API: EventsApi
-## &nbsp; &nbsp; [Operation: event_notifications_get](#markdown-header-op-EventsApi-event_notifications_get) (method `/blck/p4_cl_EventsApi=>event_notifications_get`)
+## &nbsp; &nbsp; [Operation: event_notifications_get](#markdown-header-op-EventsApi-event_notifications_get)
 # API: JobsApi
-## &nbsp; &nbsp; [Operation: jobs_post](#markdown-header-op-JobsApi-jobs_post) (method `/blck/p4_cl_JobsApi=>jobs_post`)
-## &nbsp; &nbsp; [Operation: jobs_uuid_abort_post](#markdown-header-op-JobsApi-jobs_uuid_abort_post) (method `/blck/p4_cl_JobsApi=>jobs_uuid_abort_post`)
-## &nbsp; &nbsp; [Operation: jobs_uuid_get](#markdown-header-op-JobsApi-jobs_uuid_get) (method `/blck/p4_cl_JobsApi=>jobs_uuid_get`)
-## &nbsp; &nbsp; [Operation: jobs_uuid_pause_post](#markdown-header-op-JobsApi-jobs_uuid_pause_post) (method `/blck/p4_cl_JobsApi=>jobs_uuid_pause_post`)
-## &nbsp; &nbsp; [Operation: jobs_uuid_put](#markdown-header-op-JobsApi-jobs_uuid_put) (method `/blck/p4_cl_JobsApi=>jobs_uuid_put`)
-## &nbsp; &nbsp; [Operation: jobs_uuid_resume_post](#markdown-header-op-JobsApi-jobs_uuid_resume_post) (method `/blck/p4_cl_JobsApi=>jobs_uuid_resume_post`)
-## &nbsp; &nbsp; [Operation: jobs_uuid_start_post](#markdown-header-op-JobsApi-jobs_uuid_start_post) (method `/blck/p4_cl_JobsApi=>jobs_uuid_start_post`)
+## &nbsp; &nbsp; [Operation: jobs_post](#markdown-header-op-JobsApi-jobs_post)
+## &nbsp; &nbsp; [Operation: jobs_uuid_abort_post](#markdown-header-op-JobsApi-jobs_uuid_abort_post)
+## &nbsp; &nbsp; [Operation: jobs_uuid_get](#markdown-header-op-JobsApi-jobs_uuid_get)
+## &nbsp; &nbsp; [Operation: jobs_uuid_pause_post](#markdown-header-op-JobsApi-jobs_uuid_pause_post)
+## &nbsp; &nbsp; [Operation: jobs_uuid_put](#markdown-header-op-JobsApi-jobs_uuid_put)
+## &nbsp; &nbsp; [Operation: jobs_uuid_resume_post](#markdown-header-op-JobsApi-jobs_uuid_resume_post)
+## &nbsp; &nbsp; [Operation: jobs_uuid_start_post](#markdown-header-op-JobsApi-jobs_uuid_start_post)
 # API: PrintersApi
-## &nbsp; &nbsp; [Operation: printers_get](#markdown-header-op-PrintersApi-printers_get) (method `/blck/p4_cl_PrintersApi=>printers_get`)
+## &nbsp; &nbsp; [Operation: printers_get](#markdown-header-op-PrintersApi-printers_get)
 # Models and Enumerations
 ## &nbsp; &nbsp; [Model: Error](#markdown-header-model-error) (type `/blck/p4_error`)
 ## &nbsp; &nbsp; [Model: JobHeader](#markdown-header-model-job_header) (type `/blck/p4_job_header`)

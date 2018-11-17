@@ -1,8 +1,8 @@
 # API: DefaultApi
-## &nbsp; &nbsp; [Operation: get_doc_attr](#markdown-header-op-DefaultApi-get_doc_attr) (method `/blck/sp_cl_DefaultApi=>get_doc_attr`)
-## &nbsp; &nbsp; [Operation: get_doc_data](#markdown-header-op-DefaultApi-get_doc_data) (method `/blck/sp_cl_DefaultApi=>get_doc_data`)
-## &nbsp; &nbsp; [Operation: get_docs](#markdown-header-op-DefaultApi-get_docs) (method `/blck/sp_cl_DefaultApi=>get_docs`)
-## &nbsp; &nbsp; [Operation: set_doc_attr](#markdown-header-op-DefaultApi-set_doc_attr) (method `/blck/sp_cl_DefaultApi=>set_doc_attr`)
+## &nbsp; &nbsp; [Operation: get_doc_attr](#markdown-header-op-DefaultApi-get_doc_attr)
+## &nbsp; &nbsp; [Operation: get_doc_data](#markdown-header-op-DefaultApi-get_doc_data)
+## &nbsp; &nbsp; [Operation: get_docs](#markdown-header-op-DefaultApi-get_docs)
+## &nbsp; &nbsp; [Operation: set_doc_attr](#markdown-header-op-DefaultApi-set_doc_attr)
 # Models and Enumerations
 ## &nbsp; &nbsp; [Model: DocAttrValue](#markdown-header-model-doc_attr_value) (type `/blck/sp_doc_attr_value`)
 ## &nbsp; &nbsp; [Model: SEALDoc](#markdown-header-model-seal_doc) (type `/blck/sp_seal_doc`)

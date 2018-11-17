@@ -8061,33 +8061,33 @@ Name | Type | Description
 * we can handle the result with either "if" with individual cases
 * or use a case clause to handle all scenarios:
   case gv_mf_data_type.
-    when /blck/mfi_cl_model=>mf_data_type-uninitialized.
+    when /blck/mfi_const=>me_mf_data_type-uninitialized.
 *     do something specific to uninitialized case..
-    when /blck/mfi_cl_model=>mf_data_type-text.
+    when /blck/mfi_const=>me_mf_data_type-text.
 *     do something specific to text case..
-    when /blck/mfi_cl_model=>mf_data_type-integer.
+    when /blck/mfi_const=>me_mf_data_type-integer.
 *     do something specific to integer case..
-    when /blck/mfi_cl_model=>mf_data_type-floating.
+    when /blck/mfi_const=>me_mf_data_type-floating.
 *     do something specific to floating case..
-    when /blck/mfi_cl_model=>mf_data_type-date.
+    when /blck/mfi_const=>me_mf_data_type-date.
 *     do something specific to date case..
-    when /blck/mfi_cl_model=>mf_data_type-time.
+    when /blck/mfi_const=>me_mf_data_type-time.
 *     do something specific to time case..
-    when /blck/mfi_cl_model=>mf_data_type-timestamp.
+    when /blck/mfi_const=>me_mf_data_type-timestamp.
 *     do something specific to timestamp case..
-    when /blck/mfi_cl_model=>mf_data_type-boolean.
+    when /blck/mfi_const=>me_mf_data_type-boolean.
 *     do something specific to boolean case..
-    when /blck/mfi_cl_model=>mf_data_type-lookup.
+    when /blck/mfi_const=>me_mf_data_type-lookup.
 *     do something specific to lookup case..
-    when /blck/mfi_cl_model=>mf_data_type-multi_select_lookup.
+    when /blck/mfi_const=>me_mf_data_type-multi_select_lookup.
 *     do something specific to multi_select_lookup case..
-    when /blck/mfi_cl_model=>mf_data_type-integer64.
+    when /blck/mfi_const=>me_mf_data_type-integer64.
 *     do something specific to integer64 case..
-    when /blck/mfi_cl_model=>mf_data_type-filetime.
+    when /blck/mfi_const=>me_mf_data_type-filetime.
 *     do something specific to filetime case..
-    when /blck/mfi_cl_model=>mf_data_type-multi_line_text.
+    when /blck/mfi_const=>me_mf_data_type-multi_line_text.
 *     do something specific to multi_line_text case..
-    when /blck/mfi_cl_model=>mf_data_type-acl.
+    when /blck/mfi_const=>me_mf_data_type-acl.
 *     do something specific to acl case..
   endcase.
 
@@ -8548,11 +8548,11 @@ Name | Type | Description
 * we can handle the result with either "if" with individual cases
 * or use a case clause to handle all scenarios:
   case gv_mfobjectversio.
-    when /blck/mfi_cl_model=>mfobjectversio-none.
+    when /blck/mfi_const=>me_mfobjectversio-none.
 *     do something specific to none case..
-    when /blck/mfi_cl_model=>mfobjectversio-completed.
+    when /blck/mfi_const=>me_mfobjectversio-completed.
 *     do something specific to completed case..
-    when /blck/mfi_cl_model=>mfobjectversio-has_related_objects.
+    when /blck/mfi_const=>me_mfobjectversio-has_related_objects.
 *     do something specific to has_related_objects case..
   endcase.
 
@@ -8926,17 +8926,17 @@ Name | Type | Description
 * we can handle the result with either "if" with individual cases
 * or use a case clause to handle all scenarios:
   case gv_mffolderconten.
-    when /blck/mfi_cl_model=>mffolderconten-unknown.
+    when /blck/mfi_const=>me_mffolderconten-unknown.
 *     do something specific to unknown case..
-    when /blck/mfi_cl_model=>mffolderconten-view_folder.
+    when /blck/mfi_const=>me_mffolderconten-view_folder.
 *     do something specific to view_folder case..
-    when /blck/mfi_cl_model=>mffolderconten-property_folder.
+    when /blck/mfi_const=>me_mffolderconten-property_folder.
 *     do something specific to property_folder case..
-    when /blck/mfi_cl_model=>mffolderconten-traditional_folder.
+    when /blck/mfi_const=>me_mffolderconten-traditional_folder.
 *     do something specific to traditional_folder case..
-    when /blck/mfi_cl_model=>mffolderconten-object_version.
+    when /blck/mfi_const=>me_mffolderconten-object_version.
 *     do something specific to object_version case..
-    when /blck/mfi_cl_model=>mffolderconten-external_view_folder.
+    when /blck/mfi_const=>me_mffolderconten-external_view_folder.
 *     do something specific to external_view_folder case..
   endcase.
 
@@ -9192,13 +9192,13 @@ Name | Type | Description
 * we can handle the result with either "if" with individual cases
 * or use a case clause to handle all scenarios:
   case gv_mf_auth_type.
-    when /blck/mfi_cl_model=>mf_auth_type-unknown.
+    when /blck/mfi_const=>me_mf_auth_type-unknown.
 *     do something specific to unknown case..
-    when /blck/mfi_cl_model=>mf_auth_type-logged_on_windows_user.
+    when /blck/mfi_const=>me_mf_auth_type-logged_on_windows_user.
 *     do something specific to logged_on_windows_user case..
-    when /blck/mfi_cl_model=>mf_auth_type-specific_windows_user.
+    when /blck/mfi_const=>me_mf_auth_type-specific_windows_user.
 *     do something specific to specific_windows_user case..
-    when /blck/mfi_cl_model=>mf_auth_type-specific_m_files_user.
+    when /blck/mfi_const=>me_mf_auth_type-specific_m_files_user.
 *     do something specific to specific_m_files_user case..
   endcase.
 
@@ -9250,9 +9250,9 @@ Name | Value | Constant
 * we can handle the result with either "if" with individual cases
 * or use a case clause to handle all scenarios:
   case gv_mfacl_mode.
-    when /blck/mfi_cl_model=>mfacl_mode-simple.
+    when /blck/mfi_const=>me_mfacl_mode-simple.
 *     do something specific to simple case..
-    when /blck/mfi_cl_model=>mfacl_mode-automaticpermissionswithc.
+    when /blck/mfi_const=>me_mfacl_mode-automaticpermissionswithc.
 *     do something specific to automaticpermissionswithc case..
   endcase.
 
@@ -9303,15 +9303,15 @@ Name | Value | Constant
 * we can handle the result with either "if" with individual cases
 * or use a case clause to handle all scenarios:
   case gv_mfautomaticval.
-    when /blck/mfi_cl_model=>mfautomaticval-none.
+    when /blck/mfi_const=>me_mfautomaticval-none.
 *     do something specific to none case..
-    when /blck/mfi_cl_model=>mfautomaticval-calculatedwithplaceholder.
+    when /blck/mfi_const=>me_mfautomaticval-calculatedwithplaceholder.
 *     do something specific to calculatedwithplaceholder case..
-    when /blck/mfi_cl_model=>mfautomaticval-calculated_with_vb_script.
+    when /blck/mfi_const=>me_mfautomaticval-calculated_with_vb_script.
 *     do something specific to calculated_with_vb_script case..
-    when /blck/mfi_cl_model=>mfautomaticval-auto_number_simple.
+    when /blck/mfi_const=>me_mfautomaticval-auto_number_simple.
 *     do something specific to auto_number_simple case..
-    when /blck/mfi_cl_model=>mfautomaticval-with_vb_script.
+    when /blck/mfi_const=>me_mfautomaticval-with_vb_script.
 *     do something specific to with_vb_script case..
   endcase.
 
@@ -9365,11 +9365,11 @@ Name | Value | Constant
 * we can handle the result with either "if" with individual cases
 * or use a case clause to handle all scenarios:
   case gv_mfcheckoutstat.
-    when /blck/mfi_cl_model=>mfcheckoutstat-checked_in.
+    when /blck/mfi_const=>me_mfcheckoutstat-checked_in.
 *     do something specific to checked_in case..
-    when /blck/mfi_cl_model=>mfcheckoutstat-checked_out.
+    when /blck/mfi_const=>me_mfcheckoutstat-checked_out.
 *     do something specific to checked_out case..
-    when /blck/mfi_cl_model=>mfcheckoutstat-checked_out_to_me.
+    when /blck/mfi_const=>me_mfcheckoutstat-checked_out_to_me.
 *     do something specific to checked_out_to_me case..
   endcase.
 
@@ -9419,13 +9419,13 @@ Name | Value | Constant
 * we can handle the result with either "if" with individual cases
 * or use a case clause to handle all scenarios:
   case gv_mfextensionaut.
-    when /blck/mfi_cl_model=>mfextensionaut-none.
+    when /blck/mfi_const=>me_mfextensionaut-none.
 *     do something specific to none case..
-    when /blck/mfi_cl_model=>mfextensionaut-common.
+    when /blck/mfi_const=>me_mfextensionaut-common.
 *     do something specific to common case..
-    when /blck/mfi_cl_model=>mfextensionaut-indexer.
+    when /blck/mfi_const=>me_mfextensionaut-indexer.
 *     do something specific to indexer case..
-    when /blck/mfi_cl_model=>mfextensionaut-permissions.
+    when /blck/mfi_const=>me_mfextensionaut-permissions.
 *     do something specific to permissions case..
   endcase.
 
@@ -9476,11 +9476,11 @@ Name | Value | Constant
 * we can handle the result with either "if" with individual cases
 * or use a case clause to handle all scenarios:
   case gv_mfrefreshstatu.
-    when /blck/mfi_cl_model=>mfrefreshstatu-none.
+    when /blck/mfi_const=>me_mfrefreshstatu-none.
 *     do something specific to none case..
-    when /blck/mfi_cl_model=>mfrefreshstatu-quick.
+    when /blck/mfi_const=>me_mfrefreshstatu-quick.
 *     do something specific to quick case..
-    when /blck/mfi_cl_model=>mfrefreshstatu-full.
+    when /blck/mfi_const=>me_mfrefreshstatu-full.
 *     do something specific to full case..
   endcase.
 

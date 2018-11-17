@@ -1318,11 +1318,11 @@ Name | Type | Description
 
 Name | Value | Constant
 ------------ | ------------- | -------------
-**open** | open | `/blck/cnv_const=>me_jobstatusenum-open.`
-**waiting** | waiting | `/blck/cnv_const=>me_jobstatusenum-waiting.`
-**processing** | processing | `/blck/cnv_const=>me_jobstatusenum-processing.`
-**completed** | completed | `/blck/cnv_const=>me_jobstatusenum-completed.`
-**error** | error | `/blck/cnv_const=>me_jobstatusenum-error.`
+**open** | open | `/blck/cnv_const=>me_jobstatusenum-open`
+**waiting** | waiting | `/blck/cnv_const=>me_jobstatusenum-waiting`
+**processing** | processing | `/blck/cnv_const=>me_jobstatusenum-processing`
+**completed** | completed | `/blck/cnv_const=>me_jobstatusenum-completed`
+**error** | error | `/blck/cnv_const=>me_jobstatusenum-error`
 
 * * *
 <a name="markdown-header-model-job_ticket"></a> 

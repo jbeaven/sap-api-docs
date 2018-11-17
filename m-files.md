@@ -8010,20 +8010,20 @@ Name | Type | Description
 
 Name | Value | Constant
 ------------ | ------------- | -------------
-**uninitialized** | 0 | `/blck/mfi_const=>me_mf_data_type-uninitialized.`
-**text** | 1 | `/blck/mfi_const=>me_mf_data_type-text.`
-**integer** | 2 | `/blck/mfi_const=>me_mf_data_type-integer.`
-**floating** | 3 | `/blck/mfi_const=>me_mf_data_type-floating.`
-**date** | 5 | `/blck/mfi_const=>me_mf_data_type-date.`
-**time** | 6 | `/blck/mfi_const=>me_mf_data_type-time.`
-**timestamp** | 7 | `/blck/mfi_const=>me_mf_data_type-timestamp.`
-**boolean** | 8 | `/blck/mfi_const=>me_mf_data_type-boolean.`
-**lookup** | 9 | `/blck/mfi_const=>me_mf_data_type-lookup.`
-**multi_select_lookup** | 10 | `/blck/mfi_const=>me_mf_data_type-multi_select_lookup.`
-**integer64** | 11 | `/blck/mfi_const=>me_mf_data_type-integer64.`
-**filetime** | 12 | `/blck/mfi_const=>me_mf_data_type-filetime.`
-**multi_line_text** | 13 | `/blck/mfi_const=>me_mf_data_type-multi_line_text.`
-**acl** | 14 | `/blck/mfi_const=>me_mf_data_type-acl.`
+**uninitialized** | 0 | `/blck/mfi_const=>me_mf_data_type-uninitialized`
+**text** | 1 | `/blck/mfi_const=>me_mf_data_type-text`
+**integer** | 2 | `/blck/mfi_const=>me_mf_data_type-integer`
+**floating** | 3 | `/blck/mfi_const=>me_mf_data_type-floating`
+**date** | 5 | `/blck/mfi_const=>me_mf_data_type-date`
+**time** | 6 | `/blck/mfi_const=>me_mf_data_type-time`
+**timestamp** | 7 | `/blck/mfi_const=>me_mf_data_type-timestamp`
+**boolean** | 8 | `/blck/mfi_const=>me_mf_data_type-boolean`
+**lookup** | 9 | `/blck/mfi_const=>me_mf_data_type-lookup`
+**multi_select_lookup** | 10 | `/blck/mfi_const=>me_mf_data_type-multi_select_lookup`
+**integer64** | 11 | `/blck/mfi_const=>me_mf_data_type-integer64`
+**filetime** | 12 | `/blck/mfi_const=>me_mf_data_type-filetime`
+**multi_line_text** | 13 | `/blck/mfi_const=>me_mf_data_type-multi_line_text`
+**acl** | 14 | `/blck/mfi_const=>me_mf_data_type-acl`
 
 * * *
 <a name="markdown-header-model-typed_value"></a> 
@@ -8475,9 +8475,9 @@ Name | Type | Description
 
 Name | Value | Constant
 ------------ | ------------- | -------------
-**none** | 0 | `/blck/mfi_const=>me_mfobjectversio-none.`
-**completed** | 1 | `/blck/mfi_const=>me_mfobjectversio-completed.`
-**has_related_objects** | 2 | `/blck/mfi_const=>me_mfobjectversio-has_related_objects.`
+**none** | 0 | `/blck/mfi_const=>me_mfobjectversio-none`
+**completed** | 1 | `/blck/mfi_const=>me_mfobjectversio-completed`
+**has_related_objects** | 2 | `/blck/mfi_const=>me_mfobjectversio-has_related_objects`
 
 * * *
 <a name="markdown-header-model-object_file"></a> 
@@ -8859,12 +8859,12 @@ Name | Type | Description
 
 Name | Value | Constant
 ------------ | ------------- | -------------
-**unknown** | 0 | `/blck/mfi_const=>me_mffolderconten-unknown.`
-**view_folder** | 1 | `/blck/mfi_const=>me_mffolderconten-view_folder.`
-**property_folder** | 2 | `/blck/mfi_const=>me_mffolderconten-property_folder.`
-**traditional_folder** | 3 | `/blck/mfi_const=>me_mffolderconten-traditional_folder.`
-**object_version** | 4 | `/blck/mfi_const=>me_mffolderconten-object_version.`
-**external_view_folder** | 5 | `/blck/mfi_const=>me_mffolderconten-external_view_folder.`
+**unknown** | 0 | `/blck/mfi_const=>me_mffolderconten-unknown`
+**view_folder** | 1 | `/blck/mfi_const=>me_mffolderconten-view_folder`
+**property_folder** | 2 | `/blck/mfi_const=>me_mffolderconten-property_folder`
+**traditional_folder** | 3 | `/blck/mfi_const=>me_mffolderconten-traditional_folder`
+**object_version** | 4 | `/blck/mfi_const=>me_mffolderconten-object_version`
+**external_view_folder** | 5 | `/blck/mfi_const=>me_mffolderconten-external_view_folder`
 
 * * *
 <a name="markdown-header-model-view_location"></a> 
@@ -9121,10 +9121,10 @@ Name | Type | Description
 
 Name | Value | Constant
 ------------ | ------------- | -------------
-**unknown** | 0 | `/blck/mfi_const=>me_mf_auth_type-unknown.`
-**logged_on_windows_user** | 1 | `/blck/mfi_const=>me_mf_auth_type-logged_on_windows_user.`
-**specific_windows_user** | 2 | `/blck/mfi_const=>me_mf_auth_type-specific_windows_user.`
-**specific_m_files_user** | 3 | `/blck/mfi_const=>me_mf_auth_type-specific_m_files_user.`
+**unknown** | 0 | `/blck/mfi_const=>me_mf_auth_type-unknown`
+**logged_on_windows_user** | 1 | `/blck/mfi_const=>me_mf_auth_type-logged_on_windows_user`
+**specific_windows_user** | 2 | `/blck/mfi_const=>me_mf_auth_type-specific_windows_user`
+**specific_m_files_user** | 3 | `/blck/mfi_const=>me_mf_auth_type-specific_m_files_user`
 
 * * *
 <a name="markdown-header-enum-mfacl_mode"></a> 
@@ -9175,8 +9175,8 @@ Name | Value | Constant
 
 Name | Value | Constant
 ------------ | ------------- | -------------
-**simple** | 0 | `/blck/mfi_const=>me_mfacl_mode-simple.`
-**automaticpermissionswithc** | 1 | `/blck/mfi_const=>me_mfacl_mode-automaticpermissionswithc.`
+**simple** | 0 | `/blck/mfi_const=>me_mfacl_mode-simple`
+**automaticpermissionswithc** | 1 | `/blck/mfi_const=>me_mfacl_mode-automaticpermissionswithc`
 
 * * *
 <a name="markdown-header-enum-mfautomaticval"></a> 
@@ -9234,11 +9234,11 @@ Name | Value | Constant
 
 Name | Value | Constant
 ------------ | ------------- | -------------
-**none** | 0 | `/blck/mfi_const=>me_mfautomaticval-none.`
-**calculatedwithplaceholder** | 1 | `/blck/mfi_const=>me_mfautomaticval-calculatedwithplaceholder.`
-**calculated_with_vb_script** | 2 | `/blck/mfi_const=>me_mfautomaticval-calculated_with_vb_script.`
-**auto_number_simple** | 3 | `/blck/mfi_const=>me_mfautomaticval-auto_number_simple.`
-**with_vb_script** | 4 | `/blck/mfi_const=>me_mfautomaticval-with_vb_script.`
+**none** | 0 | `/blck/mfi_const=>me_mfautomaticval-none`
+**calculatedwithplaceholder** | 1 | `/blck/mfi_const=>me_mfautomaticval-calculatedwithplaceholder`
+**calculated_with_vb_script** | 2 | `/blck/mfi_const=>me_mfautomaticval-calculated_with_vb_script`
+**auto_number_simple** | 3 | `/blck/mfi_const=>me_mfautomaticval-auto_number_simple`
+**with_vb_script** | 4 | `/blck/mfi_const=>me_mfautomaticval-with_vb_script`
 
 * * *
 <a name="markdown-header-enum-mfcheckoutstat"></a> 
@@ -9292,9 +9292,9 @@ Name | Value | Constant
 
 Name | Value | Constant
 ------------ | ------------- | -------------
-**checked_in** | 0 | `/blck/mfi_const=>me_mfcheckoutstat-checked_in.`
-**checked_out** | 1 | `/blck/mfi_const=>me_mfcheckoutstat-checked_out.`
-**checked_out_to_me** | 2 | `/blck/mfi_const=>me_mfcheckoutstat-checked_out_to_me.`
+**checked_in** | 0 | `/blck/mfi_const=>me_mfcheckoutstat-checked_in`
+**checked_out** | 1 | `/blck/mfi_const=>me_mfcheckoutstat-checked_out`
+**checked_out_to_me** | 2 | `/blck/mfi_const=>me_mfcheckoutstat-checked_out_to_me`
 
 * * *
 <a name="markdown-header-enum-mfextensionaut"></a> 
@@ -9348,10 +9348,10 @@ Name | Value | Constant
 
 Name | Value | Constant
 ------------ | ------------- | -------------
-**none** | 0 | `/blck/mfi_const=>me_mfextensionaut-none.`
-**common** | 1 | `/blck/mfi_const=>me_mfextensionaut-common.`
-**indexer** | 2 | `/blck/mfi_const=>me_mfextensionaut-indexer.`
-**permissions** | 3 | `/blck/mfi_const=>me_mfextensionaut-permissions.`
+**none** | 0 | `/blck/mfi_const=>me_mfextensionaut-none`
+**common** | 1 | `/blck/mfi_const=>me_mfextensionaut-common`
+**indexer** | 2 | `/blck/mfi_const=>me_mfextensionaut-indexer`
+**permissions** | 3 | `/blck/mfi_const=>me_mfextensionaut-permissions`
 
 * * *
 <a name="markdown-header-enum-mfrefreshstatu"></a> 
@@ -9403,9 +9403,9 @@ Name | Value | Constant
 
 Name | Value | Constant
 ------------ | ------------- | -------------
-**none** | 0 | `/blck/mfi_const=>me_mfrefreshstatu-none.`
-**quick** | 1 | `/blck/mfi_const=>me_mfrefreshstatu-quick.`
-**full** | 2 | `/blck/mfi_const=>me_mfrefreshstatu-full.`
+**none** | 0 | `/blck/mfi_const=>me_mfrefreshstatu-none`
+**quick** | 1 | `/blck/mfi_const=>me_mfrefreshstatu-quick`
+**full** | 2 | `/blck/mfi_const=>me_mfrefreshstatu-full`
 
 * * *
 <a name="markdown-header-model-obj_id"></a> 

@@ -1070,12 +1070,12 @@ Name | Type | Description
 
 Name | Value | Constant
 ------------ | ------------- | -------------
-**open** | open | `/blck/p4_const=>me_status_type-open.`
-**processing** | processing | `/blck/p4_const=>me_status_type-processing.`
-**completed** | completed | `/blck/p4_const=>me_status_type-completed.`
-**paused** | paused | `/blck/p4_const=>me_status_type-paused.`
-**aborted** | aborted | `/blck/p4_const=>me_status_type-aborted.`
-**failed** | failed | `/blck/p4_const=>me_status_type-failed.`
+**open** | open | `/blck/p4_const=>me_status_type-open`
+**processing** | processing | `/blck/p4_const=>me_status_type-processing`
+**completed** | completed | `/blck/p4_const=>me_status_type-completed`
+**paused** | paused | `/blck/p4_const=>me_status_type-paused`
+**aborted** | aborted | `/blck/p4_const=>me_status_type-aborted`
+**failed** | failed | `/blck/p4_const=>me_status_type-failed`
 
 * * *
 <a name="markdown-header-model-job_status"></a> 

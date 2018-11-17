@@ -82,7 +82,7 @@ Deletes a job. In case the job is in status processing, it is aborted before rem
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_job_id** | /BLCK/CNV_STRING | Id of a previously created job 
+ **i_job_id** | `/BLCK/CNV_STRING` | Id of a previously created job 
 
 ### Return types
 
@@ -173,7 +173,7 @@ Start processing of a job. If processing is already triggered nothing is done. J
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_job_id** | /BLCK/CNV_STRING | Id of a previously created job 
+ **i_job_id** | `/BLCK/CNV_STRING` | Id of a previously created job 
 
 ### Return types
 
@@ -267,17 +267,17 @@ Get a object with job status and output information
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_job_id** | /BLCK/CNV_STRING | Id of a previously created job 
+ **i_job_id** | `/BLCK/CNV_STRING` | Id of a previously created job 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/CNV_JOB_STATUS (**[JobStatus](#markdown-header-model-job_status)**) | OK, job status information returned
- 401 | **e_code_401** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 404 | **e_code_404** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 500 | **e_code_500** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/CNV_JOB_STATUS` (**[JobStatus](#markdown-header-model-job_status)**) | OK, job status information returned
+ 401 | **e_code_401** | `/BLCK/CNV_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 404 | **e_code_404** | `/BLCK/CNV_ERROR` (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_code_500** | `/BLCK/CNV_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/CNV_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -370,7 +370,7 @@ Easy way to convert with a single REST call: - Creates a single input file with 
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_jobid** | /BLCK/CNV_STRING | Id of a previously created job 
+ **i_jobid** | `/BLCK/CNV_STRING` | Id of a previously created job 
 
 ### Return types
 
@@ -468,17 +468,17 @@ Get a object with full job status, input and output information.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_job_id** | /BLCK/CNV_STRING | Id of a previously created job 
+ **i_job_id** | `/BLCK/CNV_STRING` | Id of a previously created job 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/CNV_JOB_DATA (**[JobData](#markdown-header-model-job_data)**) | OK, job status information returned
- 401 | **e_code_401** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 404 | **e_code_404** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 500 | **e_code_500** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/CNV_JOB_DATA` (**[JobData](#markdown-header-model-job_data)**) | OK, job status information returned
+ 401 | **e_code_401** | `/BLCK/CNV_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 404 | **e_code_404** | `/BLCK/CNV_ERROR` (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_code_500** | `/BLCK/CNV_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/CNV_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -576,18 +576,18 @@ Appends a new input file to the input file list of a job.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/CNV_INPUT_FILE (**[InputFile](#markdown-header-model-input_file)**) | File ticket for preprocessing.  
- **i_job_id** | /BLCK/CNV_STRING | Id of a previously created job 
+ **i_body** | `/BLCK/CNV_INPUT_FILE` (**[InputFile](#markdown-header-model-input_file)**) | File ticket for preprocessing.  
+ **i_job_id** | `/BLCK/CNV_STRING` | Id of a previously created job 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/CNV_STRING | OK, entry created. Returns fileId as index of created file in input file list, starting with zero.
- 401 | **e_code_401** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 409 | **e_code_409** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
- 500 | **e_code_500** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/CNV_STRING` | OK, entry created. Returns fileId as index of created file in input file list, starting with zero.
+ 401 | **e_code_401** | `/BLCK/CNV_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 409 | **e_code_409** | `/BLCK/CNV_ERROR` (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
+ 500 | **e_code_500** | `/BLCK/CNV_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/CNV_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -680,7 +680,7 @@ Easy way to convert with a single REST call: - Creates a single input file with 
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_jobid** | /BLCK/CNV_STRING | Id of a previously created job 
+ **i_jobid** | `/BLCK/CNV_STRING` | Id of a previously created job 
 
 ### Return types
 
@@ -773,17 +773,17 @@ Create a new job.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/CNV_JOB_TICKET (**[JobTicket](#markdown-header-model-job_ticket)**) | Job ticket for preprocessing.  
+ **i_body** | `/BLCK/CNV_JOB_TICKET` (**[JobTicket](#markdown-header-model-job_ticket)**) | Job ticket for preprocessing.  
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/CNV_STRING | OK, entry created. Returns a job id.
- 401 | **e_code_401** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 409 | **e_code_409** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
- 500 | **e_code_500** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/CNV_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/CNV_STRING` | OK, entry created. Returns a job id.
+ 401 | **e_code_401** | `/BLCK/CNV_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 409 | **e_code_409** | `/BLCK/CNV_ERROR` (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
+ 500 | **e_code_500** | `/BLCK/CNV_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/CNV_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -882,8 +882,8 @@ Upload input file binary input content.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_job_id** | /BLCK/CNV_STRING | Id of a previously created job 
- **i_file_id** | /BLCK/CNV_STRING | Id (index) of a previously created input file 
+ **i_job_id** | `/BLCK/CNV_STRING` | Id of a previously created job 
+ **i_file_id** | `/BLCK/CNV_STRING` | Id (index) of a previously created input file 
 
 ### Return types
 
@@ -980,8 +980,8 @@ Get processing result binary content.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_job_id** | /BLCK/CNV_STRING | Id of a previously created job 
- **i_file_id** | /BLCK/CNV_STRING | Id (index) of the file in the output file list 
+ **i_job_id** | `/BLCK/CNV_STRING` | Id of a previously created job 
+ **i_file_id** | `/BLCK/CNV_STRING` | Id (index) of the file in the output file list 
 
 ### Return types
 
@@ -1082,8 +1082,8 @@ Get processing result binary content.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_job_id** | /BLCK/CNV_STRING | Id of a previously created job 
- **i_file_id** | /BLCK/CNV_STRING | Id (index) of the file in the output file list 
+ **i_job_id** | `/BLCK/CNV_STRING` | Id of a previously created job 
+ **i_file_id** | `/BLCK/CNV_STRING` | Id (index) of the file in the output file list 
 
 ### Return types
 
@@ -1137,9 +1137,9 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**code** | /BLCK/CNV_INT | 
-**message** | /BLCK/CNV_STRING | 
-**metadata** | /BLCK/CNV_STRING | 
+**code** | `/BLCK/CNV_INT` | 
+**message** | `/BLCK/CNV_STRING` | 
+**metadata** | `/BLCK/CNV_STRING` | 
 
 * * *
 <a name="markdown-header-model-file_id"></a> 
@@ -1222,8 +1222,8 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**mime_type** | /BLCK/CNV_STRING | Mime type of the file.
-**metadata** | /BLCK/CNV_STRING | File specific parameter, will be merged with job metadata at runtime.
+**mime_type** | `/BLCK/CNV_STRING` | Mime type of the file.
+**metadata** | `/BLCK/CNV_STRING` | File specific parameter, will be merged with job metadata at runtime.
 
 * * *
 <a name="markdown-header-model-job_id"></a> 
@@ -1318,11 +1318,11 @@ Name | Type | Description
 
 Name | Value | Constant
 ------------ | ------------- | -------------
-**open** | open | /blck/cnv_const=>me_jobstatusenum-open.
-**waiting** | waiting | /blck/cnv_const=>me_jobstatusenum-waiting.
-**processing** | processing | /blck/cnv_const=>me_jobstatusenum-processing.
-**completed** | completed | /blck/cnv_const=>me_jobstatusenum-completed.
-**error** | error | /blck/cnv_const=>me_jobstatusenum-error.
+**open** | open | `/blck/cnv_const=>me_jobstatusenum-open.`
+**waiting** | waiting | `/blck/cnv_const=>me_jobstatusenum-waiting.`
+**processing** | processing | `/blck/cnv_const=>me_jobstatusenum-processing.`
+**completed** | completed | `/blck/cnv_const=>me_jobstatusenum-completed.`
+**error** | error | `/blck/cnv_const=>me_jobstatusenum-error.`
 
 * * *
 <a name="markdown-header-model-job_ticket"></a> 
@@ -1367,8 +1367,8 @@ Name | Value | Constant
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**name** | /BLCK/CNV_STRING | Name of preprocessing rule to use
-**metadata** | /BLCK/CNV_STRING | Rule specific parameter.
+**name** | `/BLCK/CNV_STRING` | Name of preprocessing rule to use
+**metadata** | `/BLCK/CNV_STRING` | Rule specific parameter.
 
 * * *
 <a name="markdown-header-model-output_file"></a> 
@@ -1412,8 +1412,8 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**mime_type** | /BLCK/CNV_STRING | Mime type of the file.
-**metadata** | /BLCK/CNV_STRING | Output file specific parameter. Result of merged job metadata, input file metadata and rule target metadata. 
+**mime_type** | `/BLCK/CNV_STRING` | Mime type of the file.
+**metadata** | `/BLCK/CNV_STRING` | Output file specific parameter. Result of merged job metadata, input file metadata and rule target metadata. 
 
 * * *
 <a name="markdown-header-model-job_data"></a> 
@@ -1465,12 +1465,12 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**job_id** | /BLCK/CNV_JOB_ID (**[JobId](#markdown-header-model-job_id)**) | 
-**job_status** | /BLCK/CNV_JOBSTATUSENUM (**[JobStatusEnum](#markdown-header-enum-jobstatusenum)**) | 
-**creation_date** | /BLCK/CNV_INT | Time stamp of creation date
-**job_ticket** | /BLCK/CNV_JOB_TICKET (**[JobTicket](#markdown-header-model-job_ticket)**) | 
-**input** | /BLCK/CNV_INPUT_FILE_TT (**[array of InputFile](#markdown-header-model-input_file)**) | input file list
-**output** | /BLCK/CNV_OUTPUT_FILE_TT (**[array of OutputFile](#markdown-header-model-output_file)**) | generated output file list
+**job_id** | `/BLCK/CNV_JOB_ID` (**[JobId](#markdown-header-model-job_id)**) | 
+**job_status** | `/BLCK/CNV_JOBSTATUSENUM` (**[JobStatusEnum](#markdown-header-enum-jobstatusenum)**) | 
+**creation_date** | `/BLCK/CNV_INT` | Time stamp of creation date
+**job_ticket** | `/BLCK/CNV_JOB_TICKET` (**[JobTicket](#markdown-header-model-job_ticket)**) | 
+**input** | `/BLCK/CNV_INPUT_FILE_TT` (**[array of InputFile](#markdown-header-model-input_file)**) | input file list
+**output** | `/BLCK/CNV_OUTPUT_FILE_TT` (**[array of OutputFile](#markdown-header-model-output_file)**) | generated output file list
 
 * * *
 <a name="markdown-header-model-job_status"></a> 
@@ -1516,7 +1516,7 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**job_id** | /BLCK/CNV_JOB_ID (**[JobId](#markdown-header-model-job_id)**) | 
-**job_status** | /BLCK/CNV_JOBSTATUSENUM (**[JobStatusEnum](#markdown-header-enum-jobstatusenum)**) | 
-**output** | /BLCK/CNV_OUTPUT_FILE_TT (**[array of OutputFile](#markdown-header-model-output_file)**) | generated output file list
+**job_id** | `/BLCK/CNV_JOB_ID` (**[JobId](#markdown-header-model-job_id)**) | 
+**job_status** | `/BLCK/CNV_JOBSTATUSENUM` (**[JobStatusEnum](#markdown-header-enum-jobstatusenum)**) | 
+**output** | `/BLCK/CNV_OUTPUT_FILE_TT` (**[array of OutputFile](#markdown-header-model-output_file)**) | generated output file list
 

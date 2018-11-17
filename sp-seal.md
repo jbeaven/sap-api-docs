@@ -79,16 +79,16 @@ Get attribute of document
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_title** | /BLCK/SP_STRING | Title of the document container 
- **i_doc_id** | /BLCK/SP_INT | Id of document 
- **i_attr** | /BLCK/SP_STRING | Name of attribute to change 
- **i_accept** | /BLCK/SP_STRING | an Accept header [default "application/json"]
+ **i_title** | `/BLCK/SP_STRING` | Title of the document container 
+ **i_doc_id** | `/BLCK/SP_INT` | Id of document 
+ **i_attr** | `/BLCK/SP_STRING` | Name of attribute to change 
+ **i_accept** | `/BLCK/SP_STRING` | an Accept header [default "application/json"]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/SP_DOC_ATTR_VALUE (**[DocAttrValue](#markdown-header-model-doc_attr_value)**) | successful operation
+ 200 | **e_code_200** | `/BLCK/SP_DOC_ATTR_VALUE` (**[DocAttrValue](#markdown-header-model-doc_attr_value)**) | successful operation
  405 | value not returned |  | Invalid input
 
 ### HTTP request headers
@@ -162,14 +162,14 @@ Retrieve data of document
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_title** | /BLCK/SP_STRING | Title of the document container 
- **i_doc_id** | /BLCK/SP_INT | Id of document 
+ **i_title** | `/BLCK/SP_STRING` | Title of the document container 
+ **i_doc_id** | `/BLCK/SP_INT` | Id of document 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/SP_BINARY | successful operation
+ 200 | **e_code_200** | `/BLCK/SP_BINARY` | successful operation
  405 | value not returned |  | Invalid input
 
 ### HTTP request headers
@@ -249,15 +249,15 @@ Retrieve list of documents matching criteria
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_title** | /BLCK/SP_STRING | Title of the document container 
- **i_filter** | /BLCK/SP_STRING | Filter the list of documents [optional]
- **i_accept** | /BLCK/SP_STRING | an Accept header [default "application/json"]
+ **i_title** | `/BLCK/SP_STRING` | Title of the document container 
+ **i_filter** | `/BLCK/SP_STRING` | Filter the list of documents [optional]
+ **i_accept** | `/BLCK/SP_STRING` | an Accept header [default "application/json"]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/SP_SEAL_DOC_LIST (**[SEALDocList](#markdown-header-model-seal_doc_list)**) | successful operation
+ 200 | **e_code_200** | `/BLCK/SP_SEAL_DOC_LIST` (**[SEALDocList](#markdown-header-model-seal_doc_list)**) | successful operation
  405 | value not returned |  | Invalid input
 
 ### HTTP request headers
@@ -359,13 +359,13 @@ Pass in a json formatted body
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/SP_STRING |  
- **i_title** | /BLCK/SP_STRING | Title of the document container 
- **i_doc_id** | /BLCK/SP_INT | Id of document 
- **i_accept** | /BLCK/SP_STRING | an Accept header [default "application/json"]
- **i_content_type** | /BLCK/SP_STRING | a content type header [default "application/json"]
- **i_if_match** | /BLCK/SP_STRING | Default match header [default "*"]
- **i_x_http_method** | /BLCK/SP_STRING | Default method header [default "PATCH"]
+ **i_body** | `/BLCK/SP_STRING` |  
+ **i_title** | `/BLCK/SP_STRING` | Title of the document container 
+ **i_doc_id** | `/BLCK/SP_INT` | Id of document 
+ **i_accept** | `/BLCK/SP_STRING` | an Accept header [default "application/json"]
+ **i_content_type** | `/BLCK/SP_STRING` | a content type header [default "application/json"]
+ **i_if_match** | `/BLCK/SP_STRING` | Default match header [default "*"]
+ **i_x_http_method** | `/BLCK/SP_STRING` | Default method header [default "PATCH"]
 
 ### Return types
 
@@ -415,7 +415,7 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**value** | /BLCK/SP_STRING | 
+**value** | `/BLCK/SP_STRING` | 
 
 * * *
 <a name="markdown-header-model-seal_doc"></a> 
@@ -482,20 +482,20 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**id** | /BLCK/SP_INT | 
-**title** | /BLCK/SP_STRING | 
-**doknr** | /BLCK/SP_STRING | 
-**dokar** | /BLCK/SP_STRING | 
-**dokvr** | /BLCK/SP_STRING | 
-**doktl** | /BLCK/SP_STRING | 
-**description0** | /BLCK/SP_STRING | 
-**dir** | /BLCK/SP_STRING | 
-**sap_x0020_upload** | /BLCK/SP_STRING | 
-**created** | /BLCK/SP_TIMESTAMP | 
-**author_id** | /BLCK/SP_INT | 
-**modified** | /BLCK/SP_TIMESTAMP | 
-**editor_id** | /BLCK/SP_INT | 
-**guid** | /BLCK/SP_STRING | 
+**id** | `/BLCK/SP_INT` | 
+**title** | `/BLCK/SP_STRING` | 
+**doknr** | `/BLCK/SP_STRING` | 
+**dokar** | `/BLCK/SP_STRING` | 
+**dokvr** | `/BLCK/SP_STRING` | 
+**doktl** | `/BLCK/SP_STRING` | 
+**description0** | `/BLCK/SP_STRING` | 
+**dir** | `/BLCK/SP_STRING` | 
+**sap_x0020_upload** | `/BLCK/SP_STRING` | 
+**created** | `/BLCK/SP_TIMESTAMP` | 
+**author_id** | `/BLCK/SP_INT` | 
+**modified** | `/BLCK/SP_TIMESTAMP` | 
+**editor_id** | `/BLCK/SP_INT` | 
+**guid** | `/BLCK/SP_STRING` | 
 
 * * *
 <a name="markdown-header-model-seal_doc_list"></a> 
@@ -536,5 +536,5 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**value** | /BLCK/SP_SEAL_DOC_TT (**[array of SEALDoc](#markdown-header-model-seal_doc)**) | 
+**value** | `/BLCK/SP_SEAL_DOC_TT` (**[array of SEALDoc](#markdown-header-model-seal_doc)**) | 
 

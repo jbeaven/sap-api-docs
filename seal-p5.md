@@ -72,15 +72,15 @@ Aggregates count the number of objects matching a given query and aggregate resu
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/P5_AGGREGATEQUERY (**[AggregateQuery](#markdown-header-model-aggregatequery)**) | Query object containing definition of the requested aggregate  
+ **i_body** | `/BLCK/P5_AGGREGATEQUERY` (**[AggregateQuery](#markdown-header-model-aggregatequery)**) | Query object containing definition of the requested aggregate  
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_AGGREGATERESPO (**[AggregateResponse](#markdown-header-model-aggregaterespo)**) | OK, an aggregate json object is returned
- 400 | **e_code_400** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Missing required paramenter
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | `/BLCK/P5_AGGREGATERESPO` (**[AggregateResponse](#markdown-header-model-aggregaterespo)**) | OK, an aggregate json object is returned
+ 400 | **e_code_400** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Missing required paramenter
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -152,14 +152,14 @@ This route provides access to the number of print jobs known in PLOSSYS P5; eith
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_filter** | /BLCK/P5_STRING | OData query string describing jobs to count [optional]
+ **i_filter** | `/BLCK/P5_STRING` | OData query string describing jobs to count [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-count)**) | OK, a number is returned
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | `/BLCK/P5_COUNT` (**[Count](#markdown-header-model-count)**) | OK, a number is returned
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -264,19 +264,19 @@ A GET query to this path provides access to the list of print jobs in PLOSSYS P5
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_filter** | /BLCK/P5_STRING | OData query for searching jobs, see OData 3.0 Spec  [optional]
- **i_select** | /BLCK/P5_STRING | List of result properties, see OData 3.0 Spec  [optional]
- **i_skip** | /BLCK/P5_INT | Number of results to skip (e.g. for paging), see OData 3.0 Spec  [optional]
- **i_top** | /BLCK/P5_INT | Maximum number of results (e.g. for paging), see OData 3.0 Spec  [optional]
- **i_orderby** | /BLCK/P5_STRING | Column to use for sorting, see OData 3.0 Spec  [optional]
- **i_inlinecount** | /BLCK/P5_STRING | If missing or set to \&quot;none\&quot; the response is the result array.  If set to \&quot;allpages\&quot; the response is an object with results as the result array  and \&quot;totalCount\&quot; with the total count of entries found for this query, see OData 3.0 Spec  [optional]
+ **i_filter** | `/BLCK/P5_STRING` | OData query for searching jobs, see OData 3.0 Spec  [optional]
+ **i_select** | `/BLCK/P5_STRING` | List of result properties, see OData 3.0 Spec  [optional]
+ **i_skip** | `/BLCK/P5_INT` | Number of results to skip (e.g. for paging), see OData 3.0 Spec  [optional]
+ **i_top** | `/BLCK/P5_INT` | Maximum number of results (e.g. for paging), see OData 3.0 Spec  [optional]
+ **i_orderby** | `/BLCK/P5_STRING` | Column to use for sorting, see OData 3.0 Spec  [optional]
+ **i_inlinecount** | `/BLCK/P5_STRING` | If missing or set to \&quot;none\&quot; the response is the result array.  If set to \&quot;allpages\&quot; the response is an object with results as the result array  and \&quot;totalCount\&quot; with the total count of entries found for this query, see OData 3.0 Spec  [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_PRINT_JOB_TT (**[array of PrintJob](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | `/BLCK/P5_PRINT_JOB_TT` (**[array of PrintJob](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -348,14 +348,14 @@ A GET query to this route returns a json object containing status information an
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_job_id** | /BLCK/P5_STRING | jobID of the printjob to query 
+ **i_job_id** | `/BLCK/P5_STRING` | jobID of the printjob to query 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_PRINT_JOB (**[PrintJob](#markdown-header-model-print_job)**) | OK, a json object is returned
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | `/BLCK/P5_PRINT_JOB` (**[PrintJob](#markdown-header-model-print_job)**) | OK, a json object is returned
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -423,8 +423,8 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_METADATA (**[Metadata](#markdown-header-model-metadata)**) | Query OK, metadata document is returned
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | `/BLCK/P5_METADATA` (**[Metadata](#markdown-header-model-metadata)**) | Query OK, metadata document is returned
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -502,15 +502,15 @@ Aggregates count the number of objects matching a given query and aggregate resu
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/P5_AGGREGATEQUERY (**[AggregateQuery](#markdown-header-model-aggregatequery)**) | Query object containing definition of the requested aggregate  
+ **i_body** | `/BLCK/P5_AGGREGATEQUERY` (**[AggregateQuery](#markdown-header-model-aggregatequery)**) | Query object containing definition of the requested aggregate  
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_AGGREGATERESPO (**[AggregateResponse](#markdown-header-model-aggregaterespo)**) | OK, an aggregate json object is returned
- 400 | **e_code_400** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Missing required paramenter
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | `/BLCK/P5_AGGREGATERESPO` (**[AggregateResponse](#markdown-header-model-aggregaterespo)**) | OK, an aggregate json object is returned
+ 400 | **e_code_400** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Missing required paramenter
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -582,14 +582,14 @@ This route provides access to the number of printers registered in PLOSSYS P5; e
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_filter** | /BLCK/P5_STRING | OData query string describing printers to count [optional]
+ **i_filter** | `/BLCK/P5_STRING` | OData query string describing printers to count [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-count)**) | OK, a number is returned
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | `/BLCK/P5_COUNT` (**[Count](#markdown-header-model-count)**) | OK, a number is returned
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -698,20 +698,20 @@ Retrieve a list of all known printers in PLOSSYS P5. A plain query to the endpoi
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_filter** | /BLCK/P5_STRING | OData query for searching printers, see OData 3.0 Spec  [optional]
- **i_select** | /BLCK/P5_STRING | List of result properties, see OData 3.0 Spec  [optional]
- **i_skip** | /BLCK/P5_INT | Number of results to skip (e.g. for paging), see OData 3.0 Spec  [optional]
- **i_top** | /BLCK/P5_INT | Maximum number of results (e.g. for paging), see OData 3.0 Spec  [optional]
- **i_orderby** | /BLCK/P5_STRING | Column to use for sorting, see OData 3.0 Spec  [optional]
- **i_inlinecount** | /BLCK/P5_STRING | If missing or set to \&quot;none\&quot; the response is the result array.  If set to \&quot;allpages\&quot; the response is an object with results as the result array  and \&quot;totalCount\&quot; with the total count of entries found for this query, see OData 3.0 Spec  [optional]
+ **i_filter** | `/BLCK/P5_STRING` | OData query for searching printers, see OData 3.0 Spec  [optional]
+ **i_select** | `/BLCK/P5_STRING` | List of result properties, see OData 3.0 Spec  [optional]
+ **i_skip** | `/BLCK/P5_INT` | Number of results to skip (e.g. for paging), see OData 3.0 Spec  [optional]
+ **i_top** | `/BLCK/P5_INT` | Maximum number of results (e.g. for paging), see OData 3.0 Spec  [optional]
+ **i_orderby** | `/BLCK/P5_STRING` | Column to use for sorting, see OData 3.0 Spec  [optional]
+ **i_inlinecount** | `/BLCK/P5_STRING` | If missing or set to \&quot;none\&quot; the response is the result array.  If set to \&quot;allpages\&quot; the response is an object with results as the result array  and \&quot;totalCount\&quot; with the total count of entries found for this query, see OData 3.0 Spec  [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_PRINTER_TT (**[array of Printer](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
- other | **e_code_other** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/P5_PRINTER_TT` (**[array of Printer](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ other | **e_code_other** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -779,8 +779,8 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_METADATA (**[Metadata](#markdown-header-model-metadata)**) | Query OK, metadata document is returned
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | `/BLCK/P5_METADATA` (**[Metadata](#markdown-header-model-metadata)**) | Query OK, metadata document is returned
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -861,16 +861,16 @@ Retrieves printer configuration of the printer with the given printerName and re
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_printer_name** | /BLCK/P5_STRING | Name (not ID!) of the printer 
+ **i_printer_name** | `/BLCK/P5_STRING` | Name (not ID!) of the printer 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-printer)**) | Printer configuration
- 404 | **e_code_404** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Printer not found
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
- other | **e_code_other** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected Error
+ 200 | **e_code_200** | `/BLCK/P5_PRINTER` (**[Printer](#markdown-header-model-printer)**) | Printer configuration
+ 404 | **e_code_404** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Printer not found
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ other | **e_code_other** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected Error
 
 ### HTTP request headers
 
@@ -947,15 +947,15 @@ Retrieve log entries for the given printer.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_printer_name** | /BLCK/P5_STRING | Name of the printer to get logs for 
+ **i_printer_name** | `/BLCK/P5_STRING` | Name of the printer to get logs for 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_LOGS (**[Logs](#markdown-header-model-logs)**) | OK, log entries are returned
- 404 | **e_code_404** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | No log entries found
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | `/BLCK/P5_LOGS` (**[Logs](#markdown-header-model-logs)**) | OK, log entries are returned
+ 404 | **e_code_404** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | No log entries found
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -1027,14 +1027,14 @@ Returns a PrinterStatus object describing the current status of the printer.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_printer_name** | /BLCK/P5_STRING | Name (not ID) of the printer to query 
+ **i_printer_name** | `/BLCK/P5_STRING` | Name (not ID) of the printer to query 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_PRINTER_STATUS (**[PrinterStatus](#markdown-header-model-printer_status)**) | Query OK, status is returned
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | `/BLCK/P5_PRINTER_STATUS` (**[PrinterStatus](#markdown-header-model-printer_status)**) | Query OK, status is returned
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -1116,15 +1116,15 @@ Aggregates count the number of objects matching a given query and aggregate resu
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/P5_AGGREGATEQUERY (**[AggregateQuery](#markdown-header-model-aggregatequery)**) | Query object containing definition of the requested aggregate  
+ **i_body** | `/BLCK/P5_AGGREGATEQUERY` (**[AggregateQuery](#markdown-header-model-aggregatequery)**) | Query object containing definition of the requested aggregate  
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_AGGREGATERESPO (**[AggregateResponse](#markdown-header-model-aggregaterespo)**) | OK, an aggregate json object is returned
- 400 | **e_code_400** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Missing required paramenter
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | `/BLCK/P5_AGGREGATERESPO` (**[AggregateResponse](#markdown-header-model-aggregaterespo)**) | OK, an aggregate json object is returned
+ 400 | **e_code_400** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Missing required paramenter
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -1196,14 +1196,14 @@ This route provides access to the number of print jobs known in PLOSSYS P5; eith
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_filter** | /BLCK/P5_STRING | OData query string describing jobs to count [optional]
+ **i_filter** | `/BLCK/P5_STRING` | OData query string describing jobs to count [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-count)**) | OK, a number is returned
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | `/BLCK/P5_COUNT` (**[Count](#markdown-header-model-count)**) | OK, a number is returned
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -1308,19 +1308,19 @@ A GET query to this path provides access to the list of print jobs in PLOSSYS P5
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_filter** | /BLCK/P5_STRING | OData query for searching jobs, see OData 3.0 Spec  [optional]
- **i_select** | /BLCK/P5_STRING | List of result properties, see OData 3.0 Spec  [optional]
- **i_skip** | /BLCK/P5_INT | Number of results to skip (e.g. for paging), see OData 3.0 Spec  [optional]
- **i_top** | /BLCK/P5_INT | Maximum number of results (e.g. for paging), see OData 3.0 Spec  [optional]
- **i_orderby** | /BLCK/P5_STRING | Column to use for sorting, see OData 3.0 Spec  [optional]
- **i_inlinecount** | /BLCK/P5_STRING | If missing or set to \&quot;none\&quot; the response is the result array.  If set to \&quot;allpages\&quot; the response is an object with results as the result array  and \&quot;totalCount\&quot; with the total count of entries found for this query, see OData 3.0 Spec  [optional]
+ **i_filter** | `/BLCK/P5_STRING` | OData query for searching jobs, see OData 3.0 Spec  [optional]
+ **i_select** | `/BLCK/P5_STRING` | List of result properties, see OData 3.0 Spec  [optional]
+ **i_skip** | `/BLCK/P5_INT` | Number of results to skip (e.g. for paging), see OData 3.0 Spec  [optional]
+ **i_top** | `/BLCK/P5_INT` | Maximum number of results (e.g. for paging), see OData 3.0 Spec  [optional]
+ **i_orderby** | `/BLCK/P5_STRING` | Column to use for sorting, see OData 3.0 Spec  [optional]
+ **i_inlinecount** | `/BLCK/P5_STRING` | If missing or set to \&quot;none\&quot; the response is the result array.  If set to \&quot;allpages\&quot; the response is an object with results as the result array  and \&quot;totalCount\&quot; with the total count of entries found for this query, see OData 3.0 Spec  [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_PRINT_JOB_TT (**[array of PrintJob](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | `/BLCK/P5_PRINT_JOB_TT` (**[array of PrintJob](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -1397,15 +1397,15 @@ A DELETE query to a job instance path stops and deletes the job.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_job_id** | /BLCK/P5_STRING | jobID of the printjob to delete 
+ **i_job_id** | `/BLCK/P5_STRING` | jobID of the printjob to delete 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_PRINT_JOB (**[PrintJob](#markdown-header-model-print_job)**) | OK, a json object is returned
- 412 | **e_code_412** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Wrong Printer Status.
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | `/BLCK/P5_PRINT_JOB` (**[PrintJob](#markdown-header-model-print_job)**) | OK, a json object is returned
+ 412 | **e_code_412** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Wrong Printer Status.
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -1477,14 +1477,14 @@ A GET query to this route returns a json object containing status information an
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_job_id** | /BLCK/P5_STRING | jobID of the printjob to query 
+ **i_job_id** | `/BLCK/P5_STRING` | jobID of the printjob to query 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_PRINT_JOB (**[PrintJob](#markdown-header-model-print_job)**) | OK, a json object is returned
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | `/BLCK/P5_PRINT_JOB` (**[PrintJob](#markdown-header-model-print_job)**) | OK, a json object is returned
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -1574,8 +1574,8 @@ A print job which has been suspended using the /jobs/{jobID}/pause function can 
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/P5_JOB_TARGET (**[JobTarget](#markdown-header-model-job_target)**) | JSON object describing where to move the job 
- **i_job_id** | /BLCK/P5_STRING | ID of the print job to move 
+ **i_body** | `/BLCK/P5_JOB_TARGET` (**[JobTarget](#markdown-header-model-job_target)**) | JSON object describing where to move the job 
+ **i_job_id** | `/BLCK/P5_STRING` | ID of the print job to move 
 
 ### Return types
 
@@ -1661,7 +1661,7 @@ Print job processing can be paused by a PUT query against this functional ressou
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_job_id** | /BLCK/P5_STRING | ID of the print job to suspend 
+ **i_job_id** | `/BLCK/P5_STRING` | ID of the print job to suspend 
 
 ### Return types
 
@@ -1747,7 +1747,7 @@ A print job which has been printed before or failed can be repeated by a PUT que
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_job_id** | /BLCK/P5_STRING | ID of the print job to repeat 
+ **i_job_id** | `/BLCK/P5_STRING` | ID of the print job to repeat 
 
 ### Return types
 
@@ -1833,7 +1833,7 @@ A print job which has been suspended using the /jobs/{jobID}/pause function can 
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_job_id** | /BLCK/P5_STRING | ID of the print job to reactivate 
+ **i_job_id** | `/BLCK/P5_STRING` | ID of the print job to reactivate 
 
 ### Return types
 
@@ -1904,8 +1904,8 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_METADATA (**[Metadata](#markdown-header-model-metadata)**) | Query OK, metadata document is returned
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | `/BLCK/P5_METADATA` (**[Metadata](#markdown-header-model-metadata)**) | Query OK, metadata document is returned
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -1986,15 +1986,15 @@ A DELETE query to a job instance path stops and deletes the job.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_job_id** | /BLCK/P5_STRING | jobID of the printjob to delete 
+ **i_job_id** | `/BLCK/P5_STRING` | jobID of the printjob to delete 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_PRINT_JOB (**[PrintJob](#markdown-header-model-print_job)**) | OK, a json object is returned
- 412 | **e_code_412** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Wrong Printer Status.
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | `/BLCK/P5_PRINT_JOB` (**[PrintJob](#markdown-header-model-print_job)**) | OK, a json object is returned
+ 412 | **e_code_412** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Wrong Printer Status.
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -2084,8 +2084,8 @@ A print job which has been suspended using the /jobs/{jobID}/pause function can 
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/P5_JOB_TARGET (**[JobTarget](#markdown-header-model-job_target)**) | JSON object describing where to move the job 
- **i_job_id** | /BLCK/P5_STRING | ID of the print job to move 
+ **i_body** | `/BLCK/P5_JOB_TARGET` (**[JobTarget](#markdown-header-model-job_target)**) | JSON object describing where to move the job 
+ **i_job_id** | `/BLCK/P5_STRING` | ID of the print job to move 
 
 ### Return types
 
@@ -2171,7 +2171,7 @@ Print job processing can be paused by a PUT query against this functional ressou
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_job_id** | /BLCK/P5_STRING | ID of the print job to suspend 
+ **i_job_id** | `/BLCK/P5_STRING` | ID of the print job to suspend 
 
 ### Return types
 
@@ -2257,7 +2257,7 @@ A print job which has been printed before or failed can be repeated by a PUT que
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_job_id** | /BLCK/P5_STRING | ID of the print job to repeat 
+ **i_job_id** | `/BLCK/P5_STRING` | ID of the print job to repeat 
 
 ### Return types
 
@@ -2343,7 +2343,7 @@ A print job which has been suspended using the /jobs/{jobID}/pause function can 
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_job_id** | /BLCK/P5_STRING | ID of the print job to reactivate 
+ **i_job_id** | `/BLCK/P5_STRING` | ID of the print job to reactivate 
 
 ### Return types
 
@@ -2428,15 +2428,15 @@ Adds a new printer to the list of managed printers in PLOSSYS P5. The new printe
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-printer)**) | A JSON object describing the new printer. The &#x27;printer&#x27; property needs to contain a unique name for the new printer (if the name is already in use, the POST request will fail (HTTP 409). The &#x27;connection&#x27; parameter is an arbitrary string (e.g. a URL) used to connect from PLOSSYS to the printer. Example {   \&quot;printer\&quot;: \&quot;newPrinterName\&quot;,   \&quot;connection\&quot;: \&quot;socket://HostOrIp:9100\&quot; }  
+ **i_body** | `/BLCK/P5_PRINTER` (**[Printer](#markdown-header-model-printer)**) | A JSON object describing the new printer. The &#x27;printer&#x27; property needs to contain a unique name for the new printer (if the name is already in use, the POST request will fail (HTTP 409). The &#x27;connection&#x27; parameter is an arbitrary string (e.g. a URL) used to connect from PLOSSYS to the printer. Example {   \&quot;printer\&quot;: \&quot;newPrinterName\&quot;,   \&quot;connection\&quot;: \&quot;socket://HostOrIp:9100\&quot; }  
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-printer)**) | OK. The printer was created, details of the new printer are returned
- 500 | **e_code_500** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-printer)**) | Error, e.g. in printer already exists
- other | **e_code_other** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected Error
+ 200 | **e_code_200** | `/BLCK/P5_PRINTER` (**[Printer](#markdown-header-model-printer)**) | OK. The printer was created, details of the new printer are returned
+ 500 | **e_code_500** | `/BLCK/P5_PRINTER` (**[Printer](#markdown-header-model-printer)**) | Error, e.g. in printer already exists
+ other | **e_code_other** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected Error
 
 ### HTTP request headers
 
@@ -2514,7 +2514,7 @@ Deletes the printer with the given name; If the printer is found and deletion is
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_printer_name** | /BLCK/P5_STRING | name (not ID!) of the printer to delete 
+ **i_printer_name** | `/BLCK/P5_STRING` | name (not ID!) of the printer to delete 
 
 ### Return types
 
@@ -2596,7 +2596,7 @@ Modifies a printer, replacing the current configuration with the one given in th
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-printer)**) | JSON object containing updated printer object 
+ **i_body** | `/BLCK/P5_PRINTER` (**[Printer](#markdown-header-model-printer)**) | JSON object containing updated printer object 
 
 ### Return types
 
@@ -2672,7 +2672,7 @@ A predefined test sheet is generated and inserted into the printer queue.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_printer_name** | /BLCK/P5_STRING | name (not ID!) of the printer to test 
+ **i_printer_name** | `/BLCK/P5_STRING` | name (not ID!) of the printer to test 
 
 ### Return types
 
@@ -2758,7 +2758,7 @@ A printers operation can be paused by a PUT query against this functional ressou
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_printer_name** | /BLCK/P5_STRING | name (not ID!) of the printer to pause 
+ **i_printer_name** | `/BLCK/P5_STRING` | name (not ID!) of the printer to pause 
 
 ### Return types
 
@@ -2844,7 +2844,7 @@ A printer can be redirected so that incoming print jobs for that printer are for
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_printer_name** | /BLCK/P5_STRING | name (not ID!) of the printer to redirect 
+ **i_printer_name** | `/BLCK/P5_STRING` | name (not ID!) of the printer to redirect 
 
 ### Return types
 
@@ -2930,7 +2930,7 @@ A printer which has been suspended using the /printers/{printerName}/pause funct
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_printer_name** | /BLCK/P5_STRING | name (not ID!) of the printer to reactivate 
+ **i_printer_name** | `/BLCK/P5_STRING` | name (not ID!) of the printer to reactivate 
 
 ### Return types
 
@@ -3009,14 +3009,14 @@ This route provides access to the number of print jobs known in PLOSSYS P5; eith
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_filter** | /BLCK/P5_STRING | OData query string describing jobs to count [optional]
+ **i_filter** | `/BLCK/P5_STRING` | OData query string describing jobs to count [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-count)**) | OK, a number is returned
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | `/BLCK/P5_COUNT` (**[Count](#markdown-header-model-count)**) | OK, a number is returned
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -3121,19 +3121,19 @@ A GET query to this path provides access to the list of print jobs in PLOSSYS P5
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_filter** | /BLCK/P5_STRING | OData query for searching jobs, see OData 3.0 Spec  [optional]
- **i_select** | /BLCK/P5_STRING | List of result properties, see OData 3.0 Spec  [optional]
- **i_skip** | /BLCK/P5_INT | Number of results to skip (e.g. for paging), see OData 3.0 Spec  [optional]
- **i_top** | /BLCK/P5_INT | Maximum number of results (e.g. for paging), see OData 3.0 Spec  [optional]
- **i_orderby** | /BLCK/P5_STRING | Column to use for sorting, see OData 3.0 Spec  [optional]
- **i_inlinecount** | /BLCK/P5_STRING | If missing or set to \&quot;none\&quot; the response is the result array.  If set to \&quot;allpages\&quot; the response is an object with results as the result array  and \&quot;totalCount\&quot; with the total count of entries found for this query, see OData 3.0 Spec  [optional]
+ **i_filter** | `/BLCK/P5_STRING` | OData query for searching jobs, see OData 3.0 Spec  [optional]
+ **i_select** | `/BLCK/P5_STRING` | List of result properties, see OData 3.0 Spec  [optional]
+ **i_skip** | `/BLCK/P5_INT` | Number of results to skip (e.g. for paging), see OData 3.0 Spec  [optional]
+ **i_top** | `/BLCK/P5_INT` | Maximum number of results (e.g. for paging), see OData 3.0 Spec  [optional]
+ **i_orderby** | `/BLCK/P5_STRING` | Column to use for sorting, see OData 3.0 Spec  [optional]
+ **i_inlinecount** | `/BLCK/P5_STRING` | If missing or set to \&quot;none\&quot; the response is the result array.  If set to \&quot;allpages\&quot; the response is an object with results as the result array  and \&quot;totalCount\&quot; with the total count of entries found for this query, see OData 3.0 Spec  [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_PRINT_JOB_TT (**[array of PrintJob](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | `/BLCK/P5_PRINT_JOB_TT` (**[array of PrintJob](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -3205,14 +3205,14 @@ This route provides access to the number of printers registered in PLOSSYS P5; e
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_filter** | /BLCK/P5_STRING | OData query string describing printers to count [optional]
+ **i_filter** | `/BLCK/P5_STRING` | OData query string describing printers to count [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-count)**) | OK, a number is returned
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | `/BLCK/P5_COUNT` (**[Count](#markdown-header-model-count)**) | OK, a number is returned
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -3321,20 +3321,20 @@ Retrieve a list of all known printers in PLOSSYS P5. A plain query to the endpoi
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_filter** | /BLCK/P5_STRING | OData query for searching printers, see OData 3.0 Spec  [optional]
- **i_select** | /BLCK/P5_STRING | List of result properties, see OData 3.0 Spec  [optional]
- **i_skip** | /BLCK/P5_INT | Number of results to skip (e.g. for paging), see OData 3.0 Spec  [optional]
- **i_top** | /BLCK/P5_INT | Maximum number of results (e.g. for paging), see OData 3.0 Spec  [optional]
- **i_orderby** | /BLCK/P5_STRING | Column to use for sorting, see OData 3.0 Spec  [optional]
- **i_inlinecount** | /BLCK/P5_STRING | If missing or set to \&quot;none\&quot; the response is the result array.  If set to \&quot;allpages\&quot; the response is an object with results as the result array  and \&quot;totalCount\&quot; with the total count of entries found for this query, see OData 3.0 Spec  [optional]
+ **i_filter** | `/BLCK/P5_STRING` | OData query for searching printers, see OData 3.0 Spec  [optional]
+ **i_select** | `/BLCK/P5_STRING` | List of result properties, see OData 3.0 Spec  [optional]
+ **i_skip** | `/BLCK/P5_INT` | Number of results to skip (e.g. for paging), see OData 3.0 Spec  [optional]
+ **i_top** | `/BLCK/P5_INT` | Maximum number of results (e.g. for paging), see OData 3.0 Spec  [optional]
+ **i_orderby** | `/BLCK/P5_STRING` | Column to use for sorting, see OData 3.0 Spec  [optional]
+ **i_inlinecount** | `/BLCK/P5_STRING` | If missing or set to \&quot;none\&quot; the response is the result array.  If set to \&quot;allpages\&quot; the response is an object with results as the result array  and \&quot;totalCount\&quot; with the total count of entries found for this query, see OData 3.0 Spec  [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_PRINTER_TT (**[array of Printer](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
- other | **e_code_other** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/P5_PRINTER_TT` (**[array of Printer](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ other | **e_code_other** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -3411,15 +3411,15 @@ Retrieve log entries for the given printer.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_printer_name** | /BLCK/P5_STRING | Name of the printer to get logs for 
+ **i_printer_name** | `/BLCK/P5_STRING` | Name of the printer to get logs for 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_LOGS (**[Logs](#markdown-header-model-logs)**) | OK, log entries are returned
- 404 | **e_code_404** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | No log entries found
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | `/BLCK/P5_LOGS` (**[Logs](#markdown-header-model-logs)**) | OK, log entries are returned
+ 404 | **e_code_404** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | No log entries found
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -3501,15 +3501,15 @@ Aggregates count the number of objects matching a given query and aggregate resu
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/P5_AGGREGATEQUERY (**[AggregateQuery](#markdown-header-model-aggregatequery)**) | Query object containing definition of the requested aggregate  
+ **i_body** | `/BLCK/P5_AGGREGATEQUERY` (**[AggregateQuery](#markdown-header-model-aggregatequery)**) | Query object containing definition of the requested aggregate  
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_AGGREGATERESPO (**[AggregateResponse](#markdown-header-model-aggregaterespo)**) | OK, an aggregate json object is returned
- 400 | **e_code_400** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Missing required paramenter
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | `/BLCK/P5_AGGREGATERESPO` (**[AggregateResponse](#markdown-header-model-aggregaterespo)**) | OK, an aggregate json object is returned
+ 400 | **e_code_400** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Missing required paramenter
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -3581,14 +3581,14 @@ This route provides access to the number of printers registered in PLOSSYS P5; e
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_filter** | /BLCK/P5_STRING | OData query string describing printers to count [optional]
+ **i_filter** | `/BLCK/P5_STRING` | OData query string describing printers to count [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-count)**) | OK, a number is returned
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | `/BLCK/P5_COUNT` (**[Count](#markdown-header-model-count)**) | OK, a number is returned
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -3697,20 +3697,20 @@ Retrieve a list of all known printers in PLOSSYS P5. A plain query to the endpoi
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_filter** | /BLCK/P5_STRING | OData query for searching printers, see OData 3.0 Spec  [optional]
- **i_select** | /BLCK/P5_STRING | List of result properties, see OData 3.0 Spec  [optional]
- **i_skip** | /BLCK/P5_INT | Number of results to skip (e.g. for paging), see OData 3.0 Spec  [optional]
- **i_top** | /BLCK/P5_INT | Maximum number of results (e.g. for paging), see OData 3.0 Spec  [optional]
- **i_orderby** | /BLCK/P5_STRING | Column to use for sorting, see OData 3.0 Spec  [optional]
- **i_inlinecount** | /BLCK/P5_STRING | If missing or set to \&quot;none\&quot; the response is the result array.  If set to \&quot;allpages\&quot; the response is an object with results as the result array  and \&quot;totalCount\&quot; with the total count of entries found for this query, see OData 3.0 Spec  [optional]
+ **i_filter** | `/BLCK/P5_STRING` | OData query for searching printers, see OData 3.0 Spec  [optional]
+ **i_select** | `/BLCK/P5_STRING` | List of result properties, see OData 3.0 Spec  [optional]
+ **i_skip** | `/BLCK/P5_INT` | Number of results to skip (e.g. for paging), see OData 3.0 Spec  [optional]
+ **i_top** | `/BLCK/P5_INT` | Maximum number of results (e.g. for paging), see OData 3.0 Spec  [optional]
+ **i_orderby** | `/BLCK/P5_STRING` | Column to use for sorting, see OData 3.0 Spec  [optional]
+ **i_inlinecount** | `/BLCK/P5_STRING` | If missing or set to \&quot;none\&quot; the response is the result array.  If set to \&quot;allpages\&quot; the response is an object with results as the result array  and \&quot;totalCount\&quot; with the total count of entries found for this query, see OData 3.0 Spec  [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_PRINTER_TT (**[array of Printer](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
- other | **e_code_other** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/P5_PRINTER_TT` (**[array of Printer](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ other | **e_code_other** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -3778,8 +3778,8 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_METADATA (**[Metadata](#markdown-header-model-metadata)**) | Query OK, metadata document is returned
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | `/BLCK/P5_METADATA` (**[Metadata](#markdown-header-model-metadata)**) | Query OK, metadata document is returned
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -3861,15 +3861,15 @@ Adds a new printer to the list of managed printers in PLOSSYS P5. The new printe
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-printer)**) | A JSON object describing the new printer. The &#x27;printer&#x27; property needs to contain a unique name for the new printer (if the name is already in use, the POST request will fail (HTTP 409). The &#x27;connection&#x27; parameter is an arbitrary string (e.g. a URL) used to connect from PLOSSYS to the printer. Example {   \&quot;printer\&quot;: \&quot;newPrinterName\&quot;,   \&quot;connection\&quot;: \&quot;socket://HostOrIp:9100\&quot; }  
+ **i_body** | `/BLCK/P5_PRINTER` (**[Printer](#markdown-header-model-printer)**) | A JSON object describing the new printer. The &#x27;printer&#x27; property needs to contain a unique name for the new printer (if the name is already in use, the POST request will fail (HTTP 409). The &#x27;connection&#x27; parameter is an arbitrary string (e.g. a URL) used to connect from PLOSSYS to the printer. Example {   \&quot;printer\&quot;: \&quot;newPrinterName\&quot;,   \&quot;connection\&quot;: \&quot;socket://HostOrIp:9100\&quot; }  
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-printer)**) | OK. The printer was created, details of the new printer are returned
- 500 | **e_code_500** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-printer)**) | Error, e.g. in printer already exists
- other | **e_code_other** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected Error
+ 200 | **e_code_200** | `/BLCK/P5_PRINTER` (**[Printer](#markdown-header-model-printer)**) | OK. The printer was created, details of the new printer are returned
+ 500 | **e_code_500** | `/BLCK/P5_PRINTER` (**[Printer](#markdown-header-model-printer)**) | Error, e.g. in printer already exists
+ other | **e_code_other** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected Error
 
 ### HTTP request headers
 
@@ -3947,7 +3947,7 @@ Deletes the printer with the given name; If the printer is found and deletion is
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_printer_name** | /BLCK/P5_STRING | name (not ID!) of the printer to delete 
+ **i_printer_name** | `/BLCK/P5_STRING` | name (not ID!) of the printer to delete 
 
 ### Return types
 
@@ -4031,16 +4031,16 @@ Retrieves printer configuration of the printer with the given printerName and re
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_printer_name** | /BLCK/P5_STRING | Name (not ID!) of the printer 
+ **i_printer_name** | `/BLCK/P5_STRING` | Name (not ID!) of the printer 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-printer)**) | Printer configuration
- 404 | **e_code_404** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Printer not found
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
- other | **e_code_other** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected Error
+ 200 | **e_code_200** | `/BLCK/P5_PRINTER` (**[Printer](#markdown-header-model-printer)**) | Printer configuration
+ 404 | **e_code_404** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Printer not found
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ other | **e_code_other** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected Error
 
 ### HTTP request headers
 
@@ -4117,15 +4117,15 @@ Retrieve log entries for the given printer.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_printer_name** | /BLCK/P5_STRING | Name of the printer to get logs for 
+ **i_printer_name** | `/BLCK/P5_STRING` | Name of the printer to get logs for 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_LOGS (**[Logs](#markdown-header-model-logs)**) | OK, log entries are returned
- 404 | **e_code_404** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | No log entries found
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | `/BLCK/P5_LOGS` (**[Logs](#markdown-header-model-logs)**) | OK, log entries are returned
+ 404 | **e_code_404** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | No log entries found
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -4204,7 +4204,7 @@ Modifies a printer, replacing the current configuration with the one given in th
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/P5_PRINTER (**[Printer](#markdown-header-model-printer)**) | JSON object containing updated printer object 
+ **i_body** | `/BLCK/P5_PRINTER` (**[Printer](#markdown-header-model-printer)**) | JSON object containing updated printer object 
 
 ### Return types
 
@@ -4280,7 +4280,7 @@ A predefined test sheet is generated and inserted into the printer queue.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_printer_name** | /BLCK/P5_STRING | name (not ID!) of the printer to test 
+ **i_printer_name** | `/BLCK/P5_STRING` | name (not ID!) of the printer to test 
 
 ### Return types
 
@@ -4366,7 +4366,7 @@ A printers operation can be paused by a PUT query against this functional ressou
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_printer_name** | /BLCK/P5_STRING | name (not ID!) of the printer to pause 
+ **i_printer_name** | `/BLCK/P5_STRING` | name (not ID!) of the printer to pause 
 
 ### Return types
 
@@ -4452,7 +4452,7 @@ A printer can be redirected so that incoming print jobs for that printer are for
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_printer_name** | /BLCK/P5_STRING | name (not ID!) of the printer to redirect 
+ **i_printer_name** | `/BLCK/P5_STRING` | name (not ID!) of the printer to redirect 
 
 ### Return types
 
@@ -4538,7 +4538,7 @@ A printer which has been suspended using the /printers/{printerName}/pause funct
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_printer_name** | /BLCK/P5_STRING | name (not ID!) of the printer to reactivate 
+ **i_printer_name** | `/BLCK/P5_STRING` | name (not ID!) of the printer to reactivate 
 
 ### Return types
 
@@ -4613,14 +4613,14 @@ Returns a PrinterStatus object describing the current status of the printer.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_printer_name** | /BLCK/P5_STRING | Name (not ID) of the printer to query 
+ **i_printer_name** | `/BLCK/P5_STRING` | Name (not ID) of the printer to query 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_PRINTER_STATUS (**[PrinterStatus](#markdown-header-model-printer_status)**) | Query OK, status is returned
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | `/BLCK/P5_PRINTER_STATUS` (**[PrinterStatus](#markdown-header-model-printer_status)**) | Query OK, status is returned
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -4702,15 +4702,15 @@ Aggregates count the number of objects matching a given query and aggregate resu
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/P5_AGGREGATEQUERY (**[AggregateQuery](#markdown-header-model-aggregatequery)**) | Query object containing definition of the requested aggregate  
+ **i_body** | `/BLCK/P5_AGGREGATEQUERY` (**[AggregateQuery](#markdown-header-model-aggregatequery)**) | Query object containing definition of the requested aggregate  
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_AGGREGATERESPO (**[AggregateResponse](#markdown-header-model-aggregaterespo)**) | OK, an aggregate json object is returned
- 400 | **e_code_400** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Missing required paramenter
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | `/BLCK/P5_AGGREGATERESPO` (**[AggregateResponse](#markdown-header-model-aggregaterespo)**) | OK, an aggregate json object is returned
+ 400 | **e_code_400** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Missing required paramenter
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -4782,14 +4782,14 @@ This route provides access to the number of print jobs known in PLOSSYS P5; eith
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_filter** | /BLCK/P5_STRING | OData query string describing jobs to count [optional]
+ **i_filter** | `/BLCK/P5_STRING` | OData query string describing jobs to count [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-count)**) | OK, a number is returned
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | `/BLCK/P5_COUNT` (**[Count](#markdown-header-model-count)**) | OK, a number is returned
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -4894,19 +4894,19 @@ A GET query to this path provides access to the list of print jobs in PLOSSYS P5
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_filter** | /BLCK/P5_STRING | OData query for searching jobs, see OData 3.0 Spec  [optional]
- **i_select** | /BLCK/P5_STRING | List of result properties, see OData 3.0 Spec  [optional]
- **i_skip** | /BLCK/P5_INT | Number of results to skip (e.g. for paging), see OData 3.0 Spec  [optional]
- **i_top** | /BLCK/P5_INT | Maximum number of results (e.g. for paging), see OData 3.0 Spec  [optional]
- **i_orderby** | /BLCK/P5_STRING | Column to use for sorting, see OData 3.0 Spec  [optional]
- **i_inlinecount** | /BLCK/P5_STRING | If missing or set to \&quot;none\&quot; the response is the result array.  If set to \&quot;allpages\&quot; the response is an object with results as the result array  and \&quot;totalCount\&quot; with the total count of entries found for this query, see OData 3.0 Spec  [optional]
+ **i_filter** | `/BLCK/P5_STRING` | OData query for searching jobs, see OData 3.0 Spec  [optional]
+ **i_select** | `/BLCK/P5_STRING` | List of result properties, see OData 3.0 Spec  [optional]
+ **i_skip** | `/BLCK/P5_INT` | Number of results to skip (e.g. for paging), see OData 3.0 Spec  [optional]
+ **i_top** | `/BLCK/P5_INT` | Maximum number of results (e.g. for paging), see OData 3.0 Spec  [optional]
+ **i_orderby** | `/BLCK/P5_STRING` | Column to use for sorting, see OData 3.0 Spec  [optional]
+ **i_inlinecount** | `/BLCK/P5_STRING` | If missing or set to \&quot;none\&quot; the response is the result array.  If set to \&quot;allpages\&quot; the response is an object with results as the result array  and \&quot;totalCount\&quot; with the total count of entries found for this query, see OData 3.0 Spec  [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_PRINT_JOB_TT (**[array of PrintJob](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | `/BLCK/P5_PRINT_JOB_TT` (**[array of PrintJob](#markdown-header-model-print_job)**) | Query OK; an array of PrintJob objects is returned
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -4984,15 +4984,15 @@ Aggregates count the number of objects matching a given query and aggregate resu
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/P5_AGGREGATEQUERY (**[AggregateQuery](#markdown-header-model-aggregatequery)**) | Query object containing definition of the requested aggregate  
+ **i_body** | `/BLCK/P5_AGGREGATEQUERY` (**[AggregateQuery](#markdown-header-model-aggregatequery)**) | Query object containing definition of the requested aggregate  
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_AGGREGATERESPO (**[AggregateResponse](#markdown-header-model-aggregaterespo)**) | OK, an aggregate json object is returned
- 400 | **e_code_400** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Missing required paramenter
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | `/BLCK/P5_AGGREGATERESPO` (**[AggregateResponse](#markdown-header-model-aggregaterespo)**) | OK, an aggregate json object is returned
+ 400 | **e_code_400** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Missing required paramenter
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -5064,14 +5064,14 @@ This route provides access to the number of printers registered in PLOSSYS P5; e
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_filter** | /BLCK/P5_STRING | OData query string describing printers to count [optional]
+ **i_filter** | `/BLCK/P5_STRING` | OData query string describing printers to count [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_COUNT (**[Count](#markdown-header-model-count)**) | OK, a number is returned
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | `/BLCK/P5_COUNT` (**[Count](#markdown-header-model-count)**) | OK, a number is returned
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -5180,20 +5180,20 @@ Retrieve a list of all known printers in PLOSSYS P5. A plain query to the endpoi
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_filter** | /BLCK/P5_STRING | OData query for searching printers, see OData 3.0 Spec  [optional]
- **i_select** | /BLCK/P5_STRING | List of result properties, see OData 3.0 Spec  [optional]
- **i_skip** | /BLCK/P5_INT | Number of results to skip (e.g. for paging), see OData 3.0 Spec  [optional]
- **i_top** | /BLCK/P5_INT | Maximum number of results (e.g. for paging), see OData 3.0 Spec  [optional]
- **i_orderby** | /BLCK/P5_STRING | Column to use for sorting, see OData 3.0 Spec  [optional]
- **i_inlinecount** | /BLCK/P5_STRING | If missing or set to \&quot;none\&quot; the response is the result array.  If set to \&quot;allpages\&quot; the response is an object with results as the result array  and \&quot;totalCount\&quot; with the total count of entries found for this query, see OData 3.0 Spec  [optional]
+ **i_filter** | `/BLCK/P5_STRING` | OData query for searching printers, see OData 3.0 Spec  [optional]
+ **i_select** | `/BLCK/P5_STRING` | List of result properties, see OData 3.0 Spec  [optional]
+ **i_skip** | `/BLCK/P5_INT` | Number of results to skip (e.g. for paging), see OData 3.0 Spec  [optional]
+ **i_top** | `/BLCK/P5_INT` | Maximum number of results (e.g. for paging), see OData 3.0 Spec  [optional]
+ **i_orderby** | `/BLCK/P5_STRING` | Column to use for sorting, see OData 3.0 Spec  [optional]
+ **i_inlinecount** | `/BLCK/P5_STRING` | If missing or set to \&quot;none\&quot; the response is the result array.  If set to \&quot;allpages\&quot; the response is an object with results as the result array  and \&quot;totalCount\&quot; with the total count of entries found for this query, see OData 3.0 Spec  [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_PRINTER_TT (**[array of Printer](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
- other | **e_code_other** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/P5_PRINTER_TT` (**[array of Printer](#markdown-header-model-printer)**) | Query OK; an array of printer objects is returned
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ other | **e_code_other** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -5270,15 +5270,15 @@ Retrieve log entries for the given printer.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_printer_name** | /BLCK/P5_STRING | Name of the printer to get logs for 
+ **i_printer_name** | `/BLCK/P5_STRING` | Name of the printer to get logs for 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P5_LOGS (**[Logs](#markdown-header-model-logs)**) | OK, log entries are returned
- 404 | **e_code_404** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | No log entries found
- 500 | **e_code_500** | /BLCK/P5_ERROR (**[Error](#markdown-header-model-error)**) | Internal Server Error
+ 200 | **e_code_200** | `/BLCK/P5_LOGS` (**[Logs](#markdown-header-model-logs)**) | OK, log entries are returned
+ 404 | **e_code_404** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | No log entries found
+ 500 | **e_code_500** | `/BLCK/P5_ERROR` (**[Error](#markdown-header-model-error)**) | Internal Server Error
 
 ### HTTP request headers
 
@@ -5328,8 +5328,8 @@ HTTP Code | Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**match** | /BLCK/P5_STRING | Query-rules for objects to aggregate
-**aggregates** | /BLCK/P5_STRING_TT | List of aggregates to generate
+**match** | `/BLCK/P5_STRING` | Query-rules for objects to aggregate
+**aggregates** | `/BLCK/P5_STRING_TT` | List of aggregates to generate
 
 * * *
 <a name="markdown-header-model-aggregaterespo"></a> 
@@ -5410,7 +5410,7 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**count** | /BLCK/P5_INT | Counted number
+**count** | `/BLCK/P5_INT` | Counted number
 
 * * *
 <a name="markdown-header-model-error"></a> 
@@ -5455,9 +5455,9 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**code** | /BLCK/P5_INT | 
-**message** | /BLCK/P5_STRING | 
-**fields** | /BLCK/P5_STRING | 
+**code** | `/BLCK/P5_INT` | 
+**message** | `/BLCK/P5_STRING` | 
+**fields** | `/BLCK/P5_STRING` | 
 
 * * *
 <a name="markdown-header-model-job_target"></a> 
@@ -5501,8 +5501,8 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**target_printer** | /BLCK/P5_STRING | PrinterName of the target printer
-**target_server** | /BLCK/P5_STRING | Name of the target PLOSSYS P5 server
+**target_printer** | `/BLCK/P5_STRING` | PrinterName of the target printer
+**target_server** | `/BLCK/P5_STRING` | Name of the target PLOSSYS P5 server
 
 * * *
 <a name="markdown-header-model-logs"></a> 
@@ -5544,7 +5544,7 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**messages** | /BLCK/P5_STRING_TT | Array of Log entries
+**messages** | `/BLCK/P5_STRING_TT` | Array of Log entries
 
 * * *
 <a name="markdown-header-model-metadata"></a> 
@@ -5633,11 +5633,11 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**id** | /BLCK/P5_STRING | Job identifier
-**status** | /BLCK/P5_STRING | Current job status
-**current** | /BLCK/P5_STRING | Information about the job as it is used in PLOSSYS P5 at the present time.
-**orig** | /BLCK/P5_STRING | Information about the job as it was originally submitted to PLOSSYS P5
-**routing** | /BLCK/P5_STRING | Information about the processor route of the job.
+**id** | `/BLCK/P5_STRING` | Job identifier
+**status** | `/BLCK/P5_STRING` | Current job status
+**current** | `/BLCK/P5_STRING` | Information about the job as it is used in PLOSSYS P5 at the present time.
+**orig** | `/BLCK/P5_STRING` | Information about the job as it was originally submitted to PLOSSYS P5
+**routing** | `/BLCK/P5_STRING` | Information about the processor route of the job.
 
 * * *
 <a name="markdown-header-model-printer"></a> 
@@ -5680,8 +5680,8 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**id** | /BLCK/P5_STRING | Internal ID of the printer, auto-generated by PLOSSYS P5
-**config** | /BLCK/P5_STRING | 
+**id** | `/BLCK/P5_STRING` | Internal ID of the printer, auto-generated by PLOSSYS P5
+**config** | `/BLCK/P5_STRING` | 
 
 * * *
 <a name="markdown-header-model-printer_status"></a> 
@@ -5725,6 +5725,6 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**mode** | /BLCK/P5_STRING | One of {ready, printing, paused, redirected, error}
-**queue_length** | /BLCK/P5_INT | 
+**mode** | `/BLCK/P5_STRING` | One of {ready, printing, paused, redirected, error}
+**queue_length** | `/BLCK/P5_INT` | 
 

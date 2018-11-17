@@ -66,7 +66,7 @@ Add a new pet to the store
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/PET_PET (**[Pet](#markdown-header-model-pet)**) | Pet object that needs to be added to the store 
+ **i_body** | `/BLCK/PET_PET` (**[Pet](#markdown-header-model-pet)**) | Pet object that needs to be added to the store 
 
 ### Return types
 
@@ -143,8 +143,8 @@ Deletes a pet
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_pet_id** | /BLCK/PET_INT | Pet id to delete 
- **i_api_key** | /BLCK/PET_STRING |  [optional]
+ **i_pet_id** | `/BLCK/PET_INT` | Pet id to delete 
+ **i_api_key** | `/BLCK/PET_STRING` |  [optional]
 
 ### Return types
 
@@ -223,13 +223,13 @@ Multiple status values can be provided with comma separated strings
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_status** | /BLCK/PET_STRING_TT (**[array of ](#markdown-header-enum-)**) | Status values that need to be considered for filter 
+ **i_status** | `/BLCK/PET_STRING_TT` (**[array of ](#markdown-header-enum-)**) | Status values that need to be considered for filter 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/PET_PET_TT (**[array of Pet](#markdown-header-model-pet)**) | successful operation
+ 200 | **e_code_200** | `/BLCK/PET_PET_TT` (**[array of Pet](#markdown-header-model-pet)**) | successful operation
  400 | value not returned |  | Invalid status value
 
 ### HTTP request headers
@@ -306,13 +306,13 @@ Muliple tags can be provided with comma separated strings. Use tag1, tag2, tag3 
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_tags** | /BLCK/PET_STRING_TT (**[array of ](#markdown-header-model-)**) | Tags to filter by 
+ **i_tags** | `/BLCK/PET_STRING_TT` (**[array of ](#markdown-header-model-)**) | Tags to filter by 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/PET_PET_TT (**[array of Pet](#markdown-header-model-pet)**) | successful operation
+ 200 | **e_code_200** | `/BLCK/PET_PET_TT` (**[array of Pet](#markdown-header-model-pet)**) | successful operation
  400 | value not returned |  | Invalid tag value
 
 ### HTTP request headers
@@ -387,13 +387,13 @@ Returns a single pet
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_pet_id** | /BLCK/PET_INT | ID of pet to return 
+ **i_pet_id** | `/BLCK/PET_INT` | ID of pet to return 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/PET_PET (**[Pet](#markdown-header-model-pet)**) | successful operation
+ 200 | **e_code_200** | `/BLCK/PET_PET` (**[Pet](#markdown-header-model-pet)**) | successful operation
  400 | value not returned |  | Invalid ID supplied
  404 | value not returned |  | Pet not found
 
@@ -471,7 +471,7 @@ Update an existing pet
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/PET_PET (**[Pet](#markdown-header-model-pet)**) | Pet object that needs to be added to the store 
+ **i_body** | `/BLCK/PET_PET` (**[Pet](#markdown-header-model-pet)**) | Pet object that needs to be added to the store 
 
 ### Return types
 
@@ -551,9 +551,9 @@ Updates a pet in the store with form data
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_pet_id** | /BLCK/PET_INT | ID of pet that needs to be updated 
- **i_name** | /BLCK/PET_STRING |  [optional]
- **i_status** | /BLCK/PET_STRING |  [optional]
+ **i_pet_id** | `/BLCK/PET_INT` | ID of pet that needs to be updated 
+ **i_name** | `/BLCK/PET_STRING` |  [optional]
+ **i_status** | `/BLCK/PET_STRING` |  [optional]
 
 ### Return types
 
@@ -636,15 +636,15 @@ uploads an image
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_pet_id** | /BLCK/PET_INT | ID of pet to update 
- **i_additional_metadata** | /BLCK/PET_STRING |  [optional]
- **i_file** | /BLCK/PET_BINARY |  [optional]
+ **i_pet_id** | `/BLCK/PET_INT` | ID of pet to update 
+ **i_additional_metadata** | `/BLCK/PET_STRING` |  [optional]
+ **i_file** | `/BLCK/PET_BINARY` |  [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/PET_API_RESPONSE (**[ApiResponse](#markdown-header-model-api_response)**) | successful operation
+ 200 | **e_code_200** | `/BLCK/PET_API_RESPONSE` (**[ApiResponse](#markdown-header-model-api_response)**) | successful operation
 
 ### HTTP request headers
 
@@ -714,7 +714,7 @@ For valid response try integer IDs with positive integer value. Negative or non-
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_order_id** | /BLCK/PET_INT | ID of the order that needs to be deleted 
+ **i_order_id** | `/BLCK/PET_INT` | ID of the order that needs to be deleted 
 
 ### Return types
 
@@ -783,7 +783,7 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/PET_INT_MT (**[map of ](#markdown-header-model-)**) | successful operation
+ 200 | **e_code_200** | `/BLCK/PET_INT_MT` (**[map of ](#markdown-header-model-)**) | successful operation
 
 ### HTTP request headers
 
@@ -854,13 +854,13 @@ For valid response try integer IDs with value >= 1 and <= 10. Other values will 
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_order_id** | /BLCK/PET_INT | ID of pet that needs to be fetched 
+ **i_order_id** | `/BLCK/PET_INT` | ID of pet that needs to be fetched 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/PET_ORDER (**[Order](#markdown-header-model-order)**) | successful operation
+ 200 | **e_code_200** | `/BLCK/PET_ORDER` (**[Order](#markdown-header-model-order)**) | successful operation
  400 | value not returned |  | Invalid ID supplied
  404 | value not returned |  | Order not found
 
@@ -934,13 +934,13 @@ Place an order for a pet
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/PET_ORDER (**[Order](#markdown-header-model-order)**) | order placed for purchasing the pet 
+ **i_body** | `/BLCK/PET_ORDER` (**[Order](#markdown-header-model-order)**) | order placed for purchasing the pet 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/PET_ORDER (**[Order](#markdown-header-model-order)**) | successful operation
+ 200 | **e_code_200** | `/BLCK/PET_ORDER` (**[Order](#markdown-header-model-order)**) | successful operation
  400 | value not returned |  | Invalid Order
 
 ### HTTP request headers
@@ -1015,7 +1015,7 @@ This can only be done by the logged in user.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/PET_USER (**[User](#markdown-header-model-user)**) | Created user object 
+ **i_body** | `/BLCK/PET_USER` (**[User](#markdown-header-model-user)**) | Created user object 
 
 ### Return types
 
@@ -1081,7 +1081,7 @@ Creates list of users with given input array
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/PET_USER_TTT (**[array of User](#markdown-header-model-user)**) | List of user object 
+ **i_body** | `/BLCK/PET_USER_TTT` (**[array of User](#markdown-header-model-user)**) | List of user object 
 
 ### Return types
 
@@ -1147,7 +1147,7 @@ Creates list of users with given input array
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/PET_USER_TTT (**[array of User](#markdown-header-model-user)**) | List of user object 
+ **i_body** | `/BLCK/PET_USER_TTT` (**[array of User](#markdown-header-model-user)**) | List of user object 
 
 ### Return types
 
@@ -1216,7 +1216,7 @@ This can only be done by the logged in user.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_username** | /BLCK/PET_STRING | The name that needs to be deleted 
+ **i_username** | `/BLCK/PET_STRING` | The name that needs to be deleted 
 
 ### Return types
 
@@ -1288,13 +1288,13 @@ Get user by user name
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_username** | /BLCK/PET_STRING | The name that needs to be fetched. Use user1 for testing.  
+ **i_username** | `/BLCK/PET_STRING` | The name that needs to be fetched. Use user1 for testing.  
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/PET_USER (**[User](#markdown-header-model-user)**) | successful operation
+ 200 | **e_code_200** | `/BLCK/PET_USER` (**[User](#markdown-header-model-user)**) | successful operation
  400 | value not returned |  | Invalid username supplied
  404 | value not returned |  | User not found
 
@@ -1369,14 +1369,14 @@ Logs user into the system
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_username** | /BLCK/PET_STRING | The user name for login 
- **i_password** | /BLCK/PET_STRING | The password for login in clear text 
+ **i_username** | `/BLCK/PET_STRING` | The user name for login 
+ **i_password** | `/BLCK/PET_STRING` | The password for login in clear text 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/PET_STRING | successful operation
+ 200 | **e_code_200** | `/BLCK/PET_STRING` | successful operation
  400 | value not returned |  | Invalid username/password supplied
 
 ### HTTP request headers
@@ -1510,8 +1510,8 @@ This can only be done by the logged in user.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/PET_USER (**[User](#markdown-header-model-user)**) | Updated user object 
- **i_username** | /BLCK/PET_STRING | name that need to be updated 
+ **i_body** | `/BLCK/PET_USER` (**[User](#markdown-header-model-user)**) | Updated user object 
+ **i_username** | `/BLCK/PET_STRING` | name that need to be updated 
 
 ### Return types
 
@@ -1565,9 +1565,9 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**code** | /BLCK/PET_INT | 
-**type** | /BLCK/PET_STRING | 
-**message** | /BLCK/PET_STRING | 
+**code** | `/BLCK/PET_INT` | 
+**type** | `/BLCK/PET_STRING` | 
+**message** | `/BLCK/PET_STRING` | 
 
 * * *
 <a name="markdown-header-model-category"></a> 
@@ -1610,8 +1610,8 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**id** | /BLCK/PET_INT | 
-**name** | /BLCK/PET_STRING | 
+**id** | `/BLCK/PET_INT` | 
+**name** | `/BLCK/PET_STRING` | 
 
 * * *
 <a name="markdown-header-model-order"></a> 
@@ -1662,12 +1662,12 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**id** | /BLCK/PET_INT | 
-**pet_id** | /BLCK/PET_INT | 
-**quantity** | /BLCK/PET_INT | 
-**ship_date** | /BLCK/PET_TIMESTAMP | 
-**status** | /BLCK/PET_STRING | Order Status
-**complete** | /BLCK/PET_BOOL | 
+**id** | `/BLCK/PET_INT` | 
+**pet_id** | `/BLCK/PET_INT` | 
+**quantity** | `/BLCK/PET_INT` | 
+**ship_date** | `/BLCK/PET_TIMESTAMP` | 
+**status** | `/BLCK/PET_STRING` | Order Status
+**complete** | `/BLCK/PET_BOOL` | 
 
 * * *
 <a name="markdown-header-model-tag"></a> 
@@ -1710,8 +1710,8 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**id** | /BLCK/PET_INT | 
-**name** | /BLCK/PET_STRING | 
+**id** | `/BLCK/PET_INT` | 
+**name** | `/BLCK/PET_STRING` | 
 
 * * *
 <a name="markdown-header-model-pet"></a> 
@@ -1762,12 +1762,12 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**id** | /BLCK/PET_INT | 
-**category** | /BLCK/PET_CATEGORY (**[Category](#markdown-header-model-category)**) | 
-**name** | /BLCK/PET_STRING | 
-**photo_urls** | /BLCK/PET_STRING_TT | 
-**tags** | /BLCK/PET_TAG_TT (**[array of Tag](#markdown-header-model-tag)**) | 
-**status** | /BLCK/PET_STRING | pet status in the store
+**id** | `/BLCK/PET_INT` | 
+**category** | `/BLCK/PET_CATEGORY` (**[Category](#markdown-header-model-category)**) | 
+**name** | `/BLCK/PET_STRING` | 
+**photo_urls** | `/BLCK/PET_STRING_TT` | 
+**tags** | `/BLCK/PET_TAG_TT` (**[array of Tag](#markdown-header-model-tag)**) | 
+**status** | `/BLCK/PET_STRING` | pet status in the store
 
 * * *
 <a name="markdown-header-model-user"></a> 
@@ -1822,12 +1822,12 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**id** | /BLCK/PET_INT | 
-**username** | /BLCK/PET_STRING | 
-**first_name** | /BLCK/PET_STRING | 
-**last_name** | /BLCK/PET_STRING | 
-**email** | /BLCK/PET_STRING | 
-**password** | /BLCK/PET_STRING | 
-**phone** | /BLCK/PET_STRING | 
-**user_status** | /BLCK/PET_INT | User Status
+**id** | `/BLCK/PET_INT` | 
+**username** | `/BLCK/PET_STRING` | 
+**first_name** | `/BLCK/PET_STRING` | 
+**last_name** | `/BLCK/PET_STRING` | 
+**email** | `/BLCK/PET_STRING` | 
+**password** | `/BLCK/PET_STRING` | 
+**phone** | `/BLCK/PET_STRING` | 
+**user_status** | `/BLCK/PET_INT` | User Status
 

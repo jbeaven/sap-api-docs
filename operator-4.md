@@ -107,20 +107,20 @@ Creates a new record in the command resource. It returns a JSON object containin
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/OP4_COMMAND (**[Command](#markdown-header-model-command)**) | The command entry and it&#x27;s parameter to be created. Currently supported  commands are &#x60;copy&#x60; and &#x60;move&#x60;. The parameters for both commands: &#x60;&#x60;&#x60;json {   \&quot;action\&quot;: \&quot;copy|move\&quot;,   \&quot;parameter\&quot;: {     \&quot;source\&quot;: \&quot;source href\&quot;,     \&quot;parent\&quot;: \&quot;uuid of target parent\&quot;   } } &#x60;&#x60;&#x60; The source may be a remote repository in later implementations, so an &#x60;href&#x60; is needed here.  
- **i_sid** | /BLCK/OP4_STRING | ID of the current service. 
+ **i_body** | `/BLCK/OP4_COMMAND` (**[Command](#markdown-header-model-command)**) | The command entry and it&#x27;s parameter to be created. Currently supported  commands are &#x60;copy&#x60; and &#x60;move&#x60;. The parameters for both commands: &#x60;&#x60;&#x60;json {   \&quot;action\&quot;: \&quot;copy|move\&quot;,   \&quot;parameter\&quot;: {     \&quot;source\&quot;: \&quot;source href\&quot;,     \&quot;parent\&quot;: \&quot;uuid of target parent\&quot;   } } &#x60;&#x60;&#x60; The source may be a remote repository in later implementations, so an &#x60;href&#x60; is needed here.  
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the current service. 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_COMMAND_STATUS (**[CommandStatus](#markdown-header-model-command_status)**) | OK, entry created. Command id will be returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide commands
- 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_COMMAND_STATUS` (**[CommandStatus](#markdown-header-model-command_status)**) | OK, entry created. Command id will be returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | The service does not provide commands
+ 409 | **e_code_409** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -251,23 +251,23 @@ Some services (not all) expose access to documents. All documents available thro
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_sid** | /BLCK/OP4_STRING | ID of the current repository. 
- **i_offset** | /BLCK/OP4_INT | Index of first result to return. [default "0"]
- **i_limit** | /BLCK/OP4_INT | Number of results to return. Maximum is 500. [default "50"]
- **i_sort** | /BLCK/OP4_STRING | Sort query results. Comma separated list of property names, prefixed with &#x27;-&#x27; for descending sort order. Example: &#x27;sort&#x3D;date,-name&#x27;  [optional]
- **i_scope** | /BLCK/OP4_STRING | Set the scope when searching for documents. Possible values are &#x60;root&#x60; and &#x60;all&#x60;, default is &#x60;all&#x60;.  [default "all"]
- **i_embed** | /BLCK/OP4_STRING | Include sub-ressource or sub-collection data in response. \&quot;permissions\&quot;: include access rights records for each entry. \&quot;thumb\&quot;: include base64 encoded thumbnail image for each entry, e.g. &#x60;&#x60;&#x60; \&quot;embedded\&quot;: {   \&quot;content-type\&quot;: \&quot;image/png\&quot;   \&quot;thumb\&quot;: \&quot;A9cX0...\&quot; } &#x60;&#x60;&#x60;  [optional]
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the current repository. 
+ **i_offset** | `/BLCK/OP4_INT` | Index of first result to return. [default "0"]
+ **i_limit** | `/BLCK/OP4_INT` | Number of results to return. Maximum is 500. [default "50"]
+ **i_sort** | `/BLCK/OP4_STRING` | Sort query results. Comma separated list of property names, prefixed with &#x27;-&#x27; for descending sort order. Example: &#x27;sort&#x3D;date,-name&#x27;  [optional]
+ **i_scope** | `/BLCK/OP4_STRING` | Set the scope when searching for documents. Possible values are &#x60;root&#x60; and &#x60;all&#x60;, default is &#x60;all&#x60;.  [default "all"]
+ **i_embed** | `/BLCK/OP4_STRING` | Include sub-ressource or sub-collection data in response. \&quot;permissions\&quot;: include access rights records for each entry. \&quot;thumb\&quot;: include base64 encoded thumbnail image for each entry, e.g. &#x60;&#x60;&#x60; \&quot;embedded\&quot;: {   \&quot;content-type\&quot;: \&quot;image/png\&quot;   \&quot;thumb\&quot;: \&quot;A9cX0...\&quot; } &#x60;&#x60;&#x60;  [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_REPO_ENTRY_TT (**[array of RepoEntry](#markdown-header-model-repo_entry)**) | OK, collection of entries is returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide a repository
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_REPO_ENTRY_TT` (**[array of RepoEntry](#markdown-header-model-repo_entry)**) | OK, collection of entries is returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | The service does not provide a repository
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -376,20 +376,20 @@ Creates a new record in the current Repository, inside the root collection, and 
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/OP4_BASEREPOENTRY (**[BaseRepoEntry](#markdown-header-model-baserepoentry)**) | metadata of the entry to be created 
- **i_sid** | /BLCK/OP4_STRING | ID of the current service. 
+ **i_body** | `/BLCK/OP4_BASEREPOENTRY` (**[BaseRepoEntry](#markdown-header-model-baserepoentry)**) | metadata of the entry to be created 
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the current service. 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry created. Entry metadata returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide a repository
- 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_REPO_ENTRY` (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry created. Entry metadata returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | The service does not provide a repository
+ 409 | **e_code_409** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -499,9 +499,9 @@ Removes the current entry from the repository. This will not only remove the ref
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_sid** | /BLCK/OP4_STRING | ID of the current Service. 
- **i_uuid** | /BLCK/OP4_STRING | UUID of the entry to delete 
- **i_force** | /BLCK/OP4_BOOL | Delete document even if it&#x27;s still in use by one or more tasks. [optional]
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the current Service. 
+ **i_uuid** | `/BLCK/OP4_STRING` | UUID of the entry to delete 
+ **i_force** | `/BLCK/OP4_BOOL` | Delete document even if it&#x27;s still in use by one or more tasks. [optional]
 
 ### Return types
 
@@ -606,19 +606,19 @@ Given a 'uuid' parameter, this route retrieves an entry's metadata. The entry ma
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_sid** | /BLCK/OP4_STRING | ID of the current service. 
- **i_uuid** | /BLCK/OP4_STRING | ID of the repository entry 
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the current service. 
+ **i_uuid** | `/BLCK/OP4_STRING` | ID of the repository entry 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry metadata returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The given uuid was not found.
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_REPO_ENTRY` (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry metadata returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | The given uuid was not found.
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -733,21 +733,21 @@ Update the given entry's metadata. Only data given with the patch will be change
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/OP4_BASEREPOENTRY (**[BaseRepoEntry](#markdown-header-model-baserepoentry)**) | New entry metadata. 
- **i_sid** | /BLCK/OP4_STRING | ID of the current service. 
- **i_uuid** | /BLCK/OP4_STRING | UUID of the entry 
+ **i_body** | `/BLCK/OP4_BASEREPOENTRY` (**[BaseRepoEntry](#markdown-header-model-baserepoentry)**) | New entry metadata. 
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the current service. 
+ **i_uuid** | `/BLCK/OP4_STRING` | UUID of the entry 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry metadata replaced, new metadata returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | No entry found at the given &#x27;uuid&#x27;.
- 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_REPO_ENTRY` (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry metadata replaced, new metadata returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | No entry found at the given &#x27;uuid&#x27;.
+ 409 | **e_code_409** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -867,22 +867,22 @@ If the entry under the given uuid is a collection, then a POST request to this r
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/OP4_BASEREPOENTRY (**[BaseRepoEntry](#markdown-header-model-baserepoentry)**) | Metadata of the entry to create 
- **i_sid** | /BLCK/OP4_STRING | ID of the current Service. 
- **i_uuid** | /BLCK/OP4_STRING | UUID of the collection 
+ **i_body** | `/BLCK/OP4_BASEREPOENTRY` (**[BaseRepoEntry](#markdown-header-model-baserepoentry)**) | Metadata of the entry to create 
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the current Service. 
+ **i_uuid** | `/BLCK/OP4_STRING` | UUID of the collection 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, new entry created, metadata of the entry returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | No entry found at the given &#x27;uuid&#x27;.
- 405 | **e_code_405** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Method not allowed. The entry under &#x27;uuid&#x27; is not a collection. 
- 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_REPO_ENTRY` (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, new entry created, metadata of the entry returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | No entry found at the given &#x27;uuid&#x27;.
+ 405 | **e_code_405** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Method not allowed. The entry under &#x27;uuid&#x27; is not a collection. 
+ 409 | **e_code_409** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -998,21 +998,21 @@ Completely replace the metadata record of the given entry. Only record metadata 
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/OP4_BASEREPOENTRY (**[BaseRepoEntry](#markdown-header-model-baserepoentry)**) | New entry metadata. Note that changing the entry type is not possible by updating metadata.  
- **i_sid** | /BLCK/OP4_STRING | ID of the current repository. 
- **i_uuid** | /BLCK/OP4_STRING | UUID of the entry 
+ **i_body** | `/BLCK/OP4_BASEREPOENTRY` (**[BaseRepoEntry](#markdown-header-model-baserepoentry)**) | New entry metadata. Note that changing the entry type is not possible by updating metadata.  
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the current repository. 
+ **i_uuid** | `/BLCK/OP4_STRING` | UUID of the entry 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry metadata replaced, new metadata returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | No entry found under the given &#x27;uuid&#x27;.
- 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_REPO_ENTRY` (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry metadata replaced, new metadata returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | No entry found under the given &#x27;uuid&#x27;.
+ 409 | **e_code_409** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -1114,19 +1114,19 @@ Returns a JSON object containing the status of the command. Command resources ar
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_sid** | /BLCK/OP4_STRING | ID of the current service. 
- **i_cid** | /BLCK/OP4_STRING | ID of the command. 
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the current service. 
+ **i_cid** | `/BLCK/OP4_STRING` | ID of the command. 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_COMMAND_STATUS (**[CommandStatus](#markdown-header-model-command_status)**) | OK, status of command resource is returned
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide the given resource.
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_COMMAND_STATUS` (**[CommandStatus](#markdown-header-model-command_status)**) | OK, status of command resource is returned
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | The service does not provide the given resource.
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -1258,23 +1258,23 @@ Some services (not all) expose access to documents. All documents available thro
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_sid** | /BLCK/OP4_STRING | ID of the current repository. 
- **i_uuid** | /BLCK/OP4_STRING | UUID of the parent collection 
- **i_offset** | /BLCK/OP4_INT | Index of first result to return. [default "0"]
- **i_limit** | /BLCK/OP4_INT | Number of results to return. Maximum is 500. [default "50"]
- **i_sort** | /BLCK/OP4_STRING | Sort query results. Comma separated list of property names, prefixed with &#x27;-&#x27; for descending sort order. Example: &#x27;sort&#x3D;date,-name&#x27;  [optional]
- **i_embed** | /BLCK/OP4_STRING | Include sub-ressource or sub-collection data in response. \&quot;permissions\&quot;: include access rights records for each entry. \&quot;icon\&quot;: include icon-font and value for each entry, e.g. &#x60;&#x60;&#x60; \&quot;embedded\&quot;: {   \&quot;icon\&quot;: \&quot;material:play\&quot; } &#x60;&#x60;&#x60; \&quot;thumb\&quot;: include base64 encoded thumbnail image for each entry, e.g. &#x60;&#x60;&#x60; \&quot;embedded\&quot;: {   \&quot;content-type\&quot;: \&quot;image/png\&quot;   \&quot;thumb\&quot;: \&quot;A9cX0...\&quot; } &#x60;&#x60;&#x60;  [optional]
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the current repository. 
+ **i_uuid** | `/BLCK/OP4_STRING` | UUID of the parent collection 
+ **i_offset** | `/BLCK/OP4_INT` | Index of first result to return. [default "0"]
+ **i_limit** | `/BLCK/OP4_INT` | Number of results to return. Maximum is 500. [default "50"]
+ **i_sort** | `/BLCK/OP4_STRING` | Sort query results. Comma separated list of property names, prefixed with &#x27;-&#x27; for descending sort order. Example: &#x27;sort&#x3D;date,-name&#x27;  [optional]
+ **i_embed** | `/BLCK/OP4_STRING` | Include sub-ressource or sub-collection data in response. \&quot;permissions\&quot;: include access rights records for each entry. \&quot;icon\&quot;: include icon-font and value for each entry, e.g. &#x60;&#x60;&#x60; \&quot;embedded\&quot;: {   \&quot;icon\&quot;: \&quot;material:play\&quot; } &#x60;&#x60;&#x60; \&quot;thumb\&quot;: include base64 encoded thumbnail image for each entry, e.g. &#x60;&#x60;&#x60; \&quot;embedded\&quot;: {   \&quot;content-type\&quot;: \&quot;image/png\&quot;   \&quot;thumb\&quot;: \&quot;A9cX0...\&quot; } &#x60;&#x60;&#x60;  [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_REPO_ENTRY_TT (**[array of RepoEntry](#markdown-header-model-repo_entry)**) | OK, collection of entries is returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide a repository
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_REPO_ENTRY_TT` (**[array of RepoEntry](#markdown-header-model-repo_entry)**) | OK, collection of entries is returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | The service does not provide a repository
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -1361,17 +1361,17 @@ Deletes a single ConfigItem at the given path or all ConfigItems in the whole tr
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_path** | /BLCK/OP4_STRING | Path/to/config/item 
+ **i_path** | `/BLCK/OP4_STRING` | Path/to/config/item 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-config_item)**) | OK, configuration deleted.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 200 | **e_code_200** | `/BLCK/OP4_CONFIG_ITEM` (**[ConfigItem](#markdown-header-model-config_item)**) | OK, configuration deleted.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
  403 | value not returned |  | Forbidden. User lacks access rights to change configuration. schema:   _ref: &#x27;#/definitions/Error&#x27; 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -1471,19 +1471,19 @@ Use this route to browse the configuration. Configuration is structured unix fil
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_path** | /BLCK/OP4_STRING | Path/to/config/item [optional]
- **i_keys** | /BLCK/OP4_BOOL | Return an array of strings containing all recursively fetched keys below the given &#x27;path&#x27;. Without or an empty &#x27;path&#x27; all available keys are returned.   **Example response:** &#x60;&#x60;&#x60; [ \&quot;key1\&quot;, \&quot;path/to/key2\&quot;, \&quot;some/other/path/to/key3\&quot; ] &#x60;&#x60;&#x60;  [optional]
+ **i_path** | `/BLCK/OP4_STRING` | Path/to/config/item [optional]
+ **i_keys** | `/BLCK/OP4_BOOL` | Return an array of strings containing all recursively fetched keys below the given &#x27;path&#x27;. Without or an empty &#x27;path&#x27; all available keys are returned.   **Example response:** &#x60;&#x60;&#x60; [ \&quot;key1\&quot;, \&quot;path/to/key2\&quot;, \&quot;some/other/path/to/key3\&quot; ] &#x60;&#x60;&#x60;  [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_STRING | OK, configuration items returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The given ConfigItem was not found.
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_STRING` | OK, configuration items returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | The given ConfigItem was not found.
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -1571,18 +1571,18 @@ Stores the ConfigItem in the request body at the given path.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/OP4_STRING |  
- **i_path** | /BLCK/OP4_STRING | Path/to/config/item [optional]
+ **i_body** | `/BLCK/OP4_STRING` |  
+ **i_path** | `/BLCK/OP4_STRING` | Path/to/config/item [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-config_item)**) | OK, configuration stored.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 200 | **e_code_200** | `/BLCK/OP4_CONFIG_ITEM` (**[ConfigItem](#markdown-header-model-config_item)**) | OK, configuration stored.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
  403 | value not returned |  | Forbidden. User lacks access rights to change configuration. schema:   _ref: &#x27;#/definitions/Error&#x27; 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -1682,18 +1682,18 @@ FIXME
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_sid** | /BLCK/OP4_STRING | ID of the current service. 
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the current service. 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_SERVICE (**[Service](#markdown-header-model-service)**) | OK, service metadata is returned
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service metadata. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The requested Service was not found.
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_SERVICE` (**[Service](#markdown-header-model-service)**) | OK, service metadata is returned
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service metadata. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | The requested Service was not found.
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -1796,19 +1796,19 @@ A POST call to this route will create new jobs and return their connector id's (
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/OP4_CID_COMMAND (**[CidCommand](#markdown-header-model-cid_command)**) | Action to be performed (start, abort, pause, resume) 
- **i_sid** | /BLCK/OP4_STRING | ID of the Service managing the current Task 
+ **i_body** | `/BLCK/OP4_CID_COMMAND` (**[CidCommand](#markdown-header-model-cid_command)**) | Action to be performed (start, abort, pause, resume) 
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the Service managing the current Task 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_CID_STATUS (**[CidStatus](#markdown-header-model-cid_status)**) | OK, task data for update is returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service list. 
- 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_CID_STATUS` (**[CidStatus](#markdown-header-model-cid_status)**) | OK, task data for update is returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service list. 
+ 409 | **e_code_409** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -1912,19 +1912,19 @@ A PUT call to this route returns an array with status and output listItems for a
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/OP4_CID_TASKDATA_TTT (**[array of CidTaskdata](#markdown-header-model-cid_taskdata)**) | List of task cids for which to retrieve status 
- **i_sid** | /BLCK/OP4_STRING | ID of the Service managing the current Task 
+ **i_body** | `/BLCK/OP4_CID_TASKDATA_TTT` (**[array of CidTaskdata](#markdown-header-model-cid_taskdata)**) | List of task cids for which to retrieve status 
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the Service managing the current Task 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_CID_STATUS_TT (**[array of CidStatus](#markdown-header-model-cid_status)**) | OK, array of task data for update is returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service list. 
- 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_CID_STATUS_TT` (**[array of CidStatus](#markdown-header-model-cid_status)**) | OK, array of task data for update is returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service list. 
+ 409 | **e_code_409** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -2011,11 +2011,11 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_PANEL_ITEM_TT (**[array of PanelItem](#markdown-header-model-panel_item)**) | OK, list of UI panel configurations returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_PANEL_ITEM_TT` (**[array of PanelItem](#markdown-header-model-panel_item)**) | OK, list of UI panel configurations returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -2105,17 +2105,17 @@ A GET call to this route returns a JSON object containing the default configurat
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_pid** | /BLCK/OP4_STRING |  
+ **i_pid** | `/BLCK/OP4_STRING` |  
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-config_item)**) | OK, panel configuration is returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_CONFIG_ITEM` (**[ConfigItem](#markdown-header-model-config_item)**) | OK, panel configuration is returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -2232,20 +2232,20 @@ Creates a new record in the command resource. It returns a JSON object containin
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/OP4_COMMAND (**[Command](#markdown-header-model-command)**) | The command entry and it&#x27;s parameter to be created. Currently supported  commands are &#x60;copy&#x60; and &#x60;move&#x60;. The parameters for both commands: &#x60;&#x60;&#x60;json {   \&quot;action\&quot;: \&quot;copy|move\&quot;,   \&quot;parameter\&quot;: {     \&quot;source\&quot;: \&quot;source href\&quot;,     \&quot;parent\&quot;: \&quot;uuid of target parent\&quot;   } } &#x60;&#x60;&#x60; The source may be a remote repository in later implementations, so an &#x60;href&#x60; is needed here.  
- **i_sid** | /BLCK/OP4_STRING | ID of the current service. 
+ **i_body** | `/BLCK/OP4_COMMAND` (**[Command](#markdown-header-model-command)**) | The command entry and it&#x27;s parameter to be created. Currently supported  commands are &#x60;copy&#x60; and &#x60;move&#x60;. The parameters for both commands: &#x60;&#x60;&#x60;json {   \&quot;action\&quot;: \&quot;copy|move\&quot;,   \&quot;parameter\&quot;: {     \&quot;source\&quot;: \&quot;source href\&quot;,     \&quot;parent\&quot;: \&quot;uuid of target parent\&quot;   } } &#x60;&#x60;&#x60; The source may be a remote repository in later implementations, so an &#x60;href&#x60; is needed here.  
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the current service. 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_COMMAND_STATUS (**[CommandStatus](#markdown-header-model-command_status)**) | OK, entry created. Command id will be returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide commands
- 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_COMMAND_STATUS` (**[CommandStatus](#markdown-header-model-command_status)**) | OK, entry created. Command id will be returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | The service does not provide commands
+ 409 | **e_code_409** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -2376,23 +2376,23 @@ Some services (not all) expose access to documents. All documents available thro
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_sid** | /BLCK/OP4_STRING | ID of the current repository. 
- **i_offset** | /BLCK/OP4_INT | Index of first result to return. [default "0"]
- **i_limit** | /BLCK/OP4_INT | Number of results to return. Maximum is 500. [default "50"]
- **i_sort** | /BLCK/OP4_STRING | Sort query results. Comma separated list of property names, prefixed with &#x27;-&#x27; for descending sort order. Example: &#x27;sort&#x3D;date,-name&#x27;  [optional]
- **i_scope** | /BLCK/OP4_STRING | Set the scope when searching for documents. Possible values are &#x60;root&#x60; and &#x60;all&#x60;, default is &#x60;all&#x60;.  [default "all"]
- **i_embed** | /BLCK/OP4_STRING | Include sub-ressource or sub-collection data in response. \&quot;permissions\&quot;: include access rights records for each entry. \&quot;thumb\&quot;: include base64 encoded thumbnail image for each entry, e.g. &#x60;&#x60;&#x60; \&quot;embedded\&quot;: {   \&quot;content-type\&quot;: \&quot;image/png\&quot;   \&quot;thumb\&quot;: \&quot;A9cX0...\&quot; } &#x60;&#x60;&#x60;  [optional]
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the current repository. 
+ **i_offset** | `/BLCK/OP4_INT` | Index of first result to return. [default "0"]
+ **i_limit** | `/BLCK/OP4_INT` | Number of results to return. Maximum is 500. [default "50"]
+ **i_sort** | `/BLCK/OP4_STRING` | Sort query results. Comma separated list of property names, prefixed with &#x27;-&#x27; for descending sort order. Example: &#x27;sort&#x3D;date,-name&#x27;  [optional]
+ **i_scope** | `/BLCK/OP4_STRING` | Set the scope when searching for documents. Possible values are &#x60;root&#x60; and &#x60;all&#x60;, default is &#x60;all&#x60;.  [default "all"]
+ **i_embed** | `/BLCK/OP4_STRING` | Include sub-ressource or sub-collection data in response. \&quot;permissions\&quot;: include access rights records for each entry. \&quot;thumb\&quot;: include base64 encoded thumbnail image for each entry, e.g. &#x60;&#x60;&#x60; \&quot;embedded\&quot;: {   \&quot;content-type\&quot;: \&quot;image/png\&quot;   \&quot;thumb\&quot;: \&quot;A9cX0...\&quot; } &#x60;&#x60;&#x60;  [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_REPO_ENTRY_TT (**[array of RepoEntry](#markdown-header-model-repo_entry)**) | OK, collection of entries is returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide a repository
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_REPO_ENTRY_TT` (**[array of RepoEntry](#markdown-header-model-repo_entry)**) | OK, collection of entries is returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | The service does not provide a repository
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -2501,20 +2501,20 @@ Creates a new record in the current Repository, inside the root collection, and 
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/OP4_BASEREPOENTRY (**[BaseRepoEntry](#markdown-header-model-baserepoentry)**) | metadata of the entry to be created 
- **i_sid** | /BLCK/OP4_STRING | ID of the current service. 
+ **i_body** | `/BLCK/OP4_BASEREPOENTRY` (**[BaseRepoEntry](#markdown-header-model-baserepoentry)**) | metadata of the entry to be created 
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the current service. 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry created. Entry metadata returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide a repository
- 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_REPO_ENTRY` (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry created. Entry metadata returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | The service does not provide a repository
+ 409 | **e_code_409** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -2624,9 +2624,9 @@ Removes the current entry from the repository. This will not only remove the ref
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_sid** | /BLCK/OP4_STRING | ID of the current Service. 
- **i_uuid** | /BLCK/OP4_STRING | UUID of the entry to delete 
- **i_force** | /BLCK/OP4_BOOL | Delete document even if it&#x27;s still in use by one or more tasks. [optional]
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the current Service. 
+ **i_uuid** | `/BLCK/OP4_STRING` | UUID of the entry to delete 
+ **i_force** | `/BLCK/OP4_BOOL` | Delete document even if it&#x27;s still in use by one or more tasks. [optional]
 
 ### Return types
 
@@ -2731,19 +2731,19 @@ Given a 'uuid' parameter, this route retrieves an entry's metadata. The entry ma
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_sid** | /BLCK/OP4_STRING | ID of the current service. 
- **i_uuid** | /BLCK/OP4_STRING | ID of the repository entry 
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the current service. 
+ **i_uuid** | `/BLCK/OP4_STRING` | ID of the repository entry 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry metadata returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The given uuid was not found.
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_REPO_ENTRY` (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry metadata returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | The given uuid was not found.
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -2858,21 +2858,21 @@ Update the given entry's metadata. Only data given with the patch will be change
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/OP4_BASEREPOENTRY (**[BaseRepoEntry](#markdown-header-model-baserepoentry)**) | New entry metadata. 
- **i_sid** | /BLCK/OP4_STRING | ID of the current service. 
- **i_uuid** | /BLCK/OP4_STRING | UUID of the entry 
+ **i_body** | `/BLCK/OP4_BASEREPOENTRY` (**[BaseRepoEntry](#markdown-header-model-baserepoentry)**) | New entry metadata. 
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the current service. 
+ **i_uuid** | `/BLCK/OP4_STRING` | UUID of the entry 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry metadata replaced, new metadata returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | No entry found at the given &#x27;uuid&#x27;.
- 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_REPO_ENTRY` (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry metadata replaced, new metadata returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | No entry found at the given &#x27;uuid&#x27;.
+ 409 | **e_code_409** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -2988,21 +2988,21 @@ Completely replace the metadata record of the given entry. Only record metadata 
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/OP4_BASEREPOENTRY (**[BaseRepoEntry](#markdown-header-model-baserepoentry)**) | New entry metadata. Note that changing the entry type is not possible by updating metadata.  
- **i_sid** | /BLCK/OP4_STRING | ID of the current repository. 
- **i_uuid** | /BLCK/OP4_STRING | UUID of the entry 
+ **i_body** | `/BLCK/OP4_BASEREPOENTRY` (**[BaseRepoEntry](#markdown-header-model-baserepoentry)**) | New entry metadata. Note that changing the entry type is not possible by updating metadata.  
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the current repository. 
+ **i_uuid** | `/BLCK/OP4_STRING` | UUID of the entry 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_REPO_ENTRY (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry metadata replaced, new metadata returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | No entry found under the given &#x27;uuid&#x27;.
- 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_REPO_ENTRY` (**[RepoEntry](#markdown-header-model-repo_entry)**) | OK, entry metadata replaced, new metadata returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | No entry found under the given &#x27;uuid&#x27;.
+ 409 | **e_code_409** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -3104,19 +3104,19 @@ Returns a JSON object containing the status of the command. Command resources ar
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_sid** | /BLCK/OP4_STRING | ID of the current service. 
- **i_cid** | /BLCK/OP4_STRING | ID of the command. 
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the current service. 
+ **i_cid** | `/BLCK/OP4_STRING` | ID of the command. 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_COMMAND_STATUS (**[CommandStatus](#markdown-header-model-command_status)**) | OK, status of command resource is returned
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide the given resource.
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_COMMAND_STATUS` (**[CommandStatus](#markdown-header-model-command_status)**) | OK, status of command resource is returned
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | The service does not provide the given resource.
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -3225,8 +3225,8 @@ Deletes the binary content of a document, leaving metadata only. Note that some 
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_sid** | /BLCK/OP4_STRING | ID of the current service. 
- **i_uuid** | /BLCK/OP4_STRING | UUID of the document 
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the current service. 
+ **i_uuid** | `/BLCK/OP4_STRING` | UUID of the document 
 
 ### Return types
 
@@ -3328,8 +3328,8 @@ If the entry under 'uuid' is a document, then this route provides access to the 
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_sid** | /BLCK/OP4_STRING | ID of the current Service. 
- **i_uuid** | /BLCK/OP4_STRING | UUID of the document 
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the current Service. 
+ **i_uuid** | `/BLCK/OP4_STRING` | UUID of the document 
 
 ### Return types
 
@@ -3446,9 +3446,9 @@ Upload binary content of a document. Create if none exists, or replace existing 
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_sid** | /BLCK/OP4_STRING | ID of the current service. 
- **i_uuid** | /BLCK/OP4_STRING | UUID of the document 
- **i_content** | /BLCK/OP4_BINARY |  [optional]
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the current service. 
+ **i_uuid** | `/BLCK/OP4_STRING` | UUID of the document 
+ **i_content** | `/BLCK/OP4_BINARY` |  [optional]
 
 ### Return types
 
@@ -3550,8 +3550,8 @@ If the entry under 'uuid' is a document, then this route provides access to the 
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_sid** | /BLCK/OP4_STRING | ID of the current Service. 
- **i_uuid** | /BLCK/OP4_STRING | UUID of the document 
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the current Service. 
+ **i_uuid** | `/BLCK/OP4_STRING` | UUID of the document 
 
 ### Return types
 
@@ -3659,9 +3659,9 @@ This route triggers a connector specific function and returns the result. The fu
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_sid** | /BLCK/OP4_STRING | ID of the current repository. 
- **i_fid** | /BLCK/OP4_STRING | Name of the function to calls 
- **i_params** | /BLCK/OP4_STRING | String with a list of function specific parameter as key value pairs. Syntax: &#x60;&#x60;&#x60; params&#x3D;\&quot;key::value[;key::value]*\&quot; &#x60;&#x60;&#x60;  [optional]
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the current repository. 
+ **i_fid** | `/BLCK/OP4_STRING` | Name of the function to calls 
+ **i_params** | `/BLCK/OP4_STRING` | String with a list of function specific parameter as key value pairs. Syntax: &#x60;&#x60;&#x60; params&#x3D;\&quot;key::value[;key::value]*\&quot; &#x60;&#x60;&#x60;  [optional]
 
 ### Return types
 
@@ -3755,17 +3755,17 @@ For panels static configuration data is sometimes not sufficient, dynamically re
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_sid** | /BLCK/OP4_STRING | ID of the current repository. 
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the current repository. 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_FUNCTIONS (**[Functions](#markdown-header-model-functions)**) | OK, list of entries is returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide functions
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_FUNCTIONS` (**[Functions](#markdown-header-model-functions)**) | OK, list of entries is returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | The service does not provide functions
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -3889,21 +3889,21 @@ This is the list of Lists of the authenticated user. Use metadata property names
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_offset** | /BLCK/OP4_INT | Index of first result to return. [default "0"]
- **i_limit** | /BLCK/OP4_INT | Number of results to return. Maximum is 500. [default "50"]
- **i_sort** | /BLCK/OP4_STRING | Sort query results. Comma separated list of property names, prefixed with &#x27;-&#x27; for descending sort order. Example: &#x27;sort&#x3D;date,-name&#x27;  [optional]
- **i_embed** | /BLCK/OP4_STRING | Include information about collection members. - \&quot;items\&quot;: Include item data - \&quot;permissions\&quot;: User access rights on each List - \&quot;metadata\&quot;: Return list of lists metadata. Example:   &#x60;&#x60;&#x60;   {     exportTypes: [{       name: &#x27;csv&#x27;,       description: &#x27;Export a CSV file&#x27;,       mimeType: &#x27;text/csv&#x27;     }],     importTypes: [{       name: &#x27;csv&#x27;,       description: &#x27;Import a CSV file&#x27;,       mimeType: &#x27;text/csv&#x27;     }]   }   &#x60;&#x60;&#x60;  [optional]
+ **i_offset** | `/BLCK/OP4_INT` | Index of first result to return. [default "0"]
+ **i_limit** | `/BLCK/OP4_INT` | Number of results to return. Maximum is 500. [default "50"]
+ **i_sort** | `/BLCK/OP4_STRING` | Sort query results. Comma separated list of property names, prefixed with &#x27;-&#x27; for descending sort order. Example: &#x27;sort&#x3D;date,-name&#x27;  [optional]
+ **i_embed** | `/BLCK/OP4_STRING` | Include information about collection members. - \&quot;items\&quot;: Include item data - \&quot;permissions\&quot;: User access rights on each List - \&quot;metadata\&quot;: Return list of lists metadata. Example:   &#x60;&#x60;&#x60;   {     exportTypes: [{       name: &#x27;csv&#x27;,       description: &#x27;Export a CSV file&#x27;,       mimeType: &#x27;text/csv&#x27;     }],     importTypes: [{       name: &#x27;csv&#x27;,       description: &#x27;Import a CSV file&#x27;,       mimeType: &#x27;text/csv&#x27;     }]   }   &#x60;&#x60;&#x60;  [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_LIST_TT (**[array of List](#markdown-header-model-list)**) | OK, collection of lists is returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | No lists available
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_LIST_TT` (**[array of List](#markdown-header-model-list)**) | OK, collection of lists is returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | No lists available
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -3996,7 +3996,7 @@ Deletes the current list inclusive all it's items, but not the documents.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_lid** | /BLCK/OP4_STRING | ID of the current list. 
+ **i_lid** | `/BLCK/OP4_STRING` | ID of the current list. 
 
 ### Return types
 
@@ -4103,19 +4103,19 @@ This is the root record for a given list. It contains List-level metadata. Use t
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_lid** | /BLCK/OP4_STRING | ID of the current list. 
- **i_embed** | /BLCK/OP4_STRING | Include information about collection members or sub-ressources. - \&quot;items\&quot;: Include item data - \&quot;permissions\&quot;: Include user access rights for the current user.  [optional]
+ **i_lid** | `/BLCK/OP4_STRING` | ID of the current list. 
+ **i_embed** | `/BLCK/OP4_STRING` | Include information about collection members or sub-ressources. - \&quot;items\&quot;: Include item data - \&quot;permissions\&quot;: Include user access rights for the current user.  [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | OK, metadata is returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_LIST` (**[List](#markdown-header-model-list)**) | OK, metadata is returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -4237,22 +4237,22 @@ This is the collection of items currently in the List. For performance reasons, 
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_lid** | /BLCK/OP4_STRING | ID of the current list. 
- **i_offset** | /BLCK/OP4_INT | Index of first result to return. [default "0"]
- **i_limit** | /BLCK/OP4_INT | Number of results to return. Maximum is 500. [default "50"]
- **i_sort** | /BLCK/OP4_STRING | Sort query results. Comma separated list of property names, prefixed with &#x27;-&#x27; for descending sort order. Example: &#x27;sort&#x3D;href,-index&#x27;  [optional]
- **i_embed** | /BLCK/OP4_STRING | Sub-ressources to include in the response. - \&quot;items\&quot;: Include metadata for each List - \&quot;permissions\&quot;: Include user access rights  [optional]
+ **i_lid** | `/BLCK/OP4_STRING` | ID of the current list. 
+ **i_offset** | `/BLCK/OP4_INT` | Index of first result to return. [default "0"]
+ **i_limit** | `/BLCK/OP4_INT` | Number of results to return. Maximum is 500. [default "50"]
+ **i_sort** | `/BLCK/OP4_STRING` | Sort query results. Comma separated list of property names, prefixed with &#x27;-&#x27; for descending sort order. Example: &#x27;sort&#x3D;href,-index&#x27;  [optional]
+ **i_embed** | `/BLCK/OP4_STRING` | Sub-ressources to include in the response. - \&quot;items\&quot;: Include metadata for each List - \&quot;permissions\&quot;: Include user access rights  [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_LIST_ITEM_TT (**[array of ListItem](#markdown-header-model-list_item)**) | OK, collection of list items is returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_LIST_ITEM_TT` (**[array of ListItem](#markdown-header-model-list_item)**) | OK, collection of list items is returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -4351,8 +4351,8 @@ Deletes an entry from a list. Only the list entry is removed, not the document. 
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_lid** | /BLCK/OP4_STRING | ID of the current list. 
- **i_id** | /BLCK/OP4_STRING | ID of the current element. 
+ **i_lid** | `/BLCK/OP4_STRING` | ID of the current list. 
+ **i_id** | `/BLCK/OP4_STRING` | ID of the current element. 
 
 ### Return types
 
@@ -4457,19 +4457,19 @@ Get metadata record of a list item. Note that the 'id' is NOT the index, which i
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_lid** | /BLCK/OP4_STRING | ID of the current list. 
- **i_id** | /BLCK/OP4_STRING | ID of the current element. 
+ **i_lid** | `/BLCK/OP4_STRING` | ID of the current list. 
+ **i_id** | `/BLCK/OP4_STRING` | ID of the current element. 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, List item data is returned
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_LIST_ITEM` (**[ListItem](#markdown-header-model-list_item)**) | OK, List item data is returned
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -4592,22 +4592,22 @@ Update the metadata record of the current list item, adding missing entries but 
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_lid** | /BLCK/OP4_STRING | ID of the current list. 
- **i_id** | /BLCK/OP4_STRING | ID of the current element. 
- **i_body** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | New link data to replace existing entry. Use EITHER item OR href; if both are present, item is used.  [optional]
- **i_href** | /BLCK/OP4_STRING | Relative URL of document to link. This is a convenient way of just updating the href property of the existing List item.  [optional]
+ **i_lid** | `/BLCK/OP4_STRING` | ID of the current list. 
+ **i_id** | `/BLCK/OP4_STRING` | ID of the current element. 
+ **i_body** | `/BLCK/OP4_LIST_ITEM` (**[ListItem](#markdown-header-model-list_item)**) | New link data to replace existing entry. Use EITHER item OR href; if both are present, item is used.  [optional]
+ **i_href** | `/BLCK/OP4_STRING` | Relative URL of document to link. This is a convenient way of just updating the href property of the existing List item.  [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, List item is updated, item data returned
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_LIST_ITEM` (**[ListItem](#markdown-header-model-list_item)**) | OK, List item is updated, item data returned
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_code_409** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -4722,21 +4722,21 @@ Update and replace the entire metadata record of the current list item. Note tha
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | New item data to replace existing entry  
- **i_lid** | /BLCK/OP4_STRING | ID of the current list. 
- **i_id** | /BLCK/OP4_STRING | ID of the current element. 
+ **i_body** | `/BLCK/OP4_LIST_ITEM` (**[ListItem](#markdown-header-model-list_item)**) | New item data to replace existing entry  
+ **i_lid** | `/BLCK/OP4_STRING` | ID of the current list. 
+ **i_id** | `/BLCK/OP4_STRING` | ID of the current element. 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, List item is updated, item data returned
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_LIST_ITEM` (**[ListItem](#markdown-header-model-list_item)**) | OK, List item is updated, item data returned
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_code_409** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -4851,21 +4851,21 @@ Lists are are ordered sets, items have consecutive indices (0..n). Posting this 
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_lid** | /BLCK/OP4_STRING | ID of the current list. 
- **i_body** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | Use EITHER href OR item. If both are present, item is used.  [optional]
- **i_href** | /BLCK/OP4_STRING | Relative URL of the document instance to add to the list  [optional]
+ **i_lid** | `/BLCK/OP4_STRING` | ID of the current list. 
+ **i_body** | `/BLCK/OP4_LIST_ITEM` (**[ListItem](#markdown-header-model-list_item)**) | Use EITHER href OR item. If both are present, item is used.  [optional]
+ **i_href** | `/BLCK/OP4_STRING` | Relative URL of the document instance to add to the list  [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, document reference has been added to the list.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be created. See error message for details. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_LIST_ITEM` (**[ListItem](#markdown-header-model-list_item)**) | OK, document reference has been added to the list.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_code_409** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be created. See error message for details. 
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -4979,20 +4979,20 @@ Updates or adds part of the List metadata. Only given metadata will be replaced 
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_lid** | /BLCK/OP4_STRING | ID of the current list. 
- **i_body** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | New Metadata for the list  [optional]
+ **i_lid** | `/BLCK/OP4_STRING` | ID of the current list. 
+ **i_body** | `/BLCK/OP4_LIST` (**[List](#markdown-header-model-list)**) | New Metadata for the list  [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | OK, document list updated. New metadata returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_LIST` (**[List](#markdown-header-model-list)**) | OK, document list updated. New metadata returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_code_409** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -5106,20 +5106,20 @@ This will completely replace the existing List metadata (if any) by the given me
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_lid** | /BLCK/OP4_STRING | ID of the current list. 
- **i_body** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | New Metadata for the list  [optional]
+ **i_lid** | `/BLCK/OP4_STRING` | ID of the current list. 
+ **i_body** | `/BLCK/OP4_LIST` (**[List](#markdown-header-model-list)**) | New Metadata for the list  [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | OK, document list updated. New metadata returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_LIST` (**[List](#markdown-header-model-list)**) | OK, document list updated. New metadata returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_code_409** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -5228,19 +5228,19 @@ Creates a new entry in the list of Lists. The `Content-Type` HTTP header defines
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | metadata of the document list to create. 
- **i_href** | /BLCK/OP4_STRING | URL of the list to add. Example: &#x60;http://somehost:3456/path/to/mylist.csv&#x60;  [optional]
+ **i_body** | `/BLCK/OP4_LIST` (**[List](#markdown-header-model-list)**) | metadata of the document list to create. 
+ **i_href** | `/BLCK/OP4_STRING` | URL of the list to add. Example: &#x60;http://somehost:3456/path/to/mylist.csv&#x60;  [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | OK, list created. List metadata returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be created. See error message for details. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_LIST` (**[List](#markdown-header-model-list)**) | OK, list created. List metadata returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 409 | **e_code_409** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be created. See error message for details. 
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -5348,19 +5348,19 @@ Every user has his own list of messages containing info, warning and error messa
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_offset** | /BLCK/OP4_INT | Index of first result to return. [default "0"]
- **i_limit** | /BLCK/OP4_INT | Number of results to return. Maximum is 500. [default "25"]
- **i_sort** | /BLCK/OP4_STRING | Sort query results. Comma separated list of property names, prefixed with &#x27;-&#x27; for descending sort order. Example: &#x27;sort&#x3D;date,-type&#x27;  [optional]
+ **i_offset** | `/BLCK/OP4_INT` | Index of first result to return. [default "0"]
+ **i_limit** | `/BLCK/OP4_INT` | Number of results to return. Maximum is 500. [default "25"]
+ **i_sort** | `/BLCK/OP4_STRING` | Sort query results. Comma separated list of property names, prefixed with &#x27;-&#x27; for descending sort order. Example: &#x27;sort&#x3D;date,-type&#x27;  [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_MESSAGE_TT (**[array of Message](#markdown-header-model-message)**) | OK, list of entries is returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide messages
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_MESSAGE_TT` (**[array of Message](#markdown-header-model-message)**) | OK, list of entries is returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | The service does not provide messages
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -5461,18 +5461,18 @@ Creates a new record in the message list and assigns the posted data. The server
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/OP4_MESSAGE (**[Message](#markdown-header-model-message)**) | metadata of the entry to be created 
+ **i_body** | `/BLCK/OP4_MESSAGE` (**[Message](#markdown-header-model-message)**) | metadata of the entry to be created 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_MESSAGE (**[Message](#markdown-header-model-message)**) | OK, entry created. Entry metadata returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide messages
- 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_MESSAGE` (**[Message](#markdown-header-model-message)**) | OK, entry created. Entry metadata returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | The service does not provide messages
+ 409 | **e_code_409** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -5579,19 +5579,19 @@ Update a message entry. Only data given with the patch will be  changed/added; n
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/OP4_MESSAGE (**[Message](#markdown-header-model-message)**) | metadata of the entry to be created 
- **i_uuid** | /BLCK/OP4_STRING | ID of the message entry 
+ **i_body** | `/BLCK/OP4_MESSAGE` (**[Message](#markdown-header-model-message)**) | metadata of the entry to be created 
+ **i_uuid** | `/BLCK/OP4_STRING` | ID of the message entry 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_MESSAGE (**[Message](#markdown-header-model-message)**) | OK, message entry updated, new message returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The service does not provide messages
- 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_MESSAGE` (**[Message](#markdown-header-model-message)**) | OK, message entry updated, new message returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | The service does not provide messages
+ 409 | **e_code_409** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -5682,11 +5682,11 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_CONFIG_ITEM_TT (**[array of ConfigItem](#markdown-header-model-config_item)**) | OK, list of UI panel configurations returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_CONFIG_ITEM_TT` (**[array of ConfigItem](#markdown-header-model-config_item)**) | OK, list of UI panel configurations returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -5774,17 +5774,17 @@ User-defined panel configurations can be delete by a DELETE request to this rout
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_pid** | /BLCK/OP4_STRING | ID of the panel configuration to remove. 
+ **i_pid** | `/BLCK/OP4_STRING` | ID of the panel configuration to remove. 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-config_item)**) | OK, panel configuration was deleted, return deleted configuration.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 200 | **e_code_200** | `/BLCK/OP4_CONFIG_ITEM` (**[ConfigItem](#markdown-header-model-config_item)**) | OK, panel configuration was deleted, return deleted configuration.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
  403 | value not returned |  | Forbidden. The current user lacks access rights, or is trying to delete a read-only default configuration. schema:   _ref: &#x27;#/definitions/Error&#x27; 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -5880,18 +5880,18 @@ Returns a ConfigItem containing configuration for a stored panel.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_pid** | /BLCK/OP4_STRING | ID of the panel 
+ **i_pid** | `/BLCK/OP4_STRING` | ID of the panel 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-config_item)**) | OK, configuration returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found. The given pid is unknown.
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_CONFIG_ITEM` (**[ConfigItem](#markdown-header-model-config_item)**) | OK, configuration returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Not found. The given pid is unknown.
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -5987,19 +5987,19 @@ A PUT request to a panel configuration will replace the entire stored configurat
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/OP4_STRING | ConfigItem containing the configuration to store.  
- **i_pid** | /BLCK/OP4_STRING | ID of the panel 
+ **i_body** | `/BLCK/OP4_STRING` | ConfigItem containing the configuration to store.  
+ **i_pid** | `/BLCK/OP4_STRING` | ID of the panel 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-config_item)**) | OK, configuration updated.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 200 | **e_code_200** | `/BLCK/OP4_CONFIG_ITEM` (**[ConfigItem](#markdown-header-model-config_item)**) | OK, configuration updated.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
  403 | value not returned |  | Forbidden. The current user lacks access rights, or is trying to update a read-only default configuration. schema:   _ref: &#x27;#/definitions/Error&#x27; 
  409 | value not returned |  | Conflict. A panel configuration under the \&quot;name\&quot; given in the ConfigItem already exists. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -6092,18 +6092,18 @@ Users can save panel configurations they intend to (re-)use in later sessions un
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/OP4_STRING | ConfigItem containing the configuration to store.  
+ **i_body** | `/BLCK/OP4_STRING` | ConfigItem containing the configuration to store.  
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-config_item)**) | OK, configuration was saved. The returned configItem contains the generated ID. 
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 200 | **e_code_200** | `/BLCK/OP4_CONFIG_ITEM` (**[ConfigItem](#markdown-header-model-config_item)**) | OK, configuration was saved. The returned configItem contains the generated ID. 
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
  409 | value not returned |  | Conflict. A panel configuration under the \&quot;name\&quot; given in the ConfigItem already exists. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -6190,11 +6190,11 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_PANEL_ITEM_TT (**[array of PanelItem](#markdown-header-model-panel_item)**) | OK, list of UI panel configurations returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_PANEL_ITEM_TT` (**[array of PanelItem](#markdown-header-model-panel_item)**) | OK, list of UI panel configurations returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -6284,17 +6284,17 @@ A GET call to this route returns a JSON object containing the default configurat
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_pid** | /BLCK/OP4_STRING |  
+ **i_pid** | `/BLCK/OP4_STRING` |  
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_CONFIG_ITEM (**[ConfigItem](#markdown-header-model-config_item)**) | OK, panel configuration is returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_CONFIG_ITEM` (**[ConfigItem](#markdown-header-model-config_item)**) | OK, panel configuration is returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -6385,11 +6385,11 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_SERVICE_TT (**[array of Service](#markdown-header-model-service)**) | OK, collection of services is returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service list. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_SERVICE_TT` (**[array of Service](#markdown-header-model-service)**) | OK, collection of services is returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service list. 
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -6485,18 +6485,18 @@ FIXME
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_sid** | /BLCK/OP4_STRING | ID of the current service. 
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the current service. 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_SERVICE (**[Service](#markdown-header-model-service)**) | OK, service metadata is returned
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service metadata. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | The requested Service was not found.
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_SERVICE` (**[Service](#markdown-header-model-service)**) | OK, service metadata is returned
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service metadata. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | The requested Service was not found.
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -6587,11 +6587,11 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_SESSION_INFO (**[SessionInfo](#markdown-header-model-session_info)**) | OK, return object with session information
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service list. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_SESSION_INFO` (**[SessionInfo](#markdown-header-model-session_info)**) | OK, return object with session information
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service list. 
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -6733,24 +6733,24 @@ This route provides access to the root collection of known tasks for the current
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_sid** | /BLCK/OP4_STRING | ID of the Service managing the tasks 
- **i_offset** | /BLCK/OP4_INT | Index of first result to return. [default "0"]
- **i_limit** | /BLCK/OP4_INT | Number of results to return. Maximum is 500. [default "50"]
- **i_sort** | /BLCK/OP4_STRING | Sort query results. Comma separated list of property names, prefixed with &#x27;-&#x27; for descending sort order. Example: &#x27;sort&#x3D;date,-name&#x27;  [optional]
- **i_input_document** | /BLCK/OP4_STRING | A document UUID queried for in all lists of input documents of all tasks. [optional]
- **i_embed** | /BLCK/OP4_STRING | Information about sub-collections and/or sub-ressources to include in the response. - \&quot;permissions\&quot;: include user access rights for each Task - \&quot;metadata\&quot;: include Task metadata. - \&quot;input\&quot;: include input lists (metadata only) - \&quot;output\&quot;: include output lists (metadata only) - \&quot;cstats\&quot;: connector specific job id&#x27;s and states  [optional]
- **i_inline_count** | /BLCK/OP4_BOOL | Return a JSON object containing the number of tasks found, according to the query parameters, instead of an array with tasks.  [optional]
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the Service managing the tasks 
+ **i_offset** | `/BLCK/OP4_INT` | Index of first result to return. [default "0"]
+ **i_limit** | `/BLCK/OP4_INT` | Number of results to return. Maximum is 500. [default "50"]
+ **i_sort** | `/BLCK/OP4_STRING` | Sort query results. Comma separated list of property names, prefixed with &#x27;-&#x27; for descending sort order. Example: &#x27;sort&#x3D;date,-name&#x27;  [optional]
+ **i_input_document** | `/BLCK/OP4_STRING` | A document UUID queried for in all lists of input documents of all tasks. [optional]
+ **i_embed** | `/BLCK/OP4_STRING` | Information about sub-collections and/or sub-ressources to include in the response. - \&quot;permissions\&quot;: include user access rights for each Task - \&quot;metadata\&quot;: include Task metadata. - \&quot;input\&quot;: include input lists (metadata only) - \&quot;output\&quot;: include output lists (metadata only) - \&quot;cstats\&quot;: connector specific job id&#x27;s and states  [optional]
+ **i_inline_count** | `/BLCK/OP4_BOOL` | Return a JSON object containing the number of tasks found, according to the query parameters, instead of an array with tasks.  [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_TASK_TT (**[array of Task](#markdown-header-model-task)**) | OK, collection of tasks or count is returned. Example for count: &#x60;&#x60;&#x60; {   count: 0 } &#x60;&#x60;&#x60; 
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_TASK_TT` (**[array of Task](#markdown-header-model-task)**) | OK, collection of tasks or count is returned. Example for count: &#x60;&#x60;&#x60; {   count: 0 } &#x60;&#x60;&#x60; 
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -6868,20 +6868,20 @@ Adds a new Task to the collection. Given metadata is assigned, input list must b
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/OP4_TASK (**[Task](#markdown-header-model-task)**) | Task metadata 
- **i_sid** | /BLCK/OP4_STRING | ID of the Service managing the current Task 
+ **i_body** | `/BLCK/OP4_TASK` (**[Task](#markdown-header-model-task)**) | Task metadata 
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the Service managing the current Task 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_TASK (**[Task](#markdown-header-model-task)**) | OK, task created. Task metadata returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be created. See error message for details. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_TASK` (**[Task](#markdown-header-model-task)**) | OK, task created. Task metadata returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_code_409** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be created. See error message for details. 
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -6985,8 +6985,8 @@ Deletes a Task from the collection. This is only possible if the Task is not cur
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_sid** | /BLCK/OP4_STRING | ID of the Service managing the current Task 
- **i_tid** | /BLCK/OP4_STRING | ID of the Task to delete. 
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the Service managing the current Task 
+ **i_tid** | `/BLCK/OP4_STRING` | ID of the Task to delete. 
 
 ### Return types
 
@@ -7104,21 +7104,21 @@ This route provides access to a Task's root record. The record contains taks met
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_sid** | /BLCK/OP4_STRING | ID of the Service managing the current Task 
- **i_tid** | /BLCK/OP4_STRING | ID of the current task. 
- **i_embed** | /BLCK/OP4_STRING | Embed sub-ressources in the response. - \&quot;input\&quot;: include list of input documents - \&quot;output\&quot;: include list of output documents  [optional]
- **i_force** | /BLCK/OP4_BOOL | Force status update from backend system. [optional]
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the Service managing the current Task 
+ **i_tid** | `/BLCK/OP4_STRING` | ID of the current task. 
+ **i_embed** | `/BLCK/OP4_STRING` | Embed sub-ressources in the response. - \&quot;input\&quot;: include list of input documents - \&quot;output\&quot;: include list of output documents  [optional]
+ **i_force** | `/BLCK/OP4_BOOL` | Force status update from backend system. [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_TASK (**[Task](#markdown-header-model-task)**) | OK. Task metadata returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_TASK` (**[Task](#markdown-header-model-task)**) | OK. Task metadata returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -7232,21 +7232,21 @@ Does a partial update to the Task metadata. Given metadata replaces existing one
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/OP4_TASK_METADATA (**[TaskMetadata](#markdown-header-model-task_metadata)**) | New metadata for the task 
- **i_sid** | /BLCK/OP4_STRING | ID of the Service managing the current Task 
- **i_tid** | /BLCK/OP4_STRING | ID of the Task to update. 
+ **i_body** | `/BLCK/OP4_TASK_METADATA` (**[TaskMetadata](#markdown-header-model-task_metadata)**) | New metadata for the task 
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the Service managing the current Task 
+ **i_tid** | `/BLCK/OP4_STRING` | ID of the Task to update. 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_TASK (**[Task](#markdown-header-model-task)**) | OK, task updated and returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_TASK` (**[Task](#markdown-header-model-task)**) | OK, task updated and returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_code_409** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -7360,21 +7360,21 @@ A put call to the task root record completely replaces task metadata, but does n
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/OP4_TASK_METADATA (**[TaskMetadata](#markdown-header-model-task_metadata)**) | New metadata for the task 
- **i_sid** | /BLCK/OP4_STRING | ID of the Service managing the current Task 
- **i_tid** | /BLCK/OP4_STRING | ID of the task to update. 
+ **i_body** | `/BLCK/OP4_TASK_METADATA` (**[TaskMetadata](#markdown-header-model-task_metadata)**) | New metadata for the task 
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the Service managing the current Task 
+ **i_tid** | `/BLCK/OP4_STRING` | ID of the task to update. 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_TASK (**[Task](#markdown-header-model-task)**) | OK, task updated and returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_TASK` (**[Task](#markdown-header-model-task)**) | OK, task updated and returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_code_409** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -7484,9 +7484,9 @@ Trigger a new action on the current task. Currently supported actions are `start
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/OP4_ACTION (**[Action](#markdown-header-model-action)**) | The body contains a JSON object with the name of the action.  
- **i_sid** | /BLCK/OP4_STRING | ID of the current service. 
- **i_tid** | /BLCK/OP4_STRING | ID of the current task. 
+ **i_body** | `/BLCK/OP4_ACTION` (**[Action](#markdown-header-model-action)**) | The body contains a JSON object with the name of the action.  
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the current service. 
+ **i_tid** | `/BLCK/OP4_STRING` | ID of the current task. 
 
 ### Return types
 
@@ -7598,20 +7598,20 @@ This route provides access to a Task's list of input documents. Input lists of T
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_sid** | /BLCK/OP4_STRING | ID of the Service managing the current Task 
- **i_tid** | /BLCK/OP4_STRING | ID of the current task. 
- **i_embed** | /BLCK/OP4_STRING | Use &#x27;embed&#x27; to include sub-collection metadata in the result. - \&quot;items\&quot;: Include list-item metadata.  [optional]
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the Service managing the current Task 
+ **i_tid** | `/BLCK/OP4_STRING` | ID of the current task. 
+ **i_embed** | `/BLCK/OP4_STRING` | Use &#x27;embed&#x27; to include sub-collection metadata in the result. - \&quot;items\&quot;: Include list-item metadata.  [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | OK, collection of input list items returned
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_LIST` (**[List](#markdown-header-model-list)**) | OK, collection of input list items returned
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -7721,9 +7721,9 @@ Deletes an item from a Task's input list. The deleted ID is permanently orphaned
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_sid** | /BLCK/OP4_STRING | ID of the Service managing the current Task 
- **i_tid** | /BLCK/OP4_STRING | ID of the current task. 
- **i_id** | /BLCK/OP4_STRING | ID of the input list item to delete 
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the Service managing the current Task 
+ **i_tid** | `/BLCK/OP4_STRING` | ID of the current task. 
+ **i_id** | `/BLCK/OP4_STRING` | ID of the input list item to delete 
 
 ### Return types
 
@@ -7834,20 +7834,20 @@ FIXME
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_sid** | /BLCK/OP4_STRING | ID of the Service managing the current Task 
- **i_tid** | /BLCK/OP4_STRING | ID of the current task. 
- **i_id** | /BLCK/OP4_STRING | ID of the input list item 
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the Service managing the current Task 
+ **i_tid** | `/BLCK/OP4_STRING` | ID of the current task. 
+ **i_id** | `/BLCK/OP4_STRING` | ID of the input list item 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, input list item data returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_LIST_ITEM` (**[ListItem](#markdown-header-model-list_item)**) | OK, input list item data returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -7968,22 +7968,22 @@ Updates task input list item metadata, replacing present entries and adding miss
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_sid** | /BLCK/OP4_STRING | ID of the Service managing the current Task 
- **i_tid** | /BLCK/OP4_STRING | ID of the current task. 
- **i_id** | /BLCK/OP4_STRING | ID of the task input list item to update 
- **i_body** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | (Partial) metadata of an input list item.  [optional]
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the Service managing the current Task 
+ **i_tid** | `/BLCK/OP4_STRING` | ID of the current task. 
+ **i_id** | `/BLCK/OP4_STRING` | ID of the task input list item to update 
+ **i_body** | `/BLCK/OP4_LIST_ITEM` (**[ListItem](#markdown-header-model-list_item)**) | (Partial) metadata of an input list item.  [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, task input list item updated. Item data returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_LIST_ITEM` (**[ListItem](#markdown-header-model-list_item)**) | OK, task input list item updated. Item data returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_code_409** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -8104,22 +8104,22 @@ Replaces the task input list item's metadata, including the document reference.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_sid** | /BLCK/OP4_STRING | ID of the Service managing the current Task 
- **i_tid** | /BLCK/OP4_STRING | ID of the current task. 
- **i_id** | /BLCK/OP4_STRING | ID of the input list item 
- **i_body** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | complete item metadata for the task item.  [optional]
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the Service managing the current Task 
+ **i_tid** | `/BLCK/OP4_STRING` | ID of the current task. 
+ **i_id** | `/BLCK/OP4_STRING` | ID of the input list item 
+ **i_body** | `/BLCK/OP4_LIST_ITEM` (**[ListItem](#markdown-header-model-list_item)**) | complete item metadata for the task item.  [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, list item updated. Item data returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_LIST_ITEM` (**[ListItem](#markdown-header-model-list_item)**) | OK, list item updated. Item data returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_code_409** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -8246,22 +8246,22 @@ Does a partial update to the input list metadata. Given metadata replaces existi
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | New metadata for the input list. 
- **i_sid** | /BLCK/OP4_STRING | ID of the Service managing the current Task 
- **i_tid** | /BLCK/OP4_STRING | ID of the Task to update. 
- **i_embed** | /BLCK/OP4_STRING | Use &#x27;embed&#x27; to include sub-collection metadata for updating. - \&quot;items\&quot;: Include list-item data including indices for reordering.  [optional]
+ **i_body** | `/BLCK/OP4_LIST` (**[List](#markdown-header-model-list)**) | New metadata for the input list. 
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the Service managing the current Task 
+ **i_tid** | `/BLCK/OP4_STRING` | ID of the Task to update. 
+ **i_embed** | `/BLCK/OP4_STRING` | Use &#x27;embed&#x27; to include sub-collection metadata for updating. - \&quot;items\&quot;: Include list-item data including indices for reordering.  [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | OK, input list updated and returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_LIST` (**[List](#markdown-header-model-list)**) | OK, input list updated and returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_code_409** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -8384,22 +8384,22 @@ Creates a new entry in the given Task's input list. Given metadata is assigned t
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_sid** | /BLCK/OP4_STRING | ID of the Service managing the current Task 
- **i_tid** | /BLCK/OP4_STRING | ID of the current task. 
- **i_body** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | Complete list item metadata for the new task input list item. Use EITHER doc OR item parameter; if both are present, item is used.  [optional]
- **i_href** | /BLCK/OP4_STRING | URL of the document to add. This is a convenient way of adding a document without constructing a list item first.  [optional]
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the Service managing the current Task 
+ **i_tid** | `/BLCK/OP4_STRING` | ID of the current task. 
+ **i_body** | `/BLCK/OP4_LIST_ITEM` (**[ListItem](#markdown-header-model-list_item)**) | Complete list item metadata for the new task input list item. Use EITHER doc OR item parameter; if both are present, item is used.  [optional]
+ **i_href** | `/BLCK/OP4_STRING` | URL of the document to add. This is a convenient way of adding a document without constructing a list item first.  [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, task input list item created, item data returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_LIST_ITEM` (**[ListItem](#markdown-header-model-list_item)**) | OK, task input list item created, item data returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_code_409** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -8513,21 +8513,21 @@ A put call to the input list root record completely replaces the metadata, but d
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/OP4_TASK_METADATA (**[TaskMetadata](#markdown-header-model-task_metadata)**) | New metadata for the task input list 
- **i_sid** | /BLCK/OP4_STRING | ID of the Service managing the current Task 
- **i_tid** | /BLCK/OP4_STRING | ID of the task to update. 
+ **i_body** | `/BLCK/OP4_TASK_METADATA` (**[TaskMetadata](#markdown-header-model-task_metadata)**) | New metadata for the task input list 
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the Service managing the current Task 
+ **i_tid** | `/BLCK/OP4_STRING` | ID of the task to update. 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | OK, input list updated and returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 409 | **e_code_409** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_LIST` (**[List](#markdown-header-model-list)**) | OK, input list updated and returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Not found
+ 409 | **e_code_409** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Conflict, resource could not be updated. See error message for details. 
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -8636,20 +8636,20 @@ This route provides access to a Task's list of output documents. Output lists of
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_sid** | /BLCK/OP4_STRING | ID of the Service managing the current Task 
- **i_tid** | /BLCK/OP4_STRING | ID of the current task. 
- **i_embed** | /BLCK/OP4_STRING | Use &#x27;embed&#x27; to include sub-collection metadata in the result. - \&quot;items\&quot;: Include list-item metadata.  [optional]
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the Service managing the current Task 
+ **i_tid** | `/BLCK/OP4_STRING` | ID of the current task. 
+ **i_embed** | `/BLCK/OP4_STRING` | Use &#x27;embed&#x27; to include sub-collection metadata in the result. - \&quot;items\&quot;: Include list-item metadata.  [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_LIST (**[List](#markdown-header-model-list)**) | OK, collection of output list items returned
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_LIST` (**[List](#markdown-header-model-list)**) | OK, collection of output list items returned
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -8757,20 +8757,20 @@ This route provides access to individual task output items.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_sid** | /BLCK/OP4_STRING | ID of the Service managing the current Task 
- **i_tid** | /BLCK/OP4_STRING | ID of the current task. 
- **i_id** | /BLCK/OP4_STRING | ID of the output list item 
+ **i_sid** | `/BLCK/OP4_STRING` | ID of the Service managing the current Task 
+ **i_tid** | `/BLCK/OP4_STRING` | ID of the current task. 
+ **i_id** | `/BLCK/OP4_STRING` | ID of the output list item 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_LIST_ITEM (**[ListItem](#markdown-header-model-list_item)**) | OK, output list item data returned.
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_LIST_ITEM` (**[ListItem](#markdown-header-model-list_item)**) | OK, output list item data returned.
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -8883,20 +8883,20 @@ This route provides access to the root collection of known tasks for all service
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_input_document** | /BLCK/OP4_STRING | A document UUID queried for in all lists of input documents of all tasks. [optional]
- **i_embed** | /BLCK/OP4_STRING | Information about sub-collections and/or sub-ressources to include in the response. - \&quot;permissions\&quot;: include user access rights for each Task - \&quot;metadata\&quot;: include Task metadata. - \&quot;input\&quot;: include input lists (metadata only) - \&quot;output\&quot;: include output lists (metadata only) - \&quot;cstats\&quot;: connector specific job id&#x27;s and states  [optional]
- **i_inline_count** | /BLCK/OP4_BOOL | Return a JSON object containing the number of tasks found, according to the query parameters, instead of an array with tasks.  [optional]
+ **i_input_document** | `/BLCK/OP4_STRING` | A document UUID queried for in all lists of input documents of all tasks. [optional]
+ **i_embed** | `/BLCK/OP4_STRING` | Information about sub-collections and/or sub-ressources to include in the response. - \&quot;permissions\&quot;: include user access rights for each Task - \&quot;metadata\&quot;: include Task metadata. - \&quot;input\&quot;: include input lists (metadata only) - \&quot;output\&quot;: include output lists (metadata only) - \&quot;cstats\&quot;: connector specific job id&#x27;s and states  [optional]
+ **i_inline_count** | `/BLCK/OP4_BOOL` | Return a JSON object containing the number of tasks found, according to the query parameters, instead of an array with tasks.  [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/OP4_TASK_TT (**[array of Task](#markdown-header-model-task)**) | OK, collection of tasks or count is returned. Example for count: &#x60;&#x60;&#x60; {   count: 0 } &#x60;&#x60;&#x60; 
- 401 | **e_code_401** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
- 404 | **e_code_404** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Not found
- 500 | **e_code_500** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/OP4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/OP4_TASK_TT` (**[array of Task](#markdown-header-model-task)**) | OK, collection of tasks or count is returned. Example for count: &#x60;&#x60;&#x60; {   count: 0 } &#x60;&#x60;&#x60; 
+ 401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
+ 404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Not found
+ 500 | **e_code_500** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -8945,7 +8945,7 @@ HTTP Code | Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**action** | /BLCK/OP4_STRING | 
+**action** | `/BLCK/OP4_STRING` | 
 
 * * *
 <a name="markdown-header-model-baserepoentry"></a> 
@@ -8992,9 +8992,9 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**name** | /BLCK/OP4_STRING | (File) name of the Entry
-**type** | /BLCK/OP4_STRING | Type of RepoEntry.
-**metadata** | /BLCK/OP4_STRING | Metadata assigned to the entry
+**name** | `/BLCK/OP4_STRING` | (File) name of the Entry
+**type** | `/BLCK/OP4_STRING` | Type of RepoEntry.
+**metadata** | `/BLCK/OP4_STRING` | Metadata assigned to the entry
 
 * * *
 <a name="markdown-header-model-cid"></a> 
@@ -9077,8 +9077,8 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**action** | /BLCK/OP4_ACTION (**[Action](#markdown-header-model-action)**) | 
-**data** | /BLCK/OP4_STRING | Data depending on the action. - start: &#x60;data&#x60; contains complete task data in operator-server internal structure - abort: &#x60;data&#x60; contains tid and cids part of task data to abort - pause: &#x60;data&#x60; contains tid and cids part of task data to pause - resume: &#x60;data&#x60; contains tid and cids part of task data to resume 
+**action** | `/BLCK/OP4_ACTION` (**[Action](#markdown-header-model-action)**) | 
+**data** | `/BLCK/OP4_STRING` | Data depending on the action. - start: &#x60;data&#x60; contains complete task data in operator-server internal structure - abort: &#x60;data&#x60; contains tid and cids part of task data to abort - pause: &#x60;data&#x60; contains tid and cids part of task data to pause - resume: &#x60;data&#x60; contains tid and cids part of task data to resume 
 
 * * *
 <a name="markdown-header-model-list_item"></a> 
@@ -9123,9 +9123,9 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**index** | /BLCK/OP4_INT | This is the index of an item in a List. The index is maintained by the SEAL Operator backend. Setting the index to a value beyond the end of the list will move the item to the end of the list. Setting the index to 0 will move th item to the top of the list. Setting the index to a value in use by another item will replace this item, moving it (and all with higher indices) one space down in the list, by increasing their index values. 
-**href** | /BLCK/OP4_STRING | URL location of linked ressource
-**metadata** | /BLCK/OP4_STRING | Additional data to be stored with the link
+**index** | `/BLCK/OP4_INT` | This is the index of an item in a List. The index is maintained by the SEAL Operator backend. Setting the index to a value beyond the end of the list will move the item to the end of the list. Setting the index to 0 will move th item to the top of the list. Setting the index to a value in use by another item will replace this item, moving it (and all with higher indices) one space down in the list, by increasing their index values. 
+**href** | `/BLCK/OP4_STRING` | URL location of linked ressource
+**metadata** | `/BLCK/OP4_STRING` | Additional data to be stored with the link
 
 * * *
 <a name="markdown-header-enum-status_type"></a> 
@@ -9183,12 +9183,12 @@ Name | Type | Description
 
 Name | Value | Constant
 ------------ | ------------- | -------------
-**open** | open | /blck/op4_const=>me_status_type-open.
-**processing** | processing | /blck/op4_const=>me_status_type-processing.
-**completed** | completed | /blck/op4_const=>me_status_type-completed.
-**paused** | paused | /blck/op4_const=>me_status_type-paused.
-**aborted** | aborted | /blck/op4_const=>me_status_type-aborted.
-**failed** | failed | /blck/op4_const=>me_status_type-failed.
+**open** | open | `/blck/op4_const=>me_status_type-open.`
+**processing** | processing | `/blck/op4_const=>me_status_type-processing.`
+**completed** | completed | `/blck/op4_const=>me_status_type-completed.`
+**paused** | paused | `/blck/op4_const=>me_status_type-paused.`
+**aborted** | aborted | `/blck/op4_const=>me_status_type-aborted.`
+**failed** | failed | `/blck/op4_const=>me_status_type-failed.`
 
 * * *
 <a name="markdown-header-model-cid_status"></a> 
@@ -9242,13 +9242,13 @@ Name | Value | Constant
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**tid** | /BLCK/OP4_STRING | 
-**status** | /BLCK/OP4_STATUS_TYPE (**[StatusType](#markdown-header-enum-status_type)**) | 
-**started** | /BLCK/OP4_INT | Timestamp when the cid job started
-**finished** | /BLCK/OP4_INT | Timestamp when the cid job finished
-**cids** | /BLCK/OP4_CID_TT (**[array of CID](#markdown-header-model-cid)**) | list of cid&#x27;s
-**cstats** | /BLCK/OP4_STRING_TT | list with status for each cid
-**list_items** | /BLCK/OP4_LIST_ITEM_TT (**[array of ListItem](#markdown-header-model-list_item)**) | Output documents list
+**tid** | `/BLCK/OP4_STRING` | 
+**status** | `/BLCK/OP4_STATUS_TYPE` (**[StatusType](#markdown-header-enum-status_type)**) | 
+**started** | `/BLCK/OP4_INT` | Timestamp when the cid job started
+**finished** | `/BLCK/OP4_INT` | Timestamp when the cid job finished
+**cids** | `/BLCK/OP4_CID_TT` (**[array of CID](#markdown-header-model-cid)**) | list of cid&#x27;s
+**cstats** | `/BLCK/OP4_STRING_TT` | list with status for each cid
+**list_items** | `/BLCK/OP4_LIST_ITEM_TT` (**[array of ListItem](#markdown-header-model-list_item)**) | Output documents list
 
 * * *
 <a name="markdown-header-model-cid_taskdata"></a> 
@@ -9292,8 +9292,8 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**tid** | /BLCK/OP4_STRING | Task id
-**cids** | /BLCK/OP4_CID_TT (**[array of CID](#markdown-header-model-cid)**) | list of cid&#x27;s
+**tid** | `/BLCK/OP4_STRING` | Task id
+**cids** | `/BLCK/OP4_CID_TT` (**[array of CID](#markdown-header-model-cid)**) | list of cid&#x27;s
 
 * * *
 <a name="markdown-header-model-command"></a> 
@@ -9338,8 +9338,8 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**action** | /BLCK/OP4_STRING | 
-**parameter** | /BLCK/OP4_STRING | Command specific parameter, e.g. href&#x27;s of documents 
+**action** | `/BLCK/OP4_STRING` | 
+**parameter** | `/BLCK/OP4_STRING` | Command specific parameter, e.g. href&#x27;s of documents 
 
 * * *
 <a name="markdown-header-model-command_status"></a> 
@@ -9385,9 +9385,9 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**cid** | /BLCK/OP4_STRING | 
-**status** | /BLCK/OP4_STATUS_TYPE (**[StatusType](#markdown-header-enum-status_type)**) | 
-**command** | /BLCK/OP4_COMMAND (**[Command](#markdown-header-model-command)**) | 
+**cid** | `/BLCK/OP4_STRING` | 
+**status** | `/BLCK/OP4_STATUS_TYPE` (**[StatusType](#markdown-header-enum-status_type)**) | 
+**command** | `/BLCK/OP4_COMMAND` (**[Command](#markdown-header-model-command)**) | 
 
 * * *
 <a name="markdown-header-model-config_item"></a> 
@@ -9471,9 +9471,9 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**code** | /BLCK/OP4_INT | 
-**message** | /BLCK/OP4_STRING | 
-**metadata** | /BLCK/OP4_STRING | 
+**code** | `/BLCK/OP4_INT` | 
+**message** | `/BLCK/OP4_STRING` | 
+**metadata** | `/BLCK/OP4_STRING` | 
 
 * * *
 <a name="markdown-header-model-functions"></a> 
@@ -9573,14 +9573,14 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**uuid** | /BLCK/OP4_STRING | Unique identifier of the list, generated by SEAL Operator.
-**name** | /BLCK/OP4_STRING | User defined name for the list. Doesn&#x27;t have to be unique.
-**created** | /BLCK/OP4_INT | Timestamp of list creation
-**last_modified** | /BLCK/OP4_INT | Timestamp of list creation
-**list_length** | /BLCK/OP4_INT | Number of items in list
-**links** | /BLCK/OP4_STRING | If requested by MIME type, the links section contains hrefs to - \&quot;self\&quot;: the List itself 
-**embedded** | /BLCK/OP4_STRING | Embedded sub-ressources or sub-collections, as requested throught the \&quot;embed\&quot; query parameter 
-**metadata** | /BLCK/OP4_STRING | List metadata. Note that these do not contain item metadata.
+**uuid** | `/BLCK/OP4_STRING` | Unique identifier of the list, generated by SEAL Operator.
+**name** | `/BLCK/OP4_STRING` | User defined name for the list. Doesn&#x27;t have to be unique.
+**created** | `/BLCK/OP4_INT` | Timestamp of list creation
+**last_modified** | `/BLCK/OP4_INT` | Timestamp of list creation
+**list_length** | `/BLCK/OP4_INT` | Number of items in list
+**links** | `/BLCK/OP4_STRING` | If requested by MIME type, the links section contains hrefs to - \&quot;self\&quot;: the List itself 
+**embedded** | `/BLCK/OP4_STRING` | Embedded sub-ressources or sub-collections, as requested throught the \&quot;embed\&quot; query parameter 
+**metadata** | `/BLCK/OP4_STRING` | List metadata. Note that these do not contain item metadata.
 
 * * *
 <a name="markdown-header-model-message"></a> 
@@ -9632,12 +9632,12 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**uuid** | /BLCK/OP4_STRING | A server side defined uuid for each new entry
-**type** | /BLCK/OP4_STRING | The message type
-**text** | /BLCK/OP4_STRING | The message text
-**date** | /BLCK/OP4_INT | The creation time of the message as timestamp
-**source** | /BLCK/OP4_STRING | Name of the panel which created the message
-**read** | /BLCK/OP4_BOOL | Flag if the message has already been read by user
+**uuid** | `/BLCK/OP4_STRING` | A server side defined uuid for each new entry
+**type** | `/BLCK/OP4_STRING` | The message type
+**text** | `/BLCK/OP4_STRING` | The message text
+**date** | `/BLCK/OP4_INT` | The creation time of the message as timestamp
+**source** | `/BLCK/OP4_STRING` | Name of the panel which created the message
+**read** | `/BLCK/OP4_BOOL` | Flag if the message has already been read by user
 
 * * *
 <a name="markdown-header-model-panel_item"></a> 
@@ -9683,9 +9683,9 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**pid** | /BLCK/OP4_STRING | unique id of the PanelListItem
-**name** | /BLCK/OP4_STRING | 
-**type** | /BLCK/OP4_STRING | the panel type the configuration is for, e.g. scratch, p4,...
+**pid** | `/BLCK/OP4_STRING` | unique id of the PanelListItem
+**name** | `/BLCK/OP4_STRING` | 
+**type** | `/BLCK/OP4_STRING` | the panel type the configuration is for, e.g. scratch, p4,...
 
 * * *
 <a name="markdown-header-model-repo_entry"></a> 
@@ -9742,13 +9742,13 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**id** | /BLCK/OP4_STRING | Local ID of the document within the repository.
-**uuid** | /BLCK/OP4_STRING | Global ID of the document, created by SEAL Operator
-**name** | /BLCK/OP4_STRING | (File) name of the Entry
-**type** | /BLCK/OP4_STRING | Type of RepoEntry.
-**links** | /BLCK/OP4_STRING | If requested by MIME type, the links section contains hrefs to - \&quot;self\&quot;: the document itself - \&quot;parent\&quot;: the collection containing the document - \&quot;permissions\&quot;: an object describing user permissions on the document 
-**embedded** | /BLCK/OP4_STRING | Embedded sub-ressources as requested through the \&quot;embed\&quot; query parameter, e.g. \&quot;permissions\&quot;, \&quot;icon\&quot;, \&quot;thumb\&quot;. 
-**metadata** | /BLCK/OP4_STRING | Metadata assigned to the entry
+**id** | `/BLCK/OP4_STRING` | Local ID of the document within the repository.
+**uuid** | `/BLCK/OP4_STRING` | Global ID of the document, created by SEAL Operator
+**name** | `/BLCK/OP4_STRING` | (File) name of the Entry
+**type** | `/BLCK/OP4_STRING` | Type of RepoEntry.
+**links** | `/BLCK/OP4_STRING` | If requested by MIME type, the links section contains hrefs to - \&quot;self\&quot;: the document itself - \&quot;parent\&quot;: the collection containing the document - \&quot;permissions\&quot;: an object describing user permissions on the document 
+**embedded** | `/BLCK/OP4_STRING` | Embedded sub-ressources as requested through the \&quot;embed\&quot; query parameter, e.g. \&quot;permissions\&quot;, \&quot;icon\&quot;, \&quot;thumb\&quot;. 
+**metadata** | `/BLCK/OP4_STRING` | Metadata assigned to the entry
 
 * * *
 <a name="markdown-header-model-service"></a> 
@@ -9800,11 +9800,11 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**id** | /BLCK/OP4_STRING | Identifier of the Service within the SEAL Operator
-**name** | /BLCK/OP4_STRING | Label describing the Service
-**metadata** | /BLCK/OP4_STRING | Metadata of the Service
-**links** | /BLCK/OP4_STRING | If requested by MIME type, the links section contains hrefs to - \&quot;self\&quot;: The Service itself - \&quot;permissions\&quot;: User permissions on the Service 
-**embedded** | /BLCK/OP4_STRING | Sub-collections and/or sub-ressources requested through the embed query parameter. 
+**id** | `/BLCK/OP4_STRING` | Identifier of the Service within the SEAL Operator
+**name** | `/BLCK/OP4_STRING` | Label describing the Service
+**metadata** | `/BLCK/OP4_STRING` | Metadata of the Service
+**links** | `/BLCK/OP4_STRING` | If requested by MIME type, the links section contains hrefs to - \&quot;self\&quot;: The Service itself - \&quot;permissions\&quot;: User permissions on the Service 
+**embedded** | `/BLCK/OP4_STRING` | Sub-collections and/or sub-ressources requested through the embed query parameter. 
 
 * * *
 <a name="markdown-header-model-session_info"></a> 
@@ -9846,7 +9846,7 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**false** | /BLCK/OP4_INT | number of currently open sessions of this user
+**false** | `/BLCK/OP4_INT` | number of currently open sessions of this user
 
 * * *
 <a name="markdown-header-model-task"></a> 
@@ -9909,18 +9909,18 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**name** | /BLCK/OP4_STRING | 
-**sid** | /BLCK/OP4_STRING | 
-**tid** | /BLCK/OP4_STRING | 
-**metadata** | /BLCK/OP4_STRING | Task metadata. Note that these do not contain item metadata.
-**created** | /BLCK/OP4_INT | Timestamp of task creation
-**started** | /BLCK/OP4_INT | Timestamp of task started
-**finished** | /BLCK/OP4_INT | Timestamp of task finished
-**input_list_length** | /BLCK/OP4_INT | Number of items in input list
-**output_list_length** | /BLCK/OP4_INT | Number of items in output list
-**status** | /BLCK/OP4_STATUS_TYPE (**[StatusType](#markdown-header-enum-status_type)**) | 
-**links** | /BLCK/OP4_STRING | If requested, the links section contains hrefs to - \&quot;self\&quot;: the Task itself - \&quot;input\&quot;: input documents - \&quot;output\&quot;: output documents 
-**embedded** | /BLCK/OP4_STRING | Embedded sub-ressources or sub-collections, as requested throught the \&quot;embed\&quot; query parameter 
+**name** | `/BLCK/OP4_STRING` | 
+**sid** | `/BLCK/OP4_STRING` | 
+**tid** | `/BLCK/OP4_STRING` | 
+**metadata** | `/BLCK/OP4_STRING` | Task metadata. Note that these do not contain item metadata.
+**created** | `/BLCK/OP4_INT` | Timestamp of task creation
+**started** | `/BLCK/OP4_INT` | Timestamp of task started
+**finished** | `/BLCK/OP4_INT` | Timestamp of task finished
+**input_list_length** | `/BLCK/OP4_INT` | Number of items in input list
+**output_list_length** | `/BLCK/OP4_INT` | Number of items in output list
+**status** | `/BLCK/OP4_STATUS_TYPE` (**[StatusType](#markdown-header-enum-status_type)**) | 
+**links** | `/BLCK/OP4_STRING` | If requested, the links section contains hrefs to - \&quot;self\&quot;: the Task itself - \&quot;input\&quot;: input documents - \&quot;output\&quot;: output documents 
+**embedded** | `/BLCK/OP4_STRING` | Embedded sub-ressources or sub-collections, as requested throught the \&quot;embed\&quot; query parameter 
 
 * * *
 <a name="markdown-header-model-task_metadata"></a> 
@@ -9965,6 +9965,6 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**name** | /BLCK/OP4_STRING | Name of the Task
-**metadata** | /BLCK/OP4_STRING | Metadata assigned to the task
+**name** | `/BLCK/OP4_STRING` | Name of the Task
+**metadata** | `/BLCK/OP4_STRING` | Metadata assigned to the task
 

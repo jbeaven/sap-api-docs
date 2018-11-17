@@ -66,14 +66,14 @@ Query
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_querytext** | /BLCK/SPS_STRING | querytext 
- **i_selectproperties** | /BLCK/SPS_STRING | selectproperties [optional]
+ **i_querytext** | `/BLCK/SPS_STRING` | querytext 
+ **i_selectproperties** | `/BLCK/SPS_STRING` | selectproperties [optional]
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/SPS_QUERY (**[Query](#markdown-header-model-query)**) | OK
+ 200 | **e_code_200** | `/BLCK/SPS_QUERY` (**[Query](#markdown-header-model-query)**) | OK
 
 ### HTTP request headers
 
@@ -125,9 +125,9 @@ HTTP Code | Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**key** | /BLCK/SPS_STRING | 
-**value** | /BLCK/SPS_STRING | 
-**value_type** | /BLCK/SPS_STRING | 
+**key** | `/BLCK/SPS_STRING` | 
+**value** | `/BLCK/SPS_STRING` | 
+**value_type** | `/BLCK/SPS_STRING` | 
 
 * * *
 <a name="markdown-header-model-properties"></a> 
@@ -173,9 +173,9 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**key** | /BLCK/SPS_STRING | 
-**value** | /BLCK/SPS_STRING | 
-**value_type** | /BLCK/SPS_STRING | 
+**key** | `/BLCK/SPS_STRING` | 
+**value** | `/BLCK/SPS_STRING` | 
+**value_type** | `/BLCK/SPS_STRING` | 
 
 * * *
 <a name="markdown-header-model-rows"></a> 
@@ -217,7 +217,7 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**cells** | /BLCK/SPS_CELLS_TT (**[array of Cells](#markdown-header-model-cells)**) | 
+**cells** | `/BLCK/SPS_CELLS_TT` (**[array of Cells](#markdown-header-model-cells)**) | 
 
 * * *
 <a name="markdown-header-model-table"></a> 
@@ -259,7 +259,7 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**rows** | /BLCK/SPS_ROWS_TT (**[array of Rows](#markdown-header-model-rows)**) | 
+**rows** | `/BLCK/SPS_ROWS_TT` (**[array of Rows](#markdown-header-model-rows)**) | 
 
 * * *
 <a name="markdown-header-model-relevantresult"></a> 
@@ -317,15 +317,15 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**group_template_id** | /BLCK/SPS_STRING | 
-**item_template_id** | /BLCK/SPS_STRING | 
-**properties** | /BLCK/SPS_PROPERTIES_TT (**[array of Properties](#markdown-header-model-properties)**) | 
-**result_title** | /BLCK/SPS_STRING | 
-**result_title_url** | /BLCK/SPS_STRING | 
-**row_count** | /BLCK/SPS_INT | 
-**table** | /BLCK/SPS_TABLE (**[Table](#markdown-header-model-table)**) | 
-**total_rows** | /BLCK/SPS_INT | 
-**totalrowsincludingduplicat** | /BLCK/SPS_INT | 
+**group_template_id** | `/BLCK/SPS_STRING` | 
+**item_template_id** | `/BLCK/SPS_STRING` | 
+**properties** | `/BLCK/SPS_PROPERTIES_TT` (**[array of Properties](#markdown-header-model-properties)**) | 
+**result_title** | `/BLCK/SPS_STRING` | 
+**result_title_url** | `/BLCK/SPS_STRING` | 
+**row_count** | `/BLCK/SPS_INT` | 
+**table** | `/BLCK/SPS_TABLE` (**[Table](#markdown-header-model-table)**) | 
+**total_rows** | `/BLCK/SPS_INT` | 
+**totalrowsincludingduplicat** | `/BLCK/SPS_INT` | 
 
 * * *
 <a name="markdown-header-model-primaryqueryre"></a> 
@@ -377,12 +377,12 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**custom_results** | /BLCK/SPS_STRING_TT | 
-**query_id** | /BLCK/SPS_STRING | 
-**query_rule_id** | /BLCK/SPS_STRING | 
-**refinement_results** | /BLCK/SPS_STRING | 
-**relevant_results** | /BLCK/SPS_RELEVANTRESULT (**[RelevantResults](#markdown-header-model-relevantresult)**) | 
-**special_term_results** | /BLCK/SPS_STRING | 
+**custom_results** | `/BLCK/SPS_STRING_TT` | 
+**query_id** | `/BLCK/SPS_STRING` | 
+**query_rule_id** | `/BLCK/SPS_STRING` | 
+**refinement_results** | `/BLCK/SPS_STRING` | 
+**relevant_results** | `/BLCK/SPS_RELEVANTRESULT` (**[RelevantResults](#markdown-header-model-relevantresult)**) | 
+**special_term_results** | `/BLCK/SPS_STRING` | 
 
 * * *
 <a name="markdown-header-model-properties2"></a> 
@@ -428,9 +428,9 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**key** | /BLCK/SPS_STRING | 
-**value** | /BLCK/SPS_STRING | 
-**value_type** | /BLCK/SPS_STRING | 
+**key** | `/BLCK/SPS_STRING` | 
+**value** | `/BLCK/SPS_STRING` | 
+**value_type** | `/BLCK/SPS_STRING` | 
 
 * * *
 <a name="markdown-header-model-query"></a> 
@@ -484,11 +484,11 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**elapsed_time** | /BLCK/SPS_INT | 
-**odata_metadata** | /BLCK/SPS_STRING | 
-**primary_query_result** | /BLCK/SPS_PRIMARYQUERYRE (**[PrimaryQueryResult](#markdown-header-model-primaryqueryre)**) | 
-**properties** | /BLCK/SPS_PROPERTIES2_TT (**[array of Properties2](#markdown-header-model-properties2)**) | 
-**secondary_query_results** | /BLCK/SPS_STRING_TT | 
-**spelling_suggestion** | /BLCK/SPS_STRING | 
-**triggered_rules** | /BLCK/SPS_STRING_TT | 
+**elapsed_time** | `/BLCK/SPS_INT` | 
+**odata_metadata** | `/BLCK/SPS_STRING` | 
+**primary_query_result** | `/BLCK/SPS_PRIMARYQUERYRE` (**[PrimaryQueryResult](#markdown-header-model-primaryqueryre)**) | 
+**properties** | `/BLCK/SPS_PROPERTIES2_TT` (**[array of Properties2](#markdown-header-model-properties2)**) | 
+**secondary_query_results** | `/BLCK/SPS_STRING_TT` | 
+**spelling_suggestion** | `/BLCK/SPS_STRING` | 
+**triggered_rules** | `/BLCK/SPS_STRING_TT` | 
 

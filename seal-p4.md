@@ -81,11 +81,11 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P4_JOBSTATUSEVENT (**[JobStatusEvent](#markdown-header-model-jobstatusevent)**) | OK, job status is returned
- 401 | **e_code_401** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights. 
- 500 | **e_code_500** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/P4_JOBSTATUSEVENT` (**[JobStatusEvent](#markdown-header-model-jobstatusevent)**) | OK, job status is returned
+ 401 | **e_code_401** | `/BLCK/P4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/P4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights. 
+ 500 | **e_code_500** | `/BLCK/P4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/P4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -185,18 +185,18 @@ A POST call to this route will create a new jobs and return it's uuid.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | /BLCK/P4_STRING | job header data of the entry to be created 
+ **i_body** | `/BLCK/P4_STRING` | job header data of the entry to be created 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P4_JOB_ID (**[JobId](#markdown-header-model-job_id)**) | OK, job ID is returned.
- 401 | **e_code_401** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service list. 
- 409 | **e_code_409** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
- 500 | **e_code_500** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/P4_JOB_ID` (**[JobId](#markdown-header-model-job_id)**) | OK, job ID is returned.
+ 401 | **e_code_401** | `/BLCK/P4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/P4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service list. 
+ 409 | **e_code_409** | `/BLCK/P4_ERROR` (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
+ 500 | **e_code_500** | `/BLCK/P4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/P4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -289,7 +289,7 @@ A POST call to this route will abort a running job.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_uuid** | /BLCK/P4_STRING | ID of the current job. 
+ **i_uuid** | `/BLCK/P4_STRING` | ID of the current job. 
 
 ### Return types
 
@@ -388,18 +388,18 @@ returns status of given job
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_uuid** | /BLCK/P4_STRING | ID of the current job. 
+ **i_uuid** | `/BLCK/P4_STRING` | ID of the current job. 
 
 ### Return types
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P4_JOB_STATUS (**[JobStatus](#markdown-header-model-job_status)**) | OK, job status is returned
- 401 | **e_code_401** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service metadata. 
- 404 | **e_code_404** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | The requested Service was not found.
- 500 | **e_code_500** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/P4_JOB_STATUS` (**[JobStatus](#markdown-header-model-job_status)**) | OK, job status is returned
+ 401 | **e_code_401** | `/BLCK/P4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/P4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights to access the service metadata. 
+ 404 | **e_code_404** | `/BLCK/P4_ERROR` (**[Error](#markdown-header-model-error)**) | The requested Service was not found.
+ 500 | **e_code_500** | `/BLCK/P4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/P4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -492,7 +492,7 @@ A POST call to this route will pause a running job.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_uuid** | /BLCK/P4_STRING | ID of the current job. 
+ **i_uuid** | `/BLCK/P4_STRING` | ID of the current job. 
 
 ### Return types
 
@@ -588,7 +588,7 @@ A PUT call to this route will add a new file to the job. Data type is given in H
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_uuid** | /BLCK/P4_STRING | ID of the current job. 
+ **i_uuid** | `/BLCK/P4_STRING` | ID of the current job. 
 
 ### Return types
 
@@ -684,7 +684,7 @@ A POST call to this route will resume a paused job.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_uuid** | /BLCK/P4_STRING | ID of the current job. 
+ **i_uuid** | `/BLCK/P4_STRING` | ID of the current job. 
 
 ### Return types
 
@@ -780,7 +780,7 @@ A POST call to this route will start a previously created job.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_uuid** | /BLCK/P4_STRING | ID of the current job. 
+ **i_uuid** | `/BLCK/P4_STRING` | ID of the current job. 
 
 ### Return types
 
@@ -874,11 +874,11 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | /BLCK/P4_PRINTER_TT (**[array of Printer](#markdown-header-model-printer)**) | OK, array of printer objects is returned
- 401 | **e_code_401** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
- 403 | **e_code_403** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights. 
- 500 | **e_code_500** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Application Error
- other | **e_code_other** | /BLCK/P4_ERROR (**[Error](#markdown-header-model-error)**) | Unexpected error
+ 200 | **e_code_200** | `/BLCK/P4_PRINTER_TT` (**[array of Printer](#markdown-header-model-printer)**) | OK, array of printer objects is returned
+ 401 | **e_code_401** | `/BLCK/P4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
+ 403 | **e_code_403** | `/BLCK/P4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks acces rights. 
+ 500 | **e_code_500** | `/BLCK/P4_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
+ other | **e_code_other** | `/BLCK/P4_ERROR` (**[Error](#markdown-header-model-error)**) | Unexpected error
 
 ### HTTP request headers
 
@@ -929,9 +929,9 @@ HTTP Code | Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**code** | /BLCK/P4_INT | 
-**message** | /BLCK/P4_STRING | 
-**metadata** | /BLCK/P4_STRING | 
+**code** | `/BLCK/P4_INT` | 
+**message** | `/BLCK/P4_STRING` | 
+**metadata** | `/BLCK/P4_STRING` | 
 
 * * *
 <a name="markdown-header-model-job_header"></a> 
@@ -1012,7 +1012,7 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**uuid** | /BLCK/P4_STRING | Identifier of the job
+**uuid** | `/BLCK/P4_STRING` | Identifier of the job
 
 * * *
 <a name="markdown-header-enum-status_type"></a> 
@@ -1070,12 +1070,12 @@ Name | Type | Description
 
 Name | Value | Constant
 ------------ | ------------- | -------------
-**open** | open | /blck/p4_const=>me_status_type-open.
-**processing** | processing | /blck/p4_const=>me_status_type-processing.
-**completed** | completed | /blck/p4_const=>me_status_type-completed.
-**paused** | paused | /blck/p4_const=>me_status_type-paused.
-**aborted** | aborted | /blck/p4_const=>me_status_type-aborted.
-**failed** | failed | /blck/p4_const=>me_status_type-failed.
+**open** | open | `/blck/p4_const=>me_status_type-open.`
+**processing** | processing | `/blck/p4_const=>me_status_type-processing.`
+**completed** | completed | `/blck/p4_const=>me_status_type-completed.`
+**paused** | paused | `/blck/p4_const=>me_status_type-paused.`
+**aborted** | aborted | `/blck/p4_const=>me_status_type-aborted.`
+**failed** | failed | `/blck/p4_const=>me_status_type-failed.`
 
 * * *
 <a name="markdown-header-model-job_status"></a> 
@@ -1117,7 +1117,7 @@ Name | Value | Constant
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**status** | /BLCK/P4_STATUS_TYPE (**[StatusType](#markdown-header-enum-status_type)**) | 
+**status** | `/BLCK/P4_STATUS_TYPE` (**[StatusType](#markdown-header-enum-status_type)**) | 
 
 * * *
 <a name="markdown-header-model-jobstatusevent"></a> 
@@ -1163,9 +1163,9 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**type** | /BLCK/P4_STRING | name of event, possible values: &#x27;UPDATE_JOB&#x27; 
-**scope** | /BLCK/P4_STRING | uuid of PLOSSYS 4 job
-**parameters** | /BLCK/P4_STRING | key/value pairs with event specific parameters. E.g. for UPDATE_JOB: &#x27;status: completed&#x27; 
+**type** | `/BLCK/P4_STRING` | name of event, possible values: &#x27;UPDATE_JOB&#x27; 
+**scope** | `/BLCK/P4_STRING` | uuid of PLOSSYS 4 job
+**parameters** | `/BLCK/P4_STRING` | key/value pairs with event specific parameters. E.g. for UPDATE_JOB: &#x27;status: completed&#x27; 
 
 * * *
 <a name="markdown-header-model-printer"></a> 
@@ -1223,13 +1223,13 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**printer** | /BLCK/P4_STRING | Printer name
-**display_name** | /BLCK/P4_STRING | Name used for displaying the printer (if empty use Printer instead)
-**comment** | /BLCK/P4_STRING | Text describing the printer
-**color** | /BLCK/P4_BOOL | True if printer is capable of printing color, otherwise false
-**color_default** | /BLCK/P4_BOOL | Default color setting for jobs, sent to this printer
-**duplex** | /BLCK/P4_BOOL | True if printer is capable of printin in duplex mode, otherwise false
-**duplex_default** | /BLCK/P4_STRING | Default duplex setting for jobs, sent to this printer
-**trays** | /BLCK/P4_STRING_TT | Paper format loaded in each of the printer&#x27;s input trays
-**tray_media** | /BLCK/P4_STRING_TT | Media type loaded in each of the printer&#x27;s input trays
+**printer** | `/BLCK/P4_STRING` | Printer name
+**display_name** | `/BLCK/P4_STRING` | Name used for displaying the printer (if empty use Printer instead)
+**comment** | `/BLCK/P4_STRING` | Text describing the printer
+**color** | `/BLCK/P4_BOOL` | True if printer is capable of printing color, otherwise false
+**color_default** | `/BLCK/P4_BOOL` | Default color setting for jobs, sent to this printer
+**duplex** | `/BLCK/P4_BOOL` | True if printer is capable of printin in duplex mode, otherwise false
+**duplex_default** | `/BLCK/P4_STRING` | Default duplex setting for jobs, sent to this printer
+**trays** | `/BLCK/P4_STRING_TT` | Paper format loaded in each of the printer&#x27;s input trays
+**tray_media** | `/BLCK/P4_STRING_TT` | Media type loaded in each of the printer&#x27;s input trays
 

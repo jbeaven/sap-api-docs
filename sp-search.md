@@ -36,7 +36,7 @@ Query
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/sps_cl_SearchApi=>config(
       exporting
         i_basepath = gcc_basepath ).

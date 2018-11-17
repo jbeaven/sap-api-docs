@@ -33,13 +33,13 @@ Adds an object to the favorites.
 *   gm_body-external_repository_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
 *   gm_body-externalrepositoryobjectid = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_FavoritesApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -115,13 +115,13 @@ Retrieves object version information on the favorite object
 *   gvi_type = 42.
 *   gvs_objectid = 'ipsum lorem'.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_FavoritesApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -190,13 +190,13 @@ Retrieves favorite objects.
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_FavoritesApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -268,13 +268,13 @@ Removes an object from favorites.
 *   gvi_type = 42.
 *   gvs_objectid = 'ipsum lorem'.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_FavoritesApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -354,13 +354,13 @@ Stores a temporary file on the server and assigns an ID for it. Once uploaded th
 *** set data according to requirements of the API call
 *   gvs_body = 'ipsum lorem'.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_FilesApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -448,13 +448,13 @@ Adds a comment to an object
 *   gvi_objectid = 42.
 *   gvs_version = 'ipsum lorem'.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -545,13 +545,13 @@ Adds a new file to the object.
 *   gvi_objectid = 42.
 *   gvs_version = 'ipsum lorem'.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -635,13 +635,13 @@ Creates a new object of type.
 *   gm_body-files = l_files. " (type /BLCK/MFI_UPLOAD_INFO_TT)
 *   gvi_type = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -717,13 +717,13 @@ Demotes external objects that have been previously promoted.
 *   lr_body = ...
 *   append lr_body to gi_body.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -812,13 +812,13 @@ As checked in versions cannot be destroyed this can only be performed on a check
 *   gv_force = 'X'.
 *   gv_all_versions = 'X'.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -902,13 +902,13 @@ Retrieves automatic metadata based on specified request info.
 *   gm_body-metadata_provider_ids = l_metadata_provider_ids. " (type /BLCK/MFI_STRING_TT)
 *   gm_body-custom_data = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -989,13 +989,13 @@ Retrieves the current check out status.
 *   gvi_objectid = 42.
 *   gvs_version = 'ipsum lorem'.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1079,13 +1079,13 @@ Retrieves the comments written on the object.
 *   gvi_objectid = 42.
 *   gvs_version = 'ipsum lorem'.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1161,13 +1161,13 @@ Retrieves the deleted status of the object.
 *** set data according to requirements of the API call
 *   gvi_type = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1259,13 +1259,13 @@ Retrieves the object file contents.
 *   gvs_x_hmac = 'ipsum lorem'.
 *   gv_mac = 'X'.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1362,13 +1362,13 @@ Retrieves the object file information for the specific object file.
 *   gvs_version = 'ipsum lorem'.
 *   gvi_file = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1474,13 +1474,13 @@ Retrieves the file preview.
 *   gvi_width = 42.
 *   gvi_height = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1587,13 +1587,13 @@ Retrieves the current object file name.
 *   gvs_version = 'ipsum lorem'.
 *   gvi_file = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1679,13 +1679,13 @@ Retrieves the object file information for all the files on an object.
 *   gvi_objectid = 42.
 *   gvs_version = 'ipsum lorem'.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1763,13 +1763,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/properti
 *** set data according to requirements of the API call
 *   gvs_object_ids = 'ipsum lorem'.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1853,13 +1853,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   gvi_objectid = 42.
 *   gvs_version = 'ipsum lorem'.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1949,13 +1949,13 @@ Parameters: ?include - A list of additional fields to include in the ExtendedObj
 *   gvs_version = 'ipsum lorem'.
 *   gvs_include = 'ipsum lorem'.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -2059,13 +2059,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   gvi_width = 42.
 *   gvi_height = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -2158,13 +2158,13 @@ Retrieves all the available versions of the object.
 *** set data according to requirements of the API call
 *   gvi_type = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -2233,13 +2233,13 @@ The amount of returned objects is limited by the server, by default to 500 items
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -2307,13 +2307,13 @@ Collection of objects filtered by object type.
 *** set data according to requirements of the API call
 *   gvi_type = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -2399,13 +2399,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   gvs_version = 'ipsum lorem'.
 *   gv_for_display = 'X'.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -2500,13 +2500,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   gvs_version = 'ipsum lorem'.
 *   gvi_id = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -2602,13 +2602,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   gvi_objtype = 42.
 *   gvs_direction = 'ipsum lorem'.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -2711,13 +2711,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   gvi_objtype = 42.
 *   gvs_direction = 'ipsum lorem'.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -2812,13 +2812,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   gvi_objectid = 42.
 *   gvs_version = 'ipsum lorem'.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -2904,13 +2904,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   gvi_objectid = 42.
 *   gvs_version = 'ipsum lorem'.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -2996,13 +2996,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   gvi_objectid = 42.
 *   gvs_version = 'ipsum lorem'.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -3088,13 +3088,13 @@ Removes the file from the object.
 *   gvs_version = 'ipsum lorem'.
 *   gvi_file = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -3181,13 +3181,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   gvs_version = 'ipsum lorem'.
 *   gvi_id = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -3279,13 +3279,13 @@ Sets the check out status. This is allowed only when the object isn't checked ou
 *   gvi_objectid = 42.
 *   gvs_version = 'ipsum lorem'.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -3367,13 +3367,13 @@ Sets the deleted status of the object.
 *   gv_body = 'X'.
 *   gvi_type = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -3463,13 +3463,13 @@ Replaces the object file contents.
 *   gvs_version = 'ipsum lorem'.
 *   gvi_file = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -3566,13 +3566,13 @@ Sets the name on the object file.
 *   gvs_version = 'ipsum lorem'.
 *   gvi_file = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -3656,13 +3656,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/setmulti
 *** set data according to requirements of the API call
 *   gm_body-multiple_object_info = l_multiple_object_info. " (type /BLCK/MFI_OBJECTVERSIONU)
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -3748,13 +3748,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   gvi_objectid = 42.
 *   gvs_version = 'ipsum lorem'.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -3853,13 +3853,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   gvi_objectid = 42.
 *   gvs_version = 'ipsum lorem'.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -3956,13 +3956,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   gvs_version = 'ipsum lorem'.
 *   gvi_id = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4062,13 +4062,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   gvi_objectid = 42.
 *   gvs_version = 'ipsum lorem'.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4166,13 +4166,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   gvi_objectid = 42.
 *   gvs_version = 'ipsum lorem'.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ObjectsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4259,13 +4259,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/recentlyaccessed
 *   gm_body-external_repository_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
 *   gm_body-externalrepositoryobjectid = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_RecentApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4334,13 +4334,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/recentlyaccessed
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_RecentApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4410,13 +4410,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/repositories/
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_RepositoriesApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4495,13 +4495,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/repositories/ses
 *   gm_body-refresh_token = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
 *   gvi_targetid = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_RepositoriesApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4575,13 +4575,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/repositories/ses
 *** set data according to requirements of the API call
 *   gvi_targetid = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_RepositoriesApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4664,13 +4664,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/authentic
 *   gm_body-url = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
 *   gm_body-method = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ServerApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4739,13 +4739,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/publickey
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ServerApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4811,13 +4811,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/status/
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ServerApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4890,13 +4890,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/vaults/
 *** set data according to requirements of the API call
 *   gv_online = 'X'.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ServerApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4970,13 +4970,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/authenti
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_SessionApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -5041,13 +5041,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_SessionApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -5112,13 +5112,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/userid/
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_SessionApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -5183,13 +5183,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/vault/
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_SessionApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -5268,13 +5268,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/
 *   gm_body-url = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
 *   gm_body-method = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_SessionApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -5341,13 +5341,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_SessionApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -5414,13 +5414,13 @@ The request must have either the GUID or the Name of the vault filled. In case b
 *   gm_body-guid = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
 *   gm_body-authentication = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_SessionApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -5512,13 +5512,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *   gm_body-value_list_id = 42. " (type /BLCK/MFI_INT)
 *   gvi_id = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -5598,13 +5598,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
 *   gvi_id = 42.
 *   gvi_size = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -5681,13 +5681,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
 *** set data according to requirements of the API call
 *   gvs_guid = 'ipsum lorem'.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -5765,13 +5765,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
 *   gvi_id = 42.
 *   gvs_include = 'ipsum lorem'.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -5854,13 +5854,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *   gvi_id = 42.
 *   gvi_objectid = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -5940,13 +5940,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *   gvi_id = 42.
 *   gvi_objectid = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -6034,13 +6034,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *   gvs_filter_item = 'ipsum lorem'.
 *   gvi_condition_type = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -6124,13 +6124,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/classe
 *** set data according to requirements of the API call
 *   gvi_objtype = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -6206,13 +6206,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
 *** set data according to requirements of the API call
 *   gvi_type = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -6286,13 +6286,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
 *** set data according to requirements of the API call
 *   gvi_type = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -6366,13 +6366,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
 *** set data according to requirements of the API call
 *   gvi_type = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -6441,13 +6441,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -6517,13 +6517,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *** set data according to requirements of the API call
 *   gvi_id = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -6592,13 +6592,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -6663,13 +6663,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/proper
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -6739,13 +6739,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/proper
 *** set data according to requirements of the API call
 *   gvi_id = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -6819,13 +6819,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
 *** set data according to requirements of the API call
 *   gvi_id = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -6903,13 +6903,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
 *   gvi_id = 42.
 *   gvi_sid = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -6991,13 +6991,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
 *   gvi_id = 42.
 *   gvi_currentstate = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -7079,13 +7079,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
 *   gvi_id = 42.
 *   gvi_currentstate = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -7158,13 +7158,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/workfl
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -7236,13 +7236,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *   gvi_id = 42.
 *   gvi_objectid = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -7323,13 +7323,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *   gvi_id = 42.
 *   gvi_objectid = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -7411,13 +7411,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
 *   gvi_body = 42.
 *   gvi_type = 42.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_VaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -7497,13 +7497,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/views/path/items
 *** set data according to requirements of the API call
 *   gvs_path = 'ipsum lorem'.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ViewsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -7578,13 +7578,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/views/path/items
 *** set data according to requirements of the API call
 *   gvs_path = 'ipsum lorem'.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ViewsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -7659,13 +7659,13 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/views/path/objec
 *** set data according to requirements of the API call
 *   gvs_path = 'ipsum lorem'.
 
-* pass auth credentials to the API as needed
+*** pass auth credentials to the API as needed
     /blck/mfi_cl_api=>set_credentials(
       exporting
         i_x_authentication = '1234-5678-9012-3456' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/mfi_cl_ViewsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -7954,7 +7954,7 @@ Name | Type | Description
     data gv_mf_data_type type /blck/mfi_mf_data_type.
     
 * set the enum value we want
-    gv_mf_data_type = /blck/mfi_cl_model=>mf_data_type-uninitialized.
+    gv_mf_data_type = /blck/mfi_const=>me_mf_data_type-uninitialized.
     
 * pass the enum value to the example API via method
     /blck/cl_example_api=>set_mf_data_type_state(
@@ -8010,20 +8010,20 @@ Name | Type | Description
 
 Name | Value | Constant
 ------------ | ------------- | -------------
-**uninitialized** | 0 | /blck/mfi_cl_model=>mf_data_type-uninitialized.
-**text** | 1 | /blck/mfi_cl_model=>mf_data_type-text.
-**integer** | 2 | /blck/mfi_cl_model=>mf_data_type-integer.
-**floating** | 3 | /blck/mfi_cl_model=>mf_data_type-floating.
-**date** | 5 | /blck/mfi_cl_model=>mf_data_type-date.
-**time** | 6 | /blck/mfi_cl_model=>mf_data_type-time.
-**timestamp** | 7 | /blck/mfi_cl_model=>mf_data_type-timestamp.
-**boolean** | 8 | /blck/mfi_cl_model=>mf_data_type-boolean.
-**lookup** | 9 | /blck/mfi_cl_model=>mf_data_type-lookup.
-**multi_select_lookup** | 10 | /blck/mfi_cl_model=>mf_data_type-multi_select_lookup.
-**integer64** | 11 | /blck/mfi_cl_model=>mf_data_type-integer64.
-**filetime** | 12 | /blck/mfi_cl_model=>mf_data_type-filetime.
-**multi_line_text** | 13 | /blck/mfi_cl_model=>mf_data_type-multi_line_text.
-**acl** | 14 | /blck/mfi_cl_model=>mf_data_type-acl.
+**uninitialized** | 0 | /blck/mfi_const=>me_mf_data_type-uninitialized.
+**text** | 1 | /blck/mfi_const=>me_mf_data_type-text.
+**integer** | 2 | /blck/mfi_const=>me_mf_data_type-integer.
+**floating** | 3 | /blck/mfi_const=>me_mf_data_type-floating.
+**date** | 5 | /blck/mfi_const=>me_mf_data_type-date.
+**time** | 6 | /blck/mfi_const=>me_mf_data_type-time.
+**timestamp** | 7 | /blck/mfi_const=>me_mf_data_type-timestamp.
+**boolean** | 8 | /blck/mfi_const=>me_mf_data_type-boolean.
+**lookup** | 9 | /blck/mfi_const=>me_mf_data_type-lookup.
+**multi_select_lookup** | 10 | /blck/mfi_const=>me_mf_data_type-multi_select_lookup.
+**integer64** | 11 | /blck/mfi_const=>me_mf_data_type-integer64.
+**filetime** | 12 | /blck/mfi_const=>me_mf_data_type-filetime.
+**multi_line_text** | 13 | /blck/mfi_const=>me_mf_data_type-multi_line_text.
+**acl** | 14 | /blck/mfi_const=>me_mf_data_type-acl.
 
 * * *
 <a name="markdown-header-model-typed_value"></a> 
@@ -8043,7 +8043,7 @@ Name | Value | Constant
     data gr_typed_value type /blck/mfi_typed_value.
     
 * fill model with data as appropriate..
-    gr_typed_value-data_type = l_data_type. " (type /BLCK/MFI_MF_DATA_TYPE)
+    gr_typed_value-data_type = /blck/mfi_const=>me_mf_data_type-uninitialized. " (enum /BLCK/MFI_MF_DATA_TYPE)
     gr_typed_value-has_value = 'X'. " (type /BLCK/MFI_BOOL)
     gr_typed_value-value = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     gr_typed_value-lookup = l_lookup. " (type /BLCK/MFI_LOOKUP)
@@ -8441,7 +8441,7 @@ Name | Type | Description
     data gv_mfobjectversio type /blck/mfi_mfobjectversio.
     
 * set the enum value we want
-    gv_mfobjectversio = /blck/mfi_cl_model=>mfobjectversio-none.
+    gv_mfobjectversio = /blck/mfi_const=>me_mfobjectversio-none.
     
 * pass the enum value to the example API via method
     /blck/cl_example_api=>set_mfobjectversio_state(
@@ -8475,9 +8475,9 @@ Name | Type | Description
 
 Name | Value | Constant
 ------------ | ------------- | -------------
-**none** | 0 | /blck/mfi_cl_model=>mfobjectversio-none.
-**completed** | 1 | /blck/mfi_cl_model=>mfobjectversio-completed.
-**has_related_objects** | 2 | /blck/mfi_cl_model=>mfobjectversio-has_related_objects.
+**none** | 0 | /blck/mfi_const=>me_mfobjectversio-none.
+**completed** | 1 | /blck/mfi_const=>me_mfobjectversio-completed.
+**has_related_objects** | 2 | /blck/mfi_const=>me_mfobjectversio-has_related_objects.
 
 * * *
 <a name="markdown-header-model-object_file"></a> 
@@ -8565,7 +8565,7 @@ Name | Type | Description
     gr_object_version-last_modified_utc = 'ipsum lorem'. " (type /BLCK/MFI_TIMESTAMP)
     gr_object_version-object_checked_out = 'X'. " (type /BLCK/MFI_BOOL)
     gr_object_version-objectcheckedouttothisuser = 'X'. " (type /BLCK/MFI_BOOL)
-    gr_object_version-object_version_flags = l_object_version_flags. " (type /BLCK/MFI_MFOBJECTVERSIO)
+    gr_object_version-object_version_flags = /blck/mfi_const=>me_mfobjectversio-none. " (enum /BLCK/MFI_MFOBJECTVERSIO)
     gr_object_version-obj_ver = l_obj_ver. " (type /BLCK/MFI_OBJ_VER)
     gr_object_version-single_file = 'X'. " (type /BLCK/MFI_BOOL)
     gr_object_version-thisversionlatesttothisuse = 'X'. " (type /BLCK/MFI_BOOL)
@@ -8725,7 +8725,7 @@ Name | Type | Description
     gr_extendedobject-last_modified_utc = 'ipsum lorem'. " (type /BLCK/MFI_TIMESTAMP)
     gr_extendedobject-object_checked_out = 'X'. " (type /BLCK/MFI_BOOL)
     gr_extendedobject-objectcheckedouttothisuser = 'X'. " (type /BLCK/MFI_BOOL)
-    gr_extendedobject-object_version_flags = l_object_version_flags. " (type /BLCK/MFI_MFOBJECTVERSIO)
+    gr_extendedobject-object_version_flags = /blck/mfi_const=>me_mfobjectversio-none. " (enum /BLCK/MFI_MFOBJECTVERSIO)
     gr_extendedobject-obj_ver = l_obj_ver. " (type /BLCK/MFI_OBJ_VER)
     gr_extendedobject-single_file = 'X'. " (type /BLCK/MFI_BOOL)
     gr_extendedobject-thisversionlatesttothisuse = 'X'. " (type /BLCK/MFI_BOOL)
@@ -8819,7 +8819,7 @@ Name | Type | Description
     data gv_mffolderconten type /blck/mfi_mffolderconten.
     
 * set the enum value we want
-    gv_mffolderconten = /blck/mfi_cl_model=>mffolderconten-unknown.
+    gv_mffolderconten = /blck/mfi_const=>me_mffolderconten-unknown.
     
 * pass the enum value to the example API via method
     /blck/cl_example_api=>set_mffolderconten_state(
@@ -8859,12 +8859,12 @@ Name | Type | Description
 
 Name | Value | Constant
 ------------ | ------------- | -------------
-**unknown** | 0 | /blck/mfi_cl_model=>mffolderconten-unknown.
-**view_folder** | 1 | /blck/mfi_cl_model=>mffolderconten-view_folder.
-**property_folder** | 2 | /blck/mfi_cl_model=>mffolderconten-property_folder.
-**traditional_folder** | 3 | /blck/mfi_cl_model=>mffolderconten-traditional_folder.
-**object_version** | 4 | /blck/mfi_cl_model=>mffolderconten-object_version.
-**external_view_folder** | 5 | /blck/mfi_cl_model=>mffolderconten-external_view_folder.
+**unknown** | 0 | /blck/mfi_const=>me_mffolderconten-unknown.
+**view_folder** | 1 | /blck/mfi_const=>me_mffolderconten-view_folder.
+**property_folder** | 2 | /blck/mfi_const=>me_mffolderconten-property_folder.
+**traditional_folder** | 3 | /blck/mfi_const=>me_mffolderconten-traditional_folder.
+**object_version** | 4 | /blck/mfi_const=>me_mffolderconten-object_version.
+**external_view_folder** | 5 | /blck/mfi_const=>me_mffolderconten-external_view_folder.
 
 * * *
 <a name="markdown-header-model-view_location"></a> 
@@ -8981,7 +8981,7 @@ Name | Type | Description
     data gr_foldercontent2 type /blck/mfi_foldercontent2.
     
 * fill model with data as appropriate..
-    gr_foldercontent2-folder_content_item_type = l_folder_content_item_type. " (type /BLCK/MFI_MFFOLDERCONTEN)
+    gr_foldercontent2-folder_content_item_type = /blck/mfi_const=>me_mffolderconten-unknown. " (enum /BLCK/MFI_MFFOLDERCONTEN)
     gr_foldercontent2-object_version = l_object_version. " (type /BLCK/MFI_OBJECT_VERSION)
     gr_foldercontent2-property_folder = l_property_folder. " (type /BLCK/MFI_TYPED_VALUE)
     gr_foldercontent2-traditional_folder = l_traditional_folder. " (type /BLCK/MFI_LOOKUP)
@@ -9085,7 +9085,7 @@ Name | Type | Description
     data gv_mf_auth_type type /blck/mfi_mf_auth_type.
     
 * set the enum value we want
-    gv_mf_auth_type = /blck/mfi_cl_model=>mf_auth_type-unknown.
+    gv_mf_auth_type = /blck/mfi_const=>me_mf_auth_type-unknown.
     
 * pass the enum value to the example API via method
     /blck/cl_example_api=>set_mf_auth_type_state(
@@ -9121,10 +9121,10 @@ Name | Type | Description
 
 Name | Value | Constant
 ------------ | ------------- | -------------
-**unknown** | 0 | /blck/mfi_cl_model=>mf_auth_type-unknown.
-**logged_on_windows_user** | 1 | /blck/mfi_cl_model=>mf_auth_type-logged_on_windows_user.
-**specific_windows_user** | 2 | /blck/mfi_cl_model=>mf_auth_type-specific_windows_user.
-**specific_m_files_user** | 3 | /blck/mfi_cl_model=>mf_auth_type-specific_m_files_user.
+**unknown** | 0 | /blck/mfi_const=>me_mf_auth_type-unknown.
+**logged_on_windows_user** | 1 | /blck/mfi_const=>me_mf_auth_type-logged_on_windows_user.
+**specific_windows_user** | 2 | /blck/mfi_const=>me_mf_auth_type-specific_windows_user.
+**specific_m_files_user** | 3 | /blck/mfi_const=>me_mf_auth_type-specific_m_files_user.
 
 * * *
 <a name="markdown-header-enum-mfacl_mode"></a> 
@@ -9143,7 +9143,7 @@ Name | Value | Constant
     data gv_mfacl_mode type /blck/mfi_mfacl_mode.
     
 * set the enum value we want
-    gv_mfacl_mode = /blck/mfi_cl_model=>mfacl_mode-simple.
+    gv_mfacl_mode = /blck/mfi_const=>me_mfacl_mode-simple.
     
 * pass the enum value to the example API via method
     /blck/cl_example_api=>set_mfacl_mode_state(
@@ -9175,8 +9175,8 @@ Name | Value | Constant
 
 Name | Value | Constant
 ------------ | ------------- | -------------
-**simple** | 0 | /blck/mfi_cl_model=>mfacl_mode-simple.
-**automaticpermissionswithc** | 1 | /blck/mfi_cl_model=>mfacl_mode-automaticpermissionswithc.
+**simple** | 0 | /blck/mfi_const=>me_mfacl_mode-simple.
+**automaticpermissionswithc** | 1 | /blck/mfi_const=>me_mfacl_mode-automaticpermissionswithc.
 
 * * *
 <a name="markdown-header-enum-mfautomaticval"></a> 
@@ -9196,7 +9196,7 @@ Name | Value | Constant
     data gv_mfautomaticval type /blck/mfi_mfautomaticval.
     
 * set the enum value we want
-    gv_mfautomaticval = /blck/mfi_cl_model=>mfautomaticval-none.
+    gv_mfautomaticval = /blck/mfi_const=>me_mfautomaticval-none.
     
 * pass the enum value to the example API via method
     /blck/cl_example_api=>set_mfautomaticval_state(
@@ -9234,11 +9234,11 @@ Name | Value | Constant
 
 Name | Value | Constant
 ------------ | ------------- | -------------
-**none** | 0 | /blck/mfi_cl_model=>mfautomaticval-none.
-**calculatedwithplaceholder** | 1 | /blck/mfi_cl_model=>mfautomaticval-calculatedwithplaceholder.
-**calculated_with_vb_script** | 2 | /blck/mfi_cl_model=>mfautomaticval-calculated_with_vb_script.
-**auto_number_simple** | 3 | /blck/mfi_cl_model=>mfautomaticval-auto_number_simple.
-**with_vb_script** | 4 | /blck/mfi_cl_model=>mfautomaticval-with_vb_script.
+**none** | 0 | /blck/mfi_const=>me_mfautomaticval-none.
+**calculatedwithplaceholder** | 1 | /blck/mfi_const=>me_mfautomaticval-calculatedwithplaceholder.
+**calculated_with_vb_script** | 2 | /blck/mfi_const=>me_mfautomaticval-calculated_with_vb_script.
+**auto_number_simple** | 3 | /blck/mfi_const=>me_mfautomaticval-auto_number_simple.
+**with_vb_script** | 4 | /blck/mfi_const=>me_mfautomaticval-with_vb_script.
 
 * * *
 <a name="markdown-header-enum-mfcheckoutstat"></a> 
@@ -9258,7 +9258,7 @@ Name | Value | Constant
     data gv_mfcheckoutstat type /blck/mfi_mfcheckoutstat.
     
 * set the enum value we want
-    gv_mfcheckoutstat = /blck/mfi_cl_model=>mfcheckoutstat-checked_in.
+    gv_mfcheckoutstat = /blck/mfi_const=>me_mfcheckoutstat-checked_in.
     
 * pass the enum value to the example API via method
     /blck/cl_example_api=>set_mfcheckoutstat_state(
@@ -9292,9 +9292,9 @@ Name | Value | Constant
 
 Name | Value | Constant
 ------------ | ------------- | -------------
-**checked_in** | 0 | /blck/mfi_cl_model=>mfcheckoutstat-checked_in.
-**checked_out** | 1 | /blck/mfi_cl_model=>mfcheckoutstat-checked_out.
-**checked_out_to_me** | 2 | /blck/mfi_cl_model=>mfcheckoutstat-checked_out_to_me.
+**checked_in** | 0 | /blck/mfi_const=>me_mfcheckoutstat-checked_in.
+**checked_out** | 1 | /blck/mfi_const=>me_mfcheckoutstat-checked_out.
+**checked_out_to_me** | 2 | /blck/mfi_const=>me_mfcheckoutstat-checked_out_to_me.
 
 * * *
 <a name="markdown-header-enum-mfextensionaut"></a> 
@@ -9312,7 +9312,7 @@ Name | Value | Constant
     data gv_mfextensionaut type /blck/mfi_mfextensionaut.
     
 * set the enum value we want
-    gv_mfextensionaut = /blck/mfi_cl_model=>mfextensionaut-none.
+    gv_mfextensionaut = /blck/mfi_const=>me_mfextensionaut-none.
     
 * pass the enum value to the example API via method
     /blck/cl_example_api=>set_mfextensionaut_state(
@@ -9348,10 +9348,10 @@ Name | Value | Constant
 
 Name | Value | Constant
 ------------ | ------------- | -------------
-**none** | 0 | /blck/mfi_cl_model=>mfextensionaut-none.
-**common** | 1 | /blck/mfi_cl_model=>mfextensionaut-common.
-**indexer** | 2 | /blck/mfi_cl_model=>mfextensionaut-indexer.
-**permissions** | 3 | /blck/mfi_cl_model=>mfextensionaut-permissions.
+**none** | 0 | /blck/mfi_const=>me_mfextensionaut-none.
+**common** | 1 | /blck/mfi_const=>me_mfextensionaut-common.
+**indexer** | 2 | /blck/mfi_const=>me_mfextensionaut-indexer.
+**permissions** | 3 | /blck/mfi_const=>me_mfextensionaut-permissions.
 
 * * *
 <a name="markdown-header-enum-mfrefreshstatu"></a> 
@@ -9369,7 +9369,7 @@ Name | Value | Constant
     data gv_mfrefreshstatu type /blck/mfi_mfrefreshstatu.
     
 * set the enum value we want
-    gv_mfrefreshstatu = /blck/mfi_cl_model=>mfrefreshstatu-none.
+    gv_mfrefreshstatu = /blck/mfi_const=>me_mfrefreshstatu-none.
     
 * pass the enum value to the example API via method
     /blck/cl_example_api=>set_mfrefreshstatu_state(
@@ -9403,9 +9403,9 @@ Name | Value | Constant
 
 Name | Value | Constant
 ------------ | ------------- | -------------
-**none** | 0 | /blck/mfi_cl_model=>mfrefreshstatu-none.
-**quick** | 1 | /blck/mfi_cl_model=>mfrefreshstatu-quick.
-**full** | 2 | /blck/mfi_cl_model=>mfrefreshstatu-full.
+**none** | 0 | /blck/mfi_const=>me_mfrefreshstatu-none.
+**quick** | 1 | /blck/mfi_const=>me_mfrefreshstatu-quick.
+**full** | 2 | /blck/mfi_const=>me_mfrefreshstatu-full.
 
 * * *
 <a name="markdown-header-model-obj_id"></a> 
@@ -9709,7 +9709,7 @@ Name | Type | Description
     gr_objectversionu-last_modified_utc = 'ipsum lorem'. " (type /BLCK/MFI_TIMESTAMP)
     gr_objectversionu-object_checked_out = 'X'. " (type /BLCK/MFI_BOOL)
     gr_objectversionu-objectcheckedouttothisuser = 'X'. " (type /BLCK/MFI_BOOL)
-    gr_objectversionu-object_version_flags = l_object_version_flags. " (type /BLCK/MFI_MFOBJECTVERSIO)
+    gr_objectversionu-object_version_flags = /blck/mfi_const=>me_mfobjectversio-none. " (enum /BLCK/MFI_MFOBJECTVERSIO)
     gr_objectversionu-obj_ver = l_obj_ver. " (type /BLCK/MFI_OBJ_VER)
     gr_objectversionu-single_file = 'X'. " (type /BLCK/MFI_BOOL)
     gr_objectversionu-thisversionlatesttothisuse = 'X'. " (type /BLCK/MFI_BOOL)
@@ -10057,9 +10057,9 @@ Name | Type | Description
 * fill model with data as appropriate..
     gr_property_def-all_object_types = 'X'. " (type /BLCK/MFI_BOOL)
     gr_property_def-automatic_value = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-    gr_property_def-automatic_value_type = l_automatic_value_type. " (type /BLCK/MFI_MFAUTOMATICVAL)
+    gr_property_def-automatic_value_type = /blck/mfi_const=>me_mfautomaticval-none. " (enum /BLCK/MFI_MFAUTOMATICVAL)
     gr_property_def-based_on_value_list = 'X'. " (type /BLCK/MFI_BOOL)
-    gr_property_def-data_type = l_data_type. " (type /BLCK/MFI_MF_DATA_TYPE)
+    gr_property_def-data_type = /blck/mfi_const=>me_mf_data_type-uninitialized. " (enum /BLCK/MFI_MF_DATA_TYPE)
     gr_property_def-id = 42. " (type /BLCK/MFI_INT)
     gr_property_def-name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     gr_property_def-object_type = 42. " (type /BLCK/MFI_INT)
@@ -10223,7 +10223,7 @@ Name | Type | Description
     
 * fill model with data as appropriate..
     gr_repositoryaut2-account_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-    gr_repositoryaut2-extensionauthenticationspe = l_extensionauthenticationspe. " (type /BLCK/MFI_MFEXTENSIONAUT)
+    gr_repositoryaut2-extensionauthenticationspe = /blck/mfi_const=>me_mfextensionaut-none. " (enum /BLCK/MFI_MFEXTENSIONAUT)
     gr_repositoryaut2-target_id = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
     gr_repositoryaut2-user_id = 42. " (type /BLCK/MFI_INT)
     
@@ -10542,8 +10542,8 @@ Name | Type | Description
     
 * fill model with data as appropriate..
     gr_session_info-account_name = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
-    gr_session_info-acl_mode = l_acl_mode. " (type /BLCK/MFI_MFACL_MODE)
-    gr_session_info-authentication_type = l_authentication_type. " (type /BLCK/MFI_MF_AUTH_TYPE)
+    gr_session_info-acl_mode = /blck/mfi_const=>me_mfacl_mode-simple. " (enum /BLCK/MFI_MFACL_MODE)
+    gr_session_info-authentication_type = /blck/mfi_const=>me_mf_auth_type-unknown. " (enum /BLCK/MFI_MF_AUTH_TYPE)
     gr_session_info-can_force_undo_checkout = 'X'. " (type /BLCK/MFI_BOOL)
     gr_session_info-canmanagecommonuisettings = 'X'. " (type /BLCK/MFI_BOOL)
     gr_session_info-can_manage_common_views = 'X'. " (type /BLCK/MFI_BOOL)

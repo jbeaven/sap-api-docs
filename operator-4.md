@@ -50,10 +50,11 @@ Creates a new record in the command resource. It returns a JSON object containin
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_CollectionsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -188,10 +189,11 @@ Some services (not all) expose access to documents. All documents available thro
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_CollectionsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -322,10 +324,11 @@ Creates a new record in the current Repository, inside the root collection, and 
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_CollectionsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -443,10 +446,11 @@ Removes the current entry from the repository. This will not only remove the ref
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_CollectionsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -553,10 +557,11 @@ Given a 'uuid' parameter, this route retrieves an entry's metadata. The entry ma
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_CollectionsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -674,10 +679,11 @@ Update the given entry's metadata. Only data given with the patch will be change
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_CollectionsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -804,10 +810,11 @@ If the entry under the given uuid is a collection, then a POST request to this r
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_CollectionsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -936,10 +943,11 @@ Completely replace the metadata record of the given entry. Only record metadata 
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_CollectionsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -1057,10 +1065,11 @@ Returns a JSON object containing the status of the command. Command resources ar
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_CollectionsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -1186,10 +1195,11 @@ Some services (not all) expose access to documents. All documents available thro
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_CollectionsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -1313,7 +1323,7 @@ Deletes a single ConfigItem at the given path or all ConfigItems in the whole tr
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_ConfigurationApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1414,7 +1424,7 @@ Use this route to browse the configuration. Configuration is structured unix fil
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_ConfigurationApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1522,7 +1532,7 @@ Stores the ConfigItem in the request body at the given path.
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_ConfigurationApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1625,10 +1635,11 @@ FIXME
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_ConnectorsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -1736,10 +1747,11 @@ A POST call to this route will create new jobs and return their connector id's (
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_ConnectorsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -1851,10 +1863,11 @@ A PUT call to this route returns an array with status and output listItems for a
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_ConnectorsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -1953,10 +1966,11 @@ The SEAL Operator user interface provides the user with a set of default panels 
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_ConnectorsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -2048,10 +2062,11 @@ A GET call to this route returns a JSON object containing the default configurat
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_ConnectorsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -2160,10 +2175,11 @@ Creates a new record in the command resource. It returns a JSON object containin
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_DocumentsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -2298,10 +2314,11 @@ Some services (not all) expose access to documents. All documents available thro
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_DocumentsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -2432,10 +2449,11 @@ Creates a new record in the current Repository, inside the root collection, and 
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_DocumentsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -2553,10 +2571,11 @@ Removes the current entry from the repository. This will not only remove the ref
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_DocumentsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -2663,10 +2682,11 @@ Given a 'uuid' parameter, this route retrieves an entry's metadata. The entry ma
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_DocumentsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -2784,10 +2804,11 @@ Update the given entry's metadata. Only data given with the patch will be change
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_DocumentsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -2912,10 +2933,11 @@ Completely replace the metadata record of the given entry. Only record metadata 
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_DocumentsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -3033,10 +3055,11 @@ Returns a JSON object containing the status of the command. Command resources ar
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_DocumentsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -3148,10 +3171,11 @@ Deletes the binary content of a document, leaving metadata only. Note that some 
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_DocumentsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -3256,10 +3280,11 @@ If the entry under 'uuid' is a document, then this route provides access to the 
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_DocumentsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -3366,10 +3391,11 @@ Upload binary content of a document. Create if none exists, or replace existing 
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_DocumentsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -3476,10 +3502,11 @@ If the entry under 'uuid' is a document, then this route provides access to the 
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_DocumentsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -3584,10 +3611,11 @@ This route triggers a connector specific function and returns the result. The fu
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_FunctionsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -3683,10 +3711,11 @@ For panels static configuration data is sometimes not sufficient, dynamically re
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_FunctionsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -3801,10 +3830,11 @@ This is the list of Lists of the authenticated user. Use metadata property names
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_ListsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -3920,10 +3950,11 @@ Deletes the current list inclusive all it's items, but not the documents.
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_ListsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -4021,10 +4052,11 @@ This is the root record for a given list. It contains List-level metadata. Use t
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_ListsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -4148,10 +4180,11 @@ This is the collection of items currently in the List. For performance reasons, 
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_ListsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -4270,10 +4303,11 @@ Deletes an entry from a list. Only the list entry is removed, not the document. 
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_ListsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -4374,10 +4408,11 @@ Get metadata record of a list item. Note that the 'id' is NOT the index, which i
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_ListsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -4499,10 +4534,11 @@ Update the metadata record of the current list item, adding missing entries but 
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_ListsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -4632,10 +4668,11 @@ Update and replace the entire metadata record of the current list item. Note tha
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_ListsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -4760,10 +4797,11 @@ Lists are are ordered sets, items have consecutive indices (0..n). Posting this 
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_ListsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -4889,10 +4927,11 @@ Updates or adds part of the List metadata. Only given metadata will be replaced 
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_ListsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -5015,10 +5054,11 @@ This will completely replace the existing List metadata (if any) by the given me
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_ListsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -5139,10 +5179,11 @@ Creates a new entry in the list of Lists. The `Content-Type` HTTP header defines
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_ListsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -5258,10 +5299,11 @@ Every user has his own list of messages containing info, warning and error messa
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_MessagesApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -5372,10 +5414,11 @@ Creates a new record in the message list and assigns the posted data. The server
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_MessagesApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -5487,10 +5530,11 @@ Update a message entry. Only data given with the patch will be  changed/added; n
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_MessagesApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -5593,10 +5637,11 @@ The SEAL Operator user interface provides the user with a set of panels to use. 
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_PanelsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -5686,10 +5731,11 @@ User-defined panel configurations can be delete by a DELETE request to this rout
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_PanelsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -5787,10 +5833,11 @@ Returns a ConfigItem containing configuration for a stored panel.
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_PanelsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -5893,10 +5940,11 @@ A PUT request to a panel configuration will replace the entire stored configurat
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_PanelsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -5998,10 +6046,11 @@ Users can save panel configurations they intend to (re-)use in later sessions un
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_PanelsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -6096,10 +6145,11 @@ The SEAL Operator user interface provides the user with a set of default panels 
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_PanelsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -6191,10 +6241,11 @@ A GET call to this route returns a JSON object containing the default configurat
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_PanelsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -6289,10 +6340,11 @@ A GET call to this route will return a list of active services currently availab
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_ServicesApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -6386,10 +6438,11 @@ FIXME
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_ServicesApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -6489,10 +6542,11 @@ Get number of currently established sessions of user
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_SessionsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -6614,10 +6668,11 @@ This route provides access to the root collection of known tasks for the current
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -6761,10 +6816,11 @@ Adds a new Task to the collection. Given metadata is assigned, input list must b
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -6878,10 +6934,11 @@ Deletes a Task from the collection. This is only possible if the Task is not cur
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -6993,10 +7050,11 @@ This route provides access to a Task's root record. The record contains taks met
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -7120,10 +7178,11 @@ Does a partial update to the Task metadata. Given metadata replaces existing one
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -7247,10 +7306,11 @@ A put call to the task root record completely replaces task metadata, but does n
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -7371,10 +7431,11 @@ Trigger a new action on the current task. Currently supported actions are `start
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -7485,10 +7546,11 @@ This route provides access to a Task's list of input documents. Input lists of T
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -7606,10 +7668,11 @@ Deletes an item from a Task's input list. The deleted ID is permanently orphaned
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -7720,10 +7783,11 @@ FIXME
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -7848,10 +7912,11 @@ Updates task input list item metadata, replacing present entries and adding miss
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -7983,10 +8048,11 @@ Replaces the task input list item's metadata, including the document reference.
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -8123,10 +8189,11 @@ Does a partial update to the input list metadata. Given metadata replaces existi
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -8259,10 +8326,11 @@ Creates a new entry in the given Task's input list. Given metadata is assigned t
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -8391,10 +8459,11 @@ A put call to the input list root record completely replaces the metadata, but d
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -8515,10 +8584,11 @@ This route provides access to a Task's list of output documents. Output lists of
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -8636,10 +8706,11 @@ This route provides access to individual task output items.
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -8756,10 +8827,11 @@ This route provides access to the root collection of known tasks for all service
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/op4_cl_TasksApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -8849,7 +8921,7 @@ HTTP Code | Name | Type | Description
     data gr_action type /blck/op4_action.
     
 * fill model with data as appropriate..
-    gr_action-action = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+    gr_action-action = /blck/op4_const=>me_-. " (enum /BLCK/OP4_STRING)
     
 * pass to example API method
     /blck/cl_example_api=>update_action(
@@ -8893,7 +8965,7 @@ Name | Type | Description
     
 * fill model with data as appropriate..
     gr_baserepoentry-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-    gr_baserepoentry-type = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+    gr_baserepoentry-type = /blck/op4_const=>me_-. " (enum /BLCK/OP4_STRING)
     gr_baserepoentry-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
@@ -9071,7 +9143,7 @@ Name | Type | Description
     data gv_status_type type /blck/op4_status_type.
     
 * set the enum value we want
-    gv_status_type = /blck/op4_cl_model=>status_type-open.
+    gv_status_type = /blck/op4_const=>me_status_type-open.
     
 * pass the enum value to the example API via method
     /blck/cl_example_api=>set_status_type_state(
@@ -9111,12 +9183,12 @@ Name | Type | Description
 
 Name | Value | Constant
 ------------ | ------------- | -------------
-**open** | open | /blck/op4_cl_model=>status_type-open.
-**processing** | processing | /blck/op4_cl_model=>status_type-processing.
-**completed** | completed | /blck/op4_cl_model=>status_type-completed.
-**paused** | paused | /blck/op4_cl_model=>status_type-paused.
-**aborted** | aborted | /blck/op4_cl_model=>status_type-aborted.
-**failed** | failed | /blck/op4_cl_model=>status_type-failed.
+**open** | open | /blck/op4_const=>me_status_type-open.
+**processing** | processing | /blck/op4_const=>me_status_type-processing.
+**completed** | completed | /blck/op4_const=>me_status_type-completed.
+**paused** | paused | /blck/op4_const=>me_status_type-paused.
+**aborted** | aborted | /blck/op4_const=>me_status_type-aborted.
+**failed** | failed | /blck/op4_const=>me_status_type-failed.
 
 * * *
 <a name="markdown-header-model-cid_status"></a> 
@@ -9135,7 +9207,7 @@ Name | Value | Constant
     
 * fill model with data as appropriate..
     gr_cid_status-tid = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-    gr_cid_status-status = l_status. " (type /BLCK/OP4_STATUS_TYPE)
+    gr_cid_status-status = /blck/op4_const=>me_status_type-open. " (enum /BLCK/OP4_STATUS_TYPE)
     gr_cid_status-started = 42. " (type /BLCK/OP4_INT)
     gr_cid_status-finished = 42. " (type /BLCK/OP4_INT)
     gr_cid_status-cids = l_cids. " (type /BLCK/OP4_CID_TT)
@@ -9240,7 +9312,7 @@ Name | Type | Description
     data gr_command type /blck/op4_command.
     
 * fill model with data as appropriate..
-    gr_command-action = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+    gr_command-action = /blck/op4_const=>me_-. " (enum /BLCK/OP4_STRING)
     gr_command-parameter = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     
 * pass to example API method
@@ -9286,7 +9358,7 @@ Name | Type | Description
     
 * fill model with data as appropriate..
     gr_command_status-cid = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-    gr_command_status-status = l_status. " (type /BLCK/OP4_STATUS_TYPE)
+    gr_command_status-status = /blck/op4_const=>me_status_type-open. " (enum /BLCK/OP4_STATUS_TYPE)
     gr_command_status-command = l_command. " (type /BLCK/OP4_COMMAND)
     
 * pass to example API method
@@ -9527,7 +9599,7 @@ Name | Type | Description
     
 * fill model with data as appropriate..
     gr_message-uuid = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-    gr_message-type = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+    gr_message-type = /blck/op4_const=>me_-. " (enum /BLCK/OP4_STRING)
     gr_message-text = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     gr_message-date = 42. " (type /BLCK/OP4_INT)
     gr_message-source = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
@@ -9637,7 +9709,7 @@ Name | Type | Description
     gr_repo_entry-id = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     gr_repo_entry-uuid = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     gr_repo_entry-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-    gr_repo_entry-type = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+    gr_repo_entry-type = /blck/op4_const=>me_-. " (enum /BLCK/OP4_STRING)
     gr_repo_entry-links = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     gr_repo_entry-embedded = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     gr_repo_entry-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
@@ -9800,7 +9872,7 @@ Name | Type | Description
     gr_task-finished = 42. " (type /BLCK/OP4_INT)
     gr_task-input_list_length = 42. " (type /BLCK/OP4_INT)
     gr_task-output_list_length = 42. " (type /BLCK/OP4_INT)
-    gr_task-status = l_status. " (type /BLCK/OP4_STATUS_TYPE)
+    gr_task-status = /blck/op4_const=>me_status_type-open. " (enum /BLCK/OP4_STATUS_TYPE)
     gr_task-links = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     gr_task-embedded = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     

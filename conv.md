@@ -39,10 +39,11 @@ Deletes a job. In case the job is in status processing, it is aborted before rem
 
 
 *** optional: instantiate descendant of /blck/cnv_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/cnv_cl_ControlApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -129,10 +130,11 @@ Start processing of a job. If processing is already triggered nothing is done. J
 
 
 *** optional: instantiate descendant of /blck/cnv_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/cnv_cl_ControlApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -221,10 +223,11 @@ Get a object with job status and output information
 
 
 *** optional: instantiate descendant of /blck/cnv_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/cnv_cl_ControlApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -321,10 +324,11 @@ Easy way to convert with a single REST call: - Creates a single input file with 
 
 
 *** optional: instantiate descendant of /blck/cnv_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/cnv_cl_ControlApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -420,10 +424,11 @@ Get a object with full job status, input and output information.
 
 
 *** optional: instantiate descendant of /blck/cnv_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/cnv_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -525,10 +530,11 @@ Appends a new input file to the input file list of a job.
 
 
 *** optional: instantiate descendant of /blck/cnv_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/cnv_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -628,10 +634,11 @@ Easy way to convert with a single REST call: - Creates a single input file with 
 
 
 *** optional: instantiate descendant of /blck/cnv_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/cnv_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -722,10 +729,11 @@ Create a new job.
 
 
 *** optional: instantiate descendant of /blck/cnv_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/cnv_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -826,10 +834,11 @@ Upload input file binary input content.
 
 
 *** optional: instantiate descendant of /blck/cnv_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/cnv_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -926,10 +935,11 @@ Get processing result binary content.
 
 
 *** optional: instantiate descendant of /blck/cnv_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/cnv_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -1027,10 +1037,11 @@ Get processing result binary content.
 
 
 *** optional: instantiate descendant of /blck/cnv_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/cnv_cl_ResultsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -1269,7 +1280,7 @@ Name | Type | Description
     data gv_jobstatusenum type /blck/cnv_jobstatusenum.
     
 * set the enum value we want
-    gv_jobstatusenum = /blck/cnv_cl_model=>jobstatusenum-open.
+    gv_jobstatusenum = /blck/cnv_const=>me_jobstatusenum-open.
     
 * pass the enum value to the example API via method
     /blck/cl_example_api=>set_jobstatusenum_state(
@@ -1307,11 +1318,11 @@ Name | Type | Description
 
 Name | Value | Constant
 ------------ | ------------- | -------------
-**open** | open | /blck/cnv_cl_model=>jobstatusenum-open.
-**waiting** | waiting | /blck/cnv_cl_model=>jobstatusenum-waiting.
-**processing** | processing | /blck/cnv_cl_model=>jobstatusenum-processing.
-**completed** | completed | /blck/cnv_cl_model=>jobstatusenum-completed.
-**error** | error | /blck/cnv_cl_model=>jobstatusenum-error.
+**open** | open | /blck/cnv_const=>me_jobstatusenum-open.
+**waiting** | waiting | /blck/cnv_const=>me_jobstatusenum-waiting.
+**processing** | processing | /blck/cnv_const=>me_jobstatusenum-processing.
+**completed** | completed | /blck/cnv_const=>me_jobstatusenum-completed.
+**error** | error | /blck/cnv_const=>me_jobstatusenum-error.
 
 * * *
 <a name="markdown-header-model-job_ticket"></a> 
@@ -1421,7 +1432,7 @@ Name | Type | Description
     
 * fill model with data as appropriate..
     gr_job_data-job_id = l_job_id. " (type /BLCK/CNV_JOB_ID)
-    gr_job_data-job_status = l_job_status. " (type /BLCK/CNV_JOBSTATUSENUM)
+    gr_job_data-job_status = /blck/cnv_const=>me_jobstatusenum-open. " (enum /BLCK/CNV_JOBSTATUSENUM)
     gr_job_data-creation_date = 42. " (type /BLCK/CNV_INT)
     gr_job_data-job_ticket = l_job_ticket. " (type /BLCK/CNV_JOB_TICKET)
     gr_job_data-input = l_input. " (type /BLCK/CNV_INPUT_FILE_TT)
@@ -1478,7 +1489,7 @@ Name | Type | Description
     
 * fill model with data as appropriate..
     gr_job_status-job_id = l_job_id. " (type /BLCK/CNV_JOB_ID)
-    gr_job_status-job_status = l_job_status. " (type /BLCK/CNV_JOBSTATUSENUM)
+    gr_job_status-job_status = /blck/cnv_const=>me_jobstatusenum-open. " (enum /BLCK/CNV_JOBSTATUSENUM)
     gr_job_status-output = l_output. " (type /BLCK/CNV_OUTPUT_FILE_TT)
     
 * pass to example API method

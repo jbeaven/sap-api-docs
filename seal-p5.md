@@ -38,7 +38,7 @@ Aggregates count the number of objects matching a given query and aggregate resu
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_InfoApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -121,7 +121,7 @@ This route provides access to the number of print jobs known in PLOSSYS P5; eith
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_InfoApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -220,7 +220,7 @@ A GET query to this path provides access to the list of print jobs in PLOSSYS P5
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_InfoApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -317,7 +317,7 @@ A GET query to this route returns a json object containing status information an
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_InfoApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -391,7 +391,7 @@ Returns a JSON object describing the PrintJob object model
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_InfoApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -468,7 +468,7 @@ Aggregates count the number of objects matching a given query and aggregate resu
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_InfoApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -551,7 +551,7 @@ This route provides access to the number of printers registered in PLOSSYS P5; e
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_InfoApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -652,7 +652,7 @@ Retrieve a list of all known printers in PLOSSYS P5. A plain query to the endpoi
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_InfoApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -747,7 +747,7 @@ Returns a JSON object describing the Printer object model
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_InfoApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -825,7 +825,7 @@ Retrieves printer configuration of the printer with the given printerName and re
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_InfoApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -913,7 +913,7 @@ Retrieve log entries for the given printer.
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_InfoApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -996,7 +996,7 @@ Returns a PrinterStatus object describing the current status of the printer.
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_InfoApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1082,7 +1082,7 @@ Aggregates count the number of objects matching a given query and aggregate resu
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1165,7 +1165,7 @@ This route provides access to the number of print jobs known in PLOSSYS P5; eith
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1264,7 +1264,7 @@ A GET query to this path provides access to the list of print jobs in PLOSSYS P5
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1363,7 +1363,7 @@ A DELETE query to a job instance path stops and deletes the job.
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1446,7 +1446,7 @@ A GET query to this route returns a json object containing status information an
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1534,7 +1534,7 @@ A print job which has been suspended using the /jobs/{jobID}/pause function can 
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1623,7 +1623,7 @@ Print job processing can be paused by a PUT query against this functional ressou
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1709,7 +1709,7 @@ A print job which has been printed before or failed can be repeated by a PUT que
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1795,7 +1795,7 @@ A print job which has been suspended using the /jobs/{jobID}/pause function can 
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1872,7 +1872,7 @@ Returns a JSON object describing the PrintJob object model
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -1952,7 +1952,7 @@ A DELETE query to a job instance path stops and deletes the job.
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_ManagementApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -2044,7 +2044,7 @@ A print job which has been suspended using the /jobs/{jobID}/pause function can 
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_ManagementApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -2133,7 +2133,7 @@ Print job processing can be paused by a PUT query against this functional ressou
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_ManagementApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -2219,7 +2219,7 @@ A print job which has been printed before or failed can be repeated by a PUT que
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_ManagementApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -2305,7 +2305,7 @@ A print job which has been suspended using the /jobs/{jobID}/pause function can 
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_ManagementApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -2390,7 +2390,7 @@ Adds a new printer to the list of managed printers in PLOSSYS P5. The new printe
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_ManagementApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -2479,7 +2479,7 @@ Deletes the printer with the given name; If the printer is found and deletion is
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_ManagementApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -2561,7 +2561,7 @@ Modifies a printer, replacing the current configuration with the one given in th
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_ManagementApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -2640,7 +2640,7 @@ A predefined test sheet is generated and inserted into the printer queue.
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_ManagementApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -2720,7 +2720,7 @@ A printers operation can be paused by a PUT query against this functional ressou
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_ManagementApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -2806,7 +2806,7 @@ A printer can be redirected so that incoming print jobs for that printer are for
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_ManagementApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -2892,7 +2892,7 @@ A printer which has been suspended using the /printers/{printerName}/pause funct
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_ManagementApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -2978,7 +2978,7 @@ This route provides access to the number of print jobs known in PLOSSYS P5; eith
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_ODataApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -3077,7 +3077,7 @@ A GET query to this path provides access to the list of print jobs in PLOSSYS P5
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_ODataApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -3174,7 +3174,7 @@ This route provides access to the number of printers registered in PLOSSYS P5; e
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_ODataApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -3275,7 +3275,7 @@ Retrieve a list of all known printers in PLOSSYS P5. A plain query to the endpoi
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_ODataApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -3377,7 +3377,7 @@ Retrieve log entries for the given printer.
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_ODataApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -3467,7 +3467,7 @@ Aggregates count the number of objects matching a given query and aggregate resu
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_PrinterApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -3550,7 +3550,7 @@ This route provides access to the number of printers registered in PLOSSYS P5; e
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_PrinterApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -3651,7 +3651,7 @@ Retrieve a list of all known printers in PLOSSYS P5. A plain query to the endpoi
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_PrinterApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -3746,7 +3746,7 @@ Returns a JSON object describing the Printer object model
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_PrinterApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -3823,7 +3823,7 @@ Adds a new printer to the list of managed printers in PLOSSYS P5. The new printe
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_PrinterApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -3912,7 +3912,7 @@ Deletes the printer with the given name; If the printer is found and deletion is
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_PrinterApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -3995,7 +3995,7 @@ Retrieves printer configuration of the printer with the given printerName and re
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_PrinterApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4083,7 +4083,7 @@ Retrieve log entries for the given printer.
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_PrinterApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4169,7 +4169,7 @@ Modifies a printer, replacing the current configuration with the one given in th
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_PrinterApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4248,7 +4248,7 @@ A predefined test sheet is generated and inserted into the printer queue.
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_PrinterApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4328,7 +4328,7 @@ A printers operation can be paused by a PUT query against this functional ressou
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_PrinterApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4414,7 +4414,7 @@ A printer can be redirected so that incoming print jobs for that printer are for
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_PrinterApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4500,7 +4500,7 @@ A printer which has been suspended using the /printers/{printerName}/pause funct
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_PrinterApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4582,7 +4582,7 @@ Returns a PrinterStatus object describing the current status of the printer.
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_PrinterApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4668,7 +4668,7 @@ Aggregates count the number of objects matching a given query and aggregate resu
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_SearchApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4751,7 +4751,7 @@ This route provides access to the number of print jobs known in PLOSSYS P5; eith
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_SearchApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4850,7 +4850,7 @@ A GET query to this path provides access to the list of print jobs in PLOSSYS P5
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_SearchApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -4950,7 +4950,7 @@ Aggregates count the number of objects matching a given query and aggregate resu
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_SearchApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -5033,7 +5033,7 @@ This route provides access to the number of printers registered in PLOSSYS P5; e
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_SearchApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -5134,7 +5134,7 @@ Retrieve a list of all known printers in PLOSSYS P5. A plain query to the endpoi
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_SearchApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -5236,7 +5236,7 @@ Retrieve log entries for the given printer.
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p5_cl_SearchApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -5602,7 +5602,7 @@ Name | Type | Description
     
 * fill model with data as appropriate..
     gr_print_job-id = 'ipsum lorem'. " (type /BLCK/P5_STRING)
-    gr_print_job-status = 'ipsum lorem'. " (type /BLCK/P5_STRING)
+    gr_print_job-status = /blck/p5_const=>me_-. " (enum /BLCK/P5_STRING)
     gr_print_job-current = 'ipsum lorem'. " (type /BLCK/P5_STRING)
     gr_print_job-orig = 'ipsum lorem'. " (type /BLCK/P5_STRING)
     gr_print_job-routing = 'ipsum lorem'. " (type /BLCK/P5_STRING)

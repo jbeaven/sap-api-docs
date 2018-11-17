@@ -36,10 +36,11 @@ Opens a websocket connection and returns status changes of all jobs send by Oper
 
 
 *** optional: instantiate descendant of /blck/p4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p4_cl_EventsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -137,10 +138,11 @@ A POST call to this route will create a new jobs and return it's uuid.
 
 
 *** optional: instantiate descendant of /blck/p4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p4_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -241,10 +243,11 @@ A POST call to this route will abort a running job.
 
 
 *** optional: instantiate descendant of /blck/p4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p4_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -338,10 +341,11 @@ returns status of given job
 
 
 *** optional: instantiate descendant of /blck/p4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p4_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -442,10 +446,11 @@ A POST call to this route will pause a running job.
 
 
 *** optional: instantiate descendant of /blck/p4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p4_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -537,10 +542,11 @@ A PUT call to this route will add a new file to the job. Data type is given in H
 
 
 *** optional: instantiate descendant of /blck/p4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p4_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -632,10 +638,11 @@ A POST call to this route will resume a paused job.
 
 
 *** optional: instantiate descendant of /blck/p4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p4_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -727,10 +734,11 @@ A POST call to this route will start a previously created job.
 
 
 *** optional: instantiate descendant of /blck/p4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p4_cl_JobsApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -821,10 +829,11 @@ Returns list of available printers inluding their capabilities
 
 
 *** optional: instantiate descendant of /blck/p4_cl_auth 
-*   (gcl_auth) if bespoke auth is needed
+*** (gcl_auth) if bespoke auth is needed
+*    create object gcl_auth exporting ...
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/p4_cl_PrintersApi=>config(
       exporting
         i_basepath = gcc_basepath
@@ -1021,7 +1030,7 @@ Name | Type | Description
     data gv_status_type type /blck/p4_status_type.
     
 * set the enum value we want
-    gv_status_type = /blck/p4_cl_model=>status_type-open.
+    gv_status_type = /blck/p4_const=>me_status_type-open.
     
 * pass the enum value to the example API via method
     /blck/cl_example_api=>set_status_type_state(
@@ -1061,12 +1070,12 @@ Name | Type | Description
 
 Name | Value | Constant
 ------------ | ------------- | -------------
-**open** | open | /blck/p4_cl_model=>status_type-open.
-**processing** | processing | /blck/p4_cl_model=>status_type-processing.
-**completed** | completed | /blck/p4_cl_model=>status_type-completed.
-**paused** | paused | /blck/p4_cl_model=>status_type-paused.
-**aborted** | aborted | /blck/p4_cl_model=>status_type-aborted.
-**failed** | failed | /blck/p4_cl_model=>status_type-failed.
+**open** | open | /blck/p4_const=>me_status_type-open.
+**processing** | processing | /blck/p4_const=>me_status_type-processing.
+**completed** | completed | /blck/p4_const=>me_status_type-completed.
+**paused** | paused | /blck/p4_const=>me_status_type-paused.
+**aborted** | aborted | /blck/p4_const=>me_status_type-aborted.
+**failed** | failed | /blck/p4_const=>me_status_type-failed.
 
 * * *
 <a name="markdown-header-model-job_status"></a> 
@@ -1084,7 +1093,7 @@ Name | Value | Constant
     data gr_job_status type /blck/p4_job_status.
     
 * fill model with data as appropriate..
-    gr_job_status-status = l_status. " (type /BLCK/P4_STATUS_TYPE)
+    gr_job_status-status = /blck/p4_const=>me_status_type-open. " (enum /BLCK/P4_STATUS_TYPE)
     
 * pass to example API method
     /blck/cl_example_api=>update_job_status(
@@ -1180,7 +1189,7 @@ Name | Type | Description
     gr_printer-color = 'X'. " (type /BLCK/P4_BOOL)
     gr_printer-color_default = 'X'. " (type /BLCK/P4_BOOL)
     gr_printer-duplex = 'X'. " (type /BLCK/P4_BOOL)
-    gr_printer-duplex_default = 'ipsum lorem'. " (type /BLCK/P4_STRING)
+    gr_printer-duplex_default = /blck/p4_const=>me_-. " (enum /BLCK/P4_STRING)
     gr_printer-trays = l_trays. " (type /BLCK/P4_STRING_TT)
     gr_printer-tray_media = l_tray_media. " (type /BLCK/P4_STRING_TT)
     

@@ -43,7 +43,7 @@ Get attribute of document
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/sp_cl_DefaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -130,7 +130,7 @@ Retrieve data of document
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/sp_cl_DefaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -215,7 +215,7 @@ Retrieve list of documents matching criteria
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/sp_cl_DefaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).
@@ -319,7 +319,7 @@ Pass in a json formatted body
 
     
 *** update the configuration if needed, a default basepath is already set from the spec
-*   so the following call is only necessary if the url should be different
+*** so the parameter i_basepath is only needed if the url should be different to that specified
     /blck/sp_cl_DefaultApi=>config(
       exporting
         i_basepath = gcc_basepath ).

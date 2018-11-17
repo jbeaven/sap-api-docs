@@ -1,6 +1,86 @@
 # API: InfoApi
+## &nbsp; &nbsp; [Operation: jobs_aggregate_put](#markdown-header-op-InfoApi-jobs_aggregate_put) (method `/blck/p5_cl_InfoApi=>jobs_aggregate_put`)
+## &nbsp; &nbsp; [Operation: jobs_count_get](#markdown-header-op-InfoApi-jobs_count_get) (method `/blck/p5_cl_InfoApi=>jobs_count_get`)
+## &nbsp; &nbsp; [Operation: jobs_get](#markdown-header-op-InfoApi-jobs_get) (method `/blck/p5_cl_InfoApi=>jobs_get`)
+## &nbsp; &nbsp; [Operation: jobs_job_id_get](#markdown-header-op-InfoApi-jobs_job_id_get) (method `/blck/p5_cl_InfoApi=>jobs_job_id_get`)
+## &nbsp; &nbsp; [Operation: jobs_metadata_get](#markdown-header-op-InfoApi-jobs_metadata_get) (method `/blck/p5_cl_InfoApi=>jobs_metadata_get`)
+## &nbsp; &nbsp; [Operation: printers_aggregate_put](#markdown-header-op-InfoApi-printers_aggregate_put) (method `/blck/p5_cl_InfoApi=>printers_aggregate_put`)
+## &nbsp; &nbsp; [Operation: printers_count_get](#markdown-header-op-InfoApi-printers_count_get) (method `/blck/p5_cl_InfoApi=>printers_count_get`)
+## &nbsp; &nbsp; [Operation: printers_get](#markdown-header-op-InfoApi-printers_get) (method `/blck/p5_cl_InfoApi=>printers_get`)
+## &nbsp; &nbsp; [Operation: printers_metadata_get](#markdown-header-op-InfoApi-printers_metadata_get) (method `/blck/p5_cl_InfoApi=>printers_metadata_get`)
+## &nbsp; &nbsp; [Operation: printers_printer_name_get](#markdown-header-op-InfoApi-printers_printer_name_get) (method `/blck/p5_cl_InfoApi=>printers_printer_name_get`)
+## &nbsp; &nbsp; [Operation: printers_printer_name_logs_get](#markdown-header-op-InfoApi-printers_printer_name_logs_get) (method `/blck/p5_cl_InfoApi=>printers_printer_name_logs_get`)
+## &nbsp; &nbsp; [Operation: printersprinternamestatusget](#markdown-header-op-InfoApi-printersprinternamestatusget) (method `/blck/p5_cl_InfoApi=>printersprinternamestatusget`)
+# API: JobsApi
+## &nbsp; &nbsp; [Operation: jobs_aggregate_put](#markdown-header-op-JobsApi-jobs_aggregate_put) (method `/blck/p5_cl_JobsApi=>jobs_aggregate_put`)
+## &nbsp; &nbsp; [Operation: jobs_count_get](#markdown-header-op-JobsApi-jobs_count_get) (method `/blck/p5_cl_JobsApi=>jobs_count_get`)
+## &nbsp; &nbsp; [Operation: jobs_get](#markdown-header-op-JobsApi-jobs_get) (method `/blck/p5_cl_JobsApi=>jobs_get`)
+## &nbsp; &nbsp; [Operation: jobs_job_id_delete](#markdown-header-op-JobsApi-jobs_job_id_delete) (method `/blck/p5_cl_JobsApi=>jobs_job_id_delete`)
+## &nbsp; &nbsp; [Operation: jobs_job_id_get](#markdown-header-op-JobsApi-jobs_job_id_get) (method `/blck/p5_cl_JobsApi=>jobs_job_id_get`)
+## &nbsp; &nbsp; [Operation: jobs_job_id_move_put](#markdown-header-op-JobsApi-jobs_job_id_move_put) (method `/blck/p5_cl_JobsApi=>jobs_job_id_move_put`)
+## &nbsp; &nbsp; [Operation: jobs_job_id_pause_put](#markdown-header-op-JobsApi-jobs_job_id_pause_put) (method `/blck/p5_cl_JobsApi=>jobs_job_id_pause_put`)
+## &nbsp; &nbsp; [Operation: jobs_job_id_repeat_put](#markdown-header-op-JobsApi-jobs_job_id_repeat_put) (method `/blck/p5_cl_JobsApi=>jobs_job_id_repeat_put`)
+## &nbsp; &nbsp; [Operation: jobs_job_id_resume_put](#markdown-header-op-JobsApi-jobs_job_id_resume_put) (method `/blck/p5_cl_JobsApi=>jobs_job_id_resume_put`)
+## &nbsp; &nbsp; [Operation: jobs_metadata_get](#markdown-header-op-JobsApi-jobs_metadata_get) (method `/blck/p5_cl_JobsApi=>jobs_metadata_get`)
+# API: ManagementApi
+## &nbsp; &nbsp; [Operation: jobs_job_id_delete](#markdown-header-op-ManagementApi-jobs_job_id_delete) (method `/blck/p5_cl_ManagementApi=>jobs_job_id_delete`)
+## &nbsp; &nbsp; [Operation: jobs_job_id_move_put](#markdown-header-op-ManagementApi-jobs_job_id_move_put) (method `/blck/p5_cl_ManagementApi=>jobs_job_id_move_put`)
+## &nbsp; &nbsp; [Operation: jobs_job_id_pause_put](#markdown-header-op-ManagementApi-jobs_job_id_pause_put) (method `/blck/p5_cl_ManagementApi=>jobs_job_id_pause_put`)
+## &nbsp; &nbsp; [Operation: jobs_job_id_repeat_put](#markdown-header-op-ManagementApi-jobs_job_id_repeat_put) (method `/blck/p5_cl_ManagementApi=>jobs_job_id_repeat_put`)
+## &nbsp; &nbsp; [Operation: jobs_job_id_resume_put](#markdown-header-op-ManagementApi-jobs_job_id_resume_put) (method `/blck/p5_cl_ManagementApi=>jobs_job_id_resume_put`)
+## &nbsp; &nbsp; [Operation: printers_post](#markdown-header-op-ManagementApi-printers_post) (method `/blck/p5_cl_ManagementApi=>printers_post`)
+## &nbsp; &nbsp; [Operation: printers_printer_name_delete](#markdown-header-op-ManagementApi-printers_printer_name_delete) (method `/blck/p5_cl_ManagementApi=>printers_printer_name_delete`)
+## &nbsp; &nbsp; [Operation: printers_put](#markdown-header-op-ManagementApi-printers_put) (method `/blck/p5_cl_ManagementApi=>printers_put`)
+## &nbsp; &nbsp; [Operation: printersprinternamecreatetestj](#markdown-header-op-ManagementApi-printersprinternamecreatetestj) (method `/blck/p5_cl_ManagementApi=>printersprinternamecreatetestj`)
+## &nbsp; &nbsp; [Operation: printersprinternamepauseput](#markdown-header-op-ManagementApi-printersprinternamepauseput) (method `/blck/p5_cl_ManagementApi=>printersprinternamepauseput`)
+## &nbsp; &nbsp; [Operation: printersprinternameredirectput](#markdown-header-op-ManagementApi-printersprinternameredirectput) (method `/blck/p5_cl_ManagementApi=>printersprinternameredirectput`)
+## &nbsp; &nbsp; [Operation: printersprinternameresumeput](#markdown-header-op-ManagementApi-printersprinternameresumeput) (method `/blck/p5_cl_ManagementApi=>printersprinternameresumeput`)
+# API: ODataApi
+## &nbsp; &nbsp; [Operation: jobs_count_get](#markdown-header-op-ODataApi-jobs_count_get) (method `/blck/p5_cl_ODataApi=>jobs_count_get`)
+## &nbsp; &nbsp; [Operation: jobs_get](#markdown-header-op-ODataApi-jobs_get) (method `/blck/p5_cl_ODataApi=>jobs_get`)
+## &nbsp; &nbsp; [Operation: printers_count_get](#markdown-header-op-ODataApi-printers_count_get) (method `/blck/p5_cl_ODataApi=>printers_count_get`)
+## &nbsp; &nbsp; [Operation: printers_get](#markdown-header-op-ODataApi-printers_get) (method `/blck/p5_cl_ODataApi=>printers_get`)
+## &nbsp; &nbsp; [Operation: printers_printer_name_logs_get](#markdown-header-op-ODataApi-printers_printer_name_logs_get) (method `/blck/p5_cl_ODataApi=>printers_printer_name_logs_get`)
+# API: PrinterApi
+## &nbsp; &nbsp; [Operation: printers_aggregate_put](#markdown-header-op-PrinterApi-printers_aggregate_put) (method `/blck/p5_cl_PrinterApi=>printers_aggregate_put`)
+## &nbsp; &nbsp; [Operation: printers_count_get](#markdown-header-op-PrinterApi-printers_count_get) (method `/blck/p5_cl_PrinterApi=>printers_count_get`)
+## &nbsp; &nbsp; [Operation: printers_get](#markdown-header-op-PrinterApi-printers_get) (method `/blck/p5_cl_PrinterApi=>printers_get`)
+## &nbsp; &nbsp; [Operation: printers_metadata_get](#markdown-header-op-PrinterApi-printers_metadata_get) (method `/blck/p5_cl_PrinterApi=>printers_metadata_get`)
+## &nbsp; &nbsp; [Operation: printers_post](#markdown-header-op-PrinterApi-printers_post) (method `/blck/p5_cl_PrinterApi=>printers_post`)
+## &nbsp; &nbsp; [Operation: printers_printer_name_delete](#markdown-header-op-PrinterApi-printers_printer_name_delete) (method `/blck/p5_cl_PrinterApi=>printers_printer_name_delete`)
+## &nbsp; &nbsp; [Operation: printers_printer_name_get](#markdown-header-op-PrinterApi-printers_printer_name_get) (method `/blck/p5_cl_PrinterApi=>printers_printer_name_get`)
+## &nbsp; &nbsp; [Operation: printers_printer_name_logs_get](#markdown-header-op-PrinterApi-printers_printer_name_logs_get) (method `/blck/p5_cl_PrinterApi=>printers_printer_name_logs_get`)
+## &nbsp; &nbsp; [Operation: printers_put](#markdown-header-op-PrinterApi-printers_put) (method `/blck/p5_cl_PrinterApi=>printers_put`)
+## &nbsp; &nbsp; [Operation: printersprinternamecreatetestj](#markdown-header-op-PrinterApi-printersprinternamecreatetestj) (method `/blck/p5_cl_PrinterApi=>printersprinternamecreatetestj`)
+## &nbsp; &nbsp; [Operation: printersprinternamepauseput](#markdown-header-op-PrinterApi-printersprinternamepauseput) (method `/blck/p5_cl_PrinterApi=>printersprinternamepauseput`)
+## &nbsp; &nbsp; [Operation: printersprinternameredirectput](#markdown-header-op-PrinterApi-printersprinternameredirectput) (method `/blck/p5_cl_PrinterApi=>printersprinternameredirectput`)
+## &nbsp; &nbsp; [Operation: printersprinternameresumeput](#markdown-header-op-PrinterApi-printersprinternameresumeput) (method `/blck/p5_cl_PrinterApi=>printersprinternameresumeput`)
+## &nbsp; &nbsp; [Operation: printersprinternamestatusget](#markdown-header-op-PrinterApi-printersprinternamestatusget) (method `/blck/p5_cl_PrinterApi=>printersprinternamestatusget`)
+# API: SearchApi
+## &nbsp; &nbsp; [Operation: jobs_aggregate_put](#markdown-header-op-SearchApi-jobs_aggregate_put) (method `/blck/p5_cl_SearchApi=>jobs_aggregate_put`)
+## &nbsp; &nbsp; [Operation: jobs_count_get](#markdown-header-op-SearchApi-jobs_count_get) (method `/blck/p5_cl_SearchApi=>jobs_count_get`)
+## &nbsp; &nbsp; [Operation: jobs_get](#markdown-header-op-SearchApi-jobs_get) (method `/blck/p5_cl_SearchApi=>jobs_get`)
+## &nbsp; &nbsp; [Operation: printers_aggregate_put](#markdown-header-op-SearchApi-printers_aggregate_put) (method `/blck/p5_cl_SearchApi=>printers_aggregate_put`)
+## &nbsp; &nbsp; [Operation: printers_count_get](#markdown-header-op-SearchApi-printers_count_get) (method `/blck/p5_cl_SearchApi=>printers_count_get`)
+## &nbsp; &nbsp; [Operation: printers_get](#markdown-header-op-SearchApi-printers_get) (method `/blck/p5_cl_SearchApi=>printers_get`)
+## &nbsp; &nbsp; [Operation: printers_printer_name_logs_get](#markdown-header-op-SearchApi-printers_printer_name_logs_get) (method `/blck/p5_cl_SearchApi=>printers_printer_name_logs_get`)
+# Models and Enumerations
+## &nbsp; &nbsp; [Model: AggregateQuery](#markdown-header-model-aggregatequery) (type `/blck/p5_aggregatequery`)
+## &nbsp; &nbsp; [Model: AggregateResponse](#markdown-header-model-aggregaterespo) (type `/blck/p5_aggregaterespo`)
+## &nbsp; &nbsp; [Model: Count](#markdown-header-model-count) (type `/blck/p5_count`)
+## &nbsp; &nbsp; [Model: Error](#markdown-header-model-error) (type `/blck/p5_error`)
+## &nbsp; &nbsp; [Model: JobTarget](#markdown-header-model-job_target) (type `/blck/p5_job_target`)
+## &nbsp; &nbsp; [Model: Logs](#markdown-header-model-logs) (type `/blck/p5_logs`)
+## &nbsp; &nbsp; [Model: Metadata](#markdown-header-model-metadata) (type `/blck/p5_metadata`)
+## &nbsp; &nbsp; [Model: PrintJob](#markdown-header-model-print_job) (type `/blck/p5_print_job`)
+## &nbsp; &nbsp; [Model: Printer](#markdown-header-model-printer) (type `/blck/p5_printer`)
+## &nbsp; &nbsp; [Model: PrinterStatus](#markdown-header-model-printer_status) (type `/blck/p5_printer_status`)
+
+# API: InfoApi
 
 All URIs are relative to *https://demo.plossys-p5.com/v2*
+
+<a name="markdown-header-op-InfoApi-jobs_aggregate_put"></a>
 
 ## operation: **jobs_aggregate_put**
 Create information aggregate of multiple print jobs
@@ -88,6 +168,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-InfoApi-jobs_count_get"></a>
+
 ## operation: **jobs_count_get**
 Count print jobs, filtered by OData query
 
@@ -166,6 +248,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-InfoApi-jobs_get"></a>
 
 ## operation: **jobs_get**
 List and search jobs
@@ -284,6 +368,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-InfoApi-jobs_job_id_get"></a>
+
 ## operation: **jobs_job_id_get**
 Retrieve information on a specific print job
 
@@ -363,6 +449,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-InfoApi-jobs_metadata_get"></a>
+
 ## operation: **jobs_metadata_get**
 Get PrintJob data model description
 
@@ -431,6 +519,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-InfoApi-printers_aggregate_put"></a>
 
 ## operation: **printers_aggregate_put**
 Create information aggregate of multiple printers
@@ -518,6 +608,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-InfoApi-printers_count_get"></a>
+
 ## operation: **printers_count_get**
 Count available printes, filtered by OData query
 
@@ -596,6 +688,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-InfoApi-printers_get"></a>
 
 ## operation: **printers_get**
 GetPrinter List
@@ -719,6 +813,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-InfoApi-printers_metadata_get"></a>
+
 ## operation: **printers_metadata_get**
 Get Printer data model description
 
@@ -787,6 +883,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-InfoApi-printers_printer_name_get"></a>
 
 ## operation: **printers_printer_name_get**
 Retrieve configuration of a given printer
@@ -878,6 +976,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-InfoApi-printers_printer_name_logs_get"></a>
+
 ## operation: **printers_printer_name_logs_get**
 Access to printer logs
 
@@ -963,6 +1063,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-InfoApi-printersprinternamestatusget"></a>
+
 ## operation: **printersprinternamestatusget**
 Get Printer Status
 
@@ -1042,9 +1144,12 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+
 # API: JobsApi
 
 All URIs are relative to *https://demo.plossys-p5.com/v2*
+
+<a name="markdown-header-op-JobsApi-jobs_aggregate_put"></a>
 
 ## operation: **jobs_aggregate_put**
 Create information aggregate of multiple print jobs
@@ -1132,6 +1237,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-JobsApi-jobs_count_get"></a>
+
 ## operation: **jobs_count_get**
 Count print jobs, filtered by OData query
 
@@ -1210,6 +1317,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-JobsApi-jobs_get"></a>
 
 ## operation: **jobs_get**
 List and search jobs
@@ -1328,6 +1437,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-JobsApi-jobs_job_id_delete"></a>
+
 ## operation: **jobs_job_id_delete**
 Deletes a print job
 
@@ -1413,6 +1524,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-JobsApi-jobs_job_id_get"></a>
+
 ## operation: **jobs_job_id_get**
 Retrieve information on a specific print job
 
@@ -1491,6 +1604,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-JobsApi-jobs_job_id_move_put"></a>
 
 ## operation: **jobs_job_id_move_put**
 Resume a paused print job.
@@ -1586,6 +1701,8 @@ Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-JobsApi-jobs_job_id_pause_put"></a>
+
 ## operation: **jobs_job_id_pause_put**
 Pause a print job.
 
@@ -1671,6 +1788,8 @@ Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-JobsApi-jobs_job_id_repeat_put"></a>
 
 ## operation: **jobs_job_id_repeat_put**
 Repeat a print job.
@@ -1758,6 +1877,8 @@ Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-JobsApi-jobs_job_id_resume_put"></a>
+
 ## operation: **jobs_job_id_resume_put**
 Resume a paused print job.
 
@@ -1844,6 +1965,8 @@ Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-JobsApi-jobs_metadata_get"></a>
+
 ## operation: **jobs_metadata_get**
 Get PrintJob data model description
 
@@ -1913,9 +2036,12 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+
 # API: ManagementApi
 
 All URIs are relative to *https://demo.plossys-p5.com/v2*
+
+<a name="markdown-header-op-ManagementApi-jobs_job_id_delete"></a>
 
 ## operation: **jobs_job_id_delete**
 Deletes a print job
@@ -2001,6 +2127,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ManagementApi-jobs_job_id_move_put"></a>
 
 ## operation: **jobs_job_id_move_put**
 Resume a paused print job.
@@ -2096,6 +2224,8 @@ Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ManagementApi-jobs_job_id_pause_put"></a>
+
 ## operation: **jobs_job_id_pause_put**
 Pause a print job.
 
@@ -2181,6 +2311,8 @@ Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ManagementApi-jobs_job_id_repeat_put"></a>
 
 ## operation: **jobs_job_id_repeat_put**
 Repeat a print job.
@@ -2268,6 +2400,8 @@ Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ManagementApi-jobs_job_id_resume_put"></a>
+
 ## operation: **jobs_job_id_resume_put**
 Resume a paused print job.
 
@@ -2353,6 +2487,8 @@ Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ManagementApi-printers_post"></a>
 
 ## operation: **printers_post**
 Register a new printer
@@ -2444,6 +2580,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ManagementApi-printers_printer_name_delete"></a>
+
 ## operation: **printers_printer_name_delete**
 Delete a printer from the system
 
@@ -2524,6 +2662,8 @@ Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ManagementApi-printers_put"></a>
 
 ## operation: **printers_put**
 Modify/Reconfigure a printer
@@ -2607,6 +2747,8 @@ Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ManagementApi-printersprinternamecreatetestj"></a>
+
 ## operation: **printersprinternamecreatetestj**
 Creates a test page and sends it to the printer.
 
@@ -2682,6 +2824,8 @@ Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ManagementApi-printersprinternamepauseput"></a>
 
 ## operation: **printersprinternamepauseput**
 Pause a printer.
@@ -2769,6 +2913,8 @@ Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ManagementApi-printersprinternameredirectput"></a>
+
 ## operation: **printersprinternameredirectput**
 Redirect a printer to another.
 
@@ -2854,6 +3000,8 @@ Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ManagementApi-printersprinternameresumeput"></a>
 
 ## operation: **printersprinternameresumeput**
 Resume a paused printer.
@@ -2941,9 +3089,12 @@ Name | Type | Description
  - **Accept**: application/json
 
 
+
 # API: ODataApi
 
 All URIs are relative to *https://demo.plossys-p5.com/v2*
+
+<a name="markdown-header-op-ODataApi-jobs_count_get"></a>
 
 ## operation: **jobs_count_get**
 Count print jobs, filtered by OData query
@@ -3023,6 +3174,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ODataApi-jobs_get"></a>
 
 ## operation: **jobs_get**
 List and search jobs
@@ -3141,6 +3294,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ODataApi-printers_count_get"></a>
+
 ## operation: **printers_count_get**
 Count available printes, filtered by OData query
 
@@ -3219,6 +3374,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ODataApi-printers_get"></a>
 
 ## operation: **printers_get**
 GetPrinter List
@@ -3342,6 +3499,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ODataApi-printers_printer_name_logs_get"></a>
+
 ## operation: **printers_printer_name_logs_get**
 Access to printer logs
 
@@ -3427,9 +3586,12 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+
 # API: PrinterApi
 
 All URIs are relative to *https://demo.plossys-p5.com/v2*
+
+<a name="markdown-header-op-PrinterApi-printers_aggregate_put"></a>
 
 ## operation: **printers_aggregate_put**
 Create information aggregate of multiple printers
@@ -3517,6 +3679,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-PrinterApi-printers_count_get"></a>
+
 ## operation: **printers_count_get**
 Count available printes, filtered by OData query
 
@@ -3595,6 +3759,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-PrinterApi-printers_get"></a>
 
 ## operation: **printers_get**
 GetPrinter List
@@ -3718,6 +3884,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-PrinterApi-printers_metadata_get"></a>
+
 ## operation: **printers_metadata_get**
 Get Printer data model description
 
@@ -3786,6 +3954,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-PrinterApi-printers_post"></a>
 
 ## operation: **printers_post**
 Register a new printer
@@ -3877,6 +4047,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-PrinterApi-printers_printer_name_delete"></a>
+
 ## operation: **printers_printer_name_delete**
 Delete a printer from the system
 
@@ -3957,6 +4129,8 @@ Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-PrinterApi-printers_printer_name_get"></a>
 
 ## operation: **printers_printer_name_get**
 Retrieve configuration of a given printer
@@ -4048,6 +4222,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-PrinterApi-printers_printer_name_logs_get"></a>
+
 ## operation: **printers_printer_name_logs_get**
 Access to printer logs
 
@@ -4133,6 +4309,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-PrinterApi-printers_put"></a>
+
 ## operation: **printers_put**
 Modify/Reconfigure a printer
 
@@ -4215,6 +4393,8 @@ Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-PrinterApi-printersprinternamecreatetestj"></a>
+
 ## operation: **printersprinternamecreatetestj**
 Creates a test page and sends it to the printer.
 
@@ -4290,6 +4470,8 @@ Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-PrinterApi-printersprinternamepauseput"></a>
 
 ## operation: **printersprinternamepauseput**
 Pause a printer.
@@ -4377,6 +4559,8 @@ Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-PrinterApi-printersprinternameredirectput"></a>
+
 ## operation: **printersprinternameredirectput**
 Redirect a printer to another.
 
@@ -4462,6 +4646,8 @@ Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-PrinterApi-printersprinternameresumeput"></a>
 
 ## operation: **printersprinternameresumeput**
 Resume a paused printer.
@@ -4549,6 +4735,8 @@ Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-PrinterApi-printersprinternamestatusget"></a>
+
 ## operation: **printersprinternamestatusget**
 Get Printer Status
 
@@ -4628,9 +4816,12 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+
 # API: SearchApi
 
 All URIs are relative to *https://demo.plossys-p5.com/v2*
+
+<a name="markdown-header-op-SearchApi-jobs_aggregate_put"></a>
 
 ## operation: **jobs_aggregate_put**
 Create information aggregate of multiple print jobs
@@ -4718,6 +4909,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-SearchApi-jobs_count_get"></a>
+
 ## operation: **jobs_count_get**
 Count print jobs, filtered by OData query
 
@@ -4796,6 +4989,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-SearchApi-jobs_get"></a>
 
 ## operation: **jobs_get**
 List and search jobs
@@ -4914,6 +5109,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-SearchApi-printers_aggregate_put"></a>
+
 ## operation: **printers_aggregate_put**
 Create information aggregate of multiple printers
 
@@ -5000,6 +5197,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-SearchApi-printers_count_get"></a>
+
 ## operation: **printers_count_get**
 Count available printes, filtered by OData query
 
@@ -5078,6 +5277,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-SearchApi-printers_get"></a>
 
 ## operation: **printers_get**
 GetPrinter List
@@ -5200,6 +5401,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-SearchApi-printers_printer_name_logs_get"></a>
 
 ## operation: **printers_printer_name_logs_get**
 Access to printer logs

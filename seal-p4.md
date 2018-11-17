@@ -1,6 +1,29 @@
 # API: EventsApi
+## &nbsp; &nbsp; [Operation: event_notifications_get](#markdown-header-op-EventsApi-event_notifications_get) (method `/blck/p4_cl_EventsApi=>event_notifications_get`)
+# API: JobsApi
+## &nbsp; &nbsp; [Operation: jobs_post](#markdown-header-op-JobsApi-jobs_post) (method `/blck/p4_cl_JobsApi=>jobs_post`)
+## &nbsp; &nbsp; [Operation: jobs_uuid_abort_post](#markdown-header-op-JobsApi-jobs_uuid_abort_post) (method `/blck/p4_cl_JobsApi=>jobs_uuid_abort_post`)
+## &nbsp; &nbsp; [Operation: jobs_uuid_get](#markdown-header-op-JobsApi-jobs_uuid_get) (method `/blck/p4_cl_JobsApi=>jobs_uuid_get`)
+## &nbsp; &nbsp; [Operation: jobs_uuid_pause_post](#markdown-header-op-JobsApi-jobs_uuid_pause_post) (method `/blck/p4_cl_JobsApi=>jobs_uuid_pause_post`)
+## &nbsp; &nbsp; [Operation: jobs_uuid_put](#markdown-header-op-JobsApi-jobs_uuid_put) (method `/blck/p4_cl_JobsApi=>jobs_uuid_put`)
+## &nbsp; &nbsp; [Operation: jobs_uuid_resume_post](#markdown-header-op-JobsApi-jobs_uuid_resume_post) (method `/blck/p4_cl_JobsApi=>jobs_uuid_resume_post`)
+## &nbsp; &nbsp; [Operation: jobs_uuid_start_post](#markdown-header-op-JobsApi-jobs_uuid_start_post) (method `/blck/p4_cl_JobsApi=>jobs_uuid_start_post`)
+# API: PrintersApi
+## &nbsp; &nbsp; [Operation: printers_get](#markdown-header-op-PrintersApi-printers_get) (method `/blck/p4_cl_PrintersApi=>printers_get`)
+# Models and Enumerations
+## &nbsp; &nbsp; [Model: Error](#markdown-header-model-error) (type `/blck/p4_error`)
+## &nbsp; &nbsp; [Model: JobHeader](#markdown-header-model-job_header) (type `/blck/p4_job_header`)
+## &nbsp; &nbsp; [Model: JobId](#markdown-header-model-job_id) (type `/blck/p4_job_id`)
+## &nbsp; &nbsp; [Enum: StatusType](#markdown-header-enum-status_type) (type `/blck/p4_status_type`)
+## &nbsp; &nbsp; [Model: JobStatus](#markdown-header-model-job_status) (type `/blck/p4_job_status`)
+## &nbsp; &nbsp; [Model: JobStatusEvent](#markdown-header-model-jobstatusevent) (type `/blck/p4_jobstatusevent`)
+## &nbsp; &nbsp; [Model: Printer](#markdown-header-model-printer) (type `/blck/p4_printer`)
+
+# API: EventsApi
 
 All URIs are relative to *https://operator-seal.cloudapp.net/v1*
+
+<a name="markdown-header-op-EventsApi-event_notifications_get"></a>
 
 ## operation: **event_notifications_get**
 Retrieve job status
@@ -93,9 +116,12 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+
 # API: JobsApi
 
 All URIs are relative to *https://operator-seal.cloudapp.net/v1*
+
+<a name="markdown-header-op-JobsApi-jobs_post"></a>
 
 ## operation: **jobs_post**
 Create new job
@@ -204,6 +230,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-JobsApi-jobs_uuid_abort_post"></a>
+
 ## operation: **jobs_uuid_abort_post**
 Abort a job
 
@@ -299,6 +327,8 @@ Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-JobsApi-jobs_uuid_get"></a>
 
 ## operation: **jobs_uuid_get**
 Retrieve job status
@@ -407,6 +437,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-JobsApi-jobs_uuid_pause_post"></a>
+
 ## operation: **jobs_uuid_pause_post**
 Abort a job
 
@@ -502,6 +534,8 @@ Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-JobsApi-jobs_uuid_put"></a>
 
 ## operation: **jobs_uuid_put**
 Add files to the job
@@ -599,6 +633,8 @@ Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-JobsApi-jobs_uuid_resume_post"></a>
+
 ## operation: **jobs_uuid_resume_post**
 Resume a job
 
@@ -694,6 +730,8 @@ Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-JobsApi-jobs_uuid_start_post"></a>
 
 ## operation: **jobs_uuid_start_post**
 Start a job
@@ -791,9 +829,12 @@ Name | Type | Description
  - **Accept**: application/json
 
 
+
 # API: PrintersApi
 
 All URIs are relative to *https://operator-seal.cloudapp.net/v1*
+
+<a name="markdown-header-op-PrintersApi-printers_get"></a>
 
 ## operation: **printers_get**
 Retrieve printer list

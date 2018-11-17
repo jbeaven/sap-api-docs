@@ -1,6 +1,163 @@
 # API: FavoritesApi
+## &nbsp; &nbsp; [Operation: add_favorite](#markdown-header-op-FavoritesApi-add_favorite) (method `/blck/mfi_cl_FavoritesApi=>add_favorite`)
+## &nbsp; &nbsp; [Operation: get_favorite](#markdown-header-op-FavoritesApi-get_favorite) (method `/blck/mfi_cl_FavoritesApi=>get_favorite`)
+## &nbsp; &nbsp; [Operation: get_favorites](#markdown-header-op-FavoritesApi-get_favorites) (method `/blck/mfi_cl_FavoritesApi=>get_favorites`)
+## &nbsp; &nbsp; [Operation: remove_favorite](#markdown-header-op-FavoritesApi-remove_favorite) (method `/blck/mfi_cl_FavoritesApi=>remove_favorite`)
+# API: FilesApi
+## &nbsp; &nbsp; [Operation: upload](#markdown-header-op-FilesApi-upload) (method `/blck/mfi_cl_FilesApi=>upload`)
+# API: ObjectsApi
+## &nbsp; &nbsp; [Operation: add_comment](#markdown-header-op-ObjectsApi-add_comment) (method `/blck/mfi_cl_ObjectsApi=>add_comment`)
+## &nbsp; &nbsp; [Operation: add_file_content](#markdown-header-op-ObjectsApi-add_file_content) (method `/blck/mfi_cl_ObjectsApi=>add_file_content`)
+## &nbsp; &nbsp; [Operation: create_object](#markdown-header-op-ObjectsApi-create_object) (method `/blck/mfi_cl_ObjectsApi=>create_object`)
+## &nbsp; &nbsp; [Operation: demote_objects](#markdown-header-op-ObjectsApi-demote_objects) (method `/blck/mfi_cl_ObjectsApi=>demote_objects`)
+## &nbsp; &nbsp; [Operation: destroy_object_version](#markdown-header-op-ObjectsApi-destroy_object_version) (method `/blck/mfi_cl_ObjectsApi=>destroy_object_version`)
+## &nbsp; &nbsp; [Operation: get_automatic_metadata](#markdown-header-op-ObjectsApi-get_automatic_metadata) (method `/blck/mfi_cl_ObjectsApi=>get_automatic_metadata`)
+## &nbsp; &nbsp; [Operation: get_checkout_status](#markdown-header-op-ObjectsApi-get_checkout_status) (method `/blck/mfi_cl_ObjectsApi=>get_checkout_status`)
+## &nbsp; &nbsp; [Operation: get_comments](#markdown-header-op-ObjectsApi-get_comments) (method `/blck/mfi_cl_ObjectsApi=>get_comments`)
+## &nbsp; &nbsp; [Operation: get_deleted_state](#markdown-header-op-ObjectsApi-get_deleted_state) (method `/blck/mfi_cl_ObjectsApi=>get_deleted_state`)
+## &nbsp; &nbsp; [Operation: get_file_content](#markdown-header-op-ObjectsApi-get_file_content) (method `/blck/mfi_cl_ObjectsApi=>get_file_content`)
+## &nbsp; &nbsp; [Operation: get_file_info](#markdown-header-op-ObjectsApi-get_file_info) (method `/blck/mfi_cl_ObjectsApi=>get_file_info`)
+## &nbsp; &nbsp; [Operation: get_file_thumbnail](#markdown-header-op-ObjectsApi-get_file_thumbnail) (method `/blck/mfi_cl_ObjectsApi=>get_file_thumbnail`)
+## &nbsp; &nbsp; [Operation: get_filename](#markdown-header-op-ObjectsApi-get_filename) (method `/blck/mfi_cl_ObjectsApi=>get_filename`)
+## &nbsp; &nbsp; [Operation: get_files_info](#markdown-header-op-ObjectsApi-get_files_info) (method `/blck/mfi_cl_ObjectsApi=>get_files_info`)
+## &nbsp; &nbsp; [Operation: get_multi_obj_props](#markdown-header-op-ObjectsApi-get_multi_obj_props) (method `/blck/mfi_cl_ObjectsApi=>get_multi_obj_props`)
+## &nbsp; &nbsp; [Operation: get_name](#markdown-header-op-ObjectsApi-get_name) (method `/blck/mfi_cl_ObjectsApi=>get_name`)
+## &nbsp; &nbsp; [Operation: get_object_info](#markdown-header-op-ObjectsApi-get_object_info) (method `/blck/mfi_cl_ObjectsApi=>get_object_info`)
+## &nbsp; &nbsp; [Operation: get_object_thumbnail](#markdown-header-op-ObjectsApi-get_object_thumbnail) (method `/blck/mfi_cl_ObjectsApi=>get_object_thumbnail`)
+## &nbsp; &nbsp; [Operation: get_object_versions](#markdown-header-op-ObjectsApi-get_object_versions) (method `/blck/mfi_cl_ObjectsApi=>get_object_versions`)
+## &nbsp; &nbsp; [Operation: get_objects](#markdown-header-op-ObjectsApi-get_objects) (method `/blck/mfi_cl_ObjectsApi=>get_objects`)
+## &nbsp; &nbsp; [Operation: get_objects_of_type](#markdown-header-op-ObjectsApi-get_objects_of_type) (method `/blck/mfi_cl_ObjectsApi=>get_objects_of_type`)
+## &nbsp; &nbsp; [Operation: get_properties](#markdown-header-op-ObjectsApi-get_properties) (method `/blck/mfi_cl_ObjectsApi=>get_properties`)
+## &nbsp; &nbsp; [Operation: get_property](#markdown-header-op-ObjectsApi-get_property) (method `/blck/mfi_cl_ObjectsApi=>get_property`)
+## &nbsp; &nbsp; [Operation: get_relationship_count](#markdown-header-op-ObjectsApi-get_relationship_count) (method `/blck/mfi_cl_ObjectsApi=>get_relationship_count`)
+## &nbsp; &nbsp; [Operation: get_relationships](#markdown-header-op-ObjectsApi-get_relationships) (method `/blck/mfi_cl_ObjectsApi=>get_relationships`)
+## &nbsp; &nbsp; [Operation: get_state](#markdown-header-op-ObjectsApi-get_state) (method `/blck/mfi_cl_ObjectsApi=>get_state`)
+## &nbsp; &nbsp; [Operation: get_sub_object_count](#markdown-header-op-ObjectsApi-get_sub_object_count) (method `/blck/mfi_cl_ObjectsApi=>get_sub_object_count`)
+## &nbsp; &nbsp; [Operation: get_sub_objects](#markdown-header-op-ObjectsApi-get_sub_objects) (method `/blck/mfi_cl_ObjectsApi=>get_sub_objects`)
+## &nbsp; &nbsp; [Operation: remove_file](#markdown-header-op-ObjectsApi-remove_file) (method `/blck/mfi_cl_ObjectsApi=>remove_file`)
+## &nbsp; &nbsp; [Operation: remove_property](#markdown-header-op-ObjectsApi-remove_property) (method `/blck/mfi_cl_ObjectsApi=>remove_property`)
+## &nbsp; &nbsp; [Operation: set_checkout_status](#markdown-header-op-ObjectsApi-set_checkout_status) (method `/blck/mfi_cl_ObjectsApi=>set_checkout_status`)
+## &nbsp; &nbsp; [Operation: set_deleted_state](#markdown-header-op-ObjectsApi-set_deleted_state) (method `/blck/mfi_cl_ObjectsApi=>set_deleted_state`)
+## &nbsp; &nbsp; [Operation: set_file_contents](#markdown-header-op-ObjectsApi-set_file_contents) (method `/blck/mfi_cl_ObjectsApi=>set_file_contents`)
+## &nbsp; &nbsp; [Operation: set_filename](#markdown-header-op-ObjectsApi-set_filename) (method `/blck/mfi_cl_ObjectsApi=>set_filename`)
+## &nbsp; &nbsp; [Operation: set_multi_obj_props](#markdown-header-op-ObjectsApi-set_multi_obj_props) (method `/blck/mfi_cl_ObjectsApi=>set_multi_obj_props`)
+## &nbsp; &nbsp; [Operation: set_name](#markdown-header-op-ObjectsApi-set_name) (method `/blck/mfi_cl_ObjectsApi=>set_name`)
+## &nbsp; &nbsp; [Operation: set_properties](#markdown-header-op-ObjectsApi-set_properties) (method `/blck/mfi_cl_ObjectsApi=>set_properties`)
+## &nbsp; &nbsp; [Operation: set_property](#markdown-header-op-ObjectsApi-set_property) (method `/blck/mfi_cl_ObjectsApi=>set_property`)
+## &nbsp; &nbsp; [Operation: set_workflow_state](#markdown-header-op-ObjectsApi-set_workflow_state) (method `/blck/mfi_cl_ObjectsApi=>set_workflow_state`)
+## &nbsp; &nbsp; [Operation: update_properties](#markdown-header-op-ObjectsApi-update_properties) (method `/blck/mfi_cl_ObjectsApi=>update_properties`)
+# API: RecentApi
+## &nbsp; &nbsp; [Operation: add_recent_object](#markdown-header-op-RecentApi-add_recent_object) (method `/blck/mfi_cl_RecentApi=>add_recent_object`)
+## &nbsp; &nbsp; [Operation: get_recent_objects](#markdown-header-op-RecentApi-get_recent_objects) (method `/blck/mfi_cl_RecentApi=>get_recent_objects`)
+# API: RepositoriesApi
+## &nbsp; &nbsp; [Operation: get_repositories](#markdown-header-op-RepositoriesApi-get_repositories) (method `/blck/mfi_cl_RepositoriesApi=>get_repositories`)
+## &nbsp; &nbsp; [Operation: log_in_repo](#markdown-header-op-RepositoriesApi-log_in_repo) (method `/blck/mfi_cl_RepositoriesApi=>log_in_repo`)
+## &nbsp; &nbsp; [Operation: log_out_repo](#markdown-header-op-RepositoriesApi-log_out_repo) (method `/blck/mfi_cl_RepositoriesApi=>log_out_repo`)
+# API: ServerApi
+## &nbsp; &nbsp; [Operation: authenticate](#markdown-header-op-ServerApi-authenticate) (method `/blck/mfi_cl_ServerApi=>authenticate`)
+## &nbsp; &nbsp; [Operation: get_public_key](#markdown-header-op-ServerApi-get_public_key) (method `/blck/mfi_cl_ServerApi=>get_public_key`)
+## &nbsp; &nbsp; [Operation: get_status](#markdown-header-op-ServerApi-get_status) (method `/blck/mfi_cl_ServerApi=>get_status`)
+## &nbsp; &nbsp; [Operation: get_vaults](#markdown-header-op-ServerApi-get_vaults) (method `/blck/mfi_cl_ServerApi=>get_vaults`)
+# API: SessionApi
+## &nbsp; &nbsp; [Operation: get_auth_token](#markdown-header-op-SessionApi-get_auth_token) (method `/blck/mfi_cl_SessionApi=>get_auth_token`)
+## &nbsp; &nbsp; [Operation: get_session_info](#markdown-header-op-SessionApi-get_session_info) (method `/blck/mfi_cl_SessionApi=>get_session_info`)
+## &nbsp; &nbsp; [Operation: get_user_id](#markdown-header-op-SessionApi-get_user_id) (method `/blck/mfi_cl_SessionApi=>get_user_id`)
+## &nbsp; &nbsp; [Operation: get_vault_info](#markdown-header-op-SessionApi-get_vault_info) (method `/blck/mfi_cl_SessionApi=>get_vault_info`)
+## &nbsp; &nbsp; [Operation: log_in](#markdown-header-op-SessionApi-log_in) (method `/blck/mfi_cl_SessionApi=>log_in`)
+## &nbsp; &nbsp; [Operation: log_out](#markdown-header-op-SessionApi-log_out) (method `/blck/mfi_cl_SessionApi=>log_out`)
+## &nbsp; &nbsp; [Operation: set_vault_info](#markdown-header-op-SessionApi-set_vault_info) (method `/blck/mfi_cl_SessionApi=>set_vault_info`)
+# API: VaultApi
+## &nbsp; &nbsp; [Operation: add_item](#markdown-header-op-VaultApi-add_item) (method `/blck/mfi_cl_VaultApi=>add_item`)
+## &nbsp; &nbsp; [Operation: get_class_icon](#markdown-header-op-VaultApi-get_class_icon) (method `/blck/mfi_cl_VaultApi=>get_class_icon`)
+## &nbsp; &nbsp; [Operation: get_class_id](#markdown-header-op-VaultApi-get_class_id) (method `/blck/mfi_cl_VaultApi=>get_class_id`)
+## &nbsp; &nbsp; [Operation: get_class_info](#markdown-header-op-VaultApi-get_class_info) (method `/blck/mfi_cl_VaultApi=>get_class_info`)
+## &nbsp; &nbsp; [Operation: get_item](#markdown-header-op-VaultApi-get_item) (method `/blck/mfi_cl_VaultApi=>get_item`)
+## &nbsp; &nbsp; [Operation: get_item_title](#markdown-header-op-VaultApi-get_item_title) (method `/blck/mfi_cl_VaultApi=>get_item_title`)
+## &nbsp; &nbsp; [Operation: get_items](#markdown-header-op-VaultApi-get_items) (method `/blck/mfi_cl_VaultApi=>get_items`)
+## &nbsp; &nbsp; [Operation: get_object_classes](#markdown-header-op-VaultApi-get_object_classes) (method `/blck/mfi_cl_VaultApi=>get_object_classes`)
+## &nbsp; &nbsp; [Operation: get_object_type](#markdown-header-op-VaultApi-get_object_type) (method `/blck/mfi_cl_VaultApi=>get_object_type`)
+## &nbsp; &nbsp; [Operation: get_object_type_classes](#markdown-header-op-VaultApi-get_object_type_classes) (method `/blck/mfi_cl_VaultApi=>get_object_type_classes`)
+## &nbsp; &nbsp; [Operation: get_object_type_icon](#markdown-header-op-VaultApi-get_object_type_icon) (method `/blck/mfi_cl_VaultApi=>get_object_type_icon`)
+## &nbsp; &nbsp; [Operation: get_object_types](#markdown-header-op-VaultApi-get_object_types) (method `/blck/mfi_cl_VaultApi=>get_object_types`)
+## &nbsp; &nbsp; [Operation: get_value_list](#markdown-header-op-VaultApi-get_value_list) (method `/blck/mfi_cl_VaultApi=>get_value_list`)
+## &nbsp; &nbsp; [Operation: get_value_lists](#markdown-header-op-VaultApi-get_value_lists) (method `/blck/mfi_cl_VaultApi=>get_value_lists`)
+## &nbsp; &nbsp; [Operation: get_vault_properties](#markdown-header-op-VaultApi-get_vault_properties) (method `/blck/mfi_cl_VaultApi=>get_vault_properties`)
+## &nbsp; &nbsp; [Operation: get_vault_property](#markdown-header-op-VaultApi-get_vault_property) (method `/blck/mfi_cl_VaultApi=>get_vault_property`)
+## &nbsp; &nbsp; [Operation: get_workflow](#markdown-header-op-VaultApi-get_workflow) (method `/blck/mfi_cl_VaultApi=>get_workflow`)
+## &nbsp; &nbsp; [Operation: get_workflow_state](#markdown-header-op-VaultApi-get_workflow_state) (method `/blck/mfi_cl_VaultApi=>get_workflow_state`)
+## &nbsp; &nbsp; [Operation: get_workflow_states](#markdown-header-op-VaultApi-get_workflow_states) (method `/blck/mfi_cl_VaultApi=>get_workflow_states`)
+## &nbsp; &nbsp; [Operation: get_workflow_transitions](#markdown-header-op-VaultApi-get_workflow_transitions) (method `/blck/mfi_cl_VaultApi=>get_workflow_transitions`)
+## &nbsp; &nbsp; [Operation: get_workflows](#markdown-header-op-VaultApi-get_workflows) (method `/blck/mfi_cl_VaultApi=>get_workflows`)
+## &nbsp; &nbsp; [Operation: remove_item](#markdown-header-op-VaultApi-remove_item) (method `/blck/mfi_cl_VaultApi=>remove_item`)
+## &nbsp; &nbsp; [Operation: set_item_title](#markdown-header-op-VaultApi-set_item_title) (method `/blck/mfi_cl_VaultApi=>set_item_title`)
+## &nbsp; &nbsp; [Operation: set_refresh_status](#markdown-header-op-VaultApi-set_refresh_status) (method `/blck/mfi_cl_VaultApi=>set_refresh_status`)
+# API: ViewsApi
+## &nbsp; &nbsp; [Operation: get_view_contents](#markdown-header-op-ViewsApi-get_view_contents) (method `/blck/mfi_cl_ViewsApi=>get_view_contents`)
+## &nbsp; &nbsp; [Operation: get_view_contents_count](#markdown-header-op-ViewsApi-get_view_contents_count) (method `/blck/mfi_cl_ViewsApi=>get_view_contents_count`)
+## &nbsp; &nbsp; [Operation: get_view_objects](#markdown-header-op-ViewsApi-get_view_objects) (method `/blck/mfi_cl_ViewsApi=>get_view_objects`)
+# Models and Enumerations
+## &nbsp; &nbsp; [Model: AssociatedPropertyDef](#markdown-header-model-associatedprop) (type `/blck/mfi_associatedprop`)
+## &nbsp; &nbsp; [Model: Authentication](#markdown-header-model-authentication) (type `/blck/mfi_authentication`)
+## &nbsp; &nbsp; [Model: ObjVer](#markdown-header-model-obj_ver) (type `/blck/mfi_obj_ver`)
+## &nbsp; &nbsp; [Model: Lookup](#markdown-header-model-lookup) (type `/blck/mfi_lookup`)
+## &nbsp; &nbsp; [Enum: MFDataType](#markdown-header-enum-mf_data_type) (type `/blck/mfi_mf_data_type`)
+## &nbsp; &nbsp; [Model: TypedValue](#markdown-header-model-typed_value) (type `/blck/mfi_typed_value`)
+## &nbsp; &nbsp; [Model: PropertyValue](#markdown-header-model-property_value) (type `/blck/mfi_property_value`)
+## &nbsp; &nbsp; [Model: AutomaticMetadataRequestInfo](#markdown-header-model-automaticmetad) (type `/blck/mfi_automaticmetad`)
+## &nbsp; &nbsp; [Model: ClassGroup](#markdown-header-model-class_group) (type `/blck/mfi_class_group`)
+## &nbsp; &nbsp; [Model: StackTraceElement](#markdown-header-model-stacktraceelem) (type `/blck/mfi_stacktraceelem`)
+## &nbsp; &nbsp; [Model: ExceptionInfo3](#markdown-header-model-exceptioninfo3) (type `/blck/mfi_exceptioninfo3`)
+## &nbsp; &nbsp; [Model: ExceptionInfo2](#markdown-header-model-exceptioninfo2) (type `/blck/mfi_exceptioninfo2`)
+## &nbsp; &nbsp; [Model: ExceptionInfo](#markdown-header-model-exception_info) (type `/blck/mfi_exception_info`)
+## &nbsp; &nbsp; [Enum: MFObjectVersionFlag](#markdown-header-enum-mfobjectversio) (type `/blck/mfi_mfobjectversio`)
+## &nbsp; &nbsp; [Model: ObjectFile](#markdown-header-model-object_file) (type `/blck/mfi_object_file`)
+## &nbsp; &nbsp; [Model: ObjectVersion](#markdown-header-model-object_version) (type `/blck/mfi_object_version`)
+## &nbsp; &nbsp; [Model: ExtendedObjectClass](#markdown-header-model-extendedobjec2) (type `/blck/mfi_extendedobjec2`)
+## &nbsp; &nbsp; [Model: ExtendedObjectVersion](#markdown-header-model-extendedobject) (type `/blck/mfi_extendedobject`)
+## &nbsp; &nbsp; [Enum: MFFolderContentItemType](#markdown-header-enum-mffolderconten) (type `/blck/mfi_mffolderconten`)
+## &nbsp; &nbsp; [Model: ViewLocation](#markdown-header-model-view_location) (type `/blck/mfi_view_location`)
+## &nbsp; &nbsp; [Model: View](#markdown-header-model-view) (type `/blck/mfi_view`)
+## &nbsp; &nbsp; [Model: FolderContentItem](#markdown-header-model-foldercontent2) (type `/blck/mfi_foldercontent2`)
+## &nbsp; &nbsp; [Model: FolderContentItems](#markdown-header-model-foldercontenti) (type `/blck/mfi_foldercontenti`)
+## &nbsp; &nbsp; [Enum: MFAuthType](#markdown-header-enum-mf_auth_type) (type `/blck/mfi_mf_auth_type`)
+## &nbsp; &nbsp; [Enum: MFACLMode](#markdown-header-enum-mfacl_mode) (type `/blck/mfi_mfacl_mode`)
+## &nbsp; &nbsp; [Enum: MFAutomaticValueType](#markdown-header-enum-mfautomaticval) (type `/blck/mfi_mfautomaticval`)
+## &nbsp; &nbsp; [Enum: MFCheckOutStatus](#markdown-header-enum-mfcheckoutstat) (type `/blck/mfi_mfcheckoutstat`)
+## &nbsp; &nbsp; [Enum: MFExtensionAuthenticationSpecialUserType](#markdown-header-enum-mfextensionaut) (type `/blck/mfi_mfextensionaut`)
+## &nbsp; &nbsp; [Enum: MFRefreshStatus](#markdown-header-enum-mfrefreshstatu) (type `/blck/mfi_mfrefreshstatu`)
+## &nbsp; &nbsp; [Model: ObjID](#markdown-header-model-obj_id) (type `/blck/mfi_obj_id`)
+## &nbsp; &nbsp; [Model: ObjType](#markdown-header-model-obj_type) (type `/blck/mfi_obj_type`)
+## &nbsp; &nbsp; [Model: ObjectClass](#markdown-header-model-object_class) (type `/blck/mfi_object_class`)
+## &nbsp; &nbsp; [Model: UploadInfo](#markdown-header-model-upload_info) (type `/blck/mfi_upload_info`)
+## &nbsp; &nbsp; [Model: ObjectCreationInfo](#markdown-header-model-objectcreation) (type `/blck/mfi_objectcreation`)
+## &nbsp; &nbsp; [Model: ObjectVersionUpdateInformation](#markdown-header-model-objectversionu) (type `/blck/mfi_objectversionu`)
+## &nbsp; &nbsp; [Model: ObjectsUpdateInfo](#markdown-header-model-objectsupdatei) (type `/blck/mfi_objectsupdatei`)
+## &nbsp; &nbsp; [Model: ObjectWorkflowState](#markdown-header-model-objectworkflow) (type `/blck/mfi_objectworkflow`)
+## &nbsp; &nbsp; [Model: PasswordChange](#markdown-header-model-passwordchange) (type `/blck/mfi_passwordchange`)
+## &nbsp; &nbsp; [Model: PluginInfoConfiguration](#markdown-header-model-plugininfoconf) (type `/blck/mfi_plugininfoconf`)
+## &nbsp; &nbsp; [Model: PrimitiveTypeInt](#markdown-header-model-primitivetypei) (type `/blck/mfi_primitivetypei`)
+## &nbsp; &nbsp; [Model: PropertyDef](#markdown-header-model-property_def) (type `/blck/mfi_property_def`)
+## &nbsp; &nbsp; [Model: PropertyValueSuggestion](#markdown-header-model-propertyvalues) (type `/blck/mfi_propertyvalues`)
+## &nbsp; &nbsp; [Model: PublicKey](#markdown-header-model-public_key) (type `/blck/mfi_public_key`)
+## &nbsp; &nbsp; [Model: RepositoryAuthenticationStatus](#markdown-header-model-repositoryaut2) (type `/blck/mfi_repositoryaut2`)
+## &nbsp; &nbsp; [Model: RepositoryAuthentication](#markdown-header-model-repositoryaut3) (type `/blck/mfi_repositoryaut3`)
+## &nbsp; &nbsp; [Model: RepositoryAuthenticationTarget](#markdown-header-model-repositoryauth) (type `/blck/mfi_repositoryauth`)
+## &nbsp; &nbsp; [Model: ResultsObjectVersion](#markdown-header-model-resultsobjectv) (type `/blck/mfi_resultsobjectv`)
+## &nbsp; &nbsp; [Model: ValueListItem](#markdown-header-model-valuelistitem) (type `/blck/mfi_valuelistitem`)
+## &nbsp; &nbsp; [Model: ResultsValueListItem](#markdown-header-model-resultsvalueli) (type `/blck/mfi_resultsvalueli`)
+## &nbsp; &nbsp; [Model: SessionInfo](#markdown-header-model-session_info) (type `/blck/mfi_session_info`)
+## &nbsp; &nbsp; [Model: StatusResponse](#markdown-header-model-statusresponse) (type `/blck/mfi_statusresponse`)
+## &nbsp; &nbsp; [Model: Vault](#markdown-header-model-vault) (type `/blck/mfi_vault`)
+## &nbsp; &nbsp; [Model: VersionComment](#markdown-header-model-versioncomment) (type `/blck/mfi_versioncomment`)
+## &nbsp; &nbsp; [Model: WebServiceError](#markdown-header-model-webserviceerro) (type `/blck/mfi_webserviceerro`)
+## &nbsp; &nbsp; [Model: Workflow](#markdown-header-model-workflow) (type `/blck/mfi_workflow`)
+## &nbsp; &nbsp; [Model: WorkflowState](#markdown-header-model-workflow_state) (type `/blck/mfi_workflow_state`)
+
+# API: FavoritesApi
 
 All URIs are relative to *https://kb.cloudvault.m-files.com/REST*
+
+<a name="markdown-header-op-FavoritesApi-add_favorite"></a>
 
 ## operation: **add_favorite**
 Adds an object to the favorites.
@@ -82,6 +239,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: */*
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-FavoritesApi-get_favorite"></a>
 
 ## operation: **get_favorite**
 Retrieves object version information on the favorite object
@@ -167,6 +326,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-FavoritesApi-get_favorites"></a>
+
 ## operation: **get_favorites**
 Retrieves favorite objects.
 
@@ -235,6 +396,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-FavoritesApi-remove_favorite"></a>
 
 ## operation: **remove_favorite**
 Removes an object from favorites.
@@ -320,9 +483,12 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+
 # API: FilesApi
 
 All URIs are relative to *https://kb.cloudvault.m-files.com/REST*
+
+<a name="markdown-header-op-FilesApi-upload"></a>
 
 ## operation: **upload**
 Sets the current vault.
@@ -404,9 +570,12 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+
 # API: ObjectsApi
 
 All URIs are relative to *https://kb.cloudvault.m-files.com/REST*
+
+<a name="markdown-header-op-ObjectsApi-add_comment"></a>
 
 ## operation: **add_comment**
 Adds a comment to an object
@@ -505,6 +674,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ObjectsApi-add_file_content"></a>
+
 ## operation: **add_file_content**
 Adds a new file to the object.
 
@@ -602,6 +773,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ObjectsApi-create_object"></a>
+
 ## operation: **create_object**
 Creates a new object of type.
 
@@ -687,6 +860,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ObjectsApi-demote_objects"></a>
+
 ## operation: **demote_objects**
 Demotes external objects that have been previously promoted.
 
@@ -767,6 +942,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: */*
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ObjectsApi-destroy_object_version"></a>
 
 ## operation: **destroy_object_version**
 Destroys the object version. 
@@ -869,6 +1046,8 @@ Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ObjectsApi-get_automatic_metadata"></a>
+
 ## operation: **get_automatic_metadata**
 Retrieves automatic metadata based on specified request info.
 
@@ -952,6 +1131,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: */*
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ObjectsApi-get_checkout_status"></a>
 
 ## operation: **get_checkout_status**
 Retrieves the current check out status.
@@ -1043,6 +1224,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ObjectsApi-get_comments"></a>
+
 ## operation: **get_comments**
 Retrieves the comments written on the object.
 
@@ -1133,6 +1316,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ObjectsApi-get_deleted_state"></a>
+
 ## operation: **get_deleted_state**
 Retrieves the deleted status of the object.
 
@@ -1210,6 +1395,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ObjectsApi-get_file_content"></a>
 
 ## operation: **get_file_content**
 Retrieves the object file contents.
@@ -1322,6 +1509,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ObjectsApi-get_file_info"></a>
+
 ## operation: **get_file_info**
 Retrieves the object file information for the specific object file.
 
@@ -1417,6 +1606,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ObjectsApi-get_file_thumbnail"></a>
 
 ## operation: **get_file_thumbnail**
 Retrieves the file preview.
@@ -1547,6 +1738,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ObjectsApi-get_filename"></a>
+
 ## operation: **get_filename**
 Retrieves the current object file name.
 
@@ -1643,6 +1836,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ObjectsApi-get_files_info"></a>
+
 ## operation: **get_files_info**
 Retrieves the object file information for all the files on an object.
 
@@ -1733,6 +1928,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ObjectsApi-get_multi_obj_props"></a>
+
 ## operation: **get_multi_obj_props**
 Retrieves properties of multiple objects.
 
@@ -1814,6 +2011,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ObjectsApi-get_name"></a>
 
 ## operation: **get_name**
 Retrieves the object name
@@ -1906,6 +2105,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ObjectsApi-get_object_info"></a>
 
 ## operation: **get_object_info**
 Retrieves the object information.
@@ -2004,6 +2205,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ObjectsApi-get_object_thumbnail"></a>
 
 ## operation: **get_object_thumbnail**
 Retrieves the object preview.
@@ -2130,6 +2333,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ObjectsApi-get_object_versions"></a>
+
 ## operation: **get_object_versions**
 Retrieves all the available versions of the object.
 
@@ -2208,6 +2413,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ObjectsApi-get_objects"></a>
+
 ## operation: **get_objects**
 Retrieves objects.
 
@@ -2278,6 +2485,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ObjectsApi-get_objects_of_type"></a>
 
 ## operation: **get_objects_of_type**
 Collection of objects filtered by object type.
@@ -2356,6 +2565,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ObjectsApi-get_properties"></a>
 
 ## operation: **get_properties**
 Retrieves the object properties
@@ -2458,6 +2669,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ObjectsApi-get_property"></a>
+
 ## operation: **get_property**
 Retrieves a single property value
 
@@ -2555,6 +2768,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ObjectsApi-get_relationship_count"></a>
 
 ## operation: **get_relationship_count**
 Retrieves the number of related objects.
@@ -2665,6 +2880,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ObjectsApi-get_relationships"></a>
+
 ## operation: **get_relationships**
 Retrieves related objects.
 
@@ -2774,6 +2991,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ObjectsApi-get_state"></a>
+
 ## operation: **get_state**
 Retrieves the current workflow state.
 
@@ -2865,6 +3084,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ObjectsApi-get_sub_object_count"></a>
 
 ## operation: **get_sub_object_count**
 Retrieves the number of sub-objects.
@@ -2958,6 +3179,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ObjectsApi-get_sub_objects"></a>
+
 ## operation: **get_sub_objects**
 Retrieves a collection of sub-objects.
 
@@ -3050,6 +3273,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ObjectsApi-remove_file"></a>
+
 ## operation: **remove_file**
 Removes the file from the object.
 
@@ -3138,6 +3363,8 @@ Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ObjectsApi-remove_property"></a>
 
 ## operation: **remove_property**
 Removes a single property value
@@ -3237,6 +3464,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ObjectsApi-set_checkout_status"></a>
+
 ## operation: **set_checkout_status**
 Sets the check out status. This is allowed only when the object isn't checked out to someone else, that is when the check out status isn't CheckedOut.
 
@@ -3335,6 +3564,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ObjectsApi-set_deleted_state"></a>
+
 ## operation: **set_deleted_state**
 Sets the deleted status of the object.
 
@@ -3418,6 +3649,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: */*
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ObjectsApi-set_file_contents"></a>
 
 ## operation: **set_file_contents**
 Replaces the object file contents.
@@ -3522,6 +3755,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ObjectsApi-set_filename"></a>
+
 ## operation: **set_filename**
 Sets the name on the object file.
 
@@ -3625,6 +3860,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ObjectsApi-set_multi_obj_props"></a>
+
 ## operation: **set_multi_obj_props**
 Sets properties in multiple objects in one HTTP call. Can also be used to promote an unmanaged external object.
 
@@ -3705,6 +3942,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: */*
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ObjectsApi-set_name"></a>
 
 ## operation: **set_name**
 Sets the object name
@@ -3808,6 +4047,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ObjectsApi-set_properties"></a>
+
 ## operation: **set_properties**
 Sets the object properties. Properties not included in the request are removed from the object.
 
@@ -3908,6 +4149,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: */*
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ObjectsApi-set_property"></a>
 
 ## operation: **set_property**
   Sets a single property value
@@ -4013,6 +4256,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: */*
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ObjectsApi-set_workflow_state"></a>
 
 ## operation: **set_workflow_state**
 Sets the workflow state.
@@ -4121,6 +4366,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ObjectsApi-update_properties"></a>
+
 ## operation: **update_properties**
 Sets the posted properties on the object. If the object already has a value for the sent properties this value will be overridden.
 
@@ -4222,9 +4469,12 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+
 # API: RecentApi
 
 All URIs are relative to *https://kb.cloudvault.m-files.com/REST*
+
+<a name="markdown-header-op-RecentApi-add_recent_object"></a>
 
 ## operation: **add_recent_object**
 Notifies object access and adds the object to the recently accessed objects.
@@ -4309,6 +4559,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-RecentApi-get_recent_objects"></a>
+
 ## operation: **get_recent_objects**
 A collection of objects recently accessed by the current user.
 
@@ -4380,9 +4632,12 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+
 # API: RepositoriesApi
 
 All URIs are relative to *https://kb.cloudvault.m-files.com/REST*
+
+<a name="markdown-header-op-RepositoriesApi-get_repositories"></a>
 
 ## operation: **get_repositories**
 Array of repository authentication target objects showing the current external repository connections and their authentication states.
@@ -4455,6 +4710,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-RepositoriesApi-log_in_repo"></a>
 
 ## operation: **log_in_repo**
 Logs into the specified external repository connection using the provided authentication data.
@@ -4547,6 +4804,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-RepositoriesApi-log_out_repo"></a>
+
 ## operation: **log_out_repo**
 Logs out from specified external repository connection.
 
@@ -4620,9 +4879,12 @@ Name | Type | Description
  - **Accept**: application/json
 
 
+
 # API: ServerApi
 
 All URIs are relative to *https://kb.cloudvault.m-files.com/REST*
+
+<a name="markdown-header-op-ServerApi-authenticate"></a>
 
 ## operation: **authenticate**
 Creates a new authentication token based on the authentication information. See Getting started for more information on authenticating.
@@ -4714,6 +4976,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ServerApi-get_public_key"></a>
+
 ## operation: **get_public_key**
 Used to encrypt secure information before sending it to the server.
 
@@ -4784,6 +5048,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ServerApi-get_status"></a>
 
 ## operation: **get_status**
 Retrieves the server status. If the M-Files server is unavailable the service responds with 503.
@@ -4859,6 +5125,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ServerApi-get_vaults"></a>
 
 ## operation: **get_vaults**
 Retrieves the vaults from the server
@@ -4941,9 +5209,12 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+
 # API: SessionApi
 
 All URIs are relative to *https://kb.cloudvault.m-files.com/REST*
+
+<a name="markdown-header-op-SessionApi-get_auth_token"></a>
 
 ## operation: **get_auth_token**
 Retrieves the authentication token for the current session.
@@ -5016,6 +5287,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-SessionApi-get_session_info"></a>
+
 ## operation: **get_session_info**
 Retrieves the current session information.
 
@@ -5086,6 +5359,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-SessionApi-get_user_id"></a>
 
 ## operation: **get_user_id**
 Returns current logged in user ID.
@@ -5158,6 +5433,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-SessionApi-get_vault_info"></a>
+
 ## operation: **get_vault_info**
 Retrieves the current session information.
 
@@ -5228,6 +5505,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-SessionApi-log_in"></a>
 
 ## operation: **log_in**
 Performs login using the credentials in the request.
@@ -5318,6 +5597,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-SessionApi-log_out"></a>
+
 ## operation: **log_out**
 Performs a logout for the session.
 
@@ -5381,6 +5662,8 @@ This end-point does not need any parameters.
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-SessionApi-set_vault_info"></a>
 
 ## operation: **set_vault_info**
 Sets the current vault.
@@ -5467,9 +5750,12 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+
 # API: VaultApi
 
 All URIs are relative to *https://kb.cloudvault.m-files.com/REST*
+
+<a name="markdown-header-op-VaultApi-add_item"></a>
 
 ## operation: **add_item**
 Creates a new value list item in the value list.
@@ -5564,6 +5850,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-VaultApi-get_class_icon"></a>
+
 ## operation: **get_class_icon**
 Retrieves the object class icon.
 
@@ -5651,6 +5939,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/png
 
 
+<a name="markdown-header-op-VaultApi-get_class_id"></a>
+
 ## operation: **get_class_id**
 Retrieves the ID of the class with the given GUID.
 
@@ -5730,6 +6020,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-VaultApi-get_class_info"></a>
 
 ## operation: **get_class_info**
 Retrieves information on an object class.
@@ -5820,6 +6112,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-VaultApi-get_item"></a>
+
 ## operation: **get_item**
 Retrieves a single value list item information.
 
@@ -5906,6 +6200,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-VaultApi-get_item_title"></a>
+
 ## operation: **get_item_title**
 Retrieves the value list item title.
 
@@ -5991,6 +6287,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-VaultApi-get_items"></a>
 
 ## operation: **get_items**
 Retrieves value list item information.
@@ -6094,6 +6392,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-VaultApi-get_object_classes"></a>
+
 ## operation: **get_object_classes**
 Retrieves information on all object classes.
 
@@ -6176,6 +6476,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-VaultApi-get_object_type"></a>
+
 ## operation: **get_object_type**
 Retrieves information on an object type.
 
@@ -6255,6 +6557,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-VaultApi-get_object_type_classes"></a>
 
 ## operation: **get_object_type_classes**
 Retrieves a collection of object classes for the provided object type.
@@ -6336,6 +6640,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-VaultApi-get_object_type_icon"></a>
+
 ## operation: **get_object_type_icon**
 Retrieves the object type icon.
 
@@ -6416,6 +6722,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/png
 
 
+<a name="markdown-header-op-VaultApi-get_object_types"></a>
+
 ## operation: **get_object_types**
 Retrieves information on real object types.
 
@@ -6486,6 +6794,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-VaultApi-get_value_list"></a>
 
 ## operation: **get_value_list**
 Retrieves information on a single value list.
@@ -6567,6 +6877,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-VaultApi-get_value_lists"></a>
+
 ## operation: **get_value_lists**
   Retrieves information on all value lists.
 
@@ -6638,6 +6950,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-VaultApi-get_vault_properties"></a>
+
 ## operation: **get_vault_properties**
 Retrieves information on all property definitions.
 
@@ -6708,6 +7022,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-VaultApi-get_vault_property"></a>
 
 ## operation: **get_vault_property**
 Retrieves information on a single property definition.
@@ -6789,6 +7105,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-VaultApi-get_workflow"></a>
+
 ## operation: **get_workflow**
 Retrieves information on a single workflow.
 
@@ -6868,6 +7186,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-VaultApi-get_workflow_state"></a>
 
 ## operation: **get_workflow_state**
 Retrieves information on the specific workflow state.
@@ -6957,6 +7277,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-VaultApi-get_workflow_states"></a>
+
 ## operation: **get_workflow_states**
 Retrieves information on all workflow states of the given workflow.
 
@@ -7044,6 +7366,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-VaultApi-get_workflow_transitions"></a>
 
 ## operation: **get_workflow_transitions**
 Retrieves information on valid state transitions in the current workflow.
@@ -7133,6 +7457,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-VaultApi-get_workflows"></a>
+
 ## operation: **get_workflows**
 Retrieves information on all workflows.
 
@@ -7203,6 +7529,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-VaultApi-remove_item"></a>
 
 ## operation: **remove_item**
 Deletes a value list item.
@@ -7284,6 +7612,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-VaultApi-set_item_title"></a>
 
 ## operation: **set_item_title**
 Changes the value list item title.
@@ -7377,6 +7707,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-VaultApi-set_refresh_status"></a>
+
 ## operation: **set_refresh_status**
 Sets the refresh status to either Full or Quick.
 
@@ -7463,9 +7795,12 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+
 # API: ViewsApi
 
 All URIs are relative to *https://kb.cloudvault.m-files.com/REST*
+
+<a name="markdown-header-op-ViewsApi-get_view_contents"></a>
 
 ## operation: **get_view_contents**
 Retrieves the view contents
@@ -7548,6 +7883,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ViewsApi-get_view_contents_count"></a>
+
 ## operation: **get_view_contents_count**
 Retrieves the amount of items in the view.
 
@@ -7628,6 +7965,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ViewsApi-get_view_objects"></a>
 
 ## operation: **get_view_objects**
 Searches for objects within the view

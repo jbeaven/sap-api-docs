@@ -1,6 +1,18 @@
 # API: DefaultApi
+## &nbsp; &nbsp; [Operation: get_doc_attr](#markdown-header-op-DefaultApi-get_doc_attr) (method `/blck/sp_cl_DefaultApi=>get_doc_attr`)
+## &nbsp; &nbsp; [Operation: get_doc_data](#markdown-header-op-DefaultApi-get_doc_data) (method `/blck/sp_cl_DefaultApi=>get_doc_data`)
+## &nbsp; &nbsp; [Operation: get_docs](#markdown-header-op-DefaultApi-get_docs) (method `/blck/sp_cl_DefaultApi=>get_docs`)
+## &nbsp; &nbsp; [Operation: set_doc_attr](#markdown-header-op-DefaultApi-set_doc_attr) (method `/blck/sp_cl_DefaultApi=>set_doc_attr`)
+# Models and Enumerations
+## &nbsp; &nbsp; [Model: DocAttrValue](#markdown-header-model-doc_attr_value) (type `/blck/sp_doc_attr_value`)
+## &nbsp; &nbsp; [Model: SEALDoc](#markdown-header-model-seal_doc) (type `/blck/sp_seal_doc`)
+## &nbsp; &nbsp; [Model: SEALDocList](#markdown-header-model-seal_doc_list) (type `/blck/sp_seal_doc_list`)
+
+# API: DefaultApi
 
 All URIs are relative to *https://s3alsystems.sharepoint.com/sites/job*
+
+<a name="markdown-header-op-DefaultApi-get_doc_attr"></a>
 
 ## operation: **get_doc_attr**
 Get attribute of document
@@ -97,6 +109,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-DefaultApi-get_doc_data"></a>
+
 ## operation: **get_doc_data**
 Retrieve data of document
 
@@ -177,6 +191,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/octet-stream
 
+
+<a name="markdown-header-op-DefaultApi-get_docs"></a>
 
 ## operation: **get_docs**
 Retrieve list of documents matching criteria
@@ -265,6 +281,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-DefaultApi-set_doc_attr"></a>
 
 ## operation: **set_doc_attr**
 Set properties of document

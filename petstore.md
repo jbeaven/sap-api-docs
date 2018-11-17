@@ -1,6 +1,39 @@
 # API: PetApi
+## &nbsp; &nbsp; [Operation: add_pet](#markdown-header-op-PetApi-add_pet) (method `/blck/pet_cl_PetApi=>add_pet`)
+## &nbsp; &nbsp; [Operation: delete_pet](#markdown-header-op-PetApi-delete_pet) (method `/blck/pet_cl_PetApi=>delete_pet`)
+## &nbsp; &nbsp; [Operation: find_pets_by_status](#markdown-header-op-PetApi-find_pets_by_status) (method `/blck/pet_cl_PetApi=>find_pets_by_status`)
+## &nbsp; &nbsp; [Operation: find_pets_by_tags](#markdown-header-op-PetApi-find_pets_by_tags) (method `/blck/pet_cl_PetApi=>find_pets_by_tags`)
+## &nbsp; &nbsp; [Operation: get_pet_by_id](#markdown-header-op-PetApi-get_pet_by_id) (method `/blck/pet_cl_PetApi=>get_pet_by_id`)
+## &nbsp; &nbsp; [Operation: update_pet](#markdown-header-op-PetApi-update_pet) (method `/blck/pet_cl_PetApi=>update_pet`)
+## &nbsp; &nbsp; [Operation: update_pet_with_form](#markdown-header-op-PetApi-update_pet_with_form) (method `/blck/pet_cl_PetApi=>update_pet_with_form`)
+## &nbsp; &nbsp; [Operation: upload_file](#markdown-header-op-PetApi-upload_file) (method `/blck/pet_cl_PetApi=>upload_file`)
+# API: StoreApi
+## &nbsp; &nbsp; [Operation: delete_order](#markdown-header-op-StoreApi-delete_order) (method `/blck/pet_cl_StoreApi=>delete_order`)
+## &nbsp; &nbsp; [Operation: get_inventory](#markdown-header-op-StoreApi-get_inventory) (method `/blck/pet_cl_StoreApi=>get_inventory`)
+## &nbsp; &nbsp; [Operation: get_order_by_id](#markdown-header-op-StoreApi-get_order_by_id) (method `/blck/pet_cl_StoreApi=>get_order_by_id`)
+## &nbsp; &nbsp; [Operation: place_order](#markdown-header-op-StoreApi-place_order) (method `/blck/pet_cl_StoreApi=>place_order`)
+# API: UserApi
+## &nbsp; &nbsp; [Operation: create_user](#markdown-header-op-UserApi-create_user) (method `/blck/pet_cl_UserApi=>create_user`)
+## &nbsp; &nbsp; [Operation: create_users_with_array_input](#markdown-header-op-UserApi-create_users_with_array_input) (method `/blck/pet_cl_UserApi=>create_users_with_array_input`)
+## &nbsp; &nbsp; [Operation: create_users_with_list_input](#markdown-header-op-UserApi-create_users_with_list_input) (method `/blck/pet_cl_UserApi=>create_users_with_list_input`)
+## &nbsp; &nbsp; [Operation: delete_user](#markdown-header-op-UserApi-delete_user) (method `/blck/pet_cl_UserApi=>delete_user`)
+## &nbsp; &nbsp; [Operation: get_user_by_name](#markdown-header-op-UserApi-get_user_by_name) (method `/blck/pet_cl_UserApi=>get_user_by_name`)
+## &nbsp; &nbsp; [Operation: login_user](#markdown-header-op-UserApi-login_user) (method `/blck/pet_cl_UserApi=>login_user`)
+## &nbsp; &nbsp; [Operation: logout_user](#markdown-header-op-UserApi-logout_user) (method `/blck/pet_cl_UserApi=>logout_user`)
+## &nbsp; &nbsp; [Operation: update_user](#markdown-header-op-UserApi-update_user) (method `/blck/pet_cl_UserApi=>update_user`)
+# Models and Enumerations
+## &nbsp; &nbsp; [Model: ApiResponse](#markdown-header-model-api_response) (type `/blck/pet_api_response`)
+## &nbsp; &nbsp; [Model: Category](#markdown-header-model-category) (type `/blck/pet_category`)
+## &nbsp; &nbsp; [Model: Order](#markdown-header-model-order) (type `/blck/pet_order`)
+## &nbsp; &nbsp; [Model: Tag](#markdown-header-model-tag) (type `/blck/pet_tag`)
+## &nbsp; &nbsp; [Model: Pet](#markdown-header-model-pet) (type `/blck/pet_pet`)
+## &nbsp; &nbsp; [Model: User](#markdown-header-model-user) (type `/blck/pet_user`)
+
+# API: PetApi
 
 All URIs are relative to *https://petstore.swagger.io/v2*
+
+<a name="markdown-header-op-PetApi-add_pet"></a>
 
 ## operation: **add_pet**
 Add a new pet to the store
@@ -76,6 +109,8 @@ Name | Type | Description
  - **Content-Type**: application/json, application/xml
  - **Accept**: Not defined
 
+
+<a name="markdown-header-op-PetApi-delete_pet"></a>
 
 ## operation: **delete_pet**
 Deletes a pet
@@ -154,6 +189,8 @@ Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
+<a name="markdown-header-op-PetApi-find_pets_by_status"></a>
 
 ## operation: **find_pets_by_status**
 Finds Pets by status
@@ -238,6 +275,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/xml, application/json
 
 
+<a name="markdown-header-op-PetApi-find_pets_by_tags"></a>
+
 ## operation: **find_pets_by_tags**
 Finds Pets by tags
 
@@ -321,6 +360,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/xml, application/json
 
 
+<a name="markdown-header-op-PetApi-get_pet_by_id"></a>
+
 ## operation: **get_pet_by_id**
 Find pet by ID
 
@@ -403,6 +444,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/xml, application/json
 
 
+<a name="markdown-header-op-PetApi-update_pet"></a>
+
 ## operation: **update_pet**
 Update an existing pet
 
@@ -481,6 +524,8 @@ Name | Type | Description
  - **Content-Type**: application/json, application/xml
  - **Accept**: Not defined
 
+
+<a name="markdown-header-op-PetApi-update_pet_with_form"></a>
 
 ## operation: **update_pet_with_form**
 Updates a pet in the store with form data
@@ -563,6 +608,8 @@ Name | Type | Description
  - **Content-Type**: application/x-www-form-urlencoded
  - **Accept**: Not defined
 
+
+<a name="markdown-header-op-PetApi-upload_file"></a>
 
 ## operation: **upload_file**
 uploads an image
@@ -652,9 +699,12 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+
 # API: StoreApi
 
 All URIs are relative to *https://petstore.swagger.io/v2*
+
+<a name="markdown-header-op-StoreApi-delete_order"></a>
 
 ## operation: **delete_order**
 Delete purchase order by ID
@@ -725,6 +775,8 @@ Name | Type | Description
  - **Accept**: Not defined
 
 
+<a name="markdown-header-op-StoreApi-get_inventory"></a>
+
 ## operation: **get_inventory**
 Returns pet inventories by status
 
@@ -790,6 +842,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-StoreApi-get_order_by_id"></a>
 
 ## operation: **get_order_by_id**
 Find purchase order by ID
@@ -870,6 +924,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/xml, application/json
 
 
+<a name="markdown-header-op-StoreApi-place_order"></a>
+
 ## operation: **place_order**
 Place an order for a pet
 
@@ -949,9 +1005,12 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/xml, application/json
 
 
+
 # API: UserApi
 
 All URIs are relative to *https://petstore.swagger.io/v2*
+
+<a name="markdown-header-op-UserApi-create_user"></a>
 
 ## operation: **create_user**
 Create user
@@ -1026,6 +1085,8 @@ Name | Type | Description
  - **Accept**: Not defined
 
 
+<a name="markdown-header-op-UserApi-create_users_with_array_input"></a>
+
 ## operation: **create_users_with_array_input**
 Creates list of users with given input array
 
@@ -1092,6 +1153,8 @@ Name | Type | Description
  - **Accept**: Not defined
 
 
+<a name="markdown-header-op-UserApi-create_users_with_list_input"></a>
+
 ## operation: **create_users_with_list_input**
 Creates list of users with given input array
 
@@ -1157,6 +1220,8 @@ Name | Type | Description
  - **Content-Type**: */*
  - **Accept**: Not defined
 
+
+<a name="markdown-header-op-UserApi-delete_user"></a>
 
 ## operation: **delete_user**
 Delete user
@@ -1226,6 +1291,8 @@ Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
+<a name="markdown-header-op-UserApi-get_user_by_name"></a>
 
 ## operation: **get_user_by_name**
 Get user by user name
@@ -1303,6 +1370,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/xml, application/json
 
+
+<a name="markdown-header-op-UserApi-login_user"></a>
 
 ## operation: **login_user**
 Logs user into the system
@@ -1385,6 +1454,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/xml, application/json
 
 
+<a name="markdown-header-op-UserApi-logout_user"></a>
+
 ## operation: **logout_user**
 Logs out current logged in user session
 
@@ -1438,6 +1509,8 @@ This end-point does not need any parameters.
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
+
+<a name="markdown-header-op-UserApi-update_user"></a>
 
 ## operation: **update_user**
 Updated user

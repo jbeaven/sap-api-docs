@@ -1,6 +1,20 @@
 # API: SearchApi
+## &nbsp; &nbsp; [Operation: query](#markdown-header-op-SearchApi-query) (method `/blck/sps_cl_SearchApi=>query`)
+# Models and Enumerations
+## &nbsp; &nbsp; [Model: Cells](#markdown-header-model-cells) (type `/blck/sps_cells`)
+## &nbsp; &nbsp; [Model: Properties](#markdown-header-model-properties) (type `/blck/sps_properties`)
+## &nbsp; &nbsp; [Model: Rows](#markdown-header-model-rows) (type `/blck/sps_rows`)
+## &nbsp; &nbsp; [Model: Table](#markdown-header-model-table) (type `/blck/sps_table`)
+## &nbsp; &nbsp; [Model: RelevantResults](#markdown-header-model-relevantresult) (type `/blck/sps_relevantresult`)
+## &nbsp; &nbsp; [Model: PrimaryQueryResult](#markdown-header-model-primaryqueryre) (type `/blck/sps_primaryqueryre`)
+## &nbsp; &nbsp; [Model: Properties2](#markdown-header-model-properties2) (type `/blck/sps_properties2`)
+## &nbsp; &nbsp; [Model: Query](#markdown-header-model-query) (type `/blck/sps_query`)
+
+# API: SearchApi
 
 All URIs are relative to *https://<<SITEURL.SHAREPOINT.COM>>/_api*
+
+<a name="markdown-header-op-SearchApi-query"></a>
 
 ## operation: **query**
 

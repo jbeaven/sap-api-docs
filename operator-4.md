@@ -1,6 +1,117 @@
 # API: CollectionsApi
+## &nbsp; &nbsp; [Operation: services_sid_repo_command_post](#markdown-header-op-CollectionsApi-services_sid_repo_command_post) (method `/blck/op4_cl_CollectionsApi=>services_sid_repo_command_post`)
+## &nbsp; &nbsp; [Operation: services_sid_repo_get](#markdown-header-op-CollectionsApi-services_sid_repo_get) (method `/blck/op4_cl_CollectionsApi=>services_sid_repo_get`)
+## &nbsp; &nbsp; [Operation: services_sid_repo_post](#markdown-header-op-CollectionsApi-services_sid_repo_post) (method `/blck/op4_cl_CollectionsApi=>services_sid_repo_post`)
+## &nbsp; &nbsp; [Operation: services_sid_repo_uuid_delete](#markdown-header-op-CollectionsApi-services_sid_repo_uuid_delete) (method `/blck/op4_cl_CollectionsApi=>services_sid_repo_uuid_delete`)
+## &nbsp; &nbsp; [Operation: services_sid_repo_uuid_get](#markdown-header-op-CollectionsApi-services_sid_repo_uuid_get) (method `/blck/op4_cl_CollectionsApi=>services_sid_repo_uuid_get`)
+## &nbsp; &nbsp; [Operation: services_sid_repo_uuid_patch](#markdown-header-op-CollectionsApi-services_sid_repo_uuid_patch) (method `/blck/op4_cl_CollectionsApi=>services_sid_repo_uuid_patch`)
+## &nbsp; &nbsp; [Operation: services_sid_repo_uuid_post](#markdown-header-op-CollectionsApi-services_sid_repo_uuid_post) (method `/blck/op4_cl_CollectionsApi=>services_sid_repo_uuid_post`)
+## &nbsp; &nbsp; [Operation: services_sid_repo_uuid_put](#markdown-header-op-CollectionsApi-services_sid_repo_uuid_put) (method `/blck/op4_cl_CollectionsApi=>services_sid_repo_uuid_put`)
+## &nbsp; &nbsp; [Operation: servicessidrepocommandcidget](#markdown-header-op-CollectionsApi-servicessidrepocommandcidget) (method `/blck/op4_cl_CollectionsApi=>servicessidrepocommandcidget`)
+## &nbsp; &nbsp; [Operation: servicessidrepouuidchildrenget](#markdown-header-op-CollectionsApi-servicessidrepouuidchildrenget) (method `/blck/op4_cl_CollectionsApi=>servicessidrepouuidchildrenget`)
+# API: ConfigurationApi
+## &nbsp; &nbsp; [Operation: config_delete](#markdown-header-op-ConfigurationApi-config_delete) (method `/blck/op4_cl_ConfigurationApi=>config_delete`)
+## &nbsp; &nbsp; [Operation: config_get](#markdown-header-op-ConfigurationApi-config_get) (method `/blck/op4_cl_ConfigurationApi=>config_get`)
+## &nbsp; &nbsp; [Operation: config_put](#markdown-header-op-ConfigurationApi-config_put) (method `/blck/op4_cl_ConfigurationApi=>config_put`)
+# API: ConnectorsApi
+## &nbsp; &nbsp; [Operation: services_sid_get](#markdown-header-op-ConnectorsApi-services_sid_get) (method `/blck/op4_cl_ConnectorsApi=>services_sid_get`)
+## &nbsp; &nbsp; [Operation: servicessidconnectortaskspost](#markdown-header-op-ConnectorsApi-servicessidconnectortaskspost) (method `/blck/op4_cl_ConnectorsApi=>servicessidconnectortaskspost`)
+## &nbsp; &nbsp; [Operation: servicessidconnectortasksput](#markdown-header-op-ConnectorsApi-servicessidconnectortasksput) (method `/blck/op4_cl_ConnectorsApi=>servicessidconnectortasksput`)
+## &nbsp; &nbsp; [Operation: ui_get](#markdown-header-op-ConnectorsApi-ui_get) (method `/blck/op4_cl_ConnectorsApi=>ui_get`)
+## &nbsp; &nbsp; [Operation: ui_pid_get](#markdown-header-op-ConnectorsApi-ui_pid_get) (method `/blck/op4_cl_ConnectorsApi=>ui_pid_get`)
+# API: DocumentsApi
+## &nbsp; &nbsp; [Operation: services_sid_repo_command_post](#markdown-header-op-DocumentsApi-services_sid_repo_command_post) (method `/blck/op4_cl_DocumentsApi=>services_sid_repo_command_post`)
+## &nbsp; &nbsp; [Operation: services_sid_repo_get](#markdown-header-op-DocumentsApi-services_sid_repo_get) (method `/blck/op4_cl_DocumentsApi=>services_sid_repo_get`)
+## &nbsp; &nbsp; [Operation: services_sid_repo_post](#markdown-header-op-DocumentsApi-services_sid_repo_post) (method `/blck/op4_cl_DocumentsApi=>services_sid_repo_post`)
+## &nbsp; &nbsp; [Operation: services_sid_repo_uuid_delete](#markdown-header-op-DocumentsApi-services_sid_repo_uuid_delete) (method `/blck/op4_cl_DocumentsApi=>services_sid_repo_uuid_delete`)
+## &nbsp; &nbsp; [Operation: services_sid_repo_uuid_get](#markdown-header-op-DocumentsApi-services_sid_repo_uuid_get) (method `/blck/op4_cl_DocumentsApi=>services_sid_repo_uuid_get`)
+## &nbsp; &nbsp; [Operation: services_sid_repo_uuid_patch](#markdown-header-op-DocumentsApi-services_sid_repo_uuid_patch) (method `/blck/op4_cl_DocumentsApi=>services_sid_repo_uuid_patch`)
+## &nbsp; &nbsp; [Operation: services_sid_repo_uuid_put](#markdown-header-op-DocumentsApi-services_sid_repo_uuid_put) (method `/blck/op4_cl_DocumentsApi=>services_sid_repo_uuid_put`)
+## &nbsp; &nbsp; [Operation: servicessidrepocommandcidget](#markdown-header-op-DocumentsApi-servicessidrepocommandcidget) (method `/blck/op4_cl_DocumentsApi=>servicessidrepocommandcidget`)
+## &nbsp; &nbsp; [Operation: servicessidrepouuidcontentdele](#markdown-header-op-DocumentsApi-servicessidrepouuidcontentdele) (method `/blck/op4_cl_DocumentsApi=>servicessidrepouuidcontentdele`)
+## &nbsp; &nbsp; [Operation: servicessidrepouuidcontentget](#markdown-header-op-DocumentsApi-servicessidrepouuidcontentget) (method `/blck/op4_cl_DocumentsApi=>servicessidrepouuidcontentget`)
+## &nbsp; &nbsp; [Operation: servicessidrepouuidcontentput](#markdown-header-op-DocumentsApi-servicessidrepouuidcontentput) (method `/blck/op4_cl_DocumentsApi=>servicessidrepouuidcontentput`)
+## &nbsp; &nbsp; [Operation: servicessidrepouuidpreviewget](#markdown-header-op-DocumentsApi-servicessidrepouuidpreviewget) (method `/blck/op4_cl_DocumentsApi=>servicessidrepouuidpreviewget`)
+# API: FunctionsApi
+## &nbsp; &nbsp; [Operation: services_sid_function_fid_post](#markdown-header-op-FunctionsApi-services_sid_function_fid_post) (method `/blck/op4_cl_FunctionsApi=>services_sid_function_fid_post`)
+## &nbsp; &nbsp; [Operation: services_sid_function_get](#markdown-header-op-FunctionsApi-services_sid_function_get) (method `/blck/op4_cl_FunctionsApi=>services_sid_function_get`)
+# API: ListsApi
+## &nbsp; &nbsp; [Operation: lists_get](#markdown-header-op-ListsApi-lists_get) (method `/blck/op4_cl_ListsApi=>lists_get`)
+## &nbsp; &nbsp; [Operation: lists_lid_delete](#markdown-header-op-ListsApi-lists_lid_delete) (method `/blck/op4_cl_ListsApi=>lists_lid_delete`)
+## &nbsp; &nbsp; [Operation: lists_lid_get](#markdown-header-op-ListsApi-lists_lid_get) (method `/blck/op4_cl_ListsApi=>lists_lid_get`)
+## &nbsp; &nbsp; [Operation: lists_lid_items_get](#markdown-header-op-ListsApi-lists_lid_items_get) (method `/blck/op4_cl_ListsApi=>lists_lid_items_get`)
+## &nbsp; &nbsp; [Operation: lists_lid_items_id_delete](#markdown-header-op-ListsApi-lists_lid_items_id_delete) (method `/blck/op4_cl_ListsApi=>lists_lid_items_id_delete`)
+## &nbsp; &nbsp; [Operation: lists_lid_items_id_get](#markdown-header-op-ListsApi-lists_lid_items_id_get) (method `/blck/op4_cl_ListsApi=>lists_lid_items_id_get`)
+## &nbsp; &nbsp; [Operation: lists_lid_items_id_patch](#markdown-header-op-ListsApi-lists_lid_items_id_patch) (method `/blck/op4_cl_ListsApi=>lists_lid_items_id_patch`)
+## &nbsp; &nbsp; [Operation: lists_lid_items_id_put](#markdown-header-op-ListsApi-lists_lid_items_id_put) (method `/blck/op4_cl_ListsApi=>lists_lid_items_id_put`)
+## &nbsp; &nbsp; [Operation: lists_lid_items_post](#markdown-header-op-ListsApi-lists_lid_items_post) (method `/blck/op4_cl_ListsApi=>lists_lid_items_post`)
+## &nbsp; &nbsp; [Operation: lists_lid_patch](#markdown-header-op-ListsApi-lists_lid_patch) (method `/blck/op4_cl_ListsApi=>lists_lid_patch`)
+## &nbsp; &nbsp; [Operation: lists_lid_put](#markdown-header-op-ListsApi-lists_lid_put) (method `/blck/op4_cl_ListsApi=>lists_lid_put`)
+## &nbsp; &nbsp; [Operation: lists_post](#markdown-header-op-ListsApi-lists_post) (method `/blck/op4_cl_ListsApi=>lists_post`)
+# API: MessagesApi
+## &nbsp; &nbsp; [Operation: messages_get](#markdown-header-op-MessagesApi-messages_get) (method `/blck/op4_cl_MessagesApi=>messages_get`)
+## &nbsp; &nbsp; [Operation: messages_post](#markdown-header-op-MessagesApi-messages_post) (method `/blck/op4_cl_MessagesApi=>messages_post`)
+## &nbsp; &nbsp; [Operation: messages_uuid_patch](#markdown-header-op-MessagesApi-messages_uuid_patch) (method `/blck/op4_cl_MessagesApi=>messages_uuid_patch`)
+# API: PanelsApi
+## &nbsp; &nbsp; [Operation: panels_get](#markdown-header-op-PanelsApi-panels_get) (method `/blck/op4_cl_PanelsApi=>panels_get`)
+## &nbsp; &nbsp; [Operation: panels_pid_delete](#markdown-header-op-PanelsApi-panels_pid_delete) (method `/blck/op4_cl_PanelsApi=>panels_pid_delete`)
+## &nbsp; &nbsp; [Operation: panels_pid_get](#markdown-header-op-PanelsApi-panels_pid_get) (method `/blck/op4_cl_PanelsApi=>panels_pid_get`)
+## &nbsp; &nbsp; [Operation: panels_pid_put](#markdown-header-op-PanelsApi-panels_pid_put) (method `/blck/op4_cl_PanelsApi=>panels_pid_put`)
+## &nbsp; &nbsp; [Operation: panels_post](#markdown-header-op-PanelsApi-panels_post) (method `/blck/op4_cl_PanelsApi=>panels_post`)
+## &nbsp; &nbsp; [Operation: ui_get](#markdown-header-op-PanelsApi-ui_get) (method `/blck/op4_cl_PanelsApi=>ui_get`)
+## &nbsp; &nbsp; [Operation: ui_pid_get](#markdown-header-op-PanelsApi-ui_pid_get) (method `/blck/op4_cl_PanelsApi=>ui_pid_get`)
+# API: ServicesApi
+## &nbsp; &nbsp; [Operation: services_get](#markdown-header-op-ServicesApi-services_get) (method `/blck/op4_cl_ServicesApi=>services_get`)
+## &nbsp; &nbsp; [Operation: services_sid_get](#markdown-header-op-ServicesApi-services_sid_get) (method `/blck/op4_cl_ServicesApi=>services_sid_get`)
+# API: SessionsApi
+## &nbsp; &nbsp; [Operation: sessions_get](#markdown-header-op-SessionsApi-sessions_get) (method `/blck/op4_cl_SessionsApi=>sessions_get`)
+# API: TasksApi
+## &nbsp; &nbsp; [Operation: services_sid_tasks_get](#markdown-header-op-TasksApi-services_sid_tasks_get) (method `/blck/op4_cl_TasksApi=>services_sid_tasks_get`)
+## &nbsp; &nbsp; [Operation: services_sid_tasks_post](#markdown-header-op-TasksApi-services_sid_tasks_post) (method `/blck/op4_cl_TasksApi=>services_sid_tasks_post`)
+## &nbsp; &nbsp; [Operation: services_sid_tasks_tid_delete](#markdown-header-op-TasksApi-services_sid_tasks_tid_delete) (method `/blck/op4_cl_TasksApi=>services_sid_tasks_tid_delete`)
+## &nbsp; &nbsp; [Operation: services_sid_tasks_tid_get](#markdown-header-op-TasksApi-services_sid_tasks_tid_get) (method `/blck/op4_cl_TasksApi=>services_sid_tasks_tid_get`)
+## &nbsp; &nbsp; [Operation: services_sid_tasks_tid_patch](#markdown-header-op-TasksApi-services_sid_tasks_tid_patch) (method `/blck/op4_cl_TasksApi=>services_sid_tasks_tid_patch`)
+## &nbsp; &nbsp; [Operation: services_sid_tasks_tid_put](#markdown-header-op-TasksApi-services_sid_tasks_tid_put) (method `/blck/op4_cl_TasksApi=>services_sid_tasks_tid_put`)
+## &nbsp; &nbsp; [Operation: servicessidtaskstidactionpost](#markdown-header-op-TasksApi-servicessidtaskstidactionpost) (method `/blck/op4_cl_TasksApi=>servicessidtaskstidactionpost`)
+## &nbsp; &nbsp; [Operation: servicessidtaskstidinputget](#markdown-header-op-TasksApi-servicessidtaskstidinputget) (method `/blck/op4_cl_TasksApi=>servicessidtaskstidinputget`)
+## &nbsp; &nbsp; [Operation: servicessidtaskstidinputiddele](#markdown-header-op-TasksApi-servicessidtaskstidinputiddele) (method `/blck/op4_cl_TasksApi=>servicessidtaskstidinputiddele`)
+## &nbsp; &nbsp; [Operation: servicessidtaskstidinputidget](#markdown-header-op-TasksApi-servicessidtaskstidinputidget) (method `/blck/op4_cl_TasksApi=>servicessidtaskstidinputidget`)
+## &nbsp; &nbsp; [Operation: servicessidtaskstidinputidpatc](#markdown-header-op-TasksApi-servicessidtaskstidinputidpatc) (method `/blck/op4_cl_TasksApi=>servicessidtaskstidinputidpatc`)
+## &nbsp; &nbsp; [Operation: servicessidtaskstidinputidput](#markdown-header-op-TasksApi-servicessidtaskstidinputidput) (method `/blck/op4_cl_TasksApi=>servicessidtaskstidinputidput`)
+## &nbsp; &nbsp; [Operation: servicessidtaskstidinputpatch](#markdown-header-op-TasksApi-servicessidtaskstidinputpatch) (method `/blck/op4_cl_TasksApi=>servicessidtaskstidinputpatch`)
+## &nbsp; &nbsp; [Operation: servicessidtaskstidinputpost](#markdown-header-op-TasksApi-servicessidtaskstidinputpost) (method `/blck/op4_cl_TasksApi=>servicessidtaskstidinputpost`)
+## &nbsp; &nbsp; [Operation: servicessidtaskstidinputput](#markdown-header-op-TasksApi-servicessidtaskstidinputput) (method `/blck/op4_cl_TasksApi=>servicessidtaskstidinputput`)
+## &nbsp; &nbsp; [Operation: servicessidtaskstidoutputget](#markdown-header-op-TasksApi-servicessidtaskstidoutputget) (method `/blck/op4_cl_TasksApi=>servicessidtaskstidoutputget`)
+## &nbsp; &nbsp; [Operation: servicessidtaskstidoutputidget](#markdown-header-op-TasksApi-servicessidtaskstidoutputidget) (method `/blck/op4_cl_TasksApi=>servicessidtaskstidoutputidget`)
+## &nbsp; &nbsp; [Operation: tasks_get](#markdown-header-op-TasksApi-tasks_get) (method `/blck/op4_cl_TasksApi=>tasks_get`)
+# Models and Enumerations
+## &nbsp; &nbsp; [Model: Action](#markdown-header-model-action) (type `/blck/op4_action`)
+## &nbsp; &nbsp; [Model: BaseRepoEntry](#markdown-header-model-baserepoentry) (type `/blck/op4_baserepoentry`)
+## &nbsp; &nbsp; [Model: CID](#markdown-header-model-cid) (type `/blck/op4_cid`)
+## &nbsp; &nbsp; [Model: CidCommand](#markdown-header-model-cid_command) (type `/blck/op4_cid_command`)
+## &nbsp; &nbsp; [Model: ListItem](#markdown-header-model-list_item) (type `/blck/op4_list_item`)
+## &nbsp; &nbsp; [Enum: StatusType](#markdown-header-enum-status_type) (type `/blck/op4_status_type`)
+## &nbsp; &nbsp; [Model: CidStatus](#markdown-header-model-cid_status) (type `/blck/op4_cid_status`)
+## &nbsp; &nbsp; [Model: CidTaskdata](#markdown-header-model-cid_taskdata) (type `/blck/op4_cid_taskdata`)
+## &nbsp; &nbsp; [Model: Command](#markdown-header-model-command) (type `/blck/op4_command`)
+## &nbsp; &nbsp; [Model: CommandStatus](#markdown-header-model-command_status) (type `/blck/op4_command_status`)
+## &nbsp; &nbsp; [Model: ConfigItem](#markdown-header-model-config_item) (type `/blck/op4_config_item`)
+## &nbsp; &nbsp; [Model: Error](#markdown-header-model-error) (type `/blck/op4_error`)
+## &nbsp; &nbsp; [Model: Functions](#markdown-header-model-functions) (type `/blck/op4_functions`)
+## &nbsp; &nbsp; [Model: List](#markdown-header-model-list) (type `/blck/op4_list`)
+## &nbsp; &nbsp; [Model: Message](#markdown-header-model-message) (type `/blck/op4_message`)
+## &nbsp; &nbsp; [Model: PanelItem](#markdown-header-model-panel_item) (type `/blck/op4_panel_item`)
+## &nbsp; &nbsp; [Model: RepoEntry](#markdown-header-model-repo_entry) (type `/blck/op4_repo_entry`)
+## &nbsp; &nbsp; [Model: Service](#markdown-header-model-service) (type `/blck/op4_service`)
+## &nbsp; &nbsp; [Model: SessionInfo](#markdown-header-model-session_info) (type `/blck/op4_session_info`)
+## &nbsp; &nbsp; [Model: Task](#markdown-header-model-task) (type `/blck/op4_task`)
+## &nbsp; &nbsp; [Model: TaskMetadata](#markdown-header-model-task_metadata) (type `/blck/op4_task_metadata`)
+
+# API: CollectionsApi
 
 All URIs are relative to *https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1*
+
+<a name="markdown-header-op-CollectionsApi-services_sid_repo_command_post"></a>
 
 ## operation: **services_sid_repo_command_post**
 Create new command resource.
@@ -127,6 +238,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-CollectionsApi-services_sid_repo_get"></a>
 
 ## operation: **services_sid_repo_get**
 Access the document repository within a service
@@ -275,6 +388,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-CollectionsApi-services_sid_repo_post"></a>
+
 ## operation: **services_sid_repo_post**
 Create new entry in the root collection of the repository.
 
@@ -397,6 +512,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-CollectionsApi-services_sid_repo_uuid_delete"></a>
+
 ## operation: **services_sid_repo_uuid_delete**
 Delete the current entry.
 
@@ -512,6 +629,8 @@ Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-CollectionsApi-services_sid_repo_uuid_get"></a>
+
 ## operation: **services_sid_repo_uuid_get**
 Retrieve metadata of a specific entry (document or collection).
 
@@ -625,6 +744,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-CollectionsApi-services_sid_repo_uuid_patch"></a>
 
 ## operation: **services_sid_repo_uuid_patch**
 Update entry metadata (partial, merge)
@@ -754,6 +875,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-CollectionsApi-services_sid_repo_uuid_post"></a>
 
 ## operation: **services_sid_repo_uuid_post**
 Create a new entry in the current collection (collections only).
@@ -890,6 +1013,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-CollectionsApi-services_sid_repo_uuid_put"></a>
+
 ## operation: **services_sid_repo_uuid_put**
 Update entry metadata (complete, replace)
 
@@ -1020,6 +1145,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-CollectionsApi-servicessidrepocommandcidget"></a>
+
 ## operation: **servicessidrepocommandcidget**
 Access a command resource within a service
 
@@ -1133,6 +1260,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-CollectionsApi-servicessidrepouuidchildrenget"></a>
 
 ## operation: **servicessidrepouuidchildrenget**
 Access a collections children.
@@ -1282,9 +1411,12 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+
 # API: ConfigurationApi
 
 All URIs are relative to *https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1*
+
+<a name="markdown-header-op-ConfigurationApi-config_delete"></a>
 
 ## operation: **config_delete**
 Delete a configuration item
@@ -1378,6 +1510,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ConfigurationApi-config_get"></a>
 
 ## operation: **config_get**
 Access a configuration item or path
@@ -1491,6 +1625,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ConfigurationApi-config_put"></a>
+
 ## operation: **config_put**
 Store a configuration item
 
@@ -1590,9 +1726,12 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+
 # API: ConnectorsApi
 
 All URIs are relative to *https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1*
+
+<a name="markdown-header-op-ConnectorsApi-services_sid_get"></a>
 
 ## operation: **services_sid_get**
 Retrieve service metadata
@@ -1700,6 +1839,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ConnectorsApi-servicessidconnectortaskspost"></a>
 
 ## operation: **servicessidconnectortaskspost**
 Handle jobs in backend system
@@ -1815,6 +1956,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ConnectorsApi-servicessidconnectortasksput"></a>
 
 ## operation: **servicessidconnectortasksput**
 Get status and output files
@@ -1932,6 +2075,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ConnectorsApi-ui_get"></a>
+
 ## operation: **ui_get**
 Retrieve list of default UI panels available to the user.
 
@@ -2022,6 +2167,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ConnectorsApi-ui_pid_get"></a>
 
 ## operation: **ui_pid_get**
 Retrieve the default configuration of a UI panel.
@@ -2123,9 +2270,12 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+
 # API: DocumentsApi
 
 All URIs are relative to *https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1*
+
+<a name="markdown-header-op-DocumentsApi-services_sid_repo_command_post"></a>
 
 ## operation: **services_sid_repo_command_post**
 Create new command resource.
@@ -2252,6 +2402,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-DocumentsApi-services_sid_repo_get"></a>
 
 ## operation: **services_sid_repo_get**
 Access the document repository within a service
@@ -2400,6 +2552,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-DocumentsApi-services_sid_repo_post"></a>
+
 ## operation: **services_sid_repo_post**
 Create new entry in the root collection of the repository.
 
@@ -2522,6 +2676,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-DocumentsApi-services_sid_repo_uuid_delete"></a>
+
 ## operation: **services_sid_repo_uuid_delete**
 Delete the current entry.
 
@@ -2637,6 +2793,8 @@ Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-DocumentsApi-services_sid_repo_uuid_get"></a>
+
 ## operation: **services_sid_repo_uuid_get**
 Retrieve metadata of a specific entry (document or collection).
 
@@ -2750,6 +2908,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-DocumentsApi-services_sid_repo_uuid_patch"></a>
 
 ## operation: **services_sid_repo_uuid_patch**
 Update entry metadata (partial, merge)
@@ -2879,6 +3039,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-DocumentsApi-services_sid_repo_uuid_put"></a>
 
 ## operation: **services_sid_repo_uuid_put**
 Update entry metadata (complete, replace)
@@ -3010,6 +3172,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-DocumentsApi-servicessidrepocommandcidget"></a>
+
 ## operation: **servicessidrepocommandcidget**
 Access a command resource within a service
 
@@ -3124,6 +3288,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-DocumentsApi-servicessidrepouuidcontentdele"></a>
+
 ## operation: **servicessidrepouuidcontentdele**
 Delete document binary content (documents only)
 
@@ -3237,6 +3403,8 @@ Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-DocumentsApi-servicessidrepouuidcontentget"></a>
+
 ## operation: **servicessidrepouuidcontentget**
 Retrieve binary content (documents only)
 
@@ -3339,6 +3507,8 @@ Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application-octed/stream
 
+
+<a name="markdown-header-op-DocumentsApi-servicessidrepouuidcontentput"></a>
 
 ## operation: **servicessidrepouuidcontentput**
 Create or update document binary content (documents only)
@@ -3459,6 +3629,8 @@ Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-DocumentsApi-servicessidrepouuidpreviewget"></a>
+
 ## operation: **servicessidrepouuidpreviewget**
 Retrieve preview of binary content (documents only)
 
@@ -3562,9 +3734,12 @@ Name | Type | Description
  - **Accept**: image/jpeg
 
 
+
 # API: FunctionsApi
 
 All URIs are relative to *https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1*
+
+<a name="markdown-header-op-FunctionsApi-services_sid_function_fid_post"></a>
 
 ## operation: **services_sid_function_fid_post**
 Access a connector specific function
@@ -3672,6 +3847,8 @@ Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-FunctionsApi-services_sid_function_get"></a>
+
 ## operation: **services_sid_function_get**
 List connector specific functions
 
@@ -3773,9 +3950,12 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+
 # API: ListsApi
 
 All URIs are relative to *https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1*
+
+<a name="markdown-header-op-ListsApi-lists_get"></a>
 
 ## operation: **lists_get**
 Get collection of available Lists.
@@ -3911,6 +4091,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ListsApi-lists_lid_delete"></a>
+
 ## operation: **lists_lid_delete**
 Delete the current list
 
@@ -4006,6 +4188,8 @@ Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ListsApi-lists_lid_get"></a>
 
 ## operation: **lists_lid_get**
 Retrieve metadata for the current List.
@@ -4122,6 +4306,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ListsApi-lists_lid_items_get"></a>
 
 ## operation: **lists_lid_items_get**
 Get List items.
@@ -4260,6 +4446,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ListsApi-lists_lid_items_id_delete"></a>
+
 ## operation: **lists_lid_items_id_delete**
 Remove the current element from the list
 
@@ -4362,6 +4550,8 @@ Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ListsApi-lists_lid_items_id_get"></a>
 
 ## operation: **lists_lid_items_id_get**
 Retrieve item data of the current list element
@@ -4476,6 +4666,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ListsApi-lists_lid_items_id_patch"></a>
 
 ## operation: **lists_lid_items_id_patch**
 Update current list item (partial, merge)
@@ -4615,6 +4807,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ListsApi-lists_lid_items_id_put"></a>
+
 ## operation: **lists_lid_items_id_put**
 Update current list item (complete, replace)
 
@@ -4743,6 +4937,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ListsApi-lists_lid_items_post"></a>
 
 ## operation: **lists_lid_items_post**
 Appended and item to the list.
@@ -4873,6 +5069,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ListsApi-lists_lid_patch"></a>
+
 ## operation: **lists_lid_patch**
 Update List metadata (partial, merge)
 
@@ -4999,6 +5197,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ListsApi-lists_lid_put"></a>
 
 ## operation: **lists_lid_put**
 Update List metadata (complete, replace)
@@ -5127,6 +5327,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-ListsApi-lists_post"></a>
+
 ## operation: **lists_post**
 Create new List
 
@@ -5248,9 +5450,12 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+
 # API: MessagesApi
 
 All URIs are relative to *https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1*
+
+<a name="markdown-header-op-MessagesApi-messages_get"></a>
 
 ## operation: **messages_get**
 Access the users messages
@@ -5368,6 +5573,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-MessagesApi-messages_post"></a>
+
 ## operation: **messages_post**
 Create new message entry.
 
@@ -5479,6 +5686,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-MessagesApi-messages_uuid_patch"></a>
 
 ## operation: **messages_uuid_patch**
 Update a message entry.
@@ -5599,9 +5808,12 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+
 # API: PanelsApi
 
 All URIs are relative to *https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1*
+
+<a name="markdown-header-op-PanelsApi-panels_get"></a>
 
 ## operation: **panels_get**
 Retrieve list of UI panels available to the user.
@@ -5693,6 +5905,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-PanelsApi-panels_pid_delete"></a>
 
 ## operation: **panels_pid_delete**
 Delete a stored panel configuration
@@ -5791,6 +6005,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-PanelsApi-panels_pid_get"></a>
 
 ## operation: **panels_pid_get**
 Retrieve a specific panel configuration
@@ -5898,6 +6114,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-PanelsApi-panels_pid_put"></a>
 
 ## operation: **panels_pid_put**
 Updates a saved panel configuration
@@ -6007,6 +6225,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-PanelsApi-panels_post"></a>
+
 ## operation: **panels_post**
 Save a (user-specific) panel configuration.
 
@@ -6111,6 +6331,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-PanelsApi-ui_get"></a>
+
 ## operation: **ui_get**
 Retrieve list of default UI panels available to the user.
 
@@ -6201,6 +6423,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-PanelsApi-ui_pid_get"></a>
 
 ## operation: **ui_pid_get**
 Retrieve the default configuration of a UI panel.
@@ -6302,9 +6526,12 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+
 # API: ServicesApi
 
 All URIs are relative to *https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1*
+
+<a name="markdown-header-op-ServicesApi-services_get"></a>
 
 ## operation: **services_get**
 Get list of available services
@@ -6396,6 +6623,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-ServicesApi-services_sid_get"></a>
 
 ## operation: **services_sid_get**
 Retrieve service metadata
@@ -6504,9 +6733,12 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+
 # API: SessionsApi
 
 All URIs are relative to *https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1*
+
+<a name="markdown-header-op-SessionsApi-sessions_get"></a>
 
 ## operation: **sessions_get**
 Get session information
@@ -6599,9 +6831,12 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+
 # API: TasksApi
 
 All URIs are relative to *https://operator-sealsystems.westeurope.cloudapp.azure.com:3008/v1*
+
+<a name="markdown-header-op-TasksApi-services_sid_tasks_get"></a>
 
 ## operation: **services_sid_tasks_get**
 Retrieve collection of tasks managed by the service.
@@ -6758,6 +6993,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-TasksApi-services_sid_tasks_post"></a>
+
 ## operation: **services_sid_tasks_post**
 Create new task.
 
@@ -6889,6 +7126,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-TasksApi-services_sid_tasks_tid_delete"></a>
+
 ## operation: **services_sid_tasks_tid_delete**
 Delete a Task.
 
@@ -6996,6 +7235,8 @@ Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-TasksApi-services_sid_tasks_tid_get"></a>
 
 ## operation: **services_sid_tasks_tid_get**
 Retrieve metadata of current task.
@@ -7126,6 +7367,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-TasksApi-services_sid_tasks_tid_patch"></a>
+
 ## operation: **services_sid_tasks_tid_patch**
 Update Task metadata (partial, merge)
 
@@ -7253,6 +7496,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-TasksApi-services_sid_tasks_tid_put"></a>
 
 ## operation: **services_sid_tasks_tid_put**
 Update task metadata (complete, replace)
@@ -7382,6 +7627,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-TasksApi-servicessidtaskstidactionpost"></a>
+
 ## operation: **servicessidtaskstidactionpost**
 Trigger an action
 
@@ -7496,6 +7743,8 @@ Name | Type | Description
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-TasksApi-servicessidtaskstidinputget"></a>
 
 ## operation: **servicessidtaskstidinputget**
 Retrieve list of task input items
@@ -7619,6 +7868,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-TasksApi-servicessidtaskstidinputiddele"></a>
+
 ## operation: **servicessidtaskstidinputiddele**
 Delete a task input list item
 
@@ -7733,6 +7984,8 @@ Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-TasksApi-servicessidtaskstidinputidget"></a>
 
 ## operation: **servicessidtaskstidinputidget**
 Retrieve task item details
@@ -7854,6 +8107,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-TasksApi-servicessidtaskstidinputidpatc"></a>
 
 ## operation: **servicessidtaskstidinputidpatc**
 Update a task input list item (partial, merge)
@@ -7991,6 +8246,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-TasksApi-servicessidtaskstidinputidput"></a>
+
 ## operation: **servicessidtaskstidinputidput**
 Update the current task input list item (complete, replace)
 
@@ -8126,6 +8383,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-TasksApi-servicessidtaskstidinputpatch"></a>
 
 ## operation: **servicessidtaskstidinputpatch**
 Update input list metadata (partial, merge)
@@ -8269,6 +8528,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-TasksApi-servicessidtaskstidinputpost"></a>
+
 ## operation: **servicessidtaskstidinputpost**
 Append a new item to the input list of the task.
 
@@ -8407,6 +8668,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-TasksApi-servicessidtaskstidinputput"></a>
+
 ## operation: **servicessidtaskstidinputput**
 Update input list metadata (complete, replace)
 
@@ -8535,6 +8798,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-TasksApi-servicessidtaskstidoutputget"></a>
+
 ## operation: **servicessidtaskstidoutputget**
 Retrieve list of task output items
 
@@ -8657,6 +8922,8 @@ HTTP Code | Name | Type | Description
  - **Accept**: application/json
 
 
+<a name="markdown-header-op-TasksApi-servicessidtaskstidoutputidget"></a>
+
 ## operation: **servicessidtaskstidoutputidget**
 Retrieve task output list item details
 
@@ -8777,6 +9044,8 @@ HTTP Code | Name | Type | Description
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+
+<a name="markdown-header-op-TasksApi-tasks_get"></a>
 
 ## operation: **tasks_get**
 Retrieve collection of tasks managed by all services.

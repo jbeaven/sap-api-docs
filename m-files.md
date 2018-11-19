@@ -3487,8 +3487,8 @@ Sets the check out status. This is allowed only when the object isn't checked ou
     
 *** create variables for input and output as needed
 *   for parameter i_body:
-*   a simple ABAP primitive of type /BLCK/MFI_INT
-    data gvi_body type /BLCK/MFI_INT.
+*   a reference to enum type /BLCK/MFI_MFCHECKOUTSTAT
+    data gm_body type /BLCK/MFI_MFCHECKOUTSTAT.
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
@@ -3504,7 +3504,7 @@ Sets the check out status. This is allowed only when the object isn't checked ou
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
-*   gvi_body = 42.
+*   gm_body =  /blck/mfi_const=>me_mfcheckoutstat-checked_in.
 *   gvi_type = 42.
 *   gvi_objectid = 42.
 *   gvs_version = 'ipsum lorem'.
@@ -3523,7 +3523,7 @@ Sets the check out status. This is allowed only when the object isn't checked ou
 *** call the API method set_checkout_status via HTTP PUT
     /blck/mfi_cl_ObjectsApi=>set_checkout_status(
       exporting
-        i_body = gvi_body
+        i_body = gm_body
         i_type = gvi_type
         i_objectid = gvi_objectid
         i_version = gvs_version
@@ -3547,7 +3547,7 @@ Sets the check out status. This is allowed only when the object isn't checked ou
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | `/BLCK/MFI_INT` |  
+ **i_body** | `/BLCK/MFI_MFCHECKOUTSTAT` (**[MFCheckOutStatus](#markdown-header-enum-mfcheckoutstat)**) |  
  **i_type** | `/BLCK/MFI_INT` |  
  **i_objectid** | `/BLCK/MFI_INT` |  
  **i_version** | `/BLCK/MFI_STRING` |  [default "latest"]
@@ -3585,8 +3585,8 @@ Sets the deleted status of the object.
     
 *** create variables for input and output as needed
 *   for parameter i_body:
-*   a simple ABAP primitive of type /BLCK/MFI_BOOL
-    data gv_body type /BLCK/MFI_BOOL.
+*   a simple ABAP primitive of type /BLCK/MFI_FLAG
+    data gv_body type /BLCK/MFI_FLAG.
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
@@ -3635,7 +3635,7 @@ Sets the deleted status of the object.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | `/BLCK/MFI_BOOL` |  
+ **i_body** | `/BLCK/MFI_FLAG` |  
  **i_type** | `/BLCK/MFI_INT` |  
 
 ### Return types
@@ -7730,8 +7730,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
     
 *** create variables for input and output as needed
 *   for parameter i_body:
-*   a simple ABAP primitive of type /BLCK/MFI_INT
-    data gvi_body type /BLCK/MFI_INT.
+*   a reference to enum type /BLCK/MFI_MFREFRESHSTATU
+    data gm_body type /BLCK/MFI_MFREFRESHSTATU.
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
@@ -7741,7 +7741,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
 *** set data according to requirements of the API call
-*   gvi_body = 42.
+*   gm_body =  /blck/mfi_const=>me_mfrefreshstatu-none.
 *   gvi_type = 42.
 
 *** pass auth credentials to the API as needed
@@ -7758,7 +7758,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
 *** call the API method set_refresh_status via HTTP PUT
     /blck/mfi_cl_VaultApi=>set_refresh_status(
       exporting
-        i_body = gvi_body
+        i_body = gm_body
         i_type = gvi_type
       importing
         e_code = gvi_code
@@ -7780,7 +7780,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/object
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | `/BLCK/MFI_INT` |  
+ **i_body** | `/BLCK/MFI_MFREFRESHSTATU` (**[MFRefreshStatus](#markdown-header-enum-mfrefreshstatu)**) |  
  **i_type** | `/BLCK/MFI_INT` |  
 
 ### Return types

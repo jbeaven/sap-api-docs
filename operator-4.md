@@ -1647,8 +1647,8 @@ Stores the ConfigItem in the request body at the given path.
     
 *** create variables for input and output as needed
 *   for parameter i_body:
-*   a simple ABAP primitive of type /BLCK/OP4_STRING
-    data gvs_body type /BLCK/OP4_STRING.
+*   a simple ABAP primitive of type /BLCK/OP4_CONFIG_ITEM
+    data gvs_body type /BLCK/OP4_CONFIG_ITEM.
 *   for parameter i_path:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_path type /BLCK/OP4_STRING.
@@ -1707,7 +1707,7 @@ Stores the ConfigItem in the request body at the given path.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | `/BLCK/OP4_STRING` |  
+ **i_body** | `/BLCK/OP4_CONFIG_ITEM` |  
  **i_path** | `/BLCK/OP4_STRING` | Path/to/config/item [optional]
 
 ### Return types
@@ -6138,8 +6138,8 @@ A PUT request to a panel configuration will replace the entire stored configurat
     
 *** create variables for input and output as needed
 *   for parameter i_body:
-*   a simple ABAP primitive of type /BLCK/OP4_STRING
-    data gvs_body type /BLCK/OP4_STRING.
+*   a simple ABAP primitive of type /BLCK/OP4_CONFIG_ITEM
+    data gvs_body type /BLCK/OP4_CONFIG_ITEM.
 *   for parameter i_pid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_pid type /BLCK/OP4_STRING.
@@ -6205,7 +6205,7 @@ A PUT request to a panel configuration will replace the entire stored configurat
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | `/BLCK/OP4_STRING` | ConfigItem containing the configuration to store.  
+ **i_body** | `/BLCK/OP4_CONFIG_ITEM` | ConfigItem containing the configuration to store.  
  **i_pid** | `/BLCK/OP4_STRING` | ID of the panel 
 
 ### Return types
@@ -6248,8 +6248,8 @@ Users can save panel configurations they intend to (re-)use in later sessions un
     
 *** create variables for input and output as needed
 *   for parameter i_body:
-*   a simple ABAP primitive of type /BLCK/OP4_STRING
-    data gvs_body type /BLCK/OP4_STRING.
+*   a simple ABAP primitive of type /BLCK/OP4_CONFIG_ITEM
+    data gvs_body type /BLCK/OP4_CONFIG_ITEM.
 *   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_CONFIG_ITEM
     data gr_http200 type /BLCK/OP4_CONFIG_ITEM.
 *   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
@@ -6312,7 +6312,7 @@ Users can save panel configurations they intend to (re-)use in later sessions un
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | `/BLCK/OP4_STRING` | ConfigItem containing the configuration to store.  
+ **i_body** | `/BLCK/OP4_CONFIG_ITEM` | ConfigItem containing the configuration to store.  
 
 ### Return types
 

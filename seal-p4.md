@@ -144,8 +144,8 @@ A POST call to this route will create a new jobs and return it's uuid.
     
 *** create variables for input and output as needed
 *   for parameter i_body:
-*   a simple ABAP primitive of type /BLCK/P4_STRING
-    data gvs_body type /BLCK/P4_STRING.
+*   a simple ABAP primitive of type /BLCK/P4_JOB_HEADER
+    data gvs_body type /BLCK/P4_JOB_HEADER.
 *   when the result of the call is HTTP Code: 200 we expect type /BLCK/P4_JOB_ID
     data gr_http200 type /BLCK/P4_JOB_ID.
 *   when the result of the call is HTTP Code: 401 we expect type /BLCK/P4_ERROR
@@ -211,7 +211,7 @@ A POST call to this route will create a new jobs and return it's uuid.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | `/BLCK/P4_STRING` | job header data of the entry to be created 
+ **i_body** | `/BLCK/P4_JOB_HEADER` | job header data of the entry to be created 
 
 ### Return types
 

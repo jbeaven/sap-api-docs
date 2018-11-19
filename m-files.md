@@ -136,6 +136,7 @@
 ## &nbsp; &nbsp; [Model: PasswordChange](#markdown-header-model-passwordchange) (type `/blck/mfi_passwordchange`)
 ## &nbsp; &nbsp; [Model: PluginInfoConfiguration](#markdown-header-model-plugininfoconf) (type `/blck/mfi_plugininfoconf`)
 ## &nbsp; &nbsp; [Model: PrimitiveTypeInt](#markdown-header-model-primitivetypei) (type `/blck/mfi_primitivetypei`)
+## &nbsp; &nbsp; [Model: PrimitiveTypeString](#markdown-header-model-primitivetypes) (type `/blck/mfi_primitivetypes`)
 ## &nbsp; &nbsp; [Model: PropertyDef](#markdown-header-model-property_def) (type `/blck/mfi_property_def`)
 ## &nbsp; &nbsp; [Model: PropertyValueSuggestion](#markdown-header-model-propertyvalues) (type `/blck/mfi_propertyvalues`)
 ## &nbsp; &nbsp; [Model: PublicKey](#markdown-header-model-public_key) (type `/blck/mfi_public_key`)
@@ -1769,8 +1770,8 @@ Retrieves the current object file name.
 *   for parameter i_file:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_file type /BLCK/MFI_INT.
-*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_STRING
-    data gr_http200 type /BLCK/MFI_STRING.
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_PRIMITIVETYPES
+    data gr_http200 type /BLCK/MFI_PRIMITIVETYPES.
 *   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
@@ -1807,7 +1808,7 @@ Retrieves the current object file name.
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       do something with gr_http200 (type /BLCK/MFI_STRING)
+*       do something with gr_http200 (type /BLCK/MFI_PRIMITIVETYPES)
       when others.
 * handle the general case..
 *       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
@@ -1827,7 +1828,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | `/BLCK/MFI_STRING` | successful operation
+ 200 | **e_code_200** | `/BLCK/MFI_PRIMITIVETYPES` (**[PrimitiveTypeString](#markdown-header-model-primitivetypes)**) | successful operation
  other | **e_code_other** | `/BLCK/MFI_WEBSERVICEERRO` (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
@@ -2042,8 +2043,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *   for parameter i_version:
 *   a simple ABAP primitive of type /BLCK/MFI_STRING
     data gvs_version type /BLCK/MFI_STRING.
-*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_STRING
-    data gr_http200 type /BLCK/MFI_STRING.
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_PRIMITIVETYPES
+    data gr_http200 type /BLCK/MFI_PRIMITIVETYPES.
 *   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
@@ -2078,7 +2079,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/objects/type/obj
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       do something with gr_http200 (type /BLCK/MFI_STRING)
+*       do something with gr_http200 (type /BLCK/MFI_PRIMITIVETYPES)
       when others.
 * handle the general case..
 *       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
@@ -2097,7 +2098,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | `/BLCK/MFI_STRING` | successful operation
+ 200 | **e_code_200** | `/BLCK/MFI_PRIMITIVETYPES` (**[PrimitiveTypeString](#markdown-header-model-primitivetypes)**) | successful operation
  other | **e_code_other** | `/BLCK/MFI_WEBSERVICEERRO` (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
@@ -4909,8 +4910,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/authentic
 *   for parameter i_body:
 *   a reference to model type /BLCK/MFI_AUTHENTICATION
     data gm_body type /BLCK/MFI_AUTHENTICATION.
-*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_STRING
-    data gr_http200 type /BLCK/MFI_STRING.
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_PRIMITIVETYPES
+    data gr_http200 type /BLCK/MFI_PRIMITIVETYPES.
 *   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
@@ -4950,7 +4951,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/server/authentic
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       do something with gr_http200 (type /BLCK/MFI_STRING)
+*       do something with gr_http200 (type /BLCK/MFI_PRIMITIVETYPES)
       when others.
 * handle the general case..
 *       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
@@ -4967,7 +4968,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | `/BLCK/MFI_STRING` | successful operation
+ 200 | **e_code_200** | `/BLCK/MFI_PRIMITIVETYPES` (**[PrimitiveTypeString](#markdown-header-model-primitivetypes)**) | successful operation
  other | **e_code_other** | `/BLCK/MFI_WEBSERVICEERRO` (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
@@ -5235,8 +5236,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/authenti
     gvs_msg  type /blck/mfi_string.
     
 *** create variables for input and output as needed
-*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_STRING
-    data gr_http200 type /BLCK/MFI_STRING.
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_PRIMITIVETYPES
+    data gr_http200 type /BLCK/MFI_PRIMITIVETYPES.
 *   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
@@ -5263,7 +5264,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/session/authenti
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       do something with gr_http200 (type /BLCK/MFI_STRING)
+*       do something with gr_http200 (type /BLCK/MFI_PRIMITIVETYPES)
       when others.
 * handle the general case..
 *       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
@@ -5278,7 +5279,7 @@ This end-point does not need any parameters.
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | `/BLCK/MFI_STRING` | successful operation
+ 200 | **e_code_200** | `/BLCK/MFI_PRIMITIVETYPES` (**[PrimitiveTypeString](#markdown-header-model-primitivetypes)**) | successful operation
  other | **e_code_other** | `/BLCK/MFI_WEBSERVICEERRO` (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
@@ -6227,8 +6228,8 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *   for parameter i_objectid:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_objectid type /BLCK/MFI_INT.
-*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_STRING
-    data gr_http200 type /BLCK/MFI_STRING.
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/MFI_PRIMITIVETYPES
+    data gr_http200 type /BLCK/MFI_PRIMITIVETYPES.
 *   when the result of the call is HTTP Code: other we expect type /BLCK/MFI_WEBSERVICEERRO
     data gr_httpother type /BLCK/MFI_WEBSERVICEERRO.
         
@@ -6261,7 +6262,7 @@ https://developer.m-files.com/APIs/REST-API/Reference/resources/structure/valuel
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       do something with gr_http200 (type /BLCK/MFI_STRING)
+*       do something with gr_http200 (type /BLCK/MFI_PRIMITIVETYPES)
       when others.
 * handle the general case..
 *       do something with gr_httpother (type /BLCK/MFI_WEBSERVICEERRO)
@@ -6279,7 +6280,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | `/BLCK/MFI_STRING` | successful operation
+ 200 | **e_code_200** | `/BLCK/MFI_PRIMITIVETYPES` (**[PrimitiveTypeString](#markdown-header-model-primitivetypes)**) | successful operation
  other | **e_code_other** | `/BLCK/MFI_WEBSERVICEERRO` (**[WebServiceError](#markdown-header-model-webserviceerro)**) | an error occurred
 
 ### HTTP request headers
@@ -10377,6 +10378,48 @@ Name | Type | Description
 Name | Type | Description
 ------------ | ------------- | -------------
 **value** | `/BLCK/MFI_INT` | Primitive value.
+
+* * *
+<a name="markdown-header-model-primitivetypes"></a> 
+
+# Model: PrimitiveTypeString
+
+
+
+### Example
+```abap
+*** model primitivetypes example
+*** https://developer.m-files.com/APIs/REST-API/Reference/structs/primitivetypet/
+
+* create our variables..
+    data gr_primitivetypes type /blck/mfi_primitivetypes.
+    
+* fill model with data as appropriate..
+    gr_primitivetypes-value = 'ipsum lorem'. " (type /BLCK/MFI_STRING)
+    
+* pass to example API method
+    /blck/cl_example_api=>update_primitivetypes(
+      exporting
+        i_primitivetypes = gr_primitivetypes ).
+    		
+    clear gr_primitivetypes.
+    
+* fetch model data from example API method
+    /blck/cl_example_api=>get_primitivetypes(
+      exporting
+        i_id = 1
+      importing 
+        e_200 = gr_primitivetypes ).
+    		
+    write: gr_primitivetypes-value. " (type /BLCK/MFI_STRING)
+
+```
+
+## Properties
+
+Name | Type | Description
+------------ | ------------- | -------------
+**value** | `/BLCK/MFI_STRING` | Primitive value.
 
 * * *
 <a name="markdown-header-model-property_def"></a> 

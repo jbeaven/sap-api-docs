@@ -3585,8 +3585,8 @@ Sets the deleted status of the object.
     
 *** create variables for input and output as needed
 *   for parameter i_body:
-*   a simple ABAP primitive of type /BLCK/MFI_BOOLEAN
-    data gv_body type /BLCK/MFI_BOOLEAN.
+*   a simple ABAP primitive of type /BLCK/MFI_BOOL
+    data gv_body type /BLCK/MFI_BOOL.
 *   for parameter i_type:
 *   a simple ABAP primitive of type /BLCK/MFI_INT
     data gvi_type type /BLCK/MFI_INT.
@@ -3635,7 +3635,7 @@ Sets the deleted status of the object.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | `/BLCK/MFI_BOOLEAN` |  
+ **i_body** | `/BLCK/MFI_BOOL` |  
  **i_type** | `/BLCK/MFI_INT` |  
 
 ### Return types

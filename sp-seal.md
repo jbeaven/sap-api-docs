@@ -52,7 +52,11 @@ Get attribute of document
 *   gvs_attr = 'ipsum lorem'.
 *   gvs_accept = 'ipsum lorem'.
 
-
+*** pass auth credentials to the API as needed
+    /blck/sp_cl_api=>set_credentials(
+      exporting
+        i_basic_auth_un = 'john'
+        i_basic_auth_pw = 'pw' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
 *** so the parameter i_basepath is only needed if the url should be different to that specified
@@ -141,7 +145,11 @@ Retrieve data of document
 *   gvs_title = 'ipsum lorem'.
 *   gvi_doc_id = 42.
 
-
+*** pass auth credentials to the API as needed
+    /blck/sp_cl_api=>set_credentials(
+      exporting
+        i_basic_auth_un = 'john'
+        i_basic_auth_pw = 'pw' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
 *** so the parameter i_basepath is only needed if the url should be different to that specified
@@ -228,7 +236,11 @@ Retrieve list of documents matching criteria
 *   gvs_filter = 'ipsum lorem'.
 *   gvs_accept = 'ipsum lorem'.
 
-
+*** pass auth credentials to the API as needed
+    /blck/sp_cl_api=>set_credentials(
+      exporting
+        i_basic_auth_un = 'john'
+        i_basic_auth_pw = 'pw' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
 *** so the parameter i_basepath is only needed if the url should be different to that specified
@@ -334,7 +346,11 @@ Pass in a json formatted body
 *   gvs_if_match = 'ipsum lorem'.
 *   gvs_x_http_method = 'ipsum lorem'.
 
-
+*** pass auth credentials to the API as needed
+    /blck/sp_cl_api=>set_credentials(
+      exporting
+        i_basic_auth_un = 'john'
+        i_basic_auth_pw = 'pw' ).
     
 *** update the configuration if needed, a default basepath is already set from the spec
 *** so the parameter i_basepath is only needed if the url should be different to that specified

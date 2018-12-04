@@ -156,7 +156,7 @@ Creates a new record in the command resource. It returns a JSON object containin
         
 *** set data according to requirements of the API call
 *   gm_body-action = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-*   gm_body-parameter = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+*   gm_body-parameter = l_parameter. " (type /BLCK/OP4_STRING_MT)
 *   gvs_sid = 'ipsum lorem'.
 
 
@@ -434,7 +434,7 @@ Creates a new record in the current Repository, inside the root collection, and 
 *** set data according to requirements of the API call
 *   gm_body-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
 *   gm_body-type = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-*   gm_body-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+*   gm_body-metadata = l_metadata. " (type /BLCK/OP4_STRING_MT)
 *   gvs_sid = 'ipsum lorem'.
 
 
@@ -794,7 +794,7 @@ Update the given entry's metadata. Only data given with the patch will be change
 *** set data according to requirements of the API call
 *   gm_body-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
 *   gm_body-type = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-*   gm_body-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+*   gm_body-metadata = l_metadata. " (type /BLCK/OP4_STRING_MT)
 *   gvs_sid = 'ipsum lorem'.
 *   gvs_uuid = 'ipsum lorem'.
 
@@ -927,7 +927,7 @@ If the entry under the given uuid is a collection, then a POST request to this r
 *** set data according to requirements of the API call
 *   gm_body-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
 *   gm_body-type = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-*   gm_body-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+*   gm_body-metadata = l_metadata. " (type /BLCK/OP4_STRING_MT)
 *   gvs_sid = 'ipsum lorem'.
 *   gvs_uuid = 'ipsum lorem'.
 
@@ -1062,7 +1062,7 @@ Completely replace the metadata record of the given entry. Only record metadata 
 *** set data according to requirements of the API call
 *   gm_body-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
 *   gm_body-type = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-*   gm_body-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+*   gm_body-metadata = l_metadata. " (type /BLCK/OP4_STRING_MT)
 *   gvs_sid = 'ipsum lorem'.
 *   gvs_uuid = 'ipsum lorem'.
 
@@ -1538,8 +1538,8 @@ Use this route to browse the configuration. Configuration is structured unix fil
 *   for parameter i_keys:
 *   a simple ABAP primitive of type /BLCK/OP4_BOOL
     data gv_keys type /BLCK/OP4_BOOL.
-*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_STRING
-    data gr_http200 type /BLCK/OP4_STRING.
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_STRING_MT
+    data gr_http200 type /BLCK/OP4_STRING_MT.
 *   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
     data gr_http401 type /BLCK/OP4_ERROR.
 *   when the result of the call is HTTP Code: 403 we expect type /BLCK/OP4_ERROR
@@ -1586,7 +1586,7 @@ Use this route to browse the configuration. Configuration is structured unix fil
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       do something with gr_http200 (type /BLCK/OP4_STRING)
+*       do something with gr_http200 (type /BLCK/OP4_STRING_MT)
       when 401.
 *       do something with gr_http401 (type /BLCK/OP4_ERROR)
       when 403.
@@ -1612,7 +1612,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | `/BLCK/OP4_STRING` | OK, configuration items returned.
+ 200 | **e_code_200** | `/BLCK/OP4_STRING_MT` | OK, configuration items returned.
  401 | **e_code_401** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
  403 | **e_code_403** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | Forbidden. The user lacks rights to access the data. 
  404 | **e_code_404** | `/BLCK/OP4_ERROR` (**[Error](#markdown-header-model-error)**) | The given ConfigItem was not found.
@@ -1647,8 +1647,8 @@ Stores the ConfigItem in the request body at the given path.
     
 *** create variables for input and output as needed
 *   for parameter i_body:
-*   a simple ABAP primitive of type /BLCK/OP4_CONFIG_ITEM
-    data gvs_body type /BLCK/OP4_CONFIG_ITEM.
+*   a reference to model type /BLCK/OP4_CONFIG_ITEM
+    data gm_body type /BLCK/OP4_CONFIG_ITEM.
 *   for parameter i_path:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_path type /BLCK/OP4_STRING.
@@ -1662,7 +1662,6 @@ Stores the ConfigItem in the request body at the given path.
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
-*   gvs_body = 'ipsum lorem'.
 *   gvs_path = 'ipsum lorem'.
 
 
@@ -1677,7 +1676,7 @@ Stores the ConfigItem in the request body at the given path.
 *** i_path: Path/to/config/item
     /blck/op4_cl_ConfigurationApi=>config_put(
       exporting
-        i_body = gvs_body
+        i_body = gm_body
         i_path = gvs_path
       importing
         e_code = gvi_code
@@ -1707,7 +1706,7 @@ Stores the ConfigItem in the request body at the given path.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | `/BLCK/OP4_CONFIG_ITEM` |  
+ **i_body** | `/BLCK/OP4_CONFIG_ITEM` (**[ConfigItem](#markdown-header-model-config_item)**) |  
  **i_path** | `/BLCK/OP4_STRING` | Path/to/config/item [optional]
 
 ### Return types
@@ -1883,7 +1882,7 @@ A POST call to this route will create new jobs and return their connector id's (
         
 *** set data according to requirements of the API call
 *   gm_body-action = l_action. " (type /BLCK/OP4_ACTION)
-*   gm_body-data = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+*   gm_body-data = l_data. " (type /BLCK/OP4_STRING_MT)
 *   gvs_sid = 'ipsum lorem'.
 
 
@@ -2320,7 +2319,7 @@ Creates a new record in the command resource. It returns a JSON object containin
         
 *** set data according to requirements of the API call
 *   gm_body-action = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-*   gm_body-parameter = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+*   gm_body-parameter = l_parameter. " (type /BLCK/OP4_STRING_MT)
 *   gvs_sid = 'ipsum lorem'.
 
 
@@ -2598,7 +2597,7 @@ Creates a new record in the current Repository, inside the root collection, and 
 *** set data according to requirements of the API call
 *   gm_body-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
 *   gm_body-type = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-*   gm_body-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+*   gm_body-metadata = l_metadata. " (type /BLCK/OP4_STRING_MT)
 *   gvs_sid = 'ipsum lorem'.
 
 
@@ -2958,7 +2957,7 @@ Update the given entry's metadata. Only data given with the patch will be change
 *** set data according to requirements of the API call
 *   gm_body-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
 *   gm_body-type = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-*   gm_body-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+*   gm_body-metadata = l_metadata. " (type /BLCK/OP4_STRING_MT)
 *   gvs_sid = 'ipsum lorem'.
 *   gvs_uuid = 'ipsum lorem'.
 
@@ -3089,7 +3088,7 @@ Completely replace the metadata record of the given entry. Only record metadata 
 *** set data according to requirements of the API call
 *   gm_body-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
 *   gm_body-type = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-*   gm_body-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+*   gm_body-metadata = l_metadata. " (type /BLCK/OP4_STRING_MT)
 *   gvs_sid = 'ipsum lorem'.
 *   gvs_uuid = 'ipsum lorem'.
 
@@ -4721,7 +4720,7 @@ Update the metadata record of the current list item, adding missing entries but 
 *   gvs_id = 'ipsum lorem'.
 *   gm_body-index = 42. " (type /BLCK/OP4_INT)
 *   gm_body-href = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-*   gm_body-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+*   gm_body-metadata = l_metadata. " (type /BLCK/OP4_STRING_MT)
 *   gvs_href = 'ipsum lorem'.
 
 
@@ -4856,7 +4855,7 @@ Update and replace the entire metadata record of the current list item. Note tha
 *** set data according to requirements of the API call
 *   gm_body-index = 42. " (type /BLCK/OP4_INT)
 *   gm_body-href = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-*   gm_body-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+*   gm_body-metadata = l_metadata. " (type /BLCK/OP4_STRING_MT)
 *   gvs_lid = 'ipsum lorem'.
 *   gvs_id = 'ipsum lorem'.
 
@@ -4988,7 +4987,7 @@ Lists are are ordered sets, items have consecutive indices (0..n). Posting this 
 *   gvs_lid = 'ipsum lorem'.
 *   gm_body-index = 42. " (type /BLCK/OP4_INT)
 *   gm_body-href = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-*   gm_body-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+*   gm_body-metadata = l_metadata. " (type /BLCK/OP4_STRING_MT)
 *   gvs_href = 'ipsum lorem'.
 
 
@@ -5119,9 +5118,9 @@ Updates or adds part of the List metadata. Only given metadata will be replaced 
 *   gm_body-created = 42. " (type /BLCK/OP4_INT)
 *   gm_body-last_modified = 42. " (type /BLCK/OP4_INT)
 *   gm_body-list_length = 42. " (type /BLCK/OP4_INT)
-*   gm_body-links = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-*   gm_body-embedded = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-*   gm_body-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+*   gm_body-links = l_links. " (type /BLCK/OP4_STRING_MT)
+*   gm_body-embedded = l_embedded. " (type /BLCK/OP4_STRING_MT)
+*   gm_body-metadata = l_metadata. " (type /BLCK/OP4_STRING_MT)
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
@@ -5248,9 +5247,9 @@ This will completely replace the existing List metadata (if any) by the given me
 *   gm_body-created = 42. " (type /BLCK/OP4_INT)
 *   gm_body-last_modified = 42. " (type /BLCK/OP4_INT)
 *   gm_body-list_length = 42. " (type /BLCK/OP4_INT)
-*   gm_body-links = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-*   gm_body-embedded = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-*   gm_body-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+*   gm_body-links = l_links. " (type /BLCK/OP4_STRING_MT)
+*   gm_body-embedded = l_embedded. " (type /BLCK/OP4_STRING_MT)
+*   gm_body-metadata = l_metadata. " (type /BLCK/OP4_STRING_MT)
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
@@ -5374,9 +5373,9 @@ Creates a new entry in the list of Lists. The `Content-Type` HTTP header defines
 *   gm_body-created = 42. " (type /BLCK/OP4_INT)
 *   gm_body-last_modified = 42. " (type /BLCK/OP4_INT)
 *   gm_body-list_length = 42. " (type /BLCK/OP4_INT)
-*   gm_body-links = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-*   gm_body-embedded = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-*   gm_body-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+*   gm_body-links = l_links. " (type /BLCK/OP4_STRING_MT)
+*   gm_body-embedded = l_embedded. " (type /BLCK/OP4_STRING_MT)
+*   gm_body-metadata = l_metadata. " (type /BLCK/OP4_STRING_MT)
 *   gvs_href = 'ipsum lorem'.
 
 
@@ -6138,8 +6137,8 @@ A PUT request to a panel configuration will replace the entire stored configurat
     
 *** create variables for input and output as needed
 *   for parameter i_body:
-*   a simple ABAP primitive of type /BLCK/OP4_CONFIG_ITEM
-    data gvs_body type /BLCK/OP4_CONFIG_ITEM.
+*   a reference to model type /BLCK/OP4_CONFIG_ITEM
+    data gm_body type /BLCK/OP4_CONFIG_ITEM.
 *   for parameter i_pid:
 *   a simple ABAP primitive of type /BLCK/OP4_STRING
     data gvs_pid type /BLCK/OP4_STRING.
@@ -6153,7 +6152,6 @@ A PUT request to a panel configuration will replace the entire stored configurat
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
-*   gvs_body = 'ipsum lorem'.
 *   gvs_pid = 'ipsum lorem'.
 
 
@@ -6173,7 +6171,7 @@ A PUT request to a panel configuration will replace the entire stored configurat
 *** i_pid: ID of the panel
     /blck/op4_cl_PanelsApi=>panels_pid_put(
       exporting
-        i_body = gvs_body
+        i_body = gm_body
         i_pid = gvs_pid
       importing
         e_code = gvi_code
@@ -6205,7 +6203,7 @@ A PUT request to a panel configuration will replace the entire stored configurat
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | `/BLCK/OP4_CONFIG_ITEM` | ConfigItem containing the configuration to store.  
+ **i_body** | `/BLCK/OP4_CONFIG_ITEM` (**[ConfigItem](#markdown-header-model-config_item)**) | ConfigItem containing the configuration to store.  
  **i_pid** | `/BLCK/OP4_STRING` | ID of the panel 
 
 ### Return types
@@ -6248,8 +6246,8 @@ Users can save panel configurations they intend to (re-)use in later sessions un
     
 *** create variables for input and output as needed
 *   for parameter i_body:
-*   a simple ABAP primitive of type /BLCK/OP4_CONFIG_ITEM
-    data gvs_body type /BLCK/OP4_CONFIG_ITEM.
+*   a reference to model type /BLCK/OP4_CONFIG_ITEM
+    data gm_body type /BLCK/OP4_CONFIG_ITEM.
 *   when the result of the call is HTTP Code: 200 we expect type /BLCK/OP4_CONFIG_ITEM
     data gr_http200 type /BLCK/OP4_CONFIG_ITEM.
 *   when the result of the call is HTTP Code: 401 we expect type /BLCK/OP4_ERROR
@@ -6262,7 +6260,6 @@ Users can save panel configurations they intend to (re-)use in later sessions un
     data gr_httpother type /BLCK/OP4_ERROR.
         
 *** set data according to requirements of the API call
-*   gvs_body = 'ipsum lorem'.
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
@@ -6280,7 +6277,7 @@ Users can save panel configurations they intend to (re-)use in later sessions un
 *** i_body: ConfigItem containing the configuration to store. 
     /blck/op4_cl_PanelsApi=>panels_post(
       exporting
-        i_body = gvs_body
+        i_body = gm_body
       importing
         e_code = gvi_code
         e_message = gvs_msg
@@ -6312,7 +6309,7 @@ Users can save panel configurations they intend to (re-)use in later sessions un
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | `/BLCK/OP4_CONFIG_ITEM` | ConfigItem containing the configuration to store.  
+ **i_body** | `/BLCK/OP4_CONFIG_ITEM` (**[ConfigItem](#markdown-header-model-config_item)**) | ConfigItem containing the configuration to store.  
 
 ### Return types
 
@@ -7040,15 +7037,15 @@ Adds a new Task to the collection. Given metadata is assigned, input list must b
 *   gm_body-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
 *   gm_body-sid = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
 *   gm_body-tid = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-*   gm_body-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+*   gm_body-metadata = l_metadata. " (type /BLCK/OP4_STRING_MT)
 *   gm_body-created = 42. " (type /BLCK/OP4_INT)
 *   gm_body-started = 42. " (type /BLCK/OP4_INT)
 *   gm_body-finished = 42. " (type /BLCK/OP4_INT)
 *   gm_body-input_list_length = 42. " (type /BLCK/OP4_INT)
 *   gm_body-output_list_length = 42. " (type /BLCK/OP4_INT)
 *   gm_body-status = l_status. " (type /BLCK/OP4_STATUS_TYPE)
-*   gm_body-links = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-*   gm_body-embedded = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+*   gm_body-links = l_links. " (type /BLCK/OP4_STRING_MT)
+*   gm_body-embedded = l_embedded. " (type /BLCK/OP4_STRING_MT)
 *   gvs_sid = 'ipsum lorem'.
 
 
@@ -7415,7 +7412,7 @@ Does a partial update to the Task metadata. Given metadata replaces existing one
         
 *** set data according to requirements of the API call
 *   gm_body-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-*   gm_body-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+*   gm_body-metadata = l_metadata. " (type /BLCK/OP4_STRING_MT)
 *   gvs_sid = 'ipsum lorem'.
 *   gvs_tid = 'ipsum lorem'.
 
@@ -7545,7 +7542,7 @@ A put call to the task root record completely replaces task metadata, but does n
         
 *** set data according to requirements of the API call
 *   gm_body-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-*   gm_body-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+*   gm_body-metadata = l_metadata. " (type /BLCK/OP4_STRING_MT)
 *   gvs_sid = 'ipsum lorem'.
 *   gvs_tid = 'ipsum lorem'.
 
@@ -8163,7 +8160,7 @@ Updates task input list item metadata, replacing present entries and adding miss
 *   gvs_id = 'ipsum lorem'.
 *   gm_body-index = 42. " (type /BLCK/OP4_INT)
 *   gm_body-href = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-*   gm_body-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+*   gm_body-metadata = l_metadata. " (type /BLCK/OP4_STRING_MT)
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
@@ -8301,7 +8298,7 @@ Replaces the task input list item's metadata, including the document reference.
 *   gvs_id = 'ipsum lorem'.
 *   gm_body-index = 42. " (type /BLCK/OP4_INT)
 *   gm_body-href = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-*   gm_body-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+*   gm_body-metadata = l_metadata. " (type /BLCK/OP4_STRING_MT)
 
 
 *** optional: instantiate descendant of /blck/op4_cl_auth 
@@ -8439,9 +8436,9 @@ Does a partial update to the input list metadata. Given metadata replaces existi
 *   gm_body-created = 42. " (type /BLCK/OP4_INT)
 *   gm_body-last_modified = 42. " (type /BLCK/OP4_INT)
 *   gm_body-list_length = 42. " (type /BLCK/OP4_INT)
-*   gm_body-links = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-*   gm_body-embedded = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-*   gm_body-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+*   gm_body-links = l_links. " (type /BLCK/OP4_STRING_MT)
+*   gm_body-embedded = l_embedded. " (type /BLCK/OP4_STRING_MT)
+*   gm_body-metadata = l_metadata. " (type /BLCK/OP4_STRING_MT)
 *   gvs_sid = 'ipsum lorem'.
 *   gvs_tid = 'ipsum lorem'.
 *   gvs_embed = 'ipsum lorem'.
@@ -8582,7 +8579,7 @@ Creates a new entry in the given Task's input list. Given metadata is assigned t
 *   gvs_tid = 'ipsum lorem'.
 *   gm_body-index = 42. " (type /BLCK/OP4_INT)
 *   gm_body-href = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-*   gm_body-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+*   gm_body-metadata = l_metadata. " (type /BLCK/OP4_STRING_MT)
 *   gvs_href = 'ipsum lorem'.
 
 
@@ -8716,7 +8713,7 @@ A put call to the input list root record completely replaces the metadata, but d
         
 *** set data according to requirements of the API call
 *   gm_body-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-*   gm_body-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+*   gm_body-metadata = l_metadata. " (type /BLCK/OP4_STRING_MT)
 *   gvs_sid = 'ipsum lorem'.
 *   gvs_tid = 'ipsum lorem'.
 
@@ -9235,7 +9232,7 @@ Name | Type | Description
 * fill model with data as appropriate..
     gr_baserepoentry-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     gr_baserepoentry-type = /blck/op4_const=>me_-. " (enum /BLCK/OP4_STRING)
-    gr_baserepoentry-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+    gr_baserepoentry-metadata = l_metadata. " (type /BLCK/OP4_STRING_MT)
     
 * pass to example API method
     /blck/cl_example_api=>update_baserepoentry(
@@ -9253,7 +9250,7 @@ Name | Type | Description
     		
     write: gr_baserepoentry-name. " (type /BLCK/OP4_STRING)
     write: gr_baserepoentry-type. " (type /BLCK/OP4_STRING)
-    write: gr_baserepoentry-metadata. " (type /BLCK/OP4_STRING)
+    write: gr_baserepoentry-metadata. " (type /BLCK/OP4_STRING_MT)
 
 ```
 
@@ -9263,7 +9260,7 @@ Name | Type | Description
 ------------ | ------------- | -------------
 **name** | `/BLCK/OP4_STRING` | (File) name of the Entry
 **type** | `/BLCK/OP4_STRING` | Type of RepoEntry.
-**metadata** | `/BLCK/OP4_STRING` | Metadata assigned to the entry
+**metadata** | `/BLCK/OP4_STRING_MT` | Metadata assigned to the entry
 
 * * *
 <a name="markdown-header-model-cid"></a> 
@@ -9321,7 +9318,7 @@ Name | Type | Description
     
 * fill model with data as appropriate..
     gr_cid_command-action = l_action. " (type /BLCK/OP4_ACTION)
-    gr_cid_command-data = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+    gr_cid_command-data = l_data. " (type /BLCK/OP4_STRING_MT)
     
 * pass to example API method
     /blck/cl_example_api=>update_cid_command(
@@ -9338,7 +9335,7 @@ Name | Type | Description
         e_200 = gr_cid_command ).
     		
     write: gr_cid_command-action. " (type /BLCK/OP4_ACTION)
-    write: gr_cid_command-data. " (type /BLCK/OP4_STRING)
+    write: gr_cid_command-data. " (type /BLCK/OP4_STRING_MT)
 
 ```
 
@@ -9347,7 +9344,7 @@ Name | Type | Description
 Name | Type | Description
 ------------ | ------------- | -------------
 **action** | `/BLCK/OP4_ACTION` (**[Action](#markdown-header-model-action)**) | 
-**data** | `/BLCK/OP4_STRING` | Data depending on the action. - start: &#x60;data&#x60; contains complete task data in operator-server internal structure - abort: &#x60;data&#x60; contains tid and cids part of task data to abort - pause: &#x60;data&#x60; contains tid and cids part of task data to pause - resume: &#x60;data&#x60; contains tid and cids part of task data to resume 
+**data** | `/BLCK/OP4_STRING_MT` | Data depending on the action. - start: &#x60;data&#x60; contains complete task data in operator-server internal structure - abort: &#x60;data&#x60; contains tid and cids part of task data to abort - pause: &#x60;data&#x60; contains tid and cids part of task data to pause - resume: &#x60;data&#x60; contains tid and cids part of task data to resume 
 
 * * *
 <a name="markdown-header-model-list_item"></a> 
@@ -9366,7 +9363,7 @@ Name | Type | Description
 * fill model with data as appropriate..
     gr_list_item-index = 42. " (type /BLCK/OP4_INT)
     gr_list_item-href = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-    gr_list_item-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+    gr_list_item-metadata = l_metadata. " (type /BLCK/OP4_STRING_MT)
     
 * pass to example API method
     /blck/cl_example_api=>update_list_item(
@@ -9384,7 +9381,7 @@ Name | Type | Description
     		
     write: gr_list_item-index. " (type /BLCK/OP4_INT)
     write: gr_list_item-href. " (type /BLCK/OP4_STRING)
-    write: gr_list_item-metadata. " (type /BLCK/OP4_STRING)
+    write: gr_list_item-metadata. " (type /BLCK/OP4_STRING_MT)
 
 ```
 
@@ -9394,7 +9391,7 @@ Name | Type | Description
 ------------ | ------------- | -------------
 **index** | `/BLCK/OP4_INT` | This is the index of an item in a List. The index is maintained by the SEAL Operator backend. Setting the index to a value beyond the end of the list will move the item to the end of the list. Setting the index to 0 will move th item to the top of the list. Setting the index to a value in use by another item will replace this item, moving it (and all with higher indices) one space down in the list, by increasing their index values. 
 **href** | `/BLCK/OP4_STRING` | URL location of linked ressource
-**metadata** | `/BLCK/OP4_STRING` | Additional data to be stored with the link
+**metadata** | `/BLCK/OP4_STRING_MT` | Additional data to be stored with the link
 
 * * *
 <a name="markdown-header-enum-status_type"></a> 
@@ -9582,7 +9579,7 @@ Name | Type | Description
     
 * fill model with data as appropriate..
     gr_command-action = /blck/op4_const=>me_-. " (enum /BLCK/OP4_STRING)
-    gr_command-parameter = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+    gr_command-parameter = l_parameter. " (type /BLCK/OP4_STRING_MT)
     
 * pass to example API method
     /blck/cl_example_api=>update_command(
@@ -9599,7 +9596,7 @@ Name | Type | Description
         e_200 = gr_command ).
     		
     write: gr_command-action. " (type /BLCK/OP4_STRING)
-    write: gr_command-parameter. " (type /BLCK/OP4_STRING)
+    write: gr_command-parameter. " (type /BLCK/OP4_STRING_MT)
 
 ```
 
@@ -9608,7 +9605,7 @@ Name | Type | Description
 Name | Type | Description
 ------------ | ------------- | -------------
 **action** | `/BLCK/OP4_STRING` | 
-**parameter** | `/BLCK/OP4_STRING` | Command specific parameter, e.g. href&#x27;s of documents 
+**parameter** | `/BLCK/OP4_STRING_MT` | Command specific parameter, e.g. href&#x27;s of documents 
 
 * * *
 <a name="markdown-header-model-command_status"></a> 
@@ -9714,7 +9711,7 @@ Name | Type | Description
 * fill model with data as appropriate..
     gr_error-code = 42. " (type /BLCK/OP4_INT)
     gr_error-message = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-    gr_error-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+    gr_error-metadata = l_metadata. " (type /BLCK/OP4_STRING_MT)
     
 * pass to example API method
     /blck/cl_example_api=>update_error(
@@ -9732,7 +9729,7 @@ Name | Type | Description
     		
     write: gr_error-code. " (type /BLCK/OP4_INT)
     write: gr_error-message. " (type /BLCK/OP4_STRING)
-    write: gr_error-metadata. " (type /BLCK/OP4_STRING)
+    write: gr_error-metadata. " (type /BLCK/OP4_STRING_MT)
 
 ```
 
@@ -9742,7 +9739,7 @@ Name | Type | Description
 ------------ | ------------- | -------------
 **code** | `/BLCK/OP4_INT` | 
 **message** | `/BLCK/OP4_STRING` | 
-**metadata** | `/BLCK/OP4_STRING` | 
+**metadata** | `/BLCK/OP4_STRING_MT` | 
 
 * * *
 <a name="markdown-header-model-functions"></a> 
@@ -9809,9 +9806,9 @@ Name | Type | Description
     gr_list-created = 42. " (type /BLCK/OP4_INT)
     gr_list-last_modified = 42. " (type /BLCK/OP4_INT)
     gr_list-list_length = 42. " (type /BLCK/OP4_INT)
-    gr_list-links = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-    gr_list-embedded = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-    gr_list-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+    gr_list-links = l_links. " (type /BLCK/OP4_STRING_MT)
+    gr_list-embedded = l_embedded. " (type /BLCK/OP4_STRING_MT)
+    gr_list-metadata = l_metadata. " (type /BLCK/OP4_STRING_MT)
     
 * pass to example API method
     /blck/cl_example_api=>update_list(
@@ -9832,9 +9829,9 @@ Name | Type | Description
     write: gr_list-created. " (type /BLCK/OP4_INT)
     write: gr_list-last_modified. " (type /BLCK/OP4_INT)
     write: gr_list-list_length. " (type /BLCK/OP4_INT)
-    write: gr_list-links. " (type /BLCK/OP4_STRING)
-    write: gr_list-embedded. " (type /BLCK/OP4_STRING)
-    write: gr_list-metadata. " (type /BLCK/OP4_STRING)
+    write: gr_list-links. " (type /BLCK/OP4_STRING_MT)
+    write: gr_list-embedded. " (type /BLCK/OP4_STRING_MT)
+    write: gr_list-metadata. " (type /BLCK/OP4_STRING_MT)
 
 ```
 
@@ -9847,9 +9844,9 @@ Name | Type | Description
 **created** | `/BLCK/OP4_INT` | Timestamp of list creation
 **last_modified** | `/BLCK/OP4_INT` | Timestamp of list creation
 **list_length** | `/BLCK/OP4_INT` | Number of items in list
-**links** | `/BLCK/OP4_STRING` | If requested by MIME type, the links section contains hrefs to - \&quot;self\&quot;: the List itself 
-**embedded** | `/BLCK/OP4_STRING` | Embedded sub-ressources or sub-collections, as requested throught the \&quot;embed\&quot; query parameter 
-**metadata** | `/BLCK/OP4_STRING` | List metadata. Note that these do not contain item metadata.
+**links** | `/BLCK/OP4_STRING_MT` | If requested by MIME type, the links section contains hrefs to - \&quot;self\&quot;: the List itself 
+**embedded** | `/BLCK/OP4_STRING_MT` | Embedded sub-ressources or sub-collections, as requested throught the \&quot;embed\&quot; query parameter 
+**metadata** | `/BLCK/OP4_STRING_MT` | List metadata. Note that these do not contain item metadata.
 
 * * *
 <a name="markdown-header-model-message"></a> 
@@ -9979,9 +9976,9 @@ Name | Type | Description
     gr_repo_entry-uuid = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     gr_repo_entry-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     gr_repo_entry-type = /blck/op4_const=>me_-. " (enum /BLCK/OP4_STRING)
-    gr_repo_entry-links = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-    gr_repo_entry-embedded = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-    gr_repo_entry-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+    gr_repo_entry-links = l_links. " (type /BLCK/OP4_STRING_MT)
+    gr_repo_entry-embedded = l_embedded. " (type /BLCK/OP4_STRING_MT)
+    gr_repo_entry-metadata = l_metadata. " (type /BLCK/OP4_STRING_MT)
     
 * pass to example API method
     /blck/cl_example_api=>update_repo_entry(
@@ -10001,9 +9998,9 @@ Name | Type | Description
     write: gr_repo_entry-uuid. " (type /BLCK/OP4_STRING)
     write: gr_repo_entry-name. " (type /BLCK/OP4_STRING)
     write: gr_repo_entry-type. " (type /BLCK/OP4_STRING)
-    write: gr_repo_entry-links. " (type /BLCK/OP4_STRING)
-    write: gr_repo_entry-embedded. " (type /BLCK/OP4_STRING)
-    write: gr_repo_entry-metadata. " (type /BLCK/OP4_STRING)
+    write: gr_repo_entry-links. " (type /BLCK/OP4_STRING_MT)
+    write: gr_repo_entry-embedded. " (type /BLCK/OP4_STRING_MT)
+    write: gr_repo_entry-metadata. " (type /BLCK/OP4_STRING_MT)
 
 ```
 
@@ -10015,9 +10012,9 @@ Name | Type | Description
 **uuid** | `/BLCK/OP4_STRING` | Global ID of the document, created by SEAL Operator
 **name** | `/BLCK/OP4_STRING` | (File) name of the Entry
 **type** | `/BLCK/OP4_STRING` | Type of RepoEntry.
-**links** | `/BLCK/OP4_STRING` | If requested by MIME type, the links section contains hrefs to - \&quot;self\&quot;: the document itself - \&quot;parent\&quot;: the collection containing the document - \&quot;permissions\&quot;: an object describing user permissions on the document 
-**embedded** | `/BLCK/OP4_STRING` | Embedded sub-ressources as requested through the \&quot;embed\&quot; query parameter, e.g. \&quot;permissions\&quot;, \&quot;icon\&quot;, \&quot;thumb\&quot;. 
-**metadata** | `/BLCK/OP4_STRING` | Metadata assigned to the entry
+**links** | `/BLCK/OP4_STRING_MT` | If requested by MIME type, the links section contains hrefs to - \&quot;self\&quot;: the document itself - \&quot;parent\&quot;: the collection containing the document - \&quot;permissions\&quot;: an object describing user permissions on the document 
+**embedded** | `/BLCK/OP4_STRING_MT` | Embedded sub-ressources as requested through the \&quot;embed\&quot; query parameter, e.g. \&quot;permissions\&quot;, \&quot;icon\&quot;, \&quot;thumb\&quot;. 
+**metadata** | `/BLCK/OP4_STRING_MT` | Metadata assigned to the entry
 
 * * *
 <a name="markdown-header-model-service"></a> 
@@ -10039,9 +10036,9 @@ Name | Type | Description
 * fill model with data as appropriate..
     gr_service-id = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     gr_service-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-    gr_service-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-    gr_service-links = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-    gr_service-embedded = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+    gr_service-metadata = l_metadata. " (type /BLCK/OP4_STRING_MT)
+    gr_service-links = l_links. " (type /BLCK/OP4_STRING_MT)
+    gr_service-embedded = l_embedded. " (type /BLCK/OP4_STRING_MT)
     
 * pass to example API method
     /blck/cl_example_api=>update_service(
@@ -10059,9 +10056,9 @@ Name | Type | Description
     		
     write: gr_service-id. " (type /BLCK/OP4_STRING)
     write: gr_service-name. " (type /BLCK/OP4_STRING)
-    write: gr_service-metadata. " (type /BLCK/OP4_STRING)
-    write: gr_service-links. " (type /BLCK/OP4_STRING)
-    write: gr_service-embedded. " (type /BLCK/OP4_STRING)
+    write: gr_service-metadata. " (type /BLCK/OP4_STRING_MT)
+    write: gr_service-links. " (type /BLCK/OP4_STRING_MT)
+    write: gr_service-embedded. " (type /BLCK/OP4_STRING_MT)
 
 ```
 
@@ -10071,9 +10068,9 @@ Name | Type | Description
 ------------ | ------------- | -------------
 **id** | `/BLCK/OP4_STRING` | Identifier of the Service within the SEAL Operator
 **name** | `/BLCK/OP4_STRING` | Label describing the Service
-**metadata** | `/BLCK/OP4_STRING` | Metadata of the Service
-**links** | `/BLCK/OP4_STRING` | If requested by MIME type, the links section contains hrefs to - \&quot;self\&quot;: The Service itself - \&quot;permissions\&quot;: User permissions on the Service 
-**embedded** | `/BLCK/OP4_STRING` | Sub-collections and/or sub-ressources requested through the embed query parameter. 
+**metadata** | `/BLCK/OP4_STRING_MT` | Metadata of the Service
+**links** | `/BLCK/OP4_STRING_MT` | If requested by MIME type, the links section contains hrefs to - \&quot;self\&quot;: The Service itself - \&quot;permissions\&quot;: User permissions on the Service 
+**embedded** | `/BLCK/OP4_STRING_MT` | Sub-collections and/or sub-ressources requested through the embed query parameter. 
 
 * * *
 <a name="markdown-header-model-session_info"></a> 
@@ -10135,15 +10132,15 @@ Name | Type | Description
     gr_task-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     gr_task-sid = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
     gr_task-tid = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-    gr_task-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+    gr_task-metadata = l_metadata. " (type /BLCK/OP4_STRING_MT)
     gr_task-created = 42. " (type /BLCK/OP4_INT)
     gr_task-started = 42. " (type /BLCK/OP4_INT)
     gr_task-finished = 42. " (type /BLCK/OP4_INT)
     gr_task-input_list_length = 42. " (type /BLCK/OP4_INT)
     gr_task-output_list_length = 42. " (type /BLCK/OP4_INT)
     gr_task-status = /blck/op4_const=>me_status_type-open. " (enum /BLCK/OP4_STATUS_TYPE)
-    gr_task-links = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-    gr_task-embedded = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+    gr_task-links = l_links. " (type /BLCK/OP4_STRING_MT)
+    gr_task-embedded = l_embedded. " (type /BLCK/OP4_STRING_MT)
     
 * pass to example API method
     /blck/cl_example_api=>update_task(
@@ -10162,15 +10159,15 @@ Name | Type | Description
     write: gr_task-name. " (type /BLCK/OP4_STRING)
     write: gr_task-sid. " (type /BLCK/OP4_STRING)
     write: gr_task-tid. " (type /BLCK/OP4_STRING)
-    write: gr_task-metadata. " (type /BLCK/OP4_STRING)
+    write: gr_task-metadata. " (type /BLCK/OP4_STRING_MT)
     write: gr_task-created. " (type /BLCK/OP4_INT)
     write: gr_task-started. " (type /BLCK/OP4_INT)
     write: gr_task-finished. " (type /BLCK/OP4_INT)
     write: gr_task-input_list_length. " (type /BLCK/OP4_INT)
     write: gr_task-output_list_length. " (type /BLCK/OP4_INT)
     write: gr_task-status. " (type /BLCK/OP4_STATUS_TYPE)
-    write: gr_task-links. " (type /BLCK/OP4_STRING)
-    write: gr_task-embedded. " (type /BLCK/OP4_STRING)
+    write: gr_task-links. " (type /BLCK/OP4_STRING_MT)
+    write: gr_task-embedded. " (type /BLCK/OP4_STRING_MT)
 
 ```
 
@@ -10181,15 +10178,15 @@ Name | Type | Description
 **name** | `/BLCK/OP4_STRING` | 
 **sid** | `/BLCK/OP4_STRING` | 
 **tid** | `/BLCK/OP4_STRING` | 
-**metadata** | `/BLCK/OP4_STRING` | Task metadata. Note that these do not contain item metadata.
+**metadata** | `/BLCK/OP4_STRING_MT` | Task metadata. Note that these do not contain item metadata.
 **created** | `/BLCK/OP4_INT` | Timestamp of task creation
 **started** | `/BLCK/OP4_INT` | Timestamp of task started
 **finished** | `/BLCK/OP4_INT` | Timestamp of task finished
 **input_list_length** | `/BLCK/OP4_INT` | Number of items in input list
 **output_list_length** | `/BLCK/OP4_INT` | Number of items in output list
 **status** | `/BLCK/OP4_STATUS_TYPE` (**[StatusType](#markdown-header-enum-status_type)**) | 
-**links** | `/BLCK/OP4_STRING` | If requested, the links section contains hrefs to - \&quot;self\&quot;: the Task itself - \&quot;input\&quot;: input documents - \&quot;output\&quot;: output documents 
-**embedded** | `/BLCK/OP4_STRING` | Embedded sub-ressources or sub-collections, as requested throught the \&quot;embed\&quot; query parameter 
+**links** | `/BLCK/OP4_STRING_MT` | If requested, the links section contains hrefs to - \&quot;self\&quot;: the Task itself - \&quot;input\&quot;: input documents - \&quot;output\&quot;: output documents 
+**embedded** | `/BLCK/OP4_STRING_MT` | Embedded sub-ressources or sub-collections, as requested throught the \&quot;embed\&quot; query parameter 
 
 * * *
 <a name="markdown-header-model-task_metadata"></a> 
@@ -10209,7 +10206,7 @@ Name | Type | Description
     
 * fill model with data as appropriate..
     gr_task_metadata-name = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
-    gr_task_metadata-metadata = 'ipsum lorem'. " (type /BLCK/OP4_STRING)
+    gr_task_metadata-metadata = l_metadata. " (type /BLCK/OP4_STRING_MT)
     
 * pass to example API method
     /blck/cl_example_api=>update_task_metadata(
@@ -10226,7 +10223,7 @@ Name | Type | Description
         e_200 = gr_task_metadata ).
     		
     write: gr_task_metadata-name. " (type /BLCK/OP4_STRING)
-    write: gr_task_metadata-metadata. " (type /BLCK/OP4_STRING)
+    write: gr_task_metadata-metadata. " (type /BLCK/OP4_STRING_MT)
 
 ```
 
@@ -10235,5 +10232,5 @@ Name | Type | Description
 Name | Type | Description
 ------------ | ------------- | -------------
 **name** | `/BLCK/OP4_STRING` | Name of the Task
-**metadata** | `/BLCK/OP4_STRING` | Metadata assigned to the task
+**metadata** | `/BLCK/OP4_STRING_MT` | Metadata assigned to the task
 

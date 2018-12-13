@@ -112,7 +112,7 @@ Aggregates count the number of objects matching a given query and aggregate resu
     data gr_http500 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
-*   gm_body-match = 'ipsum lorem'. " (type /BLCK/P5_STRING)
+*   gm_body-match = l_match. " (type /BLCK/P5_STRING_MT)
 *   gm_body-aggregates = l_aggregates. " (type /BLCK/P5_STRING_TT)
 
 
@@ -552,7 +552,7 @@ Aggregates count the number of objects matching a given query and aggregate resu
     data gr_http500 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
-*   gm_body-match = 'ipsum lorem'. " (type /BLCK/P5_STRING)
+*   gm_body-match = l_match. " (type /BLCK/P5_STRING_MT)
 *   gm_body-aggregates = l_aggregates. " (type /BLCK/P5_STRING_TT)
 
 
@@ -1181,7 +1181,7 @@ Aggregates count the number of objects matching a given query and aggregate resu
     data gr_http500 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
-*   gm_body-match = 'ipsum lorem'. " (type /BLCK/P5_STRING)
+*   gm_body-match = l_match. " (type /BLCK/P5_STRING_MT)
 *   gm_body-aggregates = l_aggregates. " (type /BLCK/P5_STRING_TT)
 
 
@@ -2521,7 +2521,7 @@ Adds a new printer to the list of managed printers in PLOSSYS P5. The new printe
         
 *** set data according to requirements of the API call
 *   gm_body-id = 'ipsum lorem'. " (type /BLCK/P5_STRING)
-*   gm_body-config = 'ipsum lorem'. " (type /BLCK/P5_STRING)
+*   gm_body-config = l_config. " (type /BLCK/P5_STRING_MT)
 
 
     
@@ -2696,7 +2696,7 @@ Modifies a printer, replacing the current configuration with the one given in th
         
 *** set data according to requirements of the API call
 *   gm_body-id = 'ipsum lorem'. " (type /BLCK/P5_STRING)
-*   gm_body-config = 'ipsum lorem'. " (type /BLCK/P5_STRING)
+*   gm_body-config = l_config. " (type /BLCK/P5_STRING_MT)
 
 
     
@@ -3623,7 +3623,7 @@ Aggregates count the number of objects matching a given query and aggregate resu
     data gr_http500 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
-*   gm_body-match = 'ipsum lorem'. " (type /BLCK/P5_STRING)
+*   gm_body-match = l_match. " (type /BLCK/P5_STRING_MT)
 *   gm_body-aggregates = l_aggregates. " (type /BLCK/P5_STRING_TT)
 
 
@@ -3988,7 +3988,7 @@ Adds a new printer to the list of managed printers in PLOSSYS P5. The new printe
         
 *** set data according to requirements of the API call
 *   gm_body-id = 'ipsum lorem'. " (type /BLCK/P5_STRING)
-*   gm_body-config = 'ipsum lorem'. " (type /BLCK/P5_STRING)
+*   gm_body-config = l_config. " (type /BLCK/P5_STRING_MT)
 
 
     
@@ -4342,7 +4342,7 @@ Modifies a printer, replacing the current configuration with the one given in th
         
 *** set data according to requirements of the API call
 *   gm_body-id = 'ipsum lorem'. " (type /BLCK/P5_STRING)
-*   gm_body-config = 'ipsum lorem'. " (type /BLCK/P5_STRING)
+*   gm_body-config = l_config. " (type /BLCK/P5_STRING_MT)
 
 
     
@@ -4853,7 +4853,7 @@ Aggregates count the number of objects matching a given query and aggregate resu
     data gr_http500 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
-*   gm_body-match = 'ipsum lorem'. " (type /BLCK/P5_STRING)
+*   gm_body-match = l_match. " (type /BLCK/P5_STRING_MT)
 *   gm_body-aggregates = l_aggregates. " (type /BLCK/P5_STRING_TT)
 
 
@@ -5141,7 +5141,7 @@ Aggregates count the number of objects matching a given query and aggregate resu
     data gr_http500 type /BLCK/P5_ERROR.
         
 *** set data according to requirements of the API call
-*   gm_body-match = 'ipsum lorem'. " (type /BLCK/P5_STRING)
+*   gm_body-match = l_match. " (type /BLCK/P5_STRING_MT)
 *   gm_body-aggregates = l_aggregates. " (type /BLCK/P5_STRING_TT)
 
 
@@ -5505,7 +5505,7 @@ HTTP Code | Name | Type | Description
     data gr_aggregatequery type /blck/p5_aggregatequery.
     
 * fill model with data as appropriate..
-    gr_aggregatequery-match = 'ipsum lorem'. " (type /BLCK/P5_STRING)
+    gr_aggregatequery-match = l_match. " (type /BLCK/P5_STRING_MT)
     gr_aggregatequery-aggregates = l_aggregates. " (type /BLCK/P5_STRING_TT)
     
 * pass to example API method
@@ -5522,7 +5522,7 @@ HTTP Code | Name | Type | Description
       importing 
         e_200 = gr_aggregatequery ).
     		
-    write: gr_aggregatequery-match. " (type /BLCK/P5_STRING)
+    write: gr_aggregatequery-match. " (type /BLCK/P5_STRING_MT)
     write: gr_aggregatequery-aggregates. " (type /BLCK/P5_STRING_TT)
 
 ```
@@ -5531,7 +5531,7 @@ HTTP Code | Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**match** | `/BLCK/P5_STRING` | Query-rules for objects to aggregate
+**match** | `/BLCK/P5_STRING_MT` | Query-rules for objects to aggregate
 **aggregates** | `/BLCK/P5_STRING_TT` | List of aggregates to generate
 
 * * *
@@ -5723,7 +5723,7 @@ Name | Type | Description
     data gr_logs type /blck/p5_logs.
     
 * fill model with data as appropriate..
-    gr_logs-messages = l_messages. " (type /BLCK/P5_STRING_TT)
+    gr_logs-messages = l_messages. " (type /BLCK/P5_STRING_MT_TT)
     
 * pass to example API method
     /blck/cl_example_api=>update_logs(
@@ -5739,7 +5739,7 @@ Name | Type | Description
       importing 
         e_200 = gr_logs ).
     		
-    write: gr_logs-messages. " (type /BLCK/P5_STRING_TT)
+    write: gr_logs-messages. " (type /BLCK/P5_STRING_MT_TT)
 
 ```
 
@@ -5747,7 +5747,7 @@ Name | Type | Description
 
 Name | Type | Description
 ------------ | ------------- | -------------
-**messages** | `/BLCK/P5_STRING_TT` | Array of Log entries
+**messages** | `/BLCK/P5_STRING_MT_TT` | Array of Log entries
 
 * * *
 <a name="markdown-header-model-metadata"></a> 
@@ -5806,9 +5806,9 @@ Name | Type | Description
 * fill model with data as appropriate..
     gr_print_job-id = 'ipsum lorem'. " (type /BLCK/P5_STRING)
     gr_print_job-status = /blck/p5_const=>me_-. " (enum /BLCK/P5_STRING)
-    gr_print_job-current = 'ipsum lorem'. " (type /BLCK/P5_STRING)
-    gr_print_job-orig = 'ipsum lorem'. " (type /BLCK/P5_STRING)
-    gr_print_job-routing = 'ipsum lorem'. " (type /BLCK/P5_STRING)
+    gr_print_job-current = l_current. " (type /BLCK/P5_STRING_MT)
+    gr_print_job-orig = l_orig. " (type /BLCK/P5_STRING_MT)
+    gr_print_job-routing = l_routing. " (type /BLCK/P5_STRING_MT)
     
 * pass to example API method
     /blck/cl_example_api=>update_print_job(
@@ -5826,9 +5826,9 @@ Name | Type | Description
     		
     write: gr_print_job-id. " (type /BLCK/P5_STRING)
     write: gr_print_job-status. " (type /BLCK/P5_STRING)
-    write: gr_print_job-current. " (type /BLCK/P5_STRING)
-    write: gr_print_job-orig. " (type /BLCK/P5_STRING)
-    write: gr_print_job-routing. " (type /BLCK/P5_STRING)
+    write: gr_print_job-current. " (type /BLCK/P5_STRING_MT)
+    write: gr_print_job-orig. " (type /BLCK/P5_STRING_MT)
+    write: gr_print_job-routing. " (type /BLCK/P5_STRING_MT)
 
 ```
 
@@ -5838,9 +5838,9 @@ Name | Type | Description
 ------------ | ------------- | -------------
 **id** | `/BLCK/P5_STRING` | Job identifier
 **status** | `/BLCK/P5_STRING` | Current job status
-**current** | `/BLCK/P5_STRING` | Information about the job as it is used in PLOSSYS P5 at the present time.
-**orig** | `/BLCK/P5_STRING` | Information about the job as it was originally submitted to PLOSSYS P5
-**routing** | `/BLCK/P5_STRING` | Information about the processor route of the job.
+**current** | `/BLCK/P5_STRING_MT` | Information about the job as it is used in PLOSSYS P5 at the present time.
+**orig** | `/BLCK/P5_STRING_MT` | Information about the job as it was originally submitted to PLOSSYS P5
+**routing** | `/BLCK/P5_STRING_MT` | Information about the processor route of the job.
 
 * * *
 <a name="markdown-header-model-printer"></a> 
@@ -5858,7 +5858,7 @@ Name | Type | Description
     
 * fill model with data as appropriate..
     gr_printer-id = 'ipsum lorem'. " (type /BLCK/P5_STRING)
-    gr_printer-config = 'ipsum lorem'. " (type /BLCK/P5_STRING)
+    gr_printer-config = l_config. " (type /BLCK/P5_STRING_MT)
     
 * pass to example API method
     /blck/cl_example_api=>update_printer(
@@ -5875,7 +5875,7 @@ Name | Type | Description
         e_200 = gr_printer ).
     		
     write: gr_printer-id. " (type /BLCK/P5_STRING)
-    write: gr_printer-config. " (type /BLCK/P5_STRING)
+    write: gr_printer-config. " (type /BLCK/P5_STRING_MT)
 
 ```
 
@@ -5884,7 +5884,7 @@ Name | Type | Description
 Name | Type | Description
 ------------ | ------------- | -------------
 **id** | `/BLCK/P5_STRING` | Internal ID of the printer, auto-generated by PLOSSYS P5
-**config** | `/BLCK/P5_STRING` | 
+**config** | `/BLCK/P5_STRING_MT` | 
 
 * * *
 <a name="markdown-header-model-printer_status"></a> 

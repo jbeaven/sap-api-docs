@@ -144,8 +144,8 @@ A POST call to this route will create a new jobs and return it's uuid.
     
 *** create variables for input and output as needed
 *   for parameter i_body:
-*   a simple ABAP primitive of type /BLCK/P4_JOB_HEADER
-    data gvs_body type /BLCK/P4_JOB_HEADER.
+*   a reference to model type /BLCK/P4_JOB_HEADER
+    data gm_body type /BLCK/P4_JOB_HEADER.
 *   when the result of the call is HTTP Code: 200 we expect type /BLCK/P4_JOB_ID
     data gr_http200 type /BLCK/P4_JOB_ID.
 *   when the result of the call is HTTP Code: 401 we expect type /BLCK/P4_ERROR
@@ -160,7 +160,6 @@ A POST call to this route will create a new jobs and return it's uuid.
     data gr_httpother type /BLCK/P4_ERROR.
         
 *** set data according to requirements of the API call
-*   gvs_body = 'ipsum lorem'.
 
 
 *** optional: instantiate descendant of /blck/p4_cl_auth 
@@ -178,7 +177,7 @@ A POST call to this route will create a new jobs and return it's uuid.
 *** i_body: job header data of the entry to be created
     /blck/p4_cl_JobsApi=>jobs_post(
       exporting
-        i_body = gvs_body
+        i_body = gm_body
       importing
         e_code = gvi_code
         e_message = gvs_msg
@@ -211,7 +210,7 @@ A POST call to this route will create a new jobs and return it's uuid.
 ### Parameters
 Name | Type | Description  
 ------------- | ------------- | ------------- 
- **i_body** | `/BLCK/P4_JOB_HEADER` | job header data of the entry to be created 
+ **i_body** | `/BLCK/P4_JOB_HEADER` (**[JobHeader](#markdown-header-model-job_header)**) | job header data of the entry to be created 
 
 ### Return types
 
@@ -944,7 +943,7 @@ HTTP Code | Name | Type | Description
 * fill model with data as appropriate..
     gr_error-code = 42. " (type /BLCK/P4_INT)
     gr_error-message = 'ipsum lorem'. " (type /BLCK/P4_STRING)
-    gr_error-metadata = 'ipsum lorem'. " (type /BLCK/P4_STRING)
+    gr_error-metadata = l_metadata. " (type /BLCK/P4_STRING_MT)
     
 * pass to example API method
     /blck/cl_example_api=>update_error(
@@ -962,7 +961,7 @@ HTTP Code | Name | Type | Description
     		
     write: gr_error-code. " (type /BLCK/P4_INT)
     write: gr_error-message. " (type /BLCK/P4_STRING)
-    write: gr_error-metadata. " (type /BLCK/P4_STRING)
+    write: gr_error-metadata. " (type /BLCK/P4_STRING_MT)
 
 ```
 
@@ -972,7 +971,7 @@ Name | Type | Description
 ------------ | ------------- | -------------
 **code** | `/BLCK/P4_INT` | 
 **message** | `/BLCK/P4_STRING` | 
-**metadata** | `/BLCK/P4_STRING` | 
+**metadata** | `/BLCK/P4_STRING_MT` | 
 
 * * *
 <a name="markdown-header-model-job_header"></a> 
@@ -1178,7 +1177,7 @@ Name | Type | Description
 * fill model with data as appropriate..
     gr_jobstatusevent-type = 'ipsum lorem'. " (type /BLCK/P4_STRING)
     gr_jobstatusevent-scope = 'ipsum lorem'. " (type /BLCK/P4_STRING)
-    gr_jobstatusevent-parameters = 'ipsum lorem'. " (type /BLCK/P4_STRING)
+    gr_jobstatusevent-parameters = l_parameters. " (type /BLCK/P4_STRING_MT)
     
 * pass to example API method
     /blck/cl_example_api=>update_jobstatusevent(
@@ -1196,7 +1195,7 @@ Name | Type | Description
     		
     write: gr_jobstatusevent-type. " (type /BLCK/P4_STRING)
     write: gr_jobstatusevent-scope. " (type /BLCK/P4_STRING)
-    write: gr_jobstatusevent-parameters. " (type /BLCK/P4_STRING)
+    write: gr_jobstatusevent-parameters. " (type /BLCK/P4_STRING_MT)
 
 ```
 
@@ -1206,7 +1205,7 @@ Name | Type | Description
 ------------ | ------------- | -------------
 **type** | `/BLCK/P4_STRING` | name of event, possible values: &#x27;UPDATE_JOB&#x27; 
 **scope** | `/BLCK/P4_STRING` | uuid of PLOSSYS 4 job
-**parameters** | `/BLCK/P4_STRING` | key/value pairs with event specific parameters. E.g. for UPDATE_JOB: &#x27;status: completed&#x27; 
+**parameters** | `/BLCK/P4_STRING_MT` | key/value pairs with event specific parameters. E.g. for UPDATE_JOB: &#x27;status: completed&#x27; 
 
 * * *
 <a name="markdown-header-model-printer"></a> 

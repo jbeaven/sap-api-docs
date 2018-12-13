@@ -550,8 +550,8 @@ Appends a new input file to the input file list of a job.
 *   for parameter i_job_id:
 *   a simple ABAP primitive of type /BLCK/CNV_STRING
     data gvs_job_id type /BLCK/CNV_STRING.
-*   when the result of the call is HTTP Code: 200 we expect type /BLCK/CNV_STRING
-    data gr_http200 type /BLCK/CNV_STRING.
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/CNV_STRING_MT
+    data gr_http200 type /BLCK/CNV_STRING_MT.
 *   when the result of the call is HTTP Code: 401 we expect type /BLCK/CNV_ERROR
     data gr_http401 type /BLCK/CNV_ERROR.
 *   when the result of the call is HTTP Code: 409 we expect type /BLCK/CNV_ERROR
@@ -563,7 +563,7 @@ Appends a new input file to the input file list of a job.
         
 *** set data according to requirements of the API call
 *   gm_body-mime_type = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
-*   gm_body-metadata = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
+*   gm_body-metadata = l_metadata. " (type /BLCK/CNV_STRING_MT)
 *   gvs_job_id = 'ipsum lorem'.
 
 
@@ -597,7 +597,7 @@ Appends a new input file to the input file list of a job.
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       do something with gr_http200 (type /BLCK/CNV_STRING)
+*       do something with gr_http200 (type /BLCK/CNV_STRING_MT)
       when 401.
 *       do something with gr_http401 (type /BLCK/CNV_ERROR)
       when 409.
@@ -621,7 +621,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | `/BLCK/CNV_STRING` | OK, entry created. Returns fileId as index of created file in input file list, starting with zero.
+ 200 | **e_code_200** | `/BLCK/CNV_STRING_MT` | OK, entry created. Returns fileId as index of created file in input file list, starting with zero.
  401 | **e_code_401** | `/BLCK/CNV_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
  409 | **e_code_409** | `/BLCK/CNV_ERROR` (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
  500 | **e_code_500** | `/BLCK/CNV_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
@@ -754,8 +754,8 @@ Create a new job.
 *   for parameter i_body:
 *   a reference to model type /BLCK/CNV_JOB_TICKET
     data gm_body type /BLCK/CNV_JOB_TICKET.
-*   when the result of the call is HTTP Code: 200 we expect type /BLCK/CNV_STRING
-    data gr_http200 type /BLCK/CNV_STRING.
+*   when the result of the call is HTTP Code: 200 we expect type /BLCK/CNV_STRING_MT
+    data gr_http200 type /BLCK/CNV_STRING_MT.
 *   when the result of the call is HTTP Code: 401 we expect type /BLCK/CNV_ERROR
     data gr_http401 type /BLCK/CNV_ERROR.
 *   when the result of the call is HTTP Code: 409 we expect type /BLCK/CNV_ERROR
@@ -767,7 +767,7 @@ Create a new job.
         
 *** set data according to requirements of the API call
 *   gm_body-name = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
-*   gm_body-metadata = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
+*   gm_body-metadata = l_metadata. " (type /BLCK/CNV_STRING_MT)
 
 
 *** optional: instantiate descendant of /blck/cnv_cl_auth 
@@ -798,7 +798,7 @@ Create a new job.
 *** do something with the result if applicable..
     case gvi_code.
       when 200.
-*       do something with gr_http200 (type /BLCK/CNV_STRING)
+*       do something with gr_http200 (type /BLCK/CNV_STRING_MT)
       when 401.
 *       do something with gr_http401 (type /BLCK/CNV_ERROR)
       when 409.
@@ -821,7 +821,7 @@ Name | Type | Description
 
 HTTP Code | Name | Type | Description  
 ------------- | ------------- | ------------- | ------------- 
- 200 | **e_code_200** | `/BLCK/CNV_STRING` | OK, entry created. Returns a job id.
+ 200 | **e_code_200** | `/BLCK/CNV_STRING_MT` | OK, entry created. Returns a job id.
  401 | **e_code_401** | `/BLCK/CNV_ERROR` (**[Error](#markdown-header-model-error)**) | Unauthorized (Auth token invalid)
  409 | **e_code_409** | `/BLCK/CNV_ERROR` (**[Error](#markdown-header-model-error)**) | Conflict, ressource could not be created. See error message for details. 
  500 | **e_code_500** | `/BLCK/CNV_ERROR` (**[Error](#markdown-header-model-error)**) | Application Error
@@ -1160,7 +1160,7 @@ Name | Type | Description
 * fill model with data as appropriate..
     gr_error-code = 42. " (type /BLCK/CNV_INT)
     gr_error-message = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
-    gr_error-metadata = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
+    gr_error-metadata = l_metadata. " (type /BLCK/CNV_STRING_MT)
     
 * pass to example API method
     /blck/cl_example_api=>update_error(
@@ -1178,7 +1178,7 @@ Name | Type | Description
     		
     write: gr_error-code. " (type /BLCK/CNV_INT)
     write: gr_error-message. " (type /BLCK/CNV_STRING)
-    write: gr_error-metadata. " (type /BLCK/CNV_STRING)
+    write: gr_error-metadata. " (type /BLCK/CNV_STRING_MT)
 
 ```
 
@@ -1188,7 +1188,7 @@ Name | Type | Description
 ------------ | ------------- | -------------
 **code** | `/BLCK/CNV_INT` | 
 **message** | `/BLCK/CNV_STRING` | 
-**metadata** | `/BLCK/CNV_STRING` | 
+**metadata** | `/BLCK/CNV_STRING_MT` | 
 
 * * *
 <a name="markdown-header-model-file_id"></a> 
@@ -1246,7 +1246,7 @@ Name | Type | Description
     
 * fill model with data as appropriate..
     gr_input_file-mime_type = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
-    gr_input_file-metadata = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
+    gr_input_file-metadata = l_metadata. " (type /BLCK/CNV_STRING_MT)
     
 * pass to example API method
     /blck/cl_example_api=>update_input_file(
@@ -1263,7 +1263,7 @@ Name | Type | Description
         e_200 = gr_input_file ).
     		
     write: gr_input_file-mime_type. " (type /BLCK/CNV_STRING)
-    write: gr_input_file-metadata. " (type /BLCK/CNV_STRING)
+    write: gr_input_file-metadata. " (type /BLCK/CNV_STRING_MT)
 
 ```
 
@@ -1272,7 +1272,7 @@ Name | Type | Description
 Name | Type | Description
 ------------ | ------------- | -------------
 **mime_type** | `/BLCK/CNV_STRING` | Mime type of the file.
-**metadata** | `/BLCK/CNV_STRING` | File specific parameter, will be merged with job metadata at runtime.
+**metadata** | `/BLCK/CNV_STRING_MT` | File specific parameter, will be merged with job metadata at runtime.
 
 * * *
 <a name="markdown-header-model-job_id"></a> 
@@ -1391,7 +1391,7 @@ Name | Value | Constant
     
 * fill model with data as appropriate..
     gr_job_ticket-name = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
-    gr_job_ticket-metadata = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
+    gr_job_ticket-metadata = l_metadata. " (type /BLCK/CNV_STRING_MT)
     
 * pass to example API method
     /blck/cl_example_api=>update_job_ticket(
@@ -1408,7 +1408,7 @@ Name | Value | Constant
         e_200 = gr_job_ticket ).
     		
     write: gr_job_ticket-name. " (type /BLCK/CNV_STRING)
-    write: gr_job_ticket-metadata. " (type /BLCK/CNV_STRING)
+    write: gr_job_ticket-metadata. " (type /BLCK/CNV_STRING_MT)
 
 ```
 
@@ -1417,7 +1417,7 @@ Name | Value | Constant
 Name | Type | Description
 ------------ | ------------- | -------------
 **name** | `/BLCK/CNV_STRING` | Name of preprocessing rule to use
-**metadata** | `/BLCK/CNV_STRING` | Rule specific parameter.
+**metadata** | `/BLCK/CNV_STRING_MT` | Rule specific parameter.
 
 * * *
 <a name="markdown-header-model-output_file"></a> 
@@ -1436,7 +1436,7 @@ Name | Type | Description
     
 * fill model with data as appropriate..
     gr_output_file-mime_type = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
-    gr_output_file-metadata = 'ipsum lorem'. " (type /BLCK/CNV_STRING)
+    gr_output_file-metadata = l_metadata. " (type /BLCK/CNV_STRING_MT)
     
 * pass to example API method
     /blck/cl_example_api=>update_output_file(
@@ -1453,7 +1453,7 @@ Name | Type | Description
         e_200 = gr_output_file ).
     		
     write: gr_output_file-mime_type. " (type /BLCK/CNV_STRING)
-    write: gr_output_file-metadata. " (type /BLCK/CNV_STRING)
+    write: gr_output_file-metadata. " (type /BLCK/CNV_STRING_MT)
 
 ```
 
@@ -1462,7 +1462,7 @@ Name | Type | Description
 Name | Type | Description
 ------------ | ------------- | -------------
 **mime_type** | `/BLCK/CNV_STRING` | Mime type of the file.
-**metadata** | `/BLCK/CNV_STRING` | Output file specific parameter. Result of merged job metadata, input file metadata and rule target metadata. 
+**metadata** | `/BLCK/CNV_STRING_MT` | Output file specific parameter. Result of merged job metadata, input file metadata and rule target metadata. 
 
 * * *
 <a name="markdown-header-model-job_data"></a> 
